@@ -110,7 +110,7 @@
     "css-loader": "^1.0.1",
     "node-sass": "^4.10.0",
     "sass-loader": "^6.0.6",
-    "webpack-dev-server": "^3.0.0"
+    "webpack-dev-server": "3.0.0"
   },
   "scripts": {
     "start": "cross-env NODE_PATH=./src node scripts/start.js",
