@@ -11,12 +11,17 @@ class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            closedSmallerSidebar: false
+            closedSmallerSidebar: false,
+            width: undefined
         };
 
     }
 
+    onResize = (width) => this.setState({ width });
+
     render() {
+        const { width } = this.state;
+
         let {
             colorScheme,
             enableFixedHeader,
@@ -29,24 +34,20 @@ class Main extends React.Component {
         } = this.props;
 
         return (
-            <ResizeDetector
-                handleWidth
-                render={({ width }) => (
-                    <Fragment>
-                        <div className={cx(
-                            "app-container app-theme-" + colorScheme,
-                            {'fixed-header': enableFixedHeader},
-                            {'fixed-sidebar': enableFixedSidebar || width < 1250},
-                            {'fixed-footer': enableFixedFooter},
-                            {'closed-sidebar': enableClosedSidebar || width < 1250},
-                            {'closed-sidebar-mobile': closedSmallerSidebar || width < 1250},
-                            {'sidebar-mobile-open': enableMobileMenu},
-                        )}>
-                            <AppMain/>
-                        </div>
-                    </Fragment>
-                )}
-            />
+            <Fragment>
+                <div className={cx(
+                    "app-container app-theme-" + colorScheme,
+                    {'fixed-header': enableFixedHeader},
+                    {'fixed-sidebar': enableFixedSidebar || width < 1250},
+                    {'fixed-footer': enableFixedFooter},
+                    {'closed-sidebar': enableClosedSidebar || width < 1250},
+                    {'closed-sidebar-mobile': closedSmallerSidebar || width < 1250},
+                    {'sidebar-mobile-open': enableMobileMenu},
+                )}>
+                    <AppMain/>
+                    <ResizeDetector handleWidth onResize={this.onResize} />
+                </div>
+            </Fragment>
         )
     }
 }
