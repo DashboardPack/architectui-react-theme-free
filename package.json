@@ -1,6 +1,7 @@
 {
   "name": "architectui-react-theme-free",
   "version": "1.0.0",
+  "homepage": "https://demo.dashboardpack.com/architectui-react-pro",
   "private": true,
   "description": "ArchitectUI - Bootstrap 4 ReactJS Admin Dashboard Template FREE",
   "author": "DashboardPack.com",
@@ -16,7 +17,7 @@
     "autoprefixer": "9.4.2",
     "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",
-    "babel-jest": "20.0.3",
+    "babel-jest": "^25.1.0",
     "babel-loader": "7.1.1",
     "babel-preset-react-app": "^3.0.2",
     "babel-runtime": "6.26.0",
@@ -48,7 +49,7 @@
     "html-webpack-plugin": "3.2.0",
     "i": "^0.3.6",
     "identicon.js": "^2.3.3",
-    "jest": "23.6.0",
+    "jest": "^25.1.0",
     "jw-react-pagination": "^1.0.7",
     "lorem-ipsum": "^1.0.6",
     "moment": "^2.24.0",
@@ -110,7 +111,7 @@
     "css-loader": "^1.0.1",
     "node-sass": "^4.10.0",
     "sass-loader": "^6.0.6",
-    "webpack-dev-server": "^3.0.0"
+    "webpack-dev-server": "3.0.0"
   },
   "scripts": {
     "start": "cross-env NODE_PATH=./src node scripts/start.js",
