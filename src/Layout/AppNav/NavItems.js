@@ -5,6 +5,33 @@ export const MainNav = [
         to: '#/dashboards/basic',
     },
 ];
+export const MenuNav = [
+    {
+        icon: 'pe-7s-rocket',
+        label: 'Home',
+        to: '#/dashboards/basic',
+    },
+    {
+        icon: 'pe-7s-plus',
+        label: 'Create Job',
+        to: '#/jobs/create',
+    },
+    {
+        icon: 'pe-7s-note2',
+        label: 'My Job',
+        to: '#/jobs/basic',
+    },
+    {
+        icon: 'pe-7s-rocket',
+        label: 'My Store',
+        to: '#/dashboards/basic',
+    },
+];
+export const AccountNav = [
+    {
+        
+    },
+];
 export const ComponentsNav = [
     {
         icon: 'pe-7s-diamond',

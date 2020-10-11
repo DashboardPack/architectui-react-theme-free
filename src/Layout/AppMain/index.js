@@ -6,7 +6,7 @@ import {
 } from 'react-toastify';
 
 const Dashboards = lazy(() => import('../../DemoPages/Dashboards'));
-
+const Jobs = lazy(() => import('../../DemoPages/Jobs'));
 const Widgets = lazy(() => import('../../DemoPages/Widgets'));
 const Elements = lazy(() => import('../../DemoPages/Elements'));
 const Components = lazy(() => import('../../DemoPages/Components'));
@@ -126,6 +126,25 @@ const AppMain = () => {
 
             <Route exact path="/" render={() => (
                 <Redirect to="/dashboards/basic"/>
+            )}/>
+
+            {/* Jobs */}
+
+            <Suspense fallback={
+                <div className="loader-container">
+                    <div className="loader-container-inner">
+                        <h6 className="mt-3">
+                            Please wait while we load all the Jobs examples
+                            <small>Because this is a demonstration, we load at once all the Jobs examples. This wouldn't happen in a real live app!</small>
+                        </h6>
+                    </div>
+                </div>
+            }>
+                <Route path="/jobs" component={Jobs}/>
+            </Suspense>
+
+            <Route exact path="/" render={() => (
+                <Redirect to="/jobs/basic"/>
             )}/>
             <ToastContainer/>
         </Fragment>
