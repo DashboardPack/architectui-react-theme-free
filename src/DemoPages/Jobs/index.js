@@ -7,6 +7,9 @@ import Job from './Basic';
 // NEW JOB
 import NewJob from './Create';
 
+// JOB DETAILS
+import JobDetail from './Details';
+
 // Layout
 
 import AppHeader from '../../Layout/AppHeader';
@@ -22,8 +25,10 @@ const Jobs = ({match}) => (
                 <div className="app-main__inner">
                     {/* base */}
                     <Route path={`${match.url}/basic`} component={Job}/>
-                    {/* base */}
+                    {/* create new */}
                     <Route path={`${match.url}/create`} component={NewJob}/>
+                    {/* details */}
+                    <Route path={`${match.url}/detail`} component={JobDetail}/>
                 </div>
                 <AppFooter/>
             </div>
