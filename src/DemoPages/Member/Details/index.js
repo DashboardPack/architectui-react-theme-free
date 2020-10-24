@@ -155,7 +155,7 @@ export default class Details extends Component {
                                 </div>
                                 <div className="ml-auto">
                                     <Button size="lg" color="primary" className="mr-3">Print</Button>
-                                    <Button size="lg" color="light" href="#/jobs/basic">Close</Button>
+                                    <Button size="lg" color="light">Close</Button>
                                 </div>
                             </CardFooter>
                         </Card>

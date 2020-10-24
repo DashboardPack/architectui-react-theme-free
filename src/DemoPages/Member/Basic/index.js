@@ -10,15 +10,8 @@ import {
     Progress,
     TabContent,
     TabPane,
-    Dropdown, UncontrolledButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem,
-    Nav, NavLink, NavItem, UncontrolledDropdown
+    Dropdown, UncontrolledButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem
 } from 'reactstrap';
-
-import {
-    faBusinessTime
-} from '@fortawesome/free-solid-svg-icons';
-
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 import PageTitle from '../../../Layout/AppMain/PageTitle';
 
@@ -28,42 +21,6 @@ import avatar3 from '../../../assets/utils/images/avatars/3.jpg';
 import avatar4 from '../../../assets/utils/images/avatars/4.jpg';
 
 const val = "50";
-
-const buttons= 
-<div>
-    {/* <UncontrolledButtonDropdown>
-        <DropdownToggle caret outline className="mb-2 mr-2" color="primary">
-            Filter by
-        </DropdownToggle>
-        <DropdownMenu>
-            <DropdownItem>Show all job</DropdownItem>
-            <DropdownItem divider/>
-            <DropdownItem>Show on going job</DropdownItem>
-            <DropdownItem>Show on queue job</DropdownItem>
-            <DropdownItem>Show finished job</DropdownItem>
-            <DropdownItem>Show cancelled job</DropdownItem>
-            <DropdownItem>Show failed job</DropdownItem>
-        </DropdownMenu>
-    </UncontrolledButtonDropdown> */}
-    <UncontrolledDropdown className="d-inline-block">
-        <DropdownToggle color="info" className="btn-shadow" caret>
-            <span className="btn-icon-wrapper pr-2 opacity-7">
-                <FontAwesomeIcon icon={faBusinessTime}/>
-            </span>
-            Create New
-        </DropdownToggle>
-        <DropdownMenu right>
-            <Nav vertical>
-                <NavItem>
-                    <NavLink href="#/jobs/create">
-                        <i className="nav-link-icon lnr-inbox"> </i>
-                        <span>Print Job</span>
-                    </NavLink>
-                </NavItem>
-            </Nav>
-        </DropdownMenu>
-    </UncontrolledDropdown>
-</div>;
 
 export default class Job extends Component {
     constructor() {
@@ -76,6 +33,7 @@ export default class Job extends Component {
         };
         this.toggle = this.toggle.bind(this);
         this.toggle1 = this.toggle1.bind(this);
+
     }
 
     toggle() {
@@ -91,8 +49,6 @@ export default class Job extends Component {
             });
         }
     }
-    
-
     
 
     render() {
@@ -111,7 +67,6 @@ export default class Job extends Component {
                             heading="My Job"
                             subheading="History of all job ever submitted"
                             icon="pe-7s-note2 icon-gradient bg-sunny-morning"
-                            button={buttons}
                         />
                         <Row>
                             <Col md="12">
@@ -165,7 +120,7 @@ export default class Job extends Component {
                                                         <div className="widget-content-wrapper">
                                                             <div className="widget-content-left mr-3">
                                                                 <div className="widget-content-left">
-                                                                    {/* <img width={40} className="rounded-circle" src={avatar4} alt="Avatar" /> */}
+                                                                    <img width={40} className="rounded-circle" src={avatar4} alt="Avatar" />
                                                                 </div>
                                                             </div>
                                                             <div className="widget-content-left flex2">
@@ -189,7 +144,7 @@ export default class Job extends Component {
                                                         <div className="widget-content-wrapper">
                                                             <div className="widget-content-left mr-3">
                                                                 <div className="widget-content-left">
-                                                                    {/* <img width={40} className="rounded-circle" src={avatar3} alt="Avatar" /> */}
+                                                                    <img width={40} className="rounded-circle" src={avatar3} alt="Avatar" />
                                                                 </div>
                                                             </div>
                                                             <div className="widget-content-left flex2">
@@ -213,7 +168,7 @@ export default class Job extends Component {
                                                         <div className="widget-content-wrapper">
                                                             <div className="widget-content-left mr-3">
                                                                 <div className="widget-content-left">
-                                                                    {/* <img width={40} className="rounded-circle" src={avatar2} alt="Avatar" /> */}
+                                                                    <img width={40} className="rounded-circle" src={avatar2} alt="Avatar" />
                                                                 </div>
                                                             </div>
                                                             <div className="widget-content-left flex2">
@@ -237,8 +192,7 @@ export default class Job extends Component {
                                                         <div className="widget-content-wrapper">
                                                             <div className="widget-content-left mr-3">
                                                                 <div className="widget-content-left">
-                                                                    {/* <img width={40} className="rounded-circle" src={avatar1} alt="Avatar" /> */}
-                                                                </div>
+                                                                    <img width={40} className="rounded-circle" src={avatar1} alt="Avatar" /></div>
                                                             </div>
                                                             <div className="widget-content-left flex2">
                                                                 <div className="widget-heading">Print - Mount motor</div>

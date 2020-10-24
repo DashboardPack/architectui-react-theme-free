@@ -27,7 +27,8 @@ class PageTitle extends Component {
 
             heading,
             icon,
-            subheading
+            subheading,
+            button
         } = this.props;
 
         return (
@@ -48,25 +49,9 @@ class PageTitle extends Component {
                         </div>
                     </div>
                     <div className="page-title-actions">
+                        {button}
                         {/* <TitleComponent2/> */}
-                        <UncontrolledDropdown className="d-inline-block">
-                            <DropdownToggle color="info" className="btn-shadow" caret>
-                                <span className="btn-icon-wrapper pr-2 opacity-7">
-                                    <FontAwesomeIcon icon={faBusinessTime}/>
-                                </span>
-                                Create New
-                            </DropdownToggle>
-                            <DropdownMenu right>
-                                <Nav vertical>
-                                    <NavItem>
-                                        <NavLink href="#/jobs/create">
-                                            <i className="nav-link-icon lnr-inbox"> </i>
-                                            <span>Print Job</span>
-                                        </NavLink>
-                                    </NavItem>
-                                </Nav>
-                            </DropdownMenu>
-                        </UncontrolledDropdown>
+                        
                     </div>
                 </div>
             </div>

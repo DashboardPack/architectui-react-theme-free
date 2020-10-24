@@ -7,6 +7,7 @@ import {
 
 const Dashboards = lazy(() => import('../../DemoPages/Dashboards'));
 const Jobs = lazy(() => import('../../DemoPages/Jobs'));
+const Member = lazy(() => import('../../DemoPages/Member'));
 const Widgets = lazy(() => import('../../DemoPages/Widgets'));
 const Elements = lazy(() => import('../../DemoPages/Elements'));
 const Components = lazy(() => import('../../DemoPages/Components'));
@@ -146,6 +147,21 @@ const AppMain = () => {
             <Route exact path="/" render={() => (
                 <Redirect to="/jobs/basic"/>
             )}/>
+
+            {/* Elements */}
+
+            <Suspense fallback={
+                <div className="loader-container">
+                    <div className="loader-container-inner">
+                        <h6 className="mt-3">
+                            Please wait while we load all the Elements examples
+                            <small>Because this is a demonstration we load at once all the Elements examples. This wouldn't happen in a real live app!</small>
+                        </h6>
+                    </div>
+                </div>
+            }>
+                <Route path="/member" component={Member}/>
+            </Suspense>
             <ToastContainer/>
         </Fragment>
     )

@@ -7,11 +7,6 @@ export const MainNav = [
 ];
 export const MenuNav = [
     {
-        icon: 'pe-7s-rocket',
-        label: 'Home',
-        to: '#/dashboards/basic',
-    },
-    {
         icon: 'pe-7s-plus',
         label: 'Create Job',
         to: '#/jobs/create',
@@ -22,10 +17,25 @@ export const MenuNav = [
         to: '#/jobs/basic',
     },
     {
-        icon: 'pe-7s-rocket',
-        label: 'My Store',
-        to: '#/dashboards/basic',
+        icon: 'pe-7s-plus',
+        label: 'Register New Member',
+        to: '#/member/register',
     },
+    {
+        icon: 'pe-7s-note2',
+        label: 'Job\'s detail',
+        to: '#/jobs/detail',
+    },
+    {
+        icon: 'pe-7s-note2',
+        label: 'Technician Board',
+        to: '#/jobs/take',
+    },
+    {
+        icon: 'pe-7s-note2',
+        label: 'Job Queue',
+        to: '#/jobs/queue',
+    }
 ];
 export const AccountNav = [
     {
