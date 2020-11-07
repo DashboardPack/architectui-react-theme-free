@@ -1,34 +1,21 @@
 import React, {Fragment} from 'react';
 import {Route} from 'react-router-dom';
 
-// DASHBOARDS
-import Job from './Basic';
-
-// NEW JOB
 import NewMember from './Register';
 
-// JOB DETAILS
-import JobDetail from './Details';
-
 // Layout
-
-import AppHeader from '../../Layout/AppHeader';
+import WebHeader from '../../Layout/WebHeader';
 import AppSidebar from '../../Layout/AppSidebar';
 import AppFooter from '../../Layout/AppFooter';
 
 const Member = ({match}) => (
     <Fragment>
-        <AppHeader/>
+        <WebHeader/>
         <div className="app-main">
-            <AppSidebar/>
-            <div className="app-main__outer">
+            {/* <AppSidebar/> */}
+            <div className="container-fluid m-0 p-0">
                 <div className="app-main__inner">
-                    {/* base */}
-                    <Route path={`${match.url}/basic`} component={Job}/>
-                    {/* create new */}
-                    <Route path={`${match.url}/register`} component={NewMember}/>
-                    {/* details */}
-                    <Route path={`${match.url}/detail`} component={JobDetail}/>
+                    <NewMember/>
                 </div>
                 <AppFooter/>
             </div>

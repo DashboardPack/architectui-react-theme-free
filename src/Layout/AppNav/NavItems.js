@@ -19,7 +19,12 @@ export const MenuNav = [
     {
         icon: 'pe-7s-plus',
         label: 'Register New Member',
-        to: '#/member/register',
+        to: '#/register',
+    },
+    {
+        icon: 'pe-7s-plus',
+        label: 'Login',
+        to: '#/login',
     },
     {
         icon: 'pe-7s-note2',

@@ -14,6 +14,7 @@ const Components = lazy(() => import('../../DemoPages/Components'));
 const Charts = lazy(() => import('../../DemoPages/Charts'));
 const Forms = lazy(() => import('../../DemoPages/Forms'));
 const Tables = lazy(() => import('../../DemoPages/Tables'));
+const Login = lazy(() => import('../../DemoPages/Login'));
 
 const AppMain = () => {
 
@@ -160,7 +161,20 @@ const AppMain = () => {
                     </div>
                 </div>
             }>
-                <Route path="/member" component={Member}/>
+                <Route path="/register" component={Member}/>
+            </Suspense>
+
+            <Suspense fallback={
+                <div className="loader-container">
+                    <div className="loader-container-inner">
+                        <h6 className="mt-3">
+                            Please wait while we load all the Elements examples
+                            <small>Because this is a demonstration we load at once all the Elements examples. This wouldn't happen in a real live app!</small>
+                        </h6>
+                    </div>
+                </div>
+            }>
+                <Route path="/login" component={Login}/>
             </Suspense>
             <ToastContainer/>
         </Fragment>

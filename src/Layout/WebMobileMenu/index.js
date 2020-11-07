@@ -21,7 +21,7 @@ import {
     setEnableMobileMenuSmall,
 } from '../../reducers/ThemeOptions';
 
-class AppMobileMenu extends React.Component {
+class WebMobileMenu extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -62,23 +62,23 @@ class AppMobileMenu extends React.Component {
             <Fragment>
 
                 <div className="app-header__mobile-menu">
-                    <div onClick={this.toggleMobileSidebar}>
+                    {/* <div onClick={this.toggleMobileSidebar}>
                         <Hamburger
                             active={enableMobileMenu}
                             type="elastic"
                             onClick={() => this.setState({activeMobile: !this.state.activeMobile})}
                         />
-                    </div>
+                    </div> */}
                 </div>
                 <div className="app-header__menu">
-                    <span onClick={this.toggleMobileSmall}>
+                    {/* <span onClick={this.toggleMobileSmall}>
                         <Button size="sm"
                                 className={cx("btn-icon btn-icon-only", {active: this.state.activeSecondaryMenuMobile})}
                                 color="primary"
                                 onClick={() => this.setState({activeSecondaryMenuMobile: !this.state.activeSecondaryMenuMobile})}>
                             <div className="btn-icon-wrapper"><FontAwesomeIcon icon={faEllipsisV}/></div>
                         </Button>
-                    </span>
+                    </span> */}
                 </div>
             </Fragment>
         )
@@ -99,4 +99,4 @@ const mapDispatchToProps = dispatch => ({
 
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppMobileMenu);
+export default connect(mapStateToProps, mapDispatchToProps)(WebMobileMenu);

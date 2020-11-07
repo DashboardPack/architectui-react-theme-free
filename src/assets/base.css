@@ -7962,15 +7962,15 @@ button,
     font-size: 0.8rem; }
 
 .app-header__logo {
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   height: 60px;
   width: 280px;
   display: flex;
   align-items: center;
   transition: width .2s; }
   .app-header__logo .logo-src {
-    height: 23px;
-    width: 97px;
+    height: 42px;
+    width: 180px;
     background: url("~assets/utils/images/logo-inverse.png"); }
 
 .app-header__menu,
@@ -8975,6 +8975,9 @@ button,
 
 .bg-premium-dark {
   background-image: linear-gradient(to right, #434343 0%, black 100%) !important; }
+
+.bg-blue-dark {
+  background-image: linear-gradient(to right, rgb(128, 148, 172) 20%, #2F435A 100%) !important; }
 
 .bg-happy-green {
   background-image: linear-gradient(to bottom, #00b09b, #96c93d) !important; }

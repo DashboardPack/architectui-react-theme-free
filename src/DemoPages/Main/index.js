@@ -57,7 +57,7 @@ const mapStateToProp = state => ({
     enableFixedHeader: state.ThemeOptions.enableFixedHeader,
     enableMobileMenu: state.ThemeOptions.enableMobileMenu,
     enableFixedFooter: state.ThemeOptions.enableFixedFooter,
-    enableFixedSidebar: state.ThemeOptions.enableFixedSidebar,
+    // enableFixedSidebar: state.ThemeOptions.enableFixedSidebar,
     enableClosedSidebar: state.ThemeOptions.enableClosedSidebar,
     enablePageTabsAlt: state.ThemeOptions.enablePageTabsAlt,
 
