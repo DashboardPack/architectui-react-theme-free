@@ -13,7 +13,7 @@ ArchitectUI ReactJS is a free admin dashboard template based on Bootstrap and Re
 ### Installation
 Download and uncompress the theme package archive in your desired folder location.
 
-Download and install Node.js from nodejs.org/en/download/
+Download and install Node.js from [nodejs.org/en/download/](https://nodejs.org/en/download/)
 
 Install the latest version of npm. This will be useful when running all the build commands. Run the following in a command line, either your IDE's Terminal window or in a Windows Command Prompt.
 
