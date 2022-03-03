@@ -72,10 +72,10 @@ export default class VectorMapsAnimated extends React.Component {
             <Fragment>
                 <div>
                     <div className="text-center mb-2">
-                        <Button color="primary" className="mr-1" onClick={this.handleZoomIn}>
+                        <Button color="primary" className="me-1" onClick={this.handleZoomIn}>
                             {"Zoom in"}
                         </Button>
-                        <Button color="primary" className="mr-2" onClick={this.handleZoomOut}>
+                        <Button color="primary" className="me-2" onClick={this.handleZoomOut}>
                             {"Zoom out"}
                         </Button>
                         <Button color="secondary" onClick={this.handleReset}>

@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import {connect} from 'react-redux';
 
-import Hamburger from 'react-hamburgers';
+import { Slider } from "react-burgers";
 
 import AppMobileMenu from '../AppMobileMenu';
 
@@ -48,9 +48,9 @@ class HeaderLogo extends React.Component {
             <Fragment>
                 <div className="app-header__logo">
                     <div className="logo-src"/>
-                    <div className="header__pane ml-auto">
+                    <div className="header__pane ms-auto">
                         <div onClick={this.toggleEnableClosedSidebar}>
-                            <Hamburger
+                            <Slider
                                 active={enableClosedSidebar}
                                 type="elastic"
                                 onClick={() => this.setState({active: !this.state.active})}

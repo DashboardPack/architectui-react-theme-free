@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import JwPagination from 'jw-react-pagination';
 
@@ -53,48 +53,50 @@ class DynamicPagination extends Component {
     render() {
         return (
             <Fragment>
-                <ReactCSSTransitionGroup
-                    component="div"
-                    transitionName="TabsAnimation"
-                    transitionAppear={true}
-                    transitionAppearTimeout={0}
-                    transitionEnter={false}
-                    transitionLeave={false}>
-                    <Row>
-                        <Col lg="6">
-                            <Card className="main-card mb-3">
-                                <CardBody>
-                                    <CardTitle>Basic</CardTitle>
-                                    <JwPagination disableDefaultStyles={true} items={this.state.exampleItems}
-                                                  onChangePage={this.onChangePage}/>
+                <TransitionGroup>
+                    <CSSTransition
+                        component="div"
+                        className="TabsAnimation"
+                        appear={true}
+                        timeout={0}
+                        enter={false}
+                        exit={false}>
+                        <Row>
+                            <Col lg="6">
+                                <Card className="main-card mb-3">
+                                    <CardBody>
+                                        <CardTitle>Basic</CardTitle>
+                                        <JwPagination disableDefaultStyles={true} items={this.state.exampleItems}
+                                                    onChangePage={this.onChangePage}/>
 
-                                    <ListGroup className="mt-3">
-                                        {this.state.pageOfItems.map(item =>
-                                            <ListGroupItem key={item.id}
-                                                           className="text-center">{item.name}</ListGroupItem>
-                                        )}
-                                    </ListGroup>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                        <Col lg="6">
-                            <Card className="main-card mb-3">
-                                <CardBody>
-                                    <CardTitle>Custom Icons</CardTitle>
-                                    <JwPagination pageSize={5} items={this.state.exampleItems} onChangePage={this.onChangePage}
-                                                  labels={customLabels}/>
+                                        <ListGroup className="mt-3">
+                                            {this.state.pageOfItems.map(item =>
+                                                <ListGroupItem key={item.id}
+                                                            className="text-center">{item.name}</ListGroupItem>
+                                            )}
+                                        </ListGroup>
+                                    </CardBody>
+                                </Card>
+                            </Col>
+                            <Col lg="6">
+                                <Card className="main-card mb-3">
+                                    <CardBody>
+                                        <CardTitle>Custom Icons</CardTitle>
+                                        <JwPagination pageSize={5} items={this.state.exampleItems} onChangePage={this.onChangePage}
+                                                    labels={customLabels}/>
 
-                                    <ListGroup className="mt-3">
-                                        {this.state.pageOfItems.map(item =>
-                                            <ListGroupItem key={item.id}
-                                                           className="text-center">{item.name}</ListGroupItem>
-                                        )}
-                                    </ListGroup>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                    </Row>
-                </ReactCSSTransitionGroup>
+                                        <ListGroup className="mt-3">
+                                            {this.state.pageOfItems.map(item =>
+                                                <ListGroupItem key={item.id}
+                                                            className="text-center">{item.name}</ListGroupItem>
+                                            )}
+                                        </ListGroup>
+                                    </CardBody>
+                                </Card>
+                            </Col>
+                        </Row>
+                    </CSSTransition>
+                </TransitionGroup>
             </Fragment>
         )
             ;

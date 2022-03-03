@@ -4,7 +4,7 @@ import cx from 'classnames';
 
 import Nav from '../AppNav/VerticalNavWrapper';
 
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import HeaderLogo from '../AppLogo';
@@ -34,27 +34,27 @@ class AppSidebar extends Component {
         return (
             <Fragment>
                 <div className="sidebar-mobile-overlay" onClick={this.toggleMobileSidebar}/>
-                <ReactCSSTransitionGroup
-                    component="div"
-                    className={cx("app-sidebar", backgroundColor, {'sidebar-shadow': enableSidebarShadow})}
-                    transitionName="SidebarAnimation"
-                    transitionAppear={true}
-                    transitionAppearTimeout={1500}
-                    transitionEnter={false}
-                    transitionLeave={false}>
-                    <HeaderLogo/>
-                    <PerfectScrollbar>
-                        <div className="app-sidebar__inner">
-                            <Nav/>
+                <TransitionGroup>
+                    <CSSTransition
+                        component="div"
+                        className={cx("app-sidebar", backgroundColor, {'sidebar-shadow': enableSidebarShadow})}
+                        appear={true} timeout={1500} enter={false} exit={false}>
+                        <div>
+                            <HeaderLogo/>
+                            <PerfectScrollbar>
+                                <div className="app-sidebar__inner">
+                                    <Nav/>
+                                </div>
+                            </PerfectScrollbar>
+                            <div
+                                className={cx("app-sidebar-bg", backgroundImageOpacity)}
+                                style={{
+                                    backgroundImage: enableBackgroundImage ? 'url(' + backgroundImage + ')' : null
+                                }}>
+                            </div>
                         </div>
-                    </PerfectScrollbar>
-                    <div
-                        className={cx("app-sidebar-bg", backgroundImageOpacity)}
-                        style={{
-                            backgroundImage: enableBackgroundImage ? 'url(' + backgroundImage + ')' : null
-                        }}>
-                    </div>
-                </ReactCSSTransitionGroup>
+                    </CSSTransition>
+                </TransitionGroup>
             </Fragment>
         )
     }

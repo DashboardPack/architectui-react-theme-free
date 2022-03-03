@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import GoogleMapReact from 'google-map-react';
 
 import {
@@ -22,13 +22,14 @@ class GoogleMapsExample extends React.Component {
 
         return (
             <Fragment>
-                <ReactCSSTransitionGroup
+                <TransitionGroup>
+                <CSSTransition
                     component="div"
-                    transitionName="TabsAnimation"
-                    transitionAppear={true}
-                    transitionAppearTimeout={0}
-                    transitionEnter={false}
-                    transitionLeave={false}>
+                    className="TabsAnimation"
+                    appear={true}
+                    timeout={0}
+                    enter={false}
+                    exit={false}>
                     <Row>
                         <Col md="12">
                             <Card className="main-card mb-3">
@@ -52,7 +53,8 @@ class GoogleMapsExample extends React.Component {
                             </Card>
                         </Col>
                     </Row>
-                </ReactCSSTransitionGroup>
+                </CSSTransition>
+                </TransitionGroup>
             </Fragment>
         )
     }

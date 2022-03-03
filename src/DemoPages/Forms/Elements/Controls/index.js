@@ -35,7 +35,7 @@ class FormElementsControls extends React.Component {
             <Fragment>
                 <PageTitle
                     heading="Form Controls"
-                    subheading="Wide selection of forms controls, using the Bootstrap 4 code base, but built with React."
+                    subheading="Wide selection of forms controls, using the Bootstrap 5 code base, but built with React."
                     icon="pe-7s-display1 icon-gradient bg-premium-dark"
                 />
                 <Tabs tabsWrapperClass="body-tabs body-tabs-layout" transform={false} showInkBar={true} items={getTabs()}/>

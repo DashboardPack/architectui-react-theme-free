@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {
     Row, Col,
     Card, CardBody,
@@ -16,13 +16,14 @@ import FormInputGroupButtonShorthand from './InputGroupButtonShorthand';
 const InputGroups = (props) => {
     return (
         <Fragment>
-            <ReactCSSTransitionGroup
+            <TransitionGroup>
+            <CSSTransition
                 component="div"
-                transitionName="TabsAnimation"
-                transitionAppear={true}
-                transitionAppearTimeout={0}
-                transitionEnter={false}
-                transitionLeave={false}>
+                classNames="TabsAnimation"
+                appear={true}
+                timeout={0}
+                enter={false}
+                exit={false}>
                 <Row>
                     <Col md="6">
                         <Card className="main-card mb-3">
@@ -65,7 +66,8 @@ const InputGroups = (props) => {
                         </Card>
                     </Col>
                 </Row>
-            </ReactCSSTransitionGroup>
+            </CSSTransition>
+            </TransitionGroup>
         </Fragment>
     );
 };

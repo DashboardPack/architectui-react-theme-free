@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import PropTypes from 'prop-types';
-import {InputGroupButtonDropdown, InputGroup, Input, DropdownToggle, DropdownMenu, DropdownItem} from 'reactstrap';
+import {Dropdown, InputGroup, Input, DropdownToggle, DropdownMenu, DropdownItem} from 'reactstrap';
 
 const propTypes = {
     addonType: PropTypes.oneOf(['prepend', 'append']).isRequired,
@@ -27,7 +27,7 @@ class FormInputGroupButtonDropdown extends React.Component {
         return (
             <Fragment>
                 <InputGroup>
-                    <InputGroupButtonDropdown addonType="prepend" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                    <Dropdown addonType="prepend" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                         <DropdownToggle caret>
                             Button Dropdown
                         </DropdownToggle>
@@ -38,7 +38,7 @@ class FormInputGroupButtonDropdown extends React.Component {
                             <DropdownItem divider/>
                             <DropdownItem>Another Action</DropdownItem>
                         </DropdownMenu>
-                    </InputGroupButtonDropdown>
+                    </Dropdown>
                     <Input/>
                 </InputGroup>
             </Fragment>

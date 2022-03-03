@@ -3,7 +3,7 @@ import cx from 'classnames';
 
 import {connect} from 'react-redux';
 
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import HeaderLogo from '../AppLogo';
 
@@ -19,29 +19,32 @@ class Header extends React.Component {
         } = this.props;
         return (
             <Fragment>
-                <ReactCSSTransitionGroup
-                    component="div"
-                    className={cx("app-header", headerBackgroundColor, {'header-shadow': enableHeaderShadow})}
-                    transitionName="HeaderAnimation"
-                    transitionAppear={true}
-                    transitionAppearTimeout={1500}
-                    transitionEnter={false}
-                    transitionLeave={false}>
+                <TransitionGroup>
+                    <CSSTransition
+                        component="div"
+                        className={cx("app-header", headerBackgroundColor, {'header-shadow': enableHeaderShadow})}
+                        appear={true}
+                        timeout={1500}
+                        enter={false}
+                        exit={false}>
+                        <div>
 
-                    <HeaderLogo/>
+                            <HeaderLogo/>
 
-                    <div className={cx(
-                        "app-header__content",
-                        {'header-mobile-open': enableMobileMenuSmall},
-                    )}>
-                        <div className="app-header-left">
-                            <SearchBox/>
+                            <div className={cx(
+                                "app-header__content",
+                                {'header-mobile-open': enableMobileMenuSmall},
+                            )}>
+                                <div className="app-header-left">
+                                    <SearchBox/>
+                                </div>
+                                <div className="app-header-right">
+                                    <UserBox/>
+                                </div>
+                            </div>
                         </div>
-                        <div className="app-header-right">
-                            <UserBox/>
-                        </div>
-                    </div>
-                </ReactCSSTransitionGroup>
+                    </CSSTransition>
+                </TransitionGroup>
             </Fragment>
         );
     }

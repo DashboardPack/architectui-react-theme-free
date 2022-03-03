@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {
     Row, Col,
     Card, CardBody,
@@ -17,72 +17,74 @@ import ListGroupFlush from './ListGroupFlush';
 const ListGroupExampleBasic = (props) => {
     return (
         <Fragment>
-            <ReactCSSTransitionGroup
-                component="div"
-                transitionName="TabsAnimation"
-                transitionAppear={true}
-                transitionAppearTimeout={0}
-                transitionEnter={false}
-                transitionLeave={false}>
-                <Row>
-                    <Col md="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>List group</CardTitle>
-                                <ListGroupDefault/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                    <Col md="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>List group buttons</CardTitle>
-                                <ListGroupAnchorsAndButtons/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                    <Col md="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>List group badges</CardTitle>
-                                <ListGroupBadge/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                    <Col md="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>List group contextual classes</CardTitle>
-                                <ListGroupContextualClasses/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                    <Col md="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>List group custom content</CardTitle>
-                                <ListGroupCustomContent/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                    <Col md="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>List group disabled items</CardTitle>
-                                <ListGroupDisabledItems/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                    <Col md="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>List group without border</CardTitle>
-                                <ListGroupFlush/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                </Row>
-            </ReactCSSTransitionGroup>
+            <TransitionGroup>
+                <CSSTransition
+                    component="div"
+                    className="TabsAnimation"
+                    appear={true}
+                    timeout={0}
+                    enter={false}
+                    exit={false}>
+                    <Row>
+                        <Col md="6">
+                            <Card className="main-card mb-3">
+                                <CardBody>
+                                    <CardTitle>List group</CardTitle>
+                                    <ListGroupDefault/>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                        <Col md="6">
+                            <Card className="main-card mb-3">
+                                <CardBody>
+                                    <CardTitle>List group buttons</CardTitle>
+                                    <ListGroupAnchorsAndButtons/>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                        <Col md="6">
+                            <Card className="main-card mb-3">
+                                <CardBody>
+                                    <CardTitle>List group badges</CardTitle>
+                                    <ListGroupBadge/>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                        <Col md="6">
+                            <Card className="main-card mb-3">
+                                <CardBody>
+                                    <CardTitle>List group contextual classes</CardTitle>
+                                    <ListGroupContextualClasses/>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                        <Col md="6">
+                            <Card className="main-card mb-3">
+                                <CardBody>
+                                    <CardTitle>List group custom content</CardTitle>
+                                    <ListGroupCustomContent/>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                        <Col md="6">
+                            <Card className="main-card mb-3">
+                                <CardBody>
+                                    <CardTitle>List group disabled items</CardTitle>
+                                    <ListGroupDisabledItems/>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                        <Col md="6">
+                            <Card className="main-card mb-3">
+                                <CardBody>
+                                    <CardTitle>List group without border</CardTitle>
+                                    <ListGroupFlush/>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                    </Row>
+                </CSSTransition>
+            </TransitionGroup>
         </Fragment>
     );
 };

@@ -18,10 +18,10 @@ class ModalCustomCloseButton extends React.Component {
   }
 
   render() {
-      const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>;
+      const closeBtn = <button className="btn-close" onClick={this.toggle}>&times;</button>;
 
       return (
-          <span className="d-inline-block mb-2 mr-2">
+          <span className="d-inline-block mb-2 me-2">
         <Button color="primary" onClick={this.toggle}>Custom Close Button</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle} close={closeBtn}>Modal title</ModalHeader>

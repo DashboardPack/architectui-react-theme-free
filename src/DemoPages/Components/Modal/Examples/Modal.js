@@ -19,7 +19,7 @@ class ModalExample extends React.Component {
 
     render() {
         return (
-            <span className="d-inline-block mb-2 mr-2">
+            <span className="d-inline-block mb-2 me-2">
                 <Button color="primary" onClick={this.toggle}>Basic Modal</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>

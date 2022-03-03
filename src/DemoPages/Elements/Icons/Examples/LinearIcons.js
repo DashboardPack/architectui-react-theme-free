@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+
 import {
     Row, Col,
     Card, CardBody,
@@ -12,96 +13,98 @@ const iconData = [
 
 const LinearIconsExample = () => (
     <Fragment>
-        <ReactCSSTransitionGroup
-            component="div"
-            transitionName="TabsAnimation"
-            transitionAppear={true}
-            transitionAppearTimeout={0}
-            transitionEnter={false}
-            transitionLeave={false}>
-            <Row>
-                <Col md="12">
-                    <Card className="main-card mb-3">
-                        <CardBody>
-                            <CardTitle>Gradient Icons</CardTitle>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="lnr-star icon-gradient bg-warm-flame"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="lnr-database icon-gradient bg-night-fade"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="lnr-apartment icon-gradient bg-sunny-morning"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="lnr-cog icon-gradient bg-tempting-azure"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="lnr-trash icon-gradient bg-amy-crisp"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="lnr-lock icon-gradient bg-malibu-beach"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="lnr-screen icon-gradient bg-mean-fruit"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="lnr-laptop-phone icon-gradient bg-heavy-rain"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="lnr-calendar-full icon-gradient bg-arielle-smile"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="lnr-user icon-gradient bg-ripe-malin"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="lnr-film-play icon-gradient bg-deep-blue"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="lnr-graduation-hat icon-gradient bg-happy-itmeo"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="lnr-eye icon-gradient bg-happy-fisher"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="lnr-hand icon-gradient bg-plum-plate"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="lnr-camera-video icon-gradient bg-grow-early"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="lnr-diamond icon-gradient bg-strong-bliss"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="lnr-magic-wand icon-gradient bg-mixed-hopes"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="lnr-heart icon-gradient bg-premium-dark"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="lnr-hourglass icon-gradient bg-love-kiss"> </i>
-                            </div>
-                        </CardBody>
-                    </Card>
-                </Col>
-                <Col md="12">
-                    <Card className="main-card mb-3">
-                        <CardBody>
-                            <Row>
-                                {iconData.map(iconName => (
-                                    <Col md="2" key={iconName}>
-                                        <div className="font-icon-wrapper">
-                                            <i className={iconName}> </i>
-                                            <p>{iconName}</p>
-                                        </div>
-                                    </Col>
-                                ))}
-                            </Row>
-                        </CardBody>
-                    </Card>
-                </Col>
-            </Row>
-        </ReactCSSTransitionGroup>
+        <TransitionGroup>
+            <CSSTransition
+                component="div"
+                className="TabsAnimation"
+                appear={true}
+                timeout={0}
+                enter={false}
+                exit={false}>
+                <Row>
+                    <Col md="12">
+                        <Card className="main-card mb-3">
+                            <CardBody>
+                                <CardTitle>Gradient Icons</CardTitle>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="lnr-star icon-gradient bg-warm-flame"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="lnr-database icon-gradient bg-night-fade"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="lnr-apartment icon-gradient bg-sunny-morning"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="lnr-cog icon-gradient bg-tempting-azure"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="lnr-trash icon-gradient bg-amy-crisp"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="lnr-lock icon-gradient bg-malibu-beach"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="lnr-screen icon-gradient bg-mean-fruit"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="lnr-laptop-phone icon-gradient bg-heavy-rain"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="lnr-calendar-full icon-gradient bg-arielle-smile"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="lnr-user icon-gradient bg-ripe-malin"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="lnr-film-play icon-gradient bg-deep-blue"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="lnr-graduation-hat icon-gradient bg-happy-itmeo"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="lnr-eye icon-gradient bg-happy-fisher"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="lnr-hand icon-gradient bg-plum-plate"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="lnr-camera-video icon-gradient bg-grow-early"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="lnr-diamond icon-gradient bg-strong-bliss"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="lnr-magic-wand icon-gradient bg-mixed-hopes"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="lnr-heart icon-gradient bg-premium-dark"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="lnr-hourglass icon-gradient bg-love-kiss"> </i>
+                                </div>
+                            </CardBody>
+                        </Card>
+                    </Col>
+                    <Col md="12">
+                        <Card className="main-card mb-3">
+                            <CardBody>
+                                <Row>
+                                    {iconData.map(iconName => (
+                                        <Col md="2" key={iconName}>
+                                            <div className="font-icon-wrapper">
+                                                <i className={iconName}> </i>
+                                                <p>{iconName}</p>
+                                            </div>
+                                        </Col>
+                                    ))}
+                                </Row>
+                            </CardBody>
+                        </Card>
+                    </Col>
+                </Row>
+            </CSSTransition>
+        </TransitionGroup>
     </Fragment>
 );
 

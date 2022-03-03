@@ -1,4 +1,4 @@
-# ArchitectUI Bootstrap 4 ReactJS Theme FREE
+# ArchitectUI Bootstrap 5 ReactJS Theme FREE
 
 ArchitectUI ReactJS is a free admin dashboard template based on Bootstrap and React frontend framework. It is easy to install, customiza and use. We have this template available in [Vue](https://dashboardpack.com/theme-details/architectui-dashboard-vue-pro/), [jQuery/HTML](https://dashboardpack.com/theme-details/architectui-dashboard-html-pro), [Angular](https://dashboardpack.com/theme-details/architectui-angular-7-bootstrap-material-design-pro?v=7516fd43adaa) and other version. For more awesome admin panels please check DashboardPack.com
 
@@ -8,7 +8,7 @@ ArchitectUI ReactJS is a free admin dashboard template based on Bootstrap and Re
 
 ## ArchitectUI ReactJS Preview
 
-![ArchitectUI Bootstrap 4 ReactJS Theme FREE](https://colorlib.com/wp/wp-content/uploads/sites/2/architectui-react-free.jpg)
+![ArchitectUI Bootstrap 5 ReactJS Theme FREE](https://colorlib.com/wp/wp-content/uploads/sites/2/architectui-react-free.jpg)
 
 ### Installation
 Download and uncompress the theme package archive in your desired folder location.
