@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {
     Row, Col,
     Card, CardBody,
@@ -13,32 +13,34 @@ import TooltipExampleLight from './TooltipLight';
 const TooltipsExample = (props) => {
     return (
         <Fragment>
-            <ReactCSSTransitionGroup
-                component="div"
-                transitionName="TabsAnimation"
-                transitionAppear={true}
-                transitionAppearTimeout={0}
-                transitionEnter={false}
-                transitionLeave={false}>
-                <Row>
-                    <Col lg="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>Dark Tooltips</CardTitle>
-                                <TooltipExampleDark/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                    <Col lg="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>Light Tooltips</CardTitle>
-                                <TooltipExampleLight/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                </Row>
-            </ReactCSSTransitionGroup>
+            <TransitionGroup>
+                <CSSTransition
+                    component="div"
+                    className="TabsAnimation"
+                    appear={true}
+                    timeout={0}
+                    enter={false}
+                    exit={false}>
+                    <Row>
+                        <Col lg="6">
+                            <Card className="main-card mb-3">
+                                <CardBody>
+                                    <CardTitle>Dark Tooltips</CardTitle>
+                                    <TooltipExampleDark/>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                        <Col lg="6">
+                            <Card className="main-card mb-3">
+                                <CardBody>
+                                    <CardTitle>Light Tooltips</CardTitle>
+                                    <TooltipExampleLight/>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                    </Row>
+                </CSSTransition>
+            </TransitionGroup>
         </Fragment>
     );
 };

@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {
     Row, Col,
     Card, CardBody,
@@ -19,52 +19,54 @@ class VectorMapsExample extends React.Component {
 
         return (
             <Fragment>
-                <ReactCSSTransitionGroup
-                    component="div"
-                    transitionName="TabsAnimation"
-                    transitionAppear={true}
-                    transitionAppearTimeout={0}
-                    transitionEnter={false}
-                    transitionLeave={false}>
-                    <Row>
-                        <Col lg="6">
-                            <Card className="main-card mb-3">
-                                <CardBody>
-                                    <CardTitle>
-                                        Basic
-                                    </CardTitle>
-                                    <VectorMapsBasic/>
-                                </CardBody>
-                            </Card>
-                            <Card className="main-card mb-3">
-                                <CardBody>
-                                    <CardTitle>
-                                        Datasets
-                                    </CardTitle>
-                                    <VectorMapsDatasets/>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                        <Col lg="6">
-                            <Card className="main-card mb-3">
-                                <CardBody>
-                                    <CardTitle>
-                                        Animated
-                                    </CardTitle>
-                                    <VectorMapsAnimated/>
-                                </CardBody>
-                            </Card>
-                            <Card className="main-card mb-3">
-                                <CardBody>
-                                    <CardTitle>
-                                        Markers
-                                    </CardTitle>
-                                    <VectorMapsMarkers/>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                    </Row>
-                </ReactCSSTransitionGroup>
+                <TransitionGroup>
+                    <CSSTransition
+                        component="div"
+                        className="TabsAnimation"
+                        appear={true}
+                        timeout={0}
+                        enter={false}
+                        exit={false}>
+                        <Row>
+                            <Col lg="6">
+                                <Card className="main-card mb-3">
+                                    <CardBody>
+                                        <CardTitle>
+                                            Basic
+                                        </CardTitle>
+                                        <VectorMapsBasic/>
+                                    </CardBody>
+                                </Card>
+                                <Card className="main-card mb-3">
+                                    <CardBody>
+                                        <CardTitle>
+                                            Datasets
+                                        </CardTitle>
+                                        <VectorMapsDatasets/>
+                                    </CardBody>
+                                </Card>
+                            </Col>
+                            <Col lg="6">
+                                <Card className="main-card mb-3">
+                                    <CardBody>
+                                        <CardTitle>
+                                            Animated
+                                        </CardTitle>
+                                        <VectorMapsAnimated/>
+                                    </CardBody>
+                                </Card>
+                                <Card className="main-card mb-3">
+                                    <CardBody>
+                                        <CardTitle>
+                                            Markers
+                                        </CardTitle>
+                                        <VectorMapsMarkers/>
+                                    </CardBody>
+                                </Card>
+                            </Col>
+                        </Row>
+                    </CSSTransition>
+                </TransitionGroup>
             </Fragment>
         )
     }

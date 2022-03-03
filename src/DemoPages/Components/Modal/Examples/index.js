@@ -1,9 +1,9 @@
 import React, {Fragment} from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {
     Row, Col,
     Card, CardBody,
-    CardTitle, Button, ModalHeader, ModalBody, ModalFooter
+    CardTitle,
 } from 'reactstrap';
 
 import ModalExample from './Modal';
@@ -24,35 +24,37 @@ class ModalsExample extends React.Component {
     render() {
         return (
             <Fragment>
-                <ReactCSSTransitionGroup
-                    component="div"
-                    transitionName="TabsAnimation"
-                    transitionAppear={true}
-                    transitionAppearTimeout={0}
-                    transitionEnter={false}
-                    transitionLeave={false}>
-                    <Row className="text-center">
-                        <Col md="12">
-                            <Card className="main-card mb-3">
-                                <CardBody>
-                                    <CardTitle>
-                                        Bootstrap 4 Modals
-                                    </CardTitle>
-                                    <ModalExample/>
-                                    <ModalCustomCloseButton/>
-                                    <ModalCustomCloseIcon/>
-                                    <ModalCustomTimeout/>
-                                    <ModalExternal/>
-                                    <ModalFadeless/>
-                                    <ModalNested/>
-                                    <div className="divider"/>
-                                    <ModalBackdrop/>
-                                </CardBody>
-                            </Card>
-                        </Col>
+                <TransitionGroup>
+                    <CSSTransition
+                        component="div"
+                        className="TabsAnimation"
+                        appear={true}
+                        timeout={0}
+                        enter={false}
+                        exit={false}>
+                        <Row className="text-center">
+                            <Col md="12">
+                                <Card className="main-card mb-3">
+                                    <CardBody>
+                                        <CardTitle>
+                                            Bootstrap 5 Modals
+                                        </CardTitle>
+                                        <ModalExample/>
+                                        <ModalCustomCloseButton/>
+                                        <ModalCustomCloseIcon/>
+                                        <ModalCustomTimeout/>
+                                        <ModalExternal/>
+                                        <ModalFadeless/>
+                                        <ModalNested/>
+                                        <div className="divider"/>
+                                        <ModalBackdrop/>
+                                    </CardBody>
+                                </Card>
+                            </Col>
 
-                    </Row>
-                </ReactCSSTransitionGroup>
+                        </Row>
+                    </CSSTransition>
+                </TransitionGroup>
             </Fragment>
         )
     }

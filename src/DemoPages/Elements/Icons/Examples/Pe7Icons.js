@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {
     Row, Col,
     Card, CardBody,
@@ -51,96 +51,98 @@ const iconData = ["pe-7s-album", "pe-7s-arc", "pe-7s-back-2", "pe-7s-bandaid", "
 
 const Pe7IconsExamples = () => (
     <Fragment>
-        <ReactCSSTransitionGroup
-            component="div"
-            transitionName="TabsAnimation"
-            transitionAppear={true}
-            transitionAppearTimeout={0}
-            transitionEnter={false}
-            transitionLeave={false}>
-            <Row>
-                <Col md="12">
-                    <Card className="main-card mb-3">
-                        <CardBody>
-                            <CardTitle>Gradient Icons</CardTitle>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="pe-7s-filter icon-gradient bg-warm-flame"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="pe-7s-help1 icon-gradient bg-night-fade"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="pe-7s-moon icon-gradient bg-sunny-morning"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="pe-7s-plane icon-gradient bg-tempting-azure"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="pe-7s-box2 icon-gradient bg-amy-crisp"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="pe-7s-lock icon-gradient bg-malibu-beach"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="pe-7s-monitor icon-gradient bg-mean-fruit"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="pe-7s-mouse icon-gradient bg-heavy-rain"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="pe-7s-paint icon-gradient bg-arielle-smile"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="pe-7s-menu icon-gradient bg-ripe-malin"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="pe-7s-wristwatch icon-gradient bg-deep-blue"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="pe-7s-volume2 icon-gradient bg-happy-itmeo"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="pe-7s-video icon-gradient bg-happy-fisher"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="pe-7s-wallet icon-gradient bg-plum-plate"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="pe-7s-paint-bucket icon-gradient bg-grow-early"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="pe-7s-diamond icon-gradient bg-strong-bliss"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="pe-7s-magic-wand icon-gradient bg-mixed-hopes"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="pe-7s-arc icon-gradient bg-premium-dark"> </i>
-                            </div>
-                            <div className="font-icon-wrapper font-icon-lg">
-                                <i className="pe-7s-hourglass icon-gradient bg-love-kiss"> </i>
-                            </div>
-                        </CardBody>
-                    </Card>
-                </Col>
-                <Col md="12">
-                    <Card className="main-card mb-3">
-                        <CardBody>
-                            <Row>
-                                {iconData.map(iconName => (
-                                    <Col md="2" key={iconName}>
-                                        <div className="font-icon-wrapper">
-                                            <i className={iconName}> </i>
-                                            <p>{iconName}</p>
-                                        </div>
-                                    </Col>
-                                ))}
-                            </Row>
-                        </CardBody>
-                    </Card>
-                </Col>
-            </Row>
-        </ReactCSSTransitionGroup>
+        <TransitionGroup>
+            <CSSTransition
+                component="div"
+                className="TabsAnimation"
+                appear={true}
+                timeout={0}
+                enter={false}
+                exit={false}>
+                <Row>
+                    <Col md="12">
+                        <Card className="main-card mb-3">
+                            <CardBody>
+                                <CardTitle>Gradient Icons</CardTitle>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="pe-7s-filter icon-gradient bg-warm-flame"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="pe-7s-help1 icon-gradient bg-night-fade"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="pe-7s-moon icon-gradient bg-sunny-morning"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="pe-7s-plane icon-gradient bg-tempting-azure"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="pe-7s-box2 icon-gradient bg-amy-crisp"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="pe-7s-lock icon-gradient bg-malibu-beach"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="pe-7s-monitor icon-gradient bg-mean-fruit"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="pe-7s-mouse icon-gradient bg-heavy-rain"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="pe-7s-paint icon-gradient bg-arielle-smile"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="pe-7s-menu icon-gradient bg-ripe-malin"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="pe-7s-wristwatch icon-gradient bg-deep-blue"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="pe-7s-volume2 icon-gradient bg-happy-itmeo"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="pe-7s-video icon-gradient bg-happy-fisher"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="pe-7s-wallet icon-gradient bg-plum-plate"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="pe-7s-paint-bucket icon-gradient bg-grow-early"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="pe-7s-diamond icon-gradient bg-strong-bliss"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="pe-7s-magic-wand icon-gradient bg-mixed-hopes"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="pe-7s-arc icon-gradient bg-premium-dark"> </i>
+                                </div>
+                                <div className="font-icon-wrapper font-icon-lg">
+                                    <i className="pe-7s-hourglass icon-gradient bg-love-kiss"> </i>
+                                </div>
+                            </CardBody>
+                        </Card>
+                    </Col>
+                    <Col md="12">
+                        <Card className="main-card mb-3">
+                            <CardBody>
+                                <Row>
+                                    {iconData.map(iconName => (
+                                        <Col md="2" key={iconName}>
+                                            <div className="font-icon-wrapper">
+                                                <i className={iconName}> </i>
+                                                <p>{iconName}</p>
+                                            </div>
+                                        </Col>
+                                    ))}
+                                </Row>
+                            </CardBody>
+                        </Card>
+                    </Col>
+                </Row>
+            </CSSTransition>
+        </TransitionGroup>
     </Fragment>
 );
 

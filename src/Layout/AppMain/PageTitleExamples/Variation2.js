@@ -38,7 +38,7 @@ export default class TitleComponent2 extends Component {
     render() {
         return (
             <Fragment>
-                <Button className="btn-shadow mr-3" onClick={this.notify22} color="dark"
+                <Button className="btn-shadow me-3" onClick={this.notify22} color="dark"
                         id="Tooltip-123">
                     <FontAwesomeIcon icon={faStar}/>
                 </Button>
@@ -47,36 +47,36 @@ export default class TitleComponent2 extends Component {
                 </UncontrolledTooltip>
                 <UncontrolledDropdown className="d-inline-block">
                     <DropdownToggle color="info" className="btn-shadow" caret>
-                        <span className="btn-icon-wrapper pr-2 opacity-7">
+                        <span className="btn-icon-wrapper pe-2 opacity-7">
                             <FontAwesomeIcon icon={faBusinessTime}/>
                         </span>
                         Buttons
                     </DropdownToggle>
-                    <DropdownMenu right>
+                    <DropdownMenu end>
                         <Nav vertical>
                             <NavItem>
-                                <NavLink href="javascript:void(0);">
+                                <NavLink href="#">
                                     <i className="nav-link-icon lnr-inbox"> </i>
                                     <span>Inbox</span>
-                                    <div className="ml-auto badge badge-pill badge-secondary">86
+                                    <div className="ms-auto badge rounded-pill bg-secondary">86
                                     </div>
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="javascript:void(0);">
+                                <NavLink href="#">
                                     <i className="nav-link-icon lnr-book"> </i>
                                     <span>Book</span>
-                                    <div className="ml-auto badge badge-pill badge-danger">5</div>
+                                    <div className="ms-auto badge rounded-pill bg-danger">5</div>
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="javascript:void(0);">
+                                <NavLink href="#">
                                     <i className="nav-link-icon lnr-picture"> </i>
                                     <span>Picture</span>
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink disabled href="javascript:void(0);">
+                                <NavLink disabled href="#">
                                     <i className="nav-link-icon lnr-file-empty"> </i>
                                     <span>File Disabled</span>
                                 </NavLink>

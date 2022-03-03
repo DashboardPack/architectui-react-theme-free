@@ -1,21 +1,21 @@
 import React from 'react';
-import { InputGroup, InputGroupAddon, Input } from 'reactstrap';
+import { InputGroup, Input, InputGroupText } from 'reactstrap';
 
 const FormInputGroupSizing = (props) => {
   return (
     <div>
       <InputGroup size="lg">
-        <InputGroupAddon addonType="prepend">@lg</InputGroupAddon>
+        <InputGroupText addonType="prepend">@lg</InputGroupText>
         <Input />
       </InputGroup>
       <br />
       <InputGroup>
-        <InputGroupAddon addonType="prepend">@normal</InputGroupAddon>
+        <InputGroupText addonType="prepend">@normal</InputGroupText>
         <Input />
       </InputGroup>
       <br />
       <InputGroup size="sm">
-        <InputGroupAddon addonType="prepend">@sm</InputGroupAddon>
+        <InputGroupText addonType="prepend">@sm</InputGroupText>
         <Input />
       </InputGroup>
     </div>

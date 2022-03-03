@@ -20,7 +20,7 @@ class TooltipItem extends React.Component {
     render() {
         return (
             <Fragment>
-                <Button className="mr-2 mb-2" color="primary" id={'TooltipLight-' + this.props.id}>
+                <Button className="me-2 mb-2" color="primary" id={'TooltipLight-' + this.props.id}>
                     {this.props.item.text}
                 </Button>
                 <Tooltip className="tooltip-light" placement={this.props.item.placement} isOpen={this.state.tooltipOpen}

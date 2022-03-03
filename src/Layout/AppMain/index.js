@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import { Route, Redirect } from "react-router-dom";
 import React, {Suspense, lazy, Fragment} from 'react';
 
 import {

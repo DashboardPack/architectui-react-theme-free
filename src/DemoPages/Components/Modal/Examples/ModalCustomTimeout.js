@@ -19,7 +19,7 @@ class ModalCustomTimeout extends React.Component {
 
   render() {
     return (
-        <span className="d-inline-block mb-2 mr-2">
+        <span className="d-inline-block mb-2 me-2">
         <Button color="primary" onClick={this.toggle}>Custom Timeout</Button>
         <Modal isOpen={this.state.modal} modalTransition={{ timeout: 700 }} backdropTransition={{ timeout: 1300 }}
           toggle={this.toggle} className={this.props.className}>

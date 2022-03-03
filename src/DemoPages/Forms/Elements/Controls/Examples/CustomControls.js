@@ -1,9 +1,9 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import {
     Row, Col,
     Card, CardBody,
     CardTitle,
-    CustomInput, Form, FormGroup, Label
+    Input, Form, FormGroup, Label
 } from 'reactstrap';
 
 export default class FormsCustomControls extends React.Component {
@@ -18,13 +18,24 @@ export default class FormsCustomControls extends React.Component {
                                     <CardTitle>Checkboxes</CardTitle>
                                     <FormGroup>
                                         <div>
-                                            <CustomInput type="checkbox" id="exampleCustomCheckbox"
-                                                         label="Check this custom checkbox"/>
-                                            <CustomInput type="checkbox" id="exampleCustomCheckbox2"
-                                                         label="Or this one"/>
-                                            <CustomInput type="checkbox" id="exampleCustomCheckbox3"
-                                                         label="But not this disabled one"
-                                                         disabled/>
+                                            <FormGroup check>
+                                                <Input type="checkbox" />
+                                                <Label check>
+                                                    Check this custom checkbox
+                                                </Label>
+                                            </FormGroup>
+                                            <FormGroup check>
+                                                <Input type="checkbox" />
+                                                <Label check>
+                                                    Or this one
+                                                </Label>
+                                            </FormGroup>
+                                            <FormGroup check>
+                                                <Input type="checkbox" disabled />
+                                                <Label check>
+                                                    But not this disabled one
+                                                </Label>
+                                            </FormGroup>
                                         </div>
                                     </FormGroup>
                                 </CardBody>
@@ -33,13 +44,18 @@ export default class FormsCustomControls extends React.Component {
                                 <CardBody>
                                     <CardTitle>Inline</CardTitle>
                                     <FormGroup>
-                                        <div>
-                                            <CustomInput type="checkbox" id="exampleCustomInline"
-                                                         label="An inline custom input"
-                                                         inline/>
-                                            <CustomInput type="checkbox" id="exampleCustomInline2"
-                                                         label="and another one" inline/>
-                                        </div>
+                                        <FormGroup check inline>
+                                            <Input type="checkbox" />
+                                            <Label check>
+                                                An inline custom input
+                                            </Label>
+                                        </FormGroup>
+                                        <FormGroup check inline>
+                                            <Input type="checkbox" />
+                                            <Label check>
+                                                and another one
+                                            </Label>
+                                        </FormGroup>
                                     </FormGroup>
                                 </CardBody>
                             </Card>
@@ -50,13 +66,27 @@ export default class FormsCustomControls extends React.Component {
                                     <CardTitle>Radios</CardTitle>
                                     <FormGroup>
                                         <div>
-                                            <CustomInput type="radio" id="exampleCustomRadio" name="customRadio"
-                                                         label="Select this custom radio"/>
-                                            <CustomInput type="radio" id="exampleCustomRadio2" name="customRadio"
-                                                         label="Or this one"/>
-                                            <CustomInput type="radio" id="exampleCustomRadio3"
-                                                         label="But not this disabled one"
-                                                         disabled/>
+                                            <FormGroup check>
+                                                <Input name="radio2" type="radio" />
+                                                {' '}
+                                                <Label check>
+                                                    Select this custom radio
+                                                </Label>
+                                            </FormGroup>
+                                            <FormGroup check>
+                                                <Input name="radio2" type="radio" />
+                                                {' '}
+                                                <Label check>
+                                                    Or this one
+                                                </Label>
+                                            </FormGroup>
+                                            <FormGroup check disabled>
+                                                <Input disabled name="radio2" type="radio" />
+                                                {' '}
+                                                <Label check>
+                                                    But not this disabled one
+                                                </Label>
+                                            </FormGroup>
                                         </div>
                                     </FormGroup>
                                 </CardBody>
@@ -68,60 +98,55 @@ export default class FormsCustomControls extends React.Component {
                                         <Col md="6">
                                             <FormGroup>
                                                 <Label for="exampleCustomSelect">Custom Select</Label>
-                                                <CustomInput type="select" id="exampleCustomSelect"
-                                                             name="customSelect">
+                                                <Input type="select" id="exampleCustomSelect" name="customSelect">
                                                     <option value="">Select</option>
                                                     <option>Value 1</option>
                                                     <option>Value 2</option>
                                                     <option>Value 3</option>
                                                     <option>Value 4</option>
                                                     <option>Value 5</option>
-                                                </CustomInput>
+                                                </Input>
                                             </FormGroup>
                                             <FormGroup>
-                                                <Label for="exampleCustomMutlipleSelect">Custom Multiple
-                                                    Select</Label>
-                                                <CustomInput type="select" id="exampleCustomMutlipleSelect"
-                                                             name="customSelect"
-                                                             multiple>
+                                                <Label for="exampleCustomMutlipleSelect">
+                                                    Custom Multiple Select
+                                                </Label>
+                                                <Input type="select" id="exampleCustomMutlipleSelect" name="customSelect" multiple>
                                                     <option value="">Select</option>
                                                     <option>Value 1</option>
                                                     <option>Value 2</option>
                                                     <option>Value 3</option>
                                                     <option>Value 4</option>
                                                     <option>Value 5</option>
-                                                </CustomInput>
+                                                </Input>
                                             </FormGroup>
                                         </Col>
                                         <Col md="6">
                                             <FormGroup>
-                                                <Label for="exampleCustomSelectDisabled">Custom Select
-                                                    Disabled</Label>
-                                                <CustomInput type="select" id="exampleCustomSelectDisabled"
-                                                             name="customSelect"
-                                                             disabled>
+                                                <Label for="exampleCustomSelectDisabled">
+                                                    Custom Select Disabled
+                                                </Label>
+                                                <Input type="select" id="exampleCustomSelectDisabled" name="customSelect" disabled>
                                                     <option value="">Select</option>
                                                     <option>Value 1</option>
                                                     <option>Value 2</option>
                                                     <option>Value 3</option>
                                                     <option>Value 4</option>
                                                     <option>Value 5</option>
-                                                </CustomInput>
+                                                </Input>
                                             </FormGroup>
                                             <FormGroup>
-                                                <Label for="exampleCustomMutlipleSelectDisabled">Custom Multiple
-                                                    Select
-                                                    Disabled</Label>
-                                                <CustomInput type="select" id="exampleCustomMutlipleSelectDisabled"
-                                                             name="customSelect" multiple
-                                                             disabled>
+                                                <Label for="exampleCustomMutlipleSelectDisabled">
+                                                    Custom Multiple Select Disabled
+                                                </Label>
+                                                <Input type="select" id="exampleCustomMutlipleSelectDisabled" name="customSelect" multiple disabled>
                                                     <option value="">Select</option>
                                                     <option>Value 1</option>
                                                     <option>Value 2</option>
                                                     <option>Value 3</option>
                                                     <option>Value 4</option>
                                                     <option>Value 5</option>
-                                                </CustomInput>
+                                                </Input>
                                             </FormGroup>
                                         </Col>
                                     </Row>

@@ -81,7 +81,7 @@ export default class VectorMapsDatasets extends React.Component {
         return (
             <Fragment>
                 <div className="text-center mb-2">
-                    <Button color="primary" className="mr-1" onClick={this.switchToPopulation}>
+                    <Button color="primary" className="me-1" onClick={this.switchToPopulation}>
                         {"Population data"}
                     </Button>
                     <Button color="primary" onClick={this.switchToRegions}>

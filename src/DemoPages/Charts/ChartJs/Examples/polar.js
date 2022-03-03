@@ -1,5 +1,5 @@
 import React from 'react';
-import {Polar} from 'react-chartjs-2';
+import {PolarArea} from 'react-chartjs-2';
 
 const data = {
   datasets: [{
@@ -33,7 +33,7 @@ class PolarExample extends React.Component {
     render() {
         return (
             <div>
-              <Polar data={data} />
+              <PolarArea data={data} />
             </div>
         )
     }

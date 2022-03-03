@@ -19,7 +19,7 @@ class PopoverItem extends React.Component {
     render() {
         return (
             <span>
-                <Button className="mr-2 mb-2" color={this.props.item.btn} id={'PopoverC-' + this.props.id} onClick={this.toggle}>
+                <Button className="me-2 mb-2" color={this.props.item.btn} id={'PopoverC-' + this.props.id} onClick={this.toggle}>
                     {this.props.item.text}
                 </Button>
                 <Popover className={this.props.item.color} placement={this.props.item.placement} isOpen={this.state.popoverOpen}

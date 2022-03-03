@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {
     Row, Col,
     Card, CardBody,
@@ -21,85 +21,85 @@ import TableStriped from './Examples/TableStriped';
 const RegularTables = (props) => {
     return (
         <Fragment>
-            <PageTitle
-                heading="Regular Tables"
-                subheading="Tables are the backbone of almost all web applications."
-                icon="pe-7s-drawer icon-gradient bg-happy-itmeo"
-            />
-            <ReactCSSTransitionGroup
-                component="div"
-                transitionName="TabsAnimation"
-                transitionAppear={true}
-                transitionAppearTimeout={0}
-                transitionEnter={false}
-                transitionLeave={false}>
-                <Row>
-                    <Col lg="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>Simple table</CardTitle>
-                                <TableExample/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                    <Col lg="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>Table bordered</CardTitle>
-                                <TableBordered/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                    <Col lg="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>Table without border</CardTitle>
-                                <TableBorderless/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                    <Col lg="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>Table dark</CardTitle>
-                                <TableDark/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                    <Col lg="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>Table with hover</CardTitle>
-                                <TableHover/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                    <Col lg="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>Table responsive</CardTitle>
-                                <TableResponsive/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                    <Col lg="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>Table sizing</CardTitle>
-                                <TableSizing/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                    <Col lg="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>Table striped</CardTitle>
-                                <TableStriped/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                </Row>
-            </ReactCSSTransitionGroup>
+            <TransitionGroup>
+                <CSSTransition component="div" appear={true}
+                    timeout={0} enter={false} exit={false}>
+                    <div>
+                        <PageTitle
+                        heading="Regular Tables"
+                        subheading="Tables are the backbone of almost all web applications."
+                        icon="pe-7s-drawer icon-gradient bg-happy-itmeo" />
+                        <div>
+                            <Row>
+                                <Col lg="6">
+                                    <Card className="main-card mb-3">
+                                        <CardBody>
+                                            <CardTitle>Simple table</CardTitle>
+                                            <TableExample/>
+                                        </CardBody>
+                                    </Card>
+                                </Col>
+                                <Col lg="6">
+                                    <Card className="main-card mb-3">
+                                        <CardBody>
+                                            <CardTitle>Table bordered</CardTitle>
+                                            <TableBordered/>
+                                        </CardBody>
+                                    </Card>
+                                </Col>
+                                <Col lg="6">
+                                    <Card className="main-card mb-3">
+                                        <CardBody>
+                                            <CardTitle>Table without border</CardTitle>
+                                            <TableBorderless/>
+                                        </CardBody>
+                                    </Card>
+                                </Col>
+                                <Col lg="6">
+                                    <Card className="main-card mb-3">
+                                        <CardBody>
+                                            <CardTitle>Table dark</CardTitle>
+                                            <TableDark/>
+                                        </CardBody>
+                                    </Card>
+                                </Col>
+                                <Col lg="6">
+                                    <Card className="main-card mb-3">
+                                        <CardBody>
+                                            <CardTitle>Table with hover</CardTitle>
+                                            <TableHover/>
+                                        </CardBody>
+                                    </Card>
+                                </Col>
+                                <Col lg="6">
+                                    <Card className="main-card mb-3">
+                                        <CardBody>
+                                            <CardTitle>Table responsive</CardTitle>
+                                            <TableResponsive/>
+                                        </CardBody>
+                                    </Card>
+                                </Col>
+                                <Col lg="6">
+                                    <Card className="main-card mb-3">
+                                        <CardBody>
+                                            <CardTitle>Table sizing</CardTitle>
+                                            <TableSizing/>
+                                        </CardBody>
+                                    </Card>
+                                </Col>
+                                <Col lg="6">
+                                    <Card className="main-card mb-3">
+                                        <CardBody>
+                                            <CardTitle>Table striped</CardTitle>
+                                            <TableStriped/>
+                                        </CardBody>
+                                    </Card>
+                                </Col>
+                            </Row>
+                        </div>
+                    </div>
+                </CSSTransition>
+            </TransitionGroup>
         </Fragment>
     );
 };

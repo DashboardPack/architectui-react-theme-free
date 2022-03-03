@@ -18,9 +18,9 @@ class ModalExternal extends React.Component {
   }
 
   render() {
-    const externalCloseBtn = <button className="close" style={{ position: 'absolute', top: '15px', right: '15px' }} onClick={this.toggle}>&times;</button>;
+    const externalCloseBtn = <button className="btn-close" style={{ position: 'absolute', top: '15px', right: '15px' }} onClick={this.toggle}>&times;</button>;
     return (
-        <span className="d-inline-block mb-2 mr-2">
+        <span className="d-inline-block mb-2 me-2">
         <Button color="primary" onClick={this.toggle}>External Modal</Button>
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} external={externalCloseBtn}>
           <ModalHeader>Modal title</ModalHeader>

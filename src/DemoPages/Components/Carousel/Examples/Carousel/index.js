@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import {
     Row, Col,
@@ -13,32 +13,33 @@ import CustomExample from './CustomTag';
 const CarouselBSExample = (props) => {
     return (
         <Fragment>
-            <ReactCSSTransitionGroup
-                component="div"
-                transitionName="TabsAnimation"
-                transitionAppear={true}
-                transitionAppearTimeout={0}
-                transitionEnter={false}
-                transitionLeave={false}>
-                <Row className="slick-slider-md">
-                    <Col lg="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>Basic</CardTitle>
-                                <CarouselDefault/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                    <Col lg="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>Custom Tags</CardTitle>
-                                <CustomExample/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                </Row>
-            </ReactCSSTransitionGroup>
+            <TransitionGroup>
+                <CSSTransition
+                    component="div"
+                    appear={true}
+                    timeout={0}
+                    enter={false}
+                    exit={false}>
+                    <Row className="slick-slider-md">
+                        <Col lg="6">
+                            <Card className="main-card mb-3">
+                                <CardBody>
+                                    <CardTitle>Basic</CardTitle>
+                                    <CarouselDefault/>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                        <Col lg="6">
+                            <Card className="main-card mb-3">
+                                <CardBody>
+                                    <CardTitle>Custom Tags</CardTitle>
+                                    <CustomExample/>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                    </Row>
+                </CSSTransition>
+            </TransitionGroup>
         </Fragment>
     );
 };

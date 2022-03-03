@@ -29,10 +29,10 @@ class ModalBackdrop extends React.Component {
 
   render() {
     return (
-        <span className="d-inline-block mb-2 mr-2">
+        <span className="d-inline-block mb-2 me-2">
         <Form inline onSubmit={(e) => e.preventDefault()}>
           <FormGroup>
-            <Input bsSize="sm" className="mr-1" type="select" name="backdrop" id="backdrop" onChange={this.changeBackdrop}>
+            <Input bsSize="sm" className="me-1" type="select" name="backdrop" id="backdrop" onChange={this.changeBackdrop}>
               <option value="true">true</option>
               <option value="false">false</option>
               <option value="static">"static"</option>

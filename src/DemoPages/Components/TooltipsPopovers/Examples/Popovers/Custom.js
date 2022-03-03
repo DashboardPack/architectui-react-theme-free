@@ -31,7 +31,7 @@ class PopoverItem extends React.Component {
     render() {
         return (
             <span>
-                <Button className="mr-2 mb-2" color={this.props.item.btn} id={'PopoverCustom-' + this.props.id}
+                <Button className="me-2 mb-2" color={this.props.item.btn} id={'PopoverCustom-' + this.props.id}
                         onClick={this.toggle}>
                     {this.props.item.text}
                 </Button>
@@ -44,13 +44,13 @@ class PopoverItem extends React.Component {
                         Activity
                     </NavItem>
                     <NavItem>
-                        <NavLink href="javascript:void(0);">
+                        <NavLink href="#">
                             Chat
-                            <div className="ml-auto badge badge-pill badge-info">8</div>
+                            <div className="ms-auto badge rounded-pill bg-info">8</div>
                         </NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink href="javascript:void(0);">Recover Password</NavLink>
+                        <NavLink href="#">Recover Password</NavLink>
                     </NavItem>
                     <NavItem className="nav-item-divider"/>
                     <NavItem className="nav-item-btn">

@@ -1,9 +1,8 @@
 import React, {Fragment} from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {
     Button, UncontrolledButtonDropdown,
     DropdownToggle, Dropdown, DropdownMenu,
-    DropdownItem,
 } from 'reactstrap';
 
 import {
@@ -42,311 +41,207 @@ export default class NavsVertical extends React.Component {
     render() {
         return (
             <Fragment>
-                <ReactCSSTransitionGroup
-                    component="div"
-                    transitionName="TabsAnimation"
-                    transitionAppear={true}
-                    transitionAppearTimeout={0}
-                    transitionEnter={false}
-                    transitionLeave={false}>
-                    <Row>
-                        <Col md="12">
-                            <Card className="main-card mb-3">
-                                <CardBody>
-                                    <CardTitle>Vertical Menu</CardTitle>
-                                    <Row>
-                                        <Col>
-                                            <Nav vertical>
-                                                <NavItem>
-                                                    <NavLink href="javascript:void(0);">Link</NavLink>
-                                                </NavItem>
-                                                <NavItem>
-                                                    <NavLink href="javascript:void(0);">
-                                                        Link
-                                                        <div className="ml-auto badge badge-success">New</div>
-                                                    </NavLink>
-                                                </NavItem>
-                                                <NavItem>
-                                                    <NavLink href="javascript:void(0);">
-                                                        Another Link
-                                                        <div className="ml-auto badge badge-warning">512</div>
-                                                    </NavLink>
-                                                </NavItem>
-                                                <NavItem>
-                                                    <NavLink disabled href="javascript:void(0);">Disabled Link</NavLink>
-                                                </NavItem>
-                                            </Nav>
-                                        </Col>
-                                        <Col>
-                                            <Nav vertical>
-                                                <NavItem>
-                                                    <NavLink href="javascript:void(0);">
-                                                        <i className="nav-link-icon lnr-inbox"> </i>
-                                                        <span>Inbox</span>
-                                                        <div className="ml-auto badge badge-pill badge-secondary">86
-                                                        </div>
-                                                    </NavLink>
-                                                </NavItem>
-                                                <NavItem>
-                                                    <NavLink href="javascript:void(0);">
-                                                        <i className="nav-link-icon lnr-book"> </i>
-                                                        <span>Book</span>
-                                                        <div className="ml-auto badge badge-pill badge-danger">5</div>
-                                                    </NavLink>
-                                                </NavItem>
-                                                <NavItem>
-                                                    <NavLink href="javascript:void(0);">
-                                                        <i className="nav-link-icon lnr-picture"> </i>
-                                                        <span>Picture</span>
-                                                    </NavLink>
-                                                </NavItem>
-                                                <NavItem>
-                                                    <NavLink disabled href="javascript:void(0);">
-                                                        <i className="nav-link-icon lnr-file-empty"> </i>
-                                                        <span>File Disabled</span>
-                                                    </NavLink>
-                                                </NavItem>
-                                            </Nav>
-                                        </Col>
-                                    </Row>
-                                    <div className="divider"/>
-                                    <div className="text-center">
-                                        <UncontrolledButtonDropdown direction="down">
-                                            <DropdownToggle caret className="mb-2 mr-2" color="primary">
-                                                Dropdown Basic
-                                            </DropdownToggle>
-                                            <DropdownMenu>
+                <TransitionGroup>
+                    <CSSTransition
+                        component="div"
+                        className="TabsAnimation"
+                        appear={true}
+                        timeout={0}
+                        enter={false}
+                        exit={false}>
+                        <Row>
+                            <Col md="12">
+                                <Card className="main-card mb-3">
+                                    <CardBody>
+                                        <CardTitle>Vertical Menu</CardTitle>
+                                        <Row>
+                                            <Col>
                                                 <Nav vertical>
                                                     <NavItem>
-                                                        <NavLink href="javascript:void(0);">Link</NavLink>
+                                                        <NavLink href="#">Link</NavLink>
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink href="javascript:void(0);">
+                                                        <NavLink href="#">
                                                             Link
-                                                            <div className="ml-auto badge badge-success">New</div>
+                                                            <div className="ms-auto badge bg-success">New</div>
                                                         </NavLink>
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink href="javascript:void(0);">
+                                                        <NavLink href="#">
                                                             Another Link
-                                                            <div className="ml-auto badge badge-warning">512</div>
+                                                            <div className="ms-auto badge bg-warning">512</div>
                                                         </NavLink>
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink disabled href="javascript:void(0);">Disabled
-                                                            Link</NavLink>
+                                                        <NavLink disabled href="#">Disabled Link</NavLink>
                                                     </NavItem>
                                                 </Nav>
-                                            </DropdownMenu>
-                                        </UncontrolledButtonDropdown>
-                                        <Dropdown direction="down" className="d-inline-block"
-                                                  onMouseOver={this.onMouseEnter}
-                                                  onMouseLeave={this.onMouseLeave} isOpen={this.state.dropdownOpen}
-                                                  toggle={this.toggle}>
-                                            <DropdownToggle caret color="primary" className="mb-2 mr-2">
-                                                Dropdown Hover
-                                            </DropdownToggle>
-                                            <DropdownMenu>
+                                            </Col>
+                                            <Col>
                                                 <Nav vertical>
                                                     <NavItem>
-                                                        <NavLink href="javascript:void(0);">
+                                                        <NavLink href="#">
                                                             <i className="nav-link-icon lnr-inbox"> </i>
                                                             <span>Inbox</span>
-                                                            <div className="ml-auto badge badge-pill badge-secondary">86
+                                                            <div className="ms-auto badge rounded-pill bg-secondary">86
                                                             </div>
                                                         </NavLink>
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink href="javascript:void(0);">
+                                                        <NavLink href="#">
                                                             <i className="nav-link-icon lnr-book"> </i>
                                                             <span>Book</span>
-                                                            <div className="ml-auto badge badge-pill badge-danger">5
-                                                            </div>
+                                                            <div className="ms-auto badge rounded-pill bg-danger">5</div>
                                                         </NavLink>
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink href="javascript:void(0);">
+                                                        <NavLink href="#">
                                                             <i className="nav-link-icon lnr-picture"> </i>
                                                             <span>Picture</span>
                                                         </NavLink>
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink disabled href="javascript:void(0);">
+                                                        <NavLink disabled href="#">
                                                             <i className="nav-link-icon lnr-file-empty"> </i>
                                                             <span>File Disabled</span>
                                                         </NavLink>
                                                     </NavItem>
                                                 </Nav>
-                                            </DropdownMenu>
-                                        </Dropdown>
-                                    </div>
-                                </CardBody>
-                            </Card>
-                            <Card className="main-card mb-3">
-                                <CardBody>
-                                    <CardTitle>Separators & Headers</CardTitle>
-                                    <Row>
-                                        <Col>
-                                            <Nav vertical>
-                                                <NavItem className="nav-item-header">
-                                                    Activity
-                                                </NavItem>
-                                                <NavItem>
-                                                    <NavLink href="javascript:void(0);">
-                                                        Chat
-                                                        <div className="ml-auto badge badge-pill badge-info">8</div>
-                                                    </NavLink>
-                                                </NavItem>
-                                                <NavItem>
-                                                    <NavLink href="javascript:void(0);">Recover Password</NavLink>
-                                                </NavItem>
-                                                <NavItem className="nav-item-header">
-                                                    My Account
-                                                </NavItem>
-                                                <NavItem>
-                                                    <NavLink href="javascript:void(0);">
-                                                        Settings
-                                                        <div className="ml-auto badge badge-success">New</div>
-                                                    </NavLink>
-                                                </NavItem>
-                                                <NavItem>
-                                                    <NavLink href="javascript:void(0);">
-                                                        Messages
-                                                        <div className="ml-auto badge badge-warning">512</div>
-                                                    </NavLink>
-                                                </NavItem>
-                                                <NavItem>
-                                                    <NavLink href="javascript:void(0);">
-                                                        Logs
-                                                    </NavLink>
-                                                </NavItem>
-                                                <NavItem className="nav-item-divider"/>
-                                                <NavItem className="nav-item-btn">
-                                                    <Button size="sm" className="btn-wide btn-shadow" color="danger">
-                                                        Cancel
-                                                    </Button>
-                                                </NavItem>
-                                            </Nav>
-                                        </Col>
-                                        <Col>
-                                            <Nav vertical>
-                                                <NavItem className="nav-item-header">
-                                                    Activity
-                                                </NavItem>
-                                                <NavItem>
-                                                    <NavLink href="javascript:void(0);">
-                                                        <i className="nav-link-icon pe-7s-chat"> </i>
-                                                        <span>Chat</span>
-                                                        <div className="ml-auto badge badge-pill badge-info">8</div>
-                                                    </NavLink>
-                                                </NavItem>
-                                                <NavItem>
-                                                    <NavLink href="javascript:void(0);">
-                                                        <i className="nav-link-icon pe-7s-wallet"> </i>
-                                                        <span>Recover Password</span>
-                                                    </NavLink>
-                                                </NavItem>
-                                                <NavItem className="nav-item-header">
-                                                    My Account
-                                                </NavItem>
-                                                <NavItem>
-                                                    <NavLink href="javascript:void(0);">
-                                                        <i className="nav-link-icon pe-7s-config"> </i>
-                                                        <span>Settings</span>
-                                                        <div className="ml-auto badge badge-success">New</div>
-                                                    </NavLink>
-                                                </NavItem>
-                                                <NavItem>
-                                                    <NavLink href="javascript:void(0);">
-                                                        <i className="nav-link-icon pe-7s-coffee"> </i>
-                                                        <span>Messages</span>
-                                                        <div className="ml-auto badge badge-warning">512</div>
-                                                    </NavLink>
-                                                </NavItem>
-                                                <NavItem>
-                                                    <NavLink href="javascript:void(0);">
-                                                        <i className="nav-link-icon pe-7s-box2"> </i>
-                                                        <span>Logs</span>
-                                                    </NavLink>
-                                                </NavItem>
-                                                <NavItem className="nav-item-divider"/>
-                                                <NavItem className="nav-item-btn">
-                                                    <Button size="sm" className="btn-pill" color="success">
-                                                        Save
-                                                    </Button>
-                                                </NavItem>
-                                            </Nav>
-                                        </Col>
-                                    </Row>
-                                    <div className="divider"/>
-                                    <div className="text-center">
-                                        <UncontrolledButtonDropdown direction="up">
-                                            <DropdownToggle caret className="mb-2 mr-2" color="primary">
-                                                Dropdown Basic
-                                            </DropdownToggle>
-                                            <DropdownMenu>
+                                            </Col>
+                                        </Row>
+                                        <div className="divider"/>
+                                        <div className="text-center">
+                                            <UncontrolledButtonDropdown direction="down">
+                                                <DropdownToggle caret className="mb-2 me-2" color="primary">
+                                                    Dropdown Basic
+                                                </DropdownToggle>
+                                                <DropdownMenu>
+                                                    <Nav vertical>
+                                                        <NavItem>
+                                                            <NavLink href="#">Link</NavLink>
+                                                        </NavItem>
+                                                        <NavItem>
+                                                            <NavLink href="#">
+                                                                Link
+                                                                <div className="ms-auto badge bg-success">New</div>
+                                                            </NavLink>
+                                                        </NavItem>
+                                                        <NavItem>
+                                                            <NavLink href="#">
+                                                                Another Link
+                                                                <div className="ms-auto badge bg-warning">512</div>
+                                                            </NavLink>
+                                                        </NavItem>
+                                                        <NavItem>
+                                                            <NavLink disabled href="#">Disabled
+                                                                Link</NavLink>
+                                                        </NavItem>
+                                                    </Nav>
+                                                </DropdownMenu>
+                                            </UncontrolledButtonDropdown>
+                                            <Dropdown direction="down" className="d-inline-block"
+                                                    onMouseOver={this.onMouseEnter}
+                                                    onMouseLeave={this.onMouseLeave} isOpen={this.state.dropdownOpen}
+                                                    toggle={this.toggle}>
+                                                <DropdownToggle caret color="primary" className="mb-2 me-2">
+                                                    Dropdown Hover
+                                                </DropdownToggle>
+                                                <DropdownMenu>
+                                                    <Nav vertical>
+                                                        <NavItem>
+                                                            <NavLink href="#">
+                                                                <i className="nav-link-icon lnr-inbox"> </i>
+                                                                <span>Inbox</span>
+                                                                <div className="ms-auto badge rounded-pill bg-secondary">86
+                                                                </div>
+                                                            </NavLink>
+                                                        </NavItem>
+                                                        <NavItem>
+                                                            <NavLink href="#">
+                                                                <i className="nav-link-icon lnr-book"> </i>
+                                                                <span>Book</span>
+                                                                <div className="ms-auto badge rounded-pill bg-danger">5
+                                                                </div>
+                                                            </NavLink>
+                                                        </NavItem>
+                                                        <NavItem>
+                                                            <NavLink href="#">
+                                                                <i className="nav-link-icon lnr-picture"> </i>
+                                                                <span>Picture</span>
+                                                            </NavLink>
+                                                        </NavItem>
+                                                        <NavItem>
+                                                            <NavLink disabled href="#">
+                                                                <i className="nav-link-icon lnr-file-empty"> </i>
+                                                                <span>File Disabled</span>
+                                                            </NavLink>
+                                                        </NavItem>
+                                                    </Nav>
+                                                </DropdownMenu>
+                                            </Dropdown>
+                                        </div>
+                                    </CardBody>
+                                </Card>
+                                <Card className="main-card mb-3">
+                                    <CardBody>
+                                        <CardTitle>Separators & Headers</CardTitle>
+                                        <Row>
+                                            <Col>
                                                 <Nav vertical>
                                                     <NavItem className="nav-item-header">
                                                         Activity
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink href="javascript:void(0);">
+                                                        <NavLink href="#">
                                                             Chat
-                                                            <div className="ml-auto badge badge-pill badge-info">8</div>
+                                                            <div className="ms-auto badge rounded-pill bg-info">8</div>
                                                         </NavLink>
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink href="javascript:void(0);">Recover Password</NavLink>
+                                                        <NavLink href="#">Recover Password</NavLink>
                                                     </NavItem>
                                                     <NavItem className="nav-item-header">
                                                         My Account
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink href="javascript:void(0);">
+                                                        <NavLink href="#">
                                                             Settings
-                                                            <div className="ml-auto badge badge-success">New</div>
+                                                            <div className="ms-auto badge bg-success">New</div>
                                                         </NavLink>
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink href="javascript:void(0);">
+                                                        <NavLink href="#">
                                                             Messages
-                                                            <div className="ml-auto badge badge-warning">512</div>
+                                                            <div className="ms-auto badge bg-warning">512</div>
                                                         </NavLink>
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink href="javascript:void(0);">
+                                                        <NavLink href="#">
                                                             Logs
                                                         </NavLink>
                                                     </NavItem>
                                                     <NavItem className="nav-item-divider"/>
                                                     <NavItem className="nav-item-btn">
-                                                        <Button size="sm" className="btn-wide btn-shadow"
-                                                                color="danger">
+                                                        <Button size="sm" className="btn-wide btn-shadow" color="danger">
                                                             Cancel
                                                         </Button>
                                                     </NavItem>
                                                 </Nav>
-                                            </DropdownMenu>
-                                        </UncontrolledButtonDropdown>
-                                        <UncontrolledButtonDropdown direction="up">
-                                            <DropdownToggle caret color="primary" className="mb-2 mr-2">
-                                                Dropdown Example
-                                            </DropdownToggle>
-                                            <DropdownMenu>
+                                            </Col>
+                                            <Col>
                                                 <Nav vertical>
                                                     <NavItem className="nav-item-header">
                                                         Activity
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink href="javascript:void(0);">
+                                                        <NavLink href="#">
                                                             <i className="nav-link-icon pe-7s-chat"> </i>
                                                             <span>Chat</span>
-                                                            <div className="ml-auto badge badge-pill badge-info">8
-                                                            </div>
+                                                            <div className="ms-auto badge rounded-pill bg-info">8</div>
                                                         </NavLink>
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink href="javascript:void(0);">
+                                                        <NavLink href="#">
                                                             <i className="nav-link-icon pe-7s-wallet"> </i>
                                                             <span>Recover Password</span>
                                                         </NavLink>
@@ -355,21 +250,21 @@ export default class NavsVertical extends React.Component {
                                                         My Account
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink href="javascript:void(0);">
+                                                        <NavLink href="#">
                                                             <i className="nav-link-icon pe-7s-config"> </i>
                                                             <span>Settings</span>
-                                                            <div className="ml-auto badge badge-success">New</div>
+                                                            <div className="ms-auto badge bg-success">New</div>
                                                         </NavLink>
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink href="javascript:void(0);">
+                                                        <NavLink href="#">
                                                             <i className="nav-link-icon pe-7s-coffee"> </i>
                                                             <span>Messages</span>
-                                                            <div className="ml-auto badge badge-warning">512</div>
+                                                            <div className="ms-auto badge bg-warning">512</div>
                                                         </NavLink>
                                                     </NavItem>
                                                     <NavItem>
-                                                        <NavLink href="javascript:void(0);">
+                                                        <NavLink href="#">
                                                             <i className="nav-link-icon pe-7s-box2"> </i>
                                                             <span>Logs</span>
                                                         </NavLink>
@@ -381,14 +276,120 @@ export default class NavsVertical extends React.Component {
                                                         </Button>
                                                     </NavItem>
                                                 </Nav>
-                                            </DropdownMenu>
-                                        </UncontrolledButtonDropdown>
-                                    </div>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                    </Row>
-                </ReactCSSTransitionGroup>
+                                            </Col>
+                                        </Row>
+                                        <div className="divider"/>
+                                        <div className="text-center">
+                                            <UncontrolledButtonDropdown direction="up">
+                                                <DropdownToggle caret className="mb-2 me-2" color="primary">
+                                                    Dropdown Basic
+                                                </DropdownToggle>
+                                                <DropdownMenu>
+                                                    <Nav vertical>
+                                                        <NavItem className="nav-item-header">
+                                                            Activity
+                                                        </NavItem>
+                                                        <NavItem>
+                                                            <NavLink href="#">
+                                                                Chat
+                                                                <div className="ms-auto badge rounded-pill bg-info">8</div>
+                                                            </NavLink>
+                                                        </NavItem>
+                                                        <NavItem>
+                                                            <NavLink href="#">Recover Password</NavLink>
+                                                        </NavItem>
+                                                        <NavItem className="nav-item-header">
+                                                            My Account
+                                                        </NavItem>
+                                                        <NavItem>
+                                                            <NavLink href="#">
+                                                                Settings
+                                                                <div className="ms-auto badge bg-success">New</div>
+                                                            </NavLink>
+                                                        </NavItem>
+                                                        <NavItem>
+                                                            <NavLink href="#">
+                                                                Messages
+                                                                <div className="ms-auto badge bg-warning">512</div>
+                                                            </NavLink>
+                                                        </NavItem>
+                                                        <NavItem>
+                                                            <NavLink href="#">
+                                                                Logs
+                                                            </NavLink>
+                                                        </NavItem>
+                                                        <NavItem className="nav-item-divider"/>
+                                                        <NavItem className="nav-item-btn">
+                                                            <Button size="sm" className="btn-wide btn-shadow"
+                                                                    color="danger">
+                                                                Cancel
+                                                            </Button>
+                                                        </NavItem>
+                                                    </Nav>
+                                                </DropdownMenu>
+                                            </UncontrolledButtonDropdown>
+                                            <UncontrolledButtonDropdown direction="up">
+                                                <DropdownToggle caret color="primary" className="mb-2 me-2">
+                                                    Dropdown Example
+                                                </DropdownToggle>
+                                                <DropdownMenu>
+                                                    <Nav vertical>
+                                                        <NavItem className="nav-item-header">
+                                                            Activity
+                                                        </NavItem>
+                                                        <NavItem>
+                                                            <NavLink href="#">
+                                                                <i className="nav-link-icon pe-7s-chat"> </i>
+                                                                <span>Chat</span>
+                                                                <div className="ms-auto badge rounded-pill bg-info">8
+                                                                </div>
+                                                            </NavLink>
+                                                        </NavItem>
+                                                        <NavItem>
+                                                            <NavLink href="#">
+                                                                <i className="nav-link-icon pe-7s-wallet"> </i>
+                                                                <span>Recover Password</span>
+                                                            </NavLink>
+                                                        </NavItem>
+                                                        <NavItem className="nav-item-header">
+                                                            My Account
+                                                        </NavItem>
+                                                        <NavItem>
+                                                            <NavLink href="#">
+                                                                <i className="nav-link-icon pe-7s-config"> </i>
+                                                                <span>Settings</span>
+                                                                <div className="ms-auto badge bg-success">New</div>
+                                                            </NavLink>
+                                                        </NavItem>
+                                                        <NavItem>
+                                                            <NavLink href="#">
+                                                                <i className="nav-link-icon pe-7s-coffee"> </i>
+                                                                <span>Messages</span>
+                                                                <div className="ms-auto badge bg-warning">512</div>
+                                                            </NavLink>
+                                                        </NavItem>
+                                                        <NavItem>
+                                                            <NavLink href="#">
+                                                                <i className="nav-link-icon pe-7s-box2"> </i>
+                                                                <span>Logs</span>
+                                                            </NavLink>
+                                                        </NavItem>
+                                                        <NavItem className="nav-item-divider"/>
+                                                        <NavItem className="nav-item-btn">
+                                                            <Button size="sm" className="btn-pill" color="success">
+                                                                Save
+                                                            </Button>
+                                                        </NavItem>
+                                                    </Nav>
+                                                </DropdownMenu>
+                                            </UncontrolledButtonDropdown>
+                                        </div>
+                                    </CardBody>
+                                </Card>
+                            </Col>
+                        </Row>
+                    </CSSTransition>
+                </TransitionGroup>
             </Fragment>
         );
     }

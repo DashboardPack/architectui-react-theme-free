@@ -20,6 +20,8 @@ import {
 
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
+import 'react-toastify/dist/ReactToastify.css';
+
 import avatar1 from '../../../assets/utils/images/avatars/1.jpg';
 
 class UserBox extends React.Component {
@@ -44,46 +46,46 @@ class UserBox extends React.Component {
 
         return (
             <Fragment>
-                <div className="header-btn-lg pr-0">
+                <div className="header-btn-lg pe-0">
                     <div className="widget-content p-0">
                         <div className="widget-content-wrapper">
                             <div className="widget-content-left">
                                 <UncontrolledButtonDropdown>
                                     <DropdownToggle color="link" className="p-0">
                                         <img width={42} className="rounded-circle" src={avatar1} alt=""/>
-                                        <FontAwesomeIcon className="ml-2 opacity-8" icon={faAngleDown}/>
+                                        <FontAwesomeIcon className="ms-2 opacity-8" icon={faAngleDown}/>
                                     </DropdownToggle>
-                                    <DropdownMenu right className="rm-pointers dropdown-menu-lg">
+                                    <DropdownMenu end className="rm-pointers dropdown-menu-lg">
                                         <Nav vertical>
                                             <NavItem className="nav-item-header">
                                                 Activity
                                             </NavItem>
                                             <NavItem>
-                                                <NavLink href="javascript:void(0);">
+                                                <NavLink href="#">
                                                     Chat
-                                                    <div className="ml-auto badge badge-pill badge-info">8</div>
+                                                    <div className="ms-auto badge bg-pill bg-info">8</div>
                                                 </NavLink>
                                             </NavItem>
                                             <NavItem>
-                                                <NavLink href="javascript:void(0);">Recover Password</NavLink>
+                                                <NavLink href="#">Recover Password</NavLink>
                                             </NavItem>
                                             <NavItem className="nav-item-header">
                                                 My Account
                                             </NavItem>
                                             <NavItem>
-                                                <NavLink href="javascript:void(0);">
+                                                <NavLink href="#">
                                                     Settings
-                                                    <div className="ml-auto badge badge-success">New</div>
+                                                    <div className="ms-auto badge bg-success">New</div>
                                                 </NavLink>
                                             </NavItem>
                                             <NavItem>
-                                                <NavLink href="javascript:void(0);">
+                                                <NavLink href="#">
                                                     Messages
-                                                    <div className="ml-auto badge badge-warning">512</div>
+                                                    <div className="ms-auto badge bg-warning">512</div>
                                                 </NavLink>
                                             </NavItem>
                                             <NavItem>
-                                                <NavLink href="javascript:void(0);">
+                                                <NavLink href="#">
                                                     Logs
                                                 </NavLink>
                                             </NavItem>
@@ -91,7 +93,7 @@ class UserBox extends React.Component {
                                     </DropdownMenu>
                                 </UncontrolledButtonDropdown>
                             </div>
-                            <div className="widget-content-left  ml-3 header-user-info">
+                            <div className="widget-content-left  ms-3 header-user-info">
                                 <div className="widget-heading">
                                     Alina Mclourd
                                 </div>
@@ -100,10 +102,10 @@ class UserBox extends React.Component {
                                 </div>
                             </div>
 
-                            <div className="widget-content-right header-user-info ml-3">
+                            <div className="widget-content-right header-user-info ms-3">
                                 <Button className="btn-shadow p-1" size="sm" onClick={this.notify2} color="info"
                                         id="Tooltip-1">
-                                    <FontAwesomeIcon className="mr-2 ml-2" icon={faCalendarAlt}/>
+                                    <FontAwesomeIcon className="me-2 ms-2" icon={faCalendarAlt}/>
                                 </Button>
                                 <UncontrolledTooltip placement="bottom" target={'Tooltip-1'}>
                                     Click for Toastify Notifications!

@@ -1,13 +1,10 @@
 import React from 'react';
 import {
   InputGroup,
-  InputGroupAddon,
-  InputGroupButtonDropdown,
+  Dropdown,
   Input,
   Button,
   DropdownToggle,
-  DropdownMenu,
-  DropdownItem
  } from 'reactstrap';
 
 export default class FormInputGroupButton extends React.Component {
@@ -39,40 +36,26 @@ export default class FormInputGroupButton extends React.Component {
     return (
       <div>
         <InputGroup>
-          <InputGroupAddon addonType="prepend"><Button>I'm a button</Button> </InputGroupAddon>
+          <Button>I'm a button</Button>{" "}
           <Input />
         </InputGroup>
         <br />
         <InputGroup>
           <Input />
-          <InputGroupButtonDropdown addonType="append" isOpen={this.state.dropdownOpen} toggle={this.toggleDropDown}>
-            <DropdownToggle caret>
-              Button Dropdown
-            </DropdownToggle>
-            <DropdownMenu>
-              <DropdownItem header>Header</DropdownItem>
-              <DropdownItem disabled>Action</DropdownItem>
-              <DropdownItem>Another Action</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>Another Action</DropdownItem>
-            </DropdownMenu>
-          </InputGroupButtonDropdown>
+          <Dropdown addonType="append"
+            isOpen={this.state.dropdownOpen} toggle={this.toggleDropDown}>
+            <DropdownToggle caret>Button Dropdown</DropdownToggle>
+          </Dropdown>
         </InputGroup>
         <br />
         <InputGroup>
-          <InputGroupButtonDropdown addonType="prepend" isOpen={this.state.splitButtonOpen} toggle={this.toggleSplit}>
+          <Dropdown addonType="prepend"
+            isOpen={this.state.splitButtonOpen} toggle={this.toggleSplit}>
             <Button outline>Split Button</Button>
             <DropdownToggle split outline />
-            <DropdownMenu>
-              <DropdownItem header>Header</DropdownItem>
-              <DropdownItem disabled>Action</DropdownItem>
-              <DropdownItem>Another Action</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>Another Action</DropdownItem>
-            </DropdownMenu>
-          </InputGroupButtonDropdown>
+          </Dropdown>
           <Input placeholder="and..." />
-          <InputGroupAddon addonType="append"><Button color="secondary">I'm a button</Button> </InputGroupAddon>
+          <Button color="secondary">I'm a button</Button>{" "}
         </InputGroup>
       </div>
     );

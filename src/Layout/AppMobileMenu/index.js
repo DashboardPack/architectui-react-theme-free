@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import {connect} from 'react-redux';
 
-import Hamburger from 'react-hamburgers';
+import { Slider } from "react-burgers";
 
 import cx from 'classnames';
 
@@ -62,7 +62,7 @@ class AppMobileMenu extends React.Component {
 
                 <div className="app-header__mobile-menu">
                     <div onClick={this.toggleMobileSidebar}>
-                        <Hamburger
+                        <Slider
                             active={enableMobileMenu}
                             type="elastic"
                             onClick={() => this.setState({activeMobile: !this.state.activeMobile})}

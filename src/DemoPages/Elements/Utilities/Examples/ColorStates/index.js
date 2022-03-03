@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {
     Row, Col,
     Card, CardBody,
@@ -29,154 +29,156 @@ import bg15 from '../../../../../assets/utils/images/sidebar/city5.jpg';
 const UtilitiesColors = (props) => {
     return (
         <Fragment>
-            <ReactCSSTransitionGroup
-                component="div"
-                transitionName="TabsAnimation"
-                transitionAppear={true}
-                transitionAppearTimeout={0}
-                transitionEnter={false}
-                transitionLeave={false}>
-                <Row>
-                    <Col lg="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>Solid Colors</CardTitle>
-                                <ColorSwatches/>
-                            </CardBody>
-                        </Card>
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>Gradient Colors</CardTitle>
-                                <ColorGradients/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                    <Col lg="6">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>Text Colors</CardTitle>
-                                <TextColor/>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                    <Col md="12">
-                        <Card className="main-card mb-3">
-                            <CardBody>
-                                <CardTitle>Background Images</CardTitle>
-                                <Row>
-                                    <Col md="3">
-                                        <div className="demo-image-bg"
-                                             style={{
-                                                 backgroundImage: 'url(' + bg1 + ')'
-                                             }}
-                                        />
-                                    </Col>
-                                    <Col md="3">
-                                        <div className="demo-image-bg"
-                                             style={{
-                                                 backgroundImage: 'url(' + bg2 + ')'
-                                             }}
-                                        />
-                                    </Col>
-                                    <Col md="3">
-                                        <div className="demo-image-bg"
-                                             style={{
-                                                 backgroundImage: 'url(' + bg3 + ')'
-                                             }}
-                                        />
-                                    </Col>
-                                    <Col md="3">
-                                        <div className="demo-image-bg"
-                                             style={{
-                                                 backgroundImage: 'url(' + bg4 + ')'
-                                             }}
-                                        />
-                                    </Col>
-                                    <Col md="3">
-                                        <div className="demo-image-bg"
-                                             style={{
-                                                 backgroundImage: 'url(' + bg5 + ')'
-                                             }}
-                                        />
-                                    </Col>
-                                    <Col md="3">
-                                        <div className="demo-image-bg"
-                                             style={{
-                                                 backgroundImage: 'url(' + bg6 + ')'
-                                             }}
-                                        />
-                                    </Col>
-                                    <Col md="3">
-                                        <div className="demo-image-bg"
-                                             style={{
-                                                 backgroundImage: 'url(' + bg7 + ')'
-                                             }}
-                                        />
-                                    </Col>
-                                    <Col md="3">
-                                        <div className="demo-image-bg"
-                                             style={{
-                                                 backgroundImage: 'url(' + bg8 + ')'
-                                             }}
-                                        />
-                                    </Col>
-                                    <Col md="3">
-                                        <div className="demo-image-bg"
-                                             style={{
-                                                 backgroundImage: 'url(' + bg9 + ')'
-                                             }}
-                                        />
-                                    </Col>
-                                    <Col md="3">
-                                        <div className="demo-image-bg"
-                                             style={{
-                                                 backgroundImage: 'url(' + bg10 + ')'
-                                             }}
-                                        />
-                                    </Col>
-                                    <Col md="3">
-                                        <div className="demo-image-bg"
-                                             style={{
-                                                 backgroundImage: 'url(' + bg11 + ')'
-                                             }}
-                                        />
-                                    </Col>
-                                    <Col md="3">
-                                        <div className="demo-image-bg"
-                                             style={{
-                                                 backgroundImage: 'url(' + bg12 + ')'
-                                             }}
-                                        />
-                                    </Col>
-                                    <Col md="3">
-                                        <div className="demo-image-bg"
-                                             style={{
-                                                 backgroundImage: 'url(' + bg13 + ')'
-                                             }}
-                                        />
-                                    </Col>
-                                    <Col md="3">
-                                        <div className="demo-image-bg"
-                                             style={{
-                                                 backgroundImage: 'url(' + bg14 + ')'
-                                             }}
-                                        />
-                                    </Col>
-                                    <Col md="3">
-                                        <div className="demo-image-bg"
-                                             style={{
-                                                 backgroundImage: 'url(' + bg15 + ')'
-                                             }}
-                                        />
-                                    </Col>
-                                </Row>
+            <TransitionGroup>
+                <CSSTransition
+                    component="div"
+                    className="TabsAnimation"
+                    appear={true}
+                    timeout={0}
+                    enter={false}
+                    exit={false}>
+                    <Row>
+                        <Col lg="6">
+                            <Card className="main-card mb-3">
+                                <CardBody>
+                                    <CardTitle>Solid Colors</CardTitle>
+                                    <ColorSwatches/>
+                                </CardBody>
+                            </Card>
+                            <Card className="main-card mb-3">
+                                <CardBody>
+                                    <CardTitle>Gradient Colors</CardTitle>
+                                    <ColorGradients/>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                        <Col lg="6">
+                            <Card className="main-card mb-3">
+                                <CardBody>
+                                    <CardTitle>Text Colors</CardTitle>
+                                    <TextColor/>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                        <Col md="12">
+                            <Card className="main-card mb-3">
+                                <CardBody>
+                                    <CardTitle>Background Images</CardTitle>
+                                    <Row>
+                                        <Col md="3">
+                                            <div className="demo-image-bg"
+                                                style={{
+                                                    backgroundImage: 'url(' + bg1 + ')'
+                                                }}
+                                            />
+                                        </Col>
+                                        <Col md="3">
+                                            <div className="demo-image-bg"
+                                                style={{
+                                                    backgroundImage: 'url(' + bg2 + ')'
+                                                }}
+                                            />
+                                        </Col>
+                                        <Col md="3">
+                                            <div className="demo-image-bg"
+                                                style={{
+                                                    backgroundImage: 'url(' + bg3 + ')'
+                                                }}
+                                            />
+                                        </Col>
+                                        <Col md="3">
+                                            <div className="demo-image-bg"
+                                                style={{
+                                                    backgroundImage: 'url(' + bg4 + ')'
+                                                }}
+                                            />
+                                        </Col>
+                                        <Col md="3">
+                                            <div className="demo-image-bg"
+                                                style={{
+                                                    backgroundImage: 'url(' + bg5 + ')'
+                                                }}
+                                            />
+                                        </Col>
+                                        <Col md="3">
+                                            <div className="demo-image-bg"
+                                                style={{
+                                                    backgroundImage: 'url(' + bg6 + ')'
+                                                }}
+                                            />
+                                        </Col>
+                                        <Col md="3">
+                                            <div className="demo-image-bg"
+                                                style={{
+                                                    backgroundImage: 'url(' + bg7 + ')'
+                                                }}
+                                            />
+                                        </Col>
+                                        <Col md="3">
+                                            <div className="demo-image-bg"
+                                                style={{
+                                                    backgroundImage: 'url(' + bg8 + ')'
+                                                }}
+                                            />
+                                        </Col>
+                                        <Col md="3">
+                                            <div className="demo-image-bg"
+                                                style={{
+                                                    backgroundImage: 'url(' + bg9 + ')'
+                                                }}
+                                            />
+                                        </Col>
+                                        <Col md="3">
+                                            <div className="demo-image-bg"
+                                                style={{
+                                                    backgroundImage: 'url(' + bg10 + ')'
+                                                }}
+                                            />
+                                        </Col>
+                                        <Col md="3">
+                                            <div className="demo-image-bg"
+                                                style={{
+                                                    backgroundImage: 'url(' + bg11 + ')'
+                                                }}
+                                            />
+                                        </Col>
+                                        <Col md="3">
+                                            <div className="demo-image-bg"
+                                                style={{
+                                                    backgroundImage: 'url(' + bg12 + ')'
+                                                }}
+                                            />
+                                        </Col>
+                                        <Col md="3">
+                                            <div className="demo-image-bg"
+                                                style={{
+                                                    backgroundImage: 'url(' + bg13 + ')'
+                                                }}
+                                            />
+                                        </Col>
+                                        <Col md="3">
+                                            <div className="demo-image-bg"
+                                                style={{
+                                                    backgroundImage: 'url(' + bg14 + ')'
+                                                }}
+                                            />
+                                        </Col>
+                                        <Col md="3">
+                                            <div className="demo-image-bg"
+                                                style={{
+                                                    backgroundImage: 'url(' + bg15 + ')'
+                                                }}
+                                            />
+                                        </Col>
+                                    </Row>
 
 
-                            </CardBody>
-                        </Card>
-                    </Col>
-                </Row>
-            </ReactCSSTransitionGroup>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                    </Row>
+                </CSSTransition>
+            </TransitionGroup>
         </Fragment>
     );
 };
