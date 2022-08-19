@@ -12,3 +12,6 @@
 - updated to Bootstrap 5
 - updated to Reactstrap 9
 - Updated all Libraries
+
+## Version 2.1.0 (19 Aug 2022)
+- Library Update
