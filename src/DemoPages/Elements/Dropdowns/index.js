@@ -1,27 +1,16 @@
 import React, {Fragment} from 'react';
-
-import Tabs from 'react-responsive-tabs';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import PageTitle from '../../../Layout/AppMain/PageTitle';
+
+import Tabs, {TabPane} from 'rc-tabs';
+import TabContent from 'rc-tabs/lib/SwipeableTabContent';
+import ScrollableInkTabBar from 'rc-tabs/lib/ScrollableInkTabBar';
 
 // Dropdown Examples
 
 import DropdownStyles from './Examples/DropdownStyles';
-
-const tabsContent = [
-    {
-        title: 'Regular Dropdowns',
-        content: <DropdownStyles/>
-    }
-];
-
-function getTabs() {
-    return tabsContent.map((tab, index) => ({
-        title: tab.title,
-        getContent: () => tab.content,
-        key: index,
-    }));
-}
+import DropdownGridMenus from './Examples/DropdownGridMenus';
 
 export default class DropdownExamples extends React.Component {
 
@@ -29,12 +18,21 @@ export default class DropdownExamples extends React.Component {
 
         return (
             <Fragment>
-                <PageTitle
-                    heading="Dropdowns"
-                    subheading="Multiple styles, actions and effects are available for the Archited Framework dropdown buttons."
-                    icon="pe-7s-umbrella icon-gradient bg-sunny-morning"
-                />
-                <Tabs tabsWrapperClass="body-tabs body-tabs-layout" transform={false} showInkBar={true} items={getTabs()}/>
+                <TransitionGroup>
+                    <CSSTransition component="div" classNames="TabsAnimation" appear={true}
+                        timeout={1500} enter={false} exit={false}>
+                        <div>    
+                            <PageTitle  heading="Dropdowns"
+                                subheading="Multiple styles, actions and effects are available for the ArchitectUI dropdown buttons."
+                                icon="pe-7s-umbrella icon-gradient bg-sunny-morning"/>
+                            <Tabs defaultActiveKey="1" renderTabBar={() => <ScrollableInkTabBar/>}
+                                renderTabContent={() => <TabContent/>}>
+                                <TabPane tab='Advanced Menus' key="1"><DropdownGridMenus/></TabPane>
+                                <TabPane tab='Regular Dropdowns' key="2"><DropdownStyles/></TabPane>
+                            </Tabs>
+                        </div>
+                    </CSSTransition>
+                </TransitionGroup>
             </Fragment>
         );
     }

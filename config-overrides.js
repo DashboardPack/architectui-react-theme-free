@@ -10,6 +10,12 @@ module.exports = function override(config, env) {
         buffer: require.resolve('buffer/'),
         stream: require.resolve('stream-browserify'),
     };
-    
+
+    config.ignoreWarnings = [
+        {
+            file: /node_modules\/.*\.scss$/
+        }
+    ];
+
     return config;
 }

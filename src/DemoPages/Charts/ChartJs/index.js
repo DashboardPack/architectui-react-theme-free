@@ -1,44 +1,39 @@
-import React, {Component, Fragment} from 'react';
+import React, { Component, Fragment } from "react";
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-import Tabs from 'react-responsive-tabs';
+import PageTitle from "../../../Layout/AppMain/PageTitle";
 
-import PageTitle from '../../../Layout/AppMain/PageTitle';
+import Tabs, { TabPane } from "rc-tabs";
+import TabContent from "rc-tabs/lib/SwipeableTabContent";
+import ScrollableInkTabBar from "rc-tabs/lib/ScrollableInkTabBar";
 
 // Examples
-import ChartJsCircular from './Examples/Circular';
-import ChartJsLinesBars from './Examples/LinesBars';
-
-const tabsContent = [
-    {
-        title: 'Circular Charts',
-        content: <ChartJsCircular/>
-    },
-    {
-        title: 'Lines & Bars Charts',
-        content: <ChartJsLinesBars/>
-    },
-];
-
-function getTabs() {
-    return tabsContent.map((tab, index) => ({
-        title: tab.title,
-        getContent: () => tab.content,
-        key: index,
-    }));
-}
+import ChartJsCircular from "./Examples/Circular";
+import ChartJsLinesBars from "./Examples/LinesBars";
 
 export default class ChartJSExamples extends Component {
-    render() {
-
-        return (
-            <Fragment>
-                <PageTitle
-                    heading="ChartJS"
-                    subheading="Huge selection of charts created with the React ChartJS Plugin"
-                    icon="pe-7s-bandaid icon-gradient bg-amy-crisp"
-                />
-                <Tabs tabsWrapperClass="body-tabs body-tabs-layout" transform={false} showInkBar={true} items={getTabs()}/>
-            </Fragment>
-        );
-    }
+  render() {
+    return (
+      <Fragment>
+        <TransitionGroup>
+          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
+            timeout={1500} enter={false} exit={false}>
+            <div>  
+              <PageTitle heading="ChartJS"
+                subheading="Huge selection of charts created with the React ChartJS Plugin"
+                icon="pe-7s-bandaid icon-gradient bg-amy-crisp"/>
+              <Tabs defaultActiveKey="1" renderTabBar={() => <ScrollableInkTabBar />} renderTabContent={() => <TabContent />}>
+                <TabPane tab="Circular Charts" key="1">
+                  <ChartJsCircular />
+                </TabPane>
+                <TabPane tab="Lines & Bars Charts" key="2">
+                  <ChartJsLinesBars />
+                </TabPane>
+              </Tabs>
+            </div>
+          </CSSTransition>
+        </TransitionGroup>
+      </Fragment>
+    );
+  }
 }

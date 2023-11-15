@@ -1,0 +1,549 @@
+@use "sass:math";
+
+.ReactTable {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  .rt-table {
+    flex: auto 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    border-collapse: collapse;
+    overflow: auto
+  }
+
+  .-pagination input,
+  .-pagination select,
+  .rt-thead.-filters input,
+  .rt-thead.-filters select {
+    display: block;
+    width: 100%;
+    color: $input-color;
+    background-color: $input-bg;
+    background-clip: padding-box;
+    border: $input-border-width solid $input-border-color;
+
+    height: $input-height-sm;
+    padding: $input-padding-y-sm $input-padding-x-sm;
+    // line-height: $input-line-height-sm;
+    @include border-radius($input-border-radius-sm);
+
+    @if $enable-rounded {
+      border-radius: $input-border-radius;
+    } @else {
+      border-radius: 0;
+    }
+
+    @include box-shadow($input-box-shadow);
+    @include transition($input-transition);
+
+    &::-ms-expand {
+      background-color: transparent;
+      border: 0;
+    }
+
+    // @include form-control-focus();
+
+    // Placeholder
+    &::placeholder {
+      color: $input-placeholder-color;
+      opacity: 1;
+    }
+
+    &:disabled,
+    &[readonly] {
+      background-color: $input-disabled-bg;
+      opacity: 1;
+    }
+  }
+
+  .rt-thead {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+
+    &.-headerGroups {
+      background: rgba(0, 0, 0, 0.03);
+      border-bottom: 1px solid $table-border-color;
+
+      .rt-th,
+      .rt-td {
+        padding: $table-cell-padding-sm;
+        color: $table-head-color;
+
+        &:hover {
+          color: $table-head-color;
+        }
+
+        &:empty {
+          padding: 0;
+        }
+      }
+
+    }
+
+    &.-filters {
+      border-bottom: 1px solid $table-border-color;
+      background: $gray-100;
+
+      .rt-th {
+        border-right: 1px solid $table-border-color
+      }
+
+      &.-header {
+        box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.15)
+      }
+    }
+
+    .rt-tr {
+      text-align: center
+    }
+
+    .rt-th,
+    .rt-td {
+      padding: $table-cell-padding;
+      line-height: normal;
+      position: relative;
+      font-weight: bold;
+      border-right: 1px solid $table-border-color;
+      border-bottom: 1px solid $table-border-color;
+      transition: box-shadow .3s cubic-bezier(.175, .885, .32, 1.275);
+      box-shadow: inset 0 0 0 0 transparent;
+      color: $primary;
+
+      &:hover {
+        color: shade-color($primary, 15%);
+      }
+    }
+
+    .rt-th.-sort-asc,
+    .rt-td.-sort-asc {
+      box-shadow: inset 0 3px 0 0 $primary
+    }
+
+    .rt-th.-sort-desc,
+    .rt-td.-sort-desc {
+      box-shadow: inset 0 -3px 0 0 $primary
+    }
+
+    .rt-th.-cursor-pointer,
+    .rt-td.-cursor-pointer {
+      cursor: pointer
+    }
+
+    .rt-th:last-child,
+    .rt-td:last-child {
+      border-right: 0
+    }
+
+    .rt-resizable-header {
+      overflow: visible;
+    }
+
+    .rt-resizable-header:last-child {
+      overflow: hidden
+    }
+
+    .rt-resizable-header-content {
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .rt-header-pivot {
+      border-right-color: #f7f7f7
+    }
+
+    .rt-header-pivot:after,
+    .rt-header-pivot:before {
+      left: 100%;
+      top: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none
+    }
+
+    .rt-header-pivot:after {
+      border-color: rgba(255, 255, 255, 0);
+      border-left-color: $white;
+      border-width: 8px;
+      margin-top: -8px
+    }
+
+    .rt-header-pivot:before {
+      border-color: rgba(102, 102, 102, 0);
+      border-left-color: #f7f7f7;
+      border-width: 10px;
+      margin-top: -10px
+    }
+  }
+
+  .rt-tbody {
+    flex: 99999 1 auto;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+
+    .rt-tr-group {
+      border-bottom: solid 1px $table-border-color;
+    }
+
+    .rt-tr-group:last-child {
+      border-bottom: 0
+    }
+
+    .rt-td {
+      border-right: 1px solid $table-border-color;
+      align-items: center;
+      align-content: center;
+      display: flex;
+
+      [contenteditable="true"] {
+        width: 100%;
+        border: 1px solid transparent;
+        background: $white !important;
+        @include border-radius($input-border-radius-sm);
+
+        &:focus {
+          padding: 3px 5px;
+          border-color: $input-focus-border-color;
+          outline: none;
+        }
+      }
+    }
+
+    .rt-td:last-child {
+      border-right: 0
+    }
+
+    .rt-expandable {
+      cursor: pointer;
+      text-overflow: clip
+    }
+  }
+
+  .rt-tr-group {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch
+  }
+
+  .rt-tr {
+    flex: 1 0 auto;
+    display: inline-flex
+  }
+
+  .rt-th,
+  .rt-td {
+    flex: 1 0 0;
+    text-overflow: ellipsis;
+    padding: $table-cell-padding;
+    //overflow: hidden;
+    transition: .3s ease;
+    transition-property: width, min-width, padding, opacity;
+
+    &.-hidden {
+      width: 0 !important;
+      min-width: 0 !important;
+      padding: 0 !important;
+      border: 0 !important;
+      opacity: 0 !important
+    }
+  }
+
+  .rt-expander {
+    display: inline-block;
+    position: relative;
+    color: transparent;
+    margin: 0 10px 0 0;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-90deg);
+      border-left: 5.04px solid transparent;
+      border-right: 5.04px solid transparent;
+      border-top: 7px solid rgba(0, 0, 0, 0.8);
+      transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+      cursor: pointer
+    }
+    &.-open:after {
+      transform: translate(-50%, -50%) rotate(0)
+    }
+  }
+
+  .rt-resizer {
+    display: inline-block;
+    position: absolute;
+    width: 36px;
+    top: 0;
+    bottom: 0;
+    right: -18px;
+    cursor: col-resize;
+    z-index: 10
+  }
+
+  .rt-tfoot {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+
+    .rt-td {
+      border-right: 1px solid $table-border-color;
+      &:last-child {
+        border-right: 0
+      }
+    }
+  }
+
+  &.-striped .rt-tr.-odd {
+    background: rgba(0, 0, 0, 0.03)
+  }
+
+  &.-fixed {
+    .-header {
+      box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.07);
+    }
+
+    .pagination-bottom {
+      box-shadow: 0 -2px 7px 0 rgba(0, 0, 0, 0.07);
+    }
+  }
+
+  &.-highlight .rt-tbody .rt-tr:not(.-padRow):hover {
+    background: $dropdown-link-hover-bg
+  }
+
+  .-pagination {
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    padding: 3px;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+
+    .-btn {
+      appearance: none;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: $border-radius;
+      padding: 6px;
+      font-size: 1em;
+      color: $primary;
+      background: $gray-100;
+      transition: all .2s ease;
+      cursor: pointer;
+      outline: none;
+      font-weight: bold;
+    }
+
+    .-btn[disabled] {
+      opacity: .5;
+      cursor: default
+    }
+
+    .-btn:not([disabled]):hover {
+      background: $primary;
+      color: $white
+    }
+
+    .-previous,
+    .-next {
+      flex: 1;
+      text-align: center
+    }
+
+    .-center {
+      text-align: center;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around
+    }
+
+    .-totalPages {
+      padding-left: 5px;
+      font-weight: bold;
+    }
+
+    .-pageInfo {
+      display: inherit;
+      margin: 3px 0 3px 10px;
+      white-space: nowrap;
+      height: 30px;
+      line-height: 30px;
+    }
+
+    .-pageJump {
+      display: inline-block;
+      margin: 0 5px;
+    }
+
+    .-pageJump input {
+      width: 70px;
+      text-align: center
+    }
+
+    .-pageSizeOptions {
+      margin: 3px 10px
+    }
+  }
+
+  .rt-noData {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.8);
+    transition: all .3s ease;
+    z-index: 1;
+    pointer-events: none;
+    padding: 20px;
+    color: rgba(0, 0, 0, 0.5)
+  }
+
+  .-loading {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all .3s ease;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .-loading > div {
+    position: absolute;
+    display: block;
+    text-align: center;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    font-size: 15px;
+    color: $primary;
+    transform: translateY(-52%);
+    transition: all .3s cubic-bezier(.25, .46, .45, .94)
+  }
+
+  .-loading.-active {
+    opacity: 1;
+    z-index: 2;
+    pointer-events: all;
+  }
+
+  .-loading.-active > div {
+    transform: translateY(50%)
+  }
+
+  .rt-resizing .rt-th,
+  .rt-resizing .rt-td {
+    transition: none !important;
+    cursor: col-resize;
+    user-select: none
+  }
+
+}
+
+.table thead th,
+.table td {
+  vertical-align: middle;
+}
+
+.table {
+  th .filter {
+    margin-top: math.div($layout-spacer-x, 4);
+    height: auto;
+    padding: 0.3rem 0.5rem;
+  }
+}
+
+.caret-4-asc,
+.caret-4-desc {
+  font-family: 'Linearicons-Free';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  margin-left: math.div($layout-spacer-x, 4);
+}
+
+.table .sortable:hover {
+  .caret-4-asc,
+  .caret-4-desc {
+    color: $primary;
+  }
+}
+
+.caret-4-asc {
+  @extend .lnr-chevron-up !optional;
+}
+
+.caret-4-desc {
+  @extend .lnr-chevron-down !optional;
+}
+
+// Table sizing
+
+.table-lg {
+  th,
+  td {
+    padding: ($table-cell-padding * 2) ($table-cell-padding * 1.5);
+  }
+}
+
+//react-data-table-component  css
+
+.rdt_Table {
+  border: 1px solid rgba(0,0,0,.1);
+}
+
+.rdt_TableCol {
+  padding: 0.55rem;
+  line-height: normal;
+  position: relative;
+  font-weight: 700;
+  border-right: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+  transition: box-shadow .3s cubic-bezier(.175,.885,.32,1.275);
+  box-shadow: inset 0 0 0 0 transparent;
+  color: #545cd8;
+}
+
+.rdt_TableCell {
+  border-right: 1px solid #e9ecef;
+}
+
+.rdt_TableRow:nth-child(odd) {
+  background-color: #FFFFFF;
+}
+.rdt_TableRow:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+.rdt_TableRow:hover {
+  background-color: $dropdown-link-hover-bg;
+}

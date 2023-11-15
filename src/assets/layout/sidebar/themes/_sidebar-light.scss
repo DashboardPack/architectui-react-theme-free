@@ -1,0 +1,81 @@
+// Sidebar Light
+
+.app-sidebar {
+  &.sidebar-text-light {
+    border-right: 0 !important;
+
+    .app-sidebar__heading {
+      color: rgba(255, 255, 255, .6);
+
+      &::before {
+        background: rgba(255, 255, 255, 0.2) !important;
+      }
+    }
+
+    .metismenu {
+      .metismenu-container {
+        .metismenu-link {
+          color: rgba(255, 255, 255, .7);
+
+          &:hover {
+            color: rgba(255, 255, 255, 1);
+            background: rgba(255, 255, 255, .1);
+          }
+
+          &.active {
+            background: rgba(255, 255, 255, .1);
+          }
+        }
+
+        &.metismenu-container {
+          &.visible {
+            .metismenu-item > .metismenu-link {
+              color: rgba(255, 255, 255, .6);
+
+              &.active {
+                background: rgba(255, 255, 255, .1);
+                color: rgba(255, 255, 255, .8);
+              }
+
+              &:hover {
+                color: rgba(255, 255, 255, 1);
+              }
+
+            }
+
+            &::before {
+              background: rgba(255, 255, 255, .3);
+            }
+          }
+        }
+
+        i.metismenu-state-icon,
+        i.metismenu-icon {
+          opacity: .5;
+        }
+      }
+    }
+
+    .ps__thumb-y {
+      background: rgba(255, 255, 255, .3);
+    }
+
+    .ps__rail-y:hover {
+      .ps__thumb-y {
+        background: rgba(255, 255, 255, .2);
+      }
+    }
+
+    .app-header__logo {
+      .logo-src {
+        background: url('../../../../assets/utils/images/logo.png');
+      }
+
+      .hamburger-inner,
+      .hamburger-inner::before,
+      .hamburger-inner::after {
+        background-color: rgba(255, 255, 255, .8);
+      }
+    }
+  }
+}

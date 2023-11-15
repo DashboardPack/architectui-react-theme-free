@@ -1,0 +1,26 @@
+
+@use "sass:math";
+@use "sass:list";
+
+.rw-number-picker {
+  $half-width: list.slash($input-height, 2);
+
+  .rw-btn {
+    @include make-btn-state();
+    @include height-calc($half-width, $input-border-width);
+
+    line-height: $half-width;
+    line-height: calc(#{$half-width} - #{$input-border-width});
+    display: block;
+    border: none;
+  }
+
+  & .rw-select {
+    vertical-align: middle;
+    
+    &:hover,
+    &:active {
+      box-shadow: none;
+    }
+  }
+}

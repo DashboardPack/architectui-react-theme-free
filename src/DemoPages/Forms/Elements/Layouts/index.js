@@ -1,52 +1,42 @@
-import React, {Fragment} from 'react'
+import React, { Fragment } from "react";
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-import Tabs from 'react-responsive-tabs';
+import PageTitle from "../../../../Layout/AppMain/PageTitle";
 
-import PageTitle from '../../../../Layout/AppMain/PageTitle';
+import Tabs, { TabPane } from "rc-tabs";
+import TabContent from "rc-tabs/lib/SwipeableTabContent";
+import ScrollableInkTabBar from "rc-tabs/lib/ScrollableInkTabBar";
 
 // Examples
 
-import FormGrid from './Examples/FormGrid';
-import FormGridFormRow from './Examples/FormGridFormRow';
-
-const tabsContent = [
-    {
-        title: 'Layout ',
-        content: <FormGridFormRow/>
-    },
-    {
-        title: 'Grid',
-        content: <FormGrid/>
-    }
-
-
-];
-
-function getTabs() {
-    return tabsContent.map((tab, index) => ({
-        title: tab.title,
-        getContent: () => tab.content,
-        key: index,
-    }));
-}
+import FormGrid from "./Examples/FormGrid";
+import FormGridFormRow from "./Examples/FormGridFormRow";
 
 class FormElementsLayouts extends React.Component {
-
-    render() {
-        return (
-            <Fragment>
-                <PageTitle
-                    heading="Form Layouts"
-                    subheading="Build whatever layout you need with our ArchitectUI framework."
-                    icon="pe-7s-graph text-success"
-                />
-                <Tabs tabsWrapperClass="body-tabs body-tabs-layout" transform={false} showInkBar={true} items={getTabs()}/>
-            </Fragment>
-        )
-    }
+  render() {
+    return (
+      <Fragment>
+        <TransitionGroup>
+          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
+            timeout={1500} enter={false} exit={false}>
+            <div>  
+              <PageTitle heading="Form Layouts"
+                subheading="Build whatever layout you need with our ArchitectUI framework."
+                icon="pe-7s-graph text-success"/>
+              <Tabs defaultActiveKey="1" renderTabBar={() => <ScrollableInkTabBar />} renderTabContent={() => <TabContent />}>
+                <TabPane tab="Layout" key="1">
+                  <FormGridFormRow />
+                </TabPane>
+                <TabPane tab="Grid" key="2">
+                  <FormGrid />
+                </TabPane>
+              </Tabs>
+            </div>
+          </CSSTransition>
+        </TransitionGroup>
+      </Fragment>
+    );
+  }
 }
 
 export default FormElementsLayouts;
-
-
-

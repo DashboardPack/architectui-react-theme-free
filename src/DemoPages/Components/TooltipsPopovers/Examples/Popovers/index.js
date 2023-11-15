@@ -1,44 +1,34 @@
-import React, {Fragment} from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import {
-    Row, Col,
-    Card, CardBody,
-    CardTitle
-} from 'reactstrap';
+import React, { Fragment } from "react";
+import { Container, Col, Card, CardBody, CardTitle, Row } from "reactstrap";
 
-import PopoversBasicExample from './Basic';
-import PopoversGradientsExample from './Gradients';
+import PopoversBasicExample from "./Basic";
+import PopoversCustomExample from "./Custom";
 
-const PopoversExample = (props) => {
-    return (
-        <Fragment>
-            <TransitionGroup>
-                <CSSTransition component="div" className="TabsAnimation"
-                    appear={true} timeout={0} enter={false} exit={false}>
-                    <div>
-                        <Row>
-                            <Col lg="6">
-                                <Card className="main-card mb-3">
-                                    <CardBody>
-                                        <CardTitle>Popovers Alignments</CardTitle>
-                                        <PopoversBasicExample/>
-                                    </CardBody>
-                                </Card>
-                            </Col>
-                            <Col lg="6">
-                                <Card className="main-card mb-3">
-                                <CardBody>
-                                    <CardTitle>Gradient Colors</CardTitle>
-                                    <PopoversGradientsExample/>
-                                </CardBody>
-                                </Card>
-                            </Col>
-                        </Row>
-                    </div>
-                </CSSTransition>
-            </TransitionGroup>
-        </Fragment>
-    );
+const PopoversExample = () => {
+  return (
+    <Fragment>
+      <Container fluid>
+        <Row>
+          <Col lg="6">
+            <Card className="main-card mb-3">
+              <CardBody>
+                <CardTitle>Popovers Alignments</CardTitle>
+                <PopoversBasicExample />
+              </CardBody>
+            </Card>
+          </Col>
+          <Col lg="6">
+            <Card className="main-card mb-3">
+              <CardBody>
+                <CardTitle>Custom</CardTitle>
+                <PopoversCustomExample />
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+    </Fragment>
+  );
 };
 
 export default PopoversExample;

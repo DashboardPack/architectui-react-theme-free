@@ -1,0 +1,507 @@
+// TABS
+
+@use "sass:math";
+
+.nav-pills,
+.nav-tabs {
+  margin-bottom: $spacer;
+}
+
+.nav-link {
+  font-weight: bold;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.nav-tabs {
+  .nav-link {
+
+    &:hover {
+      color: $primary !important;
+    }
+
+    &.active {
+      color: $primary;
+    }
+  }
+}
+
+.nav-pills {
+  .nav-link {
+
+    &:hover {
+      color: $primary !important;
+    }
+
+    &.active {
+      background: $primary;
+
+      &:hover {
+        color: $white !important;
+      }
+    }
+  }
+}
+
+// Fancy Tabs
+
+.RRT__container {
+  position: relative;
+}
+
+.RRT__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.RRT__accordion {
+  flex-direction: column;
+}
+
+.RRT__tab {
+  cursor: pointer;
+  z-index: 1;
+  white-space: nowrap;
+  padding: $nav-link-padding-y $nav-link-padding-x;
+  transition: all .2s;
+
+  &:hover {
+    color: $primary;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.RRT__tab--selected {
+  color: $primary;
+}
+
+.RRT__tab--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.RRT__tab:focus {
+  z-index: 2;
+}
+
+.RRT__tab--selected .RRT__removable {
+  position: relative;
+}
+
+.RRT__tab--selected .RRT__removable-text {
+  margin-right: 10px;
+}
+
+.RRT__tab--selected .RRT__removable-icon {
+  position: absolute;
+  font-size: 18px;
+  right: 0.5em;
+  top: 0.2em;
+}
+
+// Alternate Style
+
+.body-tabs.body-tabs-layout {
+  &.body-tabs-big {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    @extend .container;
+    margin: 0 auto;
+    padding: 10px;
+    @include border-radius(50px);
+    border: $gray-200 solid 1px;
+    z-index: 7;
+
+    .RRT__tab {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 300;
+      padding: 0;
+      height: 50px;
+      line-height: 50px;
+      flex: 1;
+      text-align: center;
+      position: relative;
+      color: $primary;
+
+      &:hover {
+        color: $gray-900;
+      }
+
+      &.RRT__tab--selected {
+        color: $white;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+
+    & + .RRT__inkbar-wrapper {
+      height: 70px !important;
+      top: -70px !important;
+      @extend .container;
+      margin: 0 auto -3.4rem;
+      position: relative;
+      padding: 0 10px;
+
+      &::before {
+        position: absolute;
+        content: '';
+        background: $white;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: -11px;
+        @include border-radius(50px);
+      }
+
+      .RRT__inkbar {
+        height: 50px !important;
+        margin-top: 10px;
+        @include border-radius(50px);
+        box-shadow: 0 0 0 transparent;
+      }
+
+      & + .RRT__panel {
+        margin-top: -1rem;
+      }
+    }
+  }
+}
+
+// Panels
+
+.RRT__panel {
+  margin-top: $spacer;
+}
+
+.RRT__accordion .RRT__panel {
+}
+
+// Show More
+
+.RRT__showmore {
+  @include border-radius($border-radius);
+  background: $primary;
+  cursor: pointer;
+  z-index: 1;
+  white-space: nowrap;
+  font-weight: bold;
+  width: 36px;
+  text-align: center;
+  height: 36px;
+  display: block;
+  margin-left: 15px;
+  position: absolute;
+  right: $grid-gutter-width;
+  top: 50%;
+  margin-top: -18px;
+  font-size: 1.4rem;
+
+  &:focus {
+    outline: none;
+
+  }
+}
+
+.RRT__showmore-label {
+  position: relative;
+  z-index: 1;
+  color: $white;
+  width: 36px;
+  text-align: center;
+  height: 36px;
+  line-height: 24px;
+}
+
+.RRT__showmore--selected {
+  box-shadow: 0 16px 26px -10px rgba($primary, 0.56),
+  0 4px 25px 0px rgba(0, 0, 0, 0.12),
+  0 8px 10px -5px rgba($primary, 0.2);
+}
+
+.RRT__showmore-list {
+  position: absolute;
+  right: -1px;
+  top: 100%;
+  display: none;
+  min-width: $dropdown-min-width;
+  padding: $dropdown-padding-y 0;
+  margin: $dropdown-spacer 0 0; // override default ul
+  font-size: $font-size-base; // Redeclare because nesting can cause inheritance issues
+  color: $body-color;
+  text-align: left; // Ensures proper alignment if parent has it changed (e.g., modal footer)
+  list-style: none;
+  background-color: $dropdown-bg;
+  background-clip: padding-box;
+  border: $dropdown-border-width solid $dropdown-border-color;
+  @include border-radius($dropdown-border-radius);
+  box-shadow: $box-shadow-default;
+
+  .RRT__tab {
+    display: block;
+    width: 100%; // For `<button>`s
+    padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+    clear: both;
+    font-weight: $font-weight-normal;
+    color: $dropdown-link-color;
+    text-align: inherit; // For `<button>`s
+    white-space: nowrap; // prevent links from randomly breaking onto new lines
+    background-color: transparent; // For `<button>`s
+    border: 0; // For `<button>`s
+    margin: 0;
+
+    &:hover,
+    &.RRT__tab--selected {
+      color: $dropdown-link-hover-color !important;
+      text-decoration: none;
+      background: $dropdown-link-hover-bg;
+    }
+  }
+}
+
+.RRT__showmore-list--opened {
+  display: block;
+
+  .RRT__tab--selected {
+    color: $primary;
+  }
+}
+
+// Inkbar
+
+.RRT__inkbar-wrapper {
+  width: 100%;
+}
+
+.RRT__inkbar {
+  position: relative;
+  bottom: 0;
+  height: 3px;
+  margin-top: -3px;
+  background-color: $primary;
+  @include border-radius(15px);
+  transition: all 0.5s cubic-bezier(0.29, 1.42, 0.79, 1) 0s;
+  z-index: 2;
+}
+
+.card-tabs {
+  .card-header {
+    padding: 0 1.25rem;
+
+    &.RRT__tabs {
+      cursor: pointer;
+      font-weight: normal;
+
+      .RRT__tab {
+        text-transform: none;
+        line-height: 1.3;
+      }
+    }
+  }
+
+  .RRT__inkbar-wrapper {
+    width: calc(100% - 1.5rem) !important;
+    margin-left: 1.25rem;
+  }
+
+  .RRT__panel {
+    padding: $spacer;
+    margin: 0;
+  }
+
+  &.text-white {
+
+    .RRT__tab {
+      color: rgba(255, 255, 255, .6);
+
+      &:hover {
+        color: $white;
+      }
+    }
+
+    .RRT__tab--selected {
+      color: $white;
+    }
+
+    .RRT__inkbar {
+      background: tint-color($primary, 40%);
+    }
+  }
+}
+
+.card-tabs-animated {
+  .RRT__container > .RRT__tabs {
+    background: transparent;
+    position: relative;
+    z-index: 7;
+
+    &.card-header {
+      border-bottom: 0;
+      height: auto;
+      padding: $layout-spacer-x $layout-spacer-x math.div($layout-spacer-x, 3);
+    }
+  }
+
+  .RRT__inkbar-wrapper {
+    position: absolute;
+    top: $layout-spacer-x;
+    z-index: 5;
+  }
+
+  .RRT__tab {
+    padding: $nav-link-padding-y ($nav-link-padding-x * 1.2);
+  }
+
+  .RRT__tab--selected {
+    color: $white;
+  }
+
+  .RRT__inkbar {
+    height: 35px;
+    margin-top: 0;
+    @include border-radius($border-radius);
+    box-shadow: 0 16px 26px -10px rgba($primary, 0.56),
+    0 4px 25px 0px rgba(0, 0, 0, 0.12),
+    0 8px 10px -5px rgba($primary, 0.2);
+  }
+}
+
+.card-tabs-animated-inner {
+  .RRT__tabs {
+    padding: 0 5%;
+  }
+
+  .RRT__inkbar-wrapper {
+    left: 5%;
+    width: 90%;
+    height: 36px;
+    top: 14px;
+  }
+
+  .RRT__inkbar {
+    height: 36px;
+  }
+}
+
+.body-tabs {
+  border-bottom: $gray-300 solid 2px;
+
+  & > .RRT__tab {
+    padding: math.div($layout-spacer-x, 1.5) math.div($layout-spacer-x, 1.2);
+    font-weight: normal;
+    font-size: $font-size-base;
+  }
+
+  &.body-tabs-alt {
+    & > .RRT__tab {
+      padding: math.div($layout-spacer-x, 1.1) math.div($layout-spacer-x, 3);
+      font-weight: normal;
+      font-size: 0.86rem;
+      width: 33%;
+      text-align: center;
+    }
+
+    .RRT__inkbar {
+      height: 2px;
+      margin-top: -2px;
+    }
+  }
+}
+
+.popover,
+.dropdown-menu {
+  .RRT__panel {
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    &::after,
+    &::before {
+      width: 100%;
+      bottom: auto;
+      top: 0;
+      left: 0;
+      height: 20px;
+      position: absolute;
+      z-index: 10;
+      content: '';
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=0);
+    }
+
+    &::after {
+      bottom: 0;
+      top: auto;
+
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 80%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff', GradientType=0);
+    }
+  }
+}
+
+// Tabs alternate
+
+.tabs-lg-alternate {
+  &.card-header {
+    padding: 0;
+    height: auto;
+
+    .widget-number {
+      font-size: $h2-font-size;
+      font-weight: 300;
+    }
+
+    .tab-subheading {
+      padding: 5px 0 0;
+      opacity: .6;
+      transition: all .2s;
+    }
+
+    & > .nav {
+      margin: 0;
+
+      .nav-link {
+        padding: $layout-spacer-x 0;
+        border-right: $gray-200 solid 1px;
+        background: $gray-100;
+
+        &:hover {
+          background: $white;
+          .tab-subheading {
+            color: $black;
+            opacity: .9;
+          }
+        }
+
+        &::before {
+          background: $white;
+          border-radius: 0;
+        }
+
+        &.active {
+          background: $white;
+
+          .tab-subheading {
+            color: $black;
+            opacity: .9;
+          }
+        }
+      }
+
+      .nav-item:last-child {
+        .nav-link {
+          border-right: 0;
+        }
+      }
+    }
+  }
+}

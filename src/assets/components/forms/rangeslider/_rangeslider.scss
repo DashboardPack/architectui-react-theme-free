@@ -1,0 +1,428 @@
+@import 'tooltip';
+
+.rc-slider {
+  position: relative;
+  height: 20px;
+  padding: 8px 0 0;
+  width: 100%;
+  @include border-radius($border-radius);
+  -ms-touch-action: none;
+  touch-action: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.rc-slider-rail {
+  position: absolute;
+  width: 100%;
+  background-color: $gray-200;
+  height: 4px;
+  @include border-radius($border-radius);
+}
+
+.rc-slider-track {
+  position: absolute;
+  left: 0;
+  height: 4px;
+  @include border-radius($border-radius);
+  background-color: $primary;
+}
+
+.rc-slider-handle {
+  position: absolute;
+  margin-left: -8px;
+  margin-top: -6px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  cursor: -webkit-grab;
+  cursor: grab;
+  border-radius: 50%;
+  border: solid 2px $primary;
+  background-color: $white;
+  -ms-touch-action: pan-x;
+  touch-action: pan-x;
+  transition: box-shadow 200ms;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus,
+  &:active,
+  &:hover {
+    border-color: shade-color($primary, 15%);
+    box-shadow: 0 0.46875rem 2.1875rem rgba($primary, .8),
+    0 0.125rem 0.5875rem rgba($primary, .9);
+  }
+
+  &:active {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+  }
+}
+
+.rc-slider-mark {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 100%;
+  font-size: 12px;
+}
+
+.rc-slider-mark-text {
+  position: absolute;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  color: $gray-600;
+}
+
+.rc-slider-mark-text-active {
+  color: $gray-800;
+}
+
+.rc-slider-step {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+}
+
+.rc-slider-dot {
+  position: absolute;
+  bottom: -2px;
+  margin-left: -4px;
+  width: 8px;
+  height: 8px;
+  border: 2px solid $gray-300;
+  background-color: $white;
+  cursor: pointer;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.rc-slider-dot-active {
+  border-color: $primary;
+}
+
+.rc-slider-disabled {
+  background-color: $gray-200;
+}
+
+.rc-slider-disabled .rc-slider-track {
+  background-color: $gray-400;
+}
+
+.rc-slider-disabled .rc-slider-handle,
+.rc-slider-disabled .rc-slider-dot {
+  border-color: $gray-400;
+  box-shadow: none;
+  background-color: $white;
+  cursor: not-allowed;
+}
+
+.rc-slider-disabled .rc-slider-mark-text,
+.rc-slider-disabled .rc-slider-dot {
+  cursor: not-allowed !important;
+}
+
+.rc-slider-vertical {
+  width: 14px;
+  height: 100%;
+  padding: 0 5px;
+}
+
+.rc-slider-vertical .rc-slider-rail {
+  height: 100%;
+  width: 4px;
+}
+
+.rc-slider-vertical .rc-slider-track {
+  left: 5px;
+  bottom: 0;
+  width: 4px;
+}
+
+.rc-slider-vertical .rc-slider-handle {
+  margin-left: -6px;
+  margin-bottom: -7px;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+
+.rc-slider-vertical .rc-slider-mark {
+  top: 0;
+  left: 18px;
+  height: 100%;
+}
+
+.rc-slider-vertical .rc-slider-step {
+  height: 100%;
+  width: 4px;
+}
+
+.rc-slider-vertical .rc-slider-dot {
+  left: 2px;
+  margin-bottom: -4px;
+}
+
+.rc-slider-vertical .rc-slider-dot:first-child {
+  margin-bottom: -4px;
+}
+
+.rc-slider-vertical .rc-slider-dot:last-child {
+  margin-bottom: -4px;
+}
+
+.rc-slider-tooltip-zoom-down-enter,
+.rc-slider-tooltip-zoom-down-appear {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  animation-play-state: paused;
+}
+
+.rc-slider-tooltip-zoom-down-leave {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  display: block !important;
+  animation-play-state: paused;
+}
+
+.rc-slider-tooltip-zoom-down-enter.rc-slider-tooltip-zoom-down-enter-active,
+.rc-slider-tooltip-zoom-down-appear.rc-slider-tooltip-zoom-down-appear-active {
+  animation-name: rcSliderTooltipZoomDownIn;
+  animation-play-state: running;
+}
+
+.rc-slider-tooltip-zoom-down-leave.rc-slider-tooltip-zoom-down-leave-active {
+  animation-name: rcSliderTooltipZoomDownOut;
+  animation-play-state: running;
+}
+
+.rc-slider-tooltip-zoom-down-enter,
+.rc-slider-tooltip-zoom-down-appear {
+  transform: scale(0, 0);
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.rc-slider-tooltip-zoom-down-leave {
+  animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+}
+
+@keyframes rcSliderTooltipZoomDownIn {
+  0% {
+    opacity: 0;
+    transform-origin: 50% 100%;
+    transform: scale(0, 0);
+  }
+  100% {
+    transform-origin: 50% 100%;
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes rcSliderTooltipZoomDownOut {
+  0% {
+    transform-origin: 50% 100%;
+    transform: scale(1, 1);
+  }
+  100% {
+    opacity: 0;
+    transform-origin: 50% 100%;
+    transform: scale(0, 0);
+  }
+}
+
+.rc-slider-tooltip {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  visibility: visible;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.rc-slider-tooltip-hidden {
+  display: none;
+}
+
+.rc-slider-tooltip-placement-top {
+  padding: 4px 0 8px 0;
+}
+
+.rc-slider-tooltip-inner {
+  padding: 0 8px;
+  min-width: 28px;
+  height: 28px;
+  line-height: 28px;
+  color: $white;
+  text-align: center;
+  text-decoration: none;
+  background-color: $gray-900;
+  @include border-radius($border-radius);
+  box-shadow: $box-shadow-default;
+  font-weight: bold;
+}
+
+.rc-slider-tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+
+.rc-slider-tooltip-placement-top .rc-slider-tooltip-arrow {
+  bottom: 4px;
+  left: 50%;
+  margin-left: -4px;
+  border-width: 4px 4px 0;
+  border-top-color: $gray-900;
+}
+
+// Colors
+
+@each $color, $value in $theme-colors {
+  .rc-slider-#{$color} {
+    .rc-slider-track {
+      background-color: $value;
+    }
+
+    .rc-slider-handle {
+      border-color: $value;
+      background-color: $white;
+
+      &:focus,
+      &:active,
+      &:hover {
+        border-color: shade-color($value, 15%);
+        box-shadow: 0 0.46875rem 2.1875rem rgba($value, .8),
+        0 0.125rem 0.5875rem rgba($value, .9);
+      }
+    }
+
+    .rc-slider-dot-active {
+      border-color: $value;
+    }
+  }
+}
+
+// Alternate Styles
+
+.rc-slider-line {
+  .rc-slider-handle {
+    @include border-radius(0);
+    border-width: 0 3px 0 0;
+    margin-left: -8px;
+    width: 10px;
+    background-color: transparent;
+    box-shadow: 0 0 0 transparent !important;
+  }
+}
+
+.rc-slider-square {
+  .rc-slider-handle {
+    @include border-radius(3px);
+    border-widtH: 1px;
+
+    &:before {
+      position: absolute;
+      height: 8px;
+      width: 4px;
+      border: $gray-500 solid 1px;
+      border-width: 0 1px;
+      display: block;
+      content: '';
+      top: 50%;
+      left: 50%;
+      margin: -4px -2px;
+    }
+  }
+}
+
+// Sizing
+
+.rc-slider-lg {
+  &.rc-slider {
+    height: 20px;
+    padding: 8px 0 0;
+  }
+
+  .rc-slider-rail {
+    height: 4px;
+  }
+
+  .rc-slider-track {
+    height: 4px;
+  }
+
+  .rc-slider-handle {
+    margin-left: -10px;
+    margin-top: -8px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &.rc-slider-line {
+    .rc-slider-handle {
+      margin-left: -8px;
+      width: 10px;
+    }
+  }
+
+  &.rc-slider-square {
+    .rc-slider-handle {
+      &:before {
+        height: 10px;
+        width: 6px;
+        margin: -5px -3px;
+      }
+    }
+  }
+
+}
+
+.rc-slider-sm {
+  &.rc-slider {
+    height: 20px;
+    padding: 8px 0 0;
+  }
+
+  .rc-slider-rail {
+    height: 4px;
+  }
+
+  .rc-slider-track {
+    height: 4px;
+  }
+
+  .rc-slider-handle {
+    margin-left: -6px;
+    margin-top: -4px;
+    width: 12px;
+    height: 12px;
+  }
+
+  &.rc-slider-line {
+    .rc-slider-handle {
+      margin-left: -8px;
+      width: 10px;
+    }
+  }
+
+  &.rc-slider-square {
+    .rc-slider-handle {
+      &:before {
+        height: 6px;
+        margin: -3px 0 0 -1px;
+        border: 0;
+        width: 2px;
+        background: $gray-500;
+      }
+    }
+  }
+}
+

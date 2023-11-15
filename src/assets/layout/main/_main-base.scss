@@ -1,0 +1,91 @@
+// Main Base
+
+@use "sass:math";
+
+.app-main {
+  z-index: 8;
+  position: relative;
+  display: flex;
+
+  .app-main__outer {
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+    z-index: 12;
+    width: 1px;
+  }
+
+  .app-main__inner {
+    padding: $grid-gutter-width $grid-gutter-width 0;
+    flex: 1;
+
+    & > .RRT__container {
+      & > .RRT__panel {
+        margin-top: $grid-gutter-width;
+      }
+
+      & > .body-tabs-layout {
+        .RRT__tab {
+          margin-top: (-(math.div($layout-spacer-x, 3)));
+        }
+      }
+    }
+  }
+}
+
+// Alternate Section Tabs
+
+.body-tabs-shadow-btn {
+
+  .app-main__inner {
+    & > .RRT__container {
+      & > .RRT__panel {
+        margin-top: math.div($grid-gutter-width, 1.5);
+      }
+
+      .body-tabs-layout {
+        border: 0;
+        background: transparent;
+        position: relative;
+        z-index: 7;
+
+        .RRT__showmore {
+          margin-top: -13px;
+        }
+
+        .RRT__tab {
+          margin-top: $nav-link-padding-y;
+        }
+
+        .RRT__tab--selected {
+          color: $white;
+        }
+
+        & + .RRT__inkbar-wrapper {
+          position: absolute;
+          top: ($nav-link-padding-y * 2.2);
+          z-index: 5;
+
+          .RRT__inkbar {
+            height: 35px;
+            margin-top: 0;
+            @include border-radius($border-radius);
+            box-shadow:
+                    0 16px 26px -10px rgba($primary, 0.56),
+                    0 4px 25px 0px rgba(0, 0, 0, 0.12),
+                    0 8px 10px -5px rgba($primary, 0.2);
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+// Themes
+
+@import "themes/main-white";
+@import "themes/main-gray";
+//@import "themes/main-inverted-blue";
+//@import "themes/main-inverted-black";

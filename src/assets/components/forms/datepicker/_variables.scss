@@ -1,0 +1,21 @@
+// Datepicker
+
+$datepicker__background-color: $white;
+$datepicker__border-color: $gray-300;
+$datepicker__highlighted-color: map-get($theme-colors, 'primary');
+$datepicker__holidays-color: $orange;
+$datepicker__muted-color: $gray-400;
+$datepicker__selected-color: map-get($theme-colors, 'primary');
+$datepicker__text-color: $gray-700;
+$datepicker__header-color: $gray-800;
+$datepicker__navigation-disabled-color: shade-color($datepicker__muted-color, 5%)
+;
+
+$datepicker__border-radius: $border-radius;
+$datepicker__day-margin: 0.166rem;
+$datepicker__font-size: $font-size-base;
+$datepicker__font-family: $font-family-base;
+$datepicker__item-size: 2rem;
+$datepicker__margin: 0.5rem;
+$datepicker__navigation-size: 0.35rem;
+$datepicker__triangle-size: 6px;

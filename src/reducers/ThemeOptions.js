@@ -104,16 +104,16 @@ export const setBackgroundImageOpacity = backgroundImageOpacity => ({
     backgroundImageOpacity
 });
 
-export const setBackgroundImage = backgroundImage => ({
+export const setBackgroundImage = backgroundImage  => ({
     type: SET_BACKGROUND_IMAGE,
     backgroundImage
 });
 
 export default function reducer(state = {
-    backgroundColor: 'bg-royal sidebar-text-light',
-    headerBackgroundColor: 'bg-strong-bliss header-text-light',
+    backgroundColor: '',
+    headerBackgroundColor: '',
     enableMobileMenuSmall: '',
-    enableBackgroundImage: true,
+    enableBackgroundImage: false,
     enableClosedSidebar: false,
     enableFixedHeader: true,
     enableHeaderShadow: true,
@@ -125,7 +125,7 @@ export default function reducer(state = {
     backgroundImageOpacity: 'opacity-06',
     enablePageTitleIcon: true,
     enablePageTitleSubheading: true,
-    enablePageTabsAlt: false,
+    enablePageTabsAlt: true,
 }, action) {
     switch (action.type) {
         case SET_ENABLE_BACKGROUND_IMAGE:
@@ -229,6 +229,7 @@ export default function reducer(state = {
                 ...state,
                 backgroundImageOpacity: action.backgroundImageOpacity
             };
+            default:
     }
     return state;
 }

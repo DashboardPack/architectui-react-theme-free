@@ -1,17 +1,30 @@
-### Changelog
+# Changelog
 
-## Version 1.0.0 (5 March 2019)
+## [2.1.0] - 2022-08-19
 
-## Version 1.1.0 (6 April 2021)
+### Changed
+- Updated Libraries
 
-## Version 1.1.0 (17 May 2021)
+## [2.0.0] - 2022-03-03
 
-## Version 2.0.0 (03 Mar 2022)
+### Changed
 - Updated to React 17
 - Added react-app-rewired
-- updated to Bootstrap 5
-- updated to Reactstrap 9
+- Updated to Bootstrap 5
+- Updated to Reactstrap 9
 - Updated all Libraries
 
-## Version 2.1.0 (19 Aug 2022)
-- Library Update
+## [1.1.0] - 2021-05-17
+
+### Changed
+- Updated Libraries
+
+## [1.1.0] - 2021-04-06
+
+### Changed
+- Updated Libraries
+
+## [1.0.0] - 2019-03-05
+
+### Added
+- Initial Release

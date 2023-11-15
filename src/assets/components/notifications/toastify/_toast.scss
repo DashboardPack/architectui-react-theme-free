@@ -1,0 +1,52 @@
+@use "sass:math";
+
+.#{$rt-namespace}__toast {
+    position: relative;
+    min-height: $rt-toast-min-height;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    padding: $spacer;
+    @include border-radius($border-radius);
+    box-shadow: $box-shadow-default;
+    display: flex;
+    justify-content: space-between;
+    max-height: $rt-toast-max-height;
+    overflow: hidden;
+    font-family: $rt-font-family;
+    cursor: pointer;
+    direction: ltr;
+    &--rtl {
+        direction: rtl;
+    }
+    &--default {
+        background: $rt-color-default;
+        color: $gray-700;
+        @include box-shadow-architect($primary);
+    }
+    &--info {
+        background: $rt-color-info;
+        @include box-shadow-architect($info);
+    }
+    &--success {
+        background: $rt-color-success;
+        @include box-shadow-architect($success);
+    }
+    &--warning {
+        background: $rt-color-warning;
+        @include box-shadow-architect($warning);
+    }
+    &--error {
+        background: $rt-color-error;
+        @include box-shadow-architect($danger);
+    }
+    &-body {
+        margin: auto 0;
+        padding: 0 0 math.div($spacer, 2.5);
+    }
+}
+
+@media #{$rt-mobile} {
+  .#{$rt-namespace}__toast{
+    margin-bottom: 0;  
+  }
+}

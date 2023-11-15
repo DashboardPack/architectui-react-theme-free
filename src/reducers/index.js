@@ -1,5 +1,7 @@
-import ThemeOptions from './ThemeOptions';
+import ThemeOptions from "./ThemeOptions";
 
-export default {
-    ThemeOptions
+const reducer = {
+  ThemeOptions,
 };
+
+export default reducer;

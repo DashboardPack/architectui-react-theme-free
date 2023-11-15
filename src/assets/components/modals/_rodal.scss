@@ -1,0 +1,288 @@
+/* -- container -- */
+.rodal,
+.rodal-mask {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+.rodal {
+  position: fixed;
+}
+
+/* -- mask -- */
+.rodal-mask {
+  position: absolute;
+  background-color: $modal-backdrop-bg;
+  opacity: $modal-backdrop-opacity;
+}
+
+/* -- dialog -- */
+.rodal-dialog {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 101;
+  background: $white;
+  box-shadow: $box-shadow-lg-default;
+  @include border-radius($border-radius);
+  height: auto !important;
+}
+
+.rodal-dialog:focus {
+  outline: none;
+}
+
+/* -- close button -- */
+.rodal-close {
+  position: absolute;
+  cursor: pointer;
+  top: 16px;
+  right: 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.rodal-close:before,
+.rodal-close:after {
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  margin-top: -1px;
+  background: $gray-500;
+  border-radius: 100%;
+  transition: background .2s;
+}
+
+.rodal-close:before {
+  transform: rotate(45deg);
+}
+
+.rodal-close:after {
+  transform: rotate(-45deg);
+}
+
+.rodal-close:hover:before,
+.rodal-close:hover:after {
+  background: $gray-800;
+}
+
+/* -- fade -- */
+
+@keyframes rodal-fade-enter {
+  from {
+    opacity: 0;
+  }
+}
+
+.rodal-fade-enter {
+  animation: rodal-fade-enter both ease-in;
+}
+
+@keyframes rodal-fade-leave {
+  to {
+    opacity: 0
+  }
+}
+
+.rodal-fade-leave {
+  animation: rodal-fade-leave both ease-out;
+}
+
+@keyframes rodal-zoom-enter {
+  from {
+    transform: scale3d(.3, .3, .3);
+  }
+}
+
+.rodal-zoom-enter {
+  animation: rodal-zoom-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+@keyframes rodal-zoom-leave {
+  to {
+    transform: scale3d(.3, .3, .3);
+  }
+}
+
+.rodal-zoom-leave {
+  animation: rodal-zoom-leave both;
+}
+
+@keyframes rodal-slideDown-enter {
+  from {
+    transform: translate3d(0, -100px, 0);
+  }
+}
+
+.rodal-slideDown-enter {
+  animation: rodal-slideDown-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+@keyframes rodal-slideDown-leave {
+  to {
+    transform: translate3d(0, -100px, 0);
+  }
+}
+
+.rodal-slideDown-leave {
+  animation: rodal-slideDown-leave both;
+}
+
+/* -- slideLeft -- */
+
+@keyframes rodal-slideLeft-enter {
+  from {
+    transform: translate3d(-150px, 0, 0);
+  }
+}
+
+.rodal-slideLeft-enter {
+  animation: rodal-slideLeft-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+@keyframes rodal-slideLeft-leave {
+  to {
+    transform: translate3d(-150px, 0, 0);
+  }
+}
+
+.rodal-slideLeft-leave {
+  animation: rodal-slideLeft-leave both;
+}
+
+/* -- slideRight -- */
+
+@keyframes rodal-slideRight-enter {
+  from {
+    transform: translate3d(150px, 0, 0);
+  }
+}
+
+.rodal-slideRight-enter {
+  animation: rodal-slideRight-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+@keyframes rodal-slideRight-leave {
+  to {
+    transform: translate3d(150px, 0, 0);
+  }
+}
+
+.rodal-slideRight-leave {
+  animation: rodal-slideRight-leave both;
+}
+
+/* -- slideUp -- */
+
+@keyframes rodal-slideUp-enter {
+  from {
+    transform: translate3d(0, 100px, 0);
+  }
+}
+
+.rodal-slideUp-enter {
+  animation: rodal-slideUp-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+@keyframes rodal-slideUp-leave {
+  to {
+    transform: translate3d(0, 100px, 0);
+  }
+}
+
+.rodal-slideUp-leave {
+  animation: rodal-slideUp-leave both;
+}
+
+/* -- flip -- */
+
+@keyframes rodal-flip-enter {
+  from {
+    transform: perspective(400px) rotate3d(1, 0, 0, 60deg);
+  }
+  70% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -15deg);
+  }
+  to {
+    transform: perspective(400px);
+  }
+}
+
+.rodal-flip-enter {
+  animation: rodal-flip-enter both ease-in;
+  backface-visibility: visible !important;
+}
+
+@keyframes rodal-flip-leave {
+  from {
+    transform: perspective(400px);
+  }
+  30% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -15deg);
+  }
+  to {
+    transform: perspective(400px) rotate3d(1, 0, 0, 45deg);
+  }
+}
+
+.rodal-flip-leave {
+  animation: rodal-flip-leave both;
+  backface-visibility: visible !important;
+}
+
+/* -- rotate -- */
+
+@keyframes rodal-rotate-enter {
+  from {
+    transform: rotate3d(0, 0, 1, -180deg) scale3d(.3, .3, .3);
+  }
+}
+
+.rodal-rotate-enter {
+  animation: rodal-rotate-enter both;
+  transform-origin: center;
+}
+
+@keyframes rodal-rotate-leave {
+  to {
+    transform: rotate3d(0, 0, 1, 180deg) scale3d(.3, .3, .3);
+  }
+}
+
+.rodal-rotate-leave {
+  animation: rodal-rotate-leave both;
+  transform-origin: center;
+}
+
+/* -- door -- */
+
+@keyframes rodal-door-enter {
+  from {
+    transform: scale3d(0, 1, 1);
+  }
+}
+
+.rodal-door-enter {
+  animation: rodal-door-enter both cubic-bezier(0.4, 0, 0, 1.5);
+}
+
+@keyframes rodal-door-leave {
+  60% {
+    transform: scale3d(.01, 1, 1);
+  }
+  to {
+    transform: scale3d(0, 1, .1);
+  }
+}
+
+.rodal-door-leave {
+  animation: rodal-door-leave both;
+}

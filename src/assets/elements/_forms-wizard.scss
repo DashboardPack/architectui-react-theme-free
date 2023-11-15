@@ -1,0 +1,228 @@
+// Wizard Multi Step
+
+@use "sass:math";
+
+.forms-wizard {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  @include border-radius($border-radius);
+
+  li {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    font-size: math.div($font-size-lg, 1.1);
+    padding: math.div($layout-spacer-x, 1.5) 0;
+    color: $gray-500;
+    position: relative;
+
+    &::after,
+    &::before {
+      position: absolute;
+      height: 4px;
+      top: 50%;
+      margin-top: -(math.div($layout-spacer-x, 1.5));
+      width: 50%;
+      content: '';
+      background: $gray-300;
+      z-index: 5;
+      transition: all .2s;
+    }
+
+    &::after {
+      left: 50%;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &:first-child {
+      &::before {
+        @include border-start-radius(20px);
+      }
+    }
+
+    &:last-child {
+      &::after {
+        @include border-end-radius(20px);
+      }
+    }
+
+    em {
+      font-style: normal;
+      font-size: $h4-font-size;
+      background: $gray-400;
+      color: $white;
+      text-align: center;
+      padding: 0;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      @include border-radius(50px);
+      display: block;
+      margin: 0 auto 0.5rem;
+      position: relative;
+      z-index: 7;
+      transition: all .2s;
+    }
+
+    &.form-wizard-step-doing {
+      color: $gray-700;
+      em {
+        background: $primary;
+      }
+
+      &::before {
+        background: $primary;
+      }
+    }
+
+    &.form-wizard-step-done {
+      em {
+        font-family: 'Linearicons-Free';
+        @extend .lnr-checkmark-circle !optional;
+        background: $success;
+        overflow: hidden;
+        &::before {
+          width: 42px;
+          height: 42px;
+          font-size: 1.2rem;
+          line-height: 40px;
+          text-align: center;
+          display: block;
+        }
+      }
+
+      &::after,
+      &::before {
+        background: $success;
+      }
+    }
+
+    &:hover {
+      color: $gray-600;
+    }
+  }
+}
+
+
+// Form Wizard Alternate
+
+.forms-wizard-alt {
+  .forms-wizard {
+    li {
+      font-size: $font-size-base;
+
+      em {
+        width: 14px;
+        height: 14px;
+        line-height: 14px;
+        text-indent: -999rem;
+        border: $white solid 2px;
+        margin: -7px auto 0;
+
+      }
+    }
+  }
+}
+
+.forms-wizard-vertical {
+  .forms-wizard {
+    display: block;
+    width: 30%;
+    float: left;
+    padding: 0 $layout-spacer-x $layout-spacer-x 0;
+
+    li {
+      text-align: left;
+      display: flex;
+      align-items: center;
+      align-content: flex-start;
+      padding: math.div($layout-spacer-x, 2);
+      margin-bottom: math.div($layout-spacer-x, 3);
+      @include border-radius($border-radius-lg);
+      transition: all .2s;
+
+      &::before,
+      &::after {
+        display: none;
+      }
+
+      em {
+        margin: 0 math.div($layout-spacer-x, 2) 0 0;
+      }
+
+      &:hover {
+        background: $gray-200;
+      }
+
+      &.form-wizard-step-doing {
+        background: $primary;
+        color: $white;
+
+        em {
+          background: rgba(255,255,255,.2);
+        }
+      }
+    }
+  }
+
+  .form-wizard-content {
+    width: 70%;
+    overflow: auto;
+  }
+}
+@media screen and (min-width: 360px) and (max-width: 812px) {
+  .forms-wizard-vertical {
+    .forms-wizard {
+      display: block;
+      width: 50%;
+      float: left;
+      padding: 0 $layout-spacer-x $layout-spacer-x 0;
+  
+      li {
+        text-align: left;
+        display: flex;
+        align-items: center;
+        align-content: flex-start;
+        padding: math.div($layout-spacer-x, 2);
+        margin-bottom: math.div($layout-spacer-x, 3);
+        @include border-radius($border-radius-lg);
+        transition: all .2s;
+  
+        &::before,
+        &::after {
+          display: none;
+        }
+  
+        em {
+          margin: 0 math.div($layout-spacer-x, 2) 0 0;
+        }
+  
+        &:hover {
+          background: $gray-200;
+        }
+  
+        &.form-wizard-step-doing {
+          background: $primary;
+          color: $white;
+  
+          em {
+            background: rgba(255,255,255,.2);
+          }
+        }
+      }
+    }
+  
+    .form-wizard-content {
+      width: 50%;
+      overflow: auto;
+    }
+  }
+}

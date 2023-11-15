@@ -1,0 +1,72 @@
+// Sidebar Light
+
+.app-sidebar {
+  &.sidebar-text-dark {
+    border-right: 0 !important;
+
+    .app-sidebar__heading {
+      color: rgba(0, 0, 0, .6);
+
+      &::before {
+        background: rgba(0, 0, 0, 0.5) !important;
+      }
+    }
+
+    .metismenu {
+      .metismenu-container {
+        .metismenu-link {
+          color: rgba(0, 0, 0, .7);
+
+          &:hover {
+            color: rgba(0, 0, 0, 1);
+            background: rgba(0, 0, 0, .1);
+          }
+
+          &.active {
+            background: rgba(0, 0, 0, .1);
+          }
+        }
+
+        &.metismenu-container {
+          &.visible {
+            .metismenu-item > .metismenu-link {
+              color: rgba(0, 0, 0, .6);
+
+              &.active {
+                background: rgba(0, 0, 0, .1);
+              }
+            }
+
+            &::before {
+              background: rgba(0, 0, 0, .3);
+            }
+          }
+
+          i.metismenu-state-icon,
+          i.metismenu-icon {
+            opacity: .5;
+          }
+        }
+      }
+    }
+
+    .ps__thumb-y {
+      background: rgba(0, 0, 0, .3);
+    }
+
+    .ps__rail-y:hover {
+      .ps__thumb-y {
+        background: rgba(0, 0, 0, .2);
+      }
+    }
+
+    .app-header__logo {
+
+      .hamburger-inner,
+      .hamburger-inner::before,
+      .hamburger-inner::after {
+        background-color: rgba(0, 0, 0, .8);
+      }
+    }
+  }
+}
