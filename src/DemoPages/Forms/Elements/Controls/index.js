@@ -1,50 +1,42 @@
-import React, {Fragment} from 'react'
+import React, { Fragment } from "react";
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-import Tabs from 'react-responsive-tabs';
+import PageTitle from "../../../../Layout/AppMain/PageTitle";
 
-import PageTitle from '../../../../Layout/AppMain/PageTitle';
+import Tabs, { TabPane } from "rc-tabs";
+import TabContent from "rc-tabs/lib/SwipeableTabContent";
+import ScrollableInkTabBar from "rc-tabs/lib/ScrollableInkTabBar";
 
 // Examples
 
-import FormsDefault from './Examples/FormBasic';
-import InputGroups from './Examples/InputGroup/InputGroups';
-
-const tabsContent = [
-    {
-        title: 'Basic',
-        content: <FormsDefault/>
-    },
-    {
-        title: 'Input Groups',
-        content: <InputGroups/>
-    },
-];
-
-function getTabs() {
-    return tabsContent.map((tab, index) => ({
-        title: tab.title,
-        getContent: () => tab.content,
-        key: index,
-    }));
-}
+import FormsDefault from "./Examples/FormBasic";
+import InputGroups from "./Examples/InputGroup/InputGroups";
 
 class FormElementsControls extends React.Component {
-
-    render() {
-        return (
-            <Fragment>
-                <PageTitle
-                    heading="Form Controls"
-                    subheading="Wide selection of forms controls, using the Bootstrap 5 code base, but built with React."
-                    icon="pe-7s-display1 icon-gradient bg-premium-dark"
-                />
-                <Tabs tabsWrapperClass="body-tabs body-tabs-layout" transform={false} showInkBar={true} items={getTabs()}/>
-            </Fragment>
-        )
-    }
+  render() {
+    return (
+      <Fragment>
+        <TransitionGroup>
+          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
+            timeout={1500} enter={false} exit={false}>
+            <div>  
+              <PageTitle heading="Form Controls"
+                subheading="Wide selection of forms controls, using the Bootstrap 5 code base, but built with React."
+                icon="pe-7s-display1 icon-gradient bg-premium-dark"/>
+              <Tabs defaultActiveKey="1" renderTabBar={() => <ScrollableInkTabBar />} renderTabContent={() => <TabContent />}>
+                <TabPane tab="Basic" key="1">
+                  <FormsDefault />
+                </TabPane>
+                <TabPane tab="Input Groups" key="2">
+                  <InputGroups />
+                </TabPane>
+              </Tabs>
+            </div>
+          </CSSTransition>
+        </TransitionGroup>
+      </Fragment>
+    );
+  }
 }
 
 export default FormElementsControls;
-
-
-

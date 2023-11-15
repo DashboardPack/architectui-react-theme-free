@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import {
   InputGroup,
   Dropdown,
   Input,
   Button,
   DropdownToggle,
- } from 'reactstrap';
+} from "reactstrap";
 
 export default class FormInputGroupButton extends React.Component {
   constructor(props) {
@@ -15,22 +15,21 @@ export default class FormInputGroupButton extends React.Component {
     this.toggleSplit = this.toggleSplit.bind(this);
     this.state = {
       dropdownOpen: false,
-      splitButtonOpen: false
+      splitButtonOpen: false,
     };
   }
 
   toggleDropDown() {
     this.setState({
-      dropdownOpen: !this.state.dropdownOpen
+      dropdownOpen: !this.state.dropdownOpen,
     });
   }
 
   toggleSplit() {
     this.setState({
-      splitButtonOpen: !this.state.splitButtonOpen
+      splitButtonOpen: !this.state.splitButtonOpen,
     });
   }
-
 
   render() {
     return (

@@ -1,0 +1,107 @@
+// Header Horizontal
+
+@use "sass:math";
+
+.app-horizontal-header-layout {
+  .app-header__logo {
+    width: auto;
+  }
+
+  .header-dots {
+    margin-left: 0.5rem;
+  }
+
+  .app-header-right {
+    .header-btn-lg:first-child {
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+.app-header-menu {
+  background: $white;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex: 1;
+  padding: 0 $layout-spacer-x;
+  height: $app-header-height;
+}
+
+.horizontal-nav-menu {
+  .metismenu-container {
+    margin: 0;
+    padding: 0;
+
+    &.visible {
+      visibility: hidden !important;
+    }
+
+    .metismenu-item {
+      display: inline-block;
+      position: relative;
+
+      .metismenu-link {
+        padding: math.div($layout-spacer-x, 2.5) $layout-spacer-x;
+        color: $gray-800;
+        font-weight: bold;
+        text-decoration: none;
+        display: block;
+        @include border-radius($border-radius);
+
+        .metismenu-icon {
+          margin-right: 0.5rem;
+          opacity: .6;
+        }
+      }
+
+      &:hover {
+        & > .metismenu-link {
+          color: $primary;
+          background: $dropdown-link-hover-bg;
+
+          .metismenu-icon {
+            opacity: 1;
+          }
+        }
+      }
+
+      .metismenu-container {
+        position: absolute;
+        background: $dropdown-border-color;
+        box-shadow: $box-shadow-default;
+        background: $dropdown-bg;
+        padding: $layout-spacer-x;
+        visibility: hidden !important;
+        z-index: 25;
+        min-width: 20rem;
+        @include border-bottom-radius($dropdown-border-radius);
+
+        .metismenu-item {
+          display: block;
+          position: relative;
+
+          .metismenu-link {
+            padding: math.div($layout-spacer-x, 4) ($layout-spacer-x);
+            display: block;
+            color: $gray-800;
+            white-space: nowrap;
+            font-weight: normal;
+          }
+        }
+      }
+
+      &:hover {
+        .metismenu-container {
+          visibility: visible !important;
+
+          .metismenu-item > .metismenu-link {
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

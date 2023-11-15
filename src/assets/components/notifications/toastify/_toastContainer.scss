@@ -1,0 +1,59 @@
+@use "sass:math";
+
+.#{$rt-namespace}__toast-container {
+    z-index: $rt-z-index;
+    position: fixed;
+    padding: 0;
+    width: $rt-toast-width;
+    box-sizing: border-box;
+    color: $white;
+    &--top-left {
+        top: $spacer;
+        left: $spacer;
+    }
+    &--top-center {
+        top: $spacer;
+        left: 50%;
+        margin-left: -(math.div($rt-toast-width, 2));
+    }
+    &--top-right {
+        top: $spacer;
+        right: $spacer;
+    }
+    &--bottom-left {
+        bottom: $spacer;
+        left: $spacer;
+    }
+    &--bottom-center {
+        bottom: $spacer;
+        left: 50%;
+        margin-left: -(math.div($rt-toast-width, 2));
+    }
+    &--bottom-right {
+        bottom: $spacer;
+        right: $spacer;
+    }
+}
+
+@media #{$rt-mobile} {
+    .#{$rt-namespace}__toast-container {
+        width: 100vw;
+        padding: 0;
+        left: 0;
+        margin: 0;
+        &--top-left,
+        &--top-center,
+        &--top-right {
+            top: 0;
+        }
+        &--bottom-left,
+        &--bottom-center,
+        &--bottom-right {
+            bottom: 0;
+        }
+        &--rtl{
+          right: 0;
+          left: initial;
+        }
+    }
+}

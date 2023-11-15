@@ -1,0 +1,140 @@
+// Navigation Menu Vertical
+
+.vertical-nav-menu {
+  position: relative;
+
+  &::after {
+    content: " ";
+    pointer-events: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+
+  .metismenu-container,
+  .metismenu-item {
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  .metismenu-container {
+    list-style: none;
+
+    &:before {
+      opacity: 0;
+      transition: opacity 300ms;
+    }
+
+    .metismenu-link {
+      transition: transform .2s, height 300ms, color 300ms, background-color 300ms;
+      display: block;
+      line-height: 2.5rem;
+      height: 2.5rem;
+      padding: 0 $layout-spacer-x 0 45px;
+      position: relative;
+      @include border-radius($border-radius);
+      color: $gray-800;
+      white-space: nowrap;
+
+      &:hover {
+        background: $dropdown-link-hover-bg;
+        text-decoration: none;
+        //transform: scale(1.02);
+
+        i.metismenu-icon {
+          opacity: .6;
+        }
+
+        i.metismenu-state-icon {
+          opacity: 1;
+        }
+      }
+
+      &.active {
+        color: $primary;
+        background: $dropdown-link-hover-bg;
+      }
+
+      &.has-active-child,
+      &.active {
+        font-weight: bold;
+      }
+    }
+
+    i.metismenu-state-icon,
+    i.metismenu-icon {
+      text-align: center;
+      width: 34px;
+      height: 34px;
+      line-height: 34px;
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      margin-top: -17px;
+      font-size: 1.5rem;
+      opacity: .3;
+      transition: color 300ms;
+    }
+
+    i.metismenu-state-icon {
+      transition: transform 300ms;
+      left: auto;
+      right: 0;
+
+      &.rotate-minus-90 {
+        transform: rotate(-180deg);
+      }
+    }
+
+    .metismenu-container {
+      transition: padding 300ms;
+
+      &.visible {
+        padding: .5em 0 0 2rem;
+
+        &:before {
+          content: '';
+          height: 100%;
+          opacity: 1;
+          width: 3px;
+          background: $dropdown-link-hover-bg;
+          position: absolute;
+          left: 20px;
+          top: 0;
+          @include border-radius(15px);
+        }
+
+        & > .metismenu-item > .metismenu-link {
+          height: 2.3em;
+          line-height: 2.3em;
+          color: $gray-600;
+          margin: 0 0 3px;
+
+          &:hover {
+            color: $primary;
+          }
+
+          .metismenu-icon {
+            display: none;
+          }
+
+          &.active {
+            color: $primary;
+            background: $dropdown-link-hover-bg;
+          }
+        }
+      }
+
+      .metismenu-item > .metismenu-link {
+        height: 0;
+        overflow: hidden;
+      }
+
+      .metismenu-link {
+        padding-left: 1em;
+      }
+    }
+  }
+}

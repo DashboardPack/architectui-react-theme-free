@@ -1,0 +1,20 @@
+// Layout Splitter
+
+.handle-bar {
+  background: transparent !important;
+  @include border-radius(30px);
+
+  &:active,
+  &:hover,
+  &.handle-bar_clone {
+    background-color: $gray-200 !important;
+  }
+
+  &.resize-not-allowed:hover {
+    background-color: $gray-200;
+  }
+
+  .handle-bar_drag {
+    border-color: $primary !important;
+  }
+}

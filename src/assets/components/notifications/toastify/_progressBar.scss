@@ -1,0 +1,33 @@
+@keyframes #{$rt-namespace}__trackProgress {
+  0%{
+    width: 96%;
+  }
+  100%{
+    width: 0;
+  }
+}
+
+.#{$rt-namespace}__progress-bar {
+  position: absolute;
+  bottom: 9%;
+  left: 2%;
+  width: 0;
+  height: 5px;
+  z-index: $rt-z-index;
+  animation: #{$rt-namespace}__trackProgress linear 1;
+  background-color: rgba(255,255,255,.3);
+  @include border-radius($border-radius);
+
+  &--rtl {
+    right: 0;
+    left: initial;
+  }
+  &--default{
+    background: $rt-color-progress-default;
+  }
+
+  &--info{}
+  &--success{}
+  &--warning{}
+  &--error{}
+}

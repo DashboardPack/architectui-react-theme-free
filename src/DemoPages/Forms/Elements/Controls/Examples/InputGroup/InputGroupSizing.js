@@ -1,5 +1,5 @@
-import React from 'react';
-import { InputGroup, Input, InputGroupText } from 'reactstrap';
+import React from "react";
+import { InputGroup, Input, InputGroupText } from "reactstrap";
 
 const FormInputGroupSizing = (props) => {
   return (

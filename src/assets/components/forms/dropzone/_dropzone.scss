@@ -1,0 +1,51 @@
+// Dropzone
+
+.dropzone-wrapper {
+  width: 100%;
+  border: $gray-400 dashed 2px;
+  @include border-radius($border-radius-lg);
+  display: flex;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  height: 230px;
+  transition: all .2s;
+
+  &:hover {
+    border-color: $primary;
+  }
+
+  & > div {
+    width: 100%;
+    height: 100%;
+    outline: none !important;
+    display: flex;
+    align-items: center;
+  }
+
+  &.dropzone-wrapper-lg {
+    height: 300px;
+  }
+
+  &.dropzone-wrapper-sm {
+    height: 150px;
+  }
+
+  input {
+    width: 100%;
+    height: 100%;
+  }
+
+  .dropzone-content {
+    margin: 0 auto;
+    color: $gray-600;
+  }
+
+  &[aria-disabled="true"] {
+    border-color: $gray-300;
+
+    .dropzone-content {
+      color: $gray-400;
+    }
+  }
+}

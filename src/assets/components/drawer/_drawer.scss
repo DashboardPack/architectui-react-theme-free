@@ -1,0 +1,46 @@
+// Drawers
+
+@use "sass:math";
+
+.drawer-content-wrapper {
+  background: $white;
+  position: relative;
+  padding: $layout-spacer-x;
+
+  .drawer-heading {
+    font-size: $font-size-sm;
+    color: $body-color;
+    margin: 0;
+    background: $gray-100;
+    padding: math.div($layout-spacer-x, 2) $layout-spacer-x;
+    border-bottom: $gray-300 solid 1px;
+    border-top: $gray-300 solid 1px;
+
+    &:first-child {
+      border-top: 0;
+    }
+  }
+
+  .drawer-section {
+    padding: $layout-spacer-x;
+  }
+
+  & > .app-sidebar__heading:first-child {
+    margin-top: 0;
+  }
+}
+
+.drawer-nav-btn {
+  @include border-radius(30px);
+  background: $white;
+  position: fixed;
+  right: math.div($layout-spacer-x, 2);
+  top: math.div($layout-spacer-x, 2);
+  padding: math.div($layout-spacer-x, 3);
+  box-shadow: $box-shadow-sm;
+  z-index: 20;
+
+  .hamburger {
+    margin-top: 4px;
+  }
+}

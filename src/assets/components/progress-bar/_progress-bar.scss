@@ -1,0 +1,88 @@
+.react-sweet-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.react-sweet-progress-symbol {
+  display: flex;
+  align-items: center;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  width: 35px;
+  height: 20px;
+  padding-left: 10px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 200;
+}
+
+.react-sweet-progress-symbol-absolute {
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.react-sweet-progress-symbol-absolute .react-sweet-progress-symbol {
+  padding: 0;
+  width: 100%;
+}
+
+.react-sweet-progress-circle-outer {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.react-sweet-progress-line {
+  width: 100%;
+  border-radius: 100px;
+  background-color: #efefef;
+  vertical-align: middle;
+}
+
+.react-sweet-progress-line-inner {
+  position: relative;
+  min-height: 10px;
+  border-radius: 100px;
+  transition: width 0.3s ease;
+}
+
+.react-sweet-progress-line-inner-status-active:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 10px;
+  background: #fff;
+  animation: active-anim 2s cubic-bezier(0.25, 1, 0.6, 1) infinite;
+  content: "";
+  opacity: 0;
+}
+
+@keyframes active-anim {
+  0% {
+    width: 0;
+    opacity: .1;
+  }
+  20% {
+    width: 0;
+    opacity: .5;
+  }
+  to {
+    width: 100%;
+    opacity: 0;
+  }
+}
+
+.react-sweet-progress-circle path {
+  stroke-linecap: round;
+}

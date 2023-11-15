@@ -1,5 +1,5 @@
-import React from 'react';
-import { Progress } from 'reactstrap';
+import React from "react";
+import { Progress } from "reactstrap";
 
 const ProgressStripedExample = (props) => {
   return (

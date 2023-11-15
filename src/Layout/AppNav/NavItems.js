@@ -1,8 +1,15 @@
+export const UpgradeNav = [
+    {
+        icon: 'pe-7s-diamond',
+        label: 'Upgrade TO PRO',
+        to: 'https://dashboardpack.com/theme-details/architectui-dashboard-react-pro/',
+    },
+];
 export const MainNav = [
     {
         icon: 'pe-7s-rocket',
         label: 'Dashboard Example',
-        to: '#/dashboards/basic',
+        to: '#/dashboards/crm',
     },
 ];
 export const ComponentsNav = [
@@ -106,7 +113,7 @@ export const WidgetsNav = [
     {
         icon: 'pe-7s-graph2',
         label: 'Dashboard Boxes',
-        to: '#/widgets/dashboard-boxes',
+        to: '#/widgets/chart-boxes-3',
     },
 ];
 export const ChartsNav = [

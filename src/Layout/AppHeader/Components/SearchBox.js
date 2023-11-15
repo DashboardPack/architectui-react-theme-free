@@ -1,32 +1,39 @@
-import React, {Fragment} from 'react';
+import React, { Fragment } from "react";
 
-import cx from 'classnames';
+import cx from "classnames";
 
 class SearchBox extends React.Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            activeSearch: false
-        };
-    }
+    this.state = {
+      activeSearch: false,
+    };
+  }
 
-    render() {
-        return (
-            <Fragment>
-                <div className={cx("search-wrapper", {
-                    'active': this.state.activeSearch
-                })}>
-                    <div className="input-holder">
-                        <input type="text" className="search-input"/>
-                        <button onClick={() => this.setState({activeSearch: !this.state.activeSearch})}
-                                className="search-icon"><span/></button>
-                    </div>
-                    <button onClick={() => this.setState({activeSearch: !this.state.activeSearch})} className="btn-close"/>
-                </div>
-            </Fragment>
-        )
-    }
+  render() {
+    return (
+      <Fragment>
+        <div className={cx("search-wrapper", {
+            active: this.state.activeSearch,
+          })}>
+          <div className="input-holder">
+            <input type="text" className="search-input" placeholder="Type to search"/>
+            <button onClick={() =>
+                this.setState({ activeSearch: !this.state.activeSearch })
+              }
+              className="search-icon">
+              <span />
+            </button>
+          </div>
+          <button onClick={() =>
+              this.setState({ activeSearch: !this.state.activeSearch })
+            }
+            className="btn-close"/>
+        </div>
+      </Fragment>
+    );
+  }
 }
 
 export default SearchBox;

@@ -1,0 +1,10 @@
+// Sticky Elements
+
+.scrollable-block {
+  margin-bottom: 50px;
+  overflow: hidden;
+  position: relative;
+  .sticky {
+    z-index: 2;
+  }
+}

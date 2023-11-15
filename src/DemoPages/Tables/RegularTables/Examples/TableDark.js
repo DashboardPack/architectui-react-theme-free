@@ -1,5 +1,5 @@
-import React from 'react';
-import { Table } from 'reactstrap';
+import React from "react";
+import { Table } from "reactstrap";
 
 export default class TableDark extends React.Component {
   render() {

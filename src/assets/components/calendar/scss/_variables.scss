@@ -1,0 +1,33 @@
+
+@use "sass:math";
+
+$out-of-range-color: tint-color(#333, 50%);
+
+$calendar-border: $gray-200;
+$cell-border: $gray-200;
+
+$border-color: $gray-300;
+
+$segment-width: percentage(math.div(1, 7));
+
+$time-selection-color: #white;
+$time-selection-bg-color: rgba(0,0,0, .50);
+$date-selection-bg-color: rgba(0,0,0, .10);
+
+
+$event-bg: $primary;
+$event-border: shade-color($event-bg, 10%);
+$event-color: $white;
+$event-border-radius: $border-radius;
+$event-padding: $dropdown-spacer;
+$event-zindex: 4;
+
+$btn-color: $white;
+$btn-bg: $primary;
+$btn-border: $primary;
+
+$current-time-color: $success;
+
+$rbc-css-prefix: rbc-i;
+
+$today-highlight-bg: $dropdown-link-hover-bg;
