@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.0.0] - 2023-11-20
+
+### Changed
+
+- Migrated to React v18.
+- Import SCSS files from `node_modules` by using the sass-loader instead of relative paths like `../../node_modules`.
+- Upgraded all dependencies to latest versions.
+
+### Fixed
+
+- Fixed SCSS bugs.
+
 ## [2.1.0] - 2022-08-19
 
 ### Changed
@@ -28,3 +40,5 @@
 
 ### Added
 - Initial Release
+
+[3.0.0]: https://github.com/DashboardPack/architectui-react-theme-free/releases/tag/v3.0.0
