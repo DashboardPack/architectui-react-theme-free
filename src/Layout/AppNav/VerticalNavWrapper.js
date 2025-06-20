@@ -13,7 +13,7 @@ import {
 } from "./NavItems";
 
 const Nav = ({ enableMobileMenu, setEnableMobileMenu }) => {
-  const location = useLocation();
+  // const location = useLocation(); // Reserved for future path checking
 
   const toggleMobileSidebar = () => {
     setEnableMobileMenu(!enableMobileMenu);

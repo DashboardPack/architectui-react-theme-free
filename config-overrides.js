@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 module.exports = function override(config, env) {
     //do stuff with the webpack config...
 
@@ -11,6 +13,14 @@ module.exports = function override(config, env) {
         stream: require.resolve('stream-browserify'),
         vm: require.resolve('vm-browserify'),
     };
+
+    // Define webpack plugins with React 19 compatibility fixes
+    config.plugins = [
+        ...config.plugins,
+        new webpack.ProvidePlugin({
+            Buffer: ['buffer', 'Buffer'],
+        }),
+    ];
 
     config.ignoreWarnings = [
         {
