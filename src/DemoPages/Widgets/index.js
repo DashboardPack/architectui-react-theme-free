@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // CHART BOXES
 
@@ -25,7 +25,7 @@ import AppFooter from "../../Layout/AppFooter/";
 // Theme Options
 import ThemeOptions from "../../Layout/ThemeOptions/";
 
-const Widgets = ({ match }) => (
+const Widgets = () => (
   <Fragment>
     <ThemeOptions />
     <AppHeader />
@@ -33,13 +33,13 @@ const Widgets = ({ match }) => (
       <AppSidebar />
       <div className="app-main__outer">
         <div className="app-main__inner">
-          {/* Dashboard Widgets */}
-
-          <Route path={`${match.url}/chart-boxes`} component={WidgetsChartBoxes}/>
-          <Route path={`${match.url}/chart-boxes-2`} component={WidgetsChartBoxes2}/>
-          <Route path={`${match.url}/chart-boxes-3`} component={WidgetsChartBoxes3}/>
-          <Route path={`${match.url}/profile-boxes`} component={WidgetsProfileBoxes}/>
-          <Route path={`${match.url}/content-boxes`} component={WidgetsContentBoxes}/>
+          <Routes>
+            <Route path="chart-boxes" element={<WidgetsChartBoxes />} />
+            <Route path="chart-boxes-2" element={<WidgetsChartBoxes2 />} />
+            <Route path="chart-boxes-3" element={<WidgetsChartBoxes3 />} />
+            <Route path="profile-boxes" element={<WidgetsProfileBoxes />} />
+            <Route path="content-boxes" element={<WidgetsContentBoxes />} />
+          </Routes>
         </div>
         <AppFooter />
       </div>

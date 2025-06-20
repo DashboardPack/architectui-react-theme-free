@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // Forms
 
@@ -37,7 +37,7 @@ import AppFooter from "../../Layout/AppFooter/";
 
 import ThemeOptions from "../../Layout/ThemeOptions/";
 
-const Forms = ({ match }) => (
+const Forms = () => (
   <Fragment>
     <ThemeOptions />
     <AppHeader />
@@ -45,31 +45,29 @@ const Forms = ({ match }) => (
       <AppSidebar />
       <div className="app-main__outer">
         <div className="app-main__inner">
-          {/* Form Elements */}
+          <Routes>
+            <Route path="controls" element={<FormElementsControls />} />
+            <Route path="layouts" element={<FormElementsLayouts />} />
+            <Route path="validation" element={<FormElementsValidation />} />
+            <Route path="wizard-1" element={<FormWizardVar1 />} />
+            <Route path="wizard-2" element={<FormWizardVar2 />} />
+            <Route path="wizard-3" element={<FormWizardVar3 />} />
+            <Route path="sticky-headers" element={<FormElementsSticky />} />
 
-          <Route path={`${match.url}/controls`} component={FormElementsControls}/>
-          <Route path={`${match.url}/layouts`} component={FormElementsLayouts}/>
-          <Route path={`${match.url}/validation`} component={FormElementsValidation}/>
-          <Route path={`${match.url}/wizard-1`} component={FormWizardVar1} />
-          <Route path={`${match.url}/wizard-2`} component={FormWizardVar2} />
-          <Route path={`${match.url}/wizard-3`} component={FormWizardVar3} />
-          <Route path={`${match.url}/sticky-headers`} component={FormElementsSticky}/>
-
-          {/* Form Components */}
-
-          <Route path={`${match.url}/datepicker`} component={FormDatePicker} />
-          <Route path={`${match.url}/toggle-switch`} component={FormToggleSwitch}/>
-          <Route path={`${match.url}/range-slider`} component={FormRangeSlider}/>
-          <Route path={`${match.url}/wysiwyg-editor`} component={FormWysiwygEditor}/>
-          <Route path={`${match.url}/input-selects`} component={FormMultiSelect}/>
-          <Route path={`${match.url}/dropdown`} component={FormDropdown} />
-          <Route path={`${match.url}/input-mask`} component={FormInputMask} />
-          <Route path={`${match.url}/dropzone`} component={FormDropZone} />
-          <Route path={`${match.url}/typeahead`} component={FormTypeahead} />
-          <Route path={`${match.url}/clipboard`} component={FormClipboard} />
-          <Route path={`${match.url}/textarea-autosize`} component={FormTextareaAutosize}/>
-          <Route path={`${match.url}/numberspinners`} component={FormsNumberPickerExamples}/>
-          <Route path={`${match.url}/color-picker`} component={FormColorPicker}/>
+            <Route path="datepicker" element={<FormDatePicker />} />
+            <Route path="toggle-switch" element={<FormToggleSwitch />} />
+            <Route path="range-slider" element={<FormRangeSlider />} />
+            <Route path="wysiwyg-editor" element={<FormWysiwygEditor />} />
+            <Route path="input-selects" element={<FormMultiSelect />} />
+            <Route path="dropdown" element={<FormDropdown />} />
+            <Route path="input-mask" element={<FormInputMask />} />
+            <Route path="dropzone" element={<FormDropZone />} />
+            <Route path="typeahead" element={<FormTypeahead />} />
+            <Route path="clipboard" element={<FormClipboard />} />
+            <Route path="textarea-autosize" element={<FormTextareaAutosize />} />
+            <Route path="numberspinners" element={<FormsNumberPickerExamples />} />
+            <Route path="color-picker" element={<FormColorPicker />} />
+          </Routes>
         </div>
         <AppFooter />
       </div>

@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // DASHBOARDS
 
@@ -19,7 +19,7 @@ import AppFooter from "../../Layout/AppFooter/";
 // Theme Options
 import ThemeOptions from "../../Layout/ThemeOptions/";
 
-const Dashboards = ({ match }) => (
+const Dashboards = () => (
   <Fragment>
     <ThemeOptions />
     <AppHeader />
@@ -27,12 +27,14 @@ const Dashboards = ({ match }) => (
       <AppSidebar />
       <div className="app-main__outer">
         <div className="app-main__inner">
-          <Route path={`${match.url}/analytics`} component={AnalyticsDashboard}/>
-          <Route path={`${match.url}/sales`} component={SalesDashboard} />
-          <Route path={`${match.url}/commerce`} component={CommerceDashboard} />
-          <Route path={`${match.url}/crm`} component={CRMDashboard} />
-          <Route path={`${match.url}/minimal-dashboard-1`} component={MinimalDashboard1}/>
-          <Route path={`${match.url}/minimal-dashboard-2`} component={MinimalDashboard2}/>
+          <Routes>
+            <Route path="analytics" element={<AnalyticsDashboard />} />
+            <Route path="sales" element={<SalesDashboard />} />
+            <Route path="commerce" element={<CommerceDashboard />} />
+            <Route path="crm" element={<CRMDashboard />} />
+            <Route path="minimal-dashboard-1" element={<MinimalDashboard1 />} />
+            <Route path="minimal-dashboard-2" element={<MinimalDashboard2 />} />
+          </Routes>
         </div>
         <AppFooter />
       </div>

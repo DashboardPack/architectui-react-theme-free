@@ -21,7 +21,8 @@ const renderApp = (Component) => (
   </Provider>
 );
 
-const root = createRoot(rootElement).render(renderApp(Main));
+const root = createRoot(rootElement);
+root.render(renderApp(Main));
 
 if (module.hot) {
   module.hot.accept("./DemoPages/Main", () => {

@@ -1,4 +1,4 @@
-import { Route, Redirect } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import React, { Suspense, lazy, Fragment } from "react";
 import Loader from "react-loaders";
 
@@ -20,173 +20,181 @@ const AppMain = () => {
 
     return (
         <Fragment>
-
-            {/* Components */}
-
-            <Suspense fallback={
-                <div className="loader-container">
-                    <div className="loader-container-inner">
-                        <div className="text-center">
-                            <Loader type="ball-pulse-rise"/>
+            <Routes>
+                {/* Components */}
+                <Route path="/components/*" element={
+                    <Suspense fallback={
+                        <div className="loader-container">
+                            <div className="loader-container-inner">
+                                <div className="text-center">
+                                    <Loader type="ball-pulse-rise"/>
+                                </div>
+                                <h6 className="mt-5">
+                                    Please wait while we load all the Components examples
+                                    <small>Because this is a demonstration we load at once all the Components examples. This wouldn't happen in a real live app!</small>
+                                </h6>
+                            </div>
                         </div>
-                        <h6 className="mt-5">
-                            Please wait while we load all the Components examples
-                            <small>Because this is a demonstration we load at once all the Components examples. This wouldn't happen in a real live app!</small>
-                        </h6>
-                    </div>
-                </div>
-            }>
-                <Route path="/components" component={Components}/>
-            </Suspense>
+                    }>
+                        <Components />
+                    </Suspense>
+                } />
 
-            {/* Forms */}
-
-            <Suspense fallback={
-                <div className="loader-container">
-                    <div className="loader-container-inner">
-                        <div className="text-center">
-                            <Loader type="ball-pulse-rise"/>
+                {/* Forms */}
+                <Route path="/forms/*" element={
+                    <Suspense fallback={
+                        <div className="loader-container">
+                            <div className="loader-container-inner">
+                                <div className="text-center">
+                                    <Loader type="ball-pulse-rise"/>
+                                </div>
+                                <h6 className="mt-5">
+                                    Please wait while we load all the Forms examples
+                                    <small>Because this is a demonstration we load at once all the Forms examples. This wouldn't happen in a real live app!</small>
+                                </h6>
+                            </div>
                         </div>
-                        <h6 className="mt-5">
-                            Please wait while we load all the Forms examples
-                            <small>Because this is a demonstration we load at once all the Forms examples. This wouldn't happen in a real live app!</small>
-                        </h6>
-                    </div>
-                </div>
-            }>
-                <Route path="/forms" component={Forms}/>
-            </Suspense>
+                    }>
+                        <Forms />
+                    </Suspense>
+                } />
 
-            {/* Charts */}
-
-            <Suspense fallback={
-                <div className="loader-container">
-                    <div className="loader-container-inner">
-                        <div className="text-center">
-                            <Loader type="ball-rotate"/>
+                {/* Charts */}
+                <Route path="/charts/*" element={
+                    <Suspense fallback={
+                        <div className="loader-container">
+                            <div className="loader-container-inner">
+                                <div className="text-center">
+                                    <Loader type="ball-rotate"/>
+                                </div>
+                                <h6 className="mt-3">
+                                    Please wait while we load all the Charts examples
+                                    <small>Because this is a demonstration we load at once all the Charts examples. This wouldn't happen in a real live app!</small>
+                                </h6>
+                            </div>
                         </div>
-                        <h6 className="mt-3">
-                            Please wait while we load all the Charts examples
-                            <small>Because this is a demonstration we load at once all the Charts examples. This wouldn't happen in a real live app!</small>
-                        </h6>
-                    </div>
-                </div>
-            }>
-                <Route path="/charts" component={Charts}/>
-            </Suspense>
+                    }>
+                        <Charts />
+                    </Suspense>
+                } />
 
-            {/* Tables */}
-
-            <Suspense fallback={
-                <div className="loader-container">
-                    <div className="loader-container-inner">
-                        <div className="text-center">
-                            <Loader type="ball-pulse-rise"/>
+                {/* Tables */}
+                <Route path="/tables/*" element={
+                    <Suspense fallback={
+                        <div className="loader-container">
+                            <div className="loader-container-inner">
+                                <div className="text-center">
+                                    <Loader type="ball-pulse-rise"/>
+                                </div>
+                                <h6 className="mt-5">
+                                    Please wait while we load all the Tables examples
+                                    <small>Because this is a demonstration we load at once all the Tables examples. This wouldn't happen in a real live app!</small>
+                                </h6>
+                            </div>
                         </div>
-                        <h6 className="mt-5">
-                            Please wait while we load all the Tables examples
-                            <small>Because this is a demonstration we load at once all the Tables examples. This wouldn't happen in a real live app!</small>
-                        </h6>
-                    </div>
-                </div>
-            }>
-                <Route path="/tables" component={Tables}/>
-            </Suspense>
+                    }>
+                        <Tables />
+                    </Suspense>
+                } />
 
-            {/* Elements */}
-
-            <Suspense fallback={
-                <div className="loader-container">
-                    <div className="loader-container-inner">
-                        <div className="text-center">
-                            <Loader type="line-scale"/>
+                {/* Elements */}
+                <Route path="/elements/*" element={
+                    <Suspense fallback={
+                        <div className="loader-container">
+                            <div className="loader-container-inner">
+                                <div className="text-center">
+                                    <Loader type="line-scale"/>
+                                </div>
+                                <h6 className="mt-3">
+                                    Please wait while we load all the Elements examples
+                                    <small>Because this is a demonstration we load at once all the Elements examples. This wouldn't happen in a real live app!</small>
+                                </h6>
+                            </div>
                         </div>
-                        <h6 className="mt-3">
-                            Please wait while we load all the Elements examples
-                            <small>Because this is a demonstration we load at once all the Elements examples. This wouldn't happen in a real live app!</small>
-                        </h6>
-                    </div>
-                </div>
-            }>
-                <Route path="/elements" component={Elements}/>
-            </Suspense>
+                    }>
+                        <Elements />
+                    </Suspense>
+                } />
 
-            {/* Dashboard Widgets */}
-
-            <Suspense fallback={
-                <div className="loader-container">
-                    <div className="loader-container-inner">
-                        <div className="text-center">
-                            <Loader type="ball-pulse-sync"/>
+                {/* Dashboard Widgets */}
+                <Route path="/widgets/*" element={
+                    <Suspense fallback={
+                        <div className="loader-container">
+                            <div className="loader-container-inner">
+                                <div className="text-center">
+                                    <Loader type="ball-pulse-sync"/>
+                                </div>
+                                <h6 className="mt-3">
+                                    Please wait while we load all the Dashboard Widgets examples
+                                    <small>Because this is a demonstration we load at once all the Dashboard Widgets examples. This wouldn't happen in a real live app!</small>
+                                </h6>
+                            </div>
                         </div>
-                        <h6 className="mt-3">
-                            Please wait while we load all the Dashboard Widgets examples
-                            <small>Because this is a demonstration we load at once all the Dashboard Widgets examples. This wouldn't happen in a real live app!</small>
-                        </h6>
-                    </div>
-                </div>
-            }>
-                <Route path="/widgets" component={Widgets}/>
-            </Suspense>
+                    }>
+                        <Widgets />
+                    </Suspense>
+                } />
 
-            {/* Pages */}
-
-            <Suspense fallback={
-                <div className="loader-container">
-                    <div className="loader-container-inner">
-                        <div className="text-center">
-                            <Loader type="line-scale-party"/>
+                {/* Pages */}
+                <Route path="/pages/*" element={
+                    <Suspense fallback={
+                        <div className="loader-container">
+                            <div className="loader-container-inner">
+                                <div className="text-center">
+                                    <Loader type="line-scale-party"/>
+                                </div>
+                                <h6 className="mt-3">
+                                    Please wait while we load all the Pages examples
+                                    <small>Because this is a demonstration we load at once all the Pages examples. This wouldn't happen in a real live app!</small>
+                                </h6>
+                            </div>
                         </div>
-                        <h6 className="mt-3">
-                            Please wait while we load all the Pages examples
-                            <small>Because this is a demonstration we load at once all the Pages examples. This wouldn't happen in a real live app!</small>
-                        </h6>
-                    </div>
-                </div>
-            }>
-                <Route path="/pages" component={UserPages}/>
-            </Suspense>
+                    }>
+                        <UserPages />
+                    </Suspense>
+                } />
 
-            {/* Applications */}
-
-            <Suspense fallback={
-                <div className="loader-container">
-                    <div className="loader-container-inner">
-                        <div className="text-center">
-                            <Loader type="ball-pulse"/>
+                {/* Applications */}
+                <Route path="/apps/*" element={
+                    <Suspense fallback={
+                        <div className="loader-container">
+                            <div className="loader-container-inner">
+                                <div className="text-center">
+                                    <Loader type="ball-pulse"/>
+                                </div>
+                                <h6 className="mt-3">
+                                    Please wait while we load all the Applications examples
+                                    <small>Because this is a demonstration we load at once all the Applications examples. This wouldn't happen in a real live app!</small>
+                                </h6>
+                            </div>
                         </div>
-                        <h6 className="mt-3">
-                            Please wait while we load all the Applications examples
-                            <small>Because this is a demonstration we load at once all the Applications examples. This wouldn't happen in a real live app!</small>
-                        </h6>
-                    </div>
-                </div>
-            }>
-                <Route path="/apps" component={Applications}/>
-            </Suspense>
+                    }>
+                        <Applications />
+                    </Suspense>
+                } />
 
-            {/* Dashboards */}
-
-            <Suspense fallback={
-                <div className="loader-container">
-                    <div className="loader-container-inner">
-                        <div className="text-center">
-                            <Loader type="ball-grid-cy"/>
+                {/* Dashboards */}
+                <Route path="/dashboards/*" element={
+                    <Suspense fallback={
+                        <div className="loader-container">
+                            <div className="loader-container-inner">
+                                <div className="text-center">
+                                    <Loader type="ball-grid-cy"/>
+                                </div>
+                                <h6 className="mt-3">
+                                    Please wait while we load all the Dashboards examples
+                                    <small>Because this is a demonstration, we load at once all the Dashboards examples. This wouldn't happen in a real live app!</small>
+                                </h6>
+                            </div>
                         </div>
-                        <h6 className="mt-3">
-                            Please wait while we load all the Dashboards examples
-                            <small>Because this is a demonstration, we load at once all the Dashboards examples. This wouldn't happen in a real live app!</small>
-                        </h6>
-                    </div>
-                </div>
-            }>
-                <Route path="/dashboards" component={Dashboards}/>
-            </Suspense>
+                    }>
+                        <Dashboards />
+                    </Suspense>
+                } />
 
-
-            <Route exact path="/" render={() => (
-                <Redirect to="/dashboards/crm"/>
-            )}/>
+                {/* Default redirect */}
+                <Route path="/" element={<Navigate to="/dashboards/crm" replace />} />
+            </Routes>
             <ToastContainer/>
         </Fragment>
     )
