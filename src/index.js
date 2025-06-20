@@ -7,18 +7,20 @@ import * as serviceWorker from "./serviceWorker";
 import { HashRouter } from "react-router-dom";
 import "./assets/base.scss";
 import Main from "./DemoPages/Main";
-import configureStore from "./config/configureStore";
+import configureAppStore from "./config/configureStore";
 import { Provider } from "react-redux";
 
-const store = configureStore();
+const store = configureAppStore();
 const rootElement = document.getElementById("root");
 
 const renderApp = (Component) => (
-  <Provider store={store}>
-    <HashRouter>
-      <Component />
-    </HashRouter>
-  </Provider>
+  <React.StrictMode>
+    <Provider store={store}>
+      <HashRouter>
+        <Component />
+      </HashRouter>
+    </Provider>
+  </React.StrictMode>
 );
 
 const root = createRoot(rootElement);

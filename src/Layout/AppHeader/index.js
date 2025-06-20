@@ -10,40 +10,37 @@ import HeaderLogo from "../AppLogo";
 import SearchBox from "./Components/SearchBox";
 import UserBox from "./Components/UserBox";
 
-class Header extends React.Component {
-  render() {
-    let {
-      headerBackgroundColor,
-      enableMobileMenuSmall,
-      enableHeaderShadow,
-    } = this.props;
-    return (
-      <Fragment>
-        <TransitionGroup>
-          <CSSTransition component="div"
-            className={cx("app-header", headerBackgroundColor, {
-              "header-shadow": enableHeaderShadow,
-            })}
-            appear={true} timeout={1500} enter={false} exit={false}>
-            <div>
-              <HeaderLogo />
-              <div className={cx("app-header__content", {
-                  "header-mobile-open": enableMobileMenuSmall,
-                })}>
-                <div className="app-header-left">
-                  <SearchBox />
-                </div>
-                <div className="app-header-right">
-                  <UserBox />
-                </div>
+const Header = ({
+  headerBackgroundColor,
+  enableMobileMenuSmall,
+  enableHeaderShadow,
+}) => {
+  return (
+    <Fragment>
+      <TransitionGroup>
+        <CSSTransition component="div"
+          className={cx("app-header", headerBackgroundColor, {
+            "header-shadow": enableHeaderShadow,
+          })}
+          appear={true} timeout={1500} enter={false} exit={false}>
+          <div>
+            <HeaderLogo />
+            <div className={cx("app-header__content", {
+                "header-mobile-open": enableMobileMenuSmall,
+              })}>
+              <div className="app-header-left">
+                <SearchBox />
+              </div>
+              <div className="app-header-right">
+                <UserBox />
               </div>
             </div>
-          </CSSTransition>
-        </TransitionGroup>
-      </Fragment>
-    );
-  }
-}
+          </div>
+        </CSSTransition>
+      </TransitionGroup>
+    </Fragment>
+  );
+};
 
 const mapStateToProps = (state) => ({
   enableHeaderShadow: state.ThemeOptions.enableHeaderShadow,

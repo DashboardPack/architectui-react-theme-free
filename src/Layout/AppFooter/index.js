@@ -1,24 +1,56 @@
 import React, { Fragment } from "react";
-import MegaMenuFooter from "./Components/FooterMegaMenu";
-import FooterDots from "./Components/FooterDots";
+import { connect } from "react-redux";
 
-class AppFooter extends React.Component {
-  render() {
-    return (
-      <Fragment>
+const AppFooter = ({ enableFixedFooter }) => {
+  return (
+    <Fragment>
+      <div className="app-wrapper-footer">
         <div className="app-footer">
           <div className="app-footer__inner">
             <div className="app-footer-left">
-              <FooterDots />
+              <ul className="nav">
+                <li className="nav-item">
+                  <a href="javascript:void(0);" className="nav-link">
+                    Footer Link 1
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a href="javascript:void(0);" className="nav-link">
+                    Footer Link 2
+                  </a>
+                </li>
+              </ul>
             </div>
             <div className="app-footer-right">
-              <MegaMenuFooter />
+              <ul className="nav">
+                <li className="nav-item">
+                  <a href="javascript:void(0);" className="nav-link">
+                    Footer Link 3
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a
+                    href="javascript:void(0);"
+                    className="nav-link"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="badge badge-success mr-1 ml-0">
+                      <small>NEW</small>
+                    </div>
+                    Footer Link 4
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </Fragment>
-    );
-  }
-}
+      </div>
+    </Fragment>
+  );
+};
 
-export default AppFooter;
+const mapStateToProps = (state) => ({
+  enableFixedFooter: state.ThemeOptions.enableFixedFooter,
+});
+
+export default connect(mapStateToProps)(AppFooter);

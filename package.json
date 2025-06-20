@@ -16,27 +16,28 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.4.2",
-    "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@fortawesome/free-brands-svg-icons": "^6.4.2",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@reduxjs/toolkit": "^2.8.2",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
     "@types/markerclustererplus": "^2.1.33",
     "animate-sass": "^0.8.2",
-    "apexcharts": "^3.43.0",
+    "apexcharts": "^3.45.2",
     "aphrodite": "^2.4.0",
-    "bootstrap": "^5.3.2",
+    "bootstrap": "^5.3.3",
     "buffer": "^6.0.3",
-    "chart.js": "^4.4.0",
+    "chart.js": "^4.4.7",
     "chartist": "^1.3.0",
     "chroma-js": "^2.4.2",
     "ckeditor4": "^4.24.0",
     "ckeditor4-react": "^5.0.0",
-    "classnames": "^2.3.2",
-    "crypto-browserify": "^3.12.0",
+    "classnames": "^2.5.1",
+    "crypto-browserify": "^3.12.1",
     "date-arithmetic": "^4.1.0",
     "date-fns": "^2.30.0",
     "dropzone": "^6.0.0-beta.2",
@@ -47,14 +48,14 @@
     "install": "^0.13.0",
     "jquery": "^3.7.1",
     "loaders.css": "^0.1.2",
-    "moment": "^2.29.4",
+    "moment": "^2.30.1",
     "namor": "^2.0.4",
     "pe7-icon": "^1.0.4",
     "rc-slider": "^10.3.0",
     "rc-tabs": "^10.1.1",
-    "rc-tooltip": "^6.1.0",
-    "rc-tree": "^5.7.12",
-    "react": "^18.2.0",
+    "rc-tooltip": "^6.2.1",
+    "rc-tree": "^5.9.0",
+    "react": "^19.1.0",
     "react-animations": "^1.0.0",
     "react-anime": "^4.1.1",
     "react-apexcharts": "^1.4.0",
@@ -75,17 +76,17 @@
     "react-datepicker": "^4.18.0",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
-    "react-dom": "^18.2.0",
-    "react-dropzone": "^14.2.3",
+    "react-dom": "^19.1.0",
+    "react-dropzone": "^14.3.5",
     "react-flagkit": "^2.0.4",
     "react-form-validator-core": "^1.1.2",
-    "react-icons": "^4.11.0",
-    "react-image-crop": "^10.1.8",
+    "react-icons": "^5.4.0",
+    "react-image-crop": "^11.0.7",
     "react-input-mask": "^2.0.4",
     "react-liquid-gauge": "^1.2.4",
     "react-loaders": "^3.0.1",
     "react-loading-overlay-ts": "^2.0.2",
-    "react-map-gl": "^7.1.6",
+    "react-map-gl": "^7.1.7",
     "react-metismenu": "^1.4.0",
     "react-numeric-input": "^2.2.3",
     "react-on-screen": "^2.1.1",
@@ -93,26 +94,26 @@
     "react-perfect-scrollbar": "^1.5.8",
     "react-popper": "^2.3.0",
     "react-rating": "^2.0.5",
-    "react-redux": "^8.1.3",
-    "react-resize-detector": "^9.1.0",
+    "react-redux": "^9.1.2",
+    "react-resize-detector": "^12.0.0",
     "react-responsive-tabs": "^4.4.3",
-    "react-router-dom": "^7.6.2",
+    "react-router-dom": "^6.28.0",
     "react-scripts": "5.0.1",
-    "react-scroll": "^1.8.9",
-    "react-select": "^5.7.7",
+    "react-scroll": "^1.9.0",
+    "react-select": "^5.8.3",
     "react-simple-maps": "^3.0.0",
     "react-sizeme": "^3.0.2",
-    "react-slick": "^0.29.0",
+    "react-slick": "^0.30.2",
     "react-sparklines": "^1.7.0",
     "react-sticky-el": "^2.1.0",
-    "react-stickynode": "^4.1.0",
+    "react-stickynode": "^4.1.1",
     "react-sweet-progress": "^1.1.2",
     "react-switch": "^7.0.0",
-    "react-syntax-highlighter": "^15.5.0",
+    "react-syntax-highlighter": "^15.6.1",
     "react-table": "^7.8.0",
-    "react-textarea-autosize": "^8.5.3",
-    "react-toastify": "^9.1.3",
-    "react-transition-group": "^2.9.0",
+    "react-textarea-autosize": "^8.5.4",
+    "react-toastify": "^10.0.6",
+    "react-transition-group": "^4.4.5",
     "react-validation": "^3.0.7",
     "react-vertical-timeline-component": "^3.6.0",
     "react-visibility-sensor": "^5.1.1",
@@ -121,25 +122,27 @@
     "react-widgets-moment": "^5.0.20",
     "react-widgets-simple-number": "^5.0.20",
     "reactour": "^1.19.1",
-    "reactstrap": "^9.2.0",
-    "recharts": "^2.8.0",
-    "redux": "^4.2.1",
+    "reactstrap": "^9.2.3",
+    "recharts": "^2.13.3",
+    "redux": "^5.0.1",
     "redux-form": "^8.3.10",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.4.2",
+    "redux-thunk": "^3.1.0",
     "slick-carousel": "^1.8.1",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
-    "styled-components": "^5.3.11",
+    "styled-components": "^6.1.16",
     "sweetalert": "^2.1.2",
-    "typescript": "^4.5.4",
-    "validator": "^13.11.0",
-    "web-vitals": "^2.1.4"
+    "typescript": "^5.7.2",
+    "validator": "^13.12.0",
+    "web-vitals": "^4.2.4"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "sass": "^1.68.0",
-    "sass-loader": "^13.3.2"
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "sass": "^1.81.0",
+    "sass-loader": "^16.0.3"
   },
   "overrides": {
     "react-anime": {
@@ -147,6 +150,74 @@
       "react-dom": "$react-dom"
     },
     "react-responsive-tabs": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "ckeditor4-react": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-bootstrap-sweetalert": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-transition-group": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-widgets": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-color": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-copy-to-clipboard": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-form-validator-core": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-input-mask": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-rating": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-sparklines": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-sticky-el": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-stickynode": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-sweet-progress": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-validation": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-vertical-timeline-component": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-visibility-sensor": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "reactour": {
       "react": "$react",
       "react-dom": "$react-dom"
     }
