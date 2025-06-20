@@ -19,9 +19,10 @@ const Nav = ({ enableMobileMenu, setEnableMobileMenu }) => {
     setEnableMobileMenu(!enableMobileMenu);
   };
 
-  const isPathActive = (path) => {
-    return location.pathname.startsWith(path);
-  };
+  // Function to check if path is active (reserved for future use)
+  // const isPathActive = (path) => {
+  //   return location.pathname.startsWith(path);
+  // };
 
   return (
     <Fragment>

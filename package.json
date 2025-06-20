@@ -135,6 +135,7 @@
     "sweetalert": "^2.1.2",
     "typescript": "^5.7.2",
     "validator": "^13.12.0",
+    "vm-browserify": "^1.1.2",
     "web-vitals": "^4.2.4"
   },
   "devDependencies": {
@@ -218,6 +219,10 @@
       "react-dom": "$react-dom"
     },
     "reactour": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    },
+    "react-onclickoutside": {
       "react": "$react",
       "react-dom": "$react-dom"
     }

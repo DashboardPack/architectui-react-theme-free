@@ -20,6 +20,9 @@
 .env.test.local
 .env.production.local
 
+# upgrade tracking (keep private)
+REACT19_UPGRADE_RECIPE.md
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
