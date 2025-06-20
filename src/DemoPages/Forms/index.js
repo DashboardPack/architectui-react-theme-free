@@ -13,18 +13,18 @@ import FormWizardVar3 from "./Elements/Wizard/Examples/Variation3";
 
 import FormElementsSticky from "./Elements/StickyHeaders/";
 
-import FormDatePicker from "./Components/DatePicker/";
+// import FormDatePicker from "./Components/DatePicker/"; // Disabled for React 19 compatibility
 import FormRangeSlider from "./Components/RangeSlider/";
 import FormWysiwygEditor from "./Components/WysiwygEditor/";
 import FormToggleSwitch from "./Components/ToggleSwitch/";
-import FormMultiSelect from "./Components/MultiSelect/";
-import FormDropdown from "./Components/Dropdown/";
+// import FormMultiSelect from "./Components/MultiSelect/"; // Disabled for React 19 compatibility
+// import FormDropdown from "./Components/Dropdown/"; // Disabled for React 19 compatibility
 import FormInputMask from "./Components/InputMask/";
 import FormDropZone from "./Components/DropZone/";
 import FormTypeahead from "./Components/Typeahead/";
 import FormClipboard from "./Components/Clipboard/";
 import FormTextareaAutosize from "./Components/TextareaAutosize/";
-import FormsNumberPickerExamples from "./Components/NumberPicker/";
+// import FormsNumberPickerExamples from "./Components/NumberPicker/"; // Disabled for React 19 compatibility
 import FormColorPicker from "./Components/ColorPicker/";
 
 // Layout
@@ -54,18 +54,19 @@ const Forms = () => (
             <Route path="wizard-3" element={<FormWizardVar3 />} />
             <Route path="sticky-headers" element={<FormElementsSticky />} />
 
-            <Route path="datepicker" element={<FormDatePicker />} />
+            {/* Temporarily disabled for React 19 compatibility */}
+            {/* <Route path="datepicker" element={<FormDatePicker />} /> */}
             <Route path="toggle-switch" element={<FormToggleSwitch />} />
             <Route path="range-slider" element={<FormRangeSlider />} />
             <Route path="wysiwyg-editor" element={<FormWysiwygEditor />} />
-            <Route path="input-selects" element={<FormMultiSelect />} />
-            <Route path="dropdown" element={<FormDropdown />} />
+            {/* <Route path="input-selects" element={<FormMultiSelect />} /> */}
+            {/* <Route path="dropdown" element={<FormDropdown />} /> */}
             <Route path="input-mask" element={<FormInputMask />} />
             <Route path="dropzone" element={<FormDropZone />} />
             <Route path="typeahead" element={<FormTypeahead />} />
             <Route path="clipboard" element={<FormClipboard />} />
             <Route path="textarea-autosize" element={<FormTextareaAutosize />} />
-            <Route path="numberspinners" element={<FormsNumberPickerExamples />} />
+            {/* <Route path="numberspinners" element={<FormsNumberPickerExamples />} /> */}
             <Route path="color-picker" element={<FormColorPicker />} />
           </Routes>
         </div>
