@@ -20,6 +20,18 @@ module.exports = function override(config, env) {
         new webpack.ProvidePlugin({
             Buffer: ['buffer', 'Buffer'],
         }),
+        // Replace findDOMNode imports with our stub
+        new webpack.NormalModuleReplacementPlugin(
+            /react-dom$/,
+            (resource) => {
+                if (resource.context && 
+                    (resource.context.includes('react-onclickoutside') || 
+                     resource.context.includes('react-widgets'))) {
+                    // Replace react-dom with our compatibility module
+                    resource.request = require.resolve('./src/polyfills/react-dom-with-findDOMNode.js');
+                }
+            }
+        ),
     ];
 
     config.ignoreWarnings = [

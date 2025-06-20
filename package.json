@@ -13,7 +13,8 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postinstall": "node patch-finddomnode.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
@@ -143,6 +144,7 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
+    "glob": "^11.0.3",
     "sass": "^1.81.0",
     "sass-loader": "^16.0.3",
     "string-replace-loader": "^3.2.0"
@@ -227,6 +229,11 @@
     "react-onclickoutside": {
       "react": "$react",
       "react-dom": "$react-dom"
+    },
+    "react-datepicker": {
+      "react": "$react",
+      "react-dom": "$react-dom",
+      "react-onclickoutside": "6.13.0"
     }
   },
   "eslintConfig": {
