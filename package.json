@@ -1,6 +1,6 @@
 {
   "name": "architectui-react-theme-free",
-  "version": "3.0.0",
+  "version": "0.1.0",
   "homepage": "https://demo.dashboardpack.com/architectui-react-pro",
   "private": true,
   "description": "ArchitectUI - Bootstrap 5 ReactJS Admin Dashboard Template FREE",
@@ -14,9 +14,10 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
-    "postinstall": "node patch-finddomnode.js"
+    "postinstall": "patch-package"
   },
   "dependencies": {
+    "@babel/runtime": "^7.27.6",
     "@fortawesome/fontawesome-free": "^6.7.2",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
@@ -38,12 +39,16 @@
     "ckeditor4": "^4.24.0",
     "ckeditor4-react": "^5.0.0",
     "classnames": "^2.5.1",
+    "constants-browserify": "^1.0.0",
     "crypto-browserify": "^3.12.1",
     "date-arithmetic": "^4.1.0",
     "date-fns": "^2.30.0",
     "dropzone": "^6.0.0-beta.2",
+    "events": "^3.3.0",
+    "framer-motion": "^11.18.2",
     "globalize": "^1.7.0",
     "google-map-react": "^2.2.1",
+    "hamburger-react": "^2.5.2",
     "hamburgers": "^1.2.1",
     "https-browserify": "^1.0.0",
     "install": "^0.13.0",
@@ -51,9 +56,10 @@
     "loaders.css": "^0.1.2",
     "moment": "^2.30.1",
     "namor": "^2.0.4",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
     "pe7-icon": "^1.0.4",
     "rc-slider": "^10.3.0",
-    "rc-tabs": "^10.1.1",
     "rc-tooltip": "^6.2.1",
     "rc-tree": "^5.9.0",
     "react": "^19.1.0",
@@ -66,7 +72,6 @@
     "react-bootstrap": "^2.9.0",
     "react-bootstrap-sweetalert": "^4.4.1",
     "react-bootstrap-typeahead": "^6.2.3",
-    "react-burgers": "^1.3.0",
     "react-chartjs-2": "^5.2.0",
     "react-color": "^2.19.3",
     "react-compound-slider": "^3.4.0",
@@ -87,7 +92,6 @@
     "react-loaders": "^3.0.1",
     "react-loading-overlay-ts": "^2.0.2",
     "react-map-gl": "^7.1.7",
-    "react-metismenu": "^1.4.0",
     "react-numeric-input": "^2.2.3",
     "react-on-screen": "^2.1.1",
     "react-outside-click-handler": "^1.3.0",
@@ -95,7 +99,7 @@
     "react-perfect-scrollbar": "^1.5.8",
     "react-popper": "^2.3.0",
     "react-rating": "^2.0.5",
-    "react-redux": "^9.1.2",
+    "react-redux": "^8.1.3",
     "react-resize-detector": "^12.0.0",
     "react-responsive-tabs": "^4.4.3",
     "react-router-dom": "^6.28.0",
@@ -114,7 +118,6 @@
     "react-table": "^7.8.0",
     "react-textarea-autosize": "^8.5.4",
     "react-toastify": "^10.0.6",
-    "react-transition-group": "^4.4.5",
     "react-validation": "^3.0.7",
     "react-vertical-timeline-component": "^3.6.0",
     "react-visibility-sensor": "^5.1.1",
@@ -128,9 +131,11 @@
     "slick-carousel": "^1.8.1",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
+    "string_decoder": "^1.3.0",
     "styled-components": "^6.1.16",
     "sweetalert": "^2.1.2",
     "typescript": "^5.7.2",
+    "util": "^0.12.5",
     "validator": "^13.12.0",
     "vm-browserify": "^1.1.2",
     "web-vitals": "^4.2.4"
@@ -142,6 +147,8 @@
     "ajv": "^8.12.0",
     "ajv-keywords": "^5.1.0",
     "glob": "^11.0.3",
+    "patch-package": "^8.0.0",
+    "process": "^0.11.10",
     "sass": "^1.81.0",
     "sass-loader": "^16.0.3",
     "string-replace-loader": "^3.2.0"
@@ -160,10 +167,6 @@
       "react-dom": "$react-dom"
     },
     "react-bootstrap-sweetalert": {
-      "react": "$react",
-      "react-dom": "$react-dom"
-    },
-    "react-transition-group": {
       "react": "$react",
       "react-dom": "$react-dom"
     },

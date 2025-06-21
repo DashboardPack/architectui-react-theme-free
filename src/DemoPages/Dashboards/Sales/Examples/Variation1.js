@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
 import { Progress } from "react-sweet-progress";
 import classnames from "classnames";
 import { IoIosAnalytics } from "react-icons/io";

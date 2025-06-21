@@ -1,12 +1,12 @@
 import React, { Fragment, Component } from "react";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup  } from '../../../utils/TransitionWrapper';
 
 import PageTitleAlt from '../../../Layout/AppMain/PageTitleAlt';
 
 import Sticky from 'react-stickynode';
 
 import cx from 'classnames';
-import { Elastic } from 'react-burgers'
+import Hamburger from 'hamburger-react'
 
 import {
     TabContent, TabPane, DropdownItem,
@@ -101,8 +101,12 @@ export default class FaqSection extends Component {
                                 <Card className="col-md-12 app-inner-layout__content">
                                     <div className="pb-5 ps-5 pe-5 pt-3">
                                         <div className="mobile-app-menu-btn mb-3">
-                                            <Elastic width={26} lineHeight={2} lineSpacing={5} color='#6c757d' active={this.state.active}
-                                                onClick={() => this.setState({ active: !this.state.active })} />
+                                            <Hamburger 
+                                                toggled={this.state.active}
+                                                toggle={() => this.setState({ active: !this.state.active })}
+                                                size={26}
+                                                color='#6c757d'
+                                            />
                                         </div>
                                         <TabContent activeTab={this.state.activeTab}>
                                             <TabPane tabId="1">

@@ -19,8 +19,10 @@
     padding: 0;
     position: relative;
   }
+  
   .metismenu-container {
     list-style: none;
+    text-align: left;
 
     &:before {
       opacity: 0;
@@ -29,7 +31,8 @@
 
     .metismenu-link {
       transition: transform .2s, height 300ms, color 300ms, background-color 300ms;
-      display: block;
+      display: flex;
+      align-items: center;
       line-height: 2.5rem;
       height: 2.5rem;
       padding: 0 $layout-spacer-x 0 45px;
@@ -41,7 +44,6 @@
       &:hover {
         background: $dropdown-link-hover-bg;
         text-decoration: none;
-        //transform: scale(1.02);
 
         i.metismenu-icon {
           opacity: .6;
@@ -81,7 +83,7 @@
     i.metismenu-state-icon {
       transition: transform 300ms;
       left: auto;
-      right: 0;
+      right: 5px;
 
       &.rotate-minus-90 {
         transform: rotate(-180deg);
@@ -111,6 +113,7 @@
           line-height: 2.3em;
           color: $gray-600;
           margin: 0 0 3px;
+          padding-left: 35px;
 
           &:hover {
             color: $primary;
@@ -133,7 +136,7 @@
       }
 
       .metismenu-link {
-        padding-left: 1em;
+        padding-left: 35px;
       }
     }
   }

@@ -173,3 +173,14 @@
 // Responsive
 
 @import "layout/responsive/responsive-base";
+
+// Custom override: optimize sidebar navigation spacing
+.vertical-nav-menu .metismenu-link {
+  padding-right: 6px; // shrink right gap
+}
+.app-sidebar .app-sidebar__inner {
+  padding: 2px 6px $layout-spacer-x; // optimize internal padding
+}
+
+
+

@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from "react";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup  } from '../../../utils/TransitionWrapper';
 
 import {
   Col,
@@ -18,7 +18,7 @@ import {
   DropdownToggle,
 } from "reactstrap";
 
-import { Elastic } from "react-burgers";
+import Hamburger from "hamburger-react";
 
 import cx from "classnames";
 
@@ -84,10 +84,12 @@ export default class Mailbox extends Component {
                       <div className="app-inner-layout__top-pane">
                         <div className="pane-left">
                           <div className="mobile-app-menu-btn">
-                            <Elastic width={26} lineHeight={2} lineSpacing={5} color="#6c757d" active={this.state.active}
-                              onClick={() =>
-                                this.setState({ active: !this.state.active })
-                              }/>
+                            <Hamburger 
+                              toggled={this.state.active}
+                              toggle={() => this.setState({ active: !this.state.active })}
+                              size={26}
+                              color="#6c757d"
+                            />
                           </div>
                           <h4 className="mb-0"> Inbox</h4>
                           <UncontrolledButtonDropdown>

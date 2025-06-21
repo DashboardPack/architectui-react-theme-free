@@ -1,11 +1,11 @@
 import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup  } from '../../../utils/TransitionWrapper';
 
 import PageTitle from "../../../Layout/AppMain/PageTitle";
 
-import Tabs, { TabPane } from "rc-tabs";
-import TabContent from "rc-tabs/lib/SwipeableTabContent";
-import ScrollableInkTabBar from "rc-tabs/lib/ScrollableInkTabBar";
+import Tabs, { TabPane } from '../../../utils/TabsWrapper';
+import { TabContent } from '../../../utils/TabsWrapper';
+import { ScrollableInkTabBar } from '../../../utils/TabsWrapper';
 
 // Examples
 import PopoversExample from "./Examples/Popovers/";

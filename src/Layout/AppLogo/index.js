@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
 
-import { Slider } from "react-burgers";
+import Hamburger from "hamburger-react";
 
 import AppMobileMenu from "../AppMobileMenu";
 
@@ -42,8 +42,12 @@ class HeaderLogo extends React.Component {
           <div className="logo-src" />
           <div className="header__pane ms-auto">
             <div onClick={this.toggleEnableClosedSidebar}>
-              <Slider width={26} lineHeight={2} lineSpacing={5} color="#6c757d"
-                active={this.state.active} onClick={() => this.setState({ active: !this.state.active })}/>
+              <Hamburger 
+                toggled={this.props.enableClosedSidebar} 
+                toggle={this.toggleEnableClosedSidebar}
+                size={26}
+                color="#6c757d"
+              />
             </div>
           </div>
         </div>

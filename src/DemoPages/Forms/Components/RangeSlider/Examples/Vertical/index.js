@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import Slider from "rc-slider";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup  } from '../../../../../../utils/TransitionWrapper';
 import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
 
 const marks = {

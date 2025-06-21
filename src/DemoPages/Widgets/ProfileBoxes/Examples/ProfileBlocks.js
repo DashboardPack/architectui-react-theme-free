@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Button } from "reactstrap";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
 
 import avatar5 from "../../../../assets/utils/images/avatars/5.jpg";
 import avatar3 from "../../../../assets/utils/images/avatars/4.jpg";

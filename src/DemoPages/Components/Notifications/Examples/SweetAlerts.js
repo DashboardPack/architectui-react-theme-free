@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import SweetAlert from 'react-bootstrap-sweetalert';
 
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
 
 import { Row, Col, Card, CardBody, Button, CardTitle } from "reactstrap";
 

@@ -1,29 +1,28 @@
 import React, { Fragment } from "react";
-import { Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // USER PAGES
 
 import Login from "./Login/";
 import LoginBoxed from "./LoginBoxed/";
-
 import Register from "./Register/";
 import RegisterBoxed from "./RegisterBoxed/";
-
 import ForgotPassword from "./ForgotPassword/";
 import ForgotPasswordBoxed from "./ForgotPasswordBoxed/";
 
-const UserPages = ({ match }) => (
+const UserPages = () => (
   <Fragment>
-    <div className="app-container">
-      {/* User Pages */}
-
-      <Route path={`${match.url}/login`} component={Login} />
-      <Route path={`${match.url}/login-boxed`} component={LoginBoxed} />
-      <Route path={`${match.url}/register`} component={Register} />
-      <Route path={`${match.url}/register-boxed`} component={RegisterBoxed} />
-      <Route path={`${match.url}/forgot-password`} component={ForgotPassword} />
-      <Route path={`${match.url}/forgot-password-boxed`} component={ForgotPasswordBoxed}/>
-    </div>
+    <Routes>
+      <Route path="login" element={<Login />} />
+      <Route path="login-boxed" element={<LoginBoxed />} />
+      <Route path="register" element={<Register />} />
+      <Route path="register-boxed" element={<RegisterBoxed />} />
+      <Route path="forgot-password" element={<ForgotPassword />} />
+      <Route
+        path="forgot-password-boxed"
+        element={<ForgotPasswordBoxed />}
+      />
+    </Routes>
   </Fragment>
 );
 

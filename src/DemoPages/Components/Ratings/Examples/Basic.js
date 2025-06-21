@@ -3,7 +3,7 @@ import { Button, Card, CardBody, Col, CardTitle, Row } from "reactstrap";
 
 import Rating from "react-rating";
 
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
 
 import {
   faStar,

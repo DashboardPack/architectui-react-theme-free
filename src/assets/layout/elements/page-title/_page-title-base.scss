@@ -104,11 +104,11 @@
   }
 }
 
-.closed-sidebar .rc-tabs{
-  max-width: calc(100vw - 140px);
+.closed-sidebar .rc-tabs {
+  max-width: calc(100vw - 110px);
 }
-@media only screen and (max-width: 812px) and (min-width: 360px)  {
-  .closed-sidebar .rc-tabs{
+@media only screen and (max-width: 812px) and (min-width: 360px) {
+  .closed-sidebar .rc-tabs {
     max-width: calc(100vw - 0px);
   }
 }

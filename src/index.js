@@ -16,7 +16,12 @@ const rootElement = document.getElementById("root");
 const renderApp = (Component) => (
   <React.StrictMode>
     <Provider store={store}>
-      <HashRouter>
+      <HashRouter
+        future={{
+          v7_startTransition: true,
+          v7_relativeSplatPath: true
+        }}
+      >
         <Component />
       </HashRouter>
     </Provider>

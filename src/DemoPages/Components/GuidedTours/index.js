@@ -8,7 +8,7 @@ import Tooltip from "./Examples/Tooltip";
 import { Link } from "./Examples/Button";
 import PropTypes from "prop-types";
 
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup  } from '../../../utils/TransitionWrapper';
 import { Row, Col, Card, CardBody } from "reactstrap";
 
 import PageTitle from "../../../Layout/AppMain/PageTitle";

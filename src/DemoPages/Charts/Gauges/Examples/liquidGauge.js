@@ -3,7 +3,7 @@ import { interpolateRgb } from "d3-interpolate";
 import React, { Fragment, Component } from "react";
 import LiquidFillGauge from "react-liquid-gauge";
 import { Row, Col, Card, CardBody, CardTitle, Button } from "reactstrap";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
 
 export default class ChartsLiquidGaugeExample extends Component {
   state = {

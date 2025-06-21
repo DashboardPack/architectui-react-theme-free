@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup  } from '../../../../../utils/TransitionWrapper';
 
 import SimpleSlider from "./SimpleSlider";
 import MultipleItems from "./MultipleItems";

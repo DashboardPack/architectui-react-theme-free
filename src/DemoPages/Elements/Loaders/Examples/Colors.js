@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import Loader from "react-loaders";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
 import { Row, Col, Card, CardBody, CardTitle, Container } from "reactstrap";
 
 class LoadersColorsExample extends Component {

@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup  } from '../../../../../utils/TransitionWrapper';
 import GoogleMapReact from "google-map-react";
 
 import { Row, Col, Card, CardBody, CardTitle, Container } from "reactstrap";

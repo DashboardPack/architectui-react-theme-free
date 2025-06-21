@@ -1,10 +1,9 @@
-import React, { Fragment } from "react";
-// import { useLocation } from "react-router-dom"; // Reserved for future use
+import React, { Fragment, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { connect } from "react-redux";
-import MetisMenu from "react-metismenu";
+// import MetisMenu from "react-metismenu"; // Temporarily disabled for React 19 compatibility
 import { setEnableMobileMenu } from "../../reducers/ThemeOptions";
 import {
-  UpgradeNav,
   MainNav,
   ComponentsNav,
   FormsNav,
@@ -12,43 +11,90 @@ import {
   ChartsNav,
 } from "./NavItems";
 
-const Nav = ({ enableMobileMenu, setEnableMobileMenu }) => {
-  // const location = useLocation(); // Reserved for future path checking
+const SubMenu = ({ item, toggleMobileSidebar }) => {
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+  const location = useLocation();
 
-  const toggleMobileSidebar = () => {
-    setEnableMobileMenu(!enableMobileMenu);
+  const toggleSubMenu = (e) => {
+    if (!item.to || item.content) {
+      e.preventDefault();
+      e.stopPropagation();
+      setIsSubMenuOpen(!isSubMenuOpen);
+    } else if (item.to) {
+      toggleMobileSidebar();
+    }
   };
 
-  // Function to check if path is active (reserved for future use)
-  // const isPathActive = (path) => {
-  //   return location.pathname.startsWith(path);
-  // };
+  const hasSubmenu = item.content && item.content.length > 0;
+  
+  // Determine if the parent or any child is active
+  const isActive = location.pathname === item.to || 
+    (hasSubmenu && item.content.some(child => child.to === location.pathname));
+
+  return (
+    <li className={`metismenu-item ${isActive ? "mm-active" : ""}`}>
+      <Link
+        to={item.to || "#"}
+        className={`metismenu-link ${isActive ? "mm-active" : ""} ${hasSubmenu ? "has-arrow" : ""}`}
+        onClick={toggleSubMenu}
+      >
+        <i className={`metismenu-icon ${item.icon}`} />
+        {item.label}
+        {hasSubmenu && (
+          <i className={`metismenu-state-icon pe-7s-angle-${isSubMenuOpen ? 'up' : 'down'}`} />
+        )}
+      </Link>
+      {hasSubmenu && (
+        <ul className={`metismenu-container ${isSubMenuOpen ? "visible" : ""}`}>
+          {item.content.map((child, i) => (
+            <li key={i} className="metismenu-item">
+              <Link
+                to={child.to}
+                className={`metismenu-link ${
+                  location.pathname === child.to ? "active" : ""
+                }`}
+                onClick={toggleMobileSidebar}
+              >
+                {child.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </li>
+  );
+};
+
+const Nav = ({ enableMobileMenu, setEnableMobileMenu }) => {
+  const toggleMobileSidebar = () => {
+    if (enableMobileMenu) {
+      setEnableMobileMenu(false);
+    }
+  };
+
+  const renderMenu = (items) =>
+    items.map((item, i) => (
+      <SubMenu key={i} item={item} toggleMobileSidebar={toggleMobileSidebar} />
+    ));
 
   return (
     <Fragment>
-      <h5 className="app-sidebar__heading">Pro Version</h5>
-      <MetisMenu content={UpgradeNav} onSelected={toggleMobileSidebar} activeLinkFromLocation
-        className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="pe-7s-angle-down"/>
+      <div className="vertical-nav-menu">
+        <h5 className="app-sidebar__heading">Menu</h5>
+        <ul className="metismenu-container">{renderMenu(MainNav)}</ul>
 
-      <h5 className="app-sidebar__heading">Menu</h5>
-      <MetisMenu content={MainNav} onSelected={toggleMobileSidebar} activeLinkFromLocation
-        className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="pe-7s-angle-down"/>
+        <h5 className="app-sidebar__heading">UI Components</h5>
+        <ul className="metismenu-container">{renderMenu(ComponentsNav)}</ul>
 
-      <h5 className="app-sidebar__heading">UI Components</h5>
-      <MetisMenu content={ComponentsNav} onSelected={toggleMobileSidebar} activeLinkFromLocation
-        className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="pe-7s-angle-down"/>
+        <h5 className="app-sidebar__heading">Dashboard Widgets</h5>
+        <ul className="metismenu-container">{renderMenu(WidgetsNav)}</ul>
 
-      <h5 className="app-sidebar__heading">Dashboard Widgets</h5>
-      <MetisMenu content={WidgetsNav} onSelected={toggleMobileSidebar} activeLinkFromLocation
-        className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="pe-7s-angle-down"/>
+        <h5 className="app-sidebar__heading">Forms</h5>
+        <ul className="metismenu-container">{renderMenu(FormsNav)}</ul>
 
-      <h5 className="app-sidebar__heading">Forms</h5>
-      <MetisMenu content={FormsNav} onSelected={toggleMobileSidebar} activeLinkFromLocation
-        className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="pe-7s-angle-down"/>
-
-      <h5 className="app-sidebar__heading">Charts</h5>
-      <MetisMenu content={ChartsNav} onSelected={toggleMobileSidebar} activeLinkFromLocation
-        className="vertical-nav-menu" iconNamePrefix="" classNameStateIcon="pe-7s-angle-down"/>
+        <h5 className="app-sidebar__heading">Charts</h5>
+        <ul className="metismenu-container">{renderMenu(ChartsNav)}</ul>
+      </div>
     </Fragment>
   );
 };

@@ -5,6 +5,8 @@ import {
   Input,
   Button,
   DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
 } from "reactstrap";
 
 export default class FormInputGroupButton extends React.Component {
@@ -41,9 +43,15 @@ export default class FormInputGroupButton extends React.Component {
         <br />
         <InputGroup>
           <Input />
-          <Dropdown addonType="append"
-            isOpen={this.state.dropdownOpen} toggle={this.toggleDropDown}>
+          <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropDown}>
             <DropdownToggle caret>Button Dropdown</DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem header>Header</DropdownItem>
+              <DropdownItem disabled>Action</DropdownItem>
+              <DropdownItem>Another Action</DropdownItem>
+              <DropdownItem divider />
+              <DropdownItem>Another Action</DropdownItem>
+            </DropdownMenu>
           </Dropdown>
         </InputGroup>
         <br />

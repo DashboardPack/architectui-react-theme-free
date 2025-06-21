@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
 
-import { Slider } from "react-burgers";
+import Hamburger from "hamburger-react";
 
 import cx from "classnames";
 
@@ -50,22 +50,21 @@ class AppMobileMenu extends React.Component {
       <Fragment>
         <div className="app-header__mobile-menu">
           <div onClick={this.toggleMobileSidebar}>
-            <Slider width={26} lineHeight={2} lineSpacing={5} color="#6c757d" 
-              active={this.state.active} onClick={() => this.setState({ active: !this.state.active })}/>
+            <Hamburger 
+              toggled={this.props.enableMobileMenu} 
+              toggle={this.toggleMobileSidebar}
+              size={26}
+              color="#6c757d"
+            />
           </div>
         </div>
         <div className="app-header__menu">
           <span onClick={this.toggleMobileSmall}>
             <Button size="sm" className={cx("btn-icon btn-icon-only", {
-                active: this.state.activeSecondaryMenuMobile,
+                active: this.props.enableMobileMenuSmall,
               })}
               color="primary"
-              onClick={() =>
-                this.setState({
-                  activeSecondaryMenuMobile: !this.state
-                    .activeSecondaryMenuMobile,
-                })
-              }>
+              onClick={this.toggleMobileSmall}>
               <div className="btn-icon-wrapper">
                 <FontAwesomeIcon icon={faEllipsisV} />
               </div>

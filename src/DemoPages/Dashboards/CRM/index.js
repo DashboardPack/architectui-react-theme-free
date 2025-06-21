@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from "react";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup  } from '../../../utils/TransitionWrapper';
 
 import PageTitleAlt2 from "../../../Layout/AppMain/PageTitleAlt2";
 
-import Tabs, { TabPane } from "rc-tabs";
-import TabContent from "rc-tabs/lib/SwipeableTabContent";
-import ScrollableInkTabBar from "rc-tabs/lib/ScrollableInkTabBar";
+import Tabs, { TabPane } from '../../../utils/TabsWrapper';
+import { TabContent } from '../../../utils/TabsWrapper';
+import { ScrollableInkTabBar } from '../../../utils/TabsWrapper';
 
 // Examples
 import CRMDashboard1 from "./Examples/Variation1";

@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import classnames from "classnames";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup  } from '../../../utils/TransitionWrapper';
 import Tabs from "react-responsive-tabs";
 
 import dummyData from "./dummyData";

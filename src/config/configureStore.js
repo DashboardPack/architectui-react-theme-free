@@ -3,9 +3,7 @@ import reducers from "../reducers";
 
 export default function configureAppStore() {
   return configureStore({
-    reducer: {
-      ...reducers,
-    },
+    reducer: reducers,
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({
         serializableCheck: {

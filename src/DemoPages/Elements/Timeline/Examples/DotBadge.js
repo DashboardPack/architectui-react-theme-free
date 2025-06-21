@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
 import { Row, Col, Card, CardBody, CardTitle, Container } from "reactstrap";
 
 import avatar1 from "../../../../assets/utils/images/avatars/1.jpg";

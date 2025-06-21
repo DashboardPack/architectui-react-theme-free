@@ -11,7 +11,7 @@ import {
   Fade,
   Row,
 } from "reactstrap";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
 
 class AccordionsBasicExample extends Component {
   constructor(props) {

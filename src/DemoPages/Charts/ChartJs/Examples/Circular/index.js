@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup  } from '../../../../../utils/TransitionWrapper';
 import DoughnutExample from "../doughnut";
 import PieExample from "../pie";
 import DynamicDoughnutExample from "../dynamicDoughnut";
