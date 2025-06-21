@@ -41,6 +41,7 @@
     "classnames": "^2.5.1",
     "constants-browserify": "^1.0.0",
     "crypto-browserify": "^3.12.1",
+    "d3-color": "^3.1.0",
     "date-arithmetic": "^4.1.0",
     "date-fns": "^2.30.0",
     "dropzone": "^6.0.0-beta.2",
@@ -154,6 +155,10 @@
     "string-replace-loader": "^3.2.0"
   },
   "overrides": {
+    "d3-color": "^3.1.0",
+    "nth-check": "^2.1.1",
+    "postcss": "^8.4.31",
+    "prismjs": "^1.30.0",
     "react-anime": {
       "react": "$react",
       "react-dom": "$react-dom"
