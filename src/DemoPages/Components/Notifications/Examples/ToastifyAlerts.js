@@ -74,6 +74,10 @@ const Checkbox = ({ label, onChange, id, checked }) => (
 );
 
 const Radio = ({ options, name, onChange, checked = false }) => {
+  if (!options || typeof options !== 'object') {
+    return null;
+  }
+  
   return Object.keys(options).map((k) => {
     const option = options[k];
 
