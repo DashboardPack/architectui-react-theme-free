@@ -38,7 +38,18 @@ module.exports = function override(config, env) {
     config.ignoreWarnings = [
         ...(config.ignoreWarnings || []),
         /Failed to parse source map/,
-        /autoprefixer/
+        /autoprefixer/,
+        /source-map-loader/,
+        // Ignore specific source map warnings
+        function(warning) {
+            return (
+                warning.module &&
+                warning.module.resource &&
+                (warning.module.resource.includes('react-bootstrap-sweetalert') ||
+                 warning.module.resource.includes('react-redux') ||
+                 warning.module.resource.includes('react-toastify'))
+            );
+        }
     ];
 
     // Add support for ES modules in node_modules
@@ -46,6 +57,22 @@ module.exports = function override(config, env) {
         ".js": [".js", ".ts"],
         ".mjs": [".mjs", ".js"],
     };
+
+    // Disable source map generation for problematic packages
+    if (config.module && config.module.rules) {
+        config.module.rules.push({
+            test: /\.js$/,
+            include: [
+                /node_modules\/react-bootstrap-sweetalert/,
+                /node_modules\/react-redux/,
+                /node_modules\/react-toastify/
+            ],
+            use: [{
+                loader: 'source-map-loader'
+            }],
+            enforce: 'pre'
+        });
+    }
 
     return config;
 }
