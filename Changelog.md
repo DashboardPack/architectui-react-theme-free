@@ -1,6 +1,6 @@
 # Changelog
 
-## [4.0.0] - 2024-06-12
+## [4.0.0] - 2025-06-24
 
 ### Changed
 - **Upgraded to React 19.1.0:** Migrated the entire project to `react@^19.1.0` and `react-dom@^19.1.0`.
