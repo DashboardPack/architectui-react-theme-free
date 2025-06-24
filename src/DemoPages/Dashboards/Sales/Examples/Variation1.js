@@ -435,7 +435,7 @@ export default class SalesDashboard1 extends Component {
                                       Amin Hamer
                                     </div>
                                     <div className="widget-subheading mt-1 opacity-10">
-                                      <div className="badge rounded-pill badge-dark">
+                                      <div className="badge rounded-pill text-bg-dark">
                                         $7
                                       </div>
                                     </div>

@@ -27,8 +27,19 @@ class GoogleMapsExample extends React.Component {
                   <Card className="main-card mb-3">
                     <CardBody>
                       <CardTitle>Basic</CardTitle>
+                      <div className="alert alert-warning" role="alert">
+                        <strong>Note:</strong> To use Google Maps, please replace 'YOUR_GOOGLE_MAPS_API_KEY' with your actual Google Maps API key in the source code.
+                      </div>
                       <div style={{ height: "100vh", width: "100%" }}>
-                        <GoogleMapReact defaultCenter={this.props.center} defaultZoom={this.props.zoom}>
+                        <GoogleMapReact 
+                          bootstrapURLKeys={{ key: 'YOUR_GOOGLE_MAPS_API_KEY' }}
+                          defaultCenter={this.props.center} 
+                          defaultZoom={this.props.zoom}
+                          onGoogleApiLoaded={({ map, maps }) => {
+                            // Google Maps API loaded successfully
+                          }}
+                          yesIWantToUseGoogleMapApiInternals
+                        >
                           <AnyReactComponent lat={59.955413} lng={30.337844} text={"Example Text"}/>
                         </GoogleMapReact>
                       </div>

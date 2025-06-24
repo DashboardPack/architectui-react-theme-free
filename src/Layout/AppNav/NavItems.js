@@ -1,10 +1,3 @@
-export const UpgradeNav = [
-    {
-        icon: 'pe-7s-diamond',
-        label: 'Upgrade TO PRO',
-        to: 'https://dashboardpack.com/theme-details/architectui-dashboard-react-pro/',
-    },
-];
 export const MainNav = [
     {
         icon: 'pe-7s-rocket',

@@ -37,7 +37,7 @@ const Components = () => (
       <Route path="accordion" element={<Accordion />} />
       <Route path="block-loading" element={<BlockLoading />} />
       <Route path="count-up" element={<CountUp />} />
-      <Route path="modal" element={<Modal />} />
+      <Route path="modals" element={<Modal />} />
       <Route path="pagination" element={<Pagination />} />
       <Route path="progress-bar" element={<ProgressBar />} />
       <Route

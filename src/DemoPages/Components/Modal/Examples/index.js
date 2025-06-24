@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "reactstrap";
 
-
+// Import only one component at a time to test
 import ModalExample from "./Modal";
 import ModalBackdrop from "./ModalBackdrop";
 import ModalCustomCloseButton from "./ModalCustomCloseButton";
@@ -26,6 +26,13 @@ class ModalsExample extends React.Component {
       visible: false,
       animation: "zoom",
     };
+
+    // Debug logging
+    console.log('ModalsExample component initialized');
+  }
+
+  componentDidMount() {
+    console.log('ModalsExample component mounted successfully');
   }
 
   show(animation) {
@@ -40,6 +47,8 @@ class ModalsExample extends React.Component {
   }
 
   render() {
+    console.log('ModalsExample rendering...');
+    
     return (
       <Fragment>
         <TransitionGroup>

@@ -3,7 +3,7 @@ import { Col, Row, Button, FormGroup, Label, Input } from "reactstrap";
 
 // Layout
 
-const RegisterBoxed = ({ match }) => (
+const RegisterBoxed = () => (
   <Fragment>
     <div className="h-100 bg-premium-dark">
       <div className="d-flex h-100 justify-content-center align-items-center">

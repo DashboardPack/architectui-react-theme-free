@@ -7,8 +7,7 @@ import {
   Marker,
 } from "react-simple-maps";
 
-const geoUrl =
-  "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
+import world from "./Static/world-110m.json";
 
 export default class VectorMapsMarkers extends React.Component {
   render() {
@@ -20,7 +19,7 @@ export default class VectorMapsMarkers extends React.Component {
               scale: 800
             }}
           >
-            <Geographies geography={geoUrl}>
+            <Geographies geography={world}>
               {({ geographies }) =>
                 geographies.map(geo => (
                   <Geography

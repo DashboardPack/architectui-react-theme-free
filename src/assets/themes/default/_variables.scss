@@ -1,6 +1,7 @@
-// GENERIC
-
 @use "sass:math";
+@use "sass:map";
+
+// GENERIC
 
 $enable-caret: true;
 $enable-rounded: true;
@@ -28,7 +29,7 @@ $black: #000;
 
 $grays: ();
 
-$grays: map-merge(
+$grays: map.merge(
                 (
                         "100": $gray-100,
                         "200": $gray-200,
@@ -83,7 +84,7 @@ $custom-colors: (
   "alternate": $alt
 );
 
-$theme-colors: map-merge( $theme-colors, $custom-colors);
+$theme-colors: map.merge( $theme-colors, $custom-colors);
 
 // BOOTSTRAP OVERWRITES
 

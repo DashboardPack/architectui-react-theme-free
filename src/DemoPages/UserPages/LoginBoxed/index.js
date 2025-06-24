@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap";
 // Layout
 
-const LoginBoxed = ({ match }) => (
+const LoginBoxed = () => (
   <Fragment>
     <div className="h-100 bg-plum-plate bg-animation">
       <div className="d-flex h-100 justify-content-center align-items-center">

@@ -64,7 +64,7 @@ class UserBox extends React.Component {
                       icon={faAngleDown}
                     />
                   </DropdownToggle>
-                  <DropdownMenu end className="rm-pointers dropdown-menu-lg">
+                  <DropdownMenu className="rm-pointers dropdown-menu-lg">
                     <div className="dropdown-menu-header">
                       <div className="dropdown-menu-header-inner bg-info">
                         <div className="menu-header-image opacity-2"

@@ -37,6 +37,7 @@
         padding: 0;
         display: flex;
         justify-content: center;
+        align-items: center;
         margin: 0 auto;
         width: 100%;
         position: relative;
@@ -44,10 +45,9 @@
 
       .metismenu-icon {
         text-indent: 0;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        margin-left: 0;
+        position: static;
+        transform: none;
+        margin: 0;
       }
 
       .metismenu-state-icon {
@@ -103,7 +103,8 @@
         .metismenu-icon {
           position: absolute;
           left: 5px;
-          transform: none;
+          top: 50%;
+          transform: translateY(-50%);
           margin-left: 0;
         }
 

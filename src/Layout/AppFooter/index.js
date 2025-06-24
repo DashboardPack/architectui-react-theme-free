@@ -9,36 +9,48 @@ const AppFooter = ({ enableFixedFooter }) => {
           <div className="app-footer__inner">
             <div className="app-footer-left">
               <ul className="nav">
-                <li className="nav-item">
-                  <a href="javascript:void(0);" className="nav-link">
+                <li className="nav-item me-3">
+                  <button 
+                    type="button" 
+                    className="nav-link btn btn-link p-0 border-0" 
+                    style={{ background: 'none', color: 'inherit', textDecoration: 'none' }}
+                  >
                     Footer Link 1
-                  </a>
+                  </button>
                 </li>
-                <li className="nav-item">
-                  <a href="javascript:void(0);" className="nav-link">
+                <li className="nav-item me-3">
+                  <button 
+                    type="button" 
+                    className="nav-link btn btn-link p-0 border-0" 
+                    style={{ background: 'none', color: 'inherit', textDecoration: 'none' }}
+                  >
                     Footer Link 2
-                  </a>
+                  </button>
                 </li>
               </ul>
             </div>
             <div className="app-footer-right">
               <ul className="nav">
-                <li className="nav-item">
-                  <a href="javascript:void(0);" className="nav-link">
+                <li className="nav-item me-3">
+                  <button 
+                    type="button" 
+                    className="nav-link btn btn-link p-0 border-0" 
+                    style={{ background: 'none', color: 'inherit', textDecoration: 'none' }}
+                  >
                     Footer Link 3
-                  </a>
+                  </button>
                 </li>
                 <li className="nav-item">
-                  <a
-                    href="javascript:void(0);"
-                    className="nav-link"
-                    rel="noopener noreferrer"
+                  <button
+                    type="button"
+                    className="nav-link btn btn-link p-0 border-0"
+                    style={{ background: 'none', color: 'inherit', textDecoration: 'none' }}
                   >
-                    <div className="badge badge-success mr-1 ml-0">
+                    <div className="badge text-bg-success me-2 ms-0" style={{ color: 'white' }}>
                       <small>NEW</small>
                     </div>
                     Footer Link 4
-                  </a>
+                  </button>
                 </li>
               </ul>
             </div>

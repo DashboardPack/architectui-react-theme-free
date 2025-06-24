@@ -1138,7 +1138,7 @@ export default class AnalyticsDashboard1 extends Component {
                                 <div className="widget-subheading">
                                   <div>
                                     By Johnny
-                                    <div className="badge rounded-pill badge-info ms-2">
+                                    <div className="badge rounded-pill text-bg-info ms-2">
                                       NEW
                                     </div>
                                   </div>
@@ -1180,7 +1180,7 @@ export default class AnalyticsDashboard1 extends Component {
                                 </Button>
                               </div>
                               <div className="widget-content-right ms-3">
-                                <div className="badge rounded-pill badge-dark">
+                                <div className="badge rounded-pill text-bg-dark">
                                   NEW
                                 </div>
                               </div>

@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { connect } from "react-redux";
-// import MetisMenu from "react-metismenu"; // Temporarily disabled for React 19 compatibility
 import { setEnableMobileMenu } from "../../reducers/ThemeOptions";
 import {
   MainNav,
@@ -20,7 +19,7 @@ const SubMenu = ({ item, toggleMobileSidebar }) => {
       e.preventDefault();
       e.stopPropagation();
       setIsSubMenuOpen(!isSubMenuOpen);
-    } else if (item.to) {
+    } else if (item.to && !item.external) {
       toggleMobileSidebar();
     }
   };
@@ -31,11 +30,16 @@ const SubMenu = ({ item, toggleMobileSidebar }) => {
   const isActive = location.pathname === item.to || 
     (hasSubmenu && item.content.some(child => child.to === location.pathname));
 
+  const LinkComponent = item.external ? 'a' : Link;
+  const linkProps = item.external 
+    ? { href: item.to, target: "_blank", rel: "noopener noreferrer" }
+    : { to: item.to || "#" };
+
   return (
-    <li className={`metismenu-item ${isActive ? "mm-active" : ""}`}>
-      <Link
-        to={item.to || "#"}
-        className={`metismenu-link ${isActive ? "mm-active" : ""} ${hasSubmenu ? "has-arrow" : ""}`}
+    <li className={`metismenu-item ${isActive ? "active" : ""}`}>
+      <LinkComponent
+        {...linkProps}
+        className={`metismenu-link ${isActive ? "active" : ""}`}
         onClick={toggleSubMenu}
       >
         <i className={`metismenu-icon ${item.icon}`} />
@@ -43,7 +47,7 @@ const SubMenu = ({ item, toggleMobileSidebar }) => {
         {hasSubmenu && (
           <i className={`metismenu-state-icon pe-7s-angle-${isSubMenuOpen ? 'up' : 'down'}`} />
         )}
-      </Link>
+      </LinkComponent>
       {hasSubmenu && (
         <ul className={`metismenu-container ${isSubMenuOpen ? "visible" : ""}`}>
           {item.content.map((child, i) => (
@@ -80,7 +84,7 @@ const Nav = ({ enableMobileMenu, setEnableMobileMenu }) => {
   return (
     <Fragment>
       <div className="vertical-nav-menu">
-        <h5 className="app-sidebar__heading">Menu</h5>
+        <h5 className="app-sidebar__heading">MENU</h5>
         <ul className="metismenu-container">{renderMenu(MainNav)}</ul>
 
         <h5 className="app-sidebar__heading">UI Components</h5>

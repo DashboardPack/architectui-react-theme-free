@@ -1,9 +1,11 @@
+@use "sass:math";
+@use "sass:map";
+@use "sass:list";
+
 // Buttons
 
 // 2x Outline Border
 $btn-block-spacing-y:         .5rem !default;
-
-@use "sass:math";
 
 .btn-outline-2x {
   border-width: 2px;
@@ -299,7 +301,7 @@ $gradient-alt: $purple;
 
 $gradinet-percent: 15%;
 
-$btn-gradients: map_merge(
+$btn-gradients: map.merge(
                 (
                         "primary": (
                                 shade-color($gradient-primary, $gradinet-percent), // color-start
@@ -380,9 +382,9 @@ $btn-gradients: map_merge(
 }
 
 @each $grad, $colors in $btn-gradients {
-  $color: nth($colors, 1);
-  $color1: nth($colors, 2);
-  $color2: nth($colors, 3);
+  $color: list.nth($colors, 1);
+  $color1: list.nth($colors, 2);
+  $color2: list.nth($colors, 3);
 
   .btn-gradient-#{$grad} {
     @include btn-grad-variant($color, $color1, $color2);

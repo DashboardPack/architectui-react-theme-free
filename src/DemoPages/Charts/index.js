@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // Charts
 
@@ -9,35 +9,15 @@ import ChartsChartJs from "./ChartJs/";
 import ChartsGauges from "./Gauges/";
 import ApexCharts from "./ApexCharts/";
 
-// Layout
-
-import AppHeader from "../../Layout/AppHeader/";
-import AppSidebar from "../../Layout/AppSidebar/";
-import AppFooter from "../../Layout/AppFooter/";
-
-// Theme Options
-
-import ThemeOptions from "../../Layout/ThemeOptions/";
-
-const Charts = ({ match }) => (
+const Charts = () => (
   <Fragment>
-    <ThemeOptions />
-    <AppHeader />
-    <div className="app-main">
-      <AppSidebar />
-      <div className="app-main__outer">
-        <div className="app-main__inner">
-          {/* Charts */}
-
-          <Route path={`${match.url}/sparklines-1`} component={ChartsSparklines1}/>
-          <Route path={`${match.url}/sparklines-2`} component={ChartsSparklines2}/>
-          <Route path={`${match.url}/chartjs`} component={ChartsChartJs} />
-          <Route path={`${match.url}/gauges`} component={ChartsGauges} />
-          <Route path={`${match.url}/apexcharts`} component={ApexCharts} />
-        </div>
-        <AppFooter />
-      </div>
-    </div>
+    <Routes>
+      <Route path="sparklines-1" element={<ChartsSparklines1 />} />
+      <Route path="sparklines-2" element={<ChartsSparklines2 />} />
+      <Route path="chartjs" element={<ChartsChartJs />} />
+      <Route path="gauges" element={<ChartsGauges />} />
+      <Route path="apexcharts" element={<ApexCharts />} />
+    </Routes>
   </Fragment>
 );
 

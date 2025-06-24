@@ -61,13 +61,13 @@ export default class WizardStep2 extends React.Component {
           <FormGroup>
             <Label for="exampleCheckbox">Inline</Label>
             <div>
-              <FormGroup check inline>
+              <FormGroup check className="form-check-inline">
                 <Input type="checkbox" />
                 <Label check>
                   An inline custom input
                 </Label>
               </FormGroup>
-              <FormGroup check inline>
+              <FormGroup check className="form-check-inline">
                 <Input type="checkbox" />
                 <Label check>
                   and another one

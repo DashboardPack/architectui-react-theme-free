@@ -49,13 +49,13 @@ export default class FormsCustomControls extends React.Component {
                 <CardBody>
                   <CardTitle>Inline</CardTitle>
                   <FormGroup>
-                    <FormGroup check inline>
+                    <FormGroup check className="form-check-inline">
                       <Input type="checkbox" />
                       <Label check>
                         An inline custom input
                       </Label>
                     </FormGroup>
-                    <FormGroup check inline>
+                    <FormGroup check className="form-check-inline">
                       <Input type="checkbox" />
                       <Label check>
                         and another one
