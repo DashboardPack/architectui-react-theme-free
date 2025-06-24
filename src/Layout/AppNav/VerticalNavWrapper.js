@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { connect } from "react-redux";
 import { setEnableMobileMenu } from "../../reducers/ThemeOptions";
 import {
+  UpgradeNav,
   MainNav,
   ComponentsNav,
   FormsNav,
@@ -84,6 +85,9 @@ const Nav = ({ enableMobileMenu, setEnableMobileMenu }) => {
   return (
     <Fragment>
       <div className="vertical-nav-menu">
+        <h5 className="app-sidebar__heading">PRO VERSION</h5>
+        <ul className="metismenu-container">{renderMenu(UpgradeNav)}</ul>
+
         <h5 className="app-sidebar__heading">MENU</h5>
         <ul className="metismenu-container">{renderMenu(MainNav)}</ul>
 
