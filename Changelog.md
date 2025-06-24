@@ -3,7 +3,7 @@
 ## [4.0.0] - 2024-06-12
 
 ### Changed
-- **Upgraded to React 19:** Migrated the entire project to `react@^19.0.0-rc` and `react-dom@^19.0.0-rc`.
+- **Upgraded to React 19.1.0:** Migrated the entire project to `react@^19.1.0` and `react-dom@^19.1.0`.
 - **Comprehensive Dependency Update:** Updated numerous packages, including `framer-motion`, and resolved complex dependency conflicts.
 - **Modernized SCSS:** Replaced deprecated Sass functions (`map-merge`, `nth`) with their modern module-based equivalents (`map.merge`, `list.nth`).
 - **Webpack 5 Polyfills:** Integrated necessary polyfills (`crypto-browserify`, `stream-browserify`, etc.) for Node.js core modules no longer included in modern webpack.
