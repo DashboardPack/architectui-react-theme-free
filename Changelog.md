@@ -1,5 +1,30 @@
 # Changelog
 
+## [4.1.0] - 2025-12-03
+
+### Changed
+- **Upgraded to React 19.2.0:** Updated from React 19.1.0 to the latest React 19.2.0 release.
+- **Comprehensive Dependency Update:** Updated all 100+ dependencies to their latest versions, including major version upgrades:
+  - `@fortawesome/*` packages: 6.7.2 → 7.1.0
+  - `@fortawesome/react-fontawesome`: 0.2.2 → 3.1.1
+  - `apexcharts`: 4.7.0 → 5.3.6
+  - `recharts`: 2.13.3 → 3.5.1
+  - `framer-motion`: 12.19.1 → 12.23.25
+  - `react-router-dom`: 7.6.2 → 7.9.6
+  - `typescript`: 5.7.2 → 5.9.3
+  - `bootstrap`: 5.3.7 → 5.3.8
+  - And many more minor/patch updates
+- **Dependency Cleanup:** Removed 22 unused dependencies, reducing total packages from 1,908 to 1,807 (~100 packages removed including transitive dependencies).
+
+### Removed
+- **Testing Libraries:** Removed `@testing-library/jest-dom`, `@testing-library/react`, `@testing-library/user-event` (no test files in project)
+- **Unused UI Components:** Removed `chartist`, `jquery`, `rc-tree`, `react-compound-slider`, `react-dnd`, `react-dnd-html5-backend`, `react-map-gl`, `react-outside-click-handler`, `react-scroll`, `react-sizeme`, `react-syntax-highlighter`
+- **Unused Redux Packages:** Removed `redux-form`, `redux-logger`, `redux-thunk` (using @reduxjs/toolkit instead)
+- **Duplicate/Unused Packages:** Removed `dropzone` (using react-dropzone), `globalize`, `install`, `web-vitals`, `@types/markerclustererplus`
+
+### Fixed
+- **Replaced namor with browser-compatible solution:** The `namor` package v3 is not browser-compatible (uses Node.js fs module). Replaced with inline name generator arrays for demo data tables.
+
 ## [4.0.0] - 2025-06-24
 
 ### Changed

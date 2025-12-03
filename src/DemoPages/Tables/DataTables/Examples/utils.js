@@ -1,4 +1,19 @@
-import namor from "namor";
+// Simple name generator (browser-compatible replacement for namor)
+const firstNames = [
+  "James", "Mary", "John", "Patricia", "Robert", "Jennifer", "Michael", "Linda",
+  "William", "Elizabeth", "David", "Barbara", "Richard", "Susan", "Joseph", "Jessica",
+  "Thomas", "Sarah", "Charles", "Karen", "Emma", "Oliver", "Ava", "Elijah", "Sophia",
+  "Lucas", "Isabella", "Mason", "Mia", "Logan", "Charlotte", "Alexander", "Amelia",
+  "Ethan", "Harper", "Jacob", "Evelyn", "Liam", "Abigail", "Noah", "Emily"
+];
+
+const lastNames = [
+  "Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis",
+  "Rodriguez", "Martinez", "Hernandez", "Lopez", "Gonzalez", "Wilson", "Anderson",
+  "Thomas", "Taylor", "Moore", "Jackson", "Martin", "Lee", "Perez", "Thompson",
+  "White", "Harris", "Sanchez", "Clark", "Ramirez", "Lewis", "Robinson", "Walker",
+  "Young", "Allen", "King", "Wright", "Scott", "Torres", "Nguyen", "Hill", "Flores"
+];
 
 const range = (len) => {
   const arr = [];
@@ -11,8 +26,8 @@ const range = (len) => {
 const newPerson = () => {
   const statusChance = Math.random();
   return {
-    firstName: namor.generate({ words: 1}),
-    lastName: namor.generate({ words: 1 }),
+    firstName: firstNames[Math.floor(Math.random() * firstNames.length)],
+    lastName: lastNames[Math.floor(Math.random() * lastNames.length)],
     age: Math.floor(Math.random() * 30),
     visits: Math.floor(Math.random() * 100),
     progress: Math.floor(Math.random() * 100),

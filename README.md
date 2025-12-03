@@ -13,8 +13,8 @@ This template offers clean, responsive design with a comprehensive set of UI com
 ## Key Features
 
 ### Core Technologies
-- **React 19.1.0** - Latest React with improved performance and features
-- **Bootstrap 5.3.7** - Modern CSS framework with utilities
+- **React 19.2.0** - Latest React with improved performance and features
+- **Bootstrap 5.3.8** - Modern CSS framework with utilities
 - **Redux Toolkit** - State management
 - **React Router v7** - Navigation and routing
 - **Sass/SCSS** - Advanced styling capabilities
@@ -174,13 +174,13 @@ Upgrade to **ArchitectUI React PRO** for additional features:
 ## Technical Details
 
 ### Dependencies
-- **UI Framework**: Bootstrap 5.3.7, Reactstrap 9.2.3
-- **Charts**: ApexCharts 4.7.0, Chart.js 4.4.7, Recharts 2.13.3
-- **Icons**: FontAwesome 6.7.2, React Icons 5.4.0
-- **Forms**: React Hook Form, React Select, React Datepicker
-- **Animations**: Framer Motion 12.19.1, React Animations
-- **State Management**: Redux Toolkit 2.8.2
-- **Build Tools**: React App Rewired, Sass 1.89.2
+- **UI Framework**: Bootstrap 5.3.8, Reactstrap 9.2.3
+- **Charts**: ApexCharts 5.3.6, Chart.js 4.5.1, Recharts 3.5.1
+- **Icons**: FontAwesome 7.1.0, React Icons 5.5.0
+- **Forms**: React Select, React Datepicker, React Input Mask
+- **Animations**: Framer Motion 12.23.25, React Animations
+- **State Management**: Redux Toolkit 2.11.0
+- **Build Tools**: React App Rewired, Sass 1.94.2
 
 ### Performance Features
 - **Code Splitting** - Automatic route-based code splitting
