@@ -23,7 +23,7 @@ import PerfectScrollbar from "react-perfect-scrollbar";
 
 import CountUp from "react-countup";
 
-import { Progress } from "react-sweet-progress";
+import { Progress } from "../../../../components/CircleProgress";
 
 import avatar1 from "../../../../assets/utils/images/avatars/1.jpg";
 import avatar2 from "../../../../assets/utils/images/avatars/2.jpg";

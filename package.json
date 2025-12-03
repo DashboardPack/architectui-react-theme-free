@@ -1,6 +1,6 @@
 {
   "name": "architectui-react-theme-free",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "homepage": "./",
   "private": true,
   "description": "ArchitectUI - Bootstrap 5 ReactJS Admin Dashboard Template FREE",
@@ -10,10 +10,10 @@
     "url": "git+https://github.com/DashboardPack/architectui-react-theme-free"
   },
   "scripts": {
-    "start": "cross-env PORT=3001 react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-scripts eject",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite",
     "postinstall": "patch-package"
   },
   "dependencies": {
@@ -41,10 +41,10 @@
     "date-fns": "^4.1.0",
     "events": "^3.3.0",
     "framer-motion": "^12.23.25",
-    "google-map-react": "^2.2.5",
     "hamburger-react": "^2.5.2",
     "hamburgers": "^1.2.1",
     "https-browserify": "^1.0.0",
+    "leaflet": "^1.9.4",
     "loaders.css": "^0.1.2",
     "moment": "^2.30.1",
     "os-browserify": "^0.3.0",
@@ -56,8 +56,6 @@
     "react-animations": "^1.0.0",
     "react-anime": "^4.1.1",
     "react-apexcharts": "^1.9.0",
-    "react-app-polyfill": "^3.0.0",
-    "react-app-rewired": "^2.2.1",
     "react-big-calendar": "^1.19.4",
     "react-bootstrap": "^2.10.10",
     "react-bootstrap-sweetalert": "^5.2.0",
@@ -75,9 +73,9 @@
     "react-icons": "^5.5.0",
     "react-image-crop": "^11.0.10",
     "react-input-mask": "^2.0.4",
+    "react-leaflet": "^5.0.0",
     "react-liquid-gauge": "^1.2.4",
     "react-loaders": "^3.0.1",
-    "react-loading-overlay-ts": "^2.0.2",
     "react-numeric-input": "^2.2.3",
     "react-on-screen": "^2.1.1",
     "react-paginate": "^8.3.0",
@@ -88,7 +86,6 @@
     "react-resize-detector": "^12.3.0",
     "react-responsive-tabs": "^4.4.3",
     "react-router-dom": "^7.9.6",
-    "react-scripts": "5.0.1",
     "react-select": "^5.10.2",
     "react-simple-maps": "^3.0.0",
     "react-slick": "^0.31.0",
@@ -122,128 +119,99 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "@vitejs/plugin-react-swc": "^4.2.2",
     "ajv": "^8.17.1",
     "ajv-keywords": "^5.1.0",
-    "cross-env": "^10.1.0",
     "glob": "^13.0.0",
     "patch-package": "^8.0.1",
     "postcss": "^8.5.6",
     "process": "^0.11.10",
-    "resolve-url-loader": "^5.0.0",
     "sass": "^1.94.2",
-    "sass-loader": "^16.0.6",
-    "string-replace-loader": "^3.2.0",
-    "webpack-dev-server": "^4.15.2"
+    "vite": "^7.2.6",
+    "vite-plugin-node-polyfills": "^0.24.0"
   },
   "overrides": {
     "d3-color": "^3.1.0",
     "nth-check": "^2.1.1",
     "postcss": "^8.5.6",
     "prismjs": "^1.30.0",
-    "webpack-dev-server": "^4.15.2",
     "typescript": "^5.9.3",
-    "react-popper": {
-      "react": "$react",
-      "react-dom": "$react-dom"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "@types/react": "^19.2.7",
+    "rc-slider": {
+      "react": "^19.2.0",
+      "react-dom": "^19.2.0"
     },
-    "react-simple-maps": {
-      "react": "$react",
-      "react-dom": "$react-dom"
+    "rc-tooltip": {
+      "react": "^19.2.0",
+      "react-dom": "^19.2.0"
     },
-    "react-table": {
-      "react": "$react",
-      "react-dom": "$react-dom"
+    "rc-util": {
+      "react": "^19.2.0",
+      "react-dom": "^19.2.0"
     },
-    "airbnb-prop-types": {
-      "react": "$react"
+    "rc-motion": {
+      "react": "^19.2.0",
+      "react-dom": "^19.2.0"
     },
-    "react-intersection-observer": {
-      "react": "$react"
+    "@rc-component/trigger": {
+      "react": "^19.2.0",
+      "react-dom": "^19.2.0"
     },
-    "react-anime": {
-      "react": "$react",
-      "react-dom": "$react-dom"
+    "@rc-component/portal": {
+      "react": "^19.2.0",
+      "react-dom": "^19.2.0"
     },
-    "react-responsive-tabs": {
-      "react": "$react",
-      "react-dom": "$react-dom"
+    "rc-resize-observer": {
+      "react": "^19.2.0",
+      "react-dom": "^19.2.0"
     },
     "ckeditor4-react": {
-      "react": "$react",
-      "react-dom": "$react-dom"
+      "react": "^19.2.0",
+      "react-dom": "^19.2.0"
     },
-    "react-bootstrap-sweetalert": {
-      "react": "$react",
-      "react-dom": "$react-dom"
-    },
-    "react-widgets": {
-      "react": "$react",
-      "react-dom": "$react-dom"
-    },
-    "react-color": {
-      "react": "$react",
-      "react-dom": "$react-dom"
+    "react-anime": {
+      "react": "^19.2.0",
+      "react-dom": "^19.2.0"
     },
     "react-copy-to-clipboard": {
-      "react": "$react",
-      "react-dom": "$react-dom"
+      "react": "^19.2.0",
+      "react-dom": "^19.2.0"
     },
-    "react-form-validator-core": {
-      "react": "$react",
-      "react-dom": "$react-dom"
+    "react-popper": {
+      "react": "^19.2.0",
+      "react-dom": "^19.2.0"
     },
-    "react-input-mask": {
-      "react": "$react",
-      "react-dom": "$react-dom"
+    "react-responsive-tabs": {
+      "react": "^19.2.0",
+      "react-dom": "^19.2.0"
     },
-    "react-rating": {
-      "react": "$react",
-      "react-dom": "$react-dom"
+    "react-simple-maps": {
+      "react": "^19.2.0",
+      "react-dom": "^19.2.0"
     },
-    "react-sparklines": {
-      "react": "$react",
-      "react-dom": "$react-dom"
-    },
-    "react-sticky-el": {
-      "react": "$react",
-      "react-dom": "$react-dom"
-    },
-    "react-stickynode": {
-      "react": "$react",
-      "react-dom": "$react-dom"
-    },
-    "react-sweet-progress": {
-      "react": "$react",
-      "react-dom": "$react-dom"
-    },
-    "react-validation": {
-      "react": "$react",
-      "react-dom": "$react-dom"
-    },
-    "react-vertical-timeline-component": {
-      "react": "$react",
-      "react-dom": "$react-dom"
-    },
-    "react-visibility-sensor": {
-      "react": "$react",
-      "react-dom": "$react-dom"
+    "react-table": {
+      "react": "^19.2.0",
+      "react-dom": "^19.2.0"
     },
     "reactour": {
-      "react": "$react",
-      "react-dom": "$react-dom"
+      "react": "^19.2.0",
+      "react-dom": "^19.2.0"
     },
-    "react-onclickoutside": {
-      "react": "$react",
-      "react-dom": "$react-dom"
+    "styled-components": {
+      "react": "^19.2.0",
+      "react-dom": "^19.2.0"
     },
-    "react-datepicker": {
-      "react": "$react",
-      "react-dom": "$react-dom",
-      "react-onclickoutside": "6.13.0"
+    "react-resize-detector": {
+      "react": "^19.2.0",
+      "react-dom": "^19.2.0"
+    },
+    "react-intersection-observer": {
+      "react": "^19.2.0",
+      "react-dom": "^19.2.0"
     }
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": [
     ">0.2%",

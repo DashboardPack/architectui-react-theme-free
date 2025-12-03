@@ -30,7 +30,7 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
-import LoadingOverlay from "react-loading-overlay-ts";
+import LoadingOverlay from "../../../utils/LoadingOverlay";
 
 import PageTitle from "../../../Layout/AppMain/PageTitle";
 

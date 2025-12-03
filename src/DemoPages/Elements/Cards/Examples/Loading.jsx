@@ -31,7 +31,7 @@ import {
   DropdownItem,
   Container,
 } from "reactstrap";
-import LoadingOverlay from "react-loading-overlay-ts";
+import LoadingOverlay from "../../../../utils/LoadingOverlay";
 
 class CardsBlockLoadingExample extends Component {
   constructor(props) {

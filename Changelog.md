@@ -1,5 +1,30 @@
 # Changelog
 
+## [4.2.0] - 2025-12-03
+
+### Changed
+- **Migrated from Create React App to Vite:** Complete build system migration from CRA to Vite 7.2.6 for significantly faster development server startup and hot module replacement (HMR). Build times reduced from ~30s to ~3s.
+- **Renamed all .js files to .jsx:** Converted 348 JavaScript files to use the .jsx extension for better tooling support and Vite compatibility.
+- **Replaced Google Maps with Leaflet/OpenStreetMap:** Removed dependency on Google Maps API key. Interactive maps now use free OpenStreetMap tiles via react-leaflet with multiple map styles (Standard, Dark, Satellite, Topographic, Watercolor).
+- **Enhanced Vector Maps:** Completely redesigned vector maps with proper sizing, interactive hover effects, zoom/pan functionality, and city markers with tooltips showing population data.
+
+### Added
+- **Vite Configuration:** New `vite.config.js` with Node.js polyfills, React plugin, and optimized settings.
+- **Custom LoadingOverlay Component:** Created React 19 compatible loading overlay component using Framer Motion to replace deprecated `react-loading-overlay-ts`.
+- **Custom TabsWrapper Component:** Created `src/utils/TabsWrapper.jsx` to replace rc-tabs with a React 19 compatible implementation.
+- **Custom TransitionWrapper Component:** Created `src/utils/TransitionWrapper.jsx` to replace react-transition-group with Framer Motion.
+
+### Fixed
+- **React 19 Compatibility:** Resolved "A React Element from an older version of React was rendered" errors by adding comprehensive npm overrides for packages with pre-bundled older React versions.
+- **SCSS Import Paths:** Removed tilde (~) prefix from all SCSS imports for Vite compatibility.
+
+### Removed
+- **Create React App:** Removed react-scripts, react-app-rewired, and config-overrides.js.
+- **Deprecated Packages:** Removed `react-loading-overlay-ts`, `google-map-react`, `rc-tabs`, `react-transition-group`.
+
+### Security
+- **0 Vulnerabilities:** Clean security audit with all dependencies updated.
+
 ## [4.1.0] - 2025-12-03
 
 ### Changed

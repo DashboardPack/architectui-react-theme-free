@@ -14,6 +14,7 @@ This template offers clean, responsive design with a comprehensive set of UI com
 
 ### Core Technologies
 - **React 19.2.0** - Latest React with improved performance and features
+- **Vite 7.2.6** - Lightning-fast build tool with instant HMR
 - **Bootstrap 5.3.8** - Modern CSS framework with utilities
 - **Redux Toolkit** - State management
 - **React Router v7** - Navigation and routing
@@ -24,7 +25,7 @@ This template offers clean, responsive design with a comprehensive set of UI com
 - **Multiple Dashboard Layouts** - Analytics, CRM, Commerce, Sales, and Minimal
 - **Advanced Form Elements** - Date pickers, file uploads, text editors, sliders
 - **Data Visualization** - ApexCharts, Chart.js, Recharts integration
-- **Interactive Maps** - Google Maps and Vector Maps support
+- **Interactive Maps** - Leaflet/OpenStreetMap and Vector Maps (no API key required)
 - **Responsive Design** - Mobile-first approach with all device compatibility
 
 ### Layout Options
@@ -51,7 +52,7 @@ This template offers clean, responsive design with a comprehensive set of UI com
 
 2. **Install Dependencies**
    ```bash
-   npm install
+   npm install --legacy-peer-deps
    ```
 
 3. **Start Development Server**
@@ -68,12 +69,12 @@ This template offers clean, responsive design with a comprehensive set of UI com
    npm run build
    ```
 
-2. **Serve Production Build Locally**
+2. **Preview Production Build**
    ```bash
-   npx serve -s build -l 4000
+   npm run preview
    ```
-   
-   View the production build at `http://localhost:4000`
+
+   View the production build at `http://localhost:4173`
 
 ## Project Structure
 
@@ -93,7 +94,7 @@ architectui-react-theme-free/
 │   │   ├── AppSidebar/    # Sidebar components
 │   │   └── AppFooter/     # Footer components
 │   └── reducers/          # Redux store configuration
-├── config-overrides.js   # Webpack configuration
+├── vite.config.js        # Vite configuration
 └── package.json          # Dependencies and scripts
 ```
 
@@ -102,9 +103,9 @@ architectui-react-theme-free/
 | Command | Description |
 |---------|-------------|
 | `npm start` | Start development server (port 3001) |
+| `npm run dev` | Start development server (alias for start) |
 | `npm run build` | Create production build |
-| `npm test` | Run test suite |
-| `npm run eject` | Eject from Create React App (not recommended) |
+| `npm run preview` | Preview production build locally |
 
 ## Browser Support
 
@@ -180,9 +181,10 @@ Upgrade to **ArchitectUI React PRO** for additional features:
 - **Forms**: React Select, React Datepicker, React Input Mask
 - **Animations**: Framer Motion 12.23.25, React Animations
 - **State Management**: Redux Toolkit 2.11.0
-- **Build Tools**: React App Rewired, Sass 1.94.2
+- **Build Tools**: Vite 7.2.6, Sass 1.94.2
 
 ### Performance Features
+- **Lightning-Fast HMR** - Instant hot module replacement with Vite
 - **Code Splitting** - Automatic route-based code splitting
 - **Tree Shaking** - Eliminate unused code
 - **Optimized Builds** - Minified and compressed assets
