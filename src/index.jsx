@@ -2,8 +2,6 @@ import "./polyfills";
 import React from "react";
 import { createRoot } from 'react-dom/client';
 
-import * as serviceWorker from "./serviceWorker";
-
 import { HashRouter } from "react-router-dom";
 import "./assets/base.scss";
 import Main from "./DemoPages/Main";
@@ -31,10 +29,11 @@ const renderApp = (Component) => (
 const root = createRoot(rootElement);
 root.render(renderApp(Main));
 
-if (module.hot) {
-  module.hot.accept("./DemoPages/Main", () => {
-    const NextApp = require("./DemoPages/Main").default;
-    root.render(renderApp(NextApp));
+// Vite HMR
+if (import.meta.hot) {
+  import.meta.hot.accept("./DemoPages/Main", (newModule) => {
+    if (newModule) {
+      root.render(renderApp(newModule.default));
+    }
   });
 }
-serviceWorker.unregister();
