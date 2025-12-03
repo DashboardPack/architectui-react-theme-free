@@ -2,7 +2,9 @@
 
 **React 19 Compatible** - A modern, responsive admin dashboard template built with React 19, Bootstrap 5, and comprehensive component library.
 
-![ArchitectUI Bootstrap 5 ReactJS Theme FREE](https://colorlib.com/wp/wp-content/uploads/sites/2/architectui-react-free.jpg)
+[![ArchitectUI Bootstrap 5 ReactJS Theme FREE](https://colorlib.com/wp/wp-content/uploads/sites/2/architectui-react-free.jpg)](https://demo.dashboardpack.com/architectui-react-free/)
+
+[**View Live Demo**](https://demo.dashboardpack.com/architectui-react-free/)
 
 ## Overview
 
@@ -144,33 +146,56 @@ ArchitectUI is available in multiple frameworks:
 
 ## Professional Version
 
-Upgrade to **ArchitectUI React PRO** for additional features:
+Upgrade to **[ArchitectUI React PRO](https://dashboardpack.com/theme-details/architectui-dashboard-react-pro)** for additional features:
 
-- **150+ Premium Components**
-- **Advanced Dashboard Layouts**
-- **Premium Chart Libraries**
-- **Extended Form Elements**
-- **Professional Support**
-- **Regular Updates**
-- **Commercial License**
+- **200+ Premium Components** - Extensive widget and component library
+- **9+ Dashboard Layouts** - Analytics, CRM, Commerce, Sales, and more
+- **300+ Color Combinations** - Unlimited customization options
+- **Premium Chart Libraries** - Advanced data visualization
+- **Extended Form Elements** - Rich form controls and validation
+- **Professional Support** - Priority email support
+- **Regular Updates** - Continuous improvements and new features
+- **Commercial License** - Use in unlimited projects
 
-[**Get PRO Version →**](https://dashboardpack.com/theme-details/architectui-dashboard-react-pro)
+**Pricing:** Starting at $69 (Personal), $149 (Developer), or $349 (Lifetime)
+
+[**Get PRO Version**](https://dashboardpack.com/theme-details/architectui-dashboard-react-pro) | [**View PRO Demo**](https://demo.dashboardpack.com/architectui-react-pro/)
 
 ## Resources & Templates
 
-### Discover More Templates
+### DashboardPack - Premium Admin Templates
 
-**DashboardPack.com** - Premium admin dashboard templates
-- React, Vue, Angular, and HTML versions
-- Professional support and documentation
-- Regular updates and new features
-- [Browse Templates](https://dashboardpack.com/)
+[DashboardPack.com](https://dashboardpack.com/) offers professional admin dashboard templates in multiple frameworks:
 
-**Colorlib.com** - Free web templates and themes
-- Hundreds of free templates
-- Various categories: admin, landing, blog, portfolio
-- High-quality designs for every project
-- [Explore Free Templates](https://colorlib.com/)
+**ArchitectUI Family:**
+- [ArchitectUI React PRO](https://dashboardpack.com/theme-details/architectui-dashboard-react-pro) - React 19 + Bootstrap 5
+- [ArchitectUI Vue PRO](https://dashboardpack.com/theme-details/architectui-dashboard-vue-pro/) - Vue.js + Bootstrap 5
+- [ArchitectUI Angular PRO](https://dashboardpack.com/theme-details/architectui-angular-7-bootstrap-material-design-pro) - Angular + Bootstrap 5
+- [ArchitectUI HTML PRO](https://dashboardpack.com/theme-details/architectui-dashboard-html-pro) - HTML/jQuery + Bootstrap 5
+
+**Other Premium Templates:**
+- Finance SaaS Dashboard
+- Marketing Dashboard
+- Sales Dashboard
+- TailPanel (TailwindCSS)
+
+[Browse All Templates](https://dashboardpack.com/)
+
+### Colorlib - Free Templates & Resources
+
+[Colorlib.com](https://colorlib.com/) provides free web templates and helpful articles:
+
+**Recommended Articles:**
+- [15 Best React Admin Dashboard Templates](https://colorlib.com/wp/react-dashboard-templates/) - Comprehensive guide to React dashboards
+- [42 Free Bootstrap Admin Dashboard Templates](https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/) - Bootstrap admin template roundup
+
+**Free Template Categories:**
+- Admin dashboards
+- Landing pages
+- Portfolio templates
+- Blog themes
+
+[Explore Colorlib](https://colorlib.com/)
 
 ## Technical Details
 
