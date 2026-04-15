@@ -1,7 +1,6 @@
-import React, { Fragment } from 'react';
+import { Fragment } from 'react';
+import { useSelector } from 'react-redux';
 import cx from 'classnames';
-
-import { connect } from 'react-redux';
 
 import { CSSTransition, TransitionGroup } from '../../utils/TransitionWrapper';
 
@@ -10,7 +9,11 @@ import HeaderLogo from '../AppLogo';
 import SearchBox from './Components/SearchBox';
 import UserBox from './Components/UserBox';
 
-const Header = ({ headerBackgroundColor, enableMobileMenuSmall, enableHeaderShadow }) => {
+export default function Header() {
+  const headerBackgroundColor = useSelector((s) => s.ThemeOptions.headerBackgroundColor);
+  const enableMobileMenuSmall = useSelector((s) => s.ThemeOptions.enableMobileMenuSmall);
+  const enableHeaderShadow = useSelector((s) => s.ThemeOptions.enableHeaderShadow);
+
   return (
     <Fragment>
       <TransitionGroup>
@@ -41,15 +44,4 @@ const Header = ({ headerBackgroundColor, enableMobileMenuSmall, enableHeaderShad
       </TransitionGroup>
     </Fragment>
   );
-};
-
-const mapStateToProps = (state) => ({
-  enableHeaderShadow: state.ThemeOptions.enableHeaderShadow,
-  closedSmallerSidebar: state.ThemeOptions.closedSmallerSidebar,
-  headerBackgroundColor: state.ThemeOptions.headerBackgroundColor,
-  enableMobileMenuSmall: state.ThemeOptions.enableMobileMenuSmall,
-});
-
-const mapDispatchToProps = (dispatch) => ({});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+}

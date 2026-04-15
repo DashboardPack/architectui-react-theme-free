@@ -1,6 +1,6 @@
-import React, { Fragment, useState } from 'react';
+import { Fragment, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { setEnableMobileMenu } from '../../reducers/ThemeOptions';
 import { UpgradeNav, MainNav, ComponentsNav, FormsNav, WidgetsNav, ChartsNav } from './NavItems';
 
@@ -62,10 +62,12 @@ const SubMenu = ({ item, toggleMobileSidebar }) => {
   );
 };
 
-const Nav = ({ enableMobileMenu, setEnableMobileMenu }) => {
+const Nav = () => {
+  const enableMobileMenu = useSelector((s) => s.ThemeOptions.enableMobileMenu);
+  const dispatch = useDispatch();
   const toggleMobileSidebar = () => {
     if (enableMobileMenu) {
-      setEnableMobileMenu(false);
+      dispatch(setEnableMobileMenu(false));
     }
   };
 
@@ -99,12 +101,4 @@ const Nav = ({ enableMobileMenu, setEnableMobileMenu }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  enableMobileMenu: state.ThemeOptions.enableMobileMenu,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  setEnableMobileMenu: (enable) => dispatch(setEnableMobileMenu(enable)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Nav);
+export default Nav;

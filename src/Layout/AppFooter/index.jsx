@@ -1,7 +1,6 @@
-import React, { Fragment } from 'react';
-import { connect } from 'react-redux';
+import { Fragment } from 'react';
 
-const AppFooter = ({ enableFixedFooter }) => {
+const AppFooter = () => {
   return (
     <Fragment>
       <div className="app-wrapper-footer">
@@ -61,8 +60,4 @@ const AppFooter = ({ enableFixedFooter }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  enableFixedFooter: state.ThemeOptions.enableFixedFooter,
-});
-
-export default connect(mapStateToProps)(AppFooter);
+export default AppFooter;

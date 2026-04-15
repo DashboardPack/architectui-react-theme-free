@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import React, { Suspense, lazy, Fragment } from 'react';
-import Loader from 'react-loaders';
+import { Loader } from 'react-loaders';
 
 import { ToastContainer } from 'react-toastify';
 

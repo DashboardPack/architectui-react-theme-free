@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import Loader from 'react-loaders';
+import { Loader } from 'react-loaders';
 import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
 import { Row, Col, Card, CardBody, CardTitle, Container } from 'reactstrap';
 
