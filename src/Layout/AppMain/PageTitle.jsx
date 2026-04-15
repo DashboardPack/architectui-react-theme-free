@@ -21,7 +21,11 @@ class PageTitle extends Component {
       subheading,
     } = this.props;
 
-    var arr = [<TitleComponent1 />, <TitleComponent2 />, <TitleComponent3 />];
+    var arr = [
+      <TitleComponent1 key="v1" />,
+      <TitleComponent2 key="v2" />,
+      <TitleComponent3 key="v3" />,
+    ];
 
     return (
       <div className="app-page-title">

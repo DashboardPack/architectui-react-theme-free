@@ -15,7 +15,11 @@ class PageTitleAlt3 extends Component {
   render() {
     let { enablePageTitleIcon, enablePageTitleSubheading, heading, icon } = this.props;
 
-    var arr = [<TitleComponent1 />, <TitleComponent2 />, <TitleComponent4 />];
+    var arr = [
+      <TitleComponent1 key="v1" />,
+      <TitleComponent2 key="v2" />,
+      <TitleComponent4 key="v4" />,
+    ];
 
     return (
       <Fragment>

@@ -15,7 +15,7 @@ try {
   console.log(`> Found ${files.length} files to scan.`);
 
   // A robust regex that finds all forms of findDOMNode and captures the argument.
-  const findDOMNodeRegex = /[\w\$._]+\.findDOMNode\(([^)]*)\)/g;
+  const findDOMNodeRegex = /[\w$._]+\.findDOMNode\(([^)]*)\)/g;
 
   let totalPatched = 0;
 
