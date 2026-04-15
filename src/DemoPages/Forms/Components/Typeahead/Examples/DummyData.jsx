@@ -1,4 +1,4 @@
-/* eslint-disable max-len, sort-keys */
+ 
 const options = [
   {
     name: 'Alabama',
