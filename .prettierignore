@@ -1,0 +1,8 @@
+build
+node_modules
+public
+patches
+package-lock.json
+*.min.js
+*.min.css
+src/assets/components/react-widgets/scss
