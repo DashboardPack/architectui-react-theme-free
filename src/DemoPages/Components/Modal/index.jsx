@@ -6,8 +6,6 @@ import PageTitle from "../../../Layout/AppMain/PageTitle";
 import ModalsExample from "./Examples";
 
 export default function ModalsExamples() {
-  console.log('Modal component rendering - full version');
-  
   return (
     <Fragment>
       <PageTitle 

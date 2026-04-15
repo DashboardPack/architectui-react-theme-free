@@ -44,7 +44,7 @@ class FormInputMaskExample extends React.Component {
                   <div className="input-group-text">
                     <FontAwesomeIcon icon={faPhone} />
                   </div>
-                  <InputMask className="form-control" mask="+4\9 99 999 99" maskChar={null}/>
+                  <InputMask className="form-control" mask="+4\\9 99 999 99" maskChar={null}/>
                 </InputGroup>
                 <InputGroup>
                   <div className="input-group-text">
