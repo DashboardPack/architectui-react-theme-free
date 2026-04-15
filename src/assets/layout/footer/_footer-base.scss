@@ -1,6 +1,6 @@
 // Footer base
 
-@use "sass:math";
+@use 'sass:math';
 
 .app-footer {
   height: $app-header-height;
@@ -8,7 +8,7 @@
   .app-footer__inner {
     padding: 0 $layout-spacer-x 0 math.div($layout-spacer-x, 2);
     height: $app-header-height;
-    transition: all .2s;
+    transition: all 0.2s;
 
     display: flex;
     align-content: center;
@@ -42,11 +42,11 @@
 }
 
 .dot-btn-wrapper {
-  padding: .5rem;
+  padding: 0.5rem;
   position: relative;
   display: flex;
-  opacity: .7;
-  transition: opacity .2s;
+  opacity: 0.7;
+  transition: opacity 0.2s;
 
   .badge-abs {
     right: 50%;
@@ -69,4 +69,4 @@
 
 // Footer Modifiers
 
-@import "fixed-footer";
+@import 'fixed-footer';

@@ -1,13 +1,13 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
 
-import { Row, Col, Card, CardBody } from "reactstrap";
+import { Row, Col, Card, CardBody } from 'reactstrap';
 
 import DataTable from 'react-data-table-component';
 
-import PageTitle from "../../../../Layout/AppMain/PageTitle";
+import PageTitle from '../../../../Layout/AppMain/PageTitle';
 
-import { makeData } from "./utils";
+import { makeData } from './utils';
 
 export default class DataTableFixedHeader extends React.Component {
   constructor() {
@@ -22,40 +22,46 @@ export default class DataTableFixedHeader extends React.Component {
 
     const columns = [
       {
-        name: "First Name",
-        selector: row => row.firstName,
+        name: 'First Name',
+        selector: (row) => row.firstName,
         sortable: true,
       },
       {
-        name: "Last Name",
-        id: "lastName",
-        selector: row => row.lastName,
+        name: 'Last Name',
+        id: 'lastName',
+        selector: (row) => row.lastName,
         sortable: true,
       },
-    
+
       {
-        name: "Age",
-        selector: row => row.age,
+        name: 'Age',
+        selector: (row) => row.age,
         sortable: true,
       },
       {
-        name: "Status",
-        selector: row => row.status,
+        name: 'Status',
+        selector: (row) => row.status,
         sortable: true,
       },
-    
+
       {
-        name: "Visits",
-        selector: row => row.visits,
+        name: 'Visits',
+        selector: (row) => row.visits,
         sortable: true,
-        },
+      },
     ];
 
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <div>
               <PageTitle
                 heading="Data Tables"
@@ -66,12 +72,13 @@ export default class DataTableFixedHeader extends React.Component {
                 <Col md="12">
                   <Card className="main-card mb-3">
                     <CardBody>
-                      <DataTable data={data}
-                          columns={columns}
-                          pagination
-                          fixedHeader
-                          fixedHeaderScrollHeight="400px"
-                        />
+                      <DataTable
+                        data={data}
+                        columns={columns}
+                        pagination
+                        fixedHeader
+                        fixedHeaderScrollHeight="400px"
+                      />
                     </CardBody>
                   </Card>
                 </Col>

@@ -1,23 +1,24 @@
-import React, { Fragment, useState } from "react";
-import { CSSTransition, TransitionGroup } from "../../../../../utils/TransitionWrapper";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
+import React, { Fragment, useState } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../utils/TransitionWrapper';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
 
-import { Row, Col, Card, CardBody, CardTitle, Container } from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle, Container } from 'reactstrap';
 
 // Fix for default marker icons in Leaflet with webpack/vite
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png",
-  iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png",
-  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png",
+  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
+  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
 });
 
 // Custom blue marker icon
 const blueIcon = new L.Icon({
-  iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png",
-  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png",
+  iconUrl:
+    'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
@@ -26,8 +27,9 @@ const blueIcon = new L.Icon({
 
 // Custom red marker icon
 const redIcon = new L.Icon({
-  iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png",
-  shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png",
+  iconUrl:
+    'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
   iconSize: [25, 41],
   iconAnchor: [12, 41],
   popupAnchor: [1, -34],
@@ -42,9 +44,24 @@ const InteractiveMapsExample = () => {
   const [selectedLocation, setSelectedLocation] = useState(null);
 
   const locations = [
-    { id: 1, position: [59.955413, 30.337844], name: "Location 1", description: "This is the first marker" },
-    { id: 2, position: [59.93, 30.31], name: "Location 2", description: "This is the second marker" },
-    { id: 3, position: [59.97, 30.35], name: "Location 3", description: "This is the third marker" },
+    {
+      id: 1,
+      position: [59.955413, 30.337844],
+      name: 'Location 1',
+      description: 'This is the first marker',
+    },
+    {
+      id: 2,
+      position: [59.93, 30.31],
+      name: 'Location 2',
+      description: 'This is the second marker',
+    },
+    {
+      id: 3,
+      position: [59.97, 30.35],
+      name: 'Location 3',
+      description: 'This is the third marker',
+    },
   ];
 
   return (
@@ -65,14 +82,14 @@ const InteractiveMapsExample = () => {
                   <CardBody>
                     <CardTitle>Interactive Map</CardTitle>
                     <div className="alert alert-success" role="alert">
-                      <strong>No API Key Required!</strong> This map uses OpenStreetMap tiles which are free and open source.
-                      Click on markers to see popups.
+                      <strong>No API Key Required!</strong> This map uses OpenStreetMap tiles which
+                      are free and open source. Click on markers to see popups.
                     </div>
-                    <div style={{ height: "500px", width: "100%" }}>
+                    <div style={{ height: '500px', width: '100%' }}>
                       <MapContainer
                         center={DEFAULT_CENTER}
                         zoom={DEFAULT_ZOOM}
-                        style={{ height: "100%", width: "100%" }}
+                        style={{ height: '100%', width: '100%' }}
                         scrollWheelZoom={true}
                       >
                         <TileLayer
@@ -108,11 +125,11 @@ const InteractiveMapsExample = () => {
                 <Card className="main-card mb-3">
                   <CardBody>
                     <CardTitle>Dark Theme Map</CardTitle>
-                    <div style={{ height: "300px", width: "100%" }}>
+                    <div style={{ height: '300px', width: '100%' }}>
                       <MapContainer
                         center={DEFAULT_CENTER}
                         zoom={DEFAULT_ZOOM}
-                        style={{ height: "100%", width: "100%" }}
+                        style={{ height: '100%', width: '100%' }}
                         scrollWheelZoom={true}
                       >
                         <TileLayer
@@ -131,11 +148,11 @@ const InteractiveMapsExample = () => {
                 <Card className="main-card mb-3">
                   <CardBody>
                     <CardTitle>Satellite View (Esri)</CardTitle>
-                    <div style={{ height: "300px", width: "100%" }}>
+                    <div style={{ height: '300px', width: '100%' }}>
                       <MapContainer
                         center={DEFAULT_CENTER}
                         zoom={DEFAULT_ZOOM}
-                        style={{ height: "100%", width: "100%" }}
+                        style={{ height: '100%', width: '100%' }}
                         scrollWheelZoom={true}
                       >
                         <TileLayer
@@ -157,11 +174,11 @@ const InteractiveMapsExample = () => {
                 <Card className="main-card mb-3">
                   <CardBody>
                     <CardTitle>Topographic Map</CardTitle>
-                    <div style={{ height: "300px", width: "100%" }}>
+                    <div style={{ height: '300px', width: '100%' }}>
                       <MapContainer
                         center={DEFAULT_CENTER}
                         zoom={DEFAULT_ZOOM}
-                        style={{ height: "100%", width: "100%" }}
+                        style={{ height: '100%', width: '100%' }}
                         scrollWheelZoom={true}
                       >
                         <TileLayer
@@ -177,11 +194,11 @@ const InteractiveMapsExample = () => {
                 <Card className="main-card mb-3">
                   <CardBody>
                     <CardTitle>Watercolor Style</CardTitle>
-                    <div style={{ height: "300px", width: "100%" }}>
+                    <div style={{ height: '300px', width: '100%' }}>
                       <MapContainer
                         center={DEFAULT_CENTER}
                         zoom={10}
-                        style={{ height: "100%", width: "100%" }}
+                        style={{ height: '100%', width: '100%' }}
                         scrollWheelZoom={true}
                       >
                         <TileLayer

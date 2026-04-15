@@ -1,26 +1,26 @@
-import React, { Component, Fragment } from "react";
-import Tabs from "react-responsive-tabs";
+import React, { Component, Fragment } from 'react';
+import Tabs from 'react-responsive-tabs';
 
-import PageTitle from "../../../Layout/AppMain/PageTitle";
+import PageTitle from '../../../Layout/AppMain/PageTitle';
 
 // Examples
-import SalesDashboard1 from "./Examples/Variation1";
+import SalesDashboard1 from './Examples/Variation1';
 
 const tabsContent = [
   {
-    title: "Sales Report",
+    title: 'Sales Report',
     content: <SalesDashboard1 />,
   },
   {
-    title: "Account Activity",
+    title: 'Account Activity',
     content: <SalesDashboard1 />,
   },
   {
-    title: "Profile Status",
+    title: 'Profile Status',
     content: <SalesDashboard1 />,
   },
   {
-    title: "New Accounts",
+    title: 'New Accounts',
     content: <SalesDashboard1 />,
   },
 ];
@@ -40,13 +40,19 @@ export default class SalesDashboard extends Component {
         <div className="app-inner-layout">
           <div className="app-inner-layout__header-boxed p-0">
             <div className="app-inner-layout__header page-title-icon-rounded text-white bg-premium-dark mb-4">
-              <PageTitle heading="Sales Dashboard"
+              <PageTitle
+                heading="Sales Dashboard"
                 subheading="Example of a Dashboard page built with ArchitectUI."
-                icon="pe-7s-umbrella icon-gradient bg-sunny-morning"/>
+                icon="pe-7s-umbrella icon-gradient bg-sunny-morning"
+              />
             </div>
           </div>
-          <Tabs tabsWrapperClass="body-tabs body-tabs-layout body-tabs-big" transform={false}
-            showInkBar={true} items={getTabs()}/>
+          <Tabs
+            tabsWrapperClass="body-tabs body-tabs-layout body-tabs-big"
+            transform={false}
+            showInkBar={true}
+            items={getTabs()}
+          />
         </div>
       </Fragment>
     );

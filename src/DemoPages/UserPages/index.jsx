@@ -1,14 +1,14 @@
-import React, { Fragment } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { Fragment } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 // USER PAGES
 
-import Login from "./Login/";
-import LoginBoxed from "./LoginBoxed/";
-import Register from "./Register/";
-import RegisterBoxed from "./RegisterBoxed/";
-import ForgotPassword from "./ForgotPassword/";
-import ForgotPasswordBoxed from "./ForgotPasswordBoxed/";
+import Login from './Login/';
+import LoginBoxed from './LoginBoxed/';
+import Register from './Register/';
+import RegisterBoxed from './RegisterBoxed/';
+import ForgotPassword from './ForgotPassword/';
+import ForgotPasswordBoxed from './ForgotPasswordBoxed/';
 
 const UserPages = () => (
   <Fragment>
@@ -18,10 +18,7 @@ const UserPages = () => (
       <Route path="register" element={<Register />} />
       <Route path="register-boxed" element={<RegisterBoxed />} />
       <Route path="forgot-password" element={<ForgotPassword />} />
-      <Route
-        path="forgot-password-boxed"
-        element={<ForgotPasswordBoxed />}
-      />
+      <Route path="forgot-password-boxed" element={<ForgotPasswordBoxed />} />
     </Routes>
   </Fragment>
 );

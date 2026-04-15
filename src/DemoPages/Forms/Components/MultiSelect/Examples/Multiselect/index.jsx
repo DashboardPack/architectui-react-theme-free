@@ -1,24 +1,15 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../../../utils/TransitionWrapper';
-import {
-  Row,
-  Col,
-  Card,
-  CardBody,
-  CardTitle,
-  FormGroup,
-  Label,
-  Input,
-} from "reactstrap";
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../../utils/TransitionWrapper';
+import { Row, Col, Card, CardBody, CardTitle, FormGroup, Label, Input } from 'reactstrap';
 
-import { Multiselect } from "react-widgets";
+import { Multiselect } from 'react-widgets';
 
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-let colors = ["Orange", "Red", "Blue", "Purple"];
+let colors = ['Orange', 'Red', 'Blue', 'Purple'];
 
 library.add(faSpinner);
 
@@ -51,8 +42,14 @@ class FormMultiSelectWidget extends React.Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <Row>
               <Col md="6">
                 <Card className="main-card mb-3">
@@ -60,8 +57,7 @@ class FormMultiSelectWidget extends React.Component {
                     <CardTitle>DropUp</CardTitle>
                     <Row>
                       <Col md={12}>
-                        <Multiselect dropUp
-                          data={["orange", "red", "blue", "purple"]}/>
+                        <Multiselect dropUp data={['orange', 'red', 'blue', 'purple']} />
                       </Col>
                     </Row>
                   </CardBody>
@@ -79,16 +75,23 @@ class FormMultiSelectWidget extends React.Component {
                       <Col md={4}>
                         <FormGroup>
                           <Label for="examplePassword">FontAwesome Icons</Label>
-                          <Multiselect busy
+                          <Multiselect
+                            busy
                             busySpinner={
-                              <FontAwesomeIcon spin className="text-primary" icon="spinner"/>
-                            }/>
+                              <FontAwesomeIcon spin className="text-primary" icon="spinner" />
+                            }
+                          />
                         </FormGroup>
                       </Col>
                       <Col md={4}>
                         <FormGroup>
                           <Label for="examplePassword">Regular Input</Label>
-                          <Input type="text" name="address2" id="examplePassword" placeholder="Apartment, studio, or floor"/>
+                          <Input
+                            type="text"
+                            name="address2"
+                            id="examplePassword"
+                            placeholder="Apartment, studio, or floor"
+                          />
                         </FormGroup>
                       </Col>
                     </Row>
@@ -101,8 +104,14 @@ class FormMultiSelectWidget extends React.Component {
                     <CardTitle>Add Tags</CardTitle>
                     <Row>
                       <Col md={12}>
-                        <Multiselect data={people} value={value} allowCreate="onFilter" onCreate={(name) => this.handleCreate(name)}
-                          onChange={(value) => this.setState({ value })} textField="name"/>
+                        <Multiselect
+                          data={people}
+                          value={value}
+                          allowCreate="onFilter"
+                          onCreate={(name) => this.handleCreate(name)}
+                          onChange={(value) => this.setState({ value })}
+                          textField="name"
+                        />
                       </Col>
                     </Row>
                   </CardBody>
@@ -110,8 +119,17 @@ class FormMultiSelectWidget extends React.Component {
                 <Card className="main-card mb-3">
                   <CardBody>
                     <CardTitle>Disabled</CardTitle>
-                    <Multiselect className="mb-3" disabled data={colors} defaultValue={["orange", "blue"]}/>
-                    <Multiselect data={colors} defaultValue={["orange", "blue"]} disabled={["red", "purple"]}/>
+                    <Multiselect
+                      className="mb-3"
+                      disabled
+                      data={colors}
+                      defaultValue={['orange', 'blue']}
+                    />
+                    <Multiselect
+                      data={colors}
+                      defaultValue={['orange', 'blue']}
+                      disabled={['red', 'purple']}
+                    />
                   </CardBody>
                 </Card>
               </Col>

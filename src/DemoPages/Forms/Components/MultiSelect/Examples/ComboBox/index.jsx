@@ -1,25 +1,31 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../../../utils/TransitionWrapper';
-import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../../utils/TransitionWrapper';
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
-import { Combobox } from "react-widgets";
+import { Combobox } from 'react-widgets';
 
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 library.add(faSpinner);
 
 class FormComboBoxBasic extends React.Component {
   render() {
-    let colors = ["orange", "red", "blue", "green", "cyan", "purple"];
+    let colors = ['orange', 'red', 'blue', 'green', 'cyan', 'purple'];
 
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <Row>
               <Col md="6">
                 <Card className="main-card mb-3">
@@ -30,10 +36,12 @@ class FormComboBoxBasic extends React.Component {
                         <Combobox busy />
                       </Col>
                       <Col md={6}>
-                        <Combobox busy
+                        <Combobox
+                          busy
                           busySpinner={
-                            <FontAwesomeIcon spin className="text-danger" icon="spinner"/>
-                          }/>
+                            <FontAwesomeIcon spin className="text-danger" icon="spinner" />
+                          }
+                        />
                       </Col>
                     </Row>
                   </CardBody>
@@ -43,7 +51,7 @@ class FormComboBoxBasic extends React.Component {
                     <CardTitle>Dropup</CardTitle>
                     <Row>
                       <Col md={12}>
-                        <Combobox dropUp data={["orange", "red", "blue", "purple"]}/>
+                        <Combobox dropUp data={['orange', 'red', 'blue', 'purple']} />
                       </Col>
                     </Row>
                   </CardBody>
@@ -55,10 +63,14 @@ class FormComboBoxBasic extends React.Component {
                     <CardTitle>Disabled</CardTitle>
                     <Row>
                       <Col md={6}>
-                        <Combobox disabled data={colors} defaultValue={"orange"}/>
+                        <Combobox disabled data={colors} defaultValue={'orange'} />
                       </Col>
                       <Col md={6}>
-                        <Combobox data={colors} defaultValue={"orange"} disabled={["red", "purple"]}/>
+                        <Combobox
+                          data={colors}
+                          defaultValue={'orange'}
+                          disabled={['red', 'purple']}
+                        />
                       </Col>
                     </Row>
                   </CardBody>

@@ -1,13 +1,13 @@
-import React, { Fragment } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { Fragment } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 // DASHBOARD WIDGETS
 
-import ChartBoxes from "./ChartBoxes/";
-import ChartBoxes2 from "./ChartBoxes2/";
-import ChartBoxes3 from "./ChartBoxes3/";
-import ProfileBoxes from "./ProfileBoxes/";
-import ContentBoxes from "./ContentBoxes/";
+import ChartBoxes from './ChartBoxes/';
+import ChartBoxes2 from './ChartBoxes2/';
+import ChartBoxes3 from './ChartBoxes3/';
+import ProfileBoxes from './ProfileBoxes/';
+import ContentBoxes from './ContentBoxes/';
 
 const Widgets = () => (
   <Fragment>

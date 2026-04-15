@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
 import {
   Button,
   UncontrolledButtonDropdown,
@@ -8,18 +8,9 @@ import {
   DropdownMenu,
   DropdownItem,
   Container,
-} from "reactstrap";
+} from 'reactstrap';
 
-import {
-  Row,
-  Col,
-  Card,
-  CardBody,
-  CardTitle,
-  Nav,
-  NavItem,
-  NavLink,
-} from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle, Nav, NavItem, NavLink } from 'reactstrap';
 
 export default class NavsVertical extends React.Component {
   constructor(props) {
@@ -51,8 +42,14 @@ export default class NavsVertical extends React.Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Row>
                 <Col md="12">
@@ -68,17 +65,13 @@ export default class NavsVertical extends React.Component {
                             <NavItem>
                               <NavLink href="#">
                                 Link
-                                <div className="ms-auto badge bg-success">
-                                  New
-                                </div>
+                                <div className="ms-auto badge bg-success">New</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Another Link
-                                <div className="ms-auto badge bg-warning">
-                                  512
-                                </div>
+                                <div className="ms-auto badge bg-warning">512</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
@@ -94,18 +87,14 @@ export default class NavsVertical extends React.Component {
                               <NavLink href="#">
                                 <i className="nav-link-icon lnr-inbox"> </i>
                                 <span>Inbox</span>
-                                <div className="ms-auto badge rounded-pill bg-secondary">
-                                  86
-                                </div>
+                                <div className="ms-auto badge rounded-pill bg-secondary">86</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 <i className="nav-link-icon lnr-book"> </i>
                                 <span>Book</span>
-                                <div className="ms-auto badge rounded-pill bg-danger">
-                                  5
-                                </div>
+                                <div className="ms-auto badge rounded-pill bg-danger">5</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
@@ -137,17 +126,13 @@ export default class NavsVertical extends React.Component {
                               <NavItem>
                                 <NavLink href="#">
                                   Link
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   Another Link
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -158,9 +143,15 @@ export default class NavsVertical extends React.Component {
                             </Nav>
                           </DropdownMenu>
                         </UncontrolledButtonDropdown>
-                        <Dropdown direction="down" className="d-inline-block" onMouseOver={this.onMouseEnter}
-                          onMouseLeave={this.onMouseLeave} isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-                          <DropdownToggle caret color="primary"  className="mb-2 me-2">
+                        <Dropdown
+                          direction="down"
+                          className="d-inline-block"
+                          onMouseOver={this.onMouseEnter}
+                          onMouseLeave={this.onMouseLeave}
+                          isOpen={this.state.dropdownOpen}
+                          toggle={this.toggle}
+                        >
+                          <DropdownToggle caret color="primary" className="mb-2 me-2">
                             Dropdown Hover
                           </DropdownToggle>
                           <DropdownMenu>
@@ -169,18 +160,14 @@ export default class NavsVertical extends React.Component {
                                 <NavLink href="#">
                                   <i className="nav-link-icon lnr-inbox"> </i>
                                   <span>Inbox</span>
-                                  <div className="ms-auto badge rounded-pill bg-secondary">
-                                    86
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-secondary">86</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon lnr-book"> </i>
                                   <span>Book</span>
-                                  <div className="ms-auto badge rounded-pill bg-danger">
-                                    5
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-danger">5</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -191,9 +178,7 @@ export default class NavsVertical extends React.Component {
                               </NavItem>
                               <NavItem>
                                 <NavLink disabled href="#">
-                                  <i className="nav-link-icon lnr-file-empty">
-                                    {" "}
-                                  </i>
+                                  <i className="nav-link-icon lnr-file-empty"> </i>
                                   <span>File Disabled</span>
                                 </NavLink>
                               </NavItem>
@@ -209,37 +194,27 @@ export default class NavsVertical extends React.Component {
                       <Row>
                         <Col>
                           <Nav vertical>
-                            <NavItem className="nav-item-header">
-                              Activity
-                            </NavItem>
+                            <NavItem className="nav-item-header">Activity</NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Chat
-                                <div className="ms-auto badge rounded-pill bg-info">
-                                  8
-                                </div>
+                                <div className="ms-auto badge rounded-pill bg-info">8</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
                               <NavLink href="#">Recover Password</NavLink>
                             </NavItem>
-                            <NavItem className="nav-item-header">
-                              My Account
-                            </NavItem>
+                            <NavItem className="nav-item-header">My Account</NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Settings
-                                <div className="ms-auto badge bg-success">
-                                  New
-                                </div>
+                                <div className="ms-auto badge bg-success">New</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Messages
-                                <div className="ms-auto badge bg-warning">
-                                  512
-                                </div>
+                                <div className="ms-auto badge bg-warning">512</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
@@ -255,16 +230,12 @@ export default class NavsVertical extends React.Component {
                         </Col>
                         <Col>
                           <Nav vertical>
-                            <NavItem className="nav-item-header">
-                              Activity
-                            </NavItem>
+                            <NavItem className="nav-item-header">Activity</NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 <i className="nav-link-icon pe-7s-chat"> </i>
                                 <span>Chat</span>
-                                <div className="ms-auto badge rounded-pill bg-info">
-                                  8
-                                </div>
+                                <div className="ms-auto badge rounded-pill bg-info">8</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
@@ -273,25 +244,19 @@ export default class NavsVertical extends React.Component {
                                 <span>Recover Password</span>
                               </NavLink>
                             </NavItem>
-                            <NavItem className="nav-item-header">
-                              My Account
-                            </NavItem>
+                            <NavItem className="nav-item-header">My Account</NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 <i className="nav-link-icon pe-7s-config"> </i>
                                 <span>Settings</span>
-                                <div className="ms-auto badge bg-success">
-                                  New
-                                </div>
+                                <div className="ms-auto badge bg-success">New</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 <i className="nav-link-icon pe-7s-coffee"> </i>
                                 <span>Messages</span>
-                                <div className="ms-auto badge bg-warning">
-                                  512
-                                </div>
+                                <div className="ms-auto badge bg-warning">512</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
@@ -317,37 +282,27 @@ export default class NavsVertical extends React.Component {
                           </DropdownToggle>
                           <DropdownMenu>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   Chat
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">Recover Password</NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   Settings
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   Messages
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -368,16 +323,12 @@ export default class NavsVertical extends React.Component {
                           </DropdownToggle>
                           <DropdownMenu>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -386,25 +337,19 @@ export default class NavsVertical extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>

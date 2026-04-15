@@ -1,22 +1,22 @@
-import React, { Fragment } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { Fragment } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 // Elements
-import Buttons from "./Button/Icons";
-import Dropdowns from "./Dropdowns";
-import BadgesLabels from "./BadgesLabels";
-import Icons from "./Icons";
-import Cards from "./Cards";
-import ListGroup from "./ListGroup";
-import Navs from "./Navs";
-import Utilities from "./Utilities";
-import Timeline from "./Timeline";
-import ScreenVisibility from "./ScreenVisibility";
-import Loaders from "./Loaders";
-import ButtonsStandard from "./Button/Standard";
-import ButtonsPill from "./Button/Pill";
-import ButtonsShadow from "./Button/Shadow";
-import ButtonsSquare from "./Button/Square";
+import Buttons from './Button/Icons';
+import Dropdowns from './Dropdowns';
+import BadgesLabels from './BadgesLabels';
+import Icons from './Icons';
+import Cards from './Cards';
+import ListGroup from './ListGroup';
+import Navs from './Navs';
+import Utilities from './Utilities';
+import Timeline from './Timeline';
+import ScreenVisibility from './ScreenVisibility';
+import Loaders from './Loaders';
+import ButtonsStandard from './Button/Standard';
+import ButtonsPill from './Button/Pill';
+import ButtonsShadow from './Button/Shadow';
+import ButtonsSquare from './Button/Square';
 
 const Elements = () => (
   <Fragment>

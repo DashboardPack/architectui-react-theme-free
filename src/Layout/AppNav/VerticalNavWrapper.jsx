@@ -1,15 +1,8 @@
-import React, { Fragment, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { connect } from "react-redux";
-import { setEnableMobileMenu } from "../../reducers/ThemeOptions";
-import {
-  UpgradeNav,
-  MainNav,
-  ComponentsNav,
-  FormsNav,
-  WidgetsNav,
-  ChartsNav,
-} from "./NavItems";
+import React, { Fragment, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { setEnableMobileMenu } from '../../reducers/ThemeOptions';
+import { UpgradeNav, MainNav, ComponentsNav, FormsNav, WidgetsNav, ChartsNav } from './NavItems';
 
 const SubMenu = ({ item, toggleMobileSidebar }) => {
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
@@ -26,21 +19,22 @@ const SubMenu = ({ item, toggleMobileSidebar }) => {
   };
 
   const hasSubmenu = item.content && item.content.length > 0;
-  
+
   // Determine if the parent or any child is active
-  const isActive = location.pathname === item.to || 
-    (hasSubmenu && item.content.some(child => child.to === location.pathname));
+  const isActive =
+    location.pathname === item.to ||
+    (hasSubmenu && item.content.some((child) => child.to === location.pathname));
 
   const LinkComponent = item.external ? 'a' : Link;
-  const linkProps = item.external 
-    ? { href: item.to, target: "_blank", rel: "noopener noreferrer" }
-    : { to: item.to || "#" };
+  const linkProps = item.external
+    ? { href: item.to, target: '_blank', rel: 'noopener noreferrer' }
+    : { to: item.to || '#' };
 
   return (
-    <li className={`metismenu-item ${isActive ? "active" : ""}`}>
+    <li className={`metismenu-item ${isActive ? 'active' : ''}`}>
       <LinkComponent
         {...linkProps}
-        className={`metismenu-link ${isActive ? "active" : ""}`}
+        className={`metismenu-link ${isActive ? 'active' : ''}`}
         onClick={toggleSubMenu}
       >
         <i className={`metismenu-icon ${item.icon}`} />
@@ -50,14 +44,12 @@ const SubMenu = ({ item, toggleMobileSidebar }) => {
         )}
       </LinkComponent>
       {hasSubmenu && (
-        <ul className={`metismenu-container ${isSubMenuOpen ? "visible" : ""}`}>
+        <ul className={`metismenu-container ${isSubMenuOpen ? 'visible' : ''}`}>
           {item.content.map((child, i) => (
             <li key={i} className="metismenu-item">
               <Link
                 to={child.to}
-                className={`metismenu-link ${
-                  location.pathname === child.to ? "active" : ""
-                }`}
+                className={`metismenu-link ${location.pathname === child.to ? 'active' : ''}`}
                 onClick={toggleMobileSidebar}
               >
                 {child.label}

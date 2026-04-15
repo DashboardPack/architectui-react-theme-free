@@ -2,7 +2,7 @@
 
 // Popover
 
-@use "sass:math";
+@use 'sass:math';
 
 .popover {
   box-shadow: $box-shadow-default;
@@ -11,7 +11,7 @@
     margin-bottom: -$popover-body-padding-y;
     padding: 1px;
 
-    [class*="col-"] {
+    [class*='col-'] {
       padding: $popover-body-padding-y;
     }
 
@@ -25,7 +25,7 @@
   .grid-menu-xl {
     margin-bottom: -(math.div($popover-body-padding-y, 1.35));
 
-    [class*="col-"] {
+    [class*='col-'] {
       padding: 0;
     }
   }
@@ -62,7 +62,7 @@
 }
 
 @each $color, $value in $theme-colors {
-  @include bg-popover(".popover-#{$color}", $value);
+  @include bg-popover('.popover-#{$color}', $value);
 }
 
 .popover-custom {
@@ -81,7 +81,7 @@
       }
 
       .dropdown-menu-header-inner.bg-light {
-        color: rgba(0, 0, 0, .8);
+        color: rgba(0, 0, 0, 0.8);
       }
     }
   }
@@ -107,7 +107,7 @@
   }
 
   .popover-header {
-    background: rgba(255, 255, 255, .1);
+    background: rgba(255, 255, 255, 0.1);
     border-bottom: 0;
     color: rgba(255, 255, 255, 1);
 
@@ -117,16 +117,16 @@
   }
 
   .popover-body {
-    color: rgba(255, 255, 255, .7);
+    color: rgba(255, 255, 255, 0.7);
   }
 
   &.text-dark {
     .popover-header {
-      color: rgba(0, 0, 0, .8);
+      color: rgba(0, 0, 0, 0.8);
     }
 
     .popover-body {
-      color: rgba(0, 0, 0, .7);
+      color: rgba(0, 0, 0, 0.7);
     }
   }
 }

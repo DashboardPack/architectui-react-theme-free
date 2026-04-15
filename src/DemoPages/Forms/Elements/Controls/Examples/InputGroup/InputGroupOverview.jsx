@@ -1,5 +1,5 @@
-import React from "react";
-import { InputGroup, InputGroupText, Input } from "reactstrap";
+import React from 'react';
+import { InputGroup, InputGroupText, Input } from 'reactstrap';
 
 const FormInputGroupOverview = (props) => {
   return (
@@ -11,7 +11,7 @@ const FormInputGroupOverview = (props) => {
       <br />
       <InputGroup>
         <InputGroupText>
-          <Input addon type="checkbox" aria-label="Checkbox for following text input"/>
+          <Input addon type="checkbox" aria-label="Checkbox for following text input" />
         </InputGroupText>
         <Input placeholder="Check it out" />
       </InputGroup>

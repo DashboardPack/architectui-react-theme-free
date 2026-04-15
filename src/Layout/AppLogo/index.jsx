@@ -1,15 +1,15 @@
-import React, { Fragment } from "react";
-import { connect } from "react-redux";
+import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
 
-import Hamburger from "hamburger-react";
+import Hamburger from 'hamburger-react';
 
-import AppMobileMenu from "../AppMobileMenu";
+import AppMobileMenu from '../AppMobileMenu';
 
 import {
   setEnableClosedSidebar,
   setEnableMobileMenu,
   setEnableMobileMenuSmall,
-} from "../../reducers/ThemeOptions";
+} from '../../reducers/ThemeOptions';
 
 class HeaderLogo extends React.Component {
   constructor(props) {
@@ -42,8 +42,8 @@ class HeaderLogo extends React.Component {
           <div className="logo-src" />
           <div className="header__pane ms-auto">
             <div onClick={this.toggleEnableClosedSidebar}>
-              <Hamburger 
-                toggled={this.props.enableClosedSidebar} 
+              <Hamburger
+                toggled={this.props.enableClosedSidebar}
                 toggle={this.toggleEnableClosedSidebar}
                 size={26}
                 color="#6c757d"
@@ -66,8 +66,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   setEnableClosedSidebar: (enable) => dispatch(setEnableClosedSidebar(enable)),
   setEnableMobileMenu: (enable) => dispatch(setEnableMobileMenu(enable)),
-  setEnableMobileMenuSmall: (enable) =>
-    dispatch(setEnableMobileMenuSmall(enable)),
+  setEnableMobileMenuSmall: (enable) => dispatch(setEnableMobileMenuSmall(enable)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HeaderLogo);

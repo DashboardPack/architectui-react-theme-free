@@ -1,18 +1,20 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react';
 
-import PageTitle from "../../../../Layout/AppMain/PageTitle";
+import PageTitle from '../../../../Layout/AppMain/PageTitle';
 
 // Examples
 
-import FormStickyBasic from "./Examples/Basic";
+import FormStickyBasic from './Examples/Basic';
 
 class FormElementsSticky extends React.Component {
   render() {
     return (
       <Fragment>
-        <PageTitle heading="Forms Sticky Headers"
+        <PageTitle
+          heading="Forms Sticky Headers"
           subheading="Add sticky headers in forms sections!"
-          icon="lnr-map text-info"/>
+          icon="lnr-map text-info"
+        />
         <FormStickyBasic />
       </Fragment>
     );

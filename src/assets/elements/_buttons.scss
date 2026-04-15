@@ -1,11 +1,11 @@
-@use "sass:math";
-@use "sass:map";
-@use "sass:list";
+@use 'sass:math';
+@use 'sass:map';
+@use 'sass:list';
 
 // Buttons
 
 // 2x Outline Border
-$btn-block-spacing-y:         .5rem !default;
+$btn-block-spacing-y: 0.5rem !default;
 
 .btn-outline-2x {
   border-width: 2px;
@@ -37,7 +37,6 @@ $btn-block-spacing-y:         .5rem !default;
     @include border-start-radius(50px);
     @include border-end-radius(50px);
   }
-
 }
 
 // Dashed Border
@@ -64,7 +63,7 @@ $btn-block-spacing-y:         .5rem !default;
     margin-top: 0;
     font-size: 17px;
     vertical-align: middle;
-    transition: color .1s;
+    transition: color 0.1s;
     display: inline-block;
   }
 
@@ -134,7 +133,7 @@ $btn-block-spacing-y:         .5rem !default;
     display: block;
     font-size: 200%;
     margin: 5px 0;
-    opacity: .6;
+    opacity: 0.6;
   }
 
   &.btn-link {
@@ -169,7 +168,7 @@ $btn-block-spacing-y:         .5rem !default;
 
   &.btn-transition-text {
     .btn-icon-wrapper {
-      transition: all .2s !important;
+      transition: all 0.2s !important;
     }
 
     &:hover {
@@ -179,7 +178,6 @@ $btn-block-spacing-y:         .5rem !default;
     }
 
     &.btn-transition-alt {
-
       &:hover {
         .btn-icon-wrapper {
           color: $white !important;
@@ -252,13 +250,23 @@ $btn-block-spacing-y:         .5rem !default;
 
 .btn-lg {
   &.btn-wide {
-    @include button-size($btn-padding-y-lg, ($btn-padding-x-lg * 2), $font-size-lg,  $btn-border-radius-lg);
+    @include button-size(
+      $btn-padding-y-lg,
+      ($btn-padding-x-lg * 2),
+      $font-size-lg,
+      $btn-border-radius-lg
+    );
   }
 }
 
 .btn-sm {
   &.btn-wide {
-    @include button-size($btn-padding-y-sm, ($btn-padding-x-sm * 2), $font-size-xs, $btn-border-radius-sm);
+    @include button-size(
+      $btn-padding-y-sm,
+      ($btn-padding-x-sm * 2),
+      $font-size-xs,
+      $btn-border-radius-sm
+    );
   }
 }
 
@@ -268,7 +276,7 @@ $btn-block-spacing-y:         .5rem !default;
   &::after {
     position: relative;
     top: 2px;
-    opacity: .8;
+    opacity: 0.8;
   }
 }
 
@@ -281,7 +289,7 @@ $btn-block-spacing-y:         .5rem !default;
 }
 
 .dropdown-toggle-split {
-  border-left: rgba(255, 255, 255, .1) solid 1px;
+  border-left: rgba(255, 255, 255, 0.1) solid 1px;
 }
 
 // Buttons Gradients
@@ -302,59 +310,89 @@ $gradient-alt: $purple;
 $gradinet-percent: 15%;
 
 $btn-gradients: map.merge(
-                (
-                        "primary": (
-                                shade-color($gradient-primary, $gradinet-percent), // color-start
-                                $gradient-primary, // color-end
-                                0%, // gr-start
-                        ),
-                        "secondary": (
-                                shade-color($gradient-secondary, $gradinet-percent), // color-start
-                                $gradient-secondary, // color-end
-                                0%, // gr-start
-                        ),
-                        "success": (
-                                shade-color($gradient-success, $gradinet-percent), // color-start
-                                $gradient-success, // color-end
-                                0%, // gr-start
-                        ),
-                        "info": (
-                                shade-color($gradient-info, $gradinet-percent), // color-start
-                                $gradient-info, // color-end
-                                0%, // gr-start
-                        ),
-                        "warning": (
-                                shade-color($gradient-warning, $gradinet-percent), // color-start
-                                $gradient-warning, // color-end
-                                0%, // gr-start
-                        ),
-                        "danger": (
-                                shade-color($gradient-danger, $gradinet-percent), // color-start
-                                $gradient-danger, // color-end
-                                0%, // gr-start
-                        ),
-                        "focus": (
-                                shade-color($gradient-focus, $gradinet-percent), // color-start
-                                $gradient-focus, // color-end
-                                0%, // gr-start
-                        ),
-                        "alternate": (
-                                shade-color($gradient-alt, $gradinet-percent), // color-start
-                                $gradient-alt, // color-end
-                                0%, // gr-start
-                        ),
-                        "light": (
-                                shade-color($gradient-light, $gradinet-percent), // color-start
-                                $gradient-light, // color-end
-                                0%, // gr-start
-                        ),
-                        "dark": (
-                                shade-color($gradient-dark, $gradinet-percent), // color-start
-                                $gradient-dark, // color-end
-                                0%, // gr-start
-                        ),
-                ),
-                $btn-gradients
+  (
+    'primary': (
+      shade-color($gradient-primary, $gradinet-percent),
+      // color-start
+      $gradient-primary,
+      // color-end
+      0%,
+      // gr-start
+    ),
+    'secondary': (
+      shade-color($gradient-secondary, $gradinet-percent),
+      // color-start
+      $gradient-secondary,
+      // color-end
+      0%,
+      // gr-start
+    ),
+    'success': (
+      shade-color($gradient-success, $gradinet-percent),
+      // color-start
+      $gradient-success,
+      // color-end
+      0%,
+      // gr-start
+    ),
+    'info': (
+      shade-color($gradient-info, $gradinet-percent),
+      // color-start
+      $gradient-info,
+      // color-end
+      0%,
+      // gr-start
+    ),
+    'warning': (
+      shade-color($gradient-warning, $gradinet-percent),
+      // color-start
+      $gradient-warning,
+      // color-end
+      0%,
+      // gr-start
+    ),
+    'danger': (
+      shade-color($gradient-danger, $gradinet-percent),
+      // color-start
+      $gradient-danger,
+      // color-end
+      0%,
+      // gr-start
+    ),
+    'focus': (
+      shade-color($gradient-focus, $gradinet-percent),
+      // color-start
+      $gradient-focus,
+      // color-end
+      0%,
+      // gr-start
+    ),
+    'alternate': (
+      shade-color($gradient-alt, $gradinet-percent),
+      // color-start
+      $gradient-alt,
+      // color-end
+      0%,
+      // gr-start
+    ),
+    'light': (
+      shade-color($gradient-light, $gradinet-percent),
+      // color-start
+      $gradient-light,
+      // color-end
+      0%,
+      // gr-start
+    ),
+    'dark': (
+      shade-color($gradient-dark, $gradinet-percent),
+      // color-start
+      $gradient-dark,
+      // color-end
+      0%,
+      // gr-start
+    ),
+  ),
+  $btn-gradients
 );
 
 @mixin btn-grad-variant($color-start, $color-end, $gr-start) {
@@ -366,7 +404,11 @@ $btn-gradients: map.merge(
   &.active,
   &:active,
   &:not(:disabled):not(.disabled):hover {
-    background-image: linear-gradient(120deg, shade-color($color-start, 3%) 0%, shade-color($color-end, 3%) 100%);
+    background-image: linear-gradient(
+      120deg,
+      shade-color($color-start, 3%) 0%,
+      shade-color($color-end, 3%) 100%
+    );
     color: color-contrast(shade-color($color-start, 10%));
     border-color: shade-color($color-start, 10%);
   }
@@ -378,7 +420,6 @@ $btn-gradients: map.merge(
     color: color-contrast(shade-color($color-start, 10%)) !important;
     border-color: shade-color($color-end, 20%) !important;
   }
-
 }
 
 @each $grad, $colors in $btn-gradients {
@@ -390,10 +431,14 @@ $btn-gradients: map.merge(
     @include btn-grad-variant($color, $color1, $color2);
 
     &.btn-shadow {
-      box-shadow: 0 0.125rem 0.625rem rgba($color1, .4), 0 0.0625rem 0.125rem rgba($color1, .5);
+      box-shadow:
+        0 0.125rem 0.625rem rgba($color1, 0.4),
+        0 0.0625rem 0.125rem rgba($color1, 0.5);
 
       &:hover {
-        box-shadow: 0 0.125rem 0.625rem rgba($color1, .5), 0 0.0625rem 0.125rem rgba($color1, .6);
+        box-shadow:
+          0 0.125rem 0.625rem rgba($color1, 0.5),
+          0 0.0625rem 0.125rem rgba($color1, 0.6);
       }
     }
   }
@@ -417,10 +462,14 @@ $link-hover-color: shade-color($link-color, 15%);
     @include button-variant($value, $value);
 
     &.btn-shadow {
-      box-shadow: 0 0.125rem 0.625rem rgba($value, .4), 0 0.0625rem 0.125rem rgba($value, .5);
+      box-shadow:
+        0 0.125rem 0.625rem rgba($value, 0.4),
+        0 0.0625rem 0.125rem rgba($value, 0.5);
 
       &:hover {
-        box-shadow: 0 0.125rem 0.625rem rgba($value, .5), 0 0.0625rem 0.125rem rgba($value, .6);
+        box-shadow:
+          0 0.125rem 0.625rem rgba($value, 0.5),
+          0 0.0625rem 0.125rem rgba($value, 0.6);
       }
     }
   }
@@ -429,7 +478,9 @@ $link-hover-color: shade-color($link-color, 15%);
 @each $color, $value in $theme-colors {
   .btn-shadow-#{$color} {
     &:hover {
-      box-shadow: 0 0.125rem 0.625rem rgba($value, .4), 0 0.0625rem 0.125rem rgba($value, .5);
+      box-shadow:
+        0 0.125rem 0.625rem rgba($value, 0.4),
+        0 0.0625rem 0.125rem rgba($value, 0.5);
     }
   }
 }
@@ -439,13 +490,17 @@ $link-hover-color: shade-color($link-color, 15%);
     @include button-outline-variant($value);
 
     &.btn-shadow {
-      box-shadow: 0 0.125rem 0.625rem rgba($value, .4), 0 0.0625rem 0.125rem rgba($value, .5);
+      box-shadow:
+        0 0.125rem 0.625rem rgba($value, 0.4),
+        0 0.0625rem 0.125rem rgba($value, 0.5);
 
       &.active:hover,
       &.disabled:hover,
       &:active:hover,
       &:disabled:hover {
-        box-shadow: 0 0.125rem 0.625rem rgba($value, .5), 0 0.0625rem 0.125rem rgba($value, .6);
+        box-shadow:
+          0 0.125rem 0.625rem rgba($value, 0.5),
+          0 0.0625rem 0.125rem rgba($value, 0.6);
       }
 
       &:hover {

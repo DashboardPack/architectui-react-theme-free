@@ -1,11 +1,11 @@
-import React, { Component, Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
-import classnames from "classnames";
-import Tabs from "react-responsive-tabs";
+import React, { Component, Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
+import classnames from 'classnames';
+import Tabs from 'react-responsive-tabs';
 
-import dummyData from "./dummyData";
+import dummyData from './dummyData';
 
-import { Loader, Types } from "react-loaders";
+import { Loader, Types } from 'react-loaders';
 
 import {
   Row,
@@ -30,8 +30,8 @@ import {
   DropdownMenu,
   DropdownItem,
   Container,
-} from "reactstrap";
-import LoadingOverlay from "../../../../utils/LoadingOverlay";
+} from 'reactstrap';
+import LoadingOverlay from '../../../../utils/LoadingOverlay';
 
 class CardsBlockLoadingExample extends Component {
   constructor(props) {
@@ -42,7 +42,7 @@ class CardsBlockLoadingExample extends Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      activeTab: "1",
+      activeTab: '1',
       showMore: true,
       transform: true,
       showInkBar: true,
@@ -50,7 +50,7 @@ class CardsBlockLoadingExample extends Component {
       selectedTabKey: 0,
       transformWidth: 400,
       active: false,
-      loaderType: "ball-triangle-path",
+      loaderType: 'ball-triangle-path',
     };
   }
 
@@ -72,8 +72,7 @@ class CardsBlockLoadingExample extends Component {
 
   onChangeProp = (propsName) => (evt) => {
     this.setState({
-      [propsName]:
-        evt.target.type === "checkbox" ? evt.target.checked : +evt.target.value,
+      [propsName]: evt.target.type === 'checkbox' ? evt.target.checked : +evt.target.value,
     });
   };
 
@@ -88,8 +87,14 @@ class CardsBlockLoadingExample extends Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Row>
                 <Col md="6">
@@ -99,7 +104,12 @@ class CardsBlockLoadingExample extends Component {
                       <Form className="mt-4">
                         <FormGroup row>
                           <Col sm={8}>
-                            <Input type="select" bsSize="sm" onChange={this.setLoaderType} value={this.state.loaderType}>
+                            <Input
+                              type="select"
+                              bsSize="sm"
+                              onChange={this.setLoaderType}
+                              value={this.state.loaderType}
+                            >
                               {Object.keys(Types).map((type) => (
                                 <option key={type} value={type}>
                                   {type}
@@ -116,23 +126,21 @@ class CardsBlockLoadingExample extends Component {
                       </Form>
                     </CardBody>
                   </Card>
-                  <LoadingOverlay tag="div" active={this.state.active}
+                  <LoadingOverlay
+                    tag="div"
+                    active={this.state.active}
                     styles={{
                       overlay: (base) => ({
                         ...base,
-                        background: "#fff",
+                        background: '#fff',
                         opacity: 0.5,
                       }),
                     }}
-                    spinner={
-                      <Loader color="#ffffff" active type={this.state.loaderType}/>
-                    }
+                    spinner={<Loader color="#ffffff" active type={this.state.loaderType} />}
                   >
                     <Card className="mb-3 text-white card-border bg-dark">
                       <CardHeader>
-                        <i className="header-icon lnr-screen icon-gradient bg-warm-flame">
-                          {" "}
-                        </i>
+                        <i className="header-icon lnr-screen icon-gradient bg-warm-flame"> </i>
                         Without Shadow
                         <div className="btn-actions-pane-right">
                           <Button size="sm" color="light">
@@ -142,13 +150,11 @@ class CardsBlockLoadingExample extends Component {
                       </CardHeader>
                       <CardBody>
                         <p>
-                          With supporting text below as a natural lead-in to
-                          additional content.
+                          With supporting text below as a natural lead-in to additional content.
                         </p>
                         <p className="mb-0">
-                          Lorem Ipsum has been the industry's standard dummy text
-                          ever since the 1500s, when an unknown printer took a
-                          galley of type and scrambled.
+                          Lorem Ipsum has been the industry's standard dummy text ever since the
+                          1500s, when an unknown printer took a galley of type and scrambled.
                         </p>
                       </CardBody>
                       <CardFooter className="d-block text-end">
@@ -161,11 +167,13 @@ class CardsBlockLoadingExample extends Component {
                       </CardFooter>
                     </Card>
                   </LoadingOverlay>
-                  <LoadingOverlay tag="div" active={this.state.active}
+                  <LoadingOverlay
+                    tag="div"
+                    active={this.state.active}
                     styles={{
                       overlay: (base) => ({
                         ...base,
-                        background: "#fff",
+                        background: '#fff',
                         opacity: 0.5,
                       }),
                     }}
@@ -174,19 +182,20 @@ class CardsBlockLoadingExample extends Component {
                     <Card className="mb-3" inverse color="success">
                       <CardHeader>Header</CardHeader>
                       <CardBody>
-                        With supporting text below as a natural lead-in to
-                        additional content.
+                        With supporting text below as a natural lead-in to additional content.
                       </CardBody>
                       <CardFooter>Footer</CardFooter>
                     </Card>
                   </LoadingOverlay>
                 </Col>
                 <Col md="6">
-                  <LoadingOverlay tag="div" active={this.state.active}
+                  <LoadingOverlay
+                    tag="div"
+                    active={this.state.active}
                     styles={{
                       overlay: (base) => ({
                         ...base,
-                        background: "#fff",
+                        background: '#fff',
                         opacity: 0.5,
                       }),
                     }}
@@ -196,13 +205,11 @@ class CardsBlockLoadingExample extends Component {
                       <CardHeader>Shadow Hover Card</CardHeader>
                       <CardBody>
                         <p>
-                          With supporting text below as a natural lead-in to
-                          additional content.
+                          With supporting text below as a natural lead-in to additional content.
                         </p>
                         <p className="mb-0">
-                          Lorem Ipsum has been the industry's standard dummy text
-                          ever since the 1500s, when an unknown printer took a
-                          galley of type and scrambled.
+                          Lorem Ipsum has been the industry's standard dummy text ever since the
+                          1500s, when an unknown printer took a galley of type and scrambled.
                         </p>
                       </CardBody>
                       <CardFooter className="d-block text-end">
@@ -215,11 +222,13 @@ class CardsBlockLoadingExample extends Component {
                       </CardFooter>
                     </Card>
                   </LoadingOverlay>
-                  <LoadingOverlay tag="div" active={this.state.active}
+                  <LoadingOverlay
+                    tag="div"
+                    active={this.state.active}
                     styles={{
                       overlay: (base) => ({
                         ...base,
-                        background: "#fff",
+                        background: '#fff',
                         opacity: 0.5,
                       }),
                     }}
@@ -229,13 +238,11 @@ class CardsBlockLoadingExample extends Component {
                       <CardHeader>Card Hover Shadow</CardHeader>
                       <CardBody>
                         <p>
-                          With supporting text below as a natural lead-in to
-                          additional content.
+                          With supporting text below as a natural lead-in to additional content.
                         </p>
                         <p className="mb-0">
-                          Lorem Ipsum has been the industry's standard dummy text
-                          ever since the 1500s, when an unknown printer took a
-                          galley of type and scrambled.
+                          Lorem Ipsum has been the industry's standard dummy text ever since the
+                          1500s, when an unknown printer took a galley of type and scrambled.
                         </p>
                       </CardBody>
                       <CardFooter className="d-block text-end">
@@ -248,12 +255,13 @@ class CardsBlockLoadingExample extends Component {
                       </CardFooter>
                     </Card>
                   </LoadingOverlay>
-                  <LoadingOverlay tag="div"
+                  <LoadingOverlay
+                    tag="div"
                     active={this.state.active}
                     styles={{
                       overlay: (base) => ({
                         ...base,
-                        background: "#fff",
+                        background: '#fff',
                         opacity: 0.5,
                       }),
                     }}
@@ -262,8 +270,7 @@ class CardsBlockLoadingExample extends Component {
                     <Card className="mb-3 text-dark card-border" inverse color="light">
                       <CardHeader>Header</CardHeader>
                       <CardBody>
-                        With supporting text below as a natural lead-in to
-                        additional content.
+                        With supporting text below as a natural lead-in to additional content.
                       </CardBody>
                       <CardFooter>Footer</CardFooter>
                     </Card>
@@ -272,12 +279,13 @@ class CardsBlockLoadingExample extends Component {
               </Row>
               <Row>
                 <Col md="6">
-                  <LoadingOverlay tag="div"
+                  <LoadingOverlay
+                    tag="div"
                     active={this.state.active}
                     styles={{
                       overlay: (base) => ({
                         ...base,
-                        background: "#fff",
+                        background: '#fff',
                         opacity: 0.5,
                       }),
                     }}
@@ -285,7 +293,9 @@ class CardsBlockLoadingExample extends Component {
                   >
                     <Card className="main-card mb-3">
                       <CardHeader>
-                        <i className="header-icon lnr-laptop-phone icon-gradient bg-plum-plate"> {" "} </i>
+                        <i className="header-icon lnr-laptop-phone icon-gradient bg-plum-plate">
+                          {' '}
+                        </i>
                         Header Menu
                         <div className="btn-actions-pane-right">
                           <Button className="btn-icon btn-icon-only" color="link">
@@ -327,13 +337,11 @@ class CardsBlockLoadingExample extends Component {
                       </CardHeader>
                       <CardBody>
                         <p>
-                          With supporting text below as a natural lead-in to
-                          additional content.
+                          With supporting text below as a natural lead-in to additional content.
                         </p>
                         <p className="mb-0">
-                          Lorem Ipsum has been the industry's standard dummy text
-                          ever since the 1500s, when an unknown printer took a
-                          galley of type and scrambled.
+                          Lorem Ipsum has been the industry's standard dummy text ever since the
+                          1500s, when an unknown printer took a galley of type and scrambled.
                         </p>
                       </CardBody>
                       <CardFooter className="d-block text-end">
@@ -346,11 +354,13 @@ class CardsBlockLoadingExample extends Component {
                       </CardFooter>
                     </Card>
                   </LoadingOverlay>
-                  <LoadingOverlay tag="div" active={this.state.active}
+                  <LoadingOverlay
+                    tag="div"
+                    active={this.state.active}
                     styles={{
                       overlay: (base) => ({
                         ...base,
-                        background: "#fff",
+                        background: '#fff',
                         opacity: 0.5,
                       }),
                     }}
@@ -358,45 +368,48 @@ class CardsBlockLoadingExample extends Component {
                   >
                     <Card className="main-card mb-3">
                       <CardHeader>
-                        <i className="header-icon lnr-bicycle icon-gradient bg-love-kiss"> {" "} </i>
+                        <i className="header-icon lnr-bicycle icon-gradient bg-love-kiss"> </i>
                         Header with Tabs
                         <div className="btn-actions-pane-right">
                           <ButtonGroup size="sm">
-                            <Button color="dark"
+                            <Button
+                              color="dark"
                               className={
-                                "btn-shadow " +
+                                'btn-shadow ' +
                                 classnames({
-                                  active: this.state.activeTab === "1",
+                                  active: this.state.activeTab === '1',
                                 })
                               }
                               onClick={() => {
-                                this.toggle("1");
+                                this.toggle('1');
                               }}
                             >
                               Tab 1
                             </Button>
-                            <Button color="dark"
+                            <Button
+                              color="dark"
                               className={
-                                "btn-shadow " +
+                                'btn-shadow ' +
                                 classnames({
-                                  active: this.state.activeTab === "2",
+                                  active: this.state.activeTab === '2',
                                 })
                               }
                               onClick={() => {
-                                this.toggle("2");
+                                this.toggle('2');
                               }}
                             >
                               Tab 2
                             </Button>
-                            <Button color="dark"
+                            <Button
+                              color="dark"
                               className={
-                                "btn-shadow " +
+                                'btn-shadow ' +
                                 classnames({
-                                  active: this.state.activeTab === "3",
+                                  active: this.state.activeTab === '3',
                                 })
                               }
                               onClick={() => {
-                                this.toggle("3");
+                                this.toggle('3');
                               }}
                             >
                               Tab 3
@@ -408,28 +421,26 @@ class CardsBlockLoadingExample extends Component {
                         <TabContent activeTab={this.state.activeTab}>
                           <TabPane tabId="1">
                             <p>
-                              It was popularised in the 1960s with the release of
-                              Letraset sheets containing Lorem Ipsum passages, and
-                              more recently with desktop publishing software like
-                              Aldus PageMaker including versions of Lorem Ipsum.
+                              It was popularised in the 1960s with the release of Letraset sheets
+                              containing Lorem Ipsum passages, and more recently with desktop
+                              publishing software like Aldus PageMaker including versions of Lorem
+                              Ipsum.
                             </p>
                           </TabPane>
                           <TabPane tabId="2">
                             <p>
-                              Like Aldus PageMaker including versions of Lorem. It
-                              has survived not only five centuries, but also the
-                              leap into electronic typesetting, remaining
-                              essentially unchanged.{" "}
+                              Like Aldus PageMaker including versions of Lorem. It has survived not
+                              only five centuries, but also the leap into electronic typesetting,
+                              remaining essentially unchanged.{' '}
                             </p>
                           </TabPane>
                           <TabPane tabId="3">
                             <p>
-                              Lorem Ipsum has been the industry's standard dummy
-                              text ever since the 1500s, when an unknown printer
-                              took a galley of type and scrambled it to make a
-                              type specimen book. It has survived not only five
-                              centuries, but also the leap into electronic
-                              typesetting, remaining essentially unchanged.{" "}
+                              Lorem Ipsum has been the industry's standard dummy text ever since the
+                              1500s, when an unknown printer took a galley of type and scrambled it
+                              to make a type specimen book. It has survived not only five centuries,
+                              but also the leap into electronic typesetting, remaining essentially
+                              unchanged.{' '}
                             </p>
                           </TabPane>
                         </TabContent>
@@ -444,11 +455,13 @@ class CardsBlockLoadingExample extends Component {
                       </CardFooter>
                     </Card>
                   </LoadingOverlay>
-                  <LoadingOverlay  tag="div" active={this.state.active}
+                  <LoadingOverlay
+                    tag="div"
+                    active={this.state.active}
                     styles={{
                       overlay: (base) => ({
                         ...base,
-                        background: "#fff",
+                        background: '#fff',
                         opacity: 0.5,
                       }),
                     }}
@@ -456,42 +469,45 @@ class CardsBlockLoadingExample extends Component {
                   >
                     <Card className="main-card mb-3">
                       <CardHeader>
-                        <i className="header-icon lnr-gift icon-gradient bg-mixed-hopes"> {" "} </i>
+                        <i className="header-icon lnr-gift icon-gradient bg-mixed-hopes"> </i>
                         Alternate Tabs
                         <div className="btn-actions-pane-right">
                           <ButtonGroup size="sm">
-                            <Button color="focus"
+                            <Button
+                              color="focus"
                               className={
-                                "btn-pill ps-3 " +
+                                'btn-pill ps-3 ' +
                                 classnames({
-                                  active: this.state.activeTab === "1",
+                                  active: this.state.activeTab === '1',
                                 })
                               }
                               onClick={() => {
-                                this.toggle("1");
+                                this.toggle('1');
                               }}
                             >
                               Tab 1
                             </Button>
-                            <Button color="focus"
+                            <Button
+                              color="focus"
                               className={classnames({
-                                active: this.state.activeTab === "2",
+                                active: this.state.activeTab === '2',
                               })}
                               onClick={() => {
-                                this.toggle("2");
+                                this.toggle('2');
                               }}
                             >
                               Tab 2
                             </Button>
-                            <Button color="focus"
+                            <Button
+                              color="focus"
                               className={
-                                "btn-pill pe-3 " +
+                                'btn-pill pe-3 ' +
                                 classnames({
-                                  active: this.state.activeTab === "3",
+                                  active: this.state.activeTab === '3',
                                 })
                               }
                               onClick={() => {
-                                this.toggle("3");
+                                this.toggle('3');
                               }}
                             >
                               Tab 3
@@ -503,28 +519,26 @@ class CardsBlockLoadingExample extends Component {
                         <TabContent activeTab={this.state.activeTab}>
                           <TabPane tabId="1">
                             <p>
-                              It was popularised in the 1960s with the release of
-                              Letraset sheets containing Lorem Ipsum passages, and
-                              more recently with desktop publishing software like
-                              Aldus PageMaker including versions of Lorem Ipsum.
+                              It was popularised in the 1960s with the release of Letraset sheets
+                              containing Lorem Ipsum passages, and more recently with desktop
+                              publishing software like Aldus PageMaker including versions of Lorem
+                              Ipsum.
                             </p>
                           </TabPane>
                           <TabPane tabId="2">
                             <p>
-                              Like Aldus PageMaker including versions of Lorem. It
-                              has survived not only five centuries, but also the
-                              leap into electronic typesetting, remaining
-                              essentially unchanged.{" "}
+                              Like Aldus PageMaker including versions of Lorem. It has survived not
+                              only five centuries, but also the leap into electronic typesetting,
+                              remaining essentially unchanged.{' '}
                             </p>
                           </TabPane>
                           <TabPane tabId="3">
                             <p>
-                              Lorem Ipsum has been the industry's standard dummy
-                              text ever since the 1500s, when an unknown printer
-                              took a galley of type and scrambled it to make a
-                              type specimen book. It has survived not only five
-                              centuries, but also the leap into electronic
-                              typesetting, remaining essentially unchanged.{" "}
+                              Lorem Ipsum has been the industry's standard dummy text ever since the
+                              1500s, when an unknown printer took a galley of type and scrambled it
+                              to make a type specimen book. It has survived not only five centuries,
+                              but also the leap into electronic typesetting, remaining essentially
+                              unchanged.{' '}
                             </p>
                           </TabPane>
                         </TabContent>
@@ -533,12 +547,13 @@ class CardsBlockLoadingExample extends Component {
                   </LoadingOverlay>
                 </Col>
                 <Col md="6">
-                  <LoadingOverlay tag="div"
+                  <LoadingOverlay
+                    tag="div"
                     active={this.state.active}
                     styles={{
                       overlay: (base) => ({
                         ...base,
-                        background: "#fff",
+                        background: '#fff',
                         opacity: 0.5,
                       }),
                     }}
@@ -547,7 +562,7 @@ class CardsBlockLoadingExample extends Component {
                     <Card className="main-card mb-3">
                       <CardHeader>
                         <i className="header-icon lnr-graduation-hat icon-gradient bg-happy-itmeo">
-                          {" "}
+                          {' '}
                         </i>
                         Header Menu
                         <div className="btn-actions-pane-right">
@@ -574,13 +589,11 @@ class CardsBlockLoadingExample extends Component {
                       </CardHeader>
                       <CardBody>
                         <p>
-                          With supporting text below as a natural lead-in to
-                          additional content.
+                          With supporting text below as a natural lead-in to additional content.
                         </p>
                         <p className="mb-0">
-                          Lorem Ipsum has been the industry's standard dummy text
-                          ever since the 1500s, when an unknown printer took a
-                          galley of type and scrambled.
+                          Lorem Ipsum has been the industry's standard dummy text ever since the
+                          1500s, when an unknown printer took a galley of type and scrambled.
                         </p>
                       </CardBody>
                       <CardFooter className="d-block text-end">
@@ -593,11 +606,13 @@ class CardsBlockLoadingExample extends Component {
                       </CardFooter>
                     </Card>
                   </LoadingOverlay>
-                  <LoadingOverlay tag="div" active={this.state.active}
+                  <LoadingOverlay
+                    tag="div"
+                    active={this.state.active}
                     styles={{
                       overlay: (base) => ({
                         ...base,
-                        background: "#fff",
+                        background: '#fff',
                         opacity: 0.5,
                       }),
                     }}
@@ -607,36 +622,39 @@ class CardsBlockLoadingExample extends Component {
                       <CardHeader>
                         <Nav>
                           <NavItem>
-                            <NavLink href="#"
+                            <NavLink
+                              href="#"
                               className={classnames({
-                                active: this.state.activeTab === "1",
+                                active: this.state.activeTab === '1',
                               })}
                               onClick={() => {
-                                this.toggle("1");
+                                this.toggle('1');
                               }}
                             >
                               Tab 1
                             </NavLink>
                           </NavItem>
                           <NavItem>
-                            <NavLink href="#"
+                            <NavLink
+                              href="#"
                               className={classnames({
-                                active: this.state.activeTab === "2",
+                                active: this.state.activeTab === '2',
                               })}
                               onClick={() => {
-                                this.toggle("2");
+                                this.toggle('2');
                               }}
                             >
                               Tab 2
                             </NavLink>
                           </NavItem>
                           <NavItem>
-                            <NavLink href="#"
+                            <NavLink
+                              href="#"
                               className={classnames({
-                                active: this.state.activeTab === "3",
+                                active: this.state.activeTab === '3',
                               })}
                               onClick={() => {
-                                this.toggle("3");
+                                this.toggle('3');
                               }}
                             >
                               Tab 3
@@ -648,28 +666,26 @@ class CardsBlockLoadingExample extends Component {
                         <TabContent activeTab={this.state.activeTab}>
                           <TabPane tabId="1">
                             <p>
-                              It was popularised in the 1960s with the release of
-                              Letraset sheets containing Lorem Ipsum passages, and
-                              more recently with desktop publishing software like
-                              Aldus PageMaker including versions of Lorem Ipsum.
+                              It was popularised in the 1960s with the release of Letraset sheets
+                              containing Lorem Ipsum passages, and more recently with desktop
+                              publishing software like Aldus PageMaker including versions of Lorem
+                              Ipsum.
                             </p>
                           </TabPane>
                           <TabPane tabId="2">
                             <p>
-                              Like Aldus PageMaker including versions of Lorem. It
-                              has survived not only five centuries, but also the
-                              leap into electronic typesetting, remaining
-                              essentially unchanged.{" "}
+                              Like Aldus PageMaker including versions of Lorem. It has survived not
+                              only five centuries, but also the leap into electronic typesetting,
+                              remaining essentially unchanged.{' '}
                             </p>
                           </TabPane>
                           <TabPane tabId="3">
                             <p>
-                              Lorem Ipsum has been the industry's standard dummy
-                              text ever since the 1500s, when an unknown printer
-                              took a galley of type and scrambled it to make a
-                              type specimen book. It has survived not only five
-                              centuries, but also the leap into electronic
-                              typesetting, remaining essentially unchanged.{" "}
+                              Lorem Ipsum has been the industry's standard dummy text ever since the
+                              1500s, when an unknown printer took a galley of type and scrambled it
+                              to make a type specimen book. It has survived not only five centuries,
+                              but also the leap into electronic typesetting, remaining essentially
+                              unchanged.{' '}
                             </p>
                           </TabPane>
                         </TabContent>
@@ -681,11 +697,13 @@ class CardsBlockLoadingExample extends Component {
                       </CardFooter>
                     </Card>
                   </LoadingOverlay>
-                  <LoadingOverlay tag="div" active={this.state.active}
+                  <LoadingOverlay
+                    tag="div"
+                    active={this.state.active}
                     styles={{
                       overlay: (base) => ({
                         ...base,
-                        background: "#fff",
+                        background: '#fff',
                         opacity: 0.5,
                       }),
                     }}
@@ -695,36 +713,39 @@ class CardsBlockLoadingExample extends Component {
                       <CardHeader>
                         <Nav justified>
                           <NavItem>
-                            <NavLink href="#"
+                            <NavLink
+                              href="#"
                               className={classnames({
-                                active: this.state.activeTab === "1",
+                                active: this.state.activeTab === '1',
                               })}
                               onClick={() => {
-                                this.toggle("1");
+                                this.toggle('1');
                               }}
                             >
                               Tab 1
                             </NavLink>
                           </NavItem>
                           <NavItem>
-                            <NavLink href="#"
+                            <NavLink
+                              href="#"
                               className={classnames({
-                                active: this.state.activeTab === "2",
+                                active: this.state.activeTab === '2',
                               })}
                               onClick={() => {
-                                this.toggle("2");
+                                this.toggle('2');
                               }}
                             >
                               Tab 2
                             </NavLink>
                           </NavItem>
                           <NavItem>
-                            <NavLink href="#"
+                            <NavLink
+                              href="#"
                               className={classnames({
-                                active: this.state.activeTab === "3",
+                                active: this.state.activeTab === '3',
                               })}
                               onClick={() => {
-                                this.toggle("3");
+                                this.toggle('3');
                               }}
                             >
                               Tab 3
@@ -736,28 +757,26 @@ class CardsBlockLoadingExample extends Component {
                         <TabContent activeTab={this.state.activeTab}>
                           <TabPane tabId="1">
                             <p>
-                              It was popularised in the 1960s with the release of
-                              Letraset sheets containing Lorem Ipsum passages, and
-                              more recently with desktop publishing software like
-                              Aldus PageMaker including versions of Lorem Ipsum.
+                              It was popularised in the 1960s with the release of Letraset sheets
+                              containing Lorem Ipsum passages, and more recently with desktop
+                              publishing software like Aldus PageMaker including versions of Lorem
+                              Ipsum.
                             </p>
                           </TabPane>
                           <TabPane tabId="2">
                             <p>
-                              Like Aldus PageMaker including versions of Lorem. It
-                              has survived not only five centuries, but also the
-                              leap into electronic typesetting, remaining
-                              essentially unchanged.{" "}
+                              Like Aldus PageMaker including versions of Lorem. It has survived not
+                              only five centuries, but also the leap into electronic typesetting,
+                              remaining essentially unchanged.{' '}
                             </p>
                           </TabPane>
                           <TabPane tabId="3">
                             <p>
-                              Lorem Ipsum has been the industry's standard dummy
-                              text ever since the 1500s, when an unknown printer
-                              took a galley of type and scrambled it to make a
-                              type specimen book. It has survived not only five
-                              centuries, but also the leap into electronic
-                              typesetting, remaining essentially unchanged.{" "}
+                              Lorem Ipsum has been the industry's standard dummy text ever since the
+                              1500s, when an unknown printer took a galley of type and scrambled it
+                              to make a type specimen book. It has survived not only five centuries,
+                              but also the leap into electronic typesetting, remaining essentially
+                              unchanged.{' '}
                             </p>
                           </TabPane>
                         </TabContent>
@@ -768,18 +787,18 @@ class CardsBlockLoadingExample extends Component {
               </Row>
               <Row>
                 <Col md="12">
-                  <LoadingOverlay tag="div" active={this.state.active}
+                  <LoadingOverlay
+                    tag="div"
+                    active={this.state.active}
                     styles={{
                       overlay: (base) => ({
                         ...base,
-                        background: "#fff",
+                        background: '#fff',
                         opacity: 0.5,
                       }),
                     }}
                     className="block-overlay-dark"
-                    spinner={
-                      <Loader color="#fff" active type={this.state.loaderType} />
-                    }
+                    spinner={<Loader color="#fff" active type={this.state.loaderType} />}
                   >
                     <Card className="mb-3 card-tabs text-white card-border" color="focus">
                       <Tabs tabsWrapperClass="card-header" {...this.state} />
@@ -791,7 +810,7 @@ class CardsBlockLoadingExample extends Component {
                     styles={{
                       overlay: (base) => ({
                         ...base,
-                        background: "#fff",
+                        background: '#fff',
                         opacity: 0.5,
                       }),
                     }}

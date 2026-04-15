@@ -13,7 +13,7 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     z-index: -1;
     border-width: $datepicker__triangle-size;
 

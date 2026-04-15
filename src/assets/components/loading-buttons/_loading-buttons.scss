@@ -6,25 +6,23 @@
  * Copyright (C) 2018 Hakim El Hattab, http://hakim.se
  */
 
-
 /*************************************
  * CONFIG
  */
 
-@use "sass:math";
+@use 'sass:math';
 
 $spinnerSize: 32px !default;
-
 
 /*************************************
  * MIXINS
  */
 
-@mixin transition( $value ) {
+@mixin transition($value) {
   transition: $value !important;
 }
 
-@mixin transform( $value ) {
+@mixin transform($value) {
   transform: $value;
 }
 
@@ -33,14 +31,14 @@ $spinnerSize: 32px !default;
  */
 
 @keyframes ladda-spinner-line-fade {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.22; /* minimum opacity */
   }
   1% {
     opacity: 1;
   }
 }
-
 
 /*************************************
  * BUTTON BASE
@@ -49,7 +47,6 @@ $spinnerSize: 32px !default;
 .ladda-button {
   position: relative;
 }
-
 
 /* Spinner animation */
 .ladda-button .ladda-spinner {
@@ -69,7 +66,7 @@ $spinnerSize: 32px !default;
   z-index: 3;
 }
 
-[class*="btn-outline-"] {
+[class*='btn-outline-'] {
   .ladda-spinner div div div {
     background: $black !important;
   }
@@ -86,15 +83,14 @@ $spinnerSize: 32px !default;
   height: 100%;
   left: 0;
   top: 0;
-  background: rgba( 0, 0, 0, 0.2 );
+  background: rgba(0, 0, 0, 0.2);
   display: none;
 
-  @include transition( 0.1s linear all );
+  @include transition(0.1s linear all);
 }
 .ladda-button[data-loading] .ladda-progress {
   display: block;
 }
-
 
 /*************************************
  * EASING
@@ -103,30 +99,29 @@ $spinnerSize: 32px !default;
 .ladda-button,
 .ladda-button .ladda-spinner,
 .ladda-button .ladda-label {
-  @include transition( 0.3s cubic-bezier(0.175, 0.885, 0.320, 1.275) all );
+  @include transition(0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all);
 }
 
-.ladda-button[data-style=zoom-in],
-.ladda-button[data-style=zoom-in] .ladda-spinner,
-.ladda-button[data-style=zoom-in] .ladda-label,
-.ladda-button[data-style=zoom-out],
-.ladda-button[data-style=zoom-out] .ladda-spinner,
-.ladda-button[data-style=zoom-out] .ladda-label {
-  @include transition( 0.3s ease all );
+.ladda-button[data-style='zoom-in'],
+.ladda-button[data-style='zoom-in'] .ladda-spinner,
+.ladda-button[data-style='zoom-in'] .ladda-label,
+.ladda-button[data-style='zoom-out'],
+.ladda-button[data-style='zoom-out'] .ladda-spinner,
+.ladda-button[data-style='zoom-out'] .ladda-label {
+  @include transition(0.3s ease all);
 }
-
 
 /*************************************
  * EXPAND RIGHT
  */
 
-.ladda-button[data-style=expand-right] {
+.ladda-button[data-style='expand-right'] {
   .ladda-spinner {
     right: math.div($spinnerSize, -2) + 10;
   }
 
-  &[data-size="s"] .ladda-spinner,
-  &[data-size="xs"] .ladda-spinner {
+  &[data-size='s'] .ladda-spinner,
+  &[data-size='xs'] .ladda-spinner {
     right: math.div($spinnerSize, -2) + 4;
   }
 
@@ -137,25 +132,24 @@ $spinnerSize: 32px !default;
       opacity: 1;
     }
 
-    &[data-size="s"],
-    &[data-size="xs"] {
+    &[data-size='s'],
+    &[data-size='xs'] {
       padding-right: 40px;
     }
   }
 }
 
-
 /*************************************
  * EXPAND LEFT
  */
 
-.ladda-button[data-style=expand-left] {
+.ladda-button[data-style='expand-left'] {
   .ladda-spinner {
     left: math.div($spinnerSize, 2) + 10;
   }
 
-  &[data-size="s"] .ladda-spinner,
-  &[data-size="xs"] .ladda-spinner {
+  &[data-size='s'] .ladda-spinner,
+  &[data-size='xs'] .ladda-spinner {
     left: 4px;
   }
 
@@ -166,19 +160,18 @@ $spinnerSize: 32px !default;
       opacity: 1;
     }
 
-    &[data-size="s"],
-    &[data-size="xs"] {
+    &[data-size='s'],
+    &[data-size='xs'] {
       padding-left: 40px;
     }
   }
 }
 
-
 /*************************************
  * EXPAND UP
  */
 
-.ladda-button[data-style=expand-up] {
+.ladda-button[data-style='expand-up'] {
   overflow: hidden;
 
   .ladda-spinner {
@@ -196,8 +189,8 @@ $spinnerSize: 32px !default;
       margin-top: 0;
     }
 
-    &[data-size="s"],
-    &[data-size="xs"] {
+    &[data-size='s'],
+    &[data-size='xs'] {
       padding-top: 32px;
 
       .ladda-spinner {
@@ -207,12 +200,11 @@ $spinnerSize: 32px !default;
   }
 }
 
-
 /*************************************
  * EXPAND DOWN
  */
 
-.ladda-button[data-style=expand-down] {
+.ladda-button[data-style='expand-down'] {
   overflow: hidden;
 
   .ladda-spinner {
@@ -221,8 +213,8 @@ $spinnerSize: 32px !default;
     margin-left: 0;
   }
 
-  &[data-size="s"] .ladda-spinner,
-  &[data-size="xs"] .ladda-spinner {
+  &[data-size='s'] .ladda-spinner,
+  &[data-size='xs'] .ladda-spinner {
     top: 40px;
   }
 
@@ -233,18 +225,17 @@ $spinnerSize: 32px !default;
       opacity: 1;
     }
 
-    &[data-size="s"],
-    &[data-size="xs"] {
+    &[data-size='s'],
+    &[data-size='xs'] {
       padding-bottom: 32px;
     }
   }
 }
 
-
 /*************************************
  * SLIDE LEFT
  */
-.ladda-button[data-style=slide-left] {
+.ladda-button[data-style='slide-left'] {
   overflow: hidden;
 
   .ladda-label {
@@ -267,11 +258,10 @@ $spinnerSize: 32px !default;
   }
 }
 
-
 /*************************************
  * SLIDE RIGHT
  */
-.ladda-button[data-style=slide-right] {
+.ladda-button[data-style='slide-right'] {
   overflow: hidden;
 
   .ladda-label {
@@ -282,7 +272,7 @@ $spinnerSize: 32px !default;
     margin-left: 0;
     left: math.div($spinnerSize, 2);
 
-    [dir="rtl"] & {
+    [dir='rtl'] & {
       right: auto;
     }
   }
@@ -299,11 +289,10 @@ $spinnerSize: 32px !default;
   }
 }
 
-
 /*************************************
  * SLIDE UP
  */
-.ladda-button[data-style=slide-up] {
+.ladda-button[data-style='slide-up'] {
   overflow: hidden;
 
   .ladda-label {
@@ -327,11 +316,10 @@ $spinnerSize: 32px !default;
   }
 }
 
-
 /*************************************
  * SLIDE DOWN
  */
-.ladda-button[data-style=slide-down] {
+.ladda-button[data-style='slide-down'] {
   overflow: hidden;
 
   .ladda-label {
@@ -355,125 +343,119 @@ $spinnerSize: 32px !default;
   }
 }
 
-
 /*************************************
  * ZOOM-OUT
  */
 
-.ladda-button[data-style=zoom-out] {
+.ladda-button[data-style='zoom-out'] {
   overflow: hidden;
 }
-.ladda-button[data-style=zoom-out] .ladda-spinner {
+.ladda-button[data-style='zoom-out'] .ladda-spinner {
   left: 50%;
   margin-left: $spinnerSize;
 
-  @include transform( scale( 2.5 ) );
+  @include transform(scale(2.5));
 }
-.ladda-button[data-style=zoom-out] .ladda-label {
+.ladda-button[data-style='zoom-out'] .ladda-label {
   position: relative;
   display: inline-block;
 }
 
-.ladda-button[data-style=zoom-out][data-loading] .ladda-label {
+.ladda-button[data-style='zoom-out'][data-loading] .ladda-label {
   opacity: 0;
 
-  @include transform( scale( 0.5 ) );
+  @include transform(scale(0.5));
 }
-.ladda-button[data-style=zoom-out][data-loading] .ladda-spinner {
+.ladda-button[data-style='zoom-out'][data-loading] .ladda-spinner {
   opacity: 1;
   margin-left: 0;
 
-  @include transform( none );
+  @include transform(none);
 }
-
 
 /*************************************
  * ZOOM-IN
  */
 
-.ladda-button[data-style=zoom-in] {
+.ladda-button[data-style='zoom-in'] {
   overflow: hidden;
 }
-.ladda-button[data-style=zoom-in] .ladda-spinner {
+.ladda-button[data-style='zoom-in'] .ladda-spinner {
   left: 50%;
   margin-left: math.div($spinnerSize, -2);
 
-  @include transform( scale( 0.2 ) );
+  @include transform(scale(0.2));
 }
-.ladda-button[data-style=zoom-in] .ladda-label {
+.ladda-button[data-style='zoom-in'] .ladda-label {
   position: relative;
   display: inline-block;
 }
 
-.ladda-button[data-style=zoom-in][data-loading] .ladda-label {
+.ladda-button[data-style='zoom-in'][data-loading] .ladda-label {
   opacity: 0;
 
-  @include transform( scale( 2.2 ) );
+  @include transform(scale(2.2));
 }
-.ladda-button[data-style=zoom-in][data-loading] .ladda-spinner {
+.ladda-button[data-style='zoom-in'][data-loading] .ladda-spinner {
   opacity: 1;
   margin-left: 0;
 
-  @include transform( none );
+  @include transform(none);
 }
-
 
 /*************************************
  * CONTRACT
  */
 
-.ladda-button[data-style=contract] {
+.ladda-button[data-style='contract'] {
   overflow: hidden;
   width: 100px;
 }
-.ladda-button[data-style=contract] .ladda-spinner {
+.ladda-button[data-style='contract'] .ladda-spinner {
   left: 50%;
   margin-left: 0;
 }
 
-.ladda-button[data-style=contract][data-loading] {
+.ladda-button[data-style='contract'][data-loading] {
   border-radius: 50%;
   width: 52px;
 }
-.ladda-button[data-style=contract][data-loading] .ladda-label {
+.ladda-button[data-style='contract'][data-loading] .ladda-label {
   opacity: 0;
 }
-.ladda-button[data-style=contract][data-loading] .ladda-spinner {
+.ladda-button[data-style='contract'][data-loading] .ladda-spinner {
   opacity: 1;
 }
-
-
 
 /*************************************
  * OVERLAY
  */
 
-.ladda-button[data-style=contract-overlay] {
+.ladda-button[data-style='contract-overlay'] {
   overflow: hidden;
   width: 100px;
 
-  box-shadow: 0px 0px 0px 2000px rgba(0,0,0,0);
+  box-shadow: 0px 0px 0px 2000px rgba(0, 0, 0, 0);
 }
-.ladda-button[data-style=contract-overlay] .ladda-spinner {
+.ladda-button[data-style='contract-overlay'] .ladda-spinner {
   left: 50%;
   margin-left: 0;
 }
 
-.ladda-button[data-style=contract-overlay][data-loading] {
+.ladda-button[data-style='contract-overlay'][data-loading] {
   border-radius: 50%;
   width: 52px;
 
   /*outline: 10000px solid rgba( 0, 0, 0, 0.5 );*/
-  box-shadow: 0px 0px 0px 2000px rgba(0,0,0,0.8);
+  box-shadow: 0px 0px 0px 2000px rgba(0, 0, 0, 0.8);
 }
-.ladda-button[data-style=contract-overlay][data-loading] .ladda-label {
+.ladda-button[data-style='contract-overlay'][data-loading] .ladda-label {
   opacity: 0;
 }
-.ladda-button[data-style=contract-overlay][data-loading] .ladda-spinner {
+.ladda-button[data-style='contract-overlay'][data-loading] .ladda-spinner {
   opacity: 1;
 }
 
-
-[dir="rtl"] .ladda-spinner > div {
+[dir='rtl'] .ladda-spinner > div {
   left: 25% !important;
 }

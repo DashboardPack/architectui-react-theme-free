@@ -1,8 +1,8 @@
-import React, { Fragment } from "react";
-import { Row, Col, Card, CardBody, CardTitle, Container } from "reactstrap";
+import React, { Fragment } from 'react';
+import { Row, Col, Card, CardBody, CardTitle, Container } from 'reactstrap';
 
-import TooltipExampleDark from "./TooltipDark";
-import TooltipExampleLight from "./TooltipLight";
+import TooltipExampleDark from './TooltipDark';
+import TooltipExampleLight from './TooltipLight';
 
 const TooltipsExample = () => {
   return (

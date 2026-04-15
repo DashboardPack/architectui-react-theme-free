@@ -1,6 +1,6 @@
 // Page title
 
-@use "sass:math";
+@use 'sass:math';
 
 .app-page-title {
   padding: $grid-gutter-width;
@@ -30,7 +30,7 @@
   .page-title-subheading {
     padding: 3px 0 0;
     font-size: $font-size-base;
-    opacity: .6;
+    opacity: 0.6;
 
     .breadcrumb {
       padding: 0;
@@ -79,13 +79,15 @@
   & + .rc-tabs {
     // to fix width issue in firefox
     max-width: calc(100vw - 322px);
-    margin: (-($grid-gutter-width)) (-(math.div($grid-gutter-width, 2))) (($grid-gutter-width * 1.3));
+    margin: (-($grid-gutter-width)) (-(math.div($grid-gutter-width, 2)))
+      (($grid-gutter-width * 1.3));
   }
-  @media only screen and (max-width: 812px) and (min-width: 360px)  {
+  @media only screen and (max-width: 812px) and (min-width: 360px) {
     & + .rc-tabs {
       // to fix width issue in firefox
       max-width: calc(100vw - 0px);
-      margin: (-($grid-gutter-width)) (-(math.div($grid-gutter-width, 2))) (($grid-gutter-width * 1.3));
+      margin: (-($grid-gutter-width)) (-(math.div($grid-gutter-width, 2)))
+        (($grid-gutter-width * 1.3));
     }
   }
 

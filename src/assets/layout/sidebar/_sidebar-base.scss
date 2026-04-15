@@ -1,6 +1,6 @@
 // Sidebar Base
 
-@use "sass:math";
+@use 'sass:math';
 
 .app-sidebar {
   width: $app-sidebar-width;
@@ -12,7 +12,7 @@
   flex: 0 0 $app-sidebar-width;
   margin-top: -$app-header-height;
   padding-top: $app-header-height;
-  transition: all .2s;
+  transition: all 0.2s;
 
   .app-sidebar__inner {
     padding: 2px $layout-spacer-x $layout-spacer-x;
@@ -69,7 +69,7 @@
   width: 100%;
   height: 100%;
   background: #333;
-  opacity: .6;
+  opacity: 0.6;
   left: 0;
   top: 0;
   z-index: 12;
@@ -77,14 +77,13 @@
 
 // Sidebar Components
 
-@import "modifiers/navmenu-vertical";
+@import 'modifiers/navmenu-vertical';
 
 // Sidebar Modifiers
 
-@import "themes/sidebar-light";
-@import "themes/sidebar-dark";
+@import 'themes/sidebar-light';
+@import 'themes/sidebar-dark';
 //@import "themes/sidebar-inverted";
 
-
-@import "modifiers/fixed-sidebar";
-@import "modifiers/closed-sidebar";
+@import 'modifiers/fixed-sidebar';
+@import 'modifiers/closed-sidebar';

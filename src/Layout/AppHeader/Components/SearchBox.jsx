@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react';
 
-import cx from "classnames";
+import cx from 'classnames';
 
 class SearchBox extends React.Component {
   constructor(props) {
@@ -14,22 +14,24 @@ class SearchBox extends React.Component {
   render() {
     return (
       <Fragment>
-        <div className={cx("search-wrapper", {
+        <div
+          className={cx('search-wrapper', {
             active: this.state.activeSearch,
-          })}>
+          })}
+        >
           <div className="input-holder">
-            <input type="text" className="search-input" placeholder="Type to search"/>
-            <button onClick={() =>
-                this.setState({ activeSearch: !this.state.activeSearch })
-              }
-              className="search-icon">
+            <input type="text" className="search-input" placeholder="Type to search" />
+            <button
+              onClick={() => this.setState({ activeSearch: !this.state.activeSearch })}
+              className="search-icon"
+            >
               <span />
             </button>
           </div>
-          <button onClick={() =>
-              this.setState({ activeSearch: !this.state.activeSearch })
-            }
-            className="btn-close"/>
+          <button
+            onClick={() => this.setState({ activeSearch: !this.state.activeSearch })}
+            className="btn-close"
+          />
         </div>
       </Fragment>
     );

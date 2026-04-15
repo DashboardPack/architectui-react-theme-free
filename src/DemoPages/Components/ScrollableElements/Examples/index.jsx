@@ -1,18 +1,10 @@
-import React, { Component, Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
-import {
-  Row,
-  Col,
-  Card,
-  CardBody,
-  CardTitle,
-  CardHeader,
-  CardFooter,
-} from "reactstrap";
+import React, { Component, Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
+import { Row, Col, Card, CardBody, CardTitle, CardHeader, CardFooter } from 'reactstrap';
 
-import bg1 from "../../../../assets/utils/images/dropdown-header/abstract1.jpg";
-import bg2 from "../../../../assets/utils/images/dropdown-header/abstract2.jpg";
-import bg3 from "../../../../assets/utils/images/dropdown-header/abstract3.jpg";
+import bg1 from '../../../../assets/utils/images/dropdown-header/abstract1.jpg';
+import bg2 from '../../../../assets/utils/images/dropdown-header/abstract2.jpg';
+import bg3 from '../../../../assets/utils/images/dropdown-header/abstract3.jpg';
 
 import {
   Button,
@@ -23,17 +15,23 @@ import {
   Nav,
   NavItem,
   NavLink,
-} from "reactstrap";
+} from 'reactstrap';
 
-import PerfectScrollbar from "react-perfect-scrollbar";
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
 class ScrollableElements extends Component {
   render() {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <Row>
               <Col lg="6">
                 <Card className="main-card mb-3">
@@ -42,71 +40,56 @@ class ScrollableElements extends Component {
                     <div className="scroll-area-md">
                       <PerfectScrollbar>
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                          Vestibulum sodales ullamcorper vehicula. Duis placerat
-                          quam porta lorem lobortis, sit amet sodales mauris
-                          finibus. Donec posuere diam at volutpat viverra. Cras
-                          fringilla auctor augue sed congue. Maecenas mollis quis
-                          enim quis egestas. In sollicitudin mi a pretium varius.
-                          Integer eleifend sodales pharetra. Nullam vitae libero
-                          sem. Nulla et eros congue, tincidunt ante eu, tincidunt
-                          eros. Donec nisl purus, convallis a hendrerit ut,
-                          eleifend in lectus. Proin luctus dignissim lacus, in
-                          laoreet arcu eleifend non. Quisque viverra ipsum a massa
-                          porta convallis. Donec tincidunt imperdiet purus,
-                          interdum elementum ante commodo a. Quisque pharetra arcu
-                          sapien, vel ornare magna sollicitudin quis.
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+                          sodales ullamcorper vehicula. Duis placerat quam porta lorem lobortis, sit
+                          amet sodales mauris finibus. Donec posuere diam at volutpat viverra. Cras
+                          fringilla auctor augue sed congue. Maecenas mollis quis enim quis egestas.
+                          In sollicitudin mi a pretium varius. Integer eleifend sodales pharetra.
+                          Nullam vitae libero sem. Nulla et eros congue, tincidunt ante eu,
+                          tincidunt eros. Donec nisl purus, convallis a hendrerit ut, eleifend in
+                          lectus. Proin luctus dignissim lacus, in laoreet arcu eleifend non.
+                          Quisque viverra ipsum a massa porta convallis. Donec tincidunt imperdiet
+                          purus, interdum elementum ante commodo a. Quisque pharetra arcu sapien,
+                          vel ornare magna sollicitudin quis.
                         </p>
                         <p>
-                          Nunc congue magna eget eros blandit, eu viverra magna
-                          semper. Nullam in diam a metus dictum consequat. Quisque
-                          ultricies, ipsum non euismod semper, velit felis lacinia
-                          nibh, et finibus quam leo vitae nisi. Maecenas interdum
-                          diam quis risus bibendum, eu fermentum est pharetra. In
-                          dictum at enim pretium bibendum. Praesent efficitur
-                          iaculis dolor in sodales. Morbi maximus in ipsum in
-                          malesuada. Proin semper lacus tempor magna aliquam, sed
-                          aliquam dui scelerisque. Donec nisi nulla, rhoncus a
-                          tristique eget, ultrices vitae dolor. Ut id urna vitae
-                          ante tincidunt pharetra at non metus. Nunc in suscipit
-                          nulla. Sed vitae leo vulputate, euismod tortor vel,
-                          aliquet velit. Curabitur eget tincidunt elit. Nam et
-                          ligula finibus, eleifend velit et, commodo quam.
-                          Praesent non libero velit.
+                          Nunc congue magna eget eros blandit, eu viverra magna semper. Nullam in
+                          diam a metus dictum consequat. Quisque ultricies, ipsum non euismod
+                          semper, velit felis lacinia nibh, et finibus quam leo vitae nisi. Maecenas
+                          interdum diam quis risus bibendum, eu fermentum est pharetra. In dictum at
+                          enim pretium bibendum. Praesent efficitur iaculis dolor in sodales. Morbi
+                          maximus in ipsum in malesuada. Proin semper lacus tempor magna aliquam,
+                          sed aliquam dui scelerisque. Donec nisi nulla, rhoncus a tristique eget,
+                          ultrices vitae dolor. Ut id urna vitae ante tincidunt pharetra at non
+                          metus. Nunc in suscipit nulla. Sed vitae leo vulputate, euismod tortor
+                          vel, aliquet velit. Curabitur eget tincidunt elit. Nam et ligula finibus,
+                          eleifend velit et, commodo quam. Praesent non libero velit.
                         </p>
                         <p>
-                          Nunc congue magna eget eros blandit, eu viverra magna
-                          semper. Nullam in diam a metus dictum consequat. Quisque
-                          ultricies, ipsum non euismod semper, velit felis lacinia
-                          nibh, et finibus quam leo vitae nisi. Maecenas interdum
-                          diam quis risus bibendum, eu fermentum est pharetra. In
-                          dictum at enim pretium bibendum. Praesent efficitur
-                          iaculis dolor in sodales. Morbi maximus in ipsum in
-                          malesuada. Proin semper lacus tempor magna aliquam, sed
-                          aliquam dui scelerisque. Donec nisi nulla, rhoncus a
-                          tristique eget, ultrices vitae dolor. Ut id urna vitae
-                          ante tincidunt pharetra at non metus. Nunc in suscipit
-                          nulla. Sed vitae leo vulputate, euismod tortor vel,
-                          aliquet velit. Curabitur eget tincidunt elit. Nam et
-                          ligula finibus, eleifend velit et, commodo quam.
-                          Praesent non libero velit.
+                          Nunc congue magna eget eros blandit, eu viverra magna semper. Nullam in
+                          diam a metus dictum consequat. Quisque ultricies, ipsum non euismod
+                          semper, velit felis lacinia nibh, et finibus quam leo vitae nisi. Maecenas
+                          interdum diam quis risus bibendum, eu fermentum est pharetra. In dictum at
+                          enim pretium bibendum. Praesent efficitur iaculis dolor in sodales. Morbi
+                          maximus in ipsum in malesuada. Proin semper lacus tempor magna aliquam,
+                          sed aliquam dui scelerisque. Donec nisi nulla, rhoncus a tristique eget,
+                          ultrices vitae dolor. Ut id urna vitae ante tincidunt pharetra at non
+                          metus. Nunc in suscipit nulla. Sed vitae leo vulputate, euismod tortor
+                          vel, aliquet velit. Curabitur eget tincidunt elit. Nam et ligula finibus,
+                          eleifend velit et, commodo quam. Praesent non libero velit.
                         </p>
                         <p>
-                          Nunc congue magna eget eros blandit, eu viverra magna
-                          semper. Nullam in diam a metus dictum consequat. Quisque
-                          ultricies, ipsum non euismod semper, velit felis lacinia
-                          nibh, et finibus quam leo vitae nisi. Maecenas interdum
-                          diam quis risus bibendum, eu fermentum est pharetra. In
-                          dictum at enim pretium bibendum. Praesent efficitur
-                          iaculis dolor in sodales. Morbi maximus in ipsum in
-                          malesuada. Proin semper lacus tempor magna aliquam, sed
-                          aliquam dui scelerisque. Donec nisi nulla, rhoncus a
-                          tristique eget, ultrices vitae dolor. Ut id urna vitae
-                          ante tincidunt pharetra at non metus. Nunc in suscipit
-                          nulla. Sed vitae leo vulputate, euismod tortor vel,
-                          aliquet velit. Curabitur eget tincidunt elit. Nam et
-                          ligula finibus, eleifend velit et, commodo quam.
-                          Praesent non libero velit.
+                          Nunc congue magna eget eros blandit, eu viverra magna semper. Nullam in
+                          diam a metus dictum consequat. Quisque ultricies, ipsum non euismod
+                          semper, velit felis lacinia nibh, et finibus quam leo vitae nisi. Maecenas
+                          interdum diam quis risus bibendum, eu fermentum est pharetra. In dictum at
+                          enim pretium bibendum. Praesent efficitur iaculis dolor in sodales. Morbi
+                          maximus in ipsum in malesuada. Proin semper lacus tempor magna aliquam,
+                          sed aliquam dui scelerisque. Donec nisi nulla, rhoncus a tristique eget,
+                          ultrices vitae dolor. Ut id urna vitae ante tincidunt pharetra at non
+                          metus. Nunc in suscipit nulla. Sed vitae leo vulputate, euismod tortor
+                          vel, aliquet velit. Curabitur eget tincidunt elit. Nam et ligula finibus,
+                          eleifend velit et, commodo quam. Praesent non libero velit.
                         </p>
                       </PerfectScrollbar>
                     </div>
@@ -118,71 +101,56 @@ class ScrollableElements extends Component {
                     <div className="scroll-area-lg">
                       <PerfectScrollbar>
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                          Vestibulum sodales ullamcorper vehicula. Duis placerat
-                          quam porta lorem lobortis, sit amet sodales mauris
-                          finibus. Donec posuere diam at volutpat viverra. Cras
-                          fringilla auctor augue sed congue. Maecenas mollis quis
-                          enim quis egestas. In sollicitudin mi a pretium varius.
-                          Integer eleifend sodales pharetra. Nullam vitae libero
-                          sem. Nulla et eros congue, tincidunt ante eu, tincidunt
-                          eros. Donec nisl purus, convallis a hendrerit ut,
-                          eleifend in lectus. Proin luctus dignissim lacus, in
-                          laoreet arcu eleifend non. Quisque viverra ipsum a massa
-                          porta convallis. Donec tincidunt imperdiet purus,
-                          interdum elementum ante commodo a. Quisque pharetra arcu
-                          sapien, vel ornare magna sollicitudin quis.
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+                          sodales ullamcorper vehicula. Duis placerat quam porta lorem lobortis, sit
+                          amet sodales mauris finibus. Donec posuere diam at volutpat viverra. Cras
+                          fringilla auctor augue sed congue. Maecenas mollis quis enim quis egestas.
+                          In sollicitudin mi a pretium varius. Integer eleifend sodales pharetra.
+                          Nullam vitae libero sem. Nulla et eros congue, tincidunt ante eu,
+                          tincidunt eros. Donec nisl purus, convallis a hendrerit ut, eleifend in
+                          lectus. Proin luctus dignissim lacus, in laoreet arcu eleifend non.
+                          Quisque viverra ipsum a massa porta convallis. Donec tincidunt imperdiet
+                          purus, interdum elementum ante commodo a. Quisque pharetra arcu sapien,
+                          vel ornare magna sollicitudin quis.
                         </p>
                         <p>
-                          Nunc congue magna eget eros blandit, eu viverra magna
-                          semper. Nullam in diam a metus dictum consequat. Quisque
-                          ultricies, ipsum non euismod semper, velit felis lacinia
-                          nibh, et finibus quam leo vitae nisi. Maecenas interdum
-                          diam quis risus bibendum, eu fermentum est pharetra. In
-                          dictum at enim pretium bibendum. Praesent efficitur
-                          iaculis dolor in sodales. Morbi maximus in ipsum in
-                          malesuada. Proin semper lacus tempor magna aliquam, sed
-                          aliquam dui scelerisque. Donec nisi nulla, rhoncus a
-                          tristique eget, ultrices vitae dolor. Ut id urna vitae
-                          ante tincidunt pharetra at non metus. Nunc in suscipit
-                          nulla. Sed vitae leo vulputate, euismod tortor vel,
-                          aliquet velit. Curabitur eget tincidunt elit. Nam et
-                          ligula finibus, eleifend velit et, commodo quam.
-                          Praesent non libero velit.
+                          Nunc congue magna eget eros blandit, eu viverra magna semper. Nullam in
+                          diam a metus dictum consequat. Quisque ultricies, ipsum non euismod
+                          semper, velit felis lacinia nibh, et finibus quam leo vitae nisi. Maecenas
+                          interdum diam quis risus bibendum, eu fermentum est pharetra. In dictum at
+                          enim pretium bibendum. Praesent efficitur iaculis dolor in sodales. Morbi
+                          maximus in ipsum in malesuada. Proin semper lacus tempor magna aliquam,
+                          sed aliquam dui scelerisque. Donec nisi nulla, rhoncus a tristique eget,
+                          ultrices vitae dolor. Ut id urna vitae ante tincidunt pharetra at non
+                          metus. Nunc in suscipit nulla. Sed vitae leo vulputate, euismod tortor
+                          vel, aliquet velit. Curabitur eget tincidunt elit. Nam et ligula finibus,
+                          eleifend velit et, commodo quam. Praesent non libero velit.
                         </p>
                         <p>
-                          Nunc congue magna eget eros blandit, eu viverra magna
-                          semper. Nullam in diam a metus dictum consequat. Quisque
-                          ultricies, ipsum non euismod semper, velit felis lacinia
-                          nibh, et finibus quam leo vitae nisi. Maecenas interdum
-                          diam quis risus bibendum, eu fermentum est pharetra. In
-                          dictum at enim pretium bibendum. Praesent efficitur
-                          iaculis dolor in sodales. Morbi maximus in ipsum in
-                          malesuada. Proin semper lacus tempor magna aliquam, sed
-                          aliquam dui scelerisque. Donec nisi nulla, rhoncus a
-                          tristique eget, ultrices vitae dolor. Ut id urna vitae
-                          ante tincidunt pharetra at non metus. Nunc in suscipit
-                          nulla. Sed vitae leo vulputate, euismod tortor vel,
-                          aliquet velit. Curabitur eget tincidunt elit. Nam et
-                          ligula finibus, eleifend velit et, commodo quam.
-                          Praesent non libero velit.
+                          Nunc congue magna eget eros blandit, eu viverra magna semper. Nullam in
+                          diam a metus dictum consequat. Quisque ultricies, ipsum non euismod
+                          semper, velit felis lacinia nibh, et finibus quam leo vitae nisi. Maecenas
+                          interdum diam quis risus bibendum, eu fermentum est pharetra. In dictum at
+                          enim pretium bibendum. Praesent efficitur iaculis dolor in sodales. Morbi
+                          maximus in ipsum in malesuada. Proin semper lacus tempor magna aliquam,
+                          sed aliquam dui scelerisque. Donec nisi nulla, rhoncus a tristique eget,
+                          ultrices vitae dolor. Ut id urna vitae ante tincidunt pharetra at non
+                          metus. Nunc in suscipit nulla. Sed vitae leo vulputate, euismod tortor
+                          vel, aliquet velit. Curabitur eget tincidunt elit. Nam et ligula finibus,
+                          eleifend velit et, commodo quam. Praesent non libero velit.
                         </p>
                         <p>
-                          Nunc congue magna eget eros blandit, eu viverra magna
-                          semper. Nullam in diam a metus dictum consequat. Quisque
-                          ultricies, ipsum non euismod semper, velit felis lacinia
-                          nibh, et finibus quam leo vitae nisi. Maecenas interdum
-                          diam quis risus bibendum, eu fermentum est pharetra. In
-                          dictum at enim pretium bibendum. Praesent efficitur
-                          iaculis dolor in sodales. Morbi maximus in ipsum in
-                          malesuada. Proin semper lacus tempor magna aliquam, sed
-                          aliquam dui scelerisque. Donec nisi nulla, rhoncus a
-                          tristique eget, ultrices vitae dolor. Ut id urna vitae
-                          ante tincidunt pharetra at non metus. Nunc in suscipit
-                          nulla. Sed vitae leo vulputate, euismod tortor vel,
-                          aliquet velit. Curabitur eget tincidunt elit. Nam et
-                          ligula finibus, eleifend velit et, commodo quam.
-                          Praesent non libero velit.
+                          Nunc congue magna eget eros blandit, eu viverra magna semper. Nullam in
+                          diam a metus dictum consequat. Quisque ultricies, ipsum non euismod
+                          semper, velit felis lacinia nibh, et finibus quam leo vitae nisi. Maecenas
+                          interdum diam quis risus bibendum, eu fermentum est pharetra. In dictum at
+                          enim pretium bibendum. Praesent efficitur iaculis dolor in sodales. Morbi
+                          maximus in ipsum in malesuada. Proin semper lacus tempor magna aliquam,
+                          sed aliquam dui scelerisque. Donec nisi nulla, rhoncus a tristique eget,
+                          ultrices vitae dolor. Ut id urna vitae ante tincidunt pharetra at non
+                          metus. Nunc in suscipit nulla. Sed vitae leo vulputate, euismod tortor
+                          vel, aliquet velit. Curabitur eget tincidunt elit. Nam et ligula finibus,
+                          eleifend velit et, commodo quam. Praesent non libero velit.
                         </p>
                       </PerfectScrollbar>
                     </div>
@@ -196,71 +164,56 @@ class ScrollableElements extends Component {
                     <div className="scroll-area-sm">
                       <PerfectScrollbar>
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                          Vestibulum sodales ullamcorper vehicula. Duis placerat
-                          quam porta lorem lobortis, sit amet sodales mauris
-                          finibus. Donec posuere diam at volutpat viverra. Cras
-                          fringilla auctor augue sed congue. Maecenas mollis quis
-                          enim quis egestas. In sollicitudin mi a pretium varius.
-                          Integer eleifend sodales pharetra. Nullam vitae libero
-                          sem. Nulla et eros congue, tincidunt ante eu, tincidunt
-                          eros. Donec nisl purus, convallis a hendrerit ut,
-                          eleifend in lectus. Proin luctus dignissim lacus, in
-                          laoreet arcu eleifend non. Quisque viverra ipsum a massa
-                          porta convallis. Donec tincidunt imperdiet purus,
-                          interdum elementum ante commodo a. Quisque pharetra arcu
-                          sapien, vel ornare magna sollicitudin quis.
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+                          sodales ullamcorper vehicula. Duis placerat quam porta lorem lobortis, sit
+                          amet sodales mauris finibus. Donec posuere diam at volutpat viverra. Cras
+                          fringilla auctor augue sed congue. Maecenas mollis quis enim quis egestas.
+                          In sollicitudin mi a pretium varius. Integer eleifend sodales pharetra.
+                          Nullam vitae libero sem. Nulla et eros congue, tincidunt ante eu,
+                          tincidunt eros. Donec nisl purus, convallis a hendrerit ut, eleifend in
+                          lectus. Proin luctus dignissim lacus, in laoreet arcu eleifend non.
+                          Quisque viverra ipsum a massa porta convallis. Donec tincidunt imperdiet
+                          purus, interdum elementum ante commodo a. Quisque pharetra arcu sapien,
+                          vel ornare magna sollicitudin quis.
                         </p>
                         <p>
-                          Nunc congue magna eget eros blandit, eu viverra magna
-                          semper. Nullam in diam a metus dictum consequat. Quisque
-                          ultricies, ipsum non euismod semper, velit felis lacinia
-                          nibh, et finibus quam leo vitae nisi. Maecenas interdum
-                          diam quis risus bibendum, eu fermentum est pharetra. In
-                          dictum at enim pretium bibendum. Praesent efficitur
-                          iaculis dolor in sodales. Morbi maximus in ipsum in
-                          malesuada. Proin semper lacus tempor magna aliquam, sed
-                          aliquam dui scelerisque. Donec nisi nulla, rhoncus a
-                          tristique eget, ultrices vitae dolor. Ut id urna vitae
-                          ante tincidunt pharetra at non metus. Nunc in suscipit
-                          nulla. Sed vitae leo vulputate, euismod tortor vel,
-                          aliquet velit. Curabitur eget tincidunt elit. Nam et
-                          ligula finibus, eleifend velit et, commodo quam.
-                          Praesent non libero velit.
+                          Nunc congue magna eget eros blandit, eu viverra magna semper. Nullam in
+                          diam a metus dictum consequat. Quisque ultricies, ipsum non euismod
+                          semper, velit felis lacinia nibh, et finibus quam leo vitae nisi. Maecenas
+                          interdum diam quis risus bibendum, eu fermentum est pharetra. In dictum at
+                          enim pretium bibendum. Praesent efficitur iaculis dolor in sodales. Morbi
+                          maximus in ipsum in malesuada. Proin semper lacus tempor magna aliquam,
+                          sed aliquam dui scelerisque. Donec nisi nulla, rhoncus a tristique eget,
+                          ultrices vitae dolor. Ut id urna vitae ante tincidunt pharetra at non
+                          metus. Nunc in suscipit nulla. Sed vitae leo vulputate, euismod tortor
+                          vel, aliquet velit. Curabitur eget tincidunt elit. Nam et ligula finibus,
+                          eleifend velit et, commodo quam. Praesent non libero velit.
                         </p>
                         <p>
-                          Nunc congue magna eget eros blandit, eu viverra magna
-                          semper. Nullam in diam a metus dictum consequat. Quisque
-                          ultricies, ipsum non euismod semper, velit felis lacinia
-                          nibh, et finibus quam leo vitae nisi. Maecenas interdum
-                          diam quis risus bibendum, eu fermentum est pharetra. In
-                          dictum at enim pretium bibendum. Praesent efficitur
-                          iaculis dolor in sodales. Morbi maximus in ipsum in
-                          malesuada. Proin semper lacus tempor magna aliquam, sed
-                          aliquam dui scelerisque. Donec nisi nulla, rhoncus a
-                          tristique eget, ultrices vitae dolor. Ut id urna vitae
-                          ante tincidunt pharetra at non metus. Nunc in suscipit
-                          nulla. Sed vitae leo vulputate, euismod tortor vel,
-                          aliquet velit. Curabitur eget tincidunt elit. Nam et
-                          ligula finibus, eleifend velit et, commodo quam.
-                          Praesent non libero velit.
+                          Nunc congue magna eget eros blandit, eu viverra magna semper. Nullam in
+                          diam a metus dictum consequat. Quisque ultricies, ipsum non euismod
+                          semper, velit felis lacinia nibh, et finibus quam leo vitae nisi. Maecenas
+                          interdum diam quis risus bibendum, eu fermentum est pharetra. In dictum at
+                          enim pretium bibendum. Praesent efficitur iaculis dolor in sodales. Morbi
+                          maximus in ipsum in malesuada. Proin semper lacus tempor magna aliquam,
+                          sed aliquam dui scelerisque. Donec nisi nulla, rhoncus a tristique eget,
+                          ultrices vitae dolor. Ut id urna vitae ante tincidunt pharetra at non
+                          metus. Nunc in suscipit nulla. Sed vitae leo vulputate, euismod tortor
+                          vel, aliquet velit. Curabitur eget tincidunt elit. Nam et ligula finibus,
+                          eleifend velit et, commodo quam. Praesent non libero velit.
                         </p>
                         <p>
-                          Nunc congue magna eget eros blandit, eu viverra magna
-                          semper. Nullam in diam a metus dictum consequat. Quisque
-                          ultricies, ipsum non euismod semper, velit felis lacinia
-                          nibh, et finibus quam leo vitae nisi. Maecenas interdum
-                          diam quis risus bibendum, eu fermentum est pharetra. In
-                          dictum at enim pretium bibendum. Praesent efficitur
-                          iaculis dolor in sodales. Morbi maximus in ipsum in
-                          malesuada. Proin semper lacus tempor magna aliquam, sed
-                          aliquam dui scelerisque. Donec nisi nulla, rhoncus a
-                          tristique eget, ultrices vitae dolor. Ut id urna vitae
-                          ante tincidunt pharetra at non metus. Nunc in suscipit
-                          nulla. Sed vitae leo vulputate, euismod tortor vel,
-                          aliquet velit. Curabitur eget tincidunt elit. Nam et
-                          ligula finibus, eleifend velit et, commodo quam.
-                          Praesent non libero velit.
+                          Nunc congue magna eget eros blandit, eu viverra magna semper. Nullam in
+                          diam a metus dictum consequat. Quisque ultricies, ipsum non euismod
+                          semper, velit felis lacinia nibh, et finibus quam leo vitae nisi. Maecenas
+                          interdum diam quis risus bibendum, eu fermentum est pharetra. In dictum at
+                          enim pretium bibendum. Praesent efficitur iaculis dolor in sodales. Morbi
+                          maximus in ipsum in malesuada. Proin semper lacus tempor magna aliquam,
+                          sed aliquam dui scelerisque. Donec nisi nulla, rhoncus a tristique eget,
+                          ultrices vitae dolor. Ut id urna vitae ante tincidunt pharetra at non
+                          metus. Nunc in suscipit nulla. Sed vitae leo vulputate, euismod tortor
+                          vel, aliquet velit. Curabitur eget tincidunt elit. Nam et ligula finibus,
+                          eleifend velit et, commodo quam. Praesent non libero velit.
                         </p>
                       </PerfectScrollbar>
                     </div>
@@ -276,23 +229,27 @@ class ScrollableElements extends Component {
                       <DropdownMenu className="dropdown-menu-lg">
                         <div className="dropdown-menu-header">
                           <div className="dropdown-menu-header-inner bg-primary">
-                            <div className="menu-header-image"
+                            <div
+                              className="menu-header-image"
                               style={{
-                                backgroundImage: "url(" + bg1 + ")",
-                              }}/>
+                                backgroundImage: 'url(' + bg1 + ')',
+                              }}
+                            />
                             <div className="menu-header-content">
                               <div>
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                               <div className="menu-header-btn-pane">
                                 <Button size="sm" color="dark" className="me-2">
                                   Settings
                                 </Button>
-                                <Button size="sm" className="btn-icon btn-icon-only" color="warning">
-                                  <i className="pe-7s-config btn-icon-wrapper"> {" "}</i>
+                                <Button
+                                  size="sm"
+                                  className="btn-icon btn-icon-only"
+                                  color="warning"
+                                >
+                                  <i className="pe-7s-config btn-icon-wrapper"> </i>
                                 </Button>
                               </div>
                             </div>
@@ -301,37 +258,27 @@ class ScrollableElements extends Component {
                         <div className="scroll-area-xs">
                           <PerfectScrollbar>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   Chat
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">Recover Password</NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   Settings
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   Messages
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -355,63 +302,59 @@ class ScrollableElements extends Component {
                       <DropdownMenu className="dropdown-menu-lg">
                         <div className="dropdown-menu-header">
                           <div className="dropdown-menu-header-inner bg-success">
-                            <div className="menu-header-image opacity-1"
+                            <div
+                              className="menu-header-image opacity-1"
                               style={{
-                                backgroundImage: "url(" + bg3 + ")",
-                              }}/>
+                                backgroundImage: 'url(' + bg3 + ')',
+                              }}
+                            />
                             <div className="menu-header-content text-start">
                               <h5 className="menu-header-title">Settings</h5>
-                              <h6 className="menu-header-subtitle">
-                                Manage all of your options
-                              </h6>
+                              <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               <div className="menu-header-btn-pane">
                                 <Button size="sm" color="dark" className="me-2">
                                   Settings
                                 </Button>
-                                <Button size="sm" className="btn-icon btn-icon-only" color="warning">
-                                  <i className="pe-7s-config btn-icon-wrapper"> {" "}</i>
+                                <Button
+                                  size="sm"
+                                  className="btn-icon btn-icon-only"
+                                  color="warning"
+                                >
+                                  <i className="pe-7s-config btn-icon-wrapper"> </i>
                                 </Button>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div className="scroll-area-xs"
+                        <div
+                          className="scroll-area-xs"
                           style={{
-                            height: "150px",
-                          }}>
+                            height: '150px',
+                          }}
+                        >
                           <PerfectScrollbar>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   Chat
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">Recover Password</NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   Settings
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   Messages
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -420,9 +363,7 @@ class ScrollableElements extends Component {
                               <NavItem>
                                 <NavLink href="#">
                                   Messages
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -448,20 +389,24 @@ class ScrollableElements extends Component {
                       <DropdownMenu className="dropdown-menu-lg">
                         <div className="dropdown-menu-header">
                           <div className="dropdown-menu-header-inner bg-secondary">
-                            <div className="menu-header-image opacity-5"
+                            <div
+                              className="menu-header-image opacity-5"
                               style={{
-                                backgroundImage: "url(" + bg2 + ")",
-                              }}/>
+                                backgroundImage: 'url(' + bg2 + ')',
+                              }}
+                            />
                             <div className="menu-header-content btn-pane-right">
                               <div>
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                               <div className="menu-header-btn-pane">
-                                <Button size="sm" className="btn-icon btn-icon-only" color="warning">
-                                  <i className="pe-7s-config btn-icon-wrapper"> {" "} </i>
+                                <Button
+                                  size="sm"
+                                  className="btn-icon btn-icon-only"
+                                  color="warning"
+                                >
+                                  <i className="pe-7s-config btn-icon-wrapper"> </i>
                                 </Button>
                               </div>
                             </div>
@@ -470,37 +415,27 @@ class ScrollableElements extends Component {
                         <div className="scroll-area-xs">
                           <PerfectScrollbar>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   Chat
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">Recover Password</NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   Settings
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   Messages
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -527,7 +462,7 @@ class ScrollableElements extends Component {
                 </Card>
                 <Card className="main-card mb-3">
                   <CardHeader>
-                    <i className="header-icon lnr-laptop-phone icon-gradient bg-plum-plate"> {" "} </i>
+                    <i className="header-icon lnr-laptop-phone icon-gradient bg-plum-plate"> </i>
                     Header Menu
                     <div className="btn-actions-pane-right actions-icon-btn">
                       <Button className="btn-icon btn-icon-only" color="link">
@@ -571,54 +506,43 @@ class ScrollableElements extends Component {
                     <div className="scroll-area-sm">
                       <PerfectScrollbar>
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                          Vestibulum sodales ullamcorper vehicula. Duis placerat
-                          quam porta lorem lobortis, sit amet sodales mauris
-                          finibus. Donec posuere diam at volutpat viverra. Cras
-                          fringilla auctor augue sed congue. Maecenas mollis quis
-                          enim quis egestas. In sollicitudin mi a pretium varius.
-                          Integer eleifend sodales pharetra. Nullam vitae libero
-                          sem. Nulla et eros congue, tincidunt ante eu, tincidunt
-                          eros. Donec nisl purus, convallis a hendrerit ut,
-                          eleifend in lectus. Proin luctus dignissim lacus, in
-                          laoreet arcu eleifend non. Quisque viverra ipsum a massa
-                          porta convallis. Donec tincidunt imperdiet purus,
-                          interdum elementum ante commodo a. Quisque pharetra arcu
-                          sapien, vel ornare magna sollicitudin quis.
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
+                          sodales ullamcorper vehicula. Duis placerat quam porta lorem lobortis, sit
+                          amet sodales mauris finibus. Donec posuere diam at volutpat viverra. Cras
+                          fringilla auctor augue sed congue. Maecenas mollis quis enim quis egestas.
+                          In sollicitudin mi a pretium varius. Integer eleifend sodales pharetra.
+                          Nullam vitae libero sem. Nulla et eros congue, tincidunt ante eu,
+                          tincidunt eros. Donec nisl purus, convallis a hendrerit ut, eleifend in
+                          lectus. Proin luctus dignissim lacus, in laoreet arcu eleifend non.
+                          Quisque viverra ipsum a massa porta convallis. Donec tincidunt imperdiet
+                          purus, interdum elementum ante commodo a. Quisque pharetra arcu sapien,
+                          vel ornare magna sollicitudin quis.
                         </p>
                         <p>
-                          Nunc congue magna eget eros blandit, eu viverra magna
-                          semper. Nullam in diam a metus dictum consequat. Quisque
-                          ultricies, ipsum non euismod semper, velit felis lacinia
-                          nibh, et finibus quam leo vitae nisi. Maecenas interdum
-                          diam quis risus bibendum, eu fermentum est pharetra. In
-                          dictum at enim pretium bibendum. Praesent efficitur
-                          iaculis dolor in sodales. Morbi maximus in ipsum in
-                          malesuada. Proin semper lacus tempor magna aliquam, sed
-                          aliquam dui scelerisque. Donec nisi nulla, rhoncus a
-                          tristique eget, ultrices vitae dolor. Ut id urna vitae
-                          ante tincidunt pharetra at non metus. Nunc in suscipit
-                          nulla. Sed vitae leo vulputate, euismod tortor vel,
-                          aliquet velit. Curabitur eget tincidunt elit. Nam et
-                          ligula finibus, eleifend velit et, commodo quam.
-                          Praesent non libero velit.
+                          Nunc congue magna eget eros blandit, eu viverra magna semper. Nullam in
+                          diam a metus dictum consequat. Quisque ultricies, ipsum non euismod
+                          semper, velit felis lacinia nibh, et finibus quam leo vitae nisi. Maecenas
+                          interdum diam quis risus bibendum, eu fermentum est pharetra. In dictum at
+                          enim pretium bibendum. Praesent efficitur iaculis dolor in sodales. Morbi
+                          maximus in ipsum in malesuada. Proin semper lacus tempor magna aliquam,
+                          sed aliquam dui scelerisque. Donec nisi nulla, rhoncus a tristique eget,
+                          ultrices vitae dolor. Ut id urna vitae ante tincidunt pharetra at non
+                          metus. Nunc in suscipit nulla. Sed vitae leo vulputate, euismod tortor
+                          vel, aliquet velit. Curabitur eget tincidunt elit. Nam et ligula finibus,
+                          eleifend velit et, commodo quam. Praesent non libero velit.
                         </p>
                         <p>
-                          Nunc congue magna eget eros blandit, eu viverra magna
-                          semper. Nullam in diam a metus dictum consequat. Quisque
-                          ultricies, ipsum non euismod semper, velit felis lacinia
-                          nibh, et finibus quam leo vitae nisi. Maecenas interdum
-                          diam quis risus bibendum, eu fermentum est pharetra. In
-                          dictum at enim pretium bibendum. Praesent efficitur
-                          iaculis dolor in sodales. Morbi maximus in ipsum in
-                          malesuada. Proin semper lacus tempor magna aliquam, sed
-                          aliquam dui scelerisque. Donec nisi nulla, rhoncus a
-                          tristique eget, ultrices vitae dolor. Ut id urna vitae
-                          ante tincidunt pharetra at non metus. Nunc in suscipit
-                          nulla. Sed vitae leo vulputate, euismod tortor vel,
-                          aliquet velit. Curabitur eget tincidunt elit. Nam et
-                          ligula finibus, eleifend velit et, commodo quam.
-                          Praesent non libero velit.
+                          Nunc congue magna eget eros blandit, eu viverra magna semper. Nullam in
+                          diam a metus dictum consequat. Quisque ultricies, ipsum non euismod
+                          semper, velit felis lacinia nibh, et finibus quam leo vitae nisi. Maecenas
+                          interdum diam quis risus bibendum, eu fermentum est pharetra. In dictum at
+                          enim pretium bibendum. Praesent efficitur iaculis dolor in sodales. Morbi
+                          maximus in ipsum in malesuada. Proin semper lacus tempor magna aliquam,
+                          sed aliquam dui scelerisque. Donec nisi nulla, rhoncus a tristique eget,
+                          ultrices vitae dolor. Ut id urna vitae ante tincidunt pharetra at non
+                          metus. Nunc in suscipit nulla. Sed vitae leo vulputate, euismod tortor
+                          vel, aliquet velit. Curabitur eget tincidunt elit. Nam et ligula finibus,
+                          eleifend velit et, commodo quam. Praesent non libero velit.
                         </p>
                       </PerfectScrollbar>
                     </div>

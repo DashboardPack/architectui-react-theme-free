@@ -1,15 +1,15 @@
-import React from "react";
-import { Button } from "reactstrap";
+import React from 'react';
+import { Button } from 'reactstrap';
 
 const getNavStates = (indx, length) => {
   let styles = [];
   for (let i = 0; i < length; i++) {
     if (i < indx) {
-      styles.push("done");
+      styles.push('done');
     } else if (i === indx) {
-      styles.push("doing");
+      styles.push('doing');
     } else {
-      styles.push("todo");
+      styles.push('todo');
     }
   }
   return { current: indx, styles: styles };
@@ -80,13 +80,13 @@ export default class MultiStep extends React.Component {
   };
 
   getClassName = (className, i) => {
-    return className + "-" + this.state.navState.styles[i];
+    return className + '-' + this.state.navState.styles[i];
   };
 
   renderSteps = () => {
     return this.props.steps.map((s, i) => (
       <li
-        className={this.getClassName("form-wizard-step", i)}
+        className={this.getClassName('form-wizard-step', i)}
         onClick={this.handleOnClick}
         key={i}
         value={i}
@@ -104,13 +104,22 @@ export default class MultiStep extends React.Component {
         {this.props.steps[this.state.compState].component}
         <div className="divider" />
         <div className="clearfix">
-          <div style={this.props.showNavigation ? {} : { display: "none" }}>
-            <Button color="secondary" className="btn-shadow float-start btn-wide btn-pill" outline
-              style={this.state.showPreviousBtn ? {} : { display: "none" }} onClick={this.previous}>
+          <div style={this.props.showNavigation ? {} : { display: 'none' }}>
+            <Button
+              color="secondary"
+              className="btn-shadow float-start btn-wide btn-pill"
+              outline
+              style={this.state.showPreviousBtn ? {} : { display: 'none' }}
+              onClick={this.previous}
+            >
               Previous
             </Button>
-            <Button color="primary" className="btn-shadow btn-wide float-end btn-pill btn-hover-shine"
-              style={this.state.showNextBtn ? {} : { display: "none" }} onClick={this.next}>
+            <Button
+              color="primary"
+              className="btn-shadow btn-wide float-end btn-pill btn-hover-shine"
+              style={this.state.showNextBtn ? {} : { display: 'none' }}
+              onClick={this.next}
+            >
               Next
             </Button>
           </div>

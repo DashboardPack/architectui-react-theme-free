@@ -1,5 +1,5 @@
-@import "variables";
-@import "mixins";
+@import 'variables';
+@import 'mixins';
 
 .react-datepicker-wrapper {
   display: block;
@@ -43,7 +43,7 @@
 .react-datepicker-popper {
   z-index: 102;
 
-  &[data-placement^="bottom"] {
+  &[data-placement^='bottom'] {
     margin-top: $datepicker__triangle-size + 2px;
 
     .react-datepicker__triangle {
@@ -51,7 +51,7 @@
     }
   }
 
-  &[data-placement^="top"] {
+  &[data-placement^='top'] {
     margin-bottom: $datepicker__triangle-size + 2px;
 
     .react-datepicker__triangle {
@@ -59,7 +59,7 @@
     }
   }
 
-  &[data-placement^="right"] {
+  &[data-placement^='right'] {
     margin-left: $datepicker__triangle-size;
 
     .react-datepicker__triangle {
@@ -68,7 +68,7 @@
     }
   }
 
-  &[data-placement^="left"] {
+  &[data-placement^='left'] {
     margin-right: $datepicker__triangle-size;
 
     .react-datepicker__triangle {
@@ -350,7 +350,6 @@
       background-color: $dropdown-link-hover-bg;
       color: $dropdown-link-hover-color;
     }
-
   }
 
   &--keyboard-selected {
@@ -385,10 +384,9 @@
   }
 }
 
-
 .react-datepicker__day--selecting-range-start,
 .react-datepicker__day--selecting-range-end {
-  background-color: map-get($theme-colors, 'primary')  !important;
+  background-color: map-get($theme-colors, 'primary') !important;
   color: $white !important;
 }
 
@@ -501,7 +499,7 @@
     bottom: 0;
     box-sizing: border-box;
     color: $white;
-    content: "\00d7";
+    content: '\00d7';
     cursor: pointer;
     font-size: 12px;
     height: 16px;

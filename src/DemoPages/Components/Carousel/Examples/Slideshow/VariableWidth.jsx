@@ -1,10 +1,10 @@
-import React, { Fragment, Component } from "react";
-import Slider from "react-slick";
+import React, { Fragment, Component } from 'react';
+import Slider from 'react-slick';
 
 export default class VariableWidth extends Component {
   render() {
     const settings = {
-      className: "slider variable-width",
+      className: 'slider variable-width',
       dots: true,
       infinite: true,
       centerMode: true,

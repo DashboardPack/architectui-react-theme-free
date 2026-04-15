@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { headingSizes, themeColors } from "./settings";
+import React from 'react';
+import styled from 'styled-components';
+import { headingSizes, themeColors } from './settings';
 
 export default styled(({ h, ...props }) => {
   const H = `h${h}`;

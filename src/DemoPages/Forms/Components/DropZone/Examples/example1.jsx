@@ -1,8 +1,8 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react';
 
-import { Row, Col, ListGroup, ListGroupItem } from "reactstrap";
+import { Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
 
-import Dropzone from "react-dropzone";
+import Dropzone from 'react-dropzone';
 
 class FormDropZoneExample1 extends React.Component {
   constructor() {
@@ -33,15 +33,15 @@ class FormDropZoneExample1 extends React.Component {
         <Row>
           <Col md="8">
             <div className="dropzone-wrapper dropzone-wrapper-lg">
-              <Dropzone onDrop={this.onDrop.bind(this)} onFileDialogCancel={this.onCancel.bind(this)}>
+              <Dropzone
+                onDrop={this.onDrop.bind(this)}
+                onFileDialogCancel={this.onCancel.bind(this)}
+              >
                 {({ getRootProps, getInputProps }) => (
                   <div {...getRootProps()}>
                     <input {...getInputProps()} />
                     <div className="dropzone-content">
-                      <p>
-                        Try dropping some files here, or click to select files
-                        to upload.
-                      </p>
+                      <p>Try dropping some files here, or click to select files to upload.</p>
                     </div>
                   </div>
                 )}

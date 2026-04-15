@@ -9,7 +9,7 @@
   align-content: center;
   text-align: center;
   height: 230px;
-  transition: all .2s;
+  transition: all 0.2s;
 
   &:hover {
     border-color: $primary;
@@ -41,7 +41,7 @@
     color: $gray-600;
   }
 
-  &[aria-disabled="true"] {
+  &[aria-disabled='true'] {
     border-color: $gray-300;
 
     .dropzone-content {

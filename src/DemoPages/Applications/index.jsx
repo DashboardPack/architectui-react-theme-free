@@ -1,11 +1,11 @@
-import React, { Fragment } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { Fragment } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 // APPLICATIONS
 
-import Mailbox from "./Mailbox/";
-import Chat from "./Chat/";
-import FaqSection from "./FaqSection/";
+import Mailbox from './Mailbox/';
+import Chat from './Chat/';
+import FaqSection from './FaqSection/';
 
 const Applications = () => (
   <Fragment>

@@ -1,21 +1,14 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react';
 
-import {
-  InputGroup,
-  FormGroup,
-  Label,
-  Form,
-  Col,
-  Row,
-} from "reactstrap";
+import { InputGroup, FormGroup, Label, Form, Col, Row } from 'reactstrap';
 
-import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import DatePicker from "react-datepicker";
+import DatePicker from 'react-datepicker';
 
-import moment from "moment";
+import moment from 'moment';
 
 class FormDatePicker6 extends React.Component {
   constructor(props) {
@@ -55,8 +48,14 @@ class FormDatePicker6 extends React.Component {
                   <div className="input-group-text">
                     <FontAwesomeIcon icon={faCalendarAlt} />
                   </div>
-                  <DatePicker selected={this.state.startDate} selectsStart className="form-control"
-                    startDate={this.state.startDate} endDate={this.state.endDate} onChange={this.handleChangeStart}/>
+                  <DatePicker
+                    selected={this.state.startDate}
+                    selectsStart
+                    className="form-control"
+                    startDate={this.state.startDate}
+                    endDate={this.state.endDate}
+                    onChange={this.handleChangeStart}
+                  />
                 </InputGroup>
               </FormGroup>
             </Col>
@@ -65,8 +64,14 @@ class FormDatePicker6 extends React.Component {
                 <Label for="examplePassword" className="me-sm-2">
                   End Date
                 </Label>
-                <DatePicker selected={this.state.endDate} selectsEnd className="form-control"
-                  startDate={this.state.startDate} endDate={this.state.endDate} onChange={this.handleChangeEnd}/>
+                <DatePicker
+                  selected={this.state.endDate}
+                  selectsEnd
+                  className="form-control"
+                  startDate={this.state.startDate}
+                  endDate={this.state.endDate}
+                  onChange={this.handleChangeEnd}
+                />
               </FormGroup>
             </Col>
           </Row>

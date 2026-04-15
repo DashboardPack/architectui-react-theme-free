@@ -1,14 +1,14 @@
-import React, { Fragment } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { Fragment } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 // DASHBOARDS
 
-import AnalyticsDashboard from "./Analytics/";
-import SalesDashboard from "./Sales/";
-import CommerceDashboard from "./Commerce/";
-import CRMDashboard from "./CRM/";
-import MinimalDashboard1 from "./Minimal/Variation1";
-import MinimalDashboard2 from "./Minimal/Variation2";
+import AnalyticsDashboard from './Analytics/';
+import SalesDashboard from './Sales/';
+import CommerceDashboard from './Commerce/';
+import CRMDashboard from './CRM/';
+import MinimalDashboard1 from './Minimal/Variation1';
+import MinimalDashboard2 from './Minimal/Variation2';
 
 const Dashboards = () => (
   <Fragment>

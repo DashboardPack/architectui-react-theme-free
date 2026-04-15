@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { Fragment } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 // Tables
 
-import RegularTables from "./RegularTables";
-import DataTables from "./DataTables";
+import RegularTables from './RegularTables';
+import DataTables from './DataTables';
 
 const Tables = () => (
   <Fragment>

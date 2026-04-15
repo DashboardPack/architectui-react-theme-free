@@ -33,6 +33,7 @@ The entire build system has been migrated from Create React App to Vite 7.2.6:
 ### File Extensions
 
 All 348 JavaScript files have been renamed from `.js` to `.jsx` for:
+
 - Better IDE tooling and IntelliSense support
 - Explicit JSX syntax recognition
 - Vite compatibility
@@ -40,11 +41,13 @@ All 348 JavaScript files have been renamed from `.js` to `.jsx` for:
 ### Maps Overhaul
 
 **Leaflet/OpenStreetMap** (replaces Google Maps):
+
 - No API key required
 - Multiple map styles: Standard, Dark, Satellite, Topographic, Watercolor
 - Full interactive controls (zoom, pan, markers)
 
 **Enhanced Vector Maps**:
+
 - Proper sizing that fills the card container
 - Interactive hover effects on countries
 - Zoom and pan functionality
@@ -54,11 +57,11 @@ All 348 JavaScript files have been renamed from `.js` to `.jsx` for:
 
 Created to replace deprecated React 18 packages:
 
-| Component | Replaces | Technology |
-|-----------|----------|------------|
-| `LoadingOverlay` | react-loading-overlay-ts | Framer Motion |
-| `TabsWrapper` | rc-tabs | Native React |
-| `TransitionWrapper` | react-transition-group | Framer Motion |
+| Component           | Replaces                 | Technology    |
+| ------------------- | ------------------------ | ------------- |
+| `LoadingOverlay`    | react-loading-overlay-ts | Framer Motion |
+| `TabsWrapper`       | rc-tabs                  | Native React  |
+| `TransitionWrapper` | react-transition-group   | Framer Motion |
 
 ### React 19 Compatibility
 
@@ -72,14 +75,14 @@ Removed tilde (~) prefix from all SCSS imports for Vite compatibility.
 
 ## Removed Dependencies
 
-| Package | Reason |
-|---------|--------|
-| `react-scripts` | Replaced by Vite |
-| `react-app-rewired` | No longer needed |
+| Package                    | Reason                       |
+| -------------------------- | ---------------------------- |
+| `react-scripts`            | Replaced by Vite             |
+| `react-app-rewired`        | No longer needed             |
 | `react-loading-overlay-ts` | Replaced by custom component |
-| `google-map-react` | Replaced by Leaflet |
-| `rc-tabs` | Replaced by custom component |
-| `react-transition-group` | Replaced by Framer Motion |
+| `google-map-react`         | Replaced by Leaflet          |
+| `rc-tabs`                  | Replaced by custom component |
+| `react-transition-group`   | Replaced by Framer Motion    |
 
 ---
 
@@ -117,18 +120,18 @@ Preview available at `http://localhost:4173`
 
 ## Tech Stack
 
-| Category | Technology | Version |
-|----------|------------|---------|
-| Framework | React | 19.2.0 |
-| Build Tool | Vite | 7.2.6 |
-| UI Framework | Bootstrap | 5.3.8 |
-| Components | Reactstrap | 9.2.3 |
-| State | Redux Toolkit | 2.11.0 |
-| Routing | React Router | 7.9.6 |
-| Animations | Framer Motion | 12.23.25 |
-| Charts | ApexCharts, Chart.js, Recharts | Latest |
-| Maps | Leaflet, react-simple-maps | Latest |
-| Styling | Sass | 1.94.2 |
+| Category     | Technology                     | Version  |
+| ------------ | ------------------------------ | -------- |
+| Framework    | React                          | 19.2.0   |
+| Build Tool   | Vite                           | 7.2.6    |
+| UI Framework | Bootstrap                      | 5.3.8    |
+| Components   | Reactstrap                     | 9.2.3    |
+| State        | Redux Toolkit                  | 2.11.0   |
+| Routing      | React Router                   | 7.9.6    |
+| Animations   | Framer Motion                  | 12.23.25 |
+| Charts       | ApexCharts, Chart.js, Recharts | Latest   |
+| Maps         | Leaflet, react-simple-maps     | Latest   |
+| Styling      | Sass                           | 1.94.2   |
 
 ---
 

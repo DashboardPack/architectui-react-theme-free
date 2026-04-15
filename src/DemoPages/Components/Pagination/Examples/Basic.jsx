@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
 
 import {
   Row,
@@ -11,14 +11,20 @@ import {
   PaginationItem,
   PaginationLink,
   Container,
-} from "reactstrap";
+} from 'reactstrap';
 
 const BasicPagination = (props) => {
   return (
     <Fragment>
       <TransitionGroup>
-        <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-          timeout={0} enter={false} exit={false}>
+        <CSSTransition
+          component="div"
+          classNames="TabsAnimation"
+          appear={true}
+          timeout={0}
+          enter={false}
+          exit={false}
+        >
           <Container fluid>
             <Row>
               <Col lg="6">

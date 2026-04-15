@@ -1,23 +1,31 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
-import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
-import PageTitle from "../../../../Layout/AppMain/PageTitle";
+import PageTitle from '../../../../Layout/AppMain/PageTitle';
 
 // Examples
 
-import FormDropZoneExample1 from "./Examples/example1";
+import FormDropZoneExample1 from './Examples/example1';
 
 class FormDropZone extends React.Component {
   render() {
     return (
       <Fragment>
-        <PageTitle heading="DropZone"
+        <PageTitle
+          heading="DropZone"
           subheading="Create drag & drop zones for uploading files."
-          icon="pe-7s-ticket icon-gradient bg-happy-fisher"/>
+          icon="pe-7s-ticket icon-gradient bg-happy-fisher"
+        />
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <Row>
               <Col md="12">
                 <Card className="main-card mb-3">

@@ -1,8 +1,8 @@
 // Search Box
 
-@use "sass:math";
+@use 'sass:math';
 
-$search-box-size:     42px;
+$search-box-size: 42px;
 
 .search-wrapper {
   position: relative;
@@ -27,7 +27,7 @@ $search-box-size:     42px;
       border: none;
       outline: none;
       transform: translate(0, 60px);
-      transition: all .3s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+      transition: all 0.3s cubic-bezier(0, 0.105, 0.035, 1.57);
       transition-delay: 0.3s;
       font-size: $font-size-base;
     }
@@ -43,7 +43,7 @@ $search-box-size:     42px;
       float: right;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
-      background: rgba(0,0,0,.06);
+      background: rgba(0, 0, 0, 0.06);
       @include border-radius(30px);
 
       span {
@@ -53,7 +53,7 @@ $search-box-size:     42px;
         vertical-align: middle;
         position: relative;
         transform: rotate(45deg);
-        transition: all .4s cubic-bezier(0.650, -0.600, 0.240, 1.650);
+        transition: all 0.4s cubic-bezier(0.65, -0.6, 0.24, 1.65);
 
         &::before,
         &::after {
@@ -94,7 +94,7 @@ $search-box-size:     42px;
     padding: 0px;
     opacity: 0 !important;
     // transform: rotate(-180deg);
-    transition: all .2s cubic-bezier(0.285, -0.450, 0.935, 0.110);
+    transition: all 0.2s cubic-bezier(0.285, -0.45, 0.935, 0.11);
     transition-delay: 0.1s;
 
     &::before,
@@ -126,7 +126,7 @@ $search-box-size:     42px;
       width: 290px;
       border-radius: 50px;
       background: rgba(0, 0, 0, 0.05);
-      transition: all .5s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+      transition: all 0.5s cubic-bezier(0, 0.105, 0.035, 1.57);
 
       .search-input {
         opacity: 1;
@@ -147,9 +147,9 @@ $search-box-size:     42px;
 
     .btn-close {
       left: 300px;
-      opacity: .6 !important;
+      opacity: 0.6 !important;
       // transform: rotate(45deg);
-      transition: all .6s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+      transition: all 0.6s cubic-bezier(0, 0.105, 0.035, 1.57);
       transition-delay: 0.5s;
 
       &:hover {
@@ -160,6 +160,5 @@ $search-box-size:     42px;
     & + .header-megamenu {
       opacity: 0;
     }
-
   }
 }

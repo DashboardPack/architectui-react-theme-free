@@ -7,7 +7,7 @@
   align-content: center;
   position: relative;
   z-index: 10;
-  transition: all .2s;
+  transition: all 0.2s;
 
   &.header-shadow {
     box-shadow: $box-shadow-default;
@@ -51,7 +51,7 @@
   width: $app-sidebar-width;
   display: flex;
   align-items: center;
-  transition: width .2s;
+  transition: width 0.2s;
 
   .logo-src {
     height: $logo-height;
@@ -75,14 +75,14 @@
 
 // Header Modifiers
 
-@import "modifiers/fixed-header";
-@import "modifiers/header-dots";
-@import "modifiers/header-megamenu";
-@import "modifiers/header-buttons";
+@import 'modifiers/fixed-header';
+@import 'modifiers/header-dots';
+@import 'modifiers/header-megamenu';
+@import 'modifiers/header-buttons';
 //@import "modifiers/header-horizontal";
 
 // Header Themes
 
-@import "themes/header-light";
-@import "themes/header-dark";
+@import 'themes/header-light';
+@import 'themes/header-dark';
 //@import "themes/header-inverted";

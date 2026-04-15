@@ -15,6 +15,7 @@ This template offers clean, responsive design with a comprehensive set of UI com
 ## Key Features
 
 ### Core Technologies
+
 - **React 19.2.0** - Latest React with improved performance and features
 - **Vite 7.2.6** - Lightning-fast build tool with instant HMR
 - **Bootstrap 5.3.8** - Modern CSS framework with utilities
@@ -23,6 +24,7 @@ This template offers clean, responsive design with a comprehensive set of UI com
 - **Sass/SCSS** - Advanced styling capabilities
 
 ### UI Components
+
 - **30+ Ready-to-use Components** - Forms, tables, charts, modals, and more
 - **Multiple Dashboard Layouts** - Analytics, CRM, Commerce, Sales, and Minimal
 - **Advanced Form Elements** - Date pickers, file uploads, text editors, sliders
@@ -31,6 +33,7 @@ This template offers clean, responsive design with a comprehensive set of UI com
 - **Responsive Design** - Mobile-first approach with all device compatibility
 
 ### Layout Options
+
 - **Flexible Sidebar** - Collapsible with custom themes
 - **Header Variations** - Multiple header styles and configurations
 - **Footer Components** - Fixed and dynamic footer options
@@ -47,31 +50,36 @@ This template offers clean, responsive design with a comprehensive set of UI com
 ### Installation
 
 1. **Clone or Download** the repository
+
    ```bash
    git clone https://github.com/DashboardPack/architectui-react-theme-free.git
    cd architectui-react-theme-free
    ```
 
 2. **Install Dependencies**
+
    ```bash
    npm install --legacy-peer-deps
    ```
 
 3. **Start Development Server**
+
    ```bash
    npm start
    ```
-   
+
    The application will open in your browser at `http://localhost:3001`
 
 ### Build for Production
 
 1. **Create Production Build**
+
    ```bash
    npm run build
    ```
 
 2. **Preview Production Build**
+
    ```bash
    npm run preview
    ```
@@ -102,12 +110,12 @@ architectui-react-theme-free/
 
 ## Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm start` | Start development server (port 3001) |
-| `npm run dev` | Start development server (alias for start) |
-| `npm run build` | Create production build |
-| `npm run preview` | Preview production build locally |
+| Command           | Description                                |
+| ----------------- | ------------------------------------------ |
+| `npm start`       | Start development server (port 3001)       |
+| `npm run dev`     | Start development server (alias for start) |
+| `npm run build`   | Create production build                    |
+| `npm run preview` | Preview production build locally           |
 
 ## Browser Support
 
@@ -122,27 +130,33 @@ ArchitectUI React supports all modern browsers:
 ## Customization
 
 ### Theme Colors
+
 Customize the color scheme by modifying the Sass variables in:
+
 - `src/assets/themes/[theme-name]/_variables.scss`
 
 ### Layout Configuration
+
 Adjust layout settings in:
+
 - `src/reducers/ThemeOptions.js`
 
 ### Adding New Components
+
 Follow the existing component structure in:
+
 - `src/DemoPages/Components/`
 
 ## Available Versions
 
 ArchitectUI is available in multiple frameworks:
 
-| Framework | Repository | Status |
-|-----------|------------|---------|
-| **React** | [Free Version](https://github.com/DashboardPack/architectui-react-theme-free) | ✅ Active |
-| **Vue.js** | [Vue Version](https://dashboardpack.com/theme-details/architectui-dashboard-vue-pro/) | ✅ Available |
-| **Angular** | [Angular Version](https://dashboardpack.com/theme-details/architectui-angular-7-bootstrap-material-design-pro?v=7516fd43adaa) | ✅ Available |
-| **HTML/jQuery** | [HTML Version](https://dashboardpack.com/theme-details/architectui-dashboard-html-pro) | ✅ Available |
+| Framework       | Repository                                                                                                                    | Status       |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| **React**       | [Free Version](https://github.com/DashboardPack/architectui-react-theme-free)                                                 | ✅ Active    |
+| **Vue.js**      | [Vue Version](https://dashboardpack.com/theme-details/architectui-dashboard-vue-pro/)                                         | ✅ Available |
+| **Angular**     | [Angular Version](https://dashboardpack.com/theme-details/architectui-angular-7-bootstrap-material-design-pro?v=7516fd43adaa) | ✅ Available |
+| **HTML/jQuery** | [HTML Version](https://dashboardpack.com/theme-details/architectui-dashboard-html-pro)                                        | ✅ Available |
 
 ## Professional Version
 
@@ -168,12 +182,14 @@ Upgrade to **[ArchitectUI React PRO](https://dashboardpack.com/theme-details/arc
 [DashboardPack.com](https://dashboardpack.com/) offers professional admin dashboard templates in multiple frameworks:
 
 **ArchitectUI Family:**
+
 - [ArchitectUI React PRO](https://dashboardpack.com/theme-details/architectui-dashboard-react-pro) - React 19 + Bootstrap 5
 - [ArchitectUI Vue PRO](https://dashboardpack.com/theme-details/architectui-dashboard-vue-pro/) - Vue.js + Bootstrap 5
 - [ArchitectUI Angular PRO](https://dashboardpack.com/theme-details/architectui-angular-7-bootstrap-material-design-pro) - Angular + Bootstrap 5
 - [ArchitectUI HTML PRO](https://dashboardpack.com/theme-details/architectui-dashboard-html-pro) - HTML/jQuery + Bootstrap 5
 
 **Other Premium Templates:**
+
 - Finance SaaS Dashboard
 - Marketing Dashboard
 - Sales Dashboard
@@ -186,10 +202,12 @@ Upgrade to **[ArchitectUI React PRO](https://dashboardpack.com/theme-details/arc
 [Colorlib.com](https://colorlib.com/) provides free web templates and helpful articles:
 
 **Recommended Articles:**
+
 - [15 Best React Admin Dashboard Templates](https://colorlib.com/wp/react-dashboard-templates/) - Comprehensive guide to React dashboards
 - [42 Free Bootstrap Admin Dashboard Templates](https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/) - Bootstrap admin template roundup
 
 **Free Template Categories:**
+
 - Admin dashboards
 - Landing pages
 - Portfolio templates
@@ -200,6 +218,7 @@ Upgrade to **[ArchitectUI React PRO](https://dashboardpack.com/theme-details/arc
 ## Technical Details
 
 ### Dependencies
+
 - **UI Framework**: Bootstrap 5.3.8, Reactstrap 9.2.3
 - **Charts**: ApexCharts 5.3.6, Chart.js 4.5.1, Recharts 3.5.1
 - **Icons**: FontAwesome 7.1.0, React Icons 5.5.0
@@ -209,6 +228,7 @@ Upgrade to **[ArchitectUI React PRO](https://dashboardpack.com/theme-details/arc
 - **Build Tools**: Vite 7.2.6, Sass 1.94.2
 
 ### Performance Features
+
 - **Lightning-Fast HMR** - Instant hot module replacement with Vite
 - **Code Splitting** - Automatic route-based code splitting
 - **Tree Shaking** - Eliminate unused code
@@ -244,11 +264,13 @@ copies of the Software...
 ## Support & Community
 
 ### Get Help
+
 - **Documentation**: Comprehensive guides and examples included
 - **GitHub Issues**: Report bugs and request features
 - **Community**: Join our developer community
 
 ### Stay Updated
+
 - **GitHub**: Star the repository for updates
 - **DashboardPack**: Follow for new template releases
 - **Changelog**: Check [CHANGELOG.md](Changelog.md) for version history
@@ -257,7 +279,7 @@ copies of the Software...
 
 **Developed by**: [DashboardPack.com](https://dashboardpack.com/)  
 **Design**: Professional UI/UX team  
-**Maintained by**: Open source community  
+**Maintained by**: Open source community
 
 ---
 

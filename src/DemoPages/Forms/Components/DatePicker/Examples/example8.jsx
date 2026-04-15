@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react';
 
-import DatePicker from "react-datepicker";
+import DatePicker from 'react-datepicker';
 
 class FormDatePicker8 extends React.Component {
   constructor(props) {
@@ -21,8 +21,12 @@ class FormDatePicker8 extends React.Component {
     return (
       <Fragment>
         <div className="text-center">
-          <DatePicker inline selected={this.state.startDate}
-            onChange={this.handleChange} calendarClassName="no-shadow"/>
+          <DatePicker
+            inline
+            selected={this.state.startDate}
+            onChange={this.handleChange}
+            calendarClassName="no-shadow"
+          />
         </div>
       </Fragment>
     );

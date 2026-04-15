@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../../utils/TransitionWrapper';
-import Sticky from "react-stickynode";
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../utils/TransitionWrapper';
+import Sticky from 'react-stickynode';
 
 import {
   Card,
@@ -17,30 +17,46 @@ import {
   DropdownItem,
   DropdownMenu,
   DropdownToggle,
-} from "reactstrap";
+} from 'reactstrap';
 
-import { faCog } from "@fortawesome/free-solid-svg-icons";
+import { faCog } from '@fortawesome/free-solid-svg-icons';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { IoIosAnalytics } from "react-icons/io";
+import { IoIosAnalytics } from 'react-icons/io';
 
 export default class FormStickyBasic extends React.Component {
   render() {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <div>
               <Card className="main-card mb-3">
-                <Sticky enabled={true} top=".app-header" innerZ="15" activeClass="sticky-active-class">
+                <Sticky
+                  enabled={true}
+                  top=".app-header"
+                  innerZ="15"
+                  activeClass="sticky-active-class"
+                >
                   <CardHeader className="card-header-lg">
                     <div className="card-header-title font-size-lg text-capitalize fw-normal">
                       Sticky Page Headers
                     </div>
                     <div className="btn-actions-pane-right">
-                      <Button size="lg" color="warning" className="me-2" onClick={this.toggleCalendar}>
+                      <Button
+                        size="lg"
+                        color="warning"
+                        className="me-2"
+                        onClick={this.toggleCalendar}
+                      >
                         <span className="me-2 opacity-8">
                           <IoIosAnalytics color="#333333" fontSize="1.2rem" />
                         </span>
@@ -53,7 +69,12 @@ export default class FormStickyBasic extends React.Component {
                           </span>
                           Actions
                         </Button>
-                        <DropdownToggle className="dropdown-toggle-split" caret size="lg" color="primary"/>
+                        <DropdownToggle
+                          className="dropdown-toggle-split"
+                          caret
+                          size="lg"
+                          color="primary"
+                        />
                         <DropdownMenu end>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -72,24 +93,43 @@ export default class FormStickyBasic extends React.Component {
                       <Col md={6}>
                         <FormGroup>
                           <Label for="exampleEmail">Email</Label>
-                          <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder"
+                          <Input
+                            type="email"
+                            name="email"
+                            id="exampleEmail"
+                            placeholder="with a placeholder"
                           />
                         </FormGroup>
                       </Col>
                       <Col md={6}>
                         <FormGroup>
                           <Label for="examplePassword">Password</Label>
-                          <Input type="password" name="password" id="examplePassword" placeholder="password placeholder"/>
+                          <Input
+                            type="password"
+                            name="password"
+                            id="examplePassword"
+                            placeholder="password placeholder"
+                          />
                         </FormGroup>
                       </Col>
                     </Row>
                     <FormGroup>
                       <Label for="exampleAddress">Address</Label>
-                      <Input type="text" name="address" id="exampleAddress" placeholder="1234 Main St"/>
+                      <Input
+                        type="text"
+                        name="address"
+                        id="exampleAddress"
+                        placeholder="1234 Main St"
+                      />
                     </FormGroup>
                     <FormGroup>
                       <Label for="exampleAddress2">Address 2</Label>
-                      <Input type="text" name="address2"id="exampleAddress2" placeholder="Apartment, studio, or floor"/>
+                      <Input
+                        type="text"
+                        name="address2"
+                        id="exampleAddress2"
+                        placeholder="Apartment, studio, or floor"
+                      />
                     </FormGroup>
                     <Row>
                       <Col md={6}>
@@ -115,25 +155,15 @@ export default class FormStickyBasic extends React.Component {
                       <Label for="exampleCheckbox">Checkboxes</Label>
                       <div>
                         <FormGroup check>
-                          <Input id="checkbox2" type="checkbox"/>
-                          {' '}
-                          <Label check>
-                            Check this custom checkbox
-                          </Label>
+                          <Input id="checkbox2" type="checkbox" />{' '}
+                          <Label check>Check this custom checkbox</Label>
                         </FormGroup>
                         <FormGroup check>
-                          <Input id="checkbox2" type="checkbox"/>
-                          {' '}
-                          <Label check>
-                            Or this one
-                          </Label>
+                          <Input id="checkbox2" type="checkbox" /> <Label check>Or this one</Label>
                         </FormGroup>
                         <FormGroup check>
-                          <Input id="checkbox2" type="checkbox" disabled/>
-                          {' '}
-                          <Label check>
-                          But not this disabled one
-                          </Label>
+                          <Input id="checkbox2" type="checkbox" disabled />{' '}
+                          <Label check>But not this disabled one</Label>
                         </FormGroup>
                       </div>
                     </FormGroup>
@@ -141,43 +171,29 @@ export default class FormStickyBasic extends React.Component {
                       <Label for="exampleCheckbox">Radios</Label>
                       <div>
                         <FormGroup check>
-                          <Input name="radio2" type="radio"/>
-                          {' '}
-                          <Label check>
-                            Select this custom radio
-                          </Label>
+                          <Input name="radio2" type="radio" />{' '}
+                          <Label check>Select this custom radio</Label>
                         </FormGroup>
                         <FormGroup check>
-                          <Input name="radio2" type="radio"/>
-                          {' '}
-                          <Label check>
-                          Or this one
-                          </Label>
+                          <Input name="radio2" type="radio" /> <Label check>Or this one</Label>
                         </FormGroup>
                         <FormGroup check disabled>
-                        <Input disabled name="radio2" type="radio"/>
-                        {' '}
-                        <Label check>
-                          But not this disabled one
-                        </Label>
-                      </FormGroup>
+                          <Input disabled name="radio2" type="radio" />{' '}
+                          <Label check>But not this disabled one</Label>
+                        </FormGroup>
                       </div>
                     </FormGroup>
                     <FormGroup>
                       <Label for="exampleCheckbox">Inline</Label>
                       <div>
-                      <FormGroup check className="form-check-inline">
-                        <Input type="checkbox" />
-                        <Label check>
-                          An inline custom input
-                        </Label>
-                      </FormGroup>
-                      <FormGroup check className="form-check-inline">
-                        <Input type="checkbox" />
-                        <Label check>
-                          and another one
-                        </Label>
-                      </FormGroup>
+                        <FormGroup check className="form-check-inline">
+                          <Input type="checkbox" />
+                          <Label check>An inline custom input</Label>
+                        </FormGroup>
+                        <FormGroup check className="form-check-inline">
+                          <Input type="checkbox" />
+                          <Label check>and another one</Label>
+                        </FormGroup>
                       </div>
                     </FormGroup>
                     <FormGroup>
@@ -192,10 +208,13 @@ export default class FormStickyBasic extends React.Component {
                       </Input>
                     </FormGroup>
                     <FormGroup>
-                      <Label for="exampleCustomMutlipleSelect">
-                        Custom Multiple Select
-                      </Label>
-                      <Input type="select" id="exampleCustomMutlipleSelect" name="customSelect" multiple>
+                      <Label for="exampleCustomMutlipleSelect">Custom Multiple Select</Label>
+                      <Input
+                        type="select"
+                        id="exampleCustomMutlipleSelect"
+                        name="customSelect"
+                        multiple
+                      >
                         <option value="">Select</option>
                         <option>Value 1</option>
                         <option>Value 2</option>
@@ -205,10 +224,13 @@ export default class FormStickyBasic extends React.Component {
                       </Input>
                     </FormGroup>
                     <FormGroup>
-                      <Label for="exampleCustomSelectDisabled">
-                        Custom Select Disabled
-                      </Label>
-                      <Input type="select" id="exampleCustomSelectDisabled" name="customSelect" disabled>
+                      <Label for="exampleCustomSelectDisabled">Custom Select Disabled</Label>
+                      <Input
+                        type="select"
+                        id="exampleCustomSelectDisabled"
+                        name="customSelect"
+                        disabled
+                      >
                         <option value="">Select</option>
                         <option>Value 1</option>
                         <option>Value 2</option>
@@ -221,7 +243,13 @@ export default class FormStickyBasic extends React.Component {
                       <Label for="exampleCustomMutlipleSelectDisabled">
                         Custom Multiple Select Disabled
                       </Label>
-                      <Input type="select" id="exampleCustomMutlipleSelectDisabled" name="customSelect" multiple disabled>
+                      <Input
+                        type="select"
+                        id="exampleCustomMutlipleSelectDisabled"
+                        name="customSelect"
+                        multiple
+                        disabled
+                      >
                         <option value="">Select</option>
                         <option>Value 1</option>
                         <option>Value 2</option>
@@ -232,19 +260,20 @@ export default class FormStickyBasic extends React.Component {
                     </FormGroup>
                     <FormGroup>
                       <Label for="exampleCustomFileBrowser">File Browser</Label>
-                      <Input type="file" id="exampleCustomFileBrowser" name="customFile"/>
+                      <Input type="file" id="exampleCustomFileBrowser" name="customFile" />
                     </FormGroup>
                     <FormGroup>
-                      <Label for="exampleCustomFileBrowser">
-                        File Browser with Custom Label
-                      </Label>
-                      <Input type="file" id="exampleCustomFileBrowser" name="customFile" label="Yo, pick a file!"/>
+                      <Label for="exampleCustomFileBrowser">File Browser with Custom Label</Label>
+                      <Input
+                        type="file"
+                        id="exampleCustomFileBrowser"
+                        name="customFile"
+                        label="Yo, pick a file!"
+                      />
                     </FormGroup>
                     <FormGroup>
-                      <Label for="exampleCustomFileBrowser">
-                        File Browser Disabled
-                      </Label>
-                      <Input type="file" id="exampleCustomFileBrowser" name="customFile" disabled/>
+                      <Label for="exampleCustomFileBrowser">File Browser Disabled</Label>
+                      <Input type="file" id="exampleCustomFileBrowser" name="customFile" disabled />
                     </FormGroup>
                   </Col>
                 </CardBody>

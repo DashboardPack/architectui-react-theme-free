@@ -1,6 +1,6 @@
 // NAVS
 
-@use "sass:math";
+@use 'sass:math';
 
 .nav-item {
   .nav-link {
@@ -11,7 +11,9 @@
 .nav-link {
   display: flex;
   align-items: center;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
   cursor: pointer;
 
   .nav-link-icon {
@@ -19,7 +21,7 @@
     font-size: 1rem;
     width: 30px;
     text-align: center;
-    opacity: .45;
+    opacity: 0.45;
     margin-left: -10px;
   }
 
@@ -27,7 +29,7 @@
     color: $gray-700;
 
     .nav-link-icon {
-      opacity: .9;
+      opacity: 0.9;
       color: $primary;
     }
   }
@@ -35,7 +37,7 @@
   &:disabled,
   &.disabled {
     .nav-link-icon {
-      opacity: .3;
+      opacity: 0.3;
     }
   }
 }
@@ -69,14 +71,13 @@
 
 .nav-pills {
   .nav-link {
-
     &.active,
     &.active:hover {
       color: $white;
 
       .nav-link-icon {
         color: $white;
-        opacity: .8;
+        opacity: 0.8;
       }
     }
 
@@ -89,8 +90,7 @@
 // Grid Menus
 
 .grid-menu {
-
-  [class*="col-"] {
+  [class*='col-'] {
     border-right: $border-color solid 0;
     border-bottom: $border-color solid 1px;
 
@@ -101,38 +101,37 @@
 
   // @include media-breakpoint-between(sm, xl) {
 
-    [class*="col-"]:nth-last-child(-n+2) {
-      border-bottom-width: 0;
-    }
+  [class*='col-']:nth-last-child(-n + 2) {
+    border-bottom-width: 0;
+  }
 
-    [class*="col-"]:nth-child(1n) {
-      border-right-width: 1px;
-    }
+  [class*='col-']:nth-child(1n) {
+    border-right-width: 1px;
+  }
 
-    [class*="col-"]:nth-child(2n) {
-      border-right-width: 0;
-    }
+  [class*='col-']:nth-child(2n) {
+    border-right-width: 0;
+  }
   // }
 
-  [class*="col-"]:nth-last-child(-n+1) {
+  [class*='col-']:nth-last-child(-n + 1) {
     border-bottom-width: 0;
   }
 
   &.grid-menu-3col {
-
     // @include media-breakpoint-up(xl) {
 
-      [class*="col-"]:nth-last-child(-n+3) {
-        border-bottom-width: 0;
-      }
+    [class*='col-']:nth-last-child(-n + 3) {
+      border-bottom-width: 0;
+    }
 
-      [class*="col-"]:nth-child(2n) {
-        border-right-width: 1px;
-      }
+    [class*='col-']:nth-child(2n) {
+      border-right-width: 1px;
+    }
 
-      [class*="col-"]:nth-child(3n) {
-        border-right-width: 0;
-      }
+    [class*='col-']:nth-child(3n) {
+      border-right-width: 0;
+    }
     // }
   }
 
@@ -142,4 +141,3 @@
     min-width: 100%;
   }
 }
-

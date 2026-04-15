@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
-import { Row, Col, Card, CardBody, Container } from "reactstrap";
+import React, { Component, Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
+import { Row, Col, Card, CardBody, Container } from 'reactstrap';
 
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 import {
   faCoffee,
   faCog,
@@ -30,8 +30,8 @@ import {
   faArrowCircleUp,
   faArrowDown,
   faArrowLeft,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 library.add(
   fab,
@@ -67,8 +67,14 @@ class FontAwesomeIconsExample extends Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Row>
                 <Col md="12">
@@ -77,7 +83,7 @@ class FontAwesomeIconsExample extends Component {
                       <Row>
                         <Col md="2">
                           <div className="font-icon-wrapper text-primary">
-                            <FontAwesomeIcon icon={["fab", "font-awesome"]} size="4x"/>
+                            <FontAwesomeIcon icon={['fab', 'font-awesome']} size="4x" />
                             <p>size="4x"</p>
                           </div>
                         </Col>
@@ -95,25 +101,38 @@ class FontAwesomeIconsExample extends Component {
                         </Col>
                         <Col md="2">
                           <div className="font-icon-wrapper text-danger">
-                            <FontAwesomeIcon icon={["fas", "cog"]} spin fixedWidth={false} size="4x"/>
+                            <FontAwesomeIcon
+                              icon={['fas', 'cog']}
+                              spin
+                              fixedWidth={false}
+                              size="4x"
+                            />
                             <p>spin fixedWidth=false size="4x"</p>
                           </div>
                         </Col>
                         <Col md="2">
                           <div className="font-icon-wrapper text-info">
-                            <FontAwesomeIcon icon={["fas", "spinner"]} pulse fixedWidth size="4x" />
+                            <FontAwesomeIcon icon={['fas', 'spinner']} pulse fixedWidth size="4x" />
                             <p>pulse fixedWidth size="4x"</p>
                           </div>
                         </Col>
                         <Col md="2">
                           <div className="font-icon-wrapper text-warning">
-                            <FontAwesomeIcon icon={["fab", "internet-explorer"]} flip="both" size="4x"/>
+                            <FontAwesomeIcon
+                              icon={['fab', 'internet-explorer']}
+                              flip="both"
+                              size="4x"
+                            />
                             <p>flip="both" size="4x"</p>
                           </div>
                         </Col>
                         <Col md="2">
                           <div className="font-icon-wrapper text-dark">
-                            <FontAwesomeIcon icon={["fab", "font-awesome"]}size="4x" transform="left-1 rotate-15" />
+                            <FontAwesomeIcon
+                              icon={['fab', 'font-awesome']}
+                              size="4x"
+                              transform="left-1 rotate-15"
+                            />
                             <p>size="4x" transform="left-1 rotate-15"</p>
                           </div>
                         </Col>
@@ -173,25 +192,25 @@ class FontAwesomeIconsExample extends Component {
                         </Col>
                         <Col md="2">
                           <div className="font-icon-wrapper">
-                            <FontAwesomeIcon icon={faArrowAltCircleDown} size="2x"/>
+                            <FontAwesomeIcon icon={faArrowAltCircleDown} size="2x" />
                             <p>faAngleLeft size="2x"</p>
                           </div>
                         </Col>
                         <Col md="2">
                           <div className="font-icon-wrapper">
-                            <FontAwesomeIcon icon={faArrowAltCircleLeft} size="2x"/>
+                            <FontAwesomeIcon icon={faArrowAltCircleLeft} size="2x" />
                             <p>faAngleLeft size="2x"</p>
                           </div>
                         </Col>
                         <Col md="2">
                           <div className="font-icon-wrapper">
-                            <FontAwesomeIcon icon={faArrowAltCircleRight} size="2x"/>
+                            <FontAwesomeIcon icon={faArrowAltCircleRight} size="2x" />
                             <p>faAngleLeft size="2x"</p>
                           </div>
                         </Col>
                         <Col md="2">
                           <div className="font-icon-wrapper">
-                            <FontAwesomeIcon icon={faArrowAltCircleUp} size="2x"/>
+                            <FontAwesomeIcon icon={faArrowAltCircleUp} size="2x" />
                             <p>faAngleLeft size="2x"</p>
                           </div>
                         </Col>
@@ -248,52 +267,55 @@ class FontAwesomeIconsExample extends Component {
                         </Col>
                         <Col md="2">
                           <div className="font-icon-wrapper">
-                            <FontAwesomeIcon icon={faAngleRight} className="text-danger" pulse/>
+                            <FontAwesomeIcon icon={faAngleRight} className="text-danger" pulse />
                           </div>
                         </Col>
                         <Col md="2">
                           <div className="font-icon-wrapper">
-                            <FontAwesomeIcon icon={faAngleUp} className="text-primary"/>
+                            <FontAwesomeIcon icon={faAngleUp} className="text-primary" />
                           </div>
                         </Col>
                         <Col md="2">
                           <div className="font-icon-wrapper">
-                            <FontAwesomeIcon icon={faAngry} className="text-warning"/>
+                            <FontAwesomeIcon icon={faAngry} className="text-warning" />
                           </div>
                         </Col>
                         <Col md="2">
                           <div className="font-icon-wrapper">
-                            <FontAwesomeIcon icon={faAnkh} className="text-alternate"/>
+                            <FontAwesomeIcon icon={faAnkh} className="text-alternate" />
                           </div>
                         </Col>
                         <Col md="2">
                           <div className="font-icon-wrapper">
-                            <FontAwesomeIcon icon={faAppleAlt} className="text-info"/>
+                            <FontAwesomeIcon icon={faAppleAlt} className="text-info" />
                           </div>
                         </Col>
                         <Col md="2">
                           <div className="font-icon-wrapper">
-                            <FontAwesomeIcon icon={faArchive} className="text-danger"/>
+                            <FontAwesomeIcon icon={faArchive} className="text-danger" />
                           </div>
                         </Col>
                         <Col md="2">
                           <div className="font-icon-wrapper">
-                            <FontAwesomeIcon icon={faArchway} className="text-success"/>
+                            <FontAwesomeIcon icon={faArchway} className="text-success" />
                           </div>
                         </Col>
                         <Col md="2">
                           <div className="font-icon-wrapper">
-                            <FontAwesomeIcon icon={faArrowAltCircleDown} className="text-success"/>
+                            <FontAwesomeIcon icon={faArrowAltCircleDown} className="text-success" />
                           </div>
                         </Col>
                         <Col md="2">
                           <div className="font-icon-wrapper">
-                            <FontAwesomeIcon icon={faArrowAltCircleLeft} className="text-dark"/>
+                            <FontAwesomeIcon icon={faArrowAltCircleLeft} className="text-dark" />
                           </div>
                         </Col>
                         <Col md="2">
                           <div className="font-icon-wrapper">
-                            <FontAwesomeIcon icon={faArrowAltCircleRight} className="text-secondary"/>
+                            <FontAwesomeIcon
+                              icon={faArrowAltCircleRight}
+                              className="text-secondary"
+                            />
                           </div>
                         </Col>
                         <Col md="2">

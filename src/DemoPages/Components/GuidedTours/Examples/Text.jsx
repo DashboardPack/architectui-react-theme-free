@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { themeColors } from "./settings";
+import styled from 'styled-components';
+import { themeColors } from './settings';
 
 export default styled.p`
   margin: 0;
@@ -10,5 +10,5 @@ export default styled.p`
         : props.color
       : themeColors.black};
   line-height: 1.5;
-  font-size: ${(props) => (props.size ? props.size : "inherit")};
+  font-size: ${(props) => (props.size ? props.size : 'inherit')};
 `;

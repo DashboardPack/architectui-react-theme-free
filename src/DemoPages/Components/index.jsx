@@ -1,26 +1,26 @@
-import React, { Fragment } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { Fragment } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 // Components
 
-import Tabs from "./Tabs/";
-import Notifications from "./Notifications/";
-import TooltipsPopovers from "./TooltipsPopovers/";
-import Carousel from "./Carousel/";
-import Maps from "./Maps/";
-import Ratings from "./Ratings/";
-import ImageCropper from "./ImageCropper/";
-import GuidedTours from "./GuidedTours/";
-import Calendar from "./Calendar/";
-import Accordion from "./Accordion/";
-import BlockLoading from "./BlockLoading/";
-import CountUp from "./CountUp/";
-import Modal from "./Modal/";
-import Pagination from "./Pagination/";
-import ProgressBar from "./ProgressBar/";
-import ScrollableElements from "./ScrollableElements/";
-import StickyElements from "./StickyElements/";
-import TreeView from "./TreeView/";
+import Tabs from './Tabs/';
+import Notifications from './Notifications/';
+import TooltipsPopovers from './TooltipsPopovers/';
+import Carousel from './Carousel/';
+import Maps from './Maps/';
+import Ratings from './Ratings/';
+import ImageCropper from './ImageCropper/';
+import GuidedTours from './GuidedTours/';
+import Calendar from './Calendar/';
+import Accordion from './Accordion/';
+import BlockLoading from './BlockLoading/';
+import CountUp from './CountUp/';
+import Modal from './Modal/';
+import Pagination from './Pagination/';
+import ProgressBar from './ProgressBar/';
+import ScrollableElements from './ScrollableElements/';
+import StickyElements from './StickyElements/';
+import TreeView from './TreeView/';
 
 const Components = () => (
   <Fragment>
@@ -40,10 +40,7 @@ const Components = () => (
       <Route path="modals" element={<Modal />} />
       <Route path="pagination" element={<Pagination />} />
       <Route path="progress-bar" element={<ProgressBar />} />
-      <Route
-        path="scrollable-elements"
-        element={<ScrollableElements />}
-      />
+      <Route path="scrollable-elements" element={<ScrollableElements />} />
       <Route path="sticky-elements" element={<StickyElements />} />
       <Route path="tree-view" element={<TreeView />} />
     </Routes>

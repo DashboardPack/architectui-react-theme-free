@@ -1,6 +1,6 @@
 // Main Base
 
-@use "sass:math";
+@use 'sass:math';
 
 .app-main {
   z-index: 8;
@@ -36,7 +36,6 @@
 // Alternate Section Tabs
 
 .body-tabs-shadow-btn {
-
   .app-main__inner {
     & > .RRT__container {
       & > .RRT__panel {
@@ -71,21 +70,19 @@
             margin-top: 0;
             @include border-radius($border-radius);
             box-shadow:
-                    0 16px 26px -10px rgba($primary, 0.56),
-                    0 4px 25px 0px rgba(0, 0, 0, 0.12),
-                    0 8px 10px -5px rgba($primary, 0.2);
+              0 16px 26px -10px rgba($primary, 0.56),
+              0 4px 25px 0px rgba(0, 0, 0, 0.12),
+              0 8px 10px -5px rgba($primary, 0.2);
           }
         }
       }
     }
   }
-
-
 }
 
 // Themes
 
-@import "themes/main-white";
-@import "themes/main-gray";
+@import 'themes/main-white';
+@import 'themes/main-gray';
 //@import "themes/main-inverted-blue";
 //@import "themes/main-inverted-black";

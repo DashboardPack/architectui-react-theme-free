@@ -1,22 +1,20 @@
-import React, { Component, Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
-import {
-  Row,
-  Col,
-  Card,
-  CardBody,
-  CardTitle,
-  Button,
-  Container,
-} from "reactstrap";
+import React, { Component, Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
+import { Row, Col, Card, CardBody, CardTitle, Button, Container } from 'reactstrap';
 
 class LabelsExamples extends Component {
   render() {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Row>
                 <Col lg="6">
@@ -35,66 +33,86 @@ class LabelsExamples extends Component {
                       <div className="mb-2 me-2 badge bg-dark">Dark</div>
                       <div className="divider" />
                       <CardTitle>Pills</CardTitle>
-                      <div className="mb-2 me-2 badge rounded-pill bg-primary">
-                        Primary
-                      </div>
-                      <div className="mb-2 me-2 badge rounded-pill bg-secondary">
-                        Secondary
-                      </div>
-                      <div className="mb-2 me-2 badge rounded-pill bg-success">
-                        Success
-                      </div>
-                      <div className="mb-2 me-2 badge rounded-pill bg-info">
-                        Info
-                      </div>
-                      <div className="mb-2 me-2 badge rounded-pill bg-warning">
-                        Warning
-                      </div>
-                      <div className="mb-2 me-2 badge rounded-pill bg-danger">
-                        Danger
-                      </div>
-                      <div className="mb-2 me-2 badge rounded-pill bg-focus">
-                        Focus
-                      </div>
-                      <div className="mb-2 me-2 badge rounded-pill bg-alternate">
-                        Alt
-                      </div>
-                      <div className="mb-2 me-2 badge rounded-pill bg-light">
-                        Light
-                      </div>
-                      <div className="mb-2 me-2 badge rounded-pill bg-dark">
-                        Dark
-                      </div>
+                      <div className="mb-2 me-2 badge rounded-pill bg-primary">Primary</div>
+                      <div className="mb-2 me-2 badge rounded-pill bg-secondary">Secondary</div>
+                      <div className="mb-2 me-2 badge rounded-pill bg-success">Success</div>
+                      <div className="mb-2 me-2 badge rounded-pill bg-info">Info</div>
+                      <div className="mb-2 me-2 badge rounded-pill bg-warning">Warning</div>
+                      <div className="mb-2 me-2 badge rounded-pill bg-danger">Danger</div>
+                      <div className="mb-2 me-2 badge rounded-pill bg-focus">Focus</div>
+                      <div className="mb-2 me-2 badge rounded-pill bg-alternate">Alt</div>
+                      <div className="mb-2 me-2 badge rounded-pill bg-light">Light</div>
+                      <div className="mb-2 me-2 badge rounded-pill bg-dark">Dark</div>
                       <div className="divider" />
                       <CardTitle>Links</CardTitle>
-                      <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()} className="mb-2 me-2 badge bg-primary">
+                      <a
+                        href="https://colorlib.com/"
+                        onClick={(e) => e.preventDefault()}
+                        className="mb-2 me-2 badge bg-primary"
+                      >
                         Primary
                       </a>
-                      <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()} className="mb-2 me-2 badge bg-secondary">
+                      <a
+                        href="https://colorlib.com/"
+                        onClick={(e) => e.preventDefault()}
+                        className="mb-2 me-2 badge bg-secondary"
+                      >
                         Secondary
                       </a>
-                      <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()}className="mb-2 me-2 badge bg-success">
+                      <a
+                        href="https://colorlib.com/"
+                        onClick={(e) => e.preventDefault()}
+                        className="mb-2 me-2 badge bg-success"
+                      >
                         Success
                       </a>
-                      <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()} className="mb-2 me-2 badge bg-info">
+                      <a
+                        href="https://colorlib.com/"
+                        onClick={(e) => e.preventDefault()}
+                        className="mb-2 me-2 badge bg-info"
+                      >
                         Info
                       </a>
-                      <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()} className="mb-2 me-2 badge bg-warning">
+                      <a
+                        href="https://colorlib.com/"
+                        onClick={(e) => e.preventDefault()}
+                        className="mb-2 me-2 badge bg-warning"
+                      >
                         Warning
                       </a>
-                      <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()} className="mb-2 me-2 badge bg-danger">
+                      <a
+                        href="https://colorlib.com/"
+                        onClick={(e) => e.preventDefault()}
+                        className="mb-2 me-2 badge bg-danger"
+                      >
                         Danger
                       </a>
-                      <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()} className="mb-2 me-2 badge bg-focus">
+                      <a
+                        href="https://colorlib.com/"
+                        onClick={(e) => e.preventDefault()}
+                        className="mb-2 me-2 badge bg-focus"
+                      >
                         Focus
                       </a>
-                      <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()} className="mb-2 me-2 badge bg-alternate">
+                      <a
+                        href="https://colorlib.com/"
+                        onClick={(e) => e.preventDefault()}
+                        className="mb-2 me-2 badge bg-alternate"
+                      >
                         Alt
                       </a>
-                      <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()} className="mb-2 me-2 badge bg-light">
+                      <a
+                        href="https://colorlib.com/"
+                        onClick={(e) => e.preventDefault()}
+                        className="mb-2 me-2 badge bg-light"
+                      >
                         Light
                       </a>
-                      <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()} className="mb-2 me-2 badge bg-dark">
+                      <a
+                        href="https://colorlib.com/"
+                        onClick={(e) => e.preventDefault()}
+                        className="mb-2 me-2 badge bg-dark"
+                      >
                         Dark
                       </a>
                     </CardBody>

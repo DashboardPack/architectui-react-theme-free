@@ -1,19 +1,25 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../../utils/TransitionWrapper';
-import { Row, Col, Card, CardBody, CardTitle, Container } from "reactstrap";
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../utils/TransitionWrapper';
+import { Row, Col, Card, CardBody, CardTitle, Container } from 'reactstrap';
 
 // Examples
 
-import VectorMapsBasic from "./Basic";
-import VectorMapsMarkers from "./Markers";
+import VectorMapsBasic from './Basic';
+import VectorMapsMarkers from './Markers';
 
 class VectorMapsExample extends React.Component {
   render() {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Row>
                 <Col lg="6">

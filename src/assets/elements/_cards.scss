@@ -1,11 +1,11 @@
 // CARDS
 
-@use "sass:math";
+@use 'sass:math';
 
 .card {
   box-shadow: $box-shadow-default;
   border-width: 0;
-  transition: all .2s;
+  transition: all 0.2s;
 
   & > .dropdown-menu-header {
     margin: 0;
@@ -19,15 +19,15 @@
   &.text-white {
     .card-footer,
     .card-header {
-      background: rgba(255, 255, 255, .1);
-      color: rgba(255, 255, 255, .9);
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.9);
     }
   }
 
   &.text-dark.text-white {
     .card-footer,
     .card-header {
-      color: rgba(0, 0, 0, .9);
+      color: rgba(0, 0, 0, 0.9);
     }
   }
 
@@ -68,7 +68,7 @@
 .card-header,
 .card-title {
   text-transform: uppercase;
-  color: rgba(shade-color($primary, 40%), .7);
+  color: rgba(shade-color($primary, 40%), 0.7);
   font-weight: bold;
   font-size: $font-size-base;
 }
@@ -132,7 +132,7 @@
         content: '';
         @include border-radius(15px);
         background: $primary;
-        transition: all .2s;
+        transition: all 0.2s;
         height: 4px;
         width: 100%;
         position: absolute;
@@ -181,34 +181,37 @@
 
 .card-hover-shadow {
   &:hover {
-    box-shadow: 0 0.46875rem 2.1875rem rgba(shade-color($primary, 50%), .03),
-    0 0.9375rem 1.40625rem rgba(shade-color($primary, 50%), .03),
-    0 0.25rem 0.53125rem rgba(shade-color($primary, 50%), .05),
-    0 0.125rem 0.1875rem rgba(shade-color($primary, 50%), .03);
+    box-shadow:
+      0 0.46875rem 2.1875rem rgba(shade-color($primary, 50%), 0.03),
+      0 0.9375rem 1.40625rem rgba(shade-color($primary, 50%), 0.03),
+      0 0.25rem 0.53125rem rgba(shade-color($primary, 50%), 0.05),
+      0 0.125rem 0.1875rem rgba(shade-color($primary, 50%), 0.03);
   }
 }
 
 .card-hover-shadow-2x {
   &:hover {
-    box-shadow: 0 0.66875rem 2.3875rem rgba(shade-color($primary, 50%), .03),
-    0 1.1375rem 1.60625rem rgba(shade-color($primary, 50%), .03),
-    0 0.45rem 0.73125rem rgba(shade-color($primary, 50%), .05),
-    0 0.325rem 0.3875rem rgba(shade-color($primary, 50%), .03);
+    box-shadow:
+      0 0.66875rem 2.3875rem rgba(shade-color($primary, 50%), 0.03),
+      0 1.1375rem 1.60625rem rgba(shade-color($primary, 50%), 0.03),
+      0 0.45rem 0.73125rem rgba(shade-color($primary, 50%), 0.05),
+      0 0.325rem 0.3875rem rgba(shade-color($primary, 50%), 0.03);
   }
 }
 
 .card-subtitle {
   margin-bottom: $card-spacer-y;
   font-size: $font-size-sm;
-  color: rgba(shade-color($primary, 40%), .55);
+  color: rgba(shade-color($primary, 40%), 0.55);
 }
 
 @each $color, $value in $theme-colors {
   .card-shadow-#{$color} {
-    box-shadow: 0 0.46875rem 2.1875rem rgba($value, .03),
-    0 0.9375rem 1.40625rem rgba($value, .03),
-    0 0.25rem 0.53125rem rgba($value, .05),
-    0 0.125rem 0.1875rem rgba($value, .03);
+    box-shadow:
+      0 0.46875rem 2.1875rem rgba($value, 0.03),
+      0 0.9375rem 1.40625rem rgba($value, 0.03),
+      0 0.25rem 0.53125rem rgba($value, 0.05),
+      0 0.125rem 0.1875rem rgba($value, 0.03);
   }
 }
 

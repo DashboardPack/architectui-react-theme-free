@@ -1,11 +1,11 @@
-import React, { Component, Fragment } from "react";
-import { connect } from "react-redux";
-import cx from "classnames";
+import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux';
+import cx from 'classnames';
 
-import TitleComponent1 from "./PageTitleAlt3Examples/Variation1";
-import TitleComponent2 from "./PageTitleAlt3Examples/Variation2";
-import TitleComponent3 from "./PageTitleAlt3Examples/Variation3";
-import TitleComponent4 from "./PageTitleAlt3Examples/Variation4";
+import TitleComponent1 from './PageTitleAlt3Examples/Variation1';
+import TitleComponent2 from './PageTitleAlt3Examples/Variation2';
+import TitleComponent3 from './PageTitleAlt3Examples/Variation3';
+import TitleComponent4 from './PageTitleAlt3Examples/Variation4';
 
 class PageTitleAlt3 extends Component {
   randomize(myArray) {
@@ -13,12 +13,7 @@ class PageTitleAlt3 extends Component {
   }
 
   render() {
-    let {
-      enablePageTitleIcon,
-      enablePageTitleSubheading,
-      heading,
-      icon,
-    } = this.props;
+    let { enablePageTitleIcon, enablePageTitleSubheading, heading, icon } = this.props;
 
     var arr = [<TitleComponent1 />, <TitleComponent2 />, <TitleComponent4 />];
 
@@ -29,16 +24,20 @@ class PageTitleAlt3 extends Component {
             <div className="page-title-heading">
               <div>
                 <div className="page-title-head center-elem">
-                  <span className={cx("d-inline-block pe-2", {
-                      "d-none": !enablePageTitleIcon,
-                    })}>
+                  <span
+                    className={cx('d-inline-block pe-2', {
+                      'd-none': !enablePageTitleIcon,
+                    })}
+                  >
                     <i className={icon} />
                   </span>
                   <span className="d-inline-block">{heading}</span>
                 </div>
-                <div className={cx("page-title-subheading opacity-10", {
-                    "d-none": !enablePageTitleSubheading,
-                  })}>
+                <div
+                  className={cx('page-title-subheading opacity-10', {
+                    'd-none': !enablePageTitleSubheading,
+                  })}
+                >
                   <TitleComponent3 />
                 </div>
               </div>

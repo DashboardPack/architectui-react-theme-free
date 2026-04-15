@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../../utils/TransitionWrapper';
-import classnames from "classnames";
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../utils/TransitionWrapper';
+import classnames from 'classnames';
 
 import {
   TabContent,
@@ -17,11 +17,11 @@ import {
   Button,
   ButtonGroup,
   Container,
-} from "reactstrap";
+} from 'reactstrap';
 
-import AnimatedLinesTabsExample from "../AnimatedLines";
+import AnimatedLinesTabsExample from '../AnimatedLines';
 
-import dummyData from "../dummyData";
+import dummyData from '../dummyData';
 
 export default class CardTabsExample extends React.Component {
   constructor(props) {
@@ -29,7 +29,7 @@ export default class CardTabsExample extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      activeTab: "1",
+      activeTab: '1',
       showMore: true,
       transform: true,
       showInkBar: true,
@@ -49,8 +49,7 @@ export default class CardTabsExample extends React.Component {
 
   onChangeProp = (propsName) => (evt) => {
     this.setState({
-      [propsName]:
-        evt.target.type === "checkbox" ? evt.target.checked : +evt.target.value,
+      [propsName]: evt.target.type === 'checkbox' ? evt.target.checked : +evt.target.value,
     });
   };
 
@@ -65,45 +64,54 @@ export default class CardTabsExample extends React.Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Row>
                 <Col md="6">
                   <Card className="main-card mb-3">
                     <CardHeader>
-                      <i className="header-icon lnr-license icon-gradient bg-plum-plate"> {" "} </i>
+                      <i className="header-icon lnr-license icon-gradient bg-plum-plate"> </i>
                       Header with Tabs
                       <div className="btn-actions-pane-right">
                         <ButtonGroup size="sm">
-                          <Button color="primary"
+                          <Button
+                            color="primary"
                             className={
-                              "btn-shadow " +
-                              classnames({ active: this.state.activeTab === "1" })
+                              'btn-shadow ' + classnames({ active: this.state.activeTab === '1' })
                             }
                             onClick={() => {
-                              this.toggle("1");
-                            }}>
+                              this.toggle('1');
+                            }}
+                          >
                             Tab 1
                           </Button>
-                          <Button color="primary"
+                          <Button
+                            color="primary"
                             className={
-                              "btn-shadow " +
-                              classnames({ active: this.state.activeTab === "2" })
+                              'btn-shadow ' + classnames({ active: this.state.activeTab === '2' })
                             }
                             onClick={() => {
-                              this.toggle("2");
-                            }}>
+                              this.toggle('2');
+                            }}
+                          >
                             Tab 2
                           </Button>
-                          <Button color="primary"
+                          <Button
+                            color="primary"
                             className={
-                              "btn-shadow " +
-                              classnames({ active: this.state.activeTab === "3" })
+                              'btn-shadow ' + classnames({ active: this.state.activeTab === '3' })
                             }
                             onClick={() => {
-                              this.toggle("3");
-                            }}>
+                              this.toggle('3');
+                            }}
+                          >
                             Tab 3
                           </Button>
                         </ButtonGroup>
@@ -113,28 +121,26 @@ export default class CardTabsExample extends React.Component {
                       <TabContent activeTab={this.state.activeTab}>
                         <TabPane tabId="1">
                           <p>
-                            It was popularised in the 1960s with the release of
-                            Letraset sheets containing Lorem Ipsum passages, and
-                            more recently with desktop publishing software like
-                            Aldus PageMaker including versions of Lorem Ipsum.
+                            It was popularised in the 1960s with the release of Letraset sheets
+                            containing Lorem Ipsum passages, and more recently with desktop
+                            publishing software like Aldus PageMaker including versions of Lorem
+                            Ipsum.
                           </p>
                         </TabPane>
                         <TabPane tabId="2">
                           <p>
-                            Like Aldus PageMaker including versions of Lorem. It
-                            has survived not only five centuries, but also the
-                            leap into electronic typesetting, remaining
-                            essentially unchanged.{" "}
+                            Like Aldus PageMaker including versions of Lorem. It has survived not
+                            only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged.{' '}
                           </p>
                         </TabPane>
                         <TabPane tabId="3">
                           <p>
-                            Lorem Ipsum has been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer
-                            took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five
-                            centuries, but also the leap into electronic
-                            typesetting, remaining essentially unchanged.{" "}
+                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s, when an unknown printer took a galley of type and scrambled it to
+                            make a type specimen book. It has survived not only five centuries, but
+                            also the leap into electronic typesetting, remaining essentially
+                            unchanged.{' '}
                           </p>
                         </TabPane>
                       </TabContent>
@@ -147,37 +153,49 @@ export default class CardTabsExample extends React.Component {
                   </Card>
                   <Card className="main-card mb-3">
                     <CardHeader>
-                      <i className="header-icon lnr-license icon-gradient bg-plum-plate"> {" "} </i>
+                      <i className="header-icon lnr-license icon-gradient bg-plum-plate"> </i>
                       Header Tabs Buttons
                       <div className="btn-actions-pane-right">
-                        <Button size="sm" outline color="alternate"
+                        <Button
+                          size="sm"
+                          outline
+                          color="alternate"
                           className={
-                            "btn-pill btn-wide " +
-                            classnames({ active: this.state.activeTab === "1" })
+                            'btn-pill btn-wide ' +
+                            classnames({ active: this.state.activeTab === '1' })
                           }
                           onClick={() => {
-                            this.toggle("1");
-                          }}>
+                            this.toggle('1');
+                          }}
+                        >
                           Tab 1
                         </Button>
-                        <Button size="sm" outline color="alternate"
+                        <Button
+                          size="sm"
+                          outline
+                          color="alternate"
                           className={
-                            "btn-pill btn-wide me-1 ms-1 " +
-                            classnames({ active: this.state.activeTab === "2" })
+                            'btn-pill btn-wide me-1 ms-1 ' +
+                            classnames({ active: this.state.activeTab === '2' })
                           }
                           onClick={() => {
-                            this.toggle("2");
-                          }}>
+                            this.toggle('2');
+                          }}
+                        >
                           Tab 2
                         </Button>
-                        <Button size="sm" outline color="alternate"
+                        <Button
+                          size="sm"
+                          outline
+                          color="alternate"
                           className={
-                            "btn-pill btn-wide " +
-                            classnames({ active: this.state.activeTab === "3" })
+                            'btn-pill btn-wide ' +
+                            classnames({ active: this.state.activeTab === '3' })
                           }
                           onClick={() => {
-                            this.toggle("3");
-                          }}>
+                            this.toggle('3');
+                          }}
+                        >
                           Tab 3
                         </Button>
                       </div>
@@ -186,28 +204,26 @@ export default class CardTabsExample extends React.Component {
                       <TabContent activeTab={this.state.activeTab}>
                         <TabPane tabId="1">
                           <p>
-                            It was popularised in the 1960s with the release of
-                            Letraset sheets containing Lorem Ipsum passages, and
-                            more recently with desktop publishing software like
-                            Aldus PageMaker including versions of Lorem Ipsum.
+                            It was popularised in the 1960s with the release of Letraset sheets
+                            containing Lorem Ipsum passages, and more recently with desktop
+                            publishing software like Aldus PageMaker including versions of Lorem
+                            Ipsum.
                           </p>
                         </TabPane>
                         <TabPane tabId="2">
                           <p>
-                            Like Aldus PageMaker including versions of Lorem. It
-                            has survived not only five centuries, but also the
-                            leap into electronic typesetting, remaining
-                            essentially unchanged.{" "}
+                            Like Aldus PageMaker including versions of Lorem. It has survived not
+                            only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged.{' '}
                           </p>
                         </TabPane>
                         <TabPane tabId="3">
                           <p>
-                            Lorem Ipsum has been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer
-                            took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five
-                            centuries, but also the leap into electronic
-                            typesetting, remaining essentially unchanged.{" "}
+                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s, when an unknown printer took a galley of type and scrambled it to
+                            make a type specimen book. It has survived not only five centuries, but
+                            also the leap into electronic typesetting, remaining essentially
+                            unchanged.{' '}
                           </p>
                         </TabPane>
                       </TabContent>
@@ -220,37 +236,43 @@ export default class CardTabsExample extends React.Component {
                   </Card>
                   <Card className="main-card mb-3">
                     <CardHeader>
-                      <i className="header-icon lnr-gift icon-gradient bg-mixed-hopes"> {" "} </i>
+                      <i className="header-icon lnr-gift icon-gradient bg-mixed-hopes"> </i>
                       Alternate Tabs
                       <div className="btn-actions-pane-right">
                         <ButtonGroup size="sm">
-                          <Button color="focus"
+                          <Button
+                            color="focus"
                             className={
-                              "btn-pill ps-3 " +
-                              classnames({ active: this.state.activeTab === "1" })
+                              'btn-pill ps-3 ' +
+                              classnames({ active: this.state.activeTab === '1' })
                             }
                             onClick={() => {
-                              this.toggle("1");
-                            }}>
+                              this.toggle('1');
+                            }}
+                          >
                             Tab 1
                           </Button>
-                          <Button color="focus"
+                          <Button
+                            color="focus"
                             className={classnames({
-                              active: this.state.activeTab === "2",
+                              active: this.state.activeTab === '2',
                             })}
                             onClick={() => {
-                              this.toggle("2");
-                            }}>
+                              this.toggle('2');
+                            }}
+                          >
                             Tab 2
                           </Button>
-                          <Button color="focus"
+                          <Button
+                            color="focus"
                             className={
-                              "btn-pill pe-3 " +
-                              classnames({ active: this.state.activeTab === "3" })
+                              'btn-pill pe-3 ' +
+                              classnames({ active: this.state.activeTab === '3' })
                             }
                             onClick={() => {
-                              this.toggle("3");
-                            }}>
+                              this.toggle('3');
+                            }}
+                          >
                             Tab 3
                           </Button>
                         </ButtonGroup>
@@ -260,28 +282,26 @@ export default class CardTabsExample extends React.Component {
                       <TabContent activeTab={this.state.activeTab}>
                         <TabPane tabId="1">
                           <p>
-                            It was popularised in the 1960s with the release of
-                            Letraset sheets containing Lorem Ipsum passages, and
-                            more recently with desktop publishing software like
-                            Aldus PageMaker including versions of Lorem Ipsum.
+                            It was popularised in the 1960s with the release of Letraset sheets
+                            containing Lorem Ipsum passages, and more recently with desktop
+                            publishing software like Aldus PageMaker including versions of Lorem
+                            Ipsum.
                           </p>
                         </TabPane>
                         <TabPane tabId="2">
                           <p>
-                            Like Aldus PageMaker including versions of Lorem. It
-                            has survived not only five centuries, but also the
-                            leap into electronic typesetting, remaining
-                            essentially unchanged.{" "}
+                            Like Aldus PageMaker including versions of Lorem. It has survived not
+                            only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged.{' '}
                           </p>
                         </TabPane>
                         <TabPane tabId="3">
                           <p>
-                            Lorem Ipsum has been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer
-                            took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five
-                            centuries, but also the leap into electronic
-                            typesetting, remaining essentially unchanged.{" "}
+                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s, when an unknown printer took a galley of type and scrambled it to
+                            make a type specimen book. It has survived not only five centuries, but
+                            also the leap into electronic typesetting, remaining essentially
+                            unchanged.{' '}
                           </p>
                         </TabPane>
                       </TabContent>
@@ -289,42 +309,46 @@ export default class CardTabsExample extends React.Component {
                   </Card>
                   <Card className="main-card mb-3">
                     <CardHeader>
-                      <i className="header-icon lnr-gift icon-gradient bg-grow-early">
-                        {" "}
-                      </i>
+                      <i className="header-icon lnr-gift icon-gradient bg-grow-early"> </i>
                       Header Tabs Standard Buttons
                       <div className="btn-actions-pane-right">
-                        <Button outline
+                        <Button
+                          outline
                           className={
-                            "border-0 btn-pill btn-wide btn-transition " +
-                            classnames({ active: this.state.activeTab === "1" })
+                            'border-0 btn-pill btn-wide btn-transition ' +
+                            classnames({ active: this.state.activeTab === '1' })
                           }
                           color="danger"
                           onClick={() => {
-                            this.toggle("1");
-                          }}>
+                            this.toggle('1');
+                          }}
+                        >
                           Tab 1
                         </Button>
-                        <Button outline
+                        <Button
+                          outline
                           className={
-                            "me-1 ms-1 btn-pill btn-wide border-0 btn-transition " +
-                            classnames({ active: this.state.activeTab === "2" })
+                            'me-1 ms-1 btn-pill btn-wide border-0 btn-transition ' +
+                            classnames({ active: this.state.activeTab === '2' })
                           }
                           color="danger"
                           onClick={() => {
-                            this.toggle("2");
-                          }}>
+                            this.toggle('2');
+                          }}
+                        >
                           Tab 2
                         </Button>
-                        <Button outline
+                        <Button
+                          outline
                           className={
-                            "border-0 btn-pill btn-wide btn-transition " +
-                            classnames({ active: this.state.activeTab === "3" })
+                            'border-0 btn-pill btn-wide btn-transition ' +
+                            classnames({ active: this.state.activeTab === '3' })
                           }
                           color="danger"
                           onClick={() => {
-                            this.toggle("3");
-                          }}>
+                            this.toggle('3');
+                          }}
+                        >
                           Tab 3
                         </Button>
                       </div>
@@ -333,28 +357,26 @@ export default class CardTabsExample extends React.Component {
                       <TabContent activeTab={this.state.activeTab}>
                         <TabPane tabId="1">
                           <p>
-                            It was popularised in the 1960s with the release of
-                            Letraset sheets containing Lorem Ipsum passages, and
-                            more recently with desktop publishing software like
-                            Aldus PageMaker including versions of Lorem Ipsum.
+                            It was popularised in the 1960s with the release of Letraset sheets
+                            containing Lorem Ipsum passages, and more recently with desktop
+                            publishing software like Aldus PageMaker including versions of Lorem
+                            Ipsum.
                           </p>
                         </TabPane>
                         <TabPane tabId="2">
                           <p>
-                            Like Aldus PageMaker including versions of Lorem. It
-                            has survived not only five centuries, but also the
-                            leap into electronic typesetting, remaining
-                            essentially unchanged.{" "}
+                            Like Aldus PageMaker including versions of Lorem. It has survived not
+                            only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged.{' '}
                           </p>
                         </TabPane>
                         <TabPane tabId="3">
                           <p>
-                            Lorem Ipsum has been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer
-                            took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five
-                            centuries, but also the leap into electronic
-                            typesetting, remaining essentially unchanged.{" "}
+                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s, when an unknown printer took a galley of type and scrambled it to
+                            make a type specimen book. It has survived not only five centuries, but
+                            also the leap into electronic typesetting, remaining essentially
+                            unchanged.{' '}
                           </p>
                         </TabPane>
                       </TabContent>
@@ -370,40 +392,46 @@ export default class CardTabsExample extends React.Component {
                   <Card className="mb-3">
                     <CardHeader className="card-header-tab">
                       <div className="card-header-title">
-                        <i className="header-icon lnr-bicycle icon-gradient bg-love-kiss"> {" "} </i>
+                        <i className="header-icon lnr-bicycle icon-gradient bg-love-kiss"> </i>
                         Header Alternate Tabs
                       </div>
                       <Nav>
                         <NavItem>
-                          <NavLink href="#"
+                          <NavLink
+                            href="#"
                             className={classnames({
-                              active: this.state.activeTab === "1",
+                              active: this.state.activeTab === '1',
                             })}
                             onClick={() => {
-                              this.toggle("1");
-                            }}>
+                              this.toggle('1');
+                            }}
+                          >
                             Tab 1
                           </NavLink>
                         </NavItem>
                         <NavItem>
-                          <NavLink href="#"
+                          <NavLink
+                            href="#"
                             className={classnames({
-                              active: this.state.activeTab === "2",
+                              active: this.state.activeTab === '2',
                             })}
                             onClick={() => {
-                              this.toggle("2");
-                            }}>
+                              this.toggle('2');
+                            }}
+                          >
                             Tab 2
                           </NavLink>
                         </NavItem>
                         <NavItem>
-                          <NavLink href="#"
+                          <NavLink
+                            href="#"
                             className={classnames({
-                              active: this.state.activeTab === "3",
+                              active: this.state.activeTab === '3',
                             })}
                             onClick={() => {
-                              this.toggle("3");
-                            }}>
+                              this.toggle('3');
+                            }}
+                          >
                             Tab 3
                           </NavLink>
                         </NavItem>
@@ -413,28 +441,26 @@ export default class CardTabsExample extends React.Component {
                       <TabContent activeTab={this.state.activeTab}>
                         <TabPane tabId="1">
                           <p>
-                            It was popularised in the 1960s with the release of
-                            Letraset sheets containing Lorem Ipsum passages, and
-                            more recently with desktop publishing software like
-                            Aldus PageMaker including versions of Lorem Ipsum.
+                            It was popularised in the 1960s with the release of Letraset sheets
+                            containing Lorem Ipsum passages, and more recently with desktop
+                            publishing software like Aldus PageMaker including versions of Lorem
+                            Ipsum.
                           </p>
                         </TabPane>
                         <TabPane tabId="2">
                           <p>
-                            Like Aldus PageMaker including versions of Lorem. It
-                            has survived not only five centuries, but also the
-                            leap into electronic typesetting, remaining
-                            essentially unchanged.{" "}
+                            Like Aldus PageMaker including versions of Lorem. It has survived not
+                            only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged.{' '}
                           </p>
                         </TabPane>
                         <TabPane tabId="3">
                           <p>
-                            Lorem Ipsum has been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer
-                            took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five
-                            centuries, but also the leap into electronic
-                            typesetting, remaining essentially unchanged.{" "}
+                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s, when an unknown printer took a galley of type and scrambled it to
+                            make a type specimen book. It has survived not only five centuries, but
+                            also the leap into electronic typesetting, remaining essentially
+                            unchanged.{' '}
                           </p>
                         </TabPane>
                       </TabContent>
@@ -447,40 +473,46 @@ export default class CardTabsExample extends React.Component {
                   </Card>
                   <Card className="main-card mb-3">
                     <CardHeader>
-                      <i className="header-icon lnr-gift icon-gradient bg-grow-early"> {" "} </i>
+                      <i className="header-icon lnr-gift icon-gradient bg-grow-early"> </i>
                       Header Tabs Standard Buttons
                       <div className="btn-actions-pane-right">
-                        <Button outline
+                        <Button
+                          outline
                           className={
-                            "border-0 btn-transition " +
-                            classnames({ active: this.state.activeTab === "1" })
+                            'border-0 btn-transition ' +
+                            classnames({ active: this.state.activeTab === '1' })
                           }
                           color="primary"
                           onClick={() => {
-                            this.toggle("1");
-                          }}>
+                            this.toggle('1');
+                          }}
+                        >
                           Tab 1
                         </Button>
-                        <Button outline
+                        <Button
+                          outline
                           className={
-                            "me-1 ms-1 border-0 btn-transition " +
-                            classnames({ active: this.state.activeTab === "2" })
+                            'me-1 ms-1 border-0 btn-transition ' +
+                            classnames({ active: this.state.activeTab === '2' })
                           }
                           color="primary"
                           onClick={() => {
-                            this.toggle("2");
-                          }}>
+                            this.toggle('2');
+                          }}
+                        >
                           Tab 2
                         </Button>
-                        <Button outline
+                        <Button
+                          outline
                           className={
-                            "border-0 btn-transition " +
-                            classnames({ active: this.state.activeTab === "3" })
+                            'border-0 btn-transition ' +
+                            classnames({ active: this.state.activeTab === '3' })
                           }
                           color="primary"
                           onClick={() => {
-                            this.toggle("3");
-                          }}>
+                            this.toggle('3');
+                          }}
+                        >
                           Tab 3
                         </Button>
                       </div>
@@ -489,28 +521,26 @@ export default class CardTabsExample extends React.Component {
                       <TabContent activeTab={this.state.activeTab}>
                         <TabPane tabId="1">
                           <p>
-                            It was popularised in the 1960s with the release of
-                            Letraset sheets containing Lorem Ipsum passages, and
-                            more recently with desktop publishing software like
-                            Aldus PageMaker including versions of Lorem Ipsum.
+                            It was popularised in the 1960s with the release of Letraset sheets
+                            containing Lorem Ipsum passages, and more recently with desktop
+                            publishing software like Aldus PageMaker including versions of Lorem
+                            Ipsum.
                           </p>
                         </TabPane>
                         <TabPane tabId="2">
                           <p>
-                            Like Aldus PageMaker including versions of Lorem. It
-                            has survived not only five centuries, but also the
-                            leap into electronic typesetting, remaining
-                            essentially unchanged.{" "}
+                            Like Aldus PageMaker including versions of Lorem. It has survived not
+                            only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged.{' '}
                           </p>
                         </TabPane>
                         <TabPane tabId="3">
                           <p>
-                            Lorem Ipsum has been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer
-                            took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five
-                            centuries, but also the leap into electronic
-                            typesetting, remaining essentially unchanged.{" "}
+                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s, when an unknown printer took a galley of type and scrambled it to
+                            make a type specimen book. It has survived not only five centuries, but
+                            also the leap into electronic typesetting, remaining essentially
+                            unchanged.{' '}
                           </p>
                         </TabPane>
                       </TabContent>
@@ -525,35 +555,41 @@ export default class CardTabsExample extends React.Component {
                     <CardHeader>
                       <Nav justified>
                         <NavItem>
-                          <NavLink href="#"
+                          <NavLink
+                            href="#"
                             className={classnames({
-                              active: this.state.activeTab === "1",
+                              active: this.state.activeTab === '1',
                             })}
                             onClick={() => {
-                              this.toggle("1");
-                            }}>
+                              this.toggle('1');
+                            }}
+                          >
                             Tab 1
                           </NavLink>
                         </NavItem>
                         <NavItem>
-                          <NavLink href="#"
+                          <NavLink
+                            href="#"
                             className={classnames({
-                              active: this.state.activeTab === "2",
+                              active: this.state.activeTab === '2',
                             })}
                             onClick={() => {
-                              this.toggle("2");
-                            }}>
+                              this.toggle('2');
+                            }}
+                          >
                             Tab 2
                           </NavLink>
                         </NavItem>
                         <NavItem>
-                          <NavLink href="#"
+                          <NavLink
+                            href="#"
                             className={classnames({
-                              active: this.state.activeTab === "3",
+                              active: this.state.activeTab === '3',
                             })}
                             onClick={() => {
-                              this.toggle("3");
-                            }}>
+                              this.toggle('3');
+                            }}
+                          >
                             Tab 3
                           </NavLink>
                         </NavItem>
@@ -563,28 +599,26 @@ export default class CardTabsExample extends React.Component {
                       <TabContent activeTab={this.state.activeTab}>
                         <TabPane tabId="1">
                           <p>
-                            It was popularised in the 1960s with the release of
-                            Letraset sheets containing Lorem Ipsum passages, and
-                            more recently with desktop publishing software like
-                            Aldus PageMaker including versions of Lorem Ipsum.
+                            It was popularised in the 1960s with the release of Letraset sheets
+                            containing Lorem Ipsum passages, and more recently with desktop
+                            publishing software like Aldus PageMaker including versions of Lorem
+                            Ipsum.
                           </p>
                         </TabPane>
                         <TabPane tabId="2">
                           <p>
-                            Like Aldus PageMaker including versions of Lorem. It
-                            has survived not only five centuries, but also the
-                            leap into electronic typesetting, remaining
-                            essentially unchanged.{" "}
+                            Like Aldus PageMaker including versions of Lorem. It has survived not
+                            only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged.{' '}
                           </p>
                         </TabPane>
                         <TabPane tabId="3">
                           <p>
-                            Lorem Ipsum has been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer
-                            took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five
-                            centuries, but also the leap into electronic
-                            typesetting, remaining essentially unchanged.{" "}
+                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s, when an unknown printer took a galley of type and scrambled it to
+                            make a type specimen book. It has survived not only five centuries, but
+                            also the leap into electronic typesetting, remaining essentially
+                            unchanged.{' '}
                           </p>
                         </TabPane>
                       </TabContent>
@@ -593,40 +627,46 @@ export default class CardTabsExample extends React.Component {
                   <Card className="mb-3">
                     <CardHeader className="card-header-tab card-header-tab-animation">
                       <div className="card-header-title font-size-lg text-capitalize fw-normal">
-                        <i className="header-icon lnr-gift icon-gradient bg-love-kiss"> {" "} </i>
+                        <i className="header-icon lnr-gift icon-gradient bg-love-kiss"> </i>
                         Tabs Alternate Animation
                       </div>
                       <Nav>
                         <NavItem>
-                          <NavLink href="#"
+                          <NavLink
+                            href="#"
                             className={classnames({
-                              active: this.state.activeTab === "1",
+                              active: this.state.activeTab === '1',
                             })}
                             onClick={() => {
-                              this.toggle("1");
-                            }}>
+                              this.toggle('1');
+                            }}
+                          >
                             Tab 1
                           </NavLink>
                         </NavItem>
                         <NavItem>
-                          <NavLink href="#"
+                          <NavLink
+                            href="#"
                             className={classnames({
-                              active: this.state.activeTab === "2",
+                              active: this.state.activeTab === '2',
                             })}
                             onClick={() => {
-                              this.toggle("2");
-                            }}>
+                              this.toggle('2');
+                            }}
+                          >
                             Tab 2
                           </NavLink>
                         </NavItem>
                         <NavItem>
-                          <NavLink href="#"
+                          <NavLink
+                            href="#"
                             className={classnames({
-                              active: this.state.activeTab === "3",
+                              active: this.state.activeTab === '3',
                             })}
                             onClick={() => {
-                              this.toggle("3");
-                            }}>
+                              this.toggle('3');
+                            }}
+                          >
                             Tab 3
                           </NavLink>
                         </NavItem>
@@ -636,28 +676,26 @@ export default class CardTabsExample extends React.Component {
                       <TabContent activeTab={this.state.activeTab}>
                         <TabPane tabId="1">
                           <p>
-                            It was popularised in the 1960s with the release of
-                            Letraset sheets containing Lorem Ipsum passages, and
-                            more recently with desktop publishing software like
-                            Aldus PageMaker including versions of Lorem Ipsum.
+                            It was popularised in the 1960s with the release of Letraset sheets
+                            containing Lorem Ipsum passages, and more recently with desktop
+                            publishing software like Aldus PageMaker including versions of Lorem
+                            Ipsum.
                           </p>
                         </TabPane>
                         <TabPane tabId="2">
                           <p>
-                            Like Aldus PageMaker including versions of Lorem. It
-                            has survived not only five centuries, but also the
-                            leap into electronic typesetting, remaining
-                            essentially unchanged.{" "}
+                            Like Aldus PageMaker including versions of Lorem. It has survived not
+                            only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged.{' '}
                           </p>
                         </TabPane>
                         <TabPane tabId="3">
                           <p>
-                            Lorem Ipsum has been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer
-                            took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five
-                            centuries, but also the leap into electronic
-                            typesetting, remaining essentially unchanged.{" "}
+                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s, when an unknown printer took a galley of type and scrambled it to
+                            make a type specimen book. It has survived not only five centuries, but
+                            also the leap into electronic typesetting, remaining essentially
+                            unchanged.{' '}
                           </p>
                         </TabPane>
                       </TabContent>

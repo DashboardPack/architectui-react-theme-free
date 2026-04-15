@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 import {
   Row,
   Col,
@@ -17,31 +17,28 @@ import {
   DropdownToggle,
   DropdownMenu,
   UncontrolledButtonDropdown,
-} from "reactstrap";
+} from 'reactstrap';
 
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 
-import CountUp from "react-countup";
+import CountUp from 'react-countup';
 
 import DataTable from 'react-data-table-component';
 
-import avatar1 from "../../../../assets/utils/images/avatars/1.jpg";
-import avatar2 from "../../../../assets/utils/images/avatars/2.jpg";
+import avatar1 from '../../../../assets/utils/images/avatars/1.jpg';
+import avatar2 from '../../../../assets/utils/images/avatars/2.jpg';
 
-import { IoIosAnalytics } from "react-icons/io";
+import { IoIosAnalytics } from 'react-icons/io';
 
-import PerfectScrollbar from "react-perfect-scrollbar";
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
-import Slider from "react-slick";
+import Slider from 'react-slick';
 
-import { makeData } from "../../../Tables/DataTables/Examples/utils";
+import { makeData } from '../../../Tables/DataTables/Examples/utils';
 
-import { ResponsiveContainer, AreaChart, Area } from "recharts";
+import { ResponsiveContainer, AreaChart, Area } from 'recharts';
 
-import { Sparklines, SparklinesCurve } from "react-sparklines";
+import { Sparklines, SparklinesCurve } from 'react-sparklines';
 
 import {
   faAngleUp,
@@ -50,63 +47,63 @@ import {
   faEllipsisH,
   faCheck,
   faTrashAlt,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Select from "react-select";
+import Select from 'react-select';
 
 const options = [
-  { value: "1", label: "Today" },
-  { value: "2", label: "Last Week" },
-  { value: "3", label: "Last 30 Days" },
-  { value: "4", label: "Last 3 Months" },
-  { value: "5", label: "Last Year" },
+  { value: '1', label: 'Today' },
+  { value: '2', label: 'Last Week' },
+  { value: '3', label: 'Last 30 Days' },
+  { value: '4', label: 'Last 3 Months' },
+  { value: '5', label: 'Last Year' },
 ];
 
 const data55 = [
-  { name: "Page A", uv: 4000, pv: 2400, amt: 2400 },
-  { name: "Page B", uv: 3000, pv: 1398, amt: 2210 },
-  { name: "Page C", uv: 2000, pv: 9800, amt: 2290 },
-  { name: "Page D", uv: 2780, pv: 3908, amt: 2000 },
-  { name: "Page E", uv: 1890, pv: 4800, amt: 2181 },
-  { name: "Page F", uv: 2390, pv: 3800, amt: 2500 },
-  { name: "Page G", uv: 3490, pv: 4300, amt: 2100 },
-  { name: "Page C", uv: 2000, pv: 6800, amt: 2290 },
-  { name: "Page D", uv: 4780, pv: 7908, amt: 2000 },
-  { name: "Page E", uv: 2890, pv: 9800, amt: 2181 },
-  { name: "Page F", uv: 1390, pv: 3800, amt: 1500 },
-  { name: "Page G", uv: 3490, pv: 4300, amt: 2100 },
+  { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
+  { name: 'Page B', uv: 3000, pv: 1398, amt: 2210 },
+  { name: 'Page C', uv: 2000, pv: 9800, amt: 2290 },
+  { name: 'Page D', uv: 2780, pv: 3908, amt: 2000 },
+  { name: 'Page E', uv: 1890, pv: 4800, amt: 2181 },
+  { name: 'Page F', uv: 2390, pv: 3800, amt: 2500 },
+  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
+  { name: 'Page C', uv: 2000, pv: 6800, amt: 2290 },
+  { name: 'Page D', uv: 4780, pv: 7908, amt: 2000 },
+  { name: 'Page E', uv: 2890, pv: 9800, amt: 2181 },
+  { name: 'Page F', uv: 1390, pv: 3800, amt: 1500 },
+  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
 ];
 
 const data552 = [
-  { name: "Page A", uv: 4000, pv: 2400, amt: 2400 },
-  { name: "Page B", uv: 3000, pv: 1398, amt: 2210 },
-  { name: "Page F", uv: 2390, pv: 3800, amt: 2500 },
-  { name: "Page C", uv: 2000, pv: 6800, amt: 2290 },
-  { name: "Page F", uv: 1390, pv: 3800, amt: 1500 },
-  { name: "Page G", uv: 3490, pv: 4300, amt: 2100 },
-  { name: "Page D", uv: 4780, pv: 7908, amt: 2000 },
-  { name: "Page E", uv: 2890, pv: 9800, amt: 2181 },
-  { name: "Page G", uv: 3490, pv: 4300, amt: 2100 },
-  { name: "Page C", uv: 2000, pv: 9800, amt: 2290 },
-  { name: "Page D", uv: 2780, pv: 3908, amt: 2000 },
-  { name: "Page E", uv: 1890, pv: 4800, amt: 2181 },
+  { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
+  { name: 'Page B', uv: 3000, pv: 1398, amt: 2210 },
+  { name: 'Page F', uv: 2390, pv: 3800, amt: 2500 },
+  { name: 'Page C', uv: 2000, pv: 6800, amt: 2290 },
+  { name: 'Page F', uv: 1390, pv: 3800, amt: 1500 },
+  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
+  { name: 'Page D', uv: 4780, pv: 7908, amt: 2000 },
+  { name: 'Page E', uv: 2890, pv: 9800, amt: 2181 },
+  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
+  { name: 'Page C', uv: 2000, pv: 9800, amt: 2290 },
+  { name: 'Page D', uv: 2780, pv: 3908, amt: 2000 },
+  { name: 'Page E', uv: 1890, pv: 4800, amt: 2181 },
 ];
 
 const data553 = [
-  { name: "Page A", uv: 4000, pv: 2400, amt: 2400 },
-  { name: "Page B", uv: 3000, pv: 1398, amt: 2210 },
-  { name: "Page E", uv: 1890, pv: 4800, amt: 2181 },
-  { name: "Page F", uv: 1390, pv: 3800, amt: 1500 },
-  { name: "Page C", uv: 2000, pv: 9800, amt: 2290 },
-  { name: "Page F", uv: 2390, pv: 3800, amt: 2500 },
-  { name: "Page G", uv: 3490, pv: 4300, amt: 2100 },
-  { name: "Page C", uv: 2000, pv: 6800, amt: 2290 },
-  { name: "Page E", uv: 2890, pv: 9800, amt: 2181 },
-  { name: "Page D", uv: 4780, pv: 7908, amt: 2000 },
-  { name: "Page D", uv: 2780, pv: 3908, amt: 2000 },
-  { name: "Page G", uv: 3490, pv: 4300, amt: 2100 },
+  { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
+  { name: 'Page B', uv: 3000, pv: 1398, amt: 2210 },
+  { name: 'Page E', uv: 1890, pv: 4800, amt: 2181 },
+  { name: 'Page F', uv: 1390, pv: 3800, amt: 1500 },
+  { name: 'Page C', uv: 2000, pv: 9800, amt: 2290 },
+  { name: 'Page F', uv: 2390, pv: 3800, amt: 2500 },
+  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
+  { name: 'Page C', uv: 2000, pv: 6800, amt: 2290 },
+  { name: 'Page E', uv: 2890, pv: 9800, amt: 2181 },
+  { name: 'Page D', uv: 4780, pv: 7908, amt: 2000 },
+  { name: 'Page D', uv: 2780, pv: 3908, amt: 2000 },
+  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
 ];
 
 function boxMullerRandom() {
@@ -170,37 +167,37 @@ export default class AnalyticsDashboard1 extends Component {
     const { data } = this.state;
     const columns = [
       {
-        name: "First Name",
-        selector: row => row.firstName,
+        name: 'First Name',
+        selector: (row) => row.firstName,
         sortable: true,
       },
       {
-        name: "Last Name",
-        id: "lastName",
-        selector: row => row.lastName,
+        name: 'Last Name',
+        id: 'lastName',
+        selector: (row) => row.lastName,
         sortable: true,
       },
-    
+
       {
-        name: "Age",
-        selector: row => row.age,
+        name: 'Age',
+        selector: (row) => row.age,
         sortable: true,
       },
       {
-        name: "Status",
-        selector: row => row.status,
+        name: 'Status',
+        selector: (row) => row.status,
         sortable: true,
       },
-    
+
       {
-        name: "Visits",
-        selector: row => row.visits,
+        name: 'Visits',
+        selector: (row) => row.visits,
         sortable: true,
-        },
+      },
     ];
 
     const settings = {
-      className: "",
+      className: '',
       centerMode: false,
       infinite: true,
       slidesToShow: 1,
@@ -214,12 +211,12 @@ export default class AnalyticsDashboard1 extends Component {
           <Card className="mb-3">
             <CardHeader className="card-header-tab z-index-6">
               <div className="card-header-title font-size-lg text-capitalize fw-normal">
-                <i className="header-icon lnr-charts icon-gradient bg-happy-green"> {" "} </i>
+                <i className="header-icon lnr-charts icon-gradient bg-happy-green"> </i>
                 Portfolio Performance
               </div>
               <div className="btn-actions-pane-right text-capitalize">
                 <span className="d-inline-block ms-2" style={{ width: 200 }}>
-                  <Select value={selectedOption} onChange={this.handleChange} options={options}/>
+                  <Select value={selectedOption} onChange={this.handleChange} options={options} />
                 </span>
               </div>
             </CardHeader>
@@ -253,8 +250,17 @@ export default class AnalyticsDashboard1 extends Component {
                   <div className="widget-chart-content">
                     <div className="widget-subheading">Invested Dividents</div>
                     <div className="widget-numbers">
-                      <CountUp start={0} end={8.7} separator="" decimals={0} decimal=","
-                        prefix="" useEasing={false} suffix="M" duration="5"/>
+                      <CountUp
+                        start={0}
+                        end={8.7}
+                        separator=""
+                        decimals={0}
+                        decimal=","
+                        prefix=""
+                        useEasing={false}
+                        suffix="M"
+                        duration="5"
+                      />
                     </div>
                     <div className="widget-description opacity-8 text-focus">
                       Grow Rate:
@@ -276,8 +282,17 @@ export default class AnalyticsDashboard1 extends Component {
                   <div className="widget-chart-content">
                     <div className="widget-subheading">Capital Gains</div>
                     <div className="widget-numbers text-success">
-                      <CountUp start={0} end={563} separator="" decimals={0} decimal="."
-                        prefix="$" useEasing={false} suffix="" duration="7"/>
+                      <CountUp
+                        start={0}
+                        end={563}
+                        separator=""
+                        decimals={0}
+                        decimal="."
+                        prefix="$"
+                        useEasing={false}
+                        suffix=""
+                        duration="7"
+                      />
                     </div>
                     <div className="widget-description text-focus">
                       Increased by
@@ -305,7 +320,7 @@ export default class AnalyticsDashboard1 extends Component {
               <Card className="mb-3">
                 <CardHeader className="card-header-tab">
                   <div className="card-header-title font-size-lg text-capitalize fw-normal">
-                    <i className="header-icon lnr-cloud-download icon-gradient bg-happy-itmeo"> {" "} </i>
+                    <i className="header-icon lnr-cloud-download icon-gradient bg-happy-itmeo"> </i>
                     Technical Support
                   </div>
 
@@ -359,29 +374,42 @@ export default class AnalyticsDashboard1 extends Component {
                                     <span className="opacity-10 text-success pe-2">
                                       <FontAwesomeIcon icon={faAngleUp} />
                                     </span>
-                                    <CountUp start={0} end={78} separator="" decimals={0}
-                                      decimal="" prefix="" duration="15"/>
+                                    <CountUp
+                                      start={0}
+                                      end={78}
+                                      separator=""
+                                      decimals={0}
+                                      decimal=""
+                                      prefix=""
+                                      duration="15"
+                                    />
                                     <small className="opacity-5 ps-1">%</small>
                                   </div>
                                   <div className="widget-title ms-2 font-size-lg fw-normal text-muted">
-                                    <span className="text-success ps-2">
-                                      +14
-                                    </span>
+                                    <span className="text-success ps-2">+14</span>
                                   </div>
                                 </div>
                               </div>
                             </div>
                             <div className="widget-chart-wrapper he-auto opacity-10 m-0">
                               <ResponsiveContainer height={140} width="100%">
-                                <AreaChart data={data55}
+                                <AreaChart
+                                  data={data55}
                                   margin={{
                                     top: -15,
                                     right: 0,
                                     left: 0,
                                     bottom: 0,
-                                  }}>
-                                  <Area type="monotoneX" dataKey="uv" stroke="#3ac47d"
-                                    strokeWidth="4" fill="#3ac47d" fillOpacity=".2"/>
+                                  }}
+                                >
+                                  <Area
+                                    type="monotoneX"
+                                    dataKey="uv"
+                                    stroke="#3ac47d"
+                                    strokeWidth="4"
+                                    fill="#3ac47d"
+                                    fillOpacity=".2"
+                                  />
                                 </AreaChart>
                               </ResponsiveContainer>
                             </div>
@@ -403,9 +431,7 @@ export default class AnalyticsDashboard1 extends Component {
                                     <span className="text-warning">34</span>
                                   </div>
                                   <div className="widget-title ms-2 font-size-lg fw-normal text-dark">
-                                    <span className="opacity-5 text-muted ps-2 pe-1">
-                                      5%
-                                    </span>
+                                    <span className="opacity-5 text-muted ps-2 pe-1">5%</span>
                                     increase
                                   </div>
                                 </div>
@@ -413,15 +439,23 @@ export default class AnalyticsDashboard1 extends Component {
                             </div>
                             <div className="widget-chart-wrapper he-auto opacity-10 m-0">
                               <ResponsiveContainer height={140} width="100%">
-                                <AreaChart data={data552}
+                                <AreaChart
+                                  data={data552}
                                   margin={{
                                     top: -15,
                                     right: 0,
                                     left: 0,
                                     bottom: 0,
-                                  }}>
-                                  <Area type="monotoneX" dataKey="uv" stroke="#f7b924"
-                                    strokeWidth="4" fill="#f7b924" fillOpacity=".2"/>
+                                  }}
+                                >
+                                  <Area
+                                    type="monotoneX"
+                                    dataKey="uv"
+                                    stroke="#f7b924"
+                                    strokeWidth="4"
+                                    fill="#f7b924"
+                                    fillOpacity=".2"
+                                  />
                                 </AreaChart>
                               </ResponsiveContainer>
                             </div>
@@ -451,15 +485,23 @@ export default class AnalyticsDashboard1 extends Component {
                             </div>
                             <div className="widget-chart-wrapper he-auto opacity-10 m-0">
                               <ResponsiveContainer height={140} width="100%">
-                                <AreaChart data={data553}
+                                <AreaChart
+                                  data={data553}
                                   margin={{
                                     top: -15,
                                     right: 0,
                                     left: 0,
                                     bottom: 0,
-                                  }}>
-                                  <Area type="monotoneX" dataKey="uv" stroke="#545cd8"
-                                    strokeWidth="4" fill="#545cd8" fillOpacity=".2"/>
+                                  }}
+                                >
+                                  <Area
+                                    type="monotoneX"
+                                    dataKey="uv"
+                                    stroke="#545cd8"
+                                    strokeWidth="4"
+                                    fill="#545cd8"
+                                    fillOpacity=".2"
+                                  />
                                 </AreaChart>
                               </ResponsiveContainer>
                             </div>
@@ -478,9 +520,7 @@ export default class AnalyticsDashboard1 extends Component {
                           <div className="widget-content-wrapper">
                             <div className="widget-content-left">
                               <div className="widget-heading">Total Orders</div>
-                              <div className="widget-subheading">
-                                Last year expenses
-                              </div>
+                              <div className="widget-subheading">Last year expenses</div>
                             </div>
                             <div className="widget-content-right">
                               <div className="widget-numbers text-success">
@@ -490,7 +530,11 @@ export default class AnalyticsDashboard1 extends Component {
                             </div>
                           </div>
                           <div className="widget-progress-wrapper">
-                            <Progress className="progress-bar-sm progress-bar-animated-alt" color="primary" value="43"/>
+                            <Progress
+                              className="progress-bar-sm progress-bar-animated-alt"
+                              color="primary"
+                              value="43"
+                            />
                             <div className="progress-sub-label">
                               <div className="sub-label-left">YoY Growth</div>
                               <div className="sub-label-right">100%</div>
@@ -507,7 +551,7 @@ export default class AnalyticsDashboard1 extends Component {
               <Card className="card-hover-shadow-2x mb-3">
                 <CardHeader className="card-header-tab">
                   <div className="card-header-title font-size-lg text-capitalize fw-normal">
-                    <i className="header-icon lnr-lighter icon-gradient bg-amy-crisp"> {" "} </i>
+                    <i className="header-icon lnr-lighter icon-gradient bg-amy-crisp"> </i>
                     Timeline Example
                   </div>
                   <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
@@ -546,166 +590,145 @@ export default class AnalyticsDashboard1 extends Component {
                   <PerfectScrollbar>
                     <div className="p-4">
                       <VerticalTimeline layout="1-column">
-                        <VerticalTimelineElement className="vertical-timeline-item"
-                          icon={
-                            <i className="badge badge-dot badge-dot-xl bg-success"> {" "} </i>
-                          }
-                          date="10:30 PM">
+                        <VerticalTimelineElement
+                          className="vertical-timeline-item"
+                          icon={<i className="badge badge-dot badge-dot-xl bg-success"> </i>}
+                          date="10:30 PM"
+                        >
                           <h4 className="timeline-title">All Hands Meeting</h4>
                           <p>
-                            Lorem ipsum dolor sic amet, today at{" "}
+                            Lorem ipsum dolor sic amet, today at{' '}
                             <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()}>
                               12:00 PM
                             </a>
                           </p>
                         </VerticalTimelineElement>
-                        <VerticalTimelineElement className="vertical-timeline-item"
-                          icon={
-                            <i className="badge badge-dot badge-dot-xl bg-warning"> {" "} </i>
-                          }
-                          date="12:25 PM">
+                        <VerticalTimelineElement
+                          className="vertical-timeline-item"
+                          icon={<i className="badge badge-dot badge-dot-xl bg-warning"> </i>}
+                          date="12:25 PM"
+                        >
                           <p>
-                            Another meeting today, at{" "}
-                            <b className="text-danger">12:00 PM</b>
+                            Another meeting today, at <b className="text-danger">12:00 PM</b>
                           </p>
                           <p>
-                            Yet another one, at{" "}
-                            <span className="text-success">15:00 PM</span>
+                            Yet another one, at <span className="text-success">15:00 PM</span>
                           </p>
                         </VerticalTimelineElement>
-                        <VerticalTimelineElement className="vertical-timeline-item"
-                          icon={
-                            <i className="badge badge-dot badge-dot-xl bg-danger"> {" "} </i>
-                          }
-                          date="15:00 PM">
-                          <h4 className="timeline-title">
-                            Build the production release
-                          </h4>
+                        <VerticalTimelineElement
+                          className="vertical-timeline-item"
+                          icon={<i className="badge badge-dot badge-dot-xl bg-danger"> </i>}
+                          date="15:00 PM"
+                        >
+                          <h4 className="timeline-title">Build the production release</h4>
                           <p>
-                            Lorem ipsum dolor sit amit,consectetur eiusmdd
-                            tempor incididunt ut labore et dolore magna elit
-                            enim at minim veniam quis nostrud
+                            Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut
+                            labore et dolore magna elit enim at minim veniam quis nostrud
                           </p>
                         </VerticalTimelineElement>
-                        <VerticalTimelineElement className="vertical-timeline-item"
-                          icon={
-                            <i className="badge badge-dot badge-dot-xl bg-primary"> {" "} </i>
-                          }
-                          date="15:00 PM">
-                          <h4 className="timeline-title text-success">
-                            Something not important
-                          </h4>
+                        <VerticalTimelineElement
+                          className="vertical-timeline-item"
+                          icon={<i className="badge badge-dot badge-dot-xl bg-primary"> </i>}
+                          date="15:00 PM"
+                        >
+                          <h4 className="timeline-title text-success">Something not important</h4>
                           <p>
-                            Lorem ipsum dolor sit amit,consectetur elit enim at
-                            minim veniam quis nostrud
+                            Lorem ipsum dolor sit amit,consectetur elit enim at minim veniam quis
+                            nostrud
                           </p>
                         </VerticalTimelineElement>
-                        <VerticalTimelineElement className="vertical-timeline-item"
-                          icon={
-                            <i className="badge badge-dot badge-dot-xl bg-success"> {" "} </i>
-                          }
-                          date="10:30 PM">
+                        <VerticalTimelineElement
+                          className="vertical-timeline-item"
+                          icon={<i className="badge badge-dot badge-dot-xl bg-success"> </i>}
+                          date="10:30 PM"
+                        >
                           <h4 className="timeline-title">All Hands Meeting</h4>
                           <p>
-                            Lorem ipsum dolor sic amet, today at{" "}
+                            Lorem ipsum dolor sic amet, today at{' '}
                             <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()}>
                               12:00 PM
                             </a>
                           </p>
                         </VerticalTimelineElement>
-                        <VerticalTimelineElement className="vertical-timeline-item"
-                          icon={
-                            <i className="badge badge-dot badge-dot-xl bg-warning"> {" "} </i>
-                          }
-                          date="12:25 PM">
+                        <VerticalTimelineElement
+                          className="vertical-timeline-item"
+                          icon={<i className="badge badge-dot badge-dot-xl bg-warning"> </i>}
+                          date="12:25 PM"
+                        >
                           <p>
-                            Another meeting today, at{" "}
-                            <b className="text-danger">12:00 PM</b>
+                            Another meeting today, at <b className="text-danger">12:00 PM</b>
                           </p>
                           <p>
-                            Yet another one, at{" "}
-                            <span className="text-success">15:00 PM</span>
+                            Yet another one, at <span className="text-success">15:00 PM</span>
                           </p>
                         </VerticalTimelineElement>
-                        <VerticalTimelineElement className="vertical-timeline-item"
-                          icon={
-                            <i className="badge badge-dot badge-dot-xl bg-danger"> {" "} </i>
-                          }
-                          date="15:00 PM">
-                          <h4 className="timeline-title">
-                            Build the production release
-                          </h4>
+                        <VerticalTimelineElement
+                          className="vertical-timeline-item"
+                          icon={<i className="badge badge-dot badge-dot-xl bg-danger"> </i>}
+                          date="15:00 PM"
+                        >
+                          <h4 className="timeline-title">Build the production release</h4>
                           <p>
-                            Lorem ipsum dolor sit amit,consectetur eiusmdd
-                            tempor incididunt ut labore et dolore magna elit
-                            enim at minim veniam quis nostrud
+                            Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut
+                            labore et dolore magna elit enim at minim veniam quis nostrud
                           </p>
                         </VerticalTimelineElement>
-                        <VerticalTimelineElement className="vertical-timeline-item"
-                          icon={
-                            <i className="badge badge-dot badge-dot-xl bg-primary"> {" "} </i>
-                          }
-                          date="15:00 PM">
-                          <h4 className="timeline-title text-success">
-                            Something not important
-                          </h4>
+                        <VerticalTimelineElement
+                          className="vertical-timeline-item"
+                          icon={<i className="badge badge-dot badge-dot-xl bg-primary"> </i>}
+                          date="15:00 PM"
+                        >
+                          <h4 className="timeline-title text-success">Something not important</h4>
                           <p>
-                            Lorem ipsum dolor sit amit,consectetur elit enim at
-                            minim veniam quis nostrud
+                            Lorem ipsum dolor sit amit,consectetur elit enim at minim veniam quis
+                            nostrud
                           </p>
                         </VerticalTimelineElement>
-                        <VerticalTimelineElement className="vertical-timeline-item"
-                          icon={
-                            <i className="badge badge-dot badge-dot-xl bg-success"> {" "} </i>
-                          }
-                          date="10:30 PM">
+                        <VerticalTimelineElement
+                          className="vertical-timeline-item"
+                          icon={<i className="badge badge-dot badge-dot-xl bg-success"> </i>}
+                          date="10:30 PM"
+                        >
                           <h4 className="timeline-title">All Hands Meeting</h4>
                           <p>
-                            Lorem ipsum dolor sic amet, today at{" "}
+                            Lorem ipsum dolor sic amet, today at{' '}
                             <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()}>
                               12:00 PM
                             </a>
                           </p>
                         </VerticalTimelineElement>
-                        <VerticalTimelineElement className="vertical-timeline-item"
-                          icon={
-                            <i className="badge badge-dot badge-dot-xl bg-warning"> {" "} </i>
-                          }
-                          date="12:25 PM">
+                        <VerticalTimelineElement
+                          className="vertical-timeline-item"
+                          icon={<i className="badge badge-dot badge-dot-xl bg-warning"> </i>}
+                          date="12:25 PM"
+                        >
                           <p>
-                            Another meeting today, at{" "}
-                            <b className="text-danger">12:00 PM</b>
+                            Another meeting today, at <b className="text-danger">12:00 PM</b>
                           </p>
                           <p>
-                            Yet another one, at{" "}
-                            <span className="text-success">15:00 PM</span>
+                            Yet another one, at <span className="text-success">15:00 PM</span>
                           </p>
                         </VerticalTimelineElement>
-                        <VerticalTimelineElement className="vertical-timeline-item"
-                          icon={
-                            <i className="badge badge-dot badge-dot-xl bg-danger"> {" "} </i>
-                          }
-                          date="15:00 PM">
-                          <h4 className="timeline-title">
-                            Build the production release
-                          </h4>
+                        <VerticalTimelineElement
+                          className="vertical-timeline-item"
+                          icon={<i className="badge badge-dot badge-dot-xl bg-danger"> </i>}
+                          date="15:00 PM"
+                        >
+                          <h4 className="timeline-title">Build the production release</h4>
                           <p>
-                            Lorem ipsum dolor sit amit,consectetur eiusmdd
-                            tempor incididunt ut labore et dolore magna elit
-                            enim at minim veniam quis nostrud
+                            Lorem ipsum dolor sit amit,consectetur eiusmdd tempor incididunt ut
+                            labore et dolore magna elit enim at minim veniam quis nostrud
                           </p>
                         </VerticalTimelineElement>
-                        <VerticalTimelineElement className="vertical-timeline-item"
-                          icon={
-                            <i className="badge badge-dot badge-dot-xl bg-primary"> {" "} </i>
-                          }
-                          date="15:00 PM">
-                          <h4 className="timeline-title text-success">
-                            Something not important
-                          </h4>
+                        <VerticalTimelineElement
+                          className="vertical-timeline-item"
+                          icon={<i className="badge badge-dot badge-dot-xl bg-primary"> </i>}
+                          date="15:00 PM"
+                        >
+                          <h4 className="timeline-title text-success">Something not important</h4>
                           <p>
-                            Lorem ipsum dolor sit amit,consectetur elit enim at
-                            minim veniam quis nostrud
+                            Lorem ipsum dolor sit amit,consectetur elit enim at minim veniam quis
+                            nostrud
                           </p>
                         </VerticalTimelineElement>
                       </VerticalTimeline>
@@ -714,9 +737,7 @@ export default class AnalyticsDashboard1 extends Component {
                 </div>
                 <CardFooter className="d-block text-center">
                   <Button className="btn-shadow btn-wide btn-pill" color="focus">
-                    <div className="badge badge-dot badge-dot-lg bg-warning badge-pulse">
-                      Badge
-                    </div>
+                    <div className="badge badge-dot badge-dot-lg bg-warning badge-pulse">Badge</div>
                     View All Messages
                   </Button>
                 </CardFooter>
@@ -733,14 +754,20 @@ export default class AnalyticsDashboard1 extends Component {
                         <div className="widget-chart-flex">
                           <div className="fsize-4">
                             <small className="opacity-5">$</small>
-                            <CountUp start={0} end={874} separator="" decimals={0} decimal="" prefix="" duration="10"/>
+                            <CountUp
+                              start={0}
+                              end={874}
+                              separator=""
+                              decimals={0}
+                              decimal=""
+                              prefix=""
+                              duration="10"
+                            />
                           </div>
                         </div>
                       </div>
                     </div>
-                    <h6 className="widget-subheading mb-0 opacity-5">
-                      sales last month
-                    </h6>
+                    <h6 className="widget-subheading mb-0 opacity-5">sales last month</h6>
                   </div>
                   <Row className="g-0 widget-chart-wrapper mt-3 mb-3 ps-2 he-auto">
                     <Col md="9">
@@ -748,9 +775,10 @@ export default class AnalyticsDashboard1 extends Component {
                         <SparklinesCurve
                           style={{
                             strokeWidth: 3,
-                            stroke: "#3ac47d",
-                            fill: "none",
-                          }}/>
+                            stroke: '#3ac47d',
+                            fill: 'none',
+                          }}
+                        />
                       </Sparklines>
                     </Col>
                   </Row>
@@ -766,14 +794,20 @@ export default class AnalyticsDashboard1 extends Component {
                         <div className="widget-chart-flex">
                           <div className="fsize-4">
                             <small className="opacity-5">$</small>
-                            <CountUp start={0} end={1283} separator="" decimals={0} decimal="" prefix="" duration="10"/>
+                            <CountUp
+                              start={0}
+                              end={1283}
+                              separator=""
+                              decimals={0}
+                              decimal=""
+                              prefix=""
+                              duration="10"
+                            />
                           </div>
                         </div>
                       </div>
                     </div>
-                    <h6 className="widget-subheading mb-0 opacity-5">
-                      sales Income
-                    </h6>
+                    <h6 className="widget-subheading mb-0 opacity-5">sales Income</h6>
                   </div>
                   <Row className="g-0 widget-chart-wrapper mt-3 mb-3 ps-2 he-auto">
                     <Col md="9">
@@ -781,9 +815,10 @@ export default class AnalyticsDashboard1 extends Component {
                         <SparklinesCurve
                           style={{
                             strokeWidth: 3,
-                            stroke: "#545cd8",
-                            fill: "none",
-                          }}/>
+                            stroke: '#545cd8',
+                            fill: 'none',
+                          }}
+                        />
                       </Sparklines>
                     </Col>
                   </Row>
@@ -799,14 +834,20 @@ export default class AnalyticsDashboard1 extends Component {
                         <div className="widget-chart-flex">
                           <div className="fsize-4">
                             <small className="opacity-5">$</small>
-                            <CountUp start={0} end={1286} separator="" decimals={0} decimal="" prefix="" duration="10"/>
+                            <CountUp
+                              start={0}
+                              end={1286}
+                              separator=""
+                              decimals={0}
+                              decimal=""
+                              prefix=""
+                              duration="10"
+                            />
                           </div>
                         </div>
                       </div>
                     </div>
-                    <h6 className="widget-subheading mb-0 opacity-5">
-                      last month sales
-                    </h6>
+                    <h6 className="widget-subheading mb-0 opacity-5">last month sales</h6>
                   </div>
                   <Row className="g-0 widget-chart-wrapper mt-3 mb-3 ps-2 he-auto">
                     <Col md="9">
@@ -814,9 +855,10 @@ export default class AnalyticsDashboard1 extends Component {
                         <SparklinesCurve
                           style={{
                             strokeWidth: 3,
-                            stroke: "#f7b924",
-                            fill: "none",
-                          }}/>
+                            stroke: '#f7b924',
+                            fill: 'none',
+                          }}
+                        />
                       </Sparklines>
                     </Col>
                   </Row>
@@ -832,14 +874,20 @@ export default class AnalyticsDashboard1 extends Component {
                         <div className="widget-chart-flex">
                           <div className="fsize-4">
                             <small className="opacity-5">$</small>
-                            <CountUp start={0} end={564} separator="" decimals={0} decimal="" prefix="" duration="10"/>
+                            <CountUp
+                              start={0}
+                              end={564}
+                              separator=""
+                              decimals={0}
+                              decimal=""
+                              prefix=""
+                              duration="10"
+                            />
                           </div>
                         </div>
                       </div>
                     </div>
-                    <h6 className="widget-subheading mb-0 opacity-5">
-                      total revenue
-                    </h6>
+                    <h6 className="widget-subheading mb-0 opacity-5">total revenue</h6>
                   </div>
                   <Row className="g-0 widget-chart-wrapper mt-3 mb-3 ps-2 he-auto">
                     <Col md="9">
@@ -847,9 +895,10 @@ export default class AnalyticsDashboard1 extends Component {
                         <SparklinesCurve
                           style={{
                             strokeWidth: 3,
-                            stroke: "#d92550",
-                            fill: "none",
-                          }} />
+                            stroke: '#d92550',
+                            fill: 'none',
+                          }}
+                        />
                       </Sparklines>
                     </Col>
                   </Row>
@@ -860,7 +909,7 @@ export default class AnalyticsDashboard1 extends Component {
           <Card className="mb-3">
             <CardHeader className="card-header-tab">
               <div className="card-header-title font-size-lg text-capitalize fw-normal">
-                <i className="header-icon lnr-laptop-phone me-3 text-muted opacity-6"> {" "} </i>
+                <i className="header-icon lnr-laptop-phone me-3 text-muted opacity-6"> </i>
                 Easy Dynamic Tables
               </div>
               <div className="btn-actions-pane-right actions-icon-btn">
@@ -896,7 +945,8 @@ export default class AnalyticsDashboard1 extends Component {
               </div>
             </CardHeader>
             <CardBody>
-            <DataTable data={data}
+              <DataTable
+                data={data}
                 columns={columns}
                 pagination
                 fixedHeader
@@ -909,7 +959,7 @@ export default class AnalyticsDashboard1 extends Component {
               <Card className="card-hover-shadow-2x mb-3">
                 <CardHeader className="card-header-tab">
                   <div className="card-header-title font-size-lg text-capitalize fw-normal">
-                    <i className="header-icon lnr-database icon-gradient bg-malibu-beach"> {" "} </i>
+                    <i className="header-icon lnr-database icon-gradient bg-malibu-beach"> </i>
                     Tasks List
                   </div>
 
@@ -954,14 +1004,17 @@ export default class AnalyticsDashboard1 extends Component {
                           <div className="widget-content p-0">
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left me-2 ms-2">
-                                <Input type="checkbox" className="me-2 form-check-input-custom" id="exampleCustomCheckbox12" label="&nbsp;"/>
+                                <Input
+                                  type="checkbox"
+                                  className="me-2 form-check-input-custom"
+                                  id="exampleCustomCheckbox12"
+                                  label="&nbsp;"
+                                />
                               </div>
                               <div className="widget-content-left">
                                 <div className="widget-heading">
                                   Wash the car
-                                  <div className="badge bg-danger ms-2">
-                                    Rejected
-                                  </div>
+                                  <div className="badge bg-danger ms-2">Rejected</div>
                                 </div>
                                 <div className="widget-subheading">
                                   <i>Written by Bob</i>
@@ -983,24 +1036,30 @@ export default class AnalyticsDashboard1 extends Component {
                           <div className="widget-content p-0">
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left me-2 ms-2">
-                                <Input type="checkbox" className="me-2 form-check-input-custom" id="exampleCustomCheckbox1" label="&nbsp;"/>
+                                <Input
+                                  type="checkbox"
+                                  className="me-2 form-check-input-custom"
+                                  id="exampleCustomCheckbox1"
+                                  label="&nbsp;"
+                                />
                               </div>
                               <div className="widget-content-left">
-                                <div className="widget-heading">
-                                  Task with hover dropdown menu
-                                </div>
+                                <div className="widget-heading">Task with hover dropdown menu</div>
                                 <div className="widget-subheading">
                                   <div>
                                     By Johnny
-                                    <div className="badge rounded-pill bg-info ms-2">
-                                      NEW
-                                    </div>
+                                    <div className="badge rounded-pill bg-info ms-2">NEW</div>
                                   </div>
                                 </div>
                               </div>
                               <div className="widget-content-right widget-content-actions">
-                                <Dropdown className="d-inline-block rm-pointers" onMouseOver={this.onMouseEnter}
-                                  onMouseLeave={this.onMouseLeave} isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                                <Dropdown
+                                  className="d-inline-block rm-pointers"
+                                  onMouseOver={this.onMouseEnter}
+                                  onMouseLeave={this.onMouseLeave}
+                                  isOpen={this.state.dropdownOpen}
+                                  toggle={this.toggle}
+                                >
                                   <DropdownToggle color="link" className="border-0 btn-transition">
                                     <FontAwesomeIcon icon={faEllipsisH} />
                                   </DropdownToggle>
@@ -1018,15 +1077,16 @@ export default class AnalyticsDashboard1 extends Component {
                           <div className="widget-content p-0">
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left me-2 ms-2">
-                                <Input type="checkbox" className="me-2 form-check-input-custom" id="exampleCustomCheckbox4" label="&nbsp;"/>
+                                <Input
+                                  type="checkbox"
+                                  className="me-2 form-check-input-custom"
+                                  id="exampleCustomCheckbox4"
+                                  label="&nbsp;"
+                                />
                               </div>
                               <div className="widget-content-left flex2">
-                                <div className="widget-heading">
-                                  Task with Badge
-                                </div>
-                                <div className="widget-subheading">
-                                  Show on hover actions!
-                                </div>
+                                <div className="widget-heading">Task with Badge</div>
+                                <div className="widget-subheading">Show on hover actions!</div>
                               </div>
                               <div className="widget-content-right widget-content-actions">
                                 <Button className="border-0 btn-transition" outline color="success">
@@ -1034,9 +1094,7 @@ export default class AnalyticsDashboard1 extends Component {
                                 </Button>
                               </div>
                               <div className="widget-content-right ms-3">
-                                <div className="badge rounded-pill bg-success">
-                                  New
-                                </div>
+                                <div className="badge rounded-pill bg-success">New</div>
                               </div>
                             </div>
                           </div>
@@ -1046,20 +1104,21 @@ export default class AnalyticsDashboard1 extends Component {
                           <div className="widget-content p-0">
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left me-2 ms-2">
-                                <Input type="checkbox" className="me-2 form-check-input-custom" id="exampleCustomCheckbox2" label="&nbsp;"/>
+                                <Input
+                                  type="checkbox"
+                                  className="me-2 form-check-input-custom"
+                                  id="exampleCustomCheckbox2"
+                                  label="&nbsp;"
+                                />
                               </div>
                               <div className="widget-content-left me-3">
                                 <div className="widget-content-left">
-                                  <img width={42} className="rounded" src={avatar2} alt=""/>
+                                  <img width={42} className="rounded" src={avatar2} alt="" />
                                 </div>
                               </div>
                               <div className="widget-content-left">
-                                <div className="widget-heading">
-                                  Go grocery shopping
-                                </div>
-                                <div className="widget-subheading">
-                                  A short description here
-                                </div>
+                                <div className="widget-heading">Go grocery shopping</div>
+                                <div className="widget-subheading">A short description here</div>
                               </div>
                               <div className="widget-content-right widget-content-actions">
                                 <Button className="border-0 btn-transition" outline color="success">
@@ -1074,15 +1133,16 @@ export default class AnalyticsDashboard1 extends Component {
                           <div className="widget-content p-0">
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left me-2 ms-2">
-                                <Input type="checkbox" className="me-2 form-check-input-custom" id="exampleCustomCheckbox3" label="&nbsp;"/>
+                                <Input
+                                  type="checkbox"
+                                  className="me-2 form-check-input-custom"
+                                  id="exampleCustomCheckbox3"
+                                  label="&nbsp;"
+                                />
                               </div>
                               <div className="widget-content-left flex2">
-                                <div className="widget-heading">
-                                  Development Task
-                                </div>
-                                <div className="widget-subheading">
-                                  Finish React ToDo List App
-                                </div>
+                                <div className="widget-heading">Development Task</div>
+                                <div className="widget-subheading">Finish React ToDo List App</div>
                               </div>
                               <div className="widget-content-right">
                                 <Button className="border-0 btn-transition" outline color="success">
@@ -1100,14 +1160,17 @@ export default class AnalyticsDashboard1 extends Component {
                           <div className="widget-content p-0">
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left me-2 ms-2">
-                                <Input type="checkbox" className="me-2 form-check-input-custom" id="exampleCustomCheckbox12" label="&nbsp;"/>
+                                <Input
+                                  type="checkbox"
+                                  className="me-2 form-check-input-custom"
+                                  id="exampleCustomCheckbox12"
+                                  label="&nbsp;"
+                                />
                               </div>
                               <div className="widget-content-left">
                                 <div className="widget-heading">
                                   Wash the car
-                                  <div className="badge bg-danger ms-2">
-                                    Rejected
-                                  </div>
+                                  <div className="badge bg-danger ms-2">Rejected</div>
                                 </div>
                                 <div className="widget-subheading">
                                   <i>Written by Bob</i>
@@ -1129,24 +1192,30 @@ export default class AnalyticsDashboard1 extends Component {
                           <div className="widget-content p-0">
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left me-2 ms-2">
-                                <Input type="checkbox" className="me-2 form-check-input-custom" id="exampleCustomCheckbox1" label="&nbsp;"/>
+                                <Input
+                                  type="checkbox"
+                                  className="me-2 form-check-input-custom"
+                                  id="exampleCustomCheckbox1"
+                                  label="&nbsp;"
+                                />
                               </div>
                               <div className="widget-content-left">
-                                <div className="widget-heading">
-                                  Task with hover dropdown menu
-                                </div>
+                                <div className="widget-heading">Task with hover dropdown menu</div>
                                 <div className="widget-subheading">
                                   <div>
                                     By Johnny
-                                    <div className="badge rounded-pill text-bg-info ms-2">
-                                      NEW
-                                    </div>
+                                    <div className="badge rounded-pill text-bg-info ms-2">NEW</div>
                                   </div>
                                 </div>
                               </div>
                               <div className="widget-content-right widget-content-actions">
-                                <Dropdown className="d-inline-block rm-pointers" onMouseOver={this.onMouseEnter}
-                                  onMouseLeave={this.onMouseLeave} isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                                <Dropdown
+                                  className="d-inline-block rm-pointers"
+                                  onMouseOver={this.onMouseEnter}
+                                  onMouseLeave={this.onMouseLeave}
+                                  isOpen={this.state.dropdownOpen}
+                                  toggle={this.toggle}
+                                >
                                   <DropdownToggle color="link" className="border-0 btn-transition">
                                     <FontAwesomeIcon icon={faEllipsisH} />
                                   </DropdownToggle>
@@ -1164,12 +1233,15 @@ export default class AnalyticsDashboard1 extends Component {
                           <div className="widget-content p-0">
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left me-2 ms-2">
-                                <Input type="checkbox" className="me-2 form-check-input-custom" id="exampleCustomCheckbox4" label="&nbsp;"/>
+                                <Input
+                                  type="checkbox"
+                                  className="me-2 form-check-input-custom"
+                                  id="exampleCustomCheckbox4"
+                                  label="&nbsp;"
+                                />
                               </div>
                               <div className="widget-content-left flex2">
-                                <div className="widget-heading">
-                                  Badge on the right task
-                                </div>
+                                <div className="widget-heading">Badge on the right task</div>
                                 <div className="widget-subheading">
                                   This task has show on hover actions!
                                 </div>
@@ -1180,9 +1252,7 @@ export default class AnalyticsDashboard1 extends Component {
                                 </Button>
                               </div>
                               <div className="widget-content-right ms-3">
-                                <div className="badge rounded-pill text-bg-dark">
-                                  NEW
-                                </div>
+                                <div className="badge rounded-pill text-bg-dark">NEW</div>
                               </div>
                             </div>
                           </div>
@@ -1192,20 +1262,21 @@ export default class AnalyticsDashboard1 extends Component {
                           <div className="widget-content p-0">
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left me-2 ms-2">
-                                <Input type="checkbox" className="me-2 form-check-input-custom" id="exampleCustomCheckbox2" label="&nbsp;"/>
+                                <Input
+                                  type="checkbox"
+                                  className="me-2 form-check-input-custom"
+                                  id="exampleCustomCheckbox2"
+                                  label="&nbsp;"
+                                />
                               </div>
                               <div className="widget-content-left me-3">
                                 <div className="widget-content-left">
-                                  <img width={42} className="rounded" src={avatar2} alt=""/>
+                                  <img width={42} className="rounded" src={avatar2} alt="" />
                                 </div>
                               </div>
                               <div className="widget-content-left">
-                                <div className="widget-heading">
-                                  Purchase apples
-                                </div>
-                                <div className="widget-subheading">
-                                  Description here...
-                                </div>
+                                <div className="widget-heading">Purchase apples</div>
+                                <div className="widget-subheading">Description here...</div>
                               </div>
                               <div className="widget-content-right widget-content-actions">
                                 <Button className="border-0 btn-transition" outline color="danger">
@@ -1231,7 +1302,7 @@ export default class AnalyticsDashboard1 extends Component {
               <Card className="card-hover-shadow-2x mb-3">
                 <CardHeader className="card-header-tab">
                   <div className="card-header-title font-size-lg text-capitalize fw-normal">
-                    <i className="header-icon lnr-printer icon-gradient bg-ripe-malin"> {" "} </i>
+                    <i className="header-icon lnr-printer icon-gradient bg-ripe-malin"> </i>
                     Chat Box
                   </div>
                   <div className="btn-actions-pane-right text-capitalize actions-icon-btn">
@@ -1281,13 +1352,12 @@ export default class AnalyticsDashboard1 extends Component {
                           </div>
                           <div>
                             <div className="chat-box">
-                              But I must explain to you how all this mistaken
-                              idea of denouncing pleasure and praising pain was
-                              born and I will give you a complete account of the
-                              system.
+                              But I must explain to you how all this mistaken idea of denouncing
+                              pleasure and praising pain was born and I will give you a complete
+                              account of the system.
                             </div>
                             <small className="opacity-6">
-                              <FontAwesomeIcon icon={faCalendarAlt} className="me-1"/>
+                              <FontAwesomeIcon icon={faCalendarAlt} className="me-1" />
                               11:01 AM | Yesterday
                             </small>
                           </div>
@@ -1296,12 +1366,11 @@ export default class AnalyticsDashboard1 extends Component {
                           <div className="chat-box-wrapper chat-box-wrapper-right">
                             <div>
                               <div className="chat-box">
-                                Expound the actual teachings of the great
-                                explorer of the truth, the master-builder of
-                                human happiness.
+                                Expound the actual teachings of the great explorer of the truth, the
+                                master-builder of human happiness.
                               </div>
                               <small className="opacity-6">
-                                <FontAwesomeIcon icon={faCalendarAlt} className="me-1"/>
+                                <FontAwesomeIcon icon={faCalendarAlt} className="me-1" />
                                 11:01 AM | Yesterday
                               </small>
                             </div>
@@ -1326,13 +1395,12 @@ export default class AnalyticsDashboard1 extends Component {
                           </div>
                           <div>
                             <div className="chat-box bg-primary text-white">
-                              But I must explain to you how all this mistaken
-                              idea of denouncing pleasure and praising pain was
-                              born and I will give you a complete account of the
-                              system.
+                              But I must explain to you how all this mistaken idea of denouncing
+                              pleasure and praising pain was born and I will give you a complete
+                              account of the system.
                             </div>
                             <small className="opacity-8 text-danger">
-                              <FontAwesomeIcon icon={faCalendarAlt} className="me-1"/>
+                              <FontAwesomeIcon icon={faCalendarAlt} className="me-1" />
                               11:01 AM | Yesterday
                             </small>
                           </div>
@@ -1341,11 +1409,11 @@ export default class AnalyticsDashboard1 extends Component {
                           <div className="chat-box-wrapper chat-box-wrapper-right">
                             <div>
                               <div className="chat-box">
-                                Denouncing pleasure and praising pain was born
-                                and I will give you a complete account.
+                                Denouncing pleasure and praising pain was born and I will give you a
+                                complete account.
                               </div>
                               <small className="opacity-6">
-                                <FontAwesomeIcon icon={faCalendarAlt} className="me-1"/>
+                                <FontAwesomeIcon icon={faCalendarAlt} className="me-1" />
                                 11:01 AM | Yesterday
                               </small>
                             </div>
@@ -1362,11 +1430,9 @@ export default class AnalyticsDashboard1 extends Component {
                         <div className="float-end">
                           <div className="chat-box-wrapper chat-box-wrapper-right">
                             <div>
-                              <div className="chat-box">
-                                The master-builder of human happiness.
-                              </div>
+                              <div className="chat-box">The master-builder of human happiness.</div>
                               <small className="opacity-6">
-                                <FontAwesomeIcon icon={faCalendarAlt} className="me-1"/>
+                                <FontAwesomeIcon icon={faCalendarAlt} className="me-1" />
                                 11:01 AM | Yesterday
                               </small>
                             </div>
@@ -1385,7 +1451,11 @@ export default class AnalyticsDashboard1 extends Component {
                   </PerfectScrollbar>
                 </div>
                 <CardFooter>
-                  <Input bsSize="sm" type="text" placeholder="Write here and hit enter to send..."/>
+                  <Input
+                    bsSize="sm"
+                    type="text"
+                    placeholder="Write here and hit enter to send..."
+                  />
                 </CardFooter>
               </Card>
             </Col>
@@ -1401,14 +1471,10 @@ export default class AnalyticsDashboard1 extends Component {
                           <div className="widget-content-wrapper">
                             <div className="widget-content-left">
                               <div className="widget-heading">Total Orders</div>
-                              <div className="widget-subheading">
-                                Last year expenses
-                              </div>
+                              <div className="widget-subheading">Last year expenses</div>
                             </div>
                             <div className="widget-content-right">
-                              <div className="widget-numbers text-success">
-                                1896
-                              </div>
+                              <div className="widget-numbers text-success">1896</div>
                             </div>
                           </div>
                         </div>
@@ -1420,14 +1486,10 @@ export default class AnalyticsDashboard1 extends Component {
                           <div className="widget-content-wrapper">
                             <div className="widget-content-left">
                               <div className="widget-heading">Clients</div>
-                              <div className="widget-subheading">
-                                Total Clients Profit
-                              </div>
+                              <div className="widget-subheading">Total Clients Profit</div>
                             </div>
                             <div className="widget-content-right">
-                              <div className="widget-numbers text-primary">
-                                $12.6k
-                              </div>
+                              <div className="widget-numbers text-primary">$12.6k</div>
                             </div>
                           </div>
                         </div>
@@ -1443,14 +1505,10 @@ export default class AnalyticsDashboard1 extends Component {
                           <div className="widget-content-wrapper">
                             <div className="widget-content-left">
                               <div className="widget-heading">Followers</div>
-                              <div className="widget-subheading">
-                                People Interested
-                              </div>
+                              <div className="widget-subheading">People Interested</div>
                             </div>
                             <div className="widget-content-right">
-                              <div className="widget-numbers text-danger">
-                                45,9%
-                              </div>
+                              <div className="widget-numbers text-danger">45,9%</div>
                             </div>
                           </div>
                         </div>
@@ -1461,17 +1519,11 @@ export default class AnalyticsDashboard1 extends Component {
                         <div className="widget-content-outer">
                           <div className="widget-content-wrapper">
                             <div className="widget-content-left">
-                              <div className="widget-heading">
-                                Products Sold
-                              </div>
-                              <div className="widget-subheading">
-                                Total revenue streams
-                              </div>
+                              <div className="widget-heading">Products Sold</div>
+                              <div className="widget-subheading">Total revenue streams</div>
                             </div>
                             <div className="widget-content-right">
-                              <div className="widget-numbers text-warning">
-                                $3M
-                              </div>
+                              <div className="widget-numbers text-warning">$3M</div>
                             </div>
                           </div>
                         </div>
@@ -1487,14 +1539,10 @@ export default class AnalyticsDashboard1 extends Component {
                           <div className="widget-content-wrapper">
                             <div className="widget-content-left">
                               <div className="widget-heading">Total Orders</div>
-                              <div className="widget-subheading">
-                                Last year expenses
-                              </div>
+                              <div className="widget-subheading">Last year expenses</div>
                             </div>
                             <div className="widget-content-right">
-                              <div className="widget-numbers text-success">
-                                1896
-                              </div>
+                              <div className="widget-numbers text-success">1896</div>
                             </div>
                           </div>
                         </div>
@@ -1506,14 +1554,10 @@ export default class AnalyticsDashboard1 extends Component {
                           <div className="widget-content-wrapper">
                             <div className="widget-content-left">
                               <div className="widget-heading">Clients</div>
-                              <div className="widget-subheading">
-                                Total Clients Profit
-                              </div>
+                              <div className="widget-subheading">Total Clients Profit</div>
                             </div>
                             <div className="widget-content-right">
-                              <div className="widget-numbers text-primary">
-                                $12.6k
-                              </div>
+                              <div className="widget-numbers text-primary">$12.6k</div>
                             </div>
                           </div>
                         </div>

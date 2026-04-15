@@ -1,8 +1,8 @@
-import React, { Fragment } from "react";
-import { Container, Col, Card, CardBody, CardTitle, Row } from "reactstrap";
+import React, { Fragment } from 'react';
+import { Container, Col, Card, CardBody, CardTitle, Row } from 'reactstrap';
 
-import PopoversBasicExample from "./Basic";
-import PopoversCustomExample from "./Custom";
+import PopoversBasicExample from './Basic';
+import PopoversCustomExample from './Custom';
 
 const PopoversExample = () => {
   return (

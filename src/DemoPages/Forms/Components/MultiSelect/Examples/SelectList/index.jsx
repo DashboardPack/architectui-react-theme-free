@@ -1,18 +1,24 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../../../utils/TransitionWrapper';
-import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../../utils/TransitionWrapper';
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
-import { Listbox } from "react-widgets";
+import { Listbox } from 'react-widgets';
 
 class FormSelectListBasic extends React.Component {
   render() {
-    let colors = ["orange", "red", "blue", "green", "cyan", "purple"];
+    let colors = ['orange', 'red', 'blue', 'green', 'cyan', 'purple'];
 
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <Row>
               <Col md="6">
                 <Card className="main-card mb-3">
@@ -23,7 +29,7 @@ class FormSelectListBasic extends React.Component {
                         <Listbox busy />
                       </Col>
                       <Col md={6}>
-                        <Listbox data={colors} defaultValue={["orange", "blue"]}/>
+                        <Listbox data={colors} defaultValue={['orange', 'blue']} />
                       </Col>
                     </Row>
                   </CardBody>
@@ -35,10 +41,14 @@ class FormSelectListBasic extends React.Component {
                     <CardTitle>Disabled</CardTitle>
                     <Row>
                       <Col md={6}>
-                        <Listbox disabled data={colors} defaultValue={["orange", "blue"]}/>
+                        <Listbox disabled data={colors} defaultValue={['orange', 'blue']} />
                       </Col>
                       <Col md={6}>
-                        <Listbox  data={colors} defaultValue={["orange", "blue"]} disabled={["red", "purple"]}/>
+                        <Listbox
+                          data={colors}
+                          defaultValue={['orange', 'blue']}
+                          disabled={['red', 'purple']}
+                        />
                       </Col>
                     </Row>
                   </CardBody>

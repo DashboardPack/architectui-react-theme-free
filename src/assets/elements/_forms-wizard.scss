@@ -1,6 +1,6 @@
 // Wizard Multi Step
 
-@use "sass:math";
+@use 'sass:math';
 
 .forms-wizard {
   margin: 0;
@@ -31,7 +31,7 @@
       content: '';
       background: $gray-300;
       z-index: 5;
-      transition: all .2s;
+      transition: all 0.2s;
     }
 
     &::after {
@@ -69,7 +69,7 @@
       margin: 0 auto 0.5rem;
       position: relative;
       z-index: 7;
-      transition: all .2s;
+      transition: all 0.2s;
     }
 
     &.form-wizard-step-doing {
@@ -111,7 +111,6 @@
   }
 }
 
-
 // Form Wizard Alternate
 
 .forms-wizard-alt {
@@ -126,7 +125,6 @@
         text-indent: -999rem;
         border: $white solid 2px;
         margin: -7px auto 0;
-
       }
     }
   }
@@ -147,7 +145,7 @@
       padding: math.div($layout-spacer-x, 2);
       margin-bottom: math.div($layout-spacer-x, 3);
       @include border-radius($border-radius-lg);
-      transition: all .2s;
+      transition: all 0.2s;
 
       &::before,
       &::after {
@@ -167,7 +165,7 @@
         color: $white;
 
         em {
-          background: rgba(255,255,255,.2);
+          background: rgba(255, 255, 255, 0.2);
         }
       }
     }
@@ -185,7 +183,7 @@
       width: 50%;
       float: left;
       padding: 0 $layout-spacer-x $layout-spacer-x 0;
-  
+
       li {
         text-align: left;
         display: flex;
@@ -194,32 +192,32 @@
         padding: math.div($layout-spacer-x, 2);
         margin-bottom: math.div($layout-spacer-x, 3);
         @include border-radius($border-radius-lg);
-        transition: all .2s;
-  
+        transition: all 0.2s;
+
         &::before,
         &::after {
           display: none;
         }
-  
+
         em {
           margin: 0 math.div($layout-spacer-x, 2) 0 0;
         }
-  
+
         &:hover {
           background: $gray-200;
         }
-  
+
         &.form-wizard-step-doing {
           background: $primary;
           color: $white;
-  
+
           em {
-            background: rgba(255,255,255,.2);
+            background: rgba(255, 255, 255, 0.2);
           }
         }
       }
     }
-  
+
     .form-wizard-content {
       width: 50%;
       overflow: auto;

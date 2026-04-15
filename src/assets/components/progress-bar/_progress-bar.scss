@@ -64,18 +64,18 @@
   border-radius: 10px;
   background: #fff;
   animation: active-anim 2s cubic-bezier(0.25, 1, 0.6, 1) infinite;
-  content: "";
+  content: '';
   opacity: 0;
 }
 
 @keyframes active-anim {
   0% {
     width: 0;
-    opacity: .1;
+    opacity: 0.1;
   }
   20% {
     width: 0;
-    opacity: .5;
+    opacity: 0.5;
   }
   to {
     width: 100%;

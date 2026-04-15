@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import { HashRouter } from "react-router-dom";
-import "./assets/base.scss";
-import Main from "./DemoPages/Main";
-import configureAppStore from "./config/configureStore";
-import { Provider } from "react-redux";
+import { HashRouter } from 'react-router-dom';
+import './assets/base.scss';
+import Main from './DemoPages/Main';
+import configureAppStore from './config/configureStore';
+import { Provider } from 'react-redux';
 
 const store = configureAppStore();
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 
 const renderApp = (Component) => (
   <React.StrictMode>
@@ -16,7 +16,7 @@ const renderApp = (Component) => (
       <HashRouter
         future={{
           v7_startTransition: true,
-          v7_relativeSplatPath: true
+          v7_relativeSplatPath: true,
         }}
       >
         <Component />
@@ -30,7 +30,7 @@ root.render(renderApp(Main));
 
 // Vite HMR
 if (import.meta.hot) {
-  import.meta.hot.accept("./DemoPages/Main", (newModule) => {
+  import.meta.hot.accept('./DemoPages/Main', (newModule) => {
     if (newModule) {
       root.render(renderApp(newModule.default));
     }

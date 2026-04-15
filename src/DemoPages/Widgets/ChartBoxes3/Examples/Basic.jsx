@@ -1,25 +1,23 @@
-import React, { Component, Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
-import {
-  Row,
-  Col,
-  Card,
-  CardBody,
-  ListGroup,
-  ListGroupItem,
-  Progress,
-} from "reactstrap";
+import React, { Component, Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
+import { Row, Col, Card, CardBody, ListGroup, ListGroupItem, Progress } from 'reactstrap';
 
-import CountUp from "react-countup";
+import CountUp from 'react-countup';
 
 class Basic3Example extends Component {
   render() {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
-            <div>  
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
+            <div>
               <Row>
                 <Col lg="6" xl="4">
                   <div className="card mb-3 widget-content">
@@ -41,13 +39,19 @@ class Basic3Example extends Component {
                     <div className="widget-content-wrapper">
                       <div className="widget-content-left">
                         <div className="widget-heading">Clients</div>
-                        <div className="widget-subheading">
-                          Total Clients Profit
-                        </div>
+                        <div className="widget-subheading">Total Clients Profit</div>
                       </div>
                       <div className="widget-content-right">
                         <div className="widget-numbers text-primary">
-                          <CountUp start={-75.9} end={568.2} separator="" decimals={0} decimal="," prefix="$ " duration="20"/>
+                          <CountUp
+                            start={-75.9}
+                            end={568.2}
+                            separator=""
+                            decimals={0}
+                            decimal=","
+                            prefix="$ "
+                            duration="20"
+                          />
                         </div>
                       </div>
                     </div>
@@ -58,13 +62,20 @@ class Basic3Example extends Component {
                     <div className="widget-content-wrapper">
                       <div className="widget-content-left">
                         <div className="widget-heading">Products Sold</div>
-                        <div className="widget-subheading">
-                          Total revenue streams
-                        </div>
+                        <div className="widget-subheading">Total revenue streams</div>
                       </div>
                       <div className="widget-content-right">
                         <div className="widget-numbers text-warning">
-                          <CountUp start={1} end={14} separator="" decimals={0} decimal="," prefix="$" suffix="M" duration="20"/>
+                          <CountUp
+                            start={1}
+                            end={14}
+                            separator=""
+                            decimals={0}
+                            decimal=","
+                            prefix="$"
+                            suffix="M"
+                            duration="20"
+                          />
                         </div>
                       </div>
                     </div>
@@ -79,14 +90,23 @@ class Basic3Example extends Component {
                       </div>
                       <div className="widget-content-right">
                         <div className="widget-numbers text-danger">
-                          <CountUp start={0} end={45.9} separator="" decimals={0} decimal="," prefix="" suffix="%" duration="15"/>
+                          <CountUp
+                            start={0}
+                            end={45.9}
+                            separator=""
+                            decimals={0}
+                            decimal=","
+                            prefix=""
+                            suffix="%"
+                            duration="15"
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
                 </Col>
               </Row>
-              <div className="divider mt-0" style={{ marginBottom: "30px" }} />
+              <div className="divider mt-0" style={{ marginBottom: '30px' }} />
               <Row>
                 <Col lg="6" xl="4">
                   <div className="card mb-3 widget-content bg-night-fade">
@@ -108,13 +128,19 @@ class Basic3Example extends Component {
                     <div className="widget-content-wrapper text-white">
                       <div className="widget-content-left">
                         <div className="widget-heading">Clients</div>
-                        <div className="widget-subheading">
-                          Total Clients Profit
-                        </div>
+                        <div className="widget-subheading">Total Clients Profit</div>
                       </div>
                       <div className="widget-content-right">
                         <div className="widget-numbers text-white">
-                          <CountUp start={-75.9} end={568.2} separator="" decimals={0} decimal="," prefix="$ " duration="20"/>
+                          <CountUp
+                            start={-75.9}
+                            end={568.2}
+                            separator=""
+                            decimals={0}
+                            decimal=","
+                            prefix="$ "
+                            duration="20"
+                          />
                         </div>
                       </div>
                     </div>
@@ -125,13 +151,20 @@ class Basic3Example extends Component {
                     <div className="widget-content-wrapper text-white">
                       <div className="widget-content-left">
                         <div className="widget-heading">Products Sold</div>
-                        <div className="widget-subheading">
-                          Total revenue streams
-                        </div>
+                        <div className="widget-subheading">Total revenue streams</div>
                       </div>
                       <div className="widget-content-right">
                         <div className="widget-numbers text-warning">
-                          <CountUp start={1} end={14} separator="" decimals={0} decimal="," prefix="$" suffix="M" duration="20"/>
+                          <CountUp
+                            start={1}
+                            end={14}
+                            separator=""
+                            decimals={0}
+                            decimal=","
+                            prefix="$"
+                            suffix="M"
+                            duration="20"
+                          />
                         </div>
                       </div>
                     </div>
@@ -146,14 +179,23 @@ class Basic3Example extends Component {
                       </div>
                       <div className="widget-content-right">
                         <div className="widget-numbers text-dark">
-                          <CountUp start={0} end={45.9} separator="" decimals={0} decimal="," prefix="" suffix="%" duration="15"/>
+                          <CountUp
+                            start={0}
+                            end={45.9}
+                            separator=""
+                            decimals={0}
+                            decimal=","
+                            prefix=""
+                            suffix="%"
+                            duration="15"
+                          />
                         </div>
                       </div>
                     </div>
                   </div>
                 </Col>
               </Row>
-              <div className="divider mt-0" style={{ marginBottom: "30px" }} />
+              <div className="divider mt-0" style={{ marginBottom: '30px' }} />
               <Row>
                 <Col lg="6" xl="4">
                   <div className="card mb-3 widget-content">
@@ -161,16 +203,14 @@ class Basic3Example extends Component {
                       <div className="widget-content-wrapper">
                         <div className="widget-content-left">
                           <div className="widget-heading">Total Orders</div>
-                          <div className="widget-subheading">
-                            Last year expenses
-                          </div>
+                          <div className="widget-subheading">Last year expenses</div>
                         </div>
                         <div className="widget-content-right">
                           <div className="widget-numbers text-success">1896</div>
                         </div>
                       </div>
                       <div className="widget-progress-wrapper">
-                        <Progress className="progress-bar-xs" color="primary" value="65"/>
+                        <Progress className="progress-bar-xs" color="primary" value="65" />
                         <div className="progress-sub-label">
                           <div className="sub-label-left">YoY Growth</div>
                           <div className="sub-label-right">100%</div>
@@ -185,16 +225,18 @@ class Basic3Example extends Component {
                       <div className="widget-content-wrapper">
                         <div className="widget-content-left">
                           <div className="widget-heading">Clients</div>
-                          <div className="widget-subheading">
-                            Total Clients Profit
-                          </div>
+                          <div className="widget-subheading">Total Clients Profit</div>
                         </div>
                         <div className="widget-content-right">
                           <div className="widget-numbers text-primary">$12.6k</div>
                         </div>
                       </div>
                       <div className="widget-progress-wrapper">
-                        <Progress className="progress-bar-lg progress-bar-animated" color="warning" value="47"/>
+                        <Progress
+                          className="progress-bar-lg progress-bar-animated"
+                          color="warning"
+                          value="47"
+                        />
                         <div className="progress-sub-label">
                           <div className="sub-label-left">Retention</div>
                           <div className="sub-label-right">100%</div>
@@ -209,16 +251,18 @@ class Basic3Example extends Component {
                       <div className="widget-content-wrapper">
                         <div className="widget-content-left">
                           <div className="widget-heading">Products Sold</div>
-                          <div className="widget-subheading">
-                            Total revenue streams
-                          </div>
+                          <div className="widget-subheading">Total revenue streams</div>
                         </div>
                         <div className="widget-content-right">
                           <div className="widget-numbers text-warning">$3M</div>
                         </div>
                       </div>
                       <div className="widget-progress-wrapper">
-                        <Progress className="progress-bar-xs progress-bar-animated-alt" color="danger" value="85"/>
+                        <Progress
+                          className="progress-bar-xs progress-bar-animated-alt"
+                          color="danger"
+                          value="85"
+                        />
                         <div className="progress-sub-label">
                           <div className="sub-label-left">Sales</div>
                           <div className="sub-label-right">100%</div>
@@ -240,7 +284,11 @@ class Basic3Example extends Component {
                         </div>
                       </div>
                       <div className="widget-progress-wrapper">
-                        <Progress className="progress-bar-sm progress-bar-animated-alt" color="success" value="65"/>
+                        <Progress
+                          className="progress-bar-sm progress-bar-animated-alt"
+                          color="success"
+                          value="65"
+                        />
                         <div className="progress-sub-label">
                           <div className="sub-label-left">Twitter Progress</div>
                           <div className="sub-label-right">100%</div>
@@ -250,7 +298,7 @@ class Basic3Example extends Component {
                   </div>
                 </Col>
               </Row>
-              <div className="divider mt-0" style={{ marginBottom: "30px" }} />
+              <div className="divider mt-0" style={{ marginBottom: '30px' }} />
               <Card className="main-card mb-3">
                 <Row className="g-0">
                   <Col md="4">
@@ -261,9 +309,7 @@ class Basic3Example extends Component {
                         </div>
                         <div className="widget-content-left">
                           <div className="widget-heading">Total Orders</div>
-                          <div className="widget-subheading">
-                            Last year expenses
-                          </div>
+                          <div className="widget-subheading">Last year expenses</div>
                         </div>
                       </div>
                     </div>
@@ -276,9 +322,7 @@ class Basic3Example extends Component {
                         </div>
                         <div className="widget-content-left">
                           <div className="widget-heading">Products Sold</div>
-                          <div className="widget-subheading">
-                            Total revenue streams
-                          </div>
+                          <div className="widget-subheading">Total revenue streams</div>
                         </div>
                       </div>
                     </div>
@@ -298,7 +342,7 @@ class Basic3Example extends Component {
                   </Col>
                 </Row>
               </Card>
-              <div className="divider mt-0" style={{ marginBottom: "30px" }} />
+              <div className="divider mt-0" style={{ marginBottom: '30px' }} />
               <Card className="main-card mb-3">
                 <Row className="g-0">
                   <Col md="4">
@@ -310,14 +354,10 @@ class Basic3Example extends Component {
                               <div className="widget-content-wrapper">
                                 <div className="widget-content-left">
                                   <div className="widget-heading">Total Orders</div>
-                                  <div className="widget-subheading">
-                                    Last year expenses
-                                  </div>
+                                  <div className="widget-subheading">Last year expenses</div>
                                 </div>
                                 <div className="widget-content-right">
-                                  <div className="widget-numbers text-success">
-                                    1896
-                                  </div>
+                                  <div className="widget-numbers text-success">1896</div>
                                 </div>
                               </div>
                             </div>
@@ -329,14 +369,10 @@ class Basic3Example extends Component {
                               <div className="widget-content-wrapper">
                                 <div className="widget-content-left">
                                   <div className="widget-heading">Clients</div>
-                                  <div className="widget-subheading">
-                                    Total Clients Profit
-                                  </div>
+                                  <div className="widget-subheading">Total Clients Profit</div>
                                 </div>
                                 <div className="widget-content-right">
-                                  <div className="widget-numbers text-primary">
-                                    $12.6k
-                                  </div>
+                                  <div className="widget-numbers text-primary">$12.6k</div>
                                 </div>
                               </div>
                             </div>
@@ -354,14 +390,10 @@ class Basic3Example extends Component {
                               <div className="widget-content-wrapper">
                                 <div className="widget-content-left">
                                   <div className="widget-heading">Followers</div>
-                                  <div className="widget-subheading">
-                                    People Interested
-                                  </div>
+                                  <div className="widget-subheading">People Interested</div>
                                 </div>
                                 <div className="widget-content-right">
-                                  <div className="widget-numbers text-danger">
-                                    45,9%
-                                  </div>
+                                  <div className="widget-numbers text-danger">45,9%</div>
                                 </div>
                               </div>
                             </div>
@@ -372,17 +404,11 @@ class Basic3Example extends Component {
                             <div className="widget-content-outer">
                               <div className="widget-content-wrapper">
                                 <div className="widget-content-left">
-                                  <div className="widget-heading">
-                                    Products Sold
-                                  </div>
-                                  <div className="widget-subheading">
-                                    Total revenue streams
-                                  </div>
+                                  <div className="widget-heading">Products Sold</div>
+                                  <div className="widget-subheading">Total revenue streams</div>
                                 </div>
                                 <div className="widget-content-right">
-                                  <div className="widget-numbers text-warning">
-                                    $3M
-                                  </div>
+                                  <div className="widget-numbers text-warning">$3M</div>
                                 </div>
                               </div>
                             </div>
@@ -400,14 +426,10 @@ class Basic3Example extends Component {
                               <div className="widget-content-wrapper">
                                 <div className="widget-content-left">
                                   <div className="widget-heading">Total Orders</div>
-                                  <div className="widget-subheading">
-                                    Last year expenses
-                                  </div>
+                                  <div className="widget-subheading">Last year expenses</div>
                                 </div>
                                 <div className="widget-content-right">
-                                  <div className="widget-numbers text-success">
-                                    1896
-                                  </div>
+                                  <div className="widget-numbers text-success">1896</div>
                                 </div>
                               </div>
                             </div>
@@ -419,14 +441,10 @@ class Basic3Example extends Component {
                               <div className="widget-content-wrapper">
                                 <div className="widget-content-left">
                                   <div className="widget-heading">Clients</div>
-                                  <div className="widget-subheading">
-                                    Total Clients Profit
-                                  </div>
+                                  <div className="widget-subheading">Total Clients Profit</div>
                                 </div>
                                 <div className="widget-content-right">
-                                  <div className="widget-numbers text-primary">
-                                    $12.6k
-                                  </div>
+                                  <div className="widget-numbers text-primary">$12.6k</div>
                                 </div>
                               </div>
                             </div>
@@ -437,7 +455,7 @@ class Basic3Example extends Component {
                   </Col>
                 </Row>
               </Card>
-              <div className="divider mt-0" style={{ marginBottom: "30px" }} />
+              <div className="divider mt-0" style={{ marginBottom: '30px' }} />
               <Card className="main-card mb-3">
                 <Row>
                   <Col lg="6" xl="4">
@@ -446,16 +464,18 @@ class Basic3Example extends Component {
                         <div className="widget-content-wrapper">
                           <div className="widget-content-left">
                             <div className="widget-heading">Total Orders</div>
-                            <div className="widget-subheading">
-                              Last year expenses
-                            </div>
+                            <div className="widget-subheading">Last year expenses</div>
                           </div>
                           <div className="widget-content-right">
                             <div className="widget-numbers text-success">1896</div>
                           </div>
                         </div>
                         <div className="widget-progress-wrapper">
-                          <Progress className="progress-bar-sm progress-bar-animated-alt" color="primary" value="43"/>
+                          <Progress
+                            className="progress-bar-sm progress-bar-animated-alt"
+                            color="primary"
+                            value="43"
+                          />
                           <div className="progress-sub-label">
                             <div className="sub-label-left">YoY Growth</div>
                             <div className="sub-label-right">100%</div>
@@ -470,18 +490,18 @@ class Basic3Example extends Component {
                         <div className="widget-content-wrapper">
                           <div className="widget-content-left">
                             <div className="widget-heading">Clients</div>
-                            <div className="widget-subheading">
-                              Total Clients Profit
-                            </div>
+                            <div className="widget-subheading">Total Clients Profit</div>
                           </div>
                           <div className="widget-content-right">
-                            <div className="widget-numbers text-primary">
-                              $12.6k
-                            </div>
+                            <div className="widget-numbers text-primary">$12.6k</div>
                           </div>
                         </div>
                         <div className="widget-progress-wrapper">
-                          <Progress className="progress-bar-sm progress-bar-animated-alt" color="warning" value="47"/>
+                          <Progress
+                            className="progress-bar-sm progress-bar-animated-alt"
+                            color="warning"
+                            value="47"
+                          />
                           <div className="progress-sub-label">
                             <div className="sub-label-left">Retention</div>
                             <div className="sub-label-right">100%</div>
@@ -496,16 +516,18 @@ class Basic3Example extends Component {
                         <div className="widget-content-wrapper">
                           <div className="widget-content-left">
                             <div className="widget-heading">Products Sold</div>
-                            <div className="widget-subheading">
-                              Total revenue streams
-                            </div>
+                            <div className="widget-subheading">Total revenue streams</div>
                           </div>
                           <div className="widget-content-right">
                             <div className="widget-numbers text-warning">$3M</div>
                           </div>
                         </div>
                         <div className="widget-progress-wrapper">
-                          <Progress className="progress-bar-sm progress-bar-animated-alt" color="danger" value="77"/>
+                          <Progress
+                            className="progress-bar-sm progress-bar-animated-alt"
+                            color="danger"
+                            value="77"
+                          />
                           <div className="progress-sub-label">
                             <div className="sub-label-left">Sales</div>
                             <div className="sub-label-right">100%</div>
@@ -520,16 +542,18 @@ class Basic3Example extends Component {
                         <div className="widget-content-wrapper">
                           <div className="widget-content-left">
                             <div className="widget-heading">Followers</div>
-                            <div className="widget-subheading">
-                              People Interested
-                            </div>
+                            <div className="widget-subheading">People Interested</div>
                           </div>
                           <div className="widget-content-right">
                             <div className="widget-numbers text-danger">45,9%</div>
                           </div>
                         </div>
                         <div className="widget-progress-wrapper">
-                          <Progress className="progress-bar-sm progress-bar-animated-alt" color="success" value="65"/>
+                          <Progress
+                            className="progress-bar-sm progress-bar-animated-alt"
+                            color="success"
+                            value="65"
+                          />
                           <div className="progress-sub-label">
                             <div className="sub-label-left">Twitter Progress</div>
                             <div className="sub-label-right">100%</div>
@@ -540,7 +564,7 @@ class Basic3Example extends Component {
                   </Col>
                 </Row>
               </Card>
-              <div className="divider mt-0" style={{ marginBottom: "30px" }} />
+              <div className="divider mt-0" style={{ marginBottom: '30px' }} />
               <Card className="main-card mb-3">
                 <Row>
                   <Col md="4">
@@ -549,16 +573,18 @@ class Basic3Example extends Component {
                         <div className="widget-content-wrapper">
                           <div className="widget-content-left">
                             <div className="widget-heading">Total Orders</div>
-                            <div className="widget-subheading">
-                              Last year expenses
-                            </div>
+                            <div className="widget-subheading">Last year expenses</div>
                           </div>
                           <div className="widget-content-right">
                             <div className="widget-numbers text-success">1896</div>
                           </div>
                         </div>
                         <div className="widget-progress-wrapper">
-                          <Progress className="progress-bar-sm progress-bar-animated-alt" color="primary" value="43"/>
+                          <Progress
+                            className="progress-bar-sm progress-bar-animated-alt"
+                            color="primary"
+                            value="43"
+                          />
                           <div className="progress-sub-label">
                             <div className="sub-label-left">YoY Growth</div>
                             <div className="sub-label-right">100%</div>
@@ -573,16 +599,18 @@ class Basic3Example extends Component {
                         <div className="widget-content-wrapper">
                           <div className="widget-content-left">
                             <div className="widget-heading">Products Sold</div>
-                            <div className="widget-subheading">
-                              Total revenue streams
-                            </div>
+                            <div className="widget-subheading">Total revenue streams</div>
                           </div>
                           <div className="widget-content-right">
                             <div className="widget-numbers text-warning">$3M</div>
                           </div>
                         </div>
                         <div className="widget-progress-wrapper">
-                          <Progress className="progress-bar-sm progress-bar-animated-alt" color="danger" value="77"/>
+                          <Progress
+                            className="progress-bar-sm progress-bar-animated-alt"
+                            color="danger"
+                            value="77"
+                          />
                           <div className="progress-sub-label">
                             <div className="sub-label-left">Sales</div>
                             <div className="sub-label-right">100%</div>
@@ -597,16 +625,18 @@ class Basic3Example extends Component {
                         <div className="widget-content-wrapper">
                           <div className="widget-content-left">
                             <div className="widget-heading">Followers</div>
-                            <div className="widget-subheading">
-                              People Interested
-                            </div>
+                            <div className="widget-subheading">People Interested</div>
                           </div>
                           <div className="widget-content-right">
                             <div className="widget-numbers text-danger">45,9%</div>
                           </div>
                         </div>
                         <div className="widget-progress-wrapper">
-                          <Progress className="progress-bar-sm progress-bar-animated-alt" color="success" value="65"/>
+                          <Progress
+                            className="progress-bar-sm progress-bar-animated-alt"
+                            color="success"
+                            value="65"
+                          />
                           <div className="progress-sub-label">
                             <div className="sub-label-left">Twitter Progress</div>
                             <div className="sub-label-right">100%</div>
@@ -617,7 +647,7 @@ class Basic3Example extends Component {
                   </Col>
                 </Row>
               </Card>
-              <div className="divider mt-0" style={{ marginBottom: "30px" }} />
+              <div className="divider mt-0" style={{ marginBottom: '30px' }} />
               <Row>
                 <Col md="6">
                   <Card className="main-card mb-3">
@@ -628,18 +658,14 @@ class Basic3Example extends Component {
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left">
                                 <div className="widget-heading">Total Orders</div>
-                                <div className="widget-subheading">
-                                  Last year expenses
-                                </div>
+                                <div className="widget-subheading">Last year expenses</div>
                               </div>
                               <div className="widget-content-right">
-                                <div className="widget-numbers text-success">
-                                  1896
-                                </div>
+                                <div className="widget-numbers text-success">1896</div>
                               </div>
                             </div>
                             <div className="widget-progress-wrapper">
-                              <Progress className="progress-bar-xs" color="primary" value="65"/>
+                              <Progress className="progress-bar-xs" color="primary" value="65" />
                               <div className="progress-sub-label">
                                 <div className="sub-label-left">YoY Growth</div>
                                 <div className="sub-label-right">100%</div>
@@ -654,18 +680,18 @@ class Basic3Example extends Component {
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left">
                                 <div className="widget-heading">Clients</div>
-                                <div className="widget-subheading">
-                                  Total Clients Profit
-                                </div>
+                                <div className="widget-subheading">Total Clients Profit</div>
                               </div>
                               <div className="widget-content-right">
-                                <div className="widget-numbers text-primary">
-                                  $12.6k
-                                </div>
+                                <div className="widget-numbers text-primary">$12.6k</div>
                               </div>
                             </div>
                             <div className="widget-progress-wrapper">
-                              <Progress className="progress-bar-lg progress-bar-animated" color="warning" value="47"/>
+                              <Progress
+                                className="progress-bar-lg progress-bar-animated"
+                                color="warning"
+                                value="47"
+                              />
                               <div className="progress-sub-label">
                                 <div className="sub-label-left">Retention</div>
                                 <div className="sub-label-right">100%</div>
@@ -680,22 +706,20 @@ class Basic3Example extends Component {
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left">
                                 <div className="widget-heading">Followers</div>
-                                <div className="widget-subheading">
-                                  People Interested
-                                </div>
+                                <div className="widget-subheading">People Interested</div>
                               </div>
                               <div className="widget-content-right">
-                                <div className="widget-numbers text-danger">
-                                  45,9%
-                                </div>
+                                <div className="widget-numbers text-danger">45,9%</div>
                               </div>
                             </div>
                             <div className="widget-progress-wrapper">
-                              <Progress className="progress-bar-sm progress-bar-animated-alt" color="success" value="65"/>
+                              <Progress
+                                className="progress-bar-sm progress-bar-animated-alt"
+                                color="success"
+                                value="65"
+                              />
                               <div className="progress-sub-label">
-                                <div className="sub-label-left">
-                                  Twitter Progress
-                                </div>
+                                <div className="sub-label-left">Twitter Progress</div>
                                 <div className="sub-label-right">100%</div>
                               </div>
                             </div>
@@ -708,18 +732,18 @@ class Basic3Example extends Component {
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left">
                                 <div className="widget-heading">Products Sold</div>
-                                <div className="widget-subheading">
-                                  Total revenue streams
-                                </div>
+                                <div className="widget-subheading">Total revenue streams</div>
                               </div>
                               <div className="widget-content-right">
-                                <div className="widget-numbers text-warning">
-                                  $3M
-                                </div>
+                                <div className="widget-numbers text-warning">$3M</div>
                               </div>
                             </div>
                             <div className="widget-progress-wrapper">
-                              <Progress className="progress-bar-xs progress-bar-animated-alt" color="danger" value="85"/>
+                              <Progress
+                                className="progress-bar-xs progress-bar-animated-alt"
+                                color="danger"
+                                value="85"
+                              />
                               <div className="progress-sub-label">
                                 <div className="sub-label-left">Sales</div>
                                 <div className="sub-label-right">100%</div>
@@ -741,14 +765,10 @@ class Basic3Example extends Component {
                               <div className="widget-content-wrapper">
                                 <div className="widget-content-left">
                                   <div className="widget-heading">Total Orders</div>
-                                  <div className="widget-subheading">
-                                    Last year expenses
-                                  </div>
+                                  <div className="widget-subheading">Last year expenses</div>
                                 </div>
                                 <div className="widget-content-right">
-                                  <div className="widget-numbers text-success">
-                                    1896
-                                  </div>
+                                  <div className="widget-numbers text-success">1896</div>
                                 </div>
                               </div>
                             </div>
@@ -760,14 +780,10 @@ class Basic3Example extends Component {
                               <div className="widget-content-wrapper">
                                 <div className="widget-content-left">
                                   <div className="widget-heading">Clients</div>
-                                  <div className="widget-subheading">
-                                    Total Clients Profit
-                                  </div>
+                                  <div className="widget-subheading">Total Clients Profit</div>
                                 </div>
                                 <div className="widget-content-right">
-                                  <div className="widget-numbers text-primary">
-                                    $12.6k
-                                  </div>
+                                  <div className="widget-numbers text-primary">$12.6k</div>
                                 </div>
                               </div>
                             </div>
@@ -779,14 +795,10 @@ class Basic3Example extends Component {
                               <div className="widget-content-wrapper">
                                 <div className="widget-content-left">
                                   <div className="widget-heading">Followers</div>
-                                  <div className="widget-subheading">
-                                    People Interested
-                                  </div>
+                                  <div className="widget-subheading">People Interested</div>
                                 </div>
                                 <div className="widget-content-right">
-                                  <div className="widget-numbers text-danger">
-                                    45,9%
-                                  </div>
+                                  <div className="widget-numbers text-danger">45,9%</div>
                                 </div>
                               </div>
                             </div>
@@ -797,17 +809,11 @@ class Basic3Example extends Component {
                             <div className="widget-content-outer">
                               <div className="widget-content-wrapper">
                                 <div className="widget-content-left">
-                                  <div className="widget-heading">
-                                    Products Sold
-                                  </div>
-                                  <div className="widget-subheading">
-                                    Total revenue streams
-                                  </div>
+                                  <div className="widget-heading">Products Sold</div>
+                                  <div className="widget-subheading">Total revenue streams</div>
                                 </div>
                                 <div className="widget-content-right">
-                                  <div className="widget-numbers text-warning">
-                                    $3M
-                                  </div>
+                                  <div className="widget-numbers text-warning">$3M</div>
                                 </div>
                               </div>
                             </div>

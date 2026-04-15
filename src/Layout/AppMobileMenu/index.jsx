@@ -1,20 +1,17 @@
-import React, { Fragment } from "react";
-import { connect } from "react-redux";
+import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
 
-import Hamburger from "hamburger-react";
+import Hamburger from 'hamburger-react';
 
-import cx from "classnames";
+import cx from 'classnames';
 
-import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
+import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Button } from "reactstrap";
+import { Button } from 'reactstrap';
 
-import {
-  setEnableMobileMenu,
-  setEnableMobileMenuSmall,
-} from "../../reducers/ThemeOptions";
+import { setEnableMobileMenu, setEnableMobileMenuSmall } from '../../reducers/ThemeOptions';
 
 class AppMobileMenu extends React.Component {
   constructor(props) {
@@ -50,8 +47,8 @@ class AppMobileMenu extends React.Component {
       <Fragment>
         <div className="app-header__mobile-menu">
           <div onClick={this.toggleMobileSidebar}>
-            <Hamburger 
-              toggled={this.props.enableMobileMenu} 
+            <Hamburger
+              toggled={this.props.enableMobileMenu}
               toggle={this.toggleMobileSidebar}
               size={26}
               color="#6c757d"
@@ -60,11 +57,14 @@ class AppMobileMenu extends React.Component {
         </div>
         <div className="app-header__menu">
           <span onClick={this.toggleMobileSmall}>
-            <Button size="sm" className={cx("btn-icon btn-icon-only", {
+            <Button
+              size="sm"
+              className={cx('btn-icon btn-icon-only', {
                 active: this.props.enableMobileMenuSmall,
               })}
               color="primary"
-              onClick={this.toggleMobileSmall}>
+              onClick={this.toggleMobileSmall}
+            >
               <div className="btn-icon-wrapper">
                 <FontAwesomeIcon icon={faEllipsisV} />
               </div>
@@ -84,8 +84,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   setEnableMobileMenu: (enable) => dispatch(setEnableMobileMenu(enable)),
-  setEnableMobileMenuSmall: (enable) =>
-    dispatch(setEnableMobileMenuSmall(enable)),
+  setEnableMobileMenuSmall: (enable) => dispatch(setEnableMobileMenuSmall(enable)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppMobileMenu);

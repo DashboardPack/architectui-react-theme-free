@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
-import classnames from "classnames";
-import Tabs from "react-responsive-tabs";
+import React, { Component, Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
+import classnames from 'classnames';
+import Tabs from 'react-responsive-tabs';
 
-import dummyData from "./dummyData";
+import dummyData from './dummyData';
 
 import {
   TabContent,
@@ -24,7 +24,7 @@ import {
   DropdownMenu,
   DropdownItem,
   Container,
-} from "reactstrap";
+} from 'reactstrap';
 
 class CardsAdvanced extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class CardsAdvanced extends Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      activeTab: "1",
+      activeTab: '1',
       showMore: true,
       transform: true,
       showInkBar: true,
@@ -61,22 +61,24 @@ class CardsAdvanced extends Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Row>
                 <Col md="6">
                   <Card className="main-card mb-3">
                     <CardHeader>Header</CardHeader>
                     <CardBody>
-                      <p>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </p>
+                      <p>With supporting text below as a natural lead-in to additional content.</p>
                       <p className="mb-0">
-                        Lorem Ipsum has been the industry's standard dummy text
-                        ever since the 1500s, when an unknown printer took a
-                        galley of type and scrambled.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the
+                        1500s, when an unknown printer took a galley of type and scrambled.
                       </p>
                     </CardBody>
                     <CardFooter className="d-block text-end">
@@ -90,7 +92,7 @@ class CardsAdvanced extends Component {
                   </Card>
                   <Card className="mb-3 text-white card-border bg-dark">
                     <CardHeader>
-                      <i className="header-icon lnr-screen icon-gradient bg-warm-flame"> {" "} </i>
+                      <i className="header-icon lnr-screen icon-gradient bg-warm-flame"> </i>
                       Without Shadow
                       <div className="btn-actions-pane-right">
                         <Button size="sm" color="light">
@@ -99,14 +101,10 @@ class CardsAdvanced extends Component {
                       </div>
                     </CardHeader>
                     <CardBody>
-                      <p>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </p>
+                      <p>With supporting text below as a natural lead-in to additional content.</p>
                       <p className="mb-0">
-                        Lorem Ipsum has been the industry's standard dummy text
-                        ever since the 1500s, when an unknown printer took a
-                        galley of type and scrambled.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the
+                        1500s, when an unknown printer took a galley of type and scrambled.
                       </p>
                     </CardBody>
                     <CardFooter className="d-block text-end">
@@ -121,8 +119,7 @@ class CardsAdvanced extends Component {
                   <Card className="mb-3" inverse color="success">
                     <CardHeader>Header</CardHeader>
                     <CardBody>
-                      With supporting text below as a natural lead-in to
-                      additional content.
+                      With supporting text below as a natural lead-in to additional content.
                     </CardBody>
                     <CardFooter>Footer</CardFooter>
                   </Card>
@@ -131,14 +128,10 @@ class CardsAdvanced extends Component {
                   <Card className="card-hover-shadow-2x mb-3">
                     <CardHeader>Shadow Hover Card</CardHeader>
                     <CardBody>
-                      <p>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </p>
+                      <p>With supporting text below as a natural lead-in to additional content.</p>
                       <p className="mb-0">
-                        Lorem Ipsum has been the industry's standard dummy text
-                        ever since the 1500s, when an unknown printer took a
-                        galley of type and scrambled.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the
+                        1500s, when an unknown printer took a galley of type and scrambled.
                       </p>
                     </CardBody>
                     <CardFooter className="d-block text-end">
@@ -153,14 +146,10 @@ class CardsAdvanced extends Component {
                   <Card className="card-hover-shadow card-border mb-3">
                     <CardHeader>Card Hover Shadow</CardHeader>
                     <CardBody>
-                      <p>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </p>
+                      <p>With supporting text below as a natural lead-in to additional content.</p>
                       <p className="mb-0">
-                        Lorem Ipsum has been the industry's standard dummy text
-                        ever since the 1500s, when an unknown printer took a
-                        galley of type and scrambled.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the
+                        1500s, when an unknown printer took a galley of type and scrambled.
                       </p>
                     </CardBody>
                     <CardFooter className="d-block text-end">
@@ -175,8 +164,7 @@ class CardsAdvanced extends Component {
                   <Card className="mb-3 text-dark card-border" inverse color="light">
                     <CardHeader>Header</CardHeader>
                     <CardBody className="text-dark">
-                      With supporting text below as a natural lead-in to
-                      additional content.
+                      With supporting text below as a natural lead-in to additional content.
                     </CardBody>
                     <CardFooter>Footer</CardFooter>
                   </Card>
@@ -186,7 +174,7 @@ class CardsAdvanced extends Component {
                 <Col md="6">
                   <Card className="main-card mb-3">
                     <CardHeader>
-                      <i className="header-icon lnr-laptop-phone icon-gradient bg-plum-plate"> {" "} </i>
+                      <i className="header-icon lnr-laptop-phone icon-gradient bg-plum-plate"> </i>
                       Header Menu
                       <div className="btn-actions-pane-right actions-icon-btn">
                         <Button className="btn-icon btn-icon-only" color="link">
@@ -227,14 +215,10 @@ class CardsAdvanced extends Component {
                       </div>
                     </CardHeader>
                     <CardBody>
-                      <p>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </p>
+                      <p>With supporting text below as a natural lead-in to additional content.</p>
                       <p className="mb-0">
-                        Lorem Ipsum has been the industry's standard dummy text
-                        ever since the 1500s, when an unknown printer took a
-                        galley of type and scrambled.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the
+                        1500s, when an unknown printer took a galley of type and scrambled.
                       </p>
                     </CardBody>
                     <CardFooter className="d-block text-end">
@@ -248,38 +232,43 @@ class CardsAdvanced extends Component {
                   </Card>
                   <Card className="main-card mb-3">
                     <CardHeader>
-                      <i className="header-icon lnr-bicycle icon-gradient bg-love-kiss"> {" "} </i>
+                      <i className="header-icon lnr-bicycle icon-gradient bg-love-kiss"> </i>
                       Header with Tabs
                       <div className="btn-actions-pane-right actions-icon-btn">
                         <ButtonGroup size="sm">
-                          <Button caret="true" color="dark"
+                          <Button
+                            caret="true"
+                            color="dark"
                             className={
-                              "btn-shadow " +
-                              classnames({ active: this.state.activeTab === "1" })
+                              'btn-shadow ' + classnames({ active: this.state.activeTab === '1' })
                             }
                             onClick={() => {
-                              this.toggle("1");
-                            }}>
+                              this.toggle('1');
+                            }}
+                          >
                             Tab 1
                           </Button>
-                          <Button caret="true" color="dark"
+                          <Button
+                            caret="true"
+                            color="dark"
                             className={
-                              "btn-shadow " +
-                              classnames({ active: this.state.activeTab === "2" })
+                              'btn-shadow ' + classnames({ active: this.state.activeTab === '2' })
                             }
                             onClick={() => {
-                              this.toggle("2");
-                            }}>
+                              this.toggle('2');
+                            }}
+                          >
                             Tab 2
                           </Button>
-                          <Button color="dark"
+                          <Button
+                            color="dark"
                             className={
-                              "btn-shadow " +
-                              classnames({ active: this.state.activeTab === "3" })
+                              'btn-shadow ' + classnames({ active: this.state.activeTab === '3' })
                             }
                             onClick={() => {
-                              this.toggle("3");
-                            }}>
+                              this.toggle('3');
+                            }}
+                          >
                             Tab 3
                           </Button>
                         </ButtonGroup>
@@ -289,28 +278,26 @@ class CardsAdvanced extends Component {
                       <TabContent activeTab={this.state.activeTab}>
                         <TabPane tabId="1">
                           <p>
-                            It was popularised in the 1960s with the release of
-                            Letraset sheets containing Lorem Ipsum passages, and
-                            more recently with desktop publishing software like
-                            Aldus PageMaker including versions of Lorem Ipsum.
+                            It was popularised in the 1960s with the release of Letraset sheets
+                            containing Lorem Ipsum passages, and more recently with desktop
+                            publishing software like Aldus PageMaker including versions of Lorem
+                            Ipsum.
                           </p>
                         </TabPane>
                         <TabPane tabId="2">
                           <p>
-                            Like Aldus PageMaker including versions of Lorem. It
-                            has survived not only five centuries, but also the
-                            leap into electronic typesetting, remaining
-                            essentially unchanged.{" "}
+                            Like Aldus PageMaker including versions of Lorem. It has survived not
+                            only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged.{' '}
                           </p>
                         </TabPane>
                         <TabPane tabId="3">
                           <p>
-                            Lorem Ipsum has been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer
-                            took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five
-                            centuries, but also the leap into electronic
-                            typesetting, remaining essentially unchanged.{" "}
+                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s, when an unknown printer took a galley of type and scrambled it to
+                            make a type specimen book. It has survived not only five centuries, but
+                            also the leap into electronic typesetting, remaining essentially
+                            unchanged.{' '}
                           </p>
                         </TabPane>
                       </TabContent>
@@ -326,37 +313,44 @@ class CardsAdvanced extends Component {
                   </Card>
                   <Card className="main-card mb-3">
                     <CardHeader>
-                      <i className="header-icon lnr-gift icon-gradient bg-mixed-hopes"> {" "} </i>
+                      <i className="header-icon lnr-gift icon-gradient bg-mixed-hopes"> </i>
                       Alternate Tabs
                       <div className="btn-actions-pane-right actions-icon-btn">
                         <ButtonGroup size="sm">
-                          <Button caret="true" color="focus"
+                          <Button
+                            caret="true"
+                            color="focus"
                             className={
-                              "btn-pill ps-3 " +
-                              classnames({ active: this.state.activeTab === "1" })
+                              'btn-pill ps-3 ' +
+                              classnames({ active: this.state.activeTab === '1' })
                             }
                             onClick={() => {
-                              this.toggle("1");
-                            }}>
+                              this.toggle('1');
+                            }}
+                          >
                             Tab 1
                           </Button>
-                          <Button color="focus"
+                          <Button
+                            color="focus"
                             className={classnames({
-                              active: this.state.activeTab === "2",
+                              active: this.state.activeTab === '2',
                             })}
                             onClick={() => {
-                              this.toggle("2");
-                            }}>
+                              this.toggle('2');
+                            }}
+                          >
                             Tab 2
                           </Button>
-                          <Button color="focus"
+                          <Button
+                            color="focus"
                             className={
-                              "btn-pill pe-3 " +
-                              classnames({ active: this.state.activeTab === "3" })
+                              'btn-pill pe-3 ' +
+                              classnames({ active: this.state.activeTab === '3' })
                             }
                             onClick={() => {
-                              this.toggle("3");
-                            }}>
+                              this.toggle('3');
+                            }}
+                          >
                             Tab 3
                           </Button>
                         </ButtonGroup>
@@ -366,28 +360,26 @@ class CardsAdvanced extends Component {
                       <TabContent activeTab={this.state.activeTab}>
                         <TabPane tabId="1">
                           <p>
-                            It was popularised in the 1960s with the release of
-                            Letraset sheets containing Lorem Ipsum passages, and
-                            more recently with desktop publishing software like
-                            Aldus PageMaker including versions of Lorem Ipsum.
+                            It was popularised in the 1960s with the release of Letraset sheets
+                            containing Lorem Ipsum passages, and more recently with desktop
+                            publishing software like Aldus PageMaker including versions of Lorem
+                            Ipsum.
                           </p>
                         </TabPane>
                         <TabPane tabId="2">
                           <p>
-                            Like Aldus PageMaker including versions of Lorem. It
-                            has survived not only five centuries, but also the
-                            leap into electronic typesetting, remaining
-                            essentially unchanged.{" "}
+                            Like Aldus PageMaker including versions of Lorem. It has survived not
+                            only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged.{' '}
                           </p>
                         </TabPane>
                         <TabPane tabId="3">
                           <p>
-                            Lorem Ipsum has been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer
-                            took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five
-                            centuries, but also the leap into electronic
-                            typesetting, remaining essentially unchanged.{" "}
+                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s, when an unknown printer took a galley of type and scrambled it to
+                            make a type specimen book. It has survived not only five centuries, but
+                            also the leap into electronic typesetting, remaining essentially
+                            unchanged.{' '}
                           </p>
                         </TabPane>
                       </TabContent>
@@ -398,7 +390,7 @@ class CardsAdvanced extends Component {
                   <Card className="main-card mb-3">
                     <CardHeader>
                       <i className="header-icon lnr-graduation-hat icon-gradient bg-happy-itmeo">
-                        {" "}
+                        {' '}
                       </i>
                       Header Menu
                       <div className="btn-actions-pane-right actions-icon-btn">
@@ -424,14 +416,10 @@ class CardsAdvanced extends Component {
                       </div>
                     </CardHeader>
                     <CardBody>
-                      <p>
-                        With supporting text below as a natural lead-in to
-                        additional content.
-                      </p>
+                      <p>With supporting text below as a natural lead-in to additional content.</p>
                       <p className="mb-0">
-                        Lorem Ipsum has been the industry's standard dummy text
-                        ever since the 1500s, when an unknown printer took a
-                        galley of type and scrambled.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the
+                        1500s, when an unknown printer took a galley of type and scrambled.
                       </p>
                     </CardBody>
                     <CardFooter className="d-block text-end">
@@ -447,35 +435,41 @@ class CardsAdvanced extends Component {
                     <CardHeader>
                       <Nav>
                         <NavItem>
-                          <NavLink href="#"
+                          <NavLink
+                            href="#"
                             className={classnames({
-                              active: this.state.activeTab === "1",
+                              active: this.state.activeTab === '1',
                             })}
                             onClick={() => {
-                              this.toggle("1");
-                            }} >
+                              this.toggle('1');
+                            }}
+                          >
                             Tab 1
                           </NavLink>
                         </NavItem>
                         <NavItem>
-                          <NavLink href="#"
+                          <NavLink
+                            href="#"
                             className={classnames({
-                              active: this.state.activeTab === "2",
+                              active: this.state.activeTab === '2',
                             })}
                             onClick={() => {
-                              this.toggle("2");
-                            }}>
+                              this.toggle('2');
+                            }}
+                          >
                             Tab 2
                           </NavLink>
                         </NavItem>
                         <NavItem>
-                          <NavLink href="#"
+                          <NavLink
+                            href="#"
                             className={classnames({
-                              active: this.state.activeTab === "3",
+                              active: this.state.activeTab === '3',
                             })}
                             onClick={() => {
-                              this.toggle("3");
-                            }}>
+                              this.toggle('3');
+                            }}
+                          >
                             Tab 3
                           </NavLink>
                         </NavItem>
@@ -485,28 +479,26 @@ class CardsAdvanced extends Component {
                       <TabContent activeTab={this.state.activeTab}>
                         <TabPane tabId="1">
                           <p>
-                            It was popularised in the 1960s with the release of
-                            Letraset sheets containing Lorem Ipsum passages, and
-                            more recently with desktop publishing software like
-                            Aldus PageMaker including versions of Lorem Ipsum.
+                            It was popularised in the 1960s with the release of Letraset sheets
+                            containing Lorem Ipsum passages, and more recently with desktop
+                            publishing software like Aldus PageMaker including versions of Lorem
+                            Ipsum.
                           </p>
                         </TabPane>
                         <TabPane tabId="2">
                           <p>
-                            Like Aldus PageMaker including versions of Lorem. It
-                            has survived not only five centuries, but also the
-                            leap into electronic typesetting, remaining
-                            essentially unchanged.{" "}
+                            Like Aldus PageMaker including versions of Lorem. It has survived not
+                            only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged.{' '}
                           </p>
                         </TabPane>
                         <TabPane tabId="3">
                           <p>
-                            Lorem Ipsum has been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer
-                            took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five
-                            centuries, but also the leap into electronic
-                            typesetting, remaining essentially unchanged.{" "}
+                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s, when an unknown printer took a galley of type and scrambled it to
+                            make a type specimen book. It has survived not only five centuries, but
+                            also the leap into electronic typesetting, remaining essentially
+                            unchanged.{' '}
                           </p>
                         </TabPane>
                       </TabContent>
@@ -521,35 +513,41 @@ class CardsAdvanced extends Component {
                     <CardHeader>
                       <Nav justified>
                         <NavItem>
-                          <NavLink href="#"
+                          <NavLink
+                            href="#"
                             className={classnames({
-                              active: this.state.activeTab === "1",
+                              active: this.state.activeTab === '1',
                             })}
                             onClick={() => {
-                              this.toggle("1");
-                            }}>
+                              this.toggle('1');
+                            }}
+                          >
                             Tab 1
                           </NavLink>
                         </NavItem>
                         <NavItem>
-                          <NavLink  href="#"
+                          <NavLink
+                            href="#"
                             className={classnames({
-                              active: this.state.activeTab === "2",
+                              active: this.state.activeTab === '2',
                             })}
                             onClick={() => {
-                              this.toggle("2");
-                            }}>
+                              this.toggle('2');
+                            }}
+                          >
                             Tab 2
                           </NavLink>
                         </NavItem>
                         <NavItem>
-                          <NavLink href="#"
+                          <NavLink
+                            href="#"
                             className={classnames({
-                              active: this.state.activeTab === "3",
+                              active: this.state.activeTab === '3',
                             })}
                             onClick={() => {
-                              this.toggle("3");
-                            }}>
+                              this.toggle('3');
+                            }}
+                          >
                             Tab 3
                           </NavLink>
                         </NavItem>
@@ -559,28 +557,26 @@ class CardsAdvanced extends Component {
                       <TabContent activeTab={this.state.activeTab}>
                         <TabPane tabId="1">
                           <p>
-                            It was popularised in the 1960s with the release of
-                            Letraset sheets containing Lorem Ipsum passages, and
-                            more recently with desktop publishing software like
-                            Aldus PageMaker including versions of Lorem Ipsum.
+                            It was popularised in the 1960s with the release of Letraset sheets
+                            containing Lorem Ipsum passages, and more recently with desktop
+                            publishing software like Aldus PageMaker including versions of Lorem
+                            Ipsum.
                           </p>
                         </TabPane>
                         <TabPane tabId="2">
                           <p>
-                            Like Aldus PageMaker including versions of Lorem. It
-                            has survived not only five centuries, but also the
-                            leap into electronic typesetting, remaining
-                            essentially unchanged.{" "}
+                            Like Aldus PageMaker including versions of Lorem. It has survived not
+                            only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged.{' '}
                           </p>
                         </TabPane>
                         <TabPane tabId="3">
                           <p>
-                            Lorem Ipsum has been the industry's standard dummy
-                            text ever since the 1500s, when an unknown printer
-                            took a galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five
-                            centuries, but also the leap into electronic
-                            typesetting, remaining essentially unchanged.{" "}
+                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                            1500s, when an unknown printer took a galley of type and scrambled it to
+                            make a type specimen book. It has survived not only five centuries, but
+                            also the leap into electronic typesetting, remaining essentially
+                            unchanged.{' '}
                           </p>
                         </TabPane>
                       </TabContent>

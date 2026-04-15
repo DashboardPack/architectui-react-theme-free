@@ -1,5 +1,5 @@
-import React, { Fragment, Component } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../utils/TransitionWrapper';
+import React, { Fragment, Component } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../utils/TransitionWrapper';
 
 import {
   Col,
@@ -15,29 +15,25 @@ import {
   Input,
   UncontrolledButtonDropdown,
   DropdownToggle,
-} from "reactstrap";
+} from 'reactstrap';
 
-import cx from "classnames";
-import Hamburger from "hamburger-react";
+import cx from 'classnames';
+import Hamburger from 'hamburger-react';
 
-import PageTitle from "../../../Layout/AppMain/PageTitle";
+import PageTitle from '../../../Layout/AppMain/PageTitle';
 
-import avatar1 from "../../../assets/utils/images/avatars/1.jpg";
-import avatar2 from "../../../assets/utils/images/avatars/2.jpg";
-import avatar3 from "../../../assets/utils/images/avatars/3.jpg";
-import avatar4 from "../../../assets/utils/images/avatars/4.jpg";
-import avatar5 from "../../../assets/utils/images/avatars/5.jpg";
-import avatar6 from "../../../assets/utils/images/avatars/8.jpg";
-import avatar7 from "../../../assets/utils/images/avatars/9.jpg";
-import avatar8 from "../../../assets/utils/images/avatars/10.jpg";
+import avatar1 from '../../../assets/utils/images/avatars/1.jpg';
+import avatar2 from '../../../assets/utils/images/avatars/2.jpg';
+import avatar3 from '../../../assets/utils/images/avatars/3.jpg';
+import avatar4 from '../../../assets/utils/images/avatars/4.jpg';
+import avatar5 from '../../../assets/utils/images/avatars/5.jpg';
+import avatar6 from '../../../assets/utils/images/avatars/8.jpg';
+import avatar7 from '../../../assets/utils/images/avatars/9.jpg';
+import avatar8 from '../../../assets/utils/images/avatars/10.jpg';
 
-import {
-  faCog,
-  faCalendarAlt,
-  faSearch,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCog, faCalendarAlt, faSearch } from '@fortawesome/free-solid-svg-icons';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class Chat extends Component {
   constructor() {
@@ -45,7 +41,7 @@ export default class Chat extends Component {
 
     var exampleItems = [...Array(150).keys()].map((i) => ({
       id: i + 1,
-      name: "Item " + (i + 1),
+      name: 'Item ' + (i + 1),
     }));
     this.onChangePage = this.onChangePage.bind(this);
 
@@ -64,16 +60,26 @@ export default class Chat extends Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <div>
-              <div className={cx("app-inner-layout chat-layout", {
-                  "open-mobile-menu": this.state.active,
-                })}>
+              <div
+                className={cx('app-inner-layout chat-layout', {
+                  'open-mobile-menu': this.state.active,
+                })}
+              >
                 <div className="app-inner-layout__header text-white bg-premium-dark">
-                  <PageTitle heading="Chat Example"
+                  <PageTitle
+                    heading="Chat Example"
                     subheading="Build chat layouts or any other kind of layout easily with ArchitectUI."
-                    icon="pe-7s-umbrella icon-gradient bg-sunny-morning"/>
+                    icon="pe-7s-umbrella icon-gradient bg-sunny-morning"
+                  />
                 </div>
                 <div className="app-inner-layout__wrapper">
                   <Card className="app-inner-layout__content">
@@ -81,7 +87,7 @@ export default class Chat extends Component {
                       <div className="app-inner-layout__top-pane">
                         <div className="pane-left">
                           <div className="mobile-app-menu-btn">
-                            <Hamburger 
+                            <Hamburger
                               toggled={this.state.active}
                               toggle={() => this.setState({ active: !this.state.active })}
                               size={26}
@@ -97,8 +103,7 @@ export default class Chat extends Component {
                           <h4 className="mb-0 text-nowrap">
                             Chad Evans
                             <div className="opacity-7">
-                              Last Seen Online:{" "}
-                              <span className="opacity-8">10 minutes ago</span>
+                              Last Seen Online: <span className="opacity-8">10 minutes ago</span>
                             </div>
                           </h4>
                         </div>
@@ -112,37 +117,27 @@ export default class Chat extends Component {
                             </DropdownToggle>
                             <DropdownMenu end>
                               <Nav vertical>
-                                <NavItem className="nav-item-header">
-                                  Activity
-                                </NavItem>
+                                <NavItem className="nav-item-header">Activity</NavItem>
                                 <NavItem>
                                   <NavLink href="#">
                                     Chat
-                                    <div className="ms-auto badge rounded-pill bg-info">
-                                      8
-                                    </div>
+                                    <div className="ms-auto badge rounded-pill bg-info">8</div>
                                   </NavLink>
                                 </NavItem>
                                 <NavItem>
                                   <NavLink href="#">Recover Password</NavLink>
                                 </NavItem>
-                                <NavItem className="nav-item-header">
-                                  My Account
-                                </NavItem>
+                                <NavItem className="nav-item-header">My Account</NavItem>
                                 <NavItem>
                                   <NavLink href="#">
                                     Settings
-                                    <div className="ms-auto badge bg-success">
-                                      New
-                                    </div>
+                                    <div className="ms-auto badge bg-success">New</div>
                                   </NavLink>
                                 </NavItem>
                                 <NavItem>
                                   <NavLink href="#">
                                     Messages
-                                    <div className="ms-auto badge bg-warning">
-                                      512
-                                    </div>
+                                    <div className="ms-auto badge bg-warning">512</div>
                                   </NavLink>
                                 </NavItem>
                                 <NavItem>
@@ -171,13 +166,12 @@ export default class Chat extends Component {
                           </div>
                           <div>
                             <div className="chat-box">
-                              But I must explain to you how all this mistaken idea
-                              of denouncing pleasure and praising pain was born
-                              and I will give you a complete account of the
-                              system.
+                              But I must explain to you how all this mistaken idea of denouncing
+                              pleasure and praising pain was born and I will give you a complete
+                              account of the system.
                             </div>
                             <small className="opacity-6">
-                              <FontAwesomeIcon icon={faCalendarAlt} className="me-1"/>
+                              <FontAwesomeIcon icon={faCalendarAlt} className="me-1" />
                               11:01 AM | Yesterday
                             </small>
                           </div>
@@ -186,12 +180,11 @@ export default class Chat extends Component {
                           <div className="chat-box-wrapper chat-box-wrapper-right">
                             <div>
                               <div className="chat-box">
-                                Expound the actual teachings of the great explorer
-                                of the truth, the master-builder of human
-                                happiness.
+                                Expound the actual teachings of the great explorer of the truth, the
+                                master-builder of human happiness.
                               </div>
                               <small className="opacity-6">
-                                <FontAwesomeIcon icon={faCalendarAlt} className="me-1"/>
+                                <FontAwesomeIcon icon={faCalendarAlt} className="me-1" />
                                 11:01 AM | Yesterday
                               </small>
                             </div>
@@ -216,13 +209,12 @@ export default class Chat extends Component {
                           </div>
                           <div>
                             <div className="chat-box">
-                              But I must explain to you how all this mistaken idea
-                              of denouncing pleasure and praising pain was born
-                              and I will give you a complete account of the
-                              system.
+                              But I must explain to you how all this mistaken idea of denouncing
+                              pleasure and praising pain was born and I will give you a complete
+                              account of the system.
                             </div>
                             <small className="opacity-6">
-                              <FontAwesomeIcon icon={faCalendarAlt} className="me-1"/>
+                              <FontAwesomeIcon icon={faCalendarAlt} className="me-1" />
                               11:01 AM | Yesterday
                             </small>
                           </div>
@@ -231,11 +223,11 @@ export default class Chat extends Component {
                           <div className="chat-box-wrapper chat-box-wrapper-right">
                             <div>
                               <div className="chat-box">
-                                Denouncing pleasure and praising pain was born and
-                                I will give you a complete account.
+                                Denouncing pleasure and praising pain was born and I will give you a
+                                complete account.
                               </div>
                               <small className="opacity-6">
-                                <FontAwesomeIcon icon={faCalendarAlt} className="me-1"/>
+                                <FontAwesomeIcon icon={faCalendarAlt} className="me-1" />
                                 11:01 AM | Yesterday
                               </small>
                             </div>
@@ -252,11 +244,9 @@ export default class Chat extends Component {
                         <div className="float-end">
                           <div className="chat-box-wrapper chat-box-wrapper-right">
                             <div>
-                              <div className="chat-box">
-                                The master-builder of human happiness.
-                              </div>
+                              <div className="chat-box">The master-builder of human happiness.</div>
                               <small className="opacity-6">
-                                <FontAwesomeIcon icon={faCalendarAlt} className="me-1"/>
+                                <FontAwesomeIcon icon={faCalendarAlt} className="me-1" />
                                 11:01 AM | Yesterday
                               </small>
                             </div>
@@ -281,11 +271,10 @@ export default class Chat extends Component {
                           </div>
                           <div>
                             <div className="chat-box">
-                              Born and I will give you a complete account of the
-                              system.
+                              Born and I will give you a complete account of the system.
                             </div>
                             <small className="opacity-6">
-                              <FontAwesomeIcon icon={faCalendarAlt} className="me-1"/>
+                              <FontAwesomeIcon icon={faCalendarAlt} className="me-1" />
                               11:01 AM | Yesterday
                             </small>
                           </div>
@@ -302,11 +291,11 @@ export default class Chat extends Component {
                           </div>
                           <div>
                             <div className="chat-box">
-                              Mistaken idea of denouncing pleasure and praising
-                              pain was born and I will give you
+                              Mistaken idea of denouncing pleasure and praising pain was born and I
+                              will give you
                             </div>
                             <small className="opacity-6">
-                              <FontAwesomeIcon icon={faCalendarAlt} className="me-1"/>
+                              <FontAwesomeIcon icon={faCalendarAlt} className="me-1" />
                               11:01 AM | Yesterday
                             </small>
                           </div>
@@ -315,7 +304,11 @@ export default class Chat extends Component {
                       <div className="app-inner-layout__bottom-pane d-block text-center">
                         <FormGroup className="mb-0" row>
                           <Col sm={12}>
-                            <Input bsSize="lg" type="text" placeholder="Write here and hit enter to send..."/>
+                            <Input
+                              bsSize="lg"
+                              type="text"
+                              placeholder="Write here and hit enter to send..."
+                            />
                           </Col>
                         </FormGroup>
                       </div>
@@ -332,9 +325,7 @@ export default class Chat extends Component {
                             <Input placeholder="Search..." />
                           </InputGroup>
                         </NavItem>
-                        <NavItem className="nav-item-header">
-                          Friends Online
-                        </NavItem>
+                        <NavItem className="nav-item-header">Friends Online</NavItem>
                       </Nav>
                     </div>
                     <Nav vertical>
@@ -351,9 +342,7 @@ export default class Chat extends Component {
                                 </div>
                               </div>
                               <div className="widget-content-left">
-                                <div className="widget-heading">
-                                  Alina Mcloughlin
-                                </div>
+                                <div className="widget-heading">Alina Mcloughlin</div>
                                 <div className="widget-subheading">
                                   Aenean vulputate eleifend tellus.
                                 </div>
@@ -397,9 +386,7 @@ export default class Chat extends Component {
                                 </div>
                               </div>
                               <div className="widget-content-left">
-                                <div className="widget-heading">
-                                  Ella-Rose Henry
-                                </div>
+                                <div className="widget-heading">Ella-Rose Henry</div>
                                 <div className="widget-subheading">
                                   Etiam sit amet orci eget eros faucibus
                                 </div>
@@ -421,9 +408,7 @@ export default class Chat extends Component {
                                 </div>
                               </div>
                               <div className="widget-content-left">
-                                <div className="widget-heading">
-                                  Ruben Tillman
-                                </div>
+                                <div className="widget-heading">Ruben Tillman</div>
                                 <div className="widget-subheading">
                                   Lorem ipsum dolor sit amet, consectetuer
                                 </div>
@@ -445,9 +430,7 @@ export default class Chat extends Component {
                                 </div>
                               </div>
                               <div className="widget-content-left">
-                                <div className="widget-heading">
-                                  Ella-Rose Henry
-                                </div>
+                                <div className="widget-heading">Ella-Rose Henry</div>
                                 <div className="widget-subheading">
                                   Etiam sit amet orci eget eros faucibus
                                 </div>
@@ -469,9 +452,7 @@ export default class Chat extends Component {
                                 </div>
                               </div>
                               <div className="widget-content-left">
-                                <div className="widget-heading">
-                                  Ruben Tillman
-                                </div>
+                                <div className="widget-heading">Ruben Tillman</div>
                                 <div className="widget-subheading">
                                   Lorem ipsum dolor sit amet, consectetuer
                                 </div>
@@ -484,9 +465,7 @@ export default class Chat extends Component {
                     <div className="app-inner-layout__sidebar-footer pb-3">
                       <Nav vertical>
                         <NavItem className="nav-item-divider" />
-                        <NavItem className="nav-item-header">
-                          Offline Friends
-                        </NavItem>
+                        <NavItem className="nav-item-header">Offline Friends</NavItem>
                         <NavItem className="text-center p-2">
                           <div className="avatar-wrapper avatar-wrapper-overlap">
                             <div className="avatar-icon-wrapper">

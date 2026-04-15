@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
 
-import PageTitle from "../../../../Layout/AppMain/PageTitle";
+import PageTitle from '../../../../Layout/AppMain/PageTitle';
 
 import Tabs, { TabPane } from '../../../../utils/TabsWrapper';
 import { TabContent } from '../../../../utils/TabsWrapper';
@@ -9,21 +9,33 @@ import { ScrollableInkTabBar } from '../../../../utils/TabsWrapper';
 
 // Examples
 
-import FormsDefault from "./Examples/FormBasic";
-import InputGroups from "./Examples/InputGroup/InputGroups";
+import FormsDefault from './Examples/FormBasic';
+import InputGroups from './Examples/InputGroup/InputGroups';
 
 class FormElementsControls extends React.Component {
   render() {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
-            <div>  
-              <PageTitle heading="Form Controls"
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
+            <div>
+              <PageTitle
+                heading="Form Controls"
                 subheading="Wide selection of forms controls, using the Bootstrap 5 code base, but built with React."
-                icon="pe-7s-display1 icon-gradient bg-premium-dark"/>
-              <Tabs defaultActiveKey="1" renderTabBar={() => <ScrollableInkTabBar />} renderTabContent={() => <TabContent />}>
+                icon="pe-7s-display1 icon-gradient bg-premium-dark"
+              />
+              <Tabs
+                defaultActiveKey="1"
+                renderTabBar={() => <ScrollableInkTabBar />}
+                renderTabContent={() => <TabContent />}
+              >
                 <TabPane tab="Basic" key="1">
                   <FormsDefault />
                 </TabPane>

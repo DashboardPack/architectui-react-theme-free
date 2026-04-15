@@ -1,18 +1,18 @@
-import React, { Component, Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../utils/TransitionWrapper';
+import React, { Component, Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../utils/TransitionWrapper';
 
-import PageTitleAlt3 from "../../../Layout/AppMain/PageTitleAlt3";
+import PageTitleAlt3 from '../../../Layout/AppMain/PageTitleAlt3';
 
-import Chart from "react-apexcharts";
+import Chart from 'react-apexcharts';
 
-import bg1 from "../../../assets/utils/images/dropdown-header/abstract1.jpg";
+import bg1 from '../../../assets/utils/images/dropdown-header/abstract1.jpg';
 
-import avatar1 from "../../../assets/utils/images/avatars/1.jpg";
-import avatar2 from "../../../assets/utils/images/avatars/2.jpg";
-import avatar3 from "../../../assets/utils/images/avatars/3.jpg";
-import avatar4 from "../../../assets/utils/images/avatars/4.jpg";
+import avatar1 from '../../../assets/utils/images/avatars/1.jpg';
+import avatar2 from '../../../assets/utils/images/avatars/2.jpg';
+import avatar3 from '../../../assets/utils/images/avatars/3.jpg';
+import avatar4 from '../../../assets/utils/images/avatars/4.jpg';
 
-import classnames from "classnames";
+import classnames from 'classnames';
 
 import {
   Row,
@@ -35,12 +35,12 @@ import {
   DropdownMenu,
   UncontrolledButtonDropdown,
   CardFooter,
-} from "reactstrap";
+} from 'reactstrap';
 
-import Column from "./Examples/Column";
-import Bar2 from "./Examples/Bar";
-import Area from "./Examples/Area";
-import Mixed from "./Examples/Mixed";
+import Column from './Examples/Column';
+import Bar2 from './Examples/Bar';
+import Area from './Examples/Area';
+import Mixed from './Examples/Mixed';
 
 import {
   faAngleUp,
@@ -48,9 +48,9 @@ import {
   faQuestionCircle,
   faBusinessTime,
   faCog,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class MinimalDashboard1 extends Component {
   constructor(props) {
@@ -65,7 +65,7 @@ export default class MinimalDashboard1 extends Component {
       optionsRadial: {
         chart: {
           height: 350,
-          type: "radialBar",
+          type: 'radialBar',
           toolbar: {
             show: true,
           },
@@ -76,12 +76,12 @@ export default class MinimalDashboard1 extends Component {
             endAngle: 225,
             hollow: {
               margin: 0,
-              size: "70%",
-              background: "#fff",
+              size: '70%',
+              background: '#fff',
               image: undefined,
               imageOffsetX: 0,
               imageOffsetY: 0,
-              position: "front",
+              position: 'front',
               dropShadow: {
                 enabled: true,
                 top: 3,
@@ -91,8 +91,8 @@ export default class MinimalDashboard1 extends Component {
               },
             },
             track: {
-              background: "#fff",
-              strokeWidth: "67%",
+              background: '#fff',
+              strokeWidth: '67%',
               margin: 0, // margin is in pixels
               dropShadow: {
                 enabled: true,
@@ -104,31 +104,31 @@ export default class MinimalDashboard1 extends Component {
             },
 
             dataLabels: {
-              showOn: "always",
+              showOn: 'always',
               name: {
                 offsetY: -10,
                 show: true,
-                color: "#888",
-                fontSize: "17px",
+                color: '#888',
+                fontSize: '17px',
               },
               value: {
                 formatter: function (val) {
                   return parseInt(val);
                 },
-                color: "#111",
-                fontSize: "36px",
+                color: '#111',
+                fontSize: '36px',
                 show: true,
               },
             },
           },
         },
         fill: {
-          type: "gradient",
+          type: 'gradient',
           gradient: {
-            shade: "dark",
-            type: "horizontal",
+            shade: 'dark',
+            type: 'horizontal',
             shadeIntensity: 0.5,
-            gradientToColors: ["#ABE5A1"],
+            gradientToColors: ['#ABE5A1'],
             inverseColors: true,
             opacityFrom: 1,
             opacityTo: 1,
@@ -136,9 +136,9 @@ export default class MinimalDashboard1 extends Component {
           },
         },
         stroke: {
-          lineCap: "round",
+          lineCap: 'round',
         },
-        labels: ["Percent"],
+        labels: ['Percent'],
       },
       seriesRadial: [76],
     };
@@ -159,27 +159,38 @@ export default class MinimalDashboard1 extends Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
-            <div>  
-              <PageTitleAlt3 heading="Minimal Dashboards"
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
+            <div>
+              <PageTitleAlt3
+                heading="Minimal Dashboards"
                 subheading="This is an example dashboard created using build-in elements and components."
-                icon="lnr-apartment opacity-6"/>
-              <Alert className="mbg-3" color="info" isOpen={this.state.visible} toggle={this.onDismiss}>
+                icon="lnr-apartment opacity-6"
+              />
+              <Alert
+                className="mbg-3"
+                color="info"
+                isOpen={this.state.visible}
+                toggle={this.onDismiss}
+              >
                 <span className="pe-2">
                   <FontAwesomeIcon icon={faQuestionCircle} />
                 </span>
-                This dashboard example was created using only the available elements
-                and components, no additional SCSS was written!
+                This dashboard example was created using only the available elements and components,
+                no additional SCSS was written!
               </Alert>
               <Row>
                 <Col md="6" lg="3">
                   <Card className="widget-chart widget-chart2 text-start mb-3 card-btm-border card-shadow-primary border-primary">
                     <div className="widget-chat-wrapper-outer">
                       <div className="widget-chart-content">
-                        <div className="widget-title opacity-5 text-uppercase">
-                          New accounts
-                        </div>
+                        <div className="widget-title opacity-5 text-uppercase">New accounts</div>
                         <div className="widget-numbers mt-2 fsize-4 mb-0 w-100">
                           <div className="widget-chart-flex align-items-center">
                             <div>
@@ -199,9 +210,7 @@ export default class MinimalDashboard1 extends Component {
                   <Card className="widget-chart widget-chart2 text-start mb-3 card-btm-border card-shadow-danger border-danger">
                     <div className="widget-chat-wrapper-outer">
                       <div className="widget-chart-content">
-                        <div className="widget-title opacity-5 text-uppercase">
-                          Total Expenses
-                        </div>
+                        <div className="widget-title opacity-5 text-uppercase">Total Expenses</div>
                         <div className="widget-numbers mt-2 fsize-4 mb-0 w-100">
                           <div className="widget-chart-flex align-items-center">
                             <div>
@@ -221,9 +230,7 @@ export default class MinimalDashboard1 extends Component {
                   <Card className="widget-chart widget-chart2 text-start mb-3 card-btm-border card-shadow-warning border-warning">
                     <div className="widget-chat-wrapper-outer">
                       <div className="widget-chart-content">
-                        <div className="widget-title opacity-5 text-uppercase">
-                          Company Value
-                        </div>
+                        <div className="widget-title opacity-5 text-uppercase">Company Value</div>
                         <div className="widget-numbers mt-2 fsize-4 mb-0 w-100">
                           <div className="widget-chart-flex align-items-center">
                             <div>
@@ -240,9 +247,7 @@ export default class MinimalDashboard1 extends Component {
                   <Card className="widget-chart widget-chart2 text-start mb-3 card-btm-border card-shadow-success border-success">
                     <div className="widget-chat-wrapper-outer">
                       <div className="widget-chart-content">
-                        <div className="widget-title opacity-5 text-uppercase">
-                          New Employees
-                        </div>
+                        <div className="widget-title opacity-5 text-uppercase">New Employees</div>
                         <div className="widget-numbers mt-2 fsize-4 mb-0 w-100">
                           <div className="widget-chart-flex align-items-center">
                             <div>
@@ -284,7 +289,10 @@ export default class MinimalDashboard1 extends Component {
                           <DropdownToggle className="btn-icon btn-icon-only" color="link">
                             <i className="lnr-cog btn-icon-wrapper" />
                           </DropdownToggle>
-                          <DropdownMenu end className="dropdown-menu-right rm-pointers dropdown-menu-shadow dropdown-menu-hover-link">
+                          <DropdownMenu
+                            end
+                            className="dropdown-menu-right rm-pointers dropdown-menu-shadow dropdown-menu-hover-link"
+                          >
                             <DropdownItem header>Header</DropdownItem>
                             <DropdownItem>
                               <i className="dropdown-icon lnr-inbox"> </i>
@@ -312,23 +320,24 @@ export default class MinimalDashboard1 extends Component {
                       </div>
                     </CardHeader>
                     <CardBody className="p-0">
-                      <Chart options={this.state.optionsRadial} series={this.state.seriesRadial} type="radialBar" height={270}/>
+                      <Chart
+                        options={this.state.optionsRadial}
+                        series={this.state.seriesRadial}
+                        type="radialBar"
+                        height={270}
+                      />
                       <div className="widget-content pt-0 w-100">
                         <div className="widget-content-outer">
                           <div className="widget-content-wrapper">
                             <div className="widget-content-left pe-2 fsize-1">
-                              <div className="widget-numbers mt-0 fsize-3 text-warning">
-                                32%
-                              </div>
+                              <div className="widget-numbers mt-0 fsize-3 text-warning">32%</div>
                             </div>
                             <div className="widget-content-right w-100">
-                              <Progress className="progress-bar-xs" color="warning" value="32"/>
+                              <Progress className="progress-bar-xs" color="warning" value="32" />
                             </div>
                           </div>
                           <div className="widget-content-left fsize-1">
-                            <div className="text-muted opacity-6">
-                              Spendings Target
-                            </div>
+                            <div className="text-muted opacity-6">Spendings Target</div>
                           </div>
                         </div>
                       </div>
@@ -464,12 +473,10 @@ export default class MinimalDashboard1 extends Component {
                       <div className="widget-content-outer">
                         <div className="widget-content-wrapper">
                           <div className="widget-content-left pe-2 fsize-1">
-                            <div className="widget-numbers mt-0 fsize-3 text-danger">
-                              71%
-                            </div>
+                            <div className="widget-numbers mt-0 fsize-3 text-danger">71%</div>
                           </div>
                           <div className="widget-content-right w-100">
-                            <Progress className="progress-bar-xs" color="danger" value="71"/>
+                            <Progress className="progress-bar-xs" color="danger" value="71" />
                           </div>
                         </div>
                         <div className="widget-content-left fsize-1">
@@ -485,18 +492,14 @@ export default class MinimalDashboard1 extends Component {
                       <div className="widget-content-outer">
                         <div className="widget-content-wrapper">
                           <div className="widget-content-left pe-2 fsize-1">
-                            <div className="widget-numbers mt-0 fsize-3 text-success">
-                              54%
-                            </div>
+                            <div className="widget-numbers mt-0 fsize-3 text-success">54%</div>
                           </div>
                           <div className="widget-content-right w-100">
-                            <Progress className="progress-bar-xs" color="success" value="54"/>
+                            <Progress className="progress-bar-xs" color="success" value="54" />
                           </div>
                         </div>
                         <div className="widget-content-left fsize-1">
-                          <div className="text-muted opacity-6">
-                            Expenses Target
-                          </div>
+                          <div className="text-muted opacity-6">Expenses Target</div>
                         </div>
                       </div>
                     </div>
@@ -508,18 +511,14 @@ export default class MinimalDashboard1 extends Component {
                       <div className="widget-content-outer">
                         <div className="widget-content-wrapper">
                           <div className="widget-content-left pe-2 fsize-1">
-                            <div className="widget-numbers mt-0 fsize-3 text-warning">
-                              32%
-                            </div>
+                            <div className="widget-numbers mt-0 fsize-3 text-warning">32%</div>
                           </div>
                           <div className="widget-content-right w-100">
-                            <Progress className="progress-bar-xs" color="warning" value="32"/>
+                            <Progress className="progress-bar-xs" color="warning" value="32" />
                           </div>
                         </div>
                         <div className="widget-content-left fsize-1">
-                          <div className="text-muted opacity-6">
-                            Spendings Target
-                          </div>
+                          <div className="text-muted opacity-6">Spendings Target</div>
                         </div>
                       </div>
                     </div>
@@ -531,12 +530,10 @@ export default class MinimalDashboard1 extends Component {
                       <div className="widget-content-outer">
                         <div className="widget-content-wrapper">
                           <div className="widget-content-left pe-2 fsize-1">
-                            <div className="widget-numbers mt-0 fsize-3 text-info">
-                              89%
-                            </div>
+                            <div className="widget-numbers mt-0 fsize-3 text-info">89%</div>
                           </div>
                           <div className="widget-content-right w-100">
-                            <Progress className="progress-bar-xs" color="info" value="89"/>
+                            <Progress className="progress-bar-xs" color="info" value="89" />
                           </div>
                         </div>
                         <div className="widget-content-left fsize-1">
@@ -593,30 +590,50 @@ export default class MinimalDashboard1 extends Component {
                       <div className="grid-menu grid-menu-2col">
                         <Row className="g-0">
                           <Col sm="6" className="p-2">
-                            <Button className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
-                              outline color="dark">
-                              <i className="lnr-car text-primary opacity-7 btn-icon-wrapper mb-2"> {" "} </i>
+                            <Button
+                              className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
+                              outline
+                              color="dark"
+                            >
+                              <i className="lnr-car text-primary opacity-7 btn-icon-wrapper mb-2">
+                                {' '}
+                              </i>
                               Admin
                             </Button>
                           </Col>
                           <Col sm="6" className="p-2">
-                            <Button className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
-                              outline color="dark">
-                              <i className="lnr-bullhorn text-danger opacity-7 btn-icon-wrapper mb-2"> {" "} </i>
+                            <Button
+                              className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
+                              outline
+                              color="dark"
+                            >
+                              <i className="lnr-bullhorn text-danger opacity-7 btn-icon-wrapper mb-2">
+                                {' '}
+                              </i>
                               Blog
                             </Button>
                           </Col>
                           <Col sm="6" className="p-2">
-                            <Button className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
-                              outline color="dark">
-                              <i className="lnr-bug text-success opacity-7 btn-icon-wrapper mb-2"> {" "} </i>
+                            <Button
+                              className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
+                              outline
+                              color="dark"
+                            >
+                              <i className="lnr-bug text-success opacity-7 btn-icon-wrapper mb-2">
+                                {' '}
+                              </i>
                               Register
                             </Button>
                           </Col>
                           <Col sm="6" className="p-2">
-                            <Button className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
-                              outline color="dark">
-                              <i className="lnr-heart text-warning opacity-7 btn-icon-wrapper mb-2"> {" "} </i>
+                            <Button
+                              className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
+                              outline
+                              color="dark"
+                            >
+                              <i className="lnr-heart text-warning opacity-7 btn-icon-wrapper mb-2">
+                                {' '}
+                              </i>
                               Directory
                             </Button>
                           </Col>
@@ -644,30 +661,50 @@ export default class MinimalDashboard1 extends Component {
                       <div className="grid-menu grid-menu-2col">
                         <Row className="g-0">
                           <Col sm="6" className="p-2">
-                            <Button className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
-                              outline color="dark">
-                              <i className="lnr-apartment text-dark opacity-7 btn-icon-wrapper mb-2"> {" "} </i>
+                            <Button
+                              className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
+                              outline
+                              color="dark"
+                            >
+                              <i className="lnr-apartment text-dark opacity-7 btn-icon-wrapper mb-2">
+                                {' '}
+                              </i>
                               Overview
                             </Button>
                           </Col>
                           <Col sm="6" className="p-2">
-                            <Button className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
-                              outline color="dark">
-                              <i className="lnr-database text-dark opacity-7 btn-icon-wrapper mb-2"> {" "} </i>
+                            <Button
+                              className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
+                              outline
+                              color="dark"
+                            >
+                              <i className="lnr-database text-dark opacity-7 btn-icon-wrapper mb-2">
+                                {' '}
+                              </i>
                               Support
                             </Button>
                           </Col>
                           <Col sm="6" className="p-2">
-                            <Button className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
-                              outline color="dark">
-                              <i className="lnr-printer text-dark opacity-7 btn-icon-wrapper mb-2"> {" "} </i>
+                            <Button
+                              className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
+                              outline
+                              color="dark"
+                            >
+                              <i className="lnr-printer text-dark opacity-7 btn-icon-wrapper mb-2">
+                                {' '}
+                              </i>
                               Activities
                             </Button>
                           </Col>
                           <Col sm="6" className="p-2">
-                            <Button className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
-                              outline color="dark">
-                              <i className="lnr-store text-dark opacity-7 btn-icon-wrapper mb-2"> {" "} </i>
+                            <Button
+                              className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
+                              outline
+                              color="dark"
+                            >
+                              <i className="lnr-store text-dark opacity-7 btn-icon-wrapper mb-2">
+                                {' '}
+                              </i>
                               Marketing
                             </Button>
                           </Col>
@@ -683,7 +720,12 @@ export default class MinimalDashboard1 extends Component {
                         Total Expenses
                       </div>
                       <div className="btn-actions-pane-right text-capitalize">
-                        <Button size="sm" outline className="btn-wide btn-outline-2x" color="primary">
+                        <Button
+                          size="sm"
+                          outline
+                          className="btn-wide btn-outline-2x"
+                          color="primary"
+                        >
                           View All
                         </Button>
                       </div>
@@ -695,30 +737,48 @@ export default class MinimalDashboard1 extends Component {
                       <div className="grid-menu grid-menu-2col">
                         <Row className="g-0">
                           <Col sm="6" className="p-2">
-                            <Button className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
-                              outline color="success">
-                              <i className="lnr-lighter text-success opacity-7 btn-icon-wrapper mb-2"> {" "} </i>
+                            <Button
+                              className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
+                              outline
+                              color="success"
+                            >
+                              <i className="lnr-lighter text-success opacity-7 btn-icon-wrapper mb-2">
+                                {' '}
+                              </i>
                               Accounts
                             </Button>
                           </Col>
                           <Col sm="6" className="p-2">
-                            <Button className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
-                              outline color="warning">
-                              <i className="lnr-construction text-warning opacity-7 btn-icon-wrapper mb-2"> {" "} </i>
+                            <Button
+                              className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
+                              outline
+                              color="warning"
+                            >
+                              <i className="lnr-construction text-warning opacity-7 btn-icon-wrapper mb-2">
+                                {' '}
+                              </i>
                               Contacts
                             </Button>
                           </Col>
                           <Col sm="6" className="p-2">
-                            <Button className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
-                              outline color="info">
-                              <i className="lnr-bus text-info opacity-7 btn-icon-wrapper mb-2"> {" "} </i>
+                            <Button
+                              className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
+                              outline
+                              color="info"
+                            >
+                              <i className="lnr-bus text-info opacity-7 btn-icon-wrapper mb-2"> </i>
                               Products
                             </Button>
                           </Col>
                           <Col sm="6" className="p-2">
-                            <Button className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
-                              outline color="alternate">
-                              <i className="lnr-gift text-alternate opacity-7 btn-icon-wrapper mb-2"> {" "} </i>
+                            <Button
+                              className="btn-icon-vertical btn-transition-text btn-transition btn-transition-alt pt-2 pb-2"
+                              outline
+                              color="alternate"
+                            >
+                              <i className="lnr-gift text-alternate opacity-7 btn-icon-wrapper mb-2">
+                                {' '}
+                              </i>
                               Services
                             </Button>
                           </Col>
@@ -734,30 +794,38 @@ export default class MinimalDashboard1 extends Component {
                     Company Agents Status
                   </div>
                   <div className="btn-actions-pane-right">
-                    <Button size="sm" outline className="btn-icon btn-wide btn-outline-2x"
-                      id={"PopoverCustomT-1"} onClick={this.togglePop1} color="focus">
+                    <Button
+                      size="sm"
+                      outline
+                      className="btn-icon btn-wide btn-outline-2x"
+                      id={'PopoverCustomT-1'}
+                      onClick={this.togglePop1}
+                      color="focus"
+                    >
                       Actions Menu
                       <span className="ps-2 align-middle opacity-7">
                         <FontAwesomeIcon icon={faAngleDown} />
                       </span>
                     </Button>
-                    <Popover className="popover-custom rm-pointers" placement="auto"
-                      isOpen={this.state.popoverOpen1} target={"PopoverCustomT-1"} toggle={this.togglePop1}>
+                    <Popover
+                      className="popover-custom rm-pointers"
+                      placement="auto"
+                      isOpen={this.state.popoverOpen1}
+                      target={'PopoverCustomT-1'}
+                      toggle={this.togglePop1}
+                    >
                       <PopoverBody>
                         <div className="dropdown-menu-header">
-                          <div
-                            className={classnames(
-                              "dropdown-menu-header-inner bg-focus"
-                            )}>
-                            <div className="menu-header-image"
+                          <div className={classnames('dropdown-menu-header-inner bg-focus')}>
+                            <div
+                              className="menu-header-image"
                               style={{
-                                backgroundImage: "url(" + bg1 + ")",
-                              }}/>
+                                backgroundImage: 'url(' + bg1 + ')',
+                              }}
+                            />
                             <div className="menu-header-content">
                               <h5 className="menu-header-title">Settings</h5>
-                              <h6 className="menu-header-subtitle">
-                                Manage all of your options
-                              </h6>
+                              <h6 className="menu-header-subtitle">Manage all of your options</h6>
                             </div>
                           </div>
                         </div>
@@ -766,9 +834,7 @@ export default class MinimalDashboard1 extends Component {
                           <NavItem>
                             <NavLink href="#">
                               Chat
-                              <div className="ms-auto badge rounded-pill bg-info">
-                                8
-                              </div>
+                              <div className="ms-auto badge rounded-pill bg-info">8</div>
                             </NavLink>
                           </NavItem>
                           <NavItem>
@@ -800,11 +866,11 @@ export default class MinimalDashboard1 extends Component {
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="text-center text-muted" style={{ width: "80px" }}>
+                      <td className="text-center text-muted" style={{ width: '80px' }}>
                         #54
                       </td>
-                      <td className="text-center" style={{ width: "80px" }}>
-                        <img width={40} className="rounded-circle" src={avatar1} alt=""/>
+                      <td className="text-center" style={{ width: '80px' }}>
+                        <img width={40} className="rounded-circle" src={avatar1} alt="" />
                       </td>
                       <td className="text-center">
                         <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()}>
@@ -817,9 +883,7 @@ export default class MinimalDashboard1 extends Component {
                         </a>
                       </td>
                       <td className="text-center">
-                        <div className="badge rounded-pill bg-danger">
-                          Canceled
-                        </div>
+                        <div className="badge rounded-pill bg-danger">Canceled</div>
                       </td>
                       <td className="text-center">
                         <span className="pe-2 opacity-6">
@@ -827,17 +891,15 @@ export default class MinimalDashboard1 extends Component {
                         </span>
                         12 Dec
                       </td>
-                      <td className="text-center" style={{ width: "200px" }}>
+                      <td className="text-center" style={{ width: '200px' }}>
                         <div className="widget-content p-0">
                           <div className="widget-content-outer">
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left pe-2">
-                                <div className="widget-numbers fsize-1 text-danger">
-                                  71%
-                                </div>
+                                <div className="widget-numbers fsize-1 text-danger">71%</div>
                               </div>
                               <div className="widget-content-right w-100">
-                                <Progress className="progress-bar-xs" color="danger" value="71"/>
+                                <Progress className="progress-bar-xs" color="danger" value="71" />
                               </div>
                             </div>
                           </div>
@@ -855,11 +917,11 @@ export default class MinimalDashboard1 extends Component {
                       </td>
                     </tr>
                     <tr>
-                      <td className="text-center text-muted" style={{ width: "80px" }}>
+                      <td className="text-center text-muted" style={{ width: '80px' }}>
                         #55
                       </td>
-                      <td className="text-center" style={{ width: "80px" }}>
-                        <img width={40} className="rounded-circle" src={avatar2} alt=""/>
+                      <td className="text-center" style={{ width: '80px' }}>
+                        <img width={40} className="rounded-circle" src={avatar2} alt="" />
                       </td>
                       <td className="text-center">
                         <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()}>
@@ -880,17 +942,15 @@ export default class MinimalDashboard1 extends Component {
                         </span>
                         15 Dec
                       </td>
-                      <td className="text-center" style={{ width: "200px" }}>
+                      <td className="text-center" style={{ width: '200px' }}>
                         <div className="widget-content p-0">
                           <div className="widget-content-outer">
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left pe-2">
-                                <div className="widget-numbers fsize-1 text-warning">
-                                  54%
-                                </div>
+                                <div className="widget-numbers fsize-1 text-warning">54%</div>
                               </div>
                               <div className="widget-content-right w-100">
-                                <Progress className="progress-bar-xs" color="warning" value="54"/>
+                                <Progress className="progress-bar-xs" color="warning" value="54" />
                               </div>
                             </div>
                           </div>
@@ -908,11 +968,11 @@ export default class MinimalDashboard1 extends Component {
                       </td>
                     </tr>
                     <tr>
-                      <td className="text-center text-muted" style={{ width: "80px" }}>
+                      <td className="text-center text-muted" style={{ width: '80px' }}>
                         #56
                       </td>
-                      <td className="text-center" style={{ width: "80px" }}>
-                        <img width={40} className="rounded-circle" src={avatar3} alt=""/>
+                      <td className="text-center" style={{ width: '80px' }}>
+                        <img width={40} className="rounded-circle" src={avatar3} alt="" />
                       </td>
                       <td className="text-center">
                         <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()}>
@@ -925,9 +985,7 @@ export default class MinimalDashboard1 extends Component {
                         </a>
                       </td>
                       <td className="text-center">
-                        <div className="badge rounded-pill bg-warning">
-                          In Progress
-                        </div>
+                        <div className="badge rounded-pill bg-warning">In Progress</div>
                       </td>
                       <td className="text-center">
                         <span className="pe-2 opacity-6">
@@ -935,17 +993,15 @@ export default class MinimalDashboard1 extends Component {
                         </span>
                         6 Dec
                       </td>
-                      <td className="text-center" style={{ width: "200px" }}>
+                      <td className="text-center" style={{ width: '200px' }}>
                         <div className="widget-content p-0">
                           <div className="widget-content-outer">
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left pe-2">
-                                <div className="widget-numbers fsize-1 text-success">
-                                  97%
-                                </div>
+                                <div className="widget-numbers fsize-1 text-success">97%</div>
                               </div>
                               <div className="widget-content-right w-100">
-                                <Progress className="progress-bar-xs" color="success" value="97"/>
+                                <Progress className="progress-bar-xs" color="success" value="97" />
                               </div>
                             </div>
                           </div>
@@ -963,11 +1019,11 @@ export default class MinimalDashboard1 extends Component {
                       </td>
                     </tr>
                     <tr>
-                      <td className="text-center text-muted" style={{ width: "80px" }}>
+                      <td className="text-center text-muted" style={{ width: '80px' }}>
                         #56
                       </td>
-                      <td className="text-center" style={{ width: "80px" }}>
-                        <img width={40} className="rounded-circle" src={avatar4} alt=""/>
+                      <td className="text-center" style={{ width: '80px' }}>
+                        <img width={40} className="rounded-circle" src={avatar4} alt="" />
                       </td>
                       <td className="text-center">
                         <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()}>
@@ -980,9 +1036,7 @@ export default class MinimalDashboard1 extends Component {
                         </a>
                       </td>
                       <td className="text-center">
-                        <div className="badge rounded-pill bg-success">
-                          Completed
-                        </div>
+                        <div className="badge rounded-pill bg-success">Completed</div>
                       </td>
                       <td className="text-center">
                         <span className="pe-2 opacity-6">
@@ -990,17 +1044,15 @@ export default class MinimalDashboard1 extends Component {
                         </span>
                         19 Dec
                       </td>
-                      <td className="text-center" style={{ width: "200px" }}>
+                      <td className="text-center" style={{ width: '200px' }}>
                         <div className="widget-content p-0">
                           <div className="widget-content-outer">
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left pe-2">
-                                <div className="widget-numbers fsize-1 text-info">
-                                  88%
-                                </div>
+                                <div className="widget-numbers fsize-1 text-info">88%</div>
                               </div>
                               <div className="widget-content-right w-100">
-                                <Progress className="progress-bar-xs" color="info" value="88"/>
+                                <Progress className="progress-bar-xs" color="info" value="88" />
                               </div>
                             </div>
                           </div>

@@ -52,8 +52,9 @@
   &:active,
   &:hover {
     border-color: shade-color($primary, 15%);
-    box-shadow: 0 0.46875rem 2.1875rem rgba($primary, .8),
-    0 0.125rem 0.5875rem rgba($primary, .9);
+    box-shadow:
+      0 0.46875rem 2.1875rem rgba($primary, 0.8),
+      0 0.125rem 0.5875rem rgba($primary, 0.9);
   }
 
   &:active {
@@ -178,14 +179,14 @@
 
 .rc-slider-tooltip-zoom-down-enter,
 .rc-slider-tooltip-zoom-down-appear {
-  animation-duration: .3s;
+  animation-duration: 0.3s;
   animation-fill-mode: both;
   display: block !important;
   animation-play-state: paused;
 }
 
 .rc-slider-tooltip-zoom-down-leave {
-  animation-duration: .3s;
+  animation-duration: 0.3s;
   animation-fill-mode: both;
   display: block !important;
   animation-play-state: paused;
@@ -299,8 +300,9 @@
       &:active,
       &:hover {
         border-color: shade-color($value, 15%);
-        box-shadow: 0 0.46875rem 2.1875rem rgba($value, .8),
-        0 0.125rem 0.5875rem rgba($value, .9);
+        box-shadow:
+          0 0.46875rem 2.1875rem rgba($value, 0.8),
+          0 0.125rem 0.5875rem rgba($value, 0.9);
       }
     }
 
@@ -326,7 +328,7 @@
 .rc-slider-square {
   .rc-slider-handle {
     @include border-radius(3px);
-    border-widtH: 1px;
+    border-width: 1px;
 
     &:before {
       position: absolute;
@@ -382,7 +384,6 @@
       }
     }
   }
-
 }
 
 .rc-slider-sm {
@@ -425,4 +426,3 @@
     }
   }
 }
-

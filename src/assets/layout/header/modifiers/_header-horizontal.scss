@@ -1,6 +1,6 @@
 // Header Horizontal
 
-@use "sass:math";
+@use 'sass:math';
 
 .app-horizontal-header-layout {
   .app-header__logo {
@@ -53,7 +53,7 @@
 
         .metismenu-icon {
           margin-right: 0.5rem;
-          opacity: .6;
+          opacity: 0.6;
         }
       }
 

@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { Col, Row, Button, FormGroup, Label, Input } from "reactstrap";
+import React, { Fragment } from 'react';
+import { Col, Row, Button, FormGroup, Label, Input } from 'reactstrap';
 
 // Layout
 
@@ -16,9 +16,8 @@ const RegisterBoxed = () => (
                   <h4 className="mt-2">
                     <div>Welcome,</div>
                     <span>
-                      It only takes a{" "}
-                      <span className="text-success">few seconds</span> to
-                      create your account
+                      It only takes a <span className="text-success">few seconds</span> to create
+                      your account
                     </span>
                   </h4>
                 </h5>
@@ -26,29 +25,44 @@ const RegisterBoxed = () => (
                 <Row form>
                   <Col md={12}>
                     <FormGroup>
-                      <Input type="email" name="email" id="exampleEmail" placeholder="Email here..."/>
+                      <Input
+                        type="email"
+                        name="email"
+                        id="exampleEmail"
+                        placeholder="Email here..."
+                      />
                     </FormGroup>
                   </Col>
                   <Col md={12}>
                     <FormGroup>
-                      <Input type="text" name="text"  id="exampleName" placeholder="Name here..."/>
+                      <Input type="text" name="text" id="exampleName" placeholder="Name here..." />
                     </FormGroup>
                   </Col>
                   <Col md={12}>
                     <FormGroup>
-                      <Input type="password" name="password" id="examplePassword" placeholder="Password here..."/>
+                      <Input
+                        type="password"
+                        name="password"
+                        id="examplePassword"
+                        placeholder="Password here..."
+                      />
                     </FormGroup>
                   </Col>
                   <Col md={12}>
                     <FormGroup>
-                      <Input type="password" name="passwordrep" id="examplePasswordRep"  placeholder="Repeat Password here..."/>
+                      <Input
+                        type="password"
+                        name="passwordrep"
+                        id="examplePasswordRep"
+                        placeholder="Repeat Password here..."
+                      />
                     </FormGroup>
                   </Col>
                 </Row>
                 <FormGroup className="mt-3" check>
                   <Input type="checkbox" name="check" id="exampleCheck" />
                   <Label for="exampleCheck" check>
-                    Accept our{" "}
+                    Accept our{' '}
                     <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()}>
                       Terms and Conditions
                     </a>
@@ -57,18 +71,30 @@ const RegisterBoxed = () => (
                 </FormGroup>
                 <Row className="divider" />
                 <h6 className="mb-0">
-                  Already have an account?{" "}
-                  <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()} className="text-primary">
+                  Already have an account?{' '}
+                  <a
+                    href="https://colorlib.com/"
+                    onClick={(e) => e.preventDefault()}
+                    className="text-primary"
+                  >
                     Sign in
-                  </a>{" "}
-                  |{" "}
-                  <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()} className="text-primary">
+                  </a>{' '}
+                  |{' '}
+                  <a
+                    href="https://colorlib.com/"
+                    onClick={(e) => e.preventDefault()}
+                    className="text-primary"
+                  >
                     Recover Password
                   </a>
                 </h6>
               </div>
               <div className="modal-footer d-block text-center">
-                <Button color="primary" className="btn-wide btn-pill btn-shadow btn-hover-shine" size="lg">
+                <Button
+                  color="primary"
+                  className="btn-wide btn-pill btn-shadow btn-hover-shine"
+                  size="lg"
+                >
                   Create Account
                 </Button>
               </div>

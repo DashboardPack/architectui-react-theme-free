@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../../utils/TransitionWrapper';
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../utils/TransitionWrapper';
 import {
   Col,
   Card,
@@ -12,15 +12,21 @@ import {
   Input,
   FormText,
   Container,
-} from "reactstrap";
+} from 'reactstrap';
 
 export default class FormGrid extends React.Component {
   render() {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Card className="main-card mb-3">
                 <CardBody>
@@ -31,7 +37,12 @@ export default class FormGrid extends React.Component {
                         Email
                       </Label>
                       <Col sm={10}>
-                        <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder"/>
+                        <Input
+                          type="email"
+                          name="email"
+                          id="exampleEmail"
+                          placeholder="with a placeholder"
+                        />
                       </Col>
                     </FormGroup>
                     <FormGroup row>
@@ -39,7 +50,12 @@ export default class FormGrid extends React.Component {
                         Password
                       </Label>
                       <Col sm={10}>
-                        <Input type="password" name="password" id="examplePassword" placeholder="password placeholder"/>
+                        <Input
+                          type="password"
+                          name="password"
+                          id="examplePassword"
+                          placeholder="password placeholder"
+                        />
                       </Col>
                     </FormGroup>
                     <FormGroup row>
@@ -55,7 +71,7 @@ export default class FormGrid extends React.Component {
                         Select Multiple
                       </Label>
                       <Col sm={10}>
-                        <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple/>
+                        <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple />
                       </Col>
                     </FormGroup>
                     <FormGroup row>
@@ -73,34 +89,29 @@ export default class FormGrid extends React.Component {
                       <Col sm={10}>
                         <Input type="file" name="file" id="exampleFile" />
                         <FormText color="muted">
-                          This is some placeholder block-level help text for the
-                          above input. It's a bit lighter and easily wraps to a
-                          new line.
+                          This is some placeholder block-level help text for the above input. It's a
+                          bit lighter and easily wraps to a new line.
                         </FormText>
                       </Col>
                     </FormGroup>
                     <FormGroup tag="fieldset" row>
-                      <legend className="col-form-label col-sm-2">
-                        Radio Buttons
-                      </legend>
+                      <legend className="col-form-label col-sm-2">Radio Buttons</legend>
                       <Col sm={10}>
                         <FormGroup check>
                           <Label check>
-                            <Input type="radio" name="radio2" /> Option one is
-                            this and that—be sure to include why it's great
+                            <Input type="radio" name="radio2" /> Option one is this and that—be sure
+                            to include why it's great
                           </Label>
                         </FormGroup>
                         <FormGroup check>
                           <Label check>
-                            <Input type="radio" name="radio2" /> Option two can be
-                            something else and selecting it will deselect option
-                            one
+                            <Input type="radio" name="radio2" /> Option two can be something else
+                            and selecting it will deselect option one
                           </Label>
                         </FormGroup>
                         <FormGroup check disabled>
                           <Label check>
-                            <Input type="radio" name="radio2" disabled /> Option
-                            three is disabled
+                            <Input type="radio" name="radio2" disabled /> Option three is disabled
                           </Label>
                         </FormGroup>
                       </Col>

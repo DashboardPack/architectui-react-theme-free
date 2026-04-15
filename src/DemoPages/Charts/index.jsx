@@ -1,13 +1,13 @@
-import React, { Fragment } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { Fragment } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 // Charts
 
-import ChartsSparklines1 from "./Sparklines1/";
-import ChartsSparklines2 from "./Sparklines2/";
-import ChartsChartJs from "./ChartJs/";
-import ChartsGauges from "./Gauges/";
-import ApexCharts from "./ApexCharts/";
+import ChartsSparklines1 from './Sparklines1/';
+import ChartsSparklines2 from './Sparklines2/';
+import ChartsChartJs from './ChartJs/';
+import ChartsGauges from './Gauges/';
+import ApexCharts from './ApexCharts/';
 
 const Charts = () => (
   <Fragment>

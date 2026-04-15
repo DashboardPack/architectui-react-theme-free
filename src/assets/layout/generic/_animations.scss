@@ -7,7 +7,7 @@
   &.SidebarAnimation-appear-active {
     opacity: 1;
     transform: translateX(0);
-    transition: all .4s linear;
+    transition: all 0.4s linear;
   }
 }
 
@@ -27,7 +27,7 @@
   &.HeaderAnimation-appear-active {
     opacity: 1;
     transform: translateY(0);
-    transition: all .4s linear;
+    transition: all 0.4s linear;
   }
 }
 
@@ -40,6 +40,6 @@
   &.MainAnimation-appear-active {
     opacity: 1;
     transform: translateY(0);
-    transition: all .4s linear;
+    transition: all 0.4s linear;
   }
 }

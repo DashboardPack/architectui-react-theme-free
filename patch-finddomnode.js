@@ -2,7 +2,7 @@
 
 /**
  * React 19 findDOMNode Patcher
- * 
+ *
  * This script patches node_modules files that use the deprecated findDOMNode
  * to make them compatible with React 19.
  */
@@ -16,7 +16,7 @@ console.log('🔧 Patching findDOMNode usage for React 19 compatibility...');
 // Find all JS files in node_modules that might use findDOMNode
 const patterns = [
   'node_modules/react-onclickoutside/**/*.js',
-  'node_modules/react-widgets/**/*.js'
+  'node_modules/react-widgets/**/*.js',
 ];
 
 const findDOMNodeReplacement = `
@@ -29,22 +29,25 @@ const findDOMNode = (component) => {
 };
 `;
 
-patterns.forEach(pattern => {
+patterns.forEach((pattern) => {
   const files = glob.sync(pattern);
-  
-  files.forEach(filePath => {
+
+  files.forEach((filePath) => {
     try {
       let content = fs.readFileSync(filePath, 'utf8');
-      
+
       // Check if this file imports or uses findDOMNode
       if (content.includes('findDOMNode')) {
         console.log(`📝 Patching: ${filePath}`);
-        
+
         // Replace the import of findDOMNode
         content = content.replace(
           /import\s*{\s*([^}]*?)findDOMNode([^}]*?)\s*}\s*from\s*['"]react-dom['"]/g,
           (match, before, after) => {
-            const otherImports = (before + after).replace(/,\s*,/g, ',').replace(/^,|,$/g, '').trim();
+            const otherImports = (before + after)
+              .replace(/,\s*,/g, ',')
+              .replace(/^,|,$/g, '')
+              .trim();
             if (otherImports) {
               return `import { ${otherImports} } from 'react-dom';\n${findDOMNodeReplacement}`;
             } else {
@@ -52,12 +55,15 @@ patterns.forEach(pattern => {
             }
           }
         );
-        
+
         // Also handle export pattern
         content = content.replace(
           /export\s*{\s*([^}]*?)findDOMNode([^}]*?)\s*}\s*from\s*['"]react-dom['"]/g,
           (match, before, after) => {
-            const otherExports = (before + after).replace(/,\s*,/g, ',').replace(/^,|,$/g, '').trim();
+            const otherExports = (before + after)
+              .replace(/,\s*,/g, ',')
+              .replace(/^,|,$/g, '')
+              .trim();
             if (otherExports) {
               return `export { ${otherExports} } from 'react-dom';\n${findDOMNodeReplacement}\nexport { findDOMNode };`;
             } else {
@@ -65,7 +71,7 @@ patterns.forEach(pattern => {
             }
           }
         );
-        
+
         // Write the patched content back
         fs.writeFileSync(filePath, content, 'utf8');
         console.log(`✅ Successfully patched: ${filePath}`);
@@ -76,4 +82,4 @@ patterns.forEach(pattern => {
   });
 });
 
-console.log('🎉 Patching complete! Try running npm start again.'); 
+console.log('🎉 Patching complete! Try running npm start again.');

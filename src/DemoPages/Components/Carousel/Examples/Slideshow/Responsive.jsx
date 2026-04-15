@@ -1,5 +1,5 @@
-import React, { Fragment, Component } from "react";
-import Slider from "react-slick";
+import React, { Fragment, Component } from 'react';
+import Slider from 'react-slick';
 
 export default class Responsive extends Component {
   render() {

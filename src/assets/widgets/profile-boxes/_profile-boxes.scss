@@ -1,6 +1,6 @@
 // Profile Boxes
 
-@use "sass:math";
+@use 'sass:math';
 
 .profile-block {
   position: relative;
@@ -20,13 +20,12 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: .5;
+    opacity: 0.5;
     left: 0;
     top: 0;
   }
 
   .dropdown-menu-header {
-
     .menu-header-content {
       padding: $layout-spacer-lg;
 
@@ -51,10 +50,9 @@
         font-size: $font-size-lg;
 
         &:hover {
-          background: rgba(255, 255, 255, .2);
+          background: rgba(255, 255, 255, 0.2);
         }
       }
     }
   }
-
 }

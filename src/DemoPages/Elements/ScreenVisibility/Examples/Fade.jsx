@@ -1,35 +1,14 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react';
 
-import cx from "classnames";
+import cx from 'classnames';
 
-import VisibilitySensor from "react-visibility-sensor";
+import VisibilitySensor from 'react-visibility-sensor';
 
-import { ListGroup, ListGroupItem } from "reactstrap";
+import { ListGroup, ListGroupItem } from 'reactstrap';
 
-import PerfectScrollbar from "react-perfect-scrollbar";
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
-const lists = [
-  1,
-  2,
-  3,
-  4,
-  5,
-  6,
-  7,
-  8,
-  9,
-  10,
-  11,
-  12,
-  13,
-  14,
-  15,
-  16,
-  17,
-  18,
-  19,
-  20,
-];
+const lists = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 export default class FadeVisibility extends React.Component {
   constructor(props) {
     super(props);
@@ -42,14 +21,12 @@ export default class FadeVisibility extends React.Component {
   componentDidMount() {
     this.setState(() => {
       return {
-        getElement: document.getElementById("sample"),
+        getElement: document.getElementById('sample'),
       };
     });
   }
   render() {
-    var containmentDOMRect = this.state.getElement
-      ? this.state.getElement
-      : null;
+    var containmentDOMRect = this.state.getElement ? this.state.getElement : null;
 
     return (
       <Fragment>
@@ -62,13 +39,14 @@ export default class FadeVisibility extends React.Component {
                     {({ isVisible }) => {
                       return (
                         <ListGroupItem
-                          className={cx("animated", {
+                          className={cx('animated', {
                             fadeIn: isVisible,
                             fadeOut: !isVisible,
                           })}
                           style={{
-                            background: isVisible ? "transparent" : "#f65ca2",
-                          }}>
+                            background: isVisible ? 'transparent' : '#f65ca2',
+                          }}
+                        >
                           I am #{list}
                         </ListGroupItem>
                       );

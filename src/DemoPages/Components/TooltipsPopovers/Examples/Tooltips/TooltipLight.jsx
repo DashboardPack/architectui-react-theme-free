@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { Button, Tooltip } from "reactstrap";
+import React, { Fragment } from 'react';
+import { Button, Tooltip } from 'reactstrap';
 
 class TooltipItem extends React.Component {
   constructor(props) {
@@ -20,11 +20,16 @@ class TooltipItem extends React.Component {
   render() {
     return (
       <Fragment>
-        <Button className="me-2 mb-2" color="primary" id={"TooltipLight-" + this.props.id}>
+        <Button className="me-2 mb-2" color="primary" id={'TooltipLight-' + this.props.id}>
           {this.props.item.text}
         </Button>
-        <Tooltip className="tooltip-light" placement={this.props.item.placement}
-          isOpen={this.state.tooltipOpen} target={"TooltipLight-" + this.props.id} toggle={this.toggle}>
+        <Tooltip
+          className="tooltip-light"
+          placement={this.props.item.placement}
+          isOpen={this.state.tooltipOpen}
+          target={'TooltipLight-' + this.props.id}
+          toggle={this.toggle}
+        >
           Tooltip Content!
         </Tooltip>
       </Fragment>
@@ -39,24 +44,24 @@ class TooltipExampleLight extends React.Component {
     this.state = {
       tooltips: [
         {
-          placement: "auto",
-          text: "auto",
+          placement: 'auto',
+          text: 'auto',
         },
         {
-          placement: "top",
-          text: "top",
+          placement: 'top',
+          text: 'top',
         },
         {
-          placement: "right",
-          text: "right",
+          placement: 'right',
+          text: 'right',
         },
         {
-          placement: "bottom",
-          text: "bottom",
+          placement: 'bottom',
+          text: 'bottom',
         },
         {
-          placement: "left",
-          text: "left",
+          placement: 'left',
+          text: 'left',
         },
       ],
     };

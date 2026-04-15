@@ -1,44 +1,35 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../../../utils/TransitionWrapper';
-import Select from "react-select";
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../../utils/TransitionWrapper';
+import Select from 'react-select';
 
-import {
-  Row,
-  Col,
-  Card,
-  CardBody,
-  CardTitle,
-  FormGroup,
-  Label,
-  Input,
-} from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle, FormGroup, Label, Input } from 'reactstrap';
 
-import makeAnimated from "react-select/animated";
+import makeAnimated from 'react-select/animated';
 
-import { colourOptions, groupedOptions } from "./Examples/data";
+import { colourOptions, groupedOptions } from './Examples/data';
 
 const options = [
-  { value: "chocolate", label: "Chocolate" },
-  { value: "strawberry", label: "Strawberry" },
-  { value: "vanilla", label: "Vanilla" },
+  { value: 'chocolate', label: 'Chocolate' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' },
 ];
 
 const groupStyles = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
 };
 const groupBadgeStyles = {
-  backgroundColor: "#EBECF0",
-  borderRadius: "2em",
-  color: "#172B4D",
-  display: "inline-block",
+  backgroundColor: '#EBECF0',
+  borderRadius: '2em',
+  color: '#172B4D',
+  display: 'inline-block',
   fontSize: 12,
-  fontWeight: "normal",
-  lineHeight: "1",
+  fontWeight: 'normal',
+  lineHeight: '1',
   minWidth: 1,
-  padding: "0.16666666666667em 0.5em",
-  textAlign: "center",
+  padding: '0.16666666666667em 0.5em',
+  textAlign: 'center',
 };
 
 const formatGroupLabel = (data) => (
@@ -62,8 +53,14 @@ class FormMultiSelectBasic extends React.Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <Row>
               <Col md="6">
                 <Card className="main-card mb-3">
@@ -73,13 +70,22 @@ class FormMultiSelectBasic extends React.Component {
                       <Col md={6}>
                         <FormGroup>
                           <Label for="exampleEmail">Basic</Label>
-                          <Select value={selectedOption} onChange={this.handleChange}  options={options}/>
+                          <Select
+                            value={selectedOption}
+                            onChange={this.handleChange}
+                            options={options}
+                          />
                         </FormGroup>
                       </Col>
                       <Col md={6}>
                         <FormGroup>
                           <Label for="examplePassword">Regular Input</Label>
-                          <Input type="text" name="address2" id="examplePassword" placeholder="Apartment, studio, or floor"/>
+                          <Input
+                            type="text"
+                            name="address2"
+                            id="examplePassword"
+                            placeholder="Apartment, studio, or floor"
+                          />
                         </FormGroup>
                       </Col>
                     </Row>
@@ -91,7 +97,11 @@ class FormMultiSelectBasic extends React.Component {
                     <Row>
                       <Col md={12}>
                         <FormGroup>
-                          <Select defaultValue={colourOptions[1]} options={groupedOptions} formatGroupLabel={formatGroupLabel}/>
+                          <Select
+                            defaultValue={colourOptions[1]}
+                            options={groupedOptions}
+                            formatGroupLabel={formatGroupLabel}
+                          />
                         </FormGroup>
                       </Col>
                     </Row>
@@ -105,8 +115,14 @@ class FormMultiSelectBasic extends React.Component {
                     <Row>
                       <Col md={12}>
                         <FormGroup>
-                          <Select defaultValue={[colourOptions[2], colourOptions[3]]} isMulti
-                            name="colors" options={colourOptions} className="basic-multi-select" classNamePrefix="select"/>
+                          <Select
+                            defaultValue={[colourOptions[2], colourOptions[3]]}
+                            isMulti
+                            name="colors"
+                            options={colourOptions}
+                            className="basic-multi-select"
+                            classNamePrefix="select"
+                          />
                         </FormGroup>
                       </Col>
                     </Row>
@@ -118,8 +134,13 @@ class FormMultiSelectBasic extends React.Component {
                     <Row>
                       <Col md={12}>
                         <FormGroup>
-                          <Select closeMenuOnSelect={false} components={makeAnimated()}
-                            defaultValue={[colourOptions[4], colourOptions[5]]} isMulti options={colourOptions}/>
+                          <Select
+                            closeMenuOnSelect={false}
+                            components={makeAnimated()}
+                            defaultValue={[colourOptions[4], colourOptions[5]]}
+                            isMulti
+                            options={colourOptions}
+                          />
                         </FormGroup>
                       </Col>
                     </Row>

@@ -2,7 +2,7 @@
 
 // Variables
 
-@use "sass:math";
+@use 'sass:math';
 
 $theme-options-width: 500px;
 
@@ -13,11 +13,12 @@ $theme-options-width: 500px;
   top: 0;
   height: 100vh;
   transform: translate($theme-options-width);
-  transition: all .2s;
-  box-shadow: -0.46875rem 0 2.1875rem rgba(shade-color($primary, 50%), .03),
-  -0.9375rem 0 1.40625rem rgba(shade-color($primary, 50%), .03),
-  -0.25rem 0 0.53125rem rgba(shade-color($primary, 50%), .05),
-  -0.125rem 0 0.1875rem rgba(shade-color($primary, 50%), .03);
+  transition: all 0.2s;
+  box-shadow:
+    -0.46875rem 0 2.1875rem rgba(shade-color($primary, 50%), 0.03),
+    -0.9375rem 0 1.40625rem rgba(shade-color($primary, 50%), 0.03),
+    -0.25rem 0 0.53125rem rgba(shade-color($primary, 50%), 0.05),
+    -0.125rem 0 0.1875rem rgba(shade-color($primary, 50%), 0.03);
 
   .btn-open-options {
     @include border-radius(50px);
@@ -100,8 +101,8 @@ $theme-options-width: 500px;
   height: 24px;
   line-height: 24px;
   margin: 5px 5px 0;
-  transition: all .2s;
-  opacity: .7;
+  transition: all 0.2s;
+  opacity: 0.7;
   display: inline-block;
   @include border-radius(30px);
 

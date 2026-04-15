@@ -2,7 +2,7 @@
 
 // Variables
 
-@use "sass:math";
+@use 'sass:math';
 
 $widget-spacer: $spacer;
 
@@ -18,7 +18,7 @@ $widget-spacer: $spacer;
   position: relative;
 
   .progress-sub-label {
-    opacity: .8;
+    opacity: 0.8;
     padding: 5px 0 0;
   }
 
@@ -37,7 +37,7 @@ $widget-spacer: $spacer;
   }
 
   .widget-chart-content-lg {
-    padding: ($widget-spacer * 2) 0 $widget-spacer  ($widget-spacer * 2);
+    padding: ($widget-spacer * 2) 0 $widget-spacer ($widget-spacer * 2);
 
     .widget-numbers {
       margin-bottom: 0;
@@ -49,7 +49,7 @@ $widget-spacer: $spacer;
     bottom: 0;
     left: 0;
     width: 100%;
-    opacity: .25;
+    opacity: 0.25;
     z-index: 6;
     @include border-bottom-radius($card-border-radius);
     overflow: hidden;
@@ -72,7 +72,7 @@ $widget-spacer: $spacer;
   .widget-subheading {
     margin: -0.5rem 0 0;
     display: block;
-    opacity: .6;
+    opacity: 0.6;
 
     &:first-child {
       margin-top: 0;
@@ -88,15 +88,16 @@ $widget-spacer: $spacer;
   }
 
   &.widget-chart-hover {
-    transition: all .2s;
+    transition: all 0.2s;
 
     &:hover {
       z-index: 15;
       transform: scale(1.15);
-      box-shadow: 0 0.46875rem 4.1875rem rgba(shade-color($primary, 50%), .05),
-      0 0.9375rem 2.40625rem rgba(shade-color($primary, 50%), .05),
-      0 0.25rem 1.3125rem rgba(shade-color($primary, 50%), .06),
-      0 0.125rem 1.1875rem rgba(shade-color($primary, 50%), .06);
+      box-shadow:
+        0 0.46875rem 4.1875rem rgba(shade-color($primary, 50%), 0.05),
+        0 0.9375rem 2.40625rem rgba(shade-color($primary, 50%), 0.05),
+        0 0.25rem 1.3125rem rgba(shade-color($primary, 50%), 0.06),
+        0 0.125rem 1.1875rem rgba(shade-color($primary, 50%), 0.06);
       cursor: pointer;
       background: $white;
     }
@@ -112,7 +113,7 @@ $widget-spacer: $spacer;
       font-size: 1.1rem;
       padding-top: 0;
       padding-bottom: 0;
-      opacity: .6;
+      opacity: 0.6;
     }
   }
 
@@ -137,7 +138,6 @@ $widget-spacer: $spacer;
           border-bottom-left-radius: $card-border-radius;
         }
       }
-
     }
   }
 
@@ -215,7 +215,7 @@ $widget-spacer: $spacer;
     font-size: 1.1rem;
     padding-top: 0;
     padding-bottom: 0;
-    opacity: .6;
+    opacity: 0.6;
   }
 }
 
@@ -239,7 +239,6 @@ $widget-spacer: $spacer;
       }
     }
   }
-
 }
 
 .icon-wrapper {
@@ -250,7 +249,7 @@ $widget-spacer: $spacer;
   position: relative;
   overflow: hidden;
 
-  &[class*="border-"] {
+  &[class*='border-'] {
     border-width: 1px;
     border-style: solid;
   }
@@ -260,12 +259,11 @@ $widget-spacer: $spacer;
     height: 100%;
     width: 100%;
     z-index: 3;
-    opacity: .2;
+    opacity: 0.2;
 
     &.bg-light {
-      opacity: .08;
+      opacity: 0.08;
     }
-
   }
 
   i {
@@ -319,7 +317,7 @@ $widget-spacer: $spacer;
 
     .widget-chart-wrapper {
       height: 70px;
-      opacity: .8;
+      opacity: 0.8;
       position: relative;
       margin: $widget-spacer auto (-(math.div($widget-spacer, 2)));
     }
@@ -344,9 +342,9 @@ $widget-spacer: $spacer;
   h4 {
     font-size: $font-size-base;
     font-weight: bold;
-    opacity: .6;
+    opacity: 0.6;
     text-transform: uppercase;
-    padding-bottom: math.div($widget-spacer, 3)
+    padding-bottom: math.div($widget-spacer, 3);
   }
 
   svg {
@@ -358,7 +356,7 @@ $widget-spacer: $spacer;
   position: absolute;
   width: 100%;
   height: 100%;
-  opacity: .1;
+  opacity: 0.1;
 
   svg {
     width: 100%;

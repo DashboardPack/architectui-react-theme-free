@@ -7,12 +7,10 @@
   }
 
   .app-main {
-
     .app-main__outer {
       z-index: 9;
       padding-left: $app-sidebar-width;
     }
-
   }
 
   &.fixed-header {
@@ -31,7 +29,6 @@
     }
 
     .app-header {
-
       margin-left: $app-sidebar-width;
 
       .app-header__logo {
@@ -46,13 +43,11 @@
 
   &.closed-sidebar {
     &:not(.fixed-header) {
-
       .app-header {
         margin-left: $app-sidebar-width-collapsed;
       }
 
       .app-sidebar {
-
         .app-header__logo {
           width: $app-sidebar-width-collapsed;
           padding: 0;

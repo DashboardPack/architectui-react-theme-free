@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from "react";
-import { Button, Container, ButtonGroup } from "reactstrap";
+import React, { Component, Fragment } from 'react';
+import { Button, Container, ButtonGroup } from 'reactstrap';
 
-import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
 class ButtonsPillOutline2x extends Component {
   state = {
@@ -100,31 +100,71 @@ class ButtonsPillOutline2x extends Component {
               <Card className="main-card mb-3">
                 <CardBody>
                   <CardTitle>Active State</CardTitle>
-                  <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" active  color="primary">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    active
+                    color="primary"
+                  >
                     Primary
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" active color="secondary">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    active
+                    color="secondary"
+                  >
                     Secondary
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" active color="success">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    active
+                    color="success"
+                  >
                     Success
                   </Button>
                   <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" active color="info">
                     Info
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" active color="warning">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    active
+                    color="warning"
+                  >
                     Warning
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" active color="danger">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    active
+                    color="danger"
+                  >
                     Danger
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" active color="focus">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    active
+                    color="focus"
+                  >
                     Focus
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" active color="alternate">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    active
+                    color="alternate"
+                  >
                     Alt
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" active color="light">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    active
+                    color="light"
+                  >
                     Light
                   </Button>
                   <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" active color="dark">
@@ -140,37 +180,92 @@ class ButtonsPillOutline2x extends Component {
               <Card className="main-card mb-3">
                 <CardBody>
                   <CardTitle>Disabled State</CardTitle>
-                  <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" disabled color="primary">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    disabled
+                    color="primary"
+                  >
                     Primary
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" disabled color="secondary">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    disabled
+                    color="secondary"
+                  >
                     Secondary
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" disabled color="success">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    disabled
+                    color="success"
+                  >
                     Success
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" disabled color="info">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    disabled
+                    color="info"
+                  >
                     Info
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" disabled color="warning">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    disabled
+                    color="warning"
+                  >
                     Warning
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" disabled color="danger">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    disabled
+                    color="danger"
+                  >
                     Danger
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" disabled color="focus">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    disabled
+                    color="focus"
+                  >
                     Focus
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" disabled color="alternate">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    disabled
+                    color="alternate"
+                  >
                     Alt
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" disabled color="light">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    disabled
+                    color="light"
+                  >
                     Light
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" disabled color="dark">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    disabled
+                    color="dark"
+                  >
                     Dark
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-outline-2x btn-pill" disabled color="link">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    disabled
+                    color="link"
+                  >
                     link
                   </Button>
                 </CardBody>
@@ -180,13 +275,30 @@ class ButtonsPillOutline2x extends Component {
               <Card className="main-card mb-3">
                 <CardBody>
                   <CardTitle>Block Level</CardTitle>
-                  <Button outline block className="mb-2 me-2 btn-outline-2x btn-pill" size="lg" color="primary">
+                  <Button
+                    outline
+                    block
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    size="lg"
+                    color="primary"
+                  >
                     Block Large
                   </Button>
-                  <Button outline block className="mb-2 me-2 btn-outline-2x btn-pill" color="primary">
+                  <Button
+                    outline
+                    block
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    color="primary"
+                  >
                     Block Normal
                   </Button>
-                  <Button outline block className="mb-2 me-2 btn-outline-2x btn-pill" size="sm" color="primary">
+                  <Button
+                    outline
+                    block
+                    className="mb-2 me-2 btn-outline-2x btn-pill"
+                    size="sm"
+                    color="primary"
+                  >
                     Block Small
                   </Button>
                 </CardBody>
@@ -197,13 +309,27 @@ class ButtonsPillOutline2x extends Component {
                 <CardBody>
                   <CardTitle>Wider</CardTitle>
                   <div className="text-center">
-                    <Button outline className="btn-wide btn-outline-2x mb-2 me-2 btn-pill" size="lg" color="primary">
+                    <Button
+                      outline
+                      className="btn-wide btn-outline-2x mb-2 me-2 btn-pill"
+                      size="lg"
+                      color="primary"
+                    >
                       Wider Large
                     </Button>
-                    <Button outline className="btn-wide btn-outline-2x mb-2 me-2 btn-pill" color="primary">
+                    <Button
+                      outline
+                      className="btn-wide btn-outline-2x mb-2 me-2 btn-pill"
+                      color="primary"
+                    >
                       Wider Normal
                     </Button>
-                    <Button outline className="btn-wide btn-outline-2x mb-2 me-2 btn-pill" size="sm" color="primary">
+                    <Button
+                      outline
+                      className="btn-wide btn-outline-2x mb-2 me-2 btn-pill"
+                      size="sm"
+                      color="primary"
+                    >
                       Wider Small
                     </Button>
                   </div>
@@ -215,13 +341,23 @@ class ButtonsPillOutline2x extends Component {
                 <CardBody>
                   <CardTitle>Sizing</CardTitle>
                   <div className="text-center">
-                    <Button outline className="btn-outline-2x mb-2 me-2 btn-pill" size="lg" color="primary">
+                    <Button
+                      outline
+                      className="btn-outline-2x mb-2 me-2 btn-pill"
+                      size="lg"
+                      color="primary"
+                    >
                       Large
                     </Button>
                     <Button outline className="btn-outline-2x mb-2 me-2 btn-pill" color="primary">
                       Normal
                     </Button>
-                    <Button outline className="btn-outline-2x mb-2 me-2 btn-pill" size="sm" color="primary">
+                    <Button
+                      outline
+                      className="btn-outline-2x mb-2 me-2 btn-pill"
+                      size="sm"
+                      color="primary"
+                    >
                       Small
                     </Button>
                   </div>
@@ -236,46 +372,91 @@ class ButtonsPillOutline2x extends Component {
                   <CardTitle>Checkbox Buttons</CardTitle>
                   <div className="text-center">
                     <ButtonGroup size="sm" className="mb-2">
-                      <Button className="btn-outline-2x btn-pill" outline color="primary" 
-                        onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>
+                      <Button
+                        className="btn-outline-2x btn-pill"
+                        outline
+                        color="primary"
+                        onClick={() => this.onCheckboxBtnClick(1)}
+                        active={this.state.cSelected.includes(1)}
+                      >
                         One
                       </Button>
-                      <Button outline className="btn-outline-2x" color="primary"
-                        onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>
+                      <Button
+                        outline
+                        className="btn-outline-2x"
+                        color="primary"
+                        onClick={() => this.onCheckboxBtnClick(2)}
+                        active={this.state.cSelected.includes(2)}
+                      >
                         Two
                       </Button>
-                      <Button className="btn-outline-2x btn-pill" outline color="primary"
-                        onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>
+                      <Button
+                        className="btn-outline-2x btn-pill"
+                        outline
+                        color="primary"
+                        onClick={() => this.onCheckboxBtnClick(3)}
+                        active={this.state.cSelected.includes(3)}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
                     <div className="divider" />
                     <ButtonGroup className="mb-2">
-                      <Button className="btn-outline-2x btn-pill" outline color="success"
-                        onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>
+                      <Button
+                        className="btn-outline-2x btn-pill"
+                        outline
+                        color="success"
+                        onClick={() => this.onCheckboxBtnClick(1)}
+                        active={this.state.cSelected.includes(1)}
+                      >
                         One
                       </Button>
-                      <Button outline className="btn-outline-2x" color="success"
-                        onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>
+                      <Button
+                        outline
+                        className="btn-outline-2x"
+                        color="success"
+                        onClick={() => this.onCheckboxBtnClick(2)}
+                        active={this.state.cSelected.includes(2)}
+                      >
                         Two
                       </Button>
-                      <Button className="btn-outline-2x btn-pill" outline color="success"
-                        onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>
+                      <Button
+                        className="btn-outline-2x btn-pill"
+                        outline
+                        color="success"
+                        onClick={() => this.onCheckboxBtnClick(3)}
+                        active={this.state.cSelected.includes(3)}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
                     <div className="divider" />
                     <ButtonGroup size="lg" className="mb-2">
-                      <Button className="btn-outline-2x btn-pill" outline color="dark"
-                        onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>
+                      <Button
+                        className="btn-outline-2x btn-pill"
+                        outline
+                        color="dark"
+                        onClick={() => this.onCheckboxBtnClick(1)}
+                        active={this.state.cSelected.includes(1)}
+                      >
                         One
                       </Button>
-                      <Button outline className="btn-outline-2x" color="dark"
-                        onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>
+                      <Button
+                        outline
+                        className="btn-outline-2x"
+                        color="dark"
+                        onClick={() => this.onCheckboxBtnClick(2)}
+                        active={this.state.cSelected.includes(2)}
+                      >
                         Two
                       </Button>
-                      <Button className="btn-outline-2x btn-pill" outline color="dark"
-                        onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>
+                      <Button
+                        className="btn-outline-2x btn-pill"
+                        outline
+                        color="dark"
+                        onClick={() => this.onCheckboxBtnClick(3)}
+                        active={this.state.cSelected.includes(3)}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
@@ -291,46 +472,91 @@ class ButtonsPillOutline2x extends Component {
                   <CardTitle>Radio Buttons</CardTitle>
                   <div className="text-center">
                     <ButtonGroup size="sm" className="mb-2">
-                      <Button className="btn-outline-2x btn-pill" outline color="primary"
-                        onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                      <Button
+                        className="btn-outline-2x btn-pill"
+                        outline
+                        color="primary"
+                        onClick={() => this.onRadioBtnClick(1)}
+                        active={this.state.rSelected === 1}
+                      >
                         One
                       </Button>
-                      <Button outline className="btn-outline-2x" color="primary"
-                        onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>
+                      <Button
+                        outline
+                        className="btn-outline-2x"
+                        color="primary"
+                        onClick={() => this.onRadioBtnClick(2)}
+                        active={this.state.rSelected === 2}
+                      >
                         Two
                       </Button>
-                      <Button className="btn-outline-2x btn-pill" outline color="primary"
-                        onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>
+                      <Button
+                        className="btn-outline-2x btn-pill"
+                        outline
+                        color="primary"
+                        onClick={() => this.onRadioBtnClick(3)}
+                        active={this.state.rSelected === 3}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
                     <div className="divider" />
                     <ButtonGroup className="mb-2">
-                      <Button className="btn-outline-2x btn-pill" outline color="success"
-                        onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                      <Button
+                        className="btn-outline-2x btn-pill"
+                        outline
+                        color="success"
+                        onClick={() => this.onRadioBtnClick(1)}
+                        active={this.state.rSelected === 1}
+                      >
                         One
                       </Button>
-                      <Button outline className="btn-outline-2x" color="success"
-                        onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>
+                      <Button
+                        outline
+                        className="btn-outline-2x"
+                        color="success"
+                        onClick={() => this.onRadioBtnClick(2)}
+                        active={this.state.rSelected === 2}
+                      >
                         Two
                       </Button>
-                      <Button className="btn-outline-2x btn-pill" outline color="success"
-                        onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>
+                      <Button
+                        className="btn-outline-2x btn-pill"
+                        outline
+                        color="success"
+                        onClick={() => this.onRadioBtnClick(3)}
+                        active={this.state.rSelected === 3}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
                     <div className="divider" />
                     <ButtonGroup size="lg" className="mb-2">
-                      <Button className="btn-outline-2x btn-pill" outline color="alternate"
-                        onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                      <Button
+                        className="btn-outline-2x btn-pill"
+                        outline
+                        color="alternate"
+                        onClick={() => this.onRadioBtnClick(1)}
+                        active={this.state.rSelected === 1}
+                      >
                         One
                       </Button>
-                      <Button outline className="btn-outline-2x" color="alternate"
-                        onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>
+                      <Button
+                        outline
+                        className="btn-outline-2x"
+                        color="alternate"
+                        onClick={() => this.onRadioBtnClick(2)}
+                        active={this.state.rSelected === 2}
+                      >
                         Two
                       </Button>
-                      <Button className="btn-outline-2x btn-pill" outline color="alternate"
-                        onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>
+                      <Button
+                        className="btn-outline-2x btn-pill"
+                        outline
+                        color="alternate"
+                        onClick={() => this.onRadioBtnClick(3)}
+                        active={this.state.rSelected === 3}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>

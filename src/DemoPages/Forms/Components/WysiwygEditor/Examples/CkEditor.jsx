@@ -1,17 +1,17 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 
-import { CKEditor } from "ckeditor4-react";
+import { CKEditor } from 'ckeditor4-react';
 
-import { CSSTransition, TransitionGroup  } from '../../../../../utils/TransitionWrapper';
+import { CSSTransition, TransitionGroup } from '../../../../../utils/TransitionWrapper';
 
-import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
 export default class FormCkEditorEditor extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      content: "Hello World",
+      content: 'Hello World',
     };
     this.setContent = this.setContent.bind(this);
   }
@@ -19,7 +19,7 @@ export default class FormCkEditorEditor extends Component {
   //------ Test for race condition ------ //
   setContent() {
     this.setState({
-      content: "Hello World " + Math.random(),
+      content: 'Hello World ' + Math.random(),
     });
   }
 
@@ -33,8 +33,14 @@ export default class FormCkEditorEditor extends Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <Row>
               <Col md="12">
                 <Card>

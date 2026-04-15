@@ -1,21 +1,27 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../../utils/TransitionWrapper';
-import { Row, Col, Card, CardBody, CardTitle, Container } from "reactstrap";
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../utils/TransitionWrapper';
+import { Row, Col, Card, CardBody, CardTitle, Container } from 'reactstrap';
 
-import ListGroupDefault from "./ListGroup";
-import ListGroupAnchorsAndButtons from "./ListGroupAnchorsAndButtons";
-import ListGroupBadge from "./ListGroupBadge";
-import ListGroupContextualClasses from "./ListGroupContextualClasses";
-import ListGroupCustomContent from "./ListGroupCustomContent";
-import ListGroupDisabledItems from "./ListGroupDisabledItems";
-import ListGroupFlush from "./ListGroupFlush";
+import ListGroupDefault from './ListGroup';
+import ListGroupAnchorsAndButtons from './ListGroupAnchorsAndButtons';
+import ListGroupBadge from './ListGroupBadge';
+import ListGroupContextualClasses from './ListGroupContextualClasses';
+import ListGroupCustomContent from './ListGroupCustomContent';
+import ListGroupDisabledItems from './ListGroupDisabledItems';
+import ListGroupFlush from './ListGroupFlush';
 
 const ListGroupExampleBasic = (props) => {
   return (
     <Fragment>
       <TransitionGroup>
-        <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-          timeout={0} enter={false} exit={false}>
+        <CSSTransition
+          component="div"
+          classNames="TabsAnimation"
+          appear={true}
+          timeout={0}
+          enter={false}
+          exit={false}
+        >
           <Container fluid>
             <Row>
               <Col md="6">

@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 // from http://codepen.io/lbebber/pen/ypgql?editors=0100
 const steps = 20;
@@ -17,7 +17,7 @@ const doKeyframes = () =>
 ${next.perc} {
   ${next.value}
 }`;
-    }, "");
+    }, '');
 
 const anim = keyframes`${doKeyframes()}`;
 const anim2 = keyframes`${doKeyframes()}`;
