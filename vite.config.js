@@ -62,10 +62,18 @@ const cjsInteropPlugin = (pkgs) => {
         const start = m.index;
         out += code.slice(lastIndex, start);
         const ns = nsVar(spec);
+        // `mod` covers the unwrapped CJS shape for default-import resolution
+        // (import X from 'pkg' → X = exports.default ?? module.exports). For
+        // named-import resolution we spread ns.default into ns so both the
+        // Vite-wrapped CJS case (`ns = { default: { foo, bar } }`) and a
+        // mixed-exports ESM case (`ns = { foo, default: Comp }`) produce the
+        // right value for `{ foo } = ...`.
         const mod = modVar(spec);
+        const namedSrc = `__cjsnamed_${spec.replace(/[^a-z0-9]/gi, '_')}`;
         const parts = [
           `import * as ${ns} from '${spec}';`,
           `const ${mod} = ${ns} && ${ns}.default !== undefined ? ${ns}.default : ${ns};`,
+          `const ${namedSrc} = Object.assign({}, ${mod}, ${ns});`,
         ];
         const trimmed = clause.trim();
         // Split default + named parts: `Foo` / `{ A, B }` / `Foo, { A, B }`
@@ -96,7 +104,7 @@ const cjsInteropPlugin = (pkgs) => {
               return asMatch ? `${asMatch[1]}: ${asMatch[2]}` : n;
             })
             .join(', ');
-          parts.push(`const { ${rewritten} } = ${mod};`);
+          parts.push(`const { ${rewritten} } = ${namedSrc};`);
         }
         out += parts.join('\n');
         lastIndex = start + full.length;
@@ -129,6 +137,20 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         src: path.resolve(__dirname, './src'),
+        // react-sweet-progress 1.1.2 was built with an old @babel/preset-react
+        // that inlined `Symbol.for('react.element')` into its JSX helper. React
+        // 19 rejects those elements ("A React Element from an older version of
+        // React was rendered"). Redirect to the API-compatible local SVG
+        // implementation in src/components/CircleProgress.jsx until we drop the
+        // dependency entirely.
+        'react-sweet-progress': path.resolve(__dirname, './src/components/CircleProgress.jsx'),
+        // Vite 8 / rolldown wraps internmap's ESM `export class InternMap` in a
+        // lazy `__esmMin(cb)` initializer but d3-array's `ordinal.js` runs
+        // `new InternMap()` eagerly inside another wrapper — the lazy cb never
+        // fires before use, so production throws "InternMap is not a
+        // constructor". The dist/ UMD build defines the class synchronously
+        // and avoids the wrapping.
+        internmap: path.resolve(__dirname, './node_modules/internmap/dist/internmap.js'),
       },
       dedupe: ['react', 'react-dom', 'react/jsx-runtime', 'react/jsx-dev-runtime'],
     },

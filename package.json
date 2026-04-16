@@ -26,6 +26,8 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest run --coverage",
+    "test:e2e": "playwright test",
+    "test:e2e:install": "playwright install --with-deps chromium",
     "postinstall": "patch-package"
   },
   "dependencies": {
@@ -119,6 +121,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@eslint/js": "^9.39.4",
+    "@playwright/test": "^1.59.1",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
@@ -149,11 +152,13 @@
   },
   "overrides": {
     "d3-color": "^3.1.0",
+    "internmap": "^2.0.3",
     "nth-check": "^2.1.1",
     "postcss": "^8.5.9",
     "prismjs": "^1.30.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
+    "react-is": "^19.2.5",
     "@types/react": "^19.2.14",
     "ckeditor4-react": {
       "react": "^19.2.5",
