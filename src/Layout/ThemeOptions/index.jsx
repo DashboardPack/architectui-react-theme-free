@@ -19,6 +19,7 @@ import {
   setEnablePageTitleSubheading,
   setEnablePageTabsAlt,
   setEnablePageTitleIcon,
+  setDarkMode as setDarkModeAction,
 } from '../../reducers/ThemeOptions';
 
 import sideBar1 from '../../assets/utils/images/sidebar/abstract1.jpg';
@@ -56,6 +57,7 @@ function ThemeOptions() {
   const enablePageTabsAlt = useSelector((s) => s.ThemeOptions.enablePageTabsAlt);
   const enableBackgroundImage = useSelector((s) => s.ThemeOptions.enableBackgroundImage);
   const backgroundImage = useSelector((s) => s.ThemeOptions.backgroundImage);
+  const darkMode = useSelector((s) => s.ThemeOptions.darkMode) || 'auto';
 
   const [showing, setShowing] = useState(false);
 
@@ -71,6 +73,7 @@ function ThemeOptions() {
   const toggleEnablePageTabsAlt = () => dispatch(setEnablePageTabsAlt(!enablePageTabsAlt));
   const toggleEnableFixedFooter = () => dispatch(setEnableFixedFooter(!enableFixedFooter));
 
+  const setDarkMode = (v) => dispatch(setDarkModeAction(v));
   const setBackgroundColor = (v) => dispatch(setBackgroundColorAction(v));
   const setColorScheme = (v) => dispatch(setColorSchemeAction(v));
   const setHeaderBackgroundColor = (v) => dispatch(setHeaderBackgroundColorAction(v));
@@ -93,6 +96,37 @@ function ThemeOptions() {
       <div className="theme-settings__inner">
         <PerfectScrollbar>
           <div className="theme-settings__options-wrapper">
+            <h3 className="themeoptions-heading">Appearance</h3>
+            <div className="p-3">
+              <ListGroup className="mb-3">
+                <ListGroupItem>
+                  <div className="widget-content p-0">
+                    <div className="widget-content-wrapper">
+                      <div className="widget-content-left">
+                        <div className="widget-heading">Theme mode</div>
+                        <div className="widget-subheading">
+                          Follow the system setting, or force light / dark.
+                        </div>
+                      </div>
+                    </div>
+                    <ButtonGroup className="mt-3" size="sm">
+                      {['auto', 'light', 'dark'].map((value) => (
+                        <Button
+                          key={value}
+                          type="button"
+                          color={darkMode === value ? 'primary' : 'light'}
+                          outline={darkMode !== value}
+                          onClick={() => setDarkMode(value)}
+                          aria-pressed={darkMode === value}
+                        >
+                          {value[0].toUpperCase() + value.slice(1)}
+                        </Button>
+                      ))}
+                    </ButtonGroup>
+                  </div>
+                </ListGroupItem>
+              </ListGroup>
+            </div>
             <h3 className="themeoptions-heading"> Layout Options</h3>
             <div className="p-3">
               <ListGroup>

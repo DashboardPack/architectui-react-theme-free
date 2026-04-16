@@ -15,6 +15,7 @@
  * @property {boolean} [enablePageTitleIcon]
  * @property {boolean} [enablePageTitleSubheading]
  * @property {boolean} [enablePageTabsAlt]
+ * @property {'auto' | 'light' | 'dark'} [darkMode]
  */
 
 const STORAGE_KEY = 'architectui.themeOptions';
@@ -36,6 +37,7 @@ const PERSISTED_FIELDS = [
   'enablePageTitleIcon',
   'enablePageTitleSubheading',
   'enablePageTabsAlt',
+  'darkMode',
 ];
 
 /**

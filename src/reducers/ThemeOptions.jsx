@@ -23,6 +23,8 @@ export const SET_BACKGROUND_IMAGE_OPACITY = 'THEME_OPTIONS/SET_BACKGROUND_IMAGE_
 
 export const SET_HEADER_BACKGROUND_COLOR = 'THEME_OPTIONS/SET_HEADER_BACKGROUND_COLOR';
 
+export const SET_DARK_MODE = 'THEME_OPTIONS/SET_DARK_MODE';
+
 export const setEnableBackgroundImage = (enableBackgroundImage) => ({
   type: SET_ENABLE_BACKGROUND_IMAGE,
   enableBackgroundImage,
@@ -108,6 +110,14 @@ export const setBackgroundImage = (backgroundImage) => ({
   backgroundImage,
 });
 
+/**
+ * @param {'auto' | 'light' | 'dark'} darkMode
+ */
+export const setDarkMode = (darkMode) => ({
+  type: SET_DARK_MODE,
+  darkMode,
+});
+
 export default function reducer(
   state = {
     backgroundColor: '',
@@ -126,6 +136,8 @@ export default function reducer(
     enablePageTitleIcon: true,
     enablePageTitleSubheading: true,
     enablePageTabsAlt: true,
+    // 'auto' follows prefers-color-scheme; 'light' / 'dark' are explicit.
+    darkMode: 'auto',
   },
   action
 ) {
@@ -230,6 +242,12 @@ export default function reducer(
       return {
         ...state,
         backgroundImageOpacity: action.backgroundImageOpacity,
+      };
+
+    case SET_DARK_MODE:
+      return {
+        ...state,
+        darkMode: action.darkMode,
       };
     default:
   }

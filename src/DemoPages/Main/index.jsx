@@ -9,8 +9,10 @@ import AppHeader from '../../Layout/AppHeader';
 import AppSidebar from '../../Layout/AppSidebar';
 import AppFooter from '../../Layout/AppFooter';
 import ThemeOptions from '../../Layout/ThemeOptions';
+import useDarkModeSync from '../../hooks/useDarkModeSync';
 
 export default function Main() {
+  useDarkModeSync();
   const colorScheme = useSelector((s) => s.ThemeOptions.colorScheme);
   const enableFixedHeader = useSelector((s) => s.ThemeOptions.enableFixedHeader);
   const enableFixedSidebar = useSelector((s) => s.ThemeOptions.enableFixedSidebar);

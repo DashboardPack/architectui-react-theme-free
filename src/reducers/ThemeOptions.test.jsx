@@ -4,7 +4,9 @@ import reducer, {
   setEnableMobileMenu,
   setBackgroundColor,
   setColorScheme,
+  setDarkMode,
   SET_ENABLE_FIXED_HEADER,
+  SET_DARK_MODE,
 } from './ThemeOptions';
 
 const initialState = reducer(undefined, { type: '@@INIT' });
@@ -57,5 +59,13 @@ describe('ThemeOptions reducer', () => {
       type: SET_ENABLE_FIXED_HEADER,
       enableFixedHeader: true,
     });
+  });
+
+  it('defaults darkMode to auto and round-trips explicit values', () => {
+    expect(initialState.darkMode).toBe('auto');
+    expect(setDarkMode('dark')).toEqual({ type: SET_DARK_MODE, darkMode: 'dark' });
+    expect(reducer(initialState, setDarkMode('dark')).darkMode).toBe('dark');
+    expect(reducer(initialState, setDarkMode('light')).darkMode).toBe('light');
+    expect(reducer(initialState, setDarkMode('auto')).darkMode).toBe('auto');
   });
 });
