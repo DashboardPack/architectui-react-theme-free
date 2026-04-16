@@ -182,7 +182,7 @@ const InteractiveMapsExample = () => {
                         scrollWheelZoom={true}
                       >
                         <TileLayer
-                          attribution='Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a>'
+                          attribution='Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="https://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a>'
                           url="https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
                         />
                       </MapContainer>
@@ -202,7 +202,7 @@ const InteractiveMapsExample = () => {
                         scrollWheelZoom={true}
                       >
                         <TileLayer
-                          attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>'
+                          attribution='Map tiles by <a href="https://stamen.com">Stamen Design</a>'
                           url="https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}.jpg"
                         />
                       </MapContainer>

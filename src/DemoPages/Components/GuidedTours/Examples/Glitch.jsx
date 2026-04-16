@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-// from http://codepen.io/lbebber/pen/ypgql?editors=0100
+// from https://codepen.io/lbebber/pen/ypgql?editors=0100
 const steps = 20;
 const rnd = () => Math.floor(Math.random() * 100);
 const doPercAndValue = (a, i) => ({

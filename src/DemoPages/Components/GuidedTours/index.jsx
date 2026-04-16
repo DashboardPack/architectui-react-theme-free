@@ -123,7 +123,7 @@ const tourConfig = [
             any way, using custom components, styles and so on…
           </Text>
           <Text color="#373737" size=".7em" style={{ marginTop: '.7em' }}>
-            <Link href="http://codepen.io/lbebber/full/ypgql/" color="dark" nospaces>
+            <Link href="https://codepen.io/lbebber/full/ypgql/" color="dark" nospaces>
               Text effect
             </Link>{' '}
             by{' '}
