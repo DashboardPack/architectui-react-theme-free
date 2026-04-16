@@ -337,7 +337,7 @@ export default class CRMDashboard2 extends Component {
                             <h6 className="widget-subheading mb-0 opacity-5">sales last month</h6>
                           </div>
                           <Row className="g-0 widget-chart-wrapper mt-3 mb-3 ps-2 he-auto">
-                            <Col md="9">
+                            <Col md="12">
                               <Sparklines data={sampleData}>
                                 <SparklinesCurve
                                   style={{
@@ -377,7 +377,7 @@ export default class CRMDashboard2 extends Component {
                             <h6 className="widget-subheading mb-0 opacity-5">sales Income</h6>
                           </div>
                           <Row className="g-0 widget-chart-wrapper mt-3 mb-3 ps-2 he-auto">
-                            <Col md="9">
+                            <Col md="12">
                               <Sparklines data={sampleData2}>
                                 <SparklinesCurve
                                   style={{
@@ -417,7 +417,7 @@ export default class CRMDashboard2 extends Component {
                             <h6 className="widget-subheading mb-0 opacity-5">last month sales</h6>
                           </div>
                           <Row className="g-0 widget-chart-wrapper mt-3 mb-3 ps-2 he-auto">
-                            <Col md="9">
+                            <Col md="12">
                               <Sparklines data={sampleData3}>
                                 <SparklinesCurve
                                   style={{
@@ -457,7 +457,7 @@ export default class CRMDashboard2 extends Component {
                             <h6 className="widget-subheading mb-0 opacity-5">total revenue</h6>
                           </div>
                           <Row className="g-0 widget-chart-wrapper mt-3 mb-3 ps-2 he-auto">
-                            <Col md="9">
+                            <Col md="12">
                               <Sparklines data={sampleData4}>
                                 <SparklinesCurve
                                   style={{
