@@ -8,7 +8,15 @@ import prettier from 'eslint-config-prettier';
 
 export default [
   {
-    ignores: ['build/**', 'node_modules/**', 'public/**', 'patches/**', '*.min.js'],
+    ignores: [
+      'build/**',
+      'node_modules/**',
+      '.node_modules*/**',
+      'node_modules_*/**',
+      'public/**',
+      'patches/**',
+      '*.min.js',
+    ],
   },
   js.configs.recommended,
   {

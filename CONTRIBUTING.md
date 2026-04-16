@@ -29,6 +29,10 @@ npm install --legacy-peer-deps
 | `npm run lint:fix`          | Run ESLint and auto-fix what it can.             |
 | `npm run format`            | Run Prettier (write).                            |
 | `npm run format:check`      | Run Prettier in check-only mode (same as CI).    |
+| `npm test`                  | Run Vitest in watch mode.                        |
+| `npm test -- --run`         | Run Vitest once (same mode used in CI).          |
+| `npm run test:ui`           | Open the Vitest UI.                              |
+| `npm run test:coverage`     | Run Vitest once with v8 coverage.                |
 
 ## Environment
 
@@ -64,14 +68,13 @@ The build system is Vite. Manual vendor chunking lives in [vite.config.js](vite.
 
 ## Testing
 
-The Vitest harness is wired up — config in [vitest.config.js](vitest.config.js), setup in [vitest.setup.js](vitest.setup.js), tests live next to the code under test as `*.test.jsx` (see [src/reducers/ThemeOptions.test.jsx](src/reducers/ThemeOptions.test.jsx) and friends).
-
-The runner itself is **not yet installed** in `package.json`. The current `npm install` resolution stalls when the React 19 `overrides` block is reconciled with the new dev dependencies, so the test deps were held back to keep `npm install` working for everyone. Until the override audit lands, install Vitest manually if you want to run the suite locally:
+Tests live next to the code under test as `*.test.jsx` and use Vitest + React Testing Library. The entry point is [vitest.config.js](vitest.config.js); shared setup (matchers, RTL cleanup, `matchMedia` / `ResizeObserver` shims) lives in [vitest.setup.js](vitest.setup.js).
 
 ```bash
-pnpm add -D vitest @vitest/ui @vitest/coverage-v8 \
-  @testing-library/react @testing-library/jest-dom @testing-library/user-event jsdom
-npx vitest run
+npm test              # watch mode
+npm test -- --run     # single run, same as CI
+npm run test:ui       # Vitest UI
+npm run test:coverage # single run with v8 coverage
 ```
 
 When you write new tests:
@@ -79,7 +82,7 @@ When you write new tests:
 - **Prefer behavior-level tests.** Render via RTL, assert on what the user sees.
 - **Keep unit tests pure.** Reducers and helpers get plain-JS tests — no DOM.
 
-CI runs `lint` and `build` on every push and PR — see [.github/workflows/ci.yml](.github/workflows/ci.yml). The test step will be re-enabled once the override audit lets `npm install` complete cleanly with the Vitest devDeps in place.
+CI runs `lint`, `vitest run`, and `build` on every push and PR — see [.github/workflows/ci.yml](.github/workflows/ci.yml).
 
 ## Commits
 
@@ -90,7 +93,7 @@ CI runs `lint` and `build` on every push and PR — see [.github/workflows/ci.ym
 ## Pull Requests
 
 1. Fork the repo and create a feature branch (`feature/<short-name>`).
-2. Make sure `npm run lint` and `npm run build` pass locally (and `npx vitest run` if you have the test deps installed).
+2. Make sure `npm run lint`, `npm test -- --run`, and `npm run build` all pass locally — same checks CI runs.
 3. Open a PR against `master`. Include screenshots or a short recording when UI changes are user-visible.
 4. Keep PRs small and focused — reviewers merge faster.
 

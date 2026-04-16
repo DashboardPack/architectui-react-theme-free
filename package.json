@@ -23,6 +23,9 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
     "postinstall": "patch-package"
   },
   "dependencies": {
@@ -116,9 +119,15 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@eslint/js": "^9.39.4",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
+    "@vitest/coverage-v8": "^4.1.4",
+    "@vitest/ui": "^4.1.4",
     "ajv": "^8.18.0",
     "ajv-keywords": "^5.1.0",
     "eslint": "^9.39.4",
@@ -129,12 +138,14 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "glob": "^13.0.6",
     "globals": "^17.5.0",
+    "jsdom": "^29.0.2",
     "patch-package": "^8.0.1",
     "postcss": "^8.5.9",
     "prettier": "^3.8.3",
     "rollup-plugin-visualizer": "^7.0.1",
     "sass": "^1.99.0",
-    "vite": "^8.0.8"
+    "vite": "^8.0.8",
+    "vitest": "^4.1.4"
   },
   "overrides": {
     "d3-color": "^3.1.0",
@@ -144,43 +155,11 @@
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "@types/react": "^19.2.14",
-    "rc-slider": {
-      "react": "^19.2.5",
-      "react-dom": "^19.2.5"
-    },
-    "rc-tooltip": {
-      "react": "^19.2.5",
-      "react-dom": "^19.2.5"
-    },
-    "rc-util": {
-      "react": "^19.2.5",
-      "react-dom": "^19.2.5"
-    },
-    "rc-motion": {
-      "react": "^19.2.5",
-      "react-dom": "^19.2.5"
-    },
-    "@rc-component/trigger": {
-      "react": "^19.2.5",
-      "react-dom": "^19.2.5"
-    },
-    "@rc-component/portal": {
-      "react": "^19.2.5",
-      "react-dom": "^19.2.5"
-    },
-    "rc-resize-observer": {
-      "react": "^19.2.5",
-      "react-dom": "^19.2.5"
-    },
     "ckeditor4-react": {
       "react": "^19.2.5",
       "react-dom": "^19.2.5"
     },
     "react-anime": {
-      "react": "^19.2.5",
-      "react-dom": "^19.2.5"
-    },
-    "react-copy-to-clipboard": {
       "react": "^19.2.5",
       "react-dom": "^19.2.5"
     },
@@ -201,18 +180,6 @@
       "react-dom": "^19.2.5"
     },
     "reactour": {
-      "react": "^19.2.5",
-      "react-dom": "^19.2.5"
-    },
-    "styled-components": {
-      "react": "^19.2.5",
-      "react-dom": "^19.2.5"
-    },
-    "react-resize-detector": {
-      "react": "^19.2.5",
-      "react-dom": "^19.2.5"
-    },
-    "react-intersection-observer": {
       "react": "^19.2.5",
       "react-dom": "^19.2.5"
     }

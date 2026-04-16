@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   verify:
-    name: Lint and build
+    name: Lint, test, build
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -30,6 +30,9 @@ jobs:
 
       - name: Lint
         run: npm run lint
+
+      - name: Test
+        run: npx vitest run
 
       - name: Build
         run: npm run build
