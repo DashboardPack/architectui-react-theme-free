@@ -1,5 +1,7 @@
-// Linear Icons
-$linearicons-font-path: 'linearicons';
+// Linear Icons — font files are in public/fonts/linearicons/ so they resolve
+// to absolute URLs that work in both dev and the production build without
+// the CSS URL rebasing headaches that @import + nested SCSS created.
+$linearicons-font-path: '/fonts/linearicons';
 
 @font-face {
   font-family: 'Linearicons-Free';
