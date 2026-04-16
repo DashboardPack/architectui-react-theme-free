@@ -16,6 +16,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:analyze": "ANALYZE=true vite build",
     "preview": "vite preview",
     "start": "vite",
     "lint": "eslint .",
@@ -131,6 +132,7 @@
     "patch-package": "^8.0.1",
     "postcss": "^8.5.9",
     "prettier": "^3.8.3",
+    "rollup-plugin-visualizer": "^7.0.1",
     "sass": "^1.99.0",
     "vite": "^8.0.8"
   },
