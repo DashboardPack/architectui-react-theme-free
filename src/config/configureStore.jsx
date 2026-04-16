@@ -6,6 +6,14 @@ import {
   subscribeThemeOptionsPersistence,
 } from './persistThemeOptions';
 
+/**
+ * Build the Redux store. Reads any persisted `ThemeOptions` subset from
+ * localStorage on startup (merged over the reducer's defaults so schema
+ * additions always get a default value), then subscribes to the store so
+ * subsequent changes write back.
+ *
+ * @returns {import('@reduxjs/toolkit').EnhancedStore} the configured store
+ */
 export default function configureAppStore() {
   const persistedThemeOptions = loadPersistedThemeOptions();
 

@@ -1,7 +1,20 @@
 import { Component } from 'react';
 
+/**
+ * @typedef {Object} ErrorBoundaryState
+ * @property {Error | null} error
+ */
+
 const devMode = typeof import.meta !== 'undefined' && import.meta.env?.DEV;
 
+/**
+ * Top-level error boundary. Renders a friendly card with the error
+ * message, component stack (in dev), and a reload button whenever a
+ * descendant throws during render. Mounted once in `src/index.jsx` so a
+ * crash in any demo page keeps the shell alive.
+ *
+ * @extends {Component<{ children?: React.ReactNode }, ErrorBoundaryState>}
+ */
 export default class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
