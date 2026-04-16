@@ -61,7 +61,6 @@
     "rc-tooltip": "^6.4.0",
     "react": "^19.2.5",
     "react-animations": "^1.0.0",
-    "react-anime": "^4.1.1",
     "react-apexcharts": "^2.1.0",
     "react-big-calendar": "^1.19.4",
     "react-bootstrap": "^2.10.10",
@@ -83,7 +82,6 @@
     "react-input-mask": "^2.0.4",
     "react-leaflet": "^5.0.0",
     "react-liquid-gauge": "^1.2.4",
-    "react-loaders": "^3.0.1",
     "react-numeric-input": "^2.2.3",
     "react-on-screen": "^2.1.1",
     "react-paginate": "^8.3.0",
@@ -106,7 +104,6 @@
     "react-toastify": "^11.0.5",
     "react-validation": "^3.0.7",
     "react-vertical-timeline-component": "^4.0.0",
-    "react-visibility-sensor": "^5.1.1",
     "react-widgets": "^5.8.6",
     "reactour": "^1.19.4",
     "reactstrap": "^9.2.3",
@@ -160,10 +157,6 @@
     "react-is": "^19.2.5",
     "@types/react": "^19.2.14",
     "ckeditor4-react": {
-      "react": "^19.2.5",
-      "react-dom": "^19.2.5"
-    },
-    "react-anime": {
       "react": "^19.2.5",
       "react-dom": "^19.2.5"
     },

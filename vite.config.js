@@ -25,13 +25,11 @@ const cjsInteropPackages = [
   'react-data-table-component',
   'react-input-mask',
   'react-liquid-gauge',
-  'react-loaders',
   'react-perfect-scrollbar',
   'react-responsive-tabs',
   'react-slick',
   'react-sparklines',
   'react-sticky-el',
-  'react-visibility-sensor',
 ];
 
 const cjsInteropPlugin = (pkgs) => {
@@ -136,6 +134,13 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         src: path.resolve(__dirname, './src'),
+        // `react-loaders` (3.0.1, last published 2018) is a webpack-bundled UMD
+        // that produces default + named exports in a shape the optimised
+        // ESM output can't re-export cleanly. Its only job is to emit the
+        // DOM shape `loaders.css` animations expect, which is maybe twenty
+        // lines of JSX. Route the package specifier to a local component
+        // that does exactly that so the dep can drop out of the tree.
+        'react-loaders': path.resolve(__dirname, './src/components/Loader.jsx'),
         // Vite 8 / rolldown wraps internmap's ESM `export class InternMap` in a
         // lazy `__esmMin(cb)` initializer but d3-array's `ordinal.js` runs
         // `new InternMap()` eagerly inside another wrapper — the lazy cb never
@@ -189,7 +194,7 @@ export default defineConfig(({ mode }) => {
             if (/[\\/]node_modules[\\/](d3|d3-[^\\/]+)[\\/]/.test(id)) return 'vendor-d3';
             if (/[\\/]node_modules[\\/](moment|date-fns|date-arithmetic)[\\/]/.test(id))
               return 'vendor-dates';
-            if (/[\\/]node_modules[\\/](framer-motion|react-animations|react-anime|animejs)[\\/]/.test(id))
+            if (/[\\/]node_modules[\\/](framer-motion|react-animations)[\\/]/.test(id))
               return 'vendor-motion';
             if (/[\\/]node_modules[\\/]styled-components[\\/]/.test(id)) return 'vendor-styled';
             if (/[\\/]node_modules[\\/](ckeditor|ckeditor4|ckeditor4-react)[\\/]/.test(id))
