@@ -1,12 +1,13 @@
 // Dropdown
 
-@use "sass:math";
+@use 'sass:math';
 
 .dropdown-menu {
-  box-shadow: 0 0.46875rem 2.1875rem rgba(shade-color($primary, 50%), .03),
-  0 0.9375rem 1.40625rem rgba(shade-color($primary, 50%), .03),
-  0 0.25rem 0.53125rem rgba(shade-color($primary, 50%), .05),
-  0 0.125rem 0.1875rem rgba(shade-color($primary, 50%), .03);
+  box-shadow:
+    0 0.46875rem 2.1875rem rgba(shade-color($primary, 50%), 0.03),
+    0 0.9375rem 1.40625rem rgba(shade-color($primary, 50%), 0.03),
+    0 0.25rem 0.53125rem rgba(shade-color($primary, 50%), 0.05),
+    0 0.125rem 0.1875rem rgba(shade-color($primary, 50%), 0.03);
   font-size: $font-size-base;
 
   margin: $dropdown-spacer;
@@ -26,7 +27,9 @@
     font-size: $font-size-base;
     display: flex;
     align-items: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
     cursor: pointer;
     z-index: 6;
     position: relative;
@@ -36,22 +39,23 @@
       margin-right: math.div($dropdown-padding-y, 2);
       width: 30px;
       text-align: center;
-      opacity: .3;
+      opacity: 0.3;
       margin-left: -10px;
     }
 
     &:hover {
       .dropdown-icon {
-        opacity: .7;
+        opacity: 0.7;
       }
     }
   }
 
   &.dropdown-menu-shadow {
-    box-shadow: 0 0.66875rem 2.3875rem rgba(shade-color($primary, 50%), .03),
-    0 1.1375rem 1.60625rem rgba(shade-color($primary, 50%), .03),
-    0 0.45rem 0.73125rem rgba(shade-color($primary, 50%), .05),
-    0 0.325rem 0.3875rem rgba(shade-color($primary, 50%), .03);
+    box-shadow:
+      0 0.66875rem 2.3875rem rgba(shade-color($primary, 50%), 0.03),
+      0 1.1375rem 1.60625rem rgba(shade-color($primary, 50%), 0.03),
+      0 0.45rem 0.73125rem rgba(shade-color($primary, 50%), 0.05),
+      0 0.325rem 0.3875rem rgba(shade-color($primary, 50%), 0.03);
   }
 }
 
@@ -138,7 +142,7 @@
     height: 100%;
     width: 100%;
     z-index: 8;
-    opacity: .25;
+    opacity: 0.25;
     filter: grayscale(80%);
     background-size: cover;
   }
@@ -185,7 +189,7 @@
 .menu-header-subtitle {
   font-size: $font-family-base;
   margin: 5px 0 0;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .dropdown-menu {
@@ -193,7 +197,7 @@
     margin-bottom: -$dropdown-padding-y;
     padding: 1px;
 
-    [class*="col-"] {
+    [class*='col-'] {
       padding: $dropdown-padding-y;
     }
   }
@@ -201,7 +205,7 @@
   .grid-menu-xl {
     margin-bottom: -(math.div($dropdown-padding-y, 1.35));
 
-    [class*="col-"] {
+    [class*='col-'] {
       padding: 0;
     }
   }
@@ -213,7 +217,7 @@
   &::after {
     position: relative;
     top: 2px;
-    opacity: .8;
+    opacity: 0.8;
     margin-left: 5px;
   }
 }
@@ -233,13 +237,12 @@
 }
 
 .dropdown-toggle-split {
-  border-left: rgba(255, 255, 255, .1) solid 2px;
+  border-left: rgba(255, 255, 255, 0.1) solid 2px;
 }
 
 // Dropdown Indicators
 
 .dropdown-menu {
-
   &::before,
   &::after {
     position: absolute;
@@ -265,7 +268,7 @@
     z-index: 4;
   }
 
-  &[data-placement="top-start"] {
+  &[data-placement='top-start'] {
     &::before,
     &::after {
       top: auto;
@@ -277,7 +280,7 @@
     }
   }
 
-  &[data-placement="left-start"] {
+  &[data-placement='left-start'] {
     &::before,
     &::after {
       left: auto;
@@ -291,7 +294,7 @@
     }
   }
 
-  &[data-placement="right-start"] {
+  &[data-placement='right-start'] {
     &::before,
     &::after {
       right: auto;

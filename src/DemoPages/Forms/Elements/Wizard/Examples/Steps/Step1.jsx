@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { Row, Col, FormGroup, Label, Input } from "reactstrap";
+import React, { Fragment } from 'react';
+import { Row, Col, FormGroup, Label, Input } from 'reactstrap';
 
 export default class WizardStep1 extends React.Component {
   render() {
@@ -10,23 +10,38 @@ export default class WizardStep1 extends React.Component {
             <Col md={6}>
               <FormGroup>
                 <Label for="exampleEmail55">Email</Label>
-                <Input type="email" name="email" id="exampleEmail55" placeholder="with a placeholder"/>
+                <Input
+                  type="email"
+                  name="email"
+                  id="exampleEmail55"
+                  placeholder="with a placeholder"
+                />
               </FormGroup>
             </Col>
             <Col md={6}>
               <FormGroup>
                 <Label for="examplePassword22">Password</Label>
-                <Input type="password" name="password" id="examplePassword22" placeholder="password placeholder"/>
+                <Input
+                  type="password"
+                  name="password"
+                  id="examplePassword22"
+                  placeholder="password placeholder"
+                />
               </FormGroup>
             </Col>
           </Row>
           <FormGroup>
             <Label for="exampleAddress">Address</Label>
-            <Input type="text" name="address" id="exampleAddress" placeholder="1234 Main St"/>
+            <Input type="text" name="address" id="exampleAddress" placeholder="1234 Main St" />
           </FormGroup>
           <FormGroup>
             <Label for="exampleAddress2">Address 2</Label>
-            <Input type="text" name="address2" id="exampleAddress2" placeholder="Apartment, studio, or floor"/>
+            <Input
+              type="text"
+              name="address2"
+              id="exampleAddress2"
+              placeholder="Apartment, studio, or floor"
+            />
           </FormGroup>
           <Row>
             <Col md={6}>

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 /**
  * Simple circular progress indicator to replace react-sweet-progress
@@ -8,8 +8,8 @@ const CircleProgress = ({
   percent = 0,
   width = 100,
   strokeWidth = 8,
-  trailColor = "#f5f5f5",
-  strokeColor = "#3FC7FA"
+  trailColor = '#f5f5f5',
+  strokeColor = '#3FC7FA',
 }) => {
   const size = typeof width === 'number' ? width : 100;
   const radius = (size - strokeWidth) / 2;
@@ -59,19 +59,14 @@ const CircleProgress = ({
 /**
  * Wrapper component to match react-sweet-progress API
  */
-export const Progress = ({
-  type = "line",
-  percent = 0,
-  width = "100%",
-  theme = {}
-}) => {
-  if (type === "circle") {
+export const Progress = ({ type = 'line', percent = 0, width = '100%', theme = {} }) => {
+  if (type === 'circle') {
     const activeTheme = theme?.active || {};
-    const trailColor = activeTheme.trailColor || "#f5f5f5";
-    const strokeColor = activeTheme.color || "#3FC7FA";
+    const trailColor = activeTheme.trailColor || '#f5f5f5';
+    const strokeColor = activeTheme.color || '#3FC7FA';
 
     // Handle width - if it's "100%" use a default size, otherwise parse it
-    const size = width === "100%" ? 60 : (typeof width === 'number' ? width : 60);
+    const size = width === '100%' ? 60 : typeof width === 'number' ? width : 60;
 
     return (
       <CircleProgress
@@ -85,24 +80,28 @@ export const Progress = ({
 
   // Line progress (fallback)
   const activeTheme = theme?.active || {};
-  const trailColor = activeTheme.trailColor || "#f5f5f5";
-  const strokeColor = activeTheme.color || "#3FC7FA";
+  const trailColor = activeTheme.trailColor || '#f5f5f5';
+  const strokeColor = activeTheme.color || '#3FC7FA';
 
   return (
-    <div style={{
-      width: width,
-      height: 8,
-      backgroundColor: trailColor,
-      borderRadius: 4,
-      overflow: 'hidden'
-    }}>
-      <div style={{
-        width: `${percent}%`,
-        height: '100%',
-        backgroundColor: strokeColor,
+    <div
+      style={{
+        width: width,
+        height: 8,
+        backgroundColor: trailColor,
         borderRadius: 4,
-        transition: 'width 0.3s ease'
-      }} />
+        overflow: 'hidden',
+      }}
+    >
+      <div
+        style={{
+          width: `${percent}%`,
+          height: '100%',
+          backgroundColor: strokeColor,
+          borderRadius: 4,
+          transition: 'width 0.3s ease',
+        }}
+      />
     </div>
   );
 };

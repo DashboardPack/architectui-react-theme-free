@@ -1,16 +1,16 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 import SweetAlert from 'react-bootstrap-sweetalert';
 
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
 
-import { Row, Col, Card, CardBody, Button, CardTitle } from "reactstrap";
+import { Row, Col, Card, CardBody, Button, CardTitle } from 'reactstrap';
 
 export default class SweetAlerts extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
       show: false,
-      message34:false,
+      message34: false,
       message32: false,
       message33: false,
       message1: false,
@@ -24,8 +24,14 @@ export default class SweetAlerts extends Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <div>
               <Row>
                 <Col md="3">
@@ -35,8 +41,12 @@ export default class SweetAlerts extends Component {
                       <Button color="success" onClick={() => this.setState({ show: true })}>
                         Show Alert
                       </Button>
-                      <SweetAlert title="Good job!"  show={this.state.show}
-                      type="success" onConfirm={() => this.setState({ show: false })}/>
+                      <SweetAlert
+                        title="Good job!"
+                        show={this.state.show}
+                        type="success"
+                        onConfirm={() => this.setState({ show: false })}
+                      />
                     </CardBody>
                   </Card>
                 </Col>
@@ -47,8 +57,12 @@ export default class SweetAlerts extends Component {
                       <Button color="danger" onClick={() => this.setState({ message34: true })}>
                         Show Alert
                       </Button>
-                      <SweetAlert title="Good job!"  show={this.state.message34}
-                      type="error" onConfirm={() => this.setState({ message34: false })}/>
+                      <SweetAlert
+                        title="Good job!"
+                        show={this.state.message34}
+                        type="error"
+                        onConfirm={() => this.setState({ message34: false })}
+                      />
                     </CardBody>
                   </Card>
                 </Col>
@@ -59,8 +73,12 @@ export default class SweetAlerts extends Component {
                       <Button color="info" onClick={() => this.setState({ message32: true })}>
                         Show Alert
                       </Button>
-                      <SweetAlert title="Good job!"  show={this.state.message32}
-                        type="info" onConfirm={() => this.setState({ message32: false })}/>
+                      <SweetAlert
+                        title="Good job!"
+                        show={this.state.message32}
+                        type="info"
+                        onConfirm={() => this.setState({ message32: false })}
+                      />
                     </CardBody>
                   </Card>
                 </Col>
@@ -71,8 +89,12 @@ export default class SweetAlerts extends Component {
                       <Button color="warning" onClick={() => this.setState({ message33: true })}>
                         Show Alert
                       </Button>
-                      <SweetAlert title="Good job!"  show={this.state.message33}
-                        type="warning" onConfirm={() => this.setState({ message33: false })}/>
+                      <SweetAlert
+                        title="Good job!"
+                        show={this.state.message33}
+                        type="warning"
+                        onConfirm={() => this.setState({ message33: false })}
+                      />
                     </CardBody>
                   </Card>
                 </Col>
@@ -85,8 +107,11 @@ export default class SweetAlerts extends Component {
                       <Button color="primary" onClick={() => this.setState({ message1: true })}>
                         Show Alert
                       </Button>
-                      <SweetAlert title="Here's a message!"
-                        show={this.state.message1} onConfirm={() => this.setState({ message1: false })} />
+                      <SweetAlert
+                        title="Here's a message!"
+                        show={this.state.message1}
+                        onConfirm={() => this.setState({ message1: false })}
+                      />
                     </CardBody>
                   </Card>
                 </Col>
@@ -97,8 +122,11 @@ export default class SweetAlerts extends Component {
                       <Button color="primary" onClick={() => this.setState({ message2: true })}>
                         Show Alert
                       </Button>
-                      <SweetAlert title="Here's a message!" show={this.state.message2}
-                        onConfirm={() => this.setState({ message2: false })}>
+                      <SweetAlert
+                        title="Here's a message!"
+                        show={this.state.message2}
+                        onConfirm={() => this.setState({ message2: false })}
+                      >
                         It's pretty, isn't it?
                       </SweetAlert>
                     </CardBody>
@@ -112,11 +140,17 @@ export default class SweetAlerts extends Component {
                         Show Alert
                       </Button>
                       <SweetAlert
-                        title={<span>HTML <small>Title</small>!</span>}
+                        title={
+                          <span>
+                            HTML <small>Title</small>!
+                          </span>
+                        }
                         show={this.state.message4}
                         onConfirm={() => this.setState({ message4: false })}
                       >
-                        <span>A custom <span style={{color:'#F8BB86'}}>html</span> message.</span>
+                        <span>
+                          A custom <span style={{ color: '#F8BB86' }}>html</span> message.
+                        </span>
                       </SweetAlert>
                     </CardBody>
                   </Card>
@@ -125,13 +159,15 @@ export default class SweetAlerts extends Component {
                   <Card className="mb-3 text-center">
                     <CardBody>
                       <CardTitle>Auto Close Timer</CardTitle>
-                      <Button color="primary"
+                      <Button
+                        color="primary"
                         onClick={() => {
                           this.setState({ message7: true });
                           setTimeout(() => {
                             this.setState({ message7: false });
                           }, 2000);
-                        }}>
+                        }}
+                      >
                         Show Alert
                       </Button>
                       <SweetAlert

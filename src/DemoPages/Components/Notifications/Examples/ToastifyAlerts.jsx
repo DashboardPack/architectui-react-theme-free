@@ -1,58 +1,43 @@
-import React, { Component, Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
-import {
-  Row,
-  Col,
-  Card,
-  CardBody,
-  Button,
-  CardTitle,
-  CardFooter,
-} from "reactstrap";
+import React, { Component, Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
+import { Row, Col, Card, CardBody, Button, CardTitle, CardFooter } from 'reactstrap';
 
-import {
-  ToastContainer,
-  toast,
-  Bounce,
-  Slide,
-  Flip,
-  Zoom,
-} from "react-toastify";
+import { ToastContainer, toast, Bounce, Slide, Flip, Zoom } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
 const flags = [
   {
-    id: "disableAutoClose",
-    label: "Disable auto-close",
+    id: 'disableAutoClose',
+    label: 'Disable auto-close',
   },
   {
-    id: "hideProgressBar",
-    label: "Hide progress bar(less fanciness!)",
+    id: 'hideProgressBar',
+    label: 'Hide progress bar(less fanciness!)',
   },
   {
-    id: "newestOnTop",
-    label: "Newest on top*",
+    id: 'newestOnTop',
+    label: 'Newest on top*',
   },
   {
-    id: "closeOnClick",
-    label: "Close on click",
+    id: 'closeOnClick',
+    label: 'Close on click',
   },
   {
-    id: "pauseOnHover",
-    label: "Pause delay on hover",
+    id: 'pauseOnHover',
+    label: 'Pause delay on hover',
   },
   {
-    id: "pauseOnFocusLoss",
-    label: "Pause toast when the window loses focus",
+    id: 'pauseOnFocusLoss',
+    label: 'Pause toast when the window loses focus',
   },
   {
-    id: "rtl",
-    label: "Right to left layout*",
+    id: 'rtl',
+    label: 'Right to left layout*',
   },
   {
-    id: "draggable",
-    label: "Allow to drag and close the toast",
+    id: 'draggable',
+    label: 'Allow to drag and close the toast',
   },
 ];
 
@@ -65,8 +50,14 @@ const transitions = {
 
 const Checkbox = ({ label, onChange, id, checked }) => (
   <div className="form-check">
-    <input id={id} className="form-check-input" type="checkbox" name={id}
-      checked={checked} onChange={onChange}/>
+    <input
+      id={id}
+      className="form-check-input"
+      type="checkbox"
+      name={id}
+      checked={checked}
+      onChange={onChange}
+    />
     <label className="form-check-label" htmlFor={id}>
       {label}
     </label>
@@ -77,14 +68,21 @@ const Radio = ({ options, name, onChange, checked = false }) => {
   if (!options || typeof options !== 'object') {
     return null;
   }
-  
+
   return Object.keys(options).map((k) => {
     const option = options[k];
 
     return (
       <div className="form-check" key={`${name}-${option}`}>
-        <input className="form-check-input" id={option} type="radio" name={name}
-          value={option} checked={option === checked} onChange={onChange}/>
+        <input
+          className="form-check-input"
+          id={option}
+          type="radio"
+          name={name}
+          value={option}
+          checked={option === checked}
+          onChange={onChange}
+        />
         <label className="form-check-label" htmlFor={option}>
           {option}
         </label>
@@ -93,15 +91,14 @@ const Radio = ({ options, name, onChange, checked = false }) => {
   });
 };
 
-
 class ToastifyAlerts extends Component {
   state = ToastifyAlerts.getDefaultState();
 
   static getDefaultState() {
     return {
       ...ToastContainer.defaultProps,
-      transition: "bounce",
-      type: "success",
+      transition: 'bounce',
+      type: 'success',
       disableAutoClose: false,
     };
   }
@@ -114,10 +111,10 @@ class ToastifyAlerts extends Component {
   clearAll = () => toast.dismiss();
 
   showToast = () =>
-    this.state.type === "default"
-      ? toast("This is the default toaster notification box!")
+    this.state.type === 'default'
+      ? toast('This is the default toaster notification box!')
       : toast[this.state.type](
-          "This is a toaster screen notification with dummy color, position and extra texts!"
+          'This is a toaster screen notification with dummy color, position and extra texts!'
         );
 
   handleAutoCloseDelay = (e) =>
@@ -127,7 +124,7 @@ class ToastifyAlerts extends Component {
 
   isDefaultProps() {
     return (
-      this.state.position === "top-right" &&
+      this.state.position === 'top-right' &&
       this.state.autoClose === 5000 &&
       !this.state.disableAutoClose &&
       !this.state.hideProgressBar &&
@@ -153,7 +150,13 @@ class ToastifyAlerts extends Component {
   renderFlags() {
     return flags.map(({ id, label }) => (
       <div key={id}>
-        <Checkbox id={id} className="form-check-input" label={label} onChange={this.toggleCheckbox} checked={this.state[id]}/>
+        <Checkbox
+          id={id}
+          className="form-check-input"
+          label={label}
+          onChange={this.toggleCheckbox}
+          checked={this.state[id]}
+        />
       </div>
     ));
   }
@@ -162,8 +165,14 @@ class ToastifyAlerts extends Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <Row>
               <Col md="12">
                 <Card className="main-card mb-3">
@@ -174,7 +183,12 @@ class ToastifyAlerts extends Component {
                         <div>
                           <h5>Color States</h5>
                           <div>
-                            <Radio options={toast.TYPE} name="type" checked={this.state.type} onChange={this.handleRadioOrSelect}/>
+                            <Radio
+                              options={toast.TYPE}
+                              name="type"
+                              checked={this.state.type}
+                              onChange={this.handleRadioOrSelect}
+                            />
                           </div>
                         </div>
                       </Col>
@@ -188,8 +202,13 @@ class ToastifyAlerts extends Component {
                           <div>
                             <div className="">
                               <label htmlFor="transition">Transition</label>
-                              <select name="transition" id="transition" className="form-control"
-                                onChange={this.handleRadioOrSelect} value={this.state.transition} >
+                              <select
+                                name="transition"
+                                id="transition"
+                                className="form-control"
+                                onChange={this.handleRadioOrSelect}
+                                value={this.state.transition}
+                              >
                                 {Object.keys(transitions).map((k) => (
                                   <option key={k} value={k}>
                                     {k}
@@ -199,8 +218,15 @@ class ToastifyAlerts extends Component {
                             </div>
                             <div className="">
                               <label htmlFor="autoClose">Delay</label>
-                              <input type="number" name="autoClose" className="form-control" id="autoClose" value={this.state.autoClose}
-                                onChange={this.handleAutoCloseDelay} disabled={this.state.disableAutoClose}/>
+                              <input
+                                type="number"
+                                name="autoClose"
+                                className="form-control"
+                                id="autoClose"
+                                value={this.state.autoClose}
+                                onChange={this.handleAutoCloseDelay}
+                                disabled={this.state.disableAutoClose}
+                              />
                             </div>
                           </div>
                         </div>
@@ -209,10 +235,20 @@ class ToastifyAlerts extends Component {
                   </CardBody>
                   <CardFooter>
                     <div>
-                      <Button size="sm" className="text-danger" onClick={this.clearAll} color="link">
+                      <Button
+                        size="sm"
+                        className="text-danger"
+                        onClick={this.clearAll}
+                        color="link"
+                      >
                         Clear All
                       </Button>
-                      <Button size="sm" className="text-primary" onClick={this.handleReset} color="link">
+                      <Button
+                        size="sm"
+                        className="text-primary"
+                        onClick={this.handleReset}
+                        color="link"
+                      >
                         Reset
                       </Button>
                     </div>

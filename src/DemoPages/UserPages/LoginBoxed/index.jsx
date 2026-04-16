@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap";
+import React, { Fragment } from 'react';
+import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 // Layout
 
 const LoginBoxed = () => (
@@ -21,12 +21,22 @@ const LoginBoxed = () => (
                   <Row form>
                     <Col md={12}>
                       <FormGroup>
-                        <Input type="email" name="email" id="exampleEmail" placeholder="Email here..."/>
+                        <Input
+                          type="email"
+                          name="email"
+                          id="exampleEmail"
+                          placeholder="Email here..."
+                        />
                       </FormGroup>
                     </Col>
                     <Col md={12}>
                       <FormGroup>
-                        <Input type="password" name="password" id="examplePassword" placeholder="Password here..."/>
+                        <Input
+                          type="password"
+                          name="password"
+                          id="examplePassword"
+                          placeholder="Password here..."
+                        />
                       </FormGroup>
                     </Col>
                   </Row>
@@ -39,15 +49,23 @@ const LoginBoxed = () => (
                 </Form>
                 <div className="divider" />
                 <h6 className="mb-0">
-                  No account?{" "}
-                  <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()} className="text-primary">
+                  No account?{' '}
+                  <a
+                    href="https://colorlib.com/"
+                    onClick={(e) => e.preventDefault()}
+                    className="text-primary"
+                  >
                     Sign up now
                   </a>
                 </h6>
               </div>
               <div className="modal-footer clearfix">
                 <div className="float-start">
-                  <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()} className="btn-lg btn btn-link">
+                  <a
+                    href="https://colorlib.com/"
+                    onClick={(e) => e.preventDefault()}
+                    className="btn-lg btn btn-link"
+                  >
                     Recover Password
                   </a>
                 </div>

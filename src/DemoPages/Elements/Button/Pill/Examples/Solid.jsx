@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from "react";
-import { Button, Container, ButtonGroup } from "reactstrap";
+import React, { Component, Fragment } from 'react';
+import { Button, Container, ButtonGroup } from 'reactstrap';
 
-import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
 class ButtonsPillSolid extends Component {
   state = {
@@ -236,43 +236,79 @@ class ButtonsPillSolid extends Component {
                   <CardTitle>Checkbox Buttons</CardTitle>
                   <div className="text-center">
                     <ButtonGroup size="sm" className="mb-2">
-                      <Button className="btn-pill" color="primary"
-                        onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>
+                      <Button
+                        className="btn-pill"
+                        color="primary"
+                        onClick={() => this.onCheckboxBtnClick(1)}
+                        active={this.state.cSelected.includes(1)}
+                      >
                         One
                       </Button>
-                      <Button color="primary" onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>
+                      <Button
+                        color="primary"
+                        onClick={() => this.onCheckboxBtnClick(2)}
+                        active={this.state.cSelected.includes(2)}
+                      >
                         Two
                       </Button>
-                      <Button className="btn-pill" color="primary"
-                        onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>
+                      <Button
+                        className="btn-pill"
+                        color="primary"
+                        onClick={() => this.onCheckboxBtnClick(3)}
+                        active={this.state.cSelected.includes(3)}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
                     <div className="divider" />
                     <ButtonGroup className="mb-2">
-                      <Button className="btn-pill" color="warning"
-                        onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>
+                      <Button
+                        className="btn-pill"
+                        color="warning"
+                        onClick={() => this.onCheckboxBtnClick(1)}
+                        active={this.state.cSelected.includes(1)}
+                      >
                         One
                       </Button>
-                      <Button color="warning" onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>
+                      <Button
+                        color="warning"
+                        onClick={() => this.onCheckboxBtnClick(2)}
+                        active={this.state.cSelected.includes(2)}
+                      >
                         Two
                       </Button>
-                      <Button className="btn-pill" color="warning"
-                        onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>
+                      <Button
+                        className="btn-pill"
+                        color="warning"
+                        onClick={() => this.onCheckboxBtnClick(3)}
+                        active={this.state.cSelected.includes(3)}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
                     <div className="divider" />
                     <ButtonGroup size="lg" className="mb-2">
-                      <Button className="btn-pill" color="alternate"
-                        onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>
+                      <Button
+                        className="btn-pill"
+                        color="alternate"
+                        onClick={() => this.onCheckboxBtnClick(1)}
+                        active={this.state.cSelected.includes(1)}
+                      >
                         One
                       </Button>
-                      <Button color="alternate" onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)} >
+                      <Button
+                        color="alternate"
+                        onClick={() => this.onCheckboxBtnClick(2)}
+                        active={this.state.cSelected.includes(2)}
+                      >
                         Two
                       </Button>
-                      <Button className="btn-pill" color="alternate"
-                        onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>
+                      <Button
+                        className="btn-pill"
+                        color="alternate"
+                        onClick={() => this.onCheckboxBtnClick(3)}
+                        active={this.state.cSelected.includes(3)}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
@@ -288,44 +324,79 @@ class ButtonsPillSolid extends Component {
                   <CardTitle>Radio Buttons</CardTitle>
                   <div className="text-center">
                     <ButtonGroup size="sm" className="mb-2">
-                      <Button className="btn-pill" color="primary"
-                        onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                      <Button
+                        className="btn-pill"
+                        color="primary"
+                        onClick={() => this.onRadioBtnClick(1)}
+                        active={this.state.rSelected === 1}
+                      >
                         One
                       </Button>
-                      <Button color="primary" onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>
+                      <Button
+                        color="primary"
+                        onClick={() => this.onRadioBtnClick(2)}
+                        active={this.state.rSelected === 2}
+                      >
                         Two
                       </Button>
-                      <Button className="btn-pill" color="primary"
-                        onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>
+                      <Button
+                        className="btn-pill"
+                        color="primary"
+                        onClick={() => this.onRadioBtnClick(3)}
+                        active={this.state.rSelected === 3}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
                     <div className="divider" />
                     <ButtonGroup className="mb-2">
-                      <Button className="btn-pill" color="success"
-                        onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                      <Button
+                        className="btn-pill"
+                        color="success"
+                        onClick={() => this.onRadioBtnClick(1)}
+                        active={this.state.rSelected === 1}
+                      >
                         One
                       </Button>
-                      <Button color="success" onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2} >
+                      <Button
+                        color="success"
+                        onClick={() => this.onRadioBtnClick(2)}
+                        active={this.state.rSelected === 2}
+                      >
                         Two
                       </Button>
-                      <Button className="btn-pill" color="success"
-                        onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>
+                      <Button
+                        className="btn-pill"
+                        color="success"
+                        onClick={() => this.onRadioBtnClick(3)}
+                        active={this.state.rSelected === 3}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
                     <div className="divider" />
                     <ButtonGroup size="lg" className="mb-2">
-                      <Button className="btn-pill" color="info"
-                        onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                      <Button
+                        className="btn-pill"
+                        color="info"
+                        onClick={() => this.onRadioBtnClick(1)}
+                        active={this.state.rSelected === 1}
+                      >
                         One
                       </Button>
-                      <Button color="info"
-                        onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>
+                      <Button
+                        color="info"
+                        onClick={() => this.onRadioBtnClick(2)}
+                        active={this.state.rSelected === 2}
+                      >
                         Two
                       </Button>
-                      <Button className="btn-pill" color="info"
-                        onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>
+                      <Button
+                        className="btn-pill"
+                        color="info"
+                        onClick={() => this.onRadioBtnClick(3)}
+                        active={this.state.rSelected === 3}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>

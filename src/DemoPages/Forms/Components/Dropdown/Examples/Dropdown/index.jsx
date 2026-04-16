@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../../../utils/TransitionWrapper';
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../../utils/TransitionWrapper';
 import {
   Row,
   Col,
@@ -10,16 +10,16 @@ import {
   Label,
   Input,
   Container,
-} from "reactstrap";
+} from 'reactstrap';
 
-import { DropdownList } from "react-widgets";
+import { DropdownList } from 'react-widgets';
 
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-let colors = ["Orange", "Red", "Blue", "Purple"];
+let colors = ['Orange', 'Red', 'Blue', 'Purple'];
 
 library.add(faSpinner);
 
@@ -52,8 +52,14 @@ class FormDropdownExample extends React.Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Row>
                 <Col md="6">
@@ -62,8 +68,14 @@ class FormDropdownExample extends React.Component {
                       <CardTitle>Dropdown</CardTitle>
                       <Row>
                         <Col md={12}>
-                          <DropdownList data={people}  value={value} allowCreate="onFilter" textField="name"
-                            onCreate={(name) => this.handleCreate(name)} onChange={(value) => this.setState({ value })}/>
+                          <DropdownList
+                            data={people}
+                            value={value}
+                            allowCreate="onFilter"
+                            textField="name"
+                            onCreate={(name) => this.handleCreate(name)}
+                            onChange={(value) => this.setState({ value })}
+                          />
                         </Col>
                       </Row>
                     </CardBody>
@@ -81,16 +93,23 @@ class FormDropdownExample extends React.Component {
                         <Col md={4}>
                           <FormGroup>
                             <Label for="examplePassword">FontAwesome Icons</Label>
-                            <DropdownList busy
+                            <DropdownList
+                              busy
                               busySpinner={
-                                <FontAwesomeIcon className="text-success" spin icon="spinner"/>
-                              }/>
+                                <FontAwesomeIcon className="text-success" spin icon="spinner" />
+                              }
+                            />
                           </FormGroup>
                         </Col>
                         <Col md={4}>
                           <FormGroup>
                             <Label for="examplePassword">Regular Input</Label>
-                            <Input type="text" name="address2" id="examplePassword" placeholder="Apartment, studio, or floor"/>
+                            <Input
+                              type="text"
+                              name="address2"
+                              id="examplePassword"
+                              placeholder="Apartment, studio, or floor"
+                            />
                           </FormGroup>
                         </Col>
                       </Row>
@@ -103,7 +122,7 @@ class FormDropdownExample extends React.Component {
                       <CardTitle>DropUp</CardTitle>
                       <Row>
                         <Col md={12}>
-                          <DropdownList data={["orange", "red", "blue", "purple"]}/>
+                          <DropdownList data={['orange', 'red', 'blue', 'purple']} />
                         </Col>
                       </Row>
                     </CardBody>
@@ -111,8 +130,17 @@ class FormDropdownExample extends React.Component {
                   <Card className="main-card mb-3">
                     <CardBody>
                       <CardTitle>Disabled</CardTitle>
-                      <DropdownList className="mb-3" disabled data={colors} defaultValue={["orange", "blue"]}/>
-                      <DropdownList data={colors} defaultValue={["orange", "blue"]} disabled={["red", "purple"]}/>
+                      <DropdownList
+                        className="mb-3"
+                        disabled
+                        data={colors}
+                        defaultValue={['orange', 'blue']}
+                      />
+                      <DropdownList
+                        data={colors}
+                        defaultValue={['orange', 'blue']}
+                        disabled={['red', 'purple']}
+                      />
                     </CardBody>
                   </Card>
                 </Col>

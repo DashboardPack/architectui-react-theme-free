@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   InputGroup,
   Dropdown,
@@ -7,7 +7,7 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-} from "reactstrap";
+} from 'reactstrap';
 
 export default class FormInputGroupButton extends React.Component {
   constructor(props) {
@@ -37,8 +37,7 @@ export default class FormInputGroupButton extends React.Component {
     return (
       <div>
         <InputGroup>
-          <Button>I'm a button</Button>{" "}
-          <Input />
+          <Button>I'm a button</Button> <Input />
         </InputGroup>
         <br />
         <InputGroup>
@@ -56,13 +55,16 @@ export default class FormInputGroupButton extends React.Component {
         </InputGroup>
         <br />
         <InputGroup>
-          <Dropdown addonType="prepend"
-            isOpen={this.state.splitButtonOpen} toggle={this.toggleSplit}>
+          <Dropdown
+            addonType="prepend"
+            isOpen={this.state.splitButtonOpen}
+            toggle={this.toggleSplit}
+          >
             <Button outline>Split Button</Button>
             <DropdownToggle split outline />
           </Dropdown>
           <Input placeholder="and..." />
-          <Button color="secondary">I'm a button</Button>{" "}
+          <Button color="secondary">I'm a button</Button>{' '}
         </InputGroup>
       </div>
     );

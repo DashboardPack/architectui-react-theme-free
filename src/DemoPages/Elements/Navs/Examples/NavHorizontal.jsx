@@ -1,17 +1,7 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
 
-import {
-  Row,
-  Col,
-  Card,
-  CardBody,
-  CardTitle,
-  Nav,
-  NavItem,
-  NavLink,
-  Container,
-} from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle, Nav, NavItem, NavLink, Container } from 'reactstrap';
 
 export default class NavsHorizontal extends React.Component {
   constructor(props) {
@@ -43,8 +33,14 @@ export default class NavsHorizontal extends React.Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Row>
                 <Col md="12">

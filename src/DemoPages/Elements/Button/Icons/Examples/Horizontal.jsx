@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from "react";
-import { Button } from "reactstrap";
+import React, { Component, Fragment } from 'react';
+import { Button } from 'reactstrap';
 
-import { Row, Col, Card, CardBody, CardTitle, Container } from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle, Container } from 'reactstrap';
 
 class ButtonsHorizontalIcons extends Component {
   render() {
@@ -111,15 +111,27 @@ class ButtonsHorizontalIcons extends Component {
               <Card className="main-card mb-3">
                 <CardBody>
                   <CardTitle>Shadow Dashed P7 Icons</CardTitle>
-                  <Button className="mb-2 me-2 btn-icon btn-shadow btn-dashed" outline color="primary">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-shadow btn-dashed"
+                    outline
+                    color="primary"
+                  >
                     <i className="pe-7s-tools btn-icon-wrapper"> </i>
                     Primary
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-shadow btn-dashed" outline color="secondary">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-shadow btn-dashed"
+                    outline
+                    color="secondary"
+                  >
                     <i className="pe-7s-gym btn-icon-wrapper"> </i>
                     Secondary
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-shadow btn-dashed" outline color="success">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-shadow btn-dashed"
+                    outline
+                    color="success"
+                  >
                     <i className="pe-7s-umbrella btn-icon-wrapper"> </i>
                     Success
                   </Button>
@@ -127,23 +139,43 @@ class ButtonsHorizontalIcons extends Component {
                     <i className="pe-7s-science btn-icon-wrapper"> </i>
                     Info
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-shadow btn-dashed" outline color="warning">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-shadow btn-dashed"
+                    outline
+                    color="warning"
+                  >
                     <i className="pe-7s-trash btn-icon-wrapper"> </i>
                     Warning
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-shadow btn-dashed" outline color="danger">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-shadow btn-dashed"
+                    outline
+                    color="danger"
+                  >
                     <i className="pe-7s-video btn-icon-wrapper"> </i>
                     Danger
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-shadow btn-dashed" outline color="focus">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-shadow btn-dashed"
+                    outline
+                    color="focus"
+                  >
                     <i className="pe-7s-upload btn-icon-wrapper"> </i>
                     Focus
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-shadow btn-dashed" outline color="alternate">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-shadow btn-dashed"
+                    outline
+                    color="alternate"
+                  >
                     <i className="pe-7s-piggy btn-icon-wrapper"> </i>
                     Alt
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-shadow btn-dashed" outline color="light">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-shadow btn-dashed"
+                    outline
+                    color="light"
+                  >
                     <i className="pe-7s-photo btn-icon-wrapper"> </i>
                     Light
                   </Button>
@@ -211,47 +243,91 @@ class ButtonsHorizontalIcons extends Component {
               <Card className="main-card mb-3">
                 <CardBody>
                   <CardTitle>Outline 2x Shadow Linecons Icons</CardTitle>
-                  <Button className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x" outline color="primary">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x"
+                    outline
+                    color="primary"
+                  >
                     <i className="lnr-store btn-icon-wrapper"> </i>
                     Primary
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x" outline color="secondary">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x"
+                    outline
+                    color="secondary"
+                  >
                     <i className="lnr-book btn-icon-wrapper"> </i>
                     Secondary
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x" outline color="success">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x"
+                    outline
+                    color="success"
+                  >
                     <i className="lnr-user btn-icon-wrapper"> </i>
                     Success
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x" outline color="info">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x"
+                    outline
+                    color="info"
+                  >
                     <i className="lnr-paperclip btn-icon-wrapper"> </i>
                     Info
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x" outline color="warning">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x"
+                    outline
+                    color="warning"
+                  >
                     <i className="lnr-screen btn-icon-wrapper"> </i>
                     Warning
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x" outline color="danger">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x"
+                    outline
+                    color="danger"
+                  >
                     <i className="lnr-smartphone btn-icon-wrapper"> </i>
                     Danger
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x" outline color="focus">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x"
+                    outline
+                    color="focus"
+                  >
                     <i className="lnr-phone btn-icon-wrapper"> </i>
                     Focus
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x" outline color="alternate">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x"
+                    outline
+                    color="alternate"
+                  >
                     <i className="lnr-keyboard btn-icon-wrapper"> </i>
                     Alt
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x" outline color="light">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x"
+                    outline
+                    color="light"
+                  >
                     <i className="lnr-dinner btn-icon-wrapper"> </i>
                     Light
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x" outline color="dark">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x"
+                    outline
+                    color="dark"
+                  >
                     <i className="lnr-earth btn-icon-wrapper"> </i>
                     Dark
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x" outline color="link">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-shadow btn-outline-2x"
+                    outline
+                    color="link"
+                  >
                     <i className="lnr-car btn-icon-wrapper"> </i>
                     link
                   </Button>
@@ -348,15 +424,28 @@ class ButtonsHorizontalIcons extends Component {
                 <CardBody>
                   <CardTitle>Right Icon</CardTitle>
                   <div className="text-center">
-                    <Button className="btn-wide mb-2 me-2 btn-icon btn-icon-right btn-pill" size="lg" color="warning">
+                    <Button
+                      className="btn-wide mb-2 me-2 btn-icon btn-icon-right btn-pill"
+                      size="lg"
+                      color="warning"
+                    >
                       Large
                       <i className="pe-7s-science btn-icon-wrapper"> </i>
                     </Button>
-                    <Button className="btn-wide mb-2 me-2 btn-icon btn-icon-right btn-shadow btn-pill" outline color="success">
+                    <Button
+                      className="btn-wide mb-2 me-2 btn-icon btn-icon-right btn-shadow btn-pill"
+                      outline
+                      color="success"
+                    >
                       Normal
                       <i className="pe-7s-volume btn-icon-wrapper"> </i>
                     </Button>
-                    <Button className="btn-wide mb-2 me-2 btn-icon btn-icon-right btn-dashed btn-pill" outline size="sm" color="danger">
+                    <Button
+                      className="btn-wide mb-2 me-2 btn-icon btn-icon-right btn-dashed btn-pill"
+                      outline
+                      size="sm"
+                      color="danger"
+                    >
                       Small
                       <i className="pe-7s-tools btn-icon-wrapper"> </i>
                     </Button>
@@ -402,71 +491,159 @@ class ButtonsHorizontalIcons extends Component {
                     <i className="pe-7s-settings btn-icon-wrapper"> </i>
                   </Button>
                   <div className="divider" />
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-pill" outline color="primary">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-pill"
+                    outline
+                    color="primary"
+                  >
                     <i className="pe-7s-tools btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-pill" outline color="secondary">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-pill"
+                    outline
+                    color="secondary"
+                  >
                     <i className="pe-7s-gym btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-pill" outline color="success">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-pill"
+                    outline
+                    color="success"
+                  >
                     <i className="pe-7s-umbrella btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-pill" outline color="info">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-pill"
+                    outline
+                    color="info"
+                  >
                     <i className="pe-7s-science btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-pill" outline color="warning">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-pill"
+                    outline
+                    color="warning"
+                  >
                     <i className="pe-7s-trash btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-pill" outline color="danger">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-pill"
+                    outline
+                    color="danger"
+                  >
                     <i className="pe-7s-video btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-pill" outline color="focus">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-pill"
+                    outline
+                    color="focus"
+                  >
                     <i className="pe-7s-upload btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-pill" outline color="alternate">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-pill"
+                    outline
+                    color="alternate"
+                  >
                     <i className="pe-7s-piggy btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-pill" outline color="light">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-pill"
+                    outline
+                    color="light"
+                  >
                     <i className="pe-7s-photo btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-pill" outline color="dark">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-pill"
+                    outline
+                    color="dark"
+                  >
                     <i className="pe-7s-helm btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-pill" outline color="link">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-pill"
+                    outline
+                    color="link"
+                  >
                     <i className="pe-7s-settings btn-icon-wrapper"> </i>
                   </Button>
                   <div className="divider" />
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed" outline color="primary">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed"
+                    outline
+                    color="primary"
+                  >
                     <i className="pe-7s-tools btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed" outline color="secondary">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed"
+                    outline
+                    color="secondary"
+                  >
                     <i className="pe-7s-gym btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed" outline color="success">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed"
+                    outline
+                    color="success"
+                  >
                     <i className="pe-7s-umbrella btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed" outline color="info">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed"
+                    outline
+                    color="info"
+                  >
                     <i className="pe-7s-science btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed" outline color="warning">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed"
+                    outline
+                    color="warning"
+                  >
                     <i className="pe-7s-trash btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed" outline color="danger">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed"
+                    outline
+                    color="danger"
+                  >
                     <i className="pe-7s-video btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed" outline color="focus">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed"
+                    outline
+                    color="focus"
+                  >
                     <i className="pe-7s-upload btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed" outline color="alternate">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed"
+                    outline
+                    color="alternate"
+                  >
                     <i className="pe-7s-piggy btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed" outline color="light">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed"
+                    outline
+                    color="light"
+                  >
                     <i className="pe-7s-photo btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed" outline color="dark">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed"
+                    outline
+                    color="dark"
+                  >
                     <i className="pe-7s-helm btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed" outline color="link">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-dashed"
+                    outline
+                    color="link"
+                  >
                     <i className="pe-7s-settings btn-icon-wrapper"> </i>
                   </Button>
                   <div className="divider" />
@@ -504,37 +681,81 @@ class ButtonsHorizontalIcons extends Component {
                     <i className="lnr-inbox btn-icon-wrapper"> </i>
                   </Button>
                   <div className="divider" />
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x" outline color="primary">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x"
+                    outline
+                    color="primary"
+                  >
                     <i className="lnr-store btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x" outline color="secondary">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x"
+                    outline
+                    color="secondary"
+                  >
                     <i className="lnr-book btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x" outline color="success">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x"
+                    outline
+                    color="success"
+                  >
                     <i className="lnr-user btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x" outline color="info">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x"
+                    outline
+                    color="info"
+                  >
                     <i className="lnr-paperclip btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x" outline color="warning">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x"
+                    outline
+                    color="warning"
+                  >
                     <i className="lnr-screen btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x" outline color="danger">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x"
+                    outline
+                    color="danger"
+                  >
                     <i className="lnr-smartphone btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x" outline color="focus">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x"
+                    outline
+                    color="focus"
+                  >
                     <i className="lnr-phone btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x" outline color="alternate">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x"
+                    outline
+                    color="alternate"
+                  >
                     <i className="lnr-keyboard btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x" outline color="light">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x"
+                    outline
+                    color="light"
+                  >
                     <i className="lnr-dinner btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x" outline color="dark">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x"
+                    outline
+                    color="dark"
+                  >
                     <i className="lnr-earth btn-icon-wrapper"> </i>
                   </Button>
-                  <Button className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x" outline color="link">
+                  <Button
+                    className="mb-2 me-2 btn-icon btn-icon-only btn-shadow btn-outline-2x"
+                    outline
+                    color="link"
+                  >
                     <i className="lnr-car btn-icon-wrapper"> </i>
                   </Button>
                   <div className="divider" />

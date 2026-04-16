@@ -5,64 +5,63 @@
     border-right: 0 !important;
 
     .app-sidebar__heading {
-      color: rgba(255, 255, 255, .6);
+      color: rgba(255, 255, 255, 0.6);
 
       &::before {
         background: rgba(255, 255, 255, 0.2) !important;
       }
     }
 
-    .metismenu {
+    .vertical-nav-menu {
       .metismenu-container {
         .metismenu-link {
-          color: rgba(255, 255, 255, .7);
+          color: rgba(255, 255, 255, 0.7);
 
           &:hover {
             color: rgba(255, 255, 255, 1);
-            background: rgba(255, 255, 255, .1);
+            background: rgba(255, 255, 255, 0.1);
           }
 
           &.active {
-            background: rgba(255, 255, 255, .1);
+            background: rgba(255, 255, 255, 0.1);
           }
         }
 
         &.metismenu-container {
           &.visible {
             .metismenu-item > .metismenu-link {
-              color: rgba(255, 255, 255, .6);
+              color: rgba(255, 255, 255, 0.6);
 
               &.active {
-                background: rgba(255, 255, 255, .1);
-                color: rgba(255, 255, 255, .8);
+                background: rgba(255, 255, 255, 0.1);
+                color: rgba(255, 255, 255, 0.8);
               }
 
               &:hover {
                 color: rgba(255, 255, 255, 1);
               }
-
             }
 
             &::before {
-              background: rgba(255, 255, 255, .3);
+              background: rgba(255, 255, 255, 0.3);
             }
           }
         }
 
         i.metismenu-state-icon,
         i.metismenu-icon {
-          opacity: .5;
+          opacity: 0.5;
         }
       }
     }
 
     .ps__thumb-y {
-      background: rgba(255, 255, 255, .3);
+      background: rgba(255, 255, 255, 0.3);
     }
 
     .ps__rail-y:hover {
       .ps__thumb-y {
-        background: rgba(255, 255, 255, .2);
+        background: rgba(255, 255, 255, 0.2);
       }
     }
 
@@ -74,7 +73,7 @@
       .hamburger-inner,
       .hamburger-inner::before,
       .hamburger-inner::after {
-        background-color: rgba(255, 255, 255, .8);
+        background-color: rgba(255, 255, 255, 0.8);
       }
     }
   }

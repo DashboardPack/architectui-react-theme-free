@@ -1,6 +1,6 @@
 // Responsive
 
-@use "sass:math";
+@use 'sass:math';
 
 @media only screen and (max-width: 1320px) {
   .header-user-info {
@@ -9,7 +9,6 @@
 }
 
 @include media-breakpoint-down(md) {
-
   .app-main {
     display: block;
   }
@@ -32,13 +31,10 @@
   }
 
   .sidebar-mobile-open {
-
     .app-sidebar {
-
       transform: translateX(0);
 
       .app-sidebar__inner {
-
         .app-sidebar__heading {
           text-indent: initial;
 
@@ -64,7 +60,7 @@
 
         .metismenu-container {
           &.visible {
-            padding: .5em 0 0 2rem;
+            padding: 0.5em 0 0 2rem;
 
             & > .metismenu-item > .metismenu-link {
               height: 2.3em;
@@ -100,7 +96,6 @@
   }
 
   .app-main {
-
     .app-main__outer {
       padding-left: 0 !important;
       width: auto;
@@ -125,15 +120,15 @@
       left: 5%;
       width: 90%;
       top: 0;
-      transition: all .2s;
+      transition: all 0.2s;
       background: $white;
       @include border-radius(50px);
       padding: 0 10px;
       overflow: hidden;
 
       .header-btn-lg {
-        margin-left: .5rem;
-        padding: 0 .5rem;
+        margin-left: 0.5rem;
+        padding: 0 0.5rem;
 
         .hamburger-box {
           margin-top: 5px;
@@ -171,15 +166,14 @@
       .app-header__menu {
         & > span .btn,
         & > .btn {
-          background: rgba(255, 255, 255, .1);
-          border-color: rgba(255, 255, 255, .1);
+          background: rgba(255, 255, 255, 0.1);
+          border-color: rgba(255, 255, 255, 0.1);
         }
       }
 
       .header-mobile-open {
         background: $gray-800;
       }
-
     }
   }
 
@@ -196,7 +190,6 @@
     .btn-icon-vertical .btn-icon-wrapper {
       display: none;
     }
-
   }
 
   .popover {
@@ -300,7 +293,6 @@
   }
 
   .tabs-lg-alternate.card-header {
-
     & > .nav .nav-item {
       .widget-number {
         font-size: 1.5rem;
@@ -314,7 +306,6 @@
 }
 
 @include media-breakpoint-between(xs, md) {
-
   .app-page-title .page-title-icon,
   .ui-theme-settings {
     display: none;
@@ -348,7 +339,6 @@
 }
 
 @include media-breakpoint-up(lg) {
-
   .slick-slider-sm {
     .slick-slider {
       max-width: 850px !important;
@@ -357,7 +347,6 @@
 }
 
 @include media-breakpoint-down(lg) {
-
   .-hide-paging .-pagination .-center {
     display: none;
   }
@@ -375,7 +364,8 @@
 
   .app-page-title {
     padding: math.div($grid-gutter-width, 2);
-    margin: (-(math.div($grid-gutter-width, 2))) (-(math.div($grid-gutter-width, 2))) $grid-gutter-width;
+    margin: (-(math.div($grid-gutter-width, 2))) (-(math.div($grid-gutter-width, 2)))
+      $grid-gutter-width;
   }
 
   .body-tabs.body-tabs-layout {

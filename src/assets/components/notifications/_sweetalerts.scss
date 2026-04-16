@@ -330,7 +330,7 @@
     border-color: $info;
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       width: 5px;
       height: 29px;
@@ -342,7 +342,7 @@
     }
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       width: 7px;
       height: 7px;
@@ -960,18 +960,15 @@
 
 /* Success icon */
 .sweet-alert .sa-icon.sa-success {
-  border-color: transparent \9
-;
+  border-color: transparent \9;
 }
 
 .sweet-alert .sa-icon.sa-success .sa-line.sa-tip {
-  -ms-transform: rotate(45deg) \9
-;
+  -ms-transform: rotate(45deg) \9;
 }
 
 .sweet-alert .sa-icon.sa-sucsuccesscess .sa-line.sa-long {
-  -ms-transform: rotate(-45deg) \9
-;
+  -ms-transform: rotate(-45deg) \9;
 }
 
 // /*!

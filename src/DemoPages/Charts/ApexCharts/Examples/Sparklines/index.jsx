@@ -1,12 +1,12 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 
-import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
 // Examples
-import Area from "./Area";
-import Bar from "./Bar";
+import Area from './Area';
+import Bar from './Bar';
 // import Column from './Column';
-import Line from "./Line";
+import Line from './Line';
 
 export default class ApexChartsSparklines extends Component {
   render() {

@@ -1,23 +1,24 @@
-import React, { Fragment } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Fragment, Suspense, lazy } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import SuspenseFallback from '../../Layout/AppMain/SuspenseFallback';
 
-// Charts
-
-import ChartsSparklines1 from "./Sparklines1/";
-import ChartsSparklines2 from "./Sparklines2/";
-import ChartsChartJs from "./ChartJs/";
-import ChartsGauges from "./Gauges/";
-import ApexCharts from "./ApexCharts/";
+const ChartsSparklines1 = lazy(() => import('./Sparklines1/'));
+const ChartsSparklines2 = lazy(() => import('./Sparklines2/'));
+const ChartsChartJs = lazy(() => import('./ChartJs/'));
+const ChartsGauges = lazy(() => import('./Gauges/'));
+const ApexCharts = lazy(() => import('./ApexCharts/'));
 
 const Charts = () => (
   <Fragment>
-    <Routes>
-      <Route path="sparklines-1" element={<ChartsSparklines1 />} />
-      <Route path="sparklines-2" element={<ChartsSparklines2 />} />
-      <Route path="chartjs" element={<ChartsChartJs />} />
-      <Route path="gauges" element={<ChartsGauges />} />
-      <Route path="apexcharts" element={<ApexCharts />} />
-    </Routes>
+    <Suspense fallback={<SuspenseFallback />}>
+      <Routes>
+        <Route path="sparklines-1" element={<ChartsSparklines1 />} />
+        <Route path="sparklines-2" element={<ChartsSparklines2 />} />
+        <Route path="chartjs" element={<ChartsChartJs />} />
+        <Route path="gauges" element={<ChartsGauges />} />
+        <Route path="apexcharts" element={<ApexCharts />} />
+      </Routes>
+    </Suspense>
   </Fragment>
 );
 

@@ -1,29 +1,30 @@
-import React, { Component, Fragment } from "react";
-import { Button } from "reactstrap";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
+import React, { Component, Fragment } from 'react';
+import { Button } from 'reactstrap';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
 
-import avatar5 from "../../../../assets/utils/images/avatars/5.jpg";
-import avatar3 from "../../../../assets/utils/images/avatars/4.jpg";
-import avatar4 from "../../../../assets/utils/images/avatars/3.jpg";
+import avatar5 from '../../../../assets/utils/images/avatars/5.jpg';
+import avatar3 from '../../../../assets/utils/images/avatars/4.jpg';
+import avatar4 from '../../../../assets/utils/images/avatars/3.jpg';
 
+import bg1 from '../../../../assets/utils/images/dropdown-header/abstract1.jpg';
+import bg2 from '../../../../assets/utils/images/dropdown-header/city2.jpg';
+import bg3 from '../../../../assets/utils/images/dropdown-header/city4.jpg';
 
-import bg1 from "../../../../assets/utils/images/dropdown-header/abstract1.jpg";
-import bg2 from "../../../../assets/utils/images/dropdown-header/city2.jpg";
-import bg3 from "../../../../assets/utils/images/dropdown-header/city4.jpg";
-
-import {
-  Row,
-  Col,
-  Card,
-} from "reactstrap";
+import { Row, Col, Card } from 'reactstrap';
 
 class ProfileBlocks extends Component {
   render() {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <div>
               <Row>
                 <Col md="6" lg="4">
@@ -61,9 +62,7 @@ class ProfileBlocks extends Component {
                           </div>
                         </div>
                         <h5 className="menu-header-title">John Rosenberg</h5>
-                        <h6 className="menu-header-subtitle">
-                          Short Profile description
-                        </h6>
+                        <h6 className="menu-header-subtitle">Short Profile description</h6>
                         <div className="menu-header-btn-pane">
                           <Button className="btn-icon btn-pill me-2 btn-icon-only" color="link">
                             <i className="lnr-inbox btn-icon-wrapper"> </i>

@@ -1,28 +1,30 @@
-import "./polyfills";
-import React from "react";
+import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import { HashRouter } from "react-router-dom";
-import "./assets/base.scss";
-import Main from "./DemoPages/Main";
-import configureAppStore from "./config/configureStore";
-import { Provider } from "react-redux";
+import { HashRouter } from 'react-router-dom';
+import './assets/base.scss';
+import Main from './DemoPages/Main';
+import configureAppStore from './config/configureStore';
+import { Provider } from 'react-redux';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const store = configureAppStore();
-const rootElement = document.getElementById("root");
+const rootElement = document.getElementById('root');
 
 const renderApp = (Component) => (
   <React.StrictMode>
-    <Provider store={store}>
-      <HashRouter
-        future={{
-          v7_startTransition: true,
-          v7_relativeSplatPath: true
-        }}
-      >
-        <Component />
-      </HashRouter>
-    </Provider>
+    <ErrorBoundary>
+      <Provider store={store}>
+        <HashRouter
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
+        >
+          <Component />
+        </HashRouter>
+      </Provider>
+    </ErrorBoundary>
   </React.StrictMode>
 );
 
@@ -31,7 +33,7 @@ root.render(renderApp(Main));
 
 // Vite HMR
 if (import.meta.hot) {
-  import.meta.hot.accept("./DemoPages/Main", (newModule) => {
+  import.meta.hot.accept('./DemoPages/Main', (newModule) => {
     if (newModule) {
       root.render(renderApp(newModule.default));
     }

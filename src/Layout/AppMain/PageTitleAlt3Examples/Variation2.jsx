@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 
 import {
   UncontrolledDropdown,
@@ -9,13 +9,13 @@ import {
   NavLink,
   Button,
   UncontrolledTooltip,
-} from "reactstrap";
+} from 'reactstrap';
 
-import { faStar, faBusinessTime } from "@fortawesome/free-solid-svg-icons";
+import { faStar, faBusinessTime } from '@fortawesome/free-solid-svg-icons';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { toast, Slide } from "react-toastify";
+import { toast, Slide } from 'react-toastify';
 
 export default class TitleComponent2 extends Component {
   toggle(name) {
@@ -26,12 +26,12 @@ export default class TitleComponent2 extends Component {
   }
 
   notify22 = () =>
-    (this.toastId = toast("Another toastify example!!!", {
+    (this.toastId = toast('Another toastify example!!!', {
       transition: Slide,
       closeButton: true,
       autoClose: 5000,
-      position: "bottom-center",
-      type: "success",
+      position: 'bottom-center',
+      type: 'success',
     }));
 
   render() {
@@ -40,7 +40,7 @@ export default class TitleComponent2 extends Component {
         <Button className="btn-shadow me-3" onClick={this.notify22} color="dark" id="Tooltip-123">
           <FontAwesomeIcon icon={faStar} />
         </Button>
-        <UncontrolledTooltip placement="left" target={"Tooltip-123"}>
+        <UncontrolledTooltip placement="left" target={'Tooltip-123'}>
           Show a Toastify notification example!
         </UncontrolledTooltip>
         <UncontrolledDropdown className="d-inline-block">
@@ -56,9 +56,7 @@ export default class TitleComponent2 extends Component {
                 <NavLink href="#">
                   <i className="nav-link-icon lnr-inbox"> </i>
                   <span>Inbox</span>
-                  <div className="ms-auto badge rounded-pill bg-secondary">
-                    86
-                  </div>
+                  <div className="ms-auto badge rounded-pill bg-secondary">86</div>
                 </NavLink>
               </NavItem>
               <NavItem>

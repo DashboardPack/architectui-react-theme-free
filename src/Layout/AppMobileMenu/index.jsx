@@ -1,91 +1,62 @@
-import React, { Fragment } from "react";
-import { connect } from "react-redux";
+import { Fragment } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import cx from 'classnames';
 
-import Hamburger from "hamburger-react";
+import Hamburger from 'hamburger-react';
+import { Button } from 'reactstrap';
+import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import cx from "classnames";
+import { setEnableMobileMenu, setEnableMobileMenuSmall } from '../../reducers/ThemeOptions';
 
-import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
+export default function AppMobileMenu() {
+  const enableMobileMenu = useSelector((s) => s.ThemeOptions.enableMobileMenu);
+  const enableMobileMenuSmall = useSelector((s) => s.ThemeOptions.enableMobileMenuSmall);
+  const dispatch = useDispatch();
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+  const toggleMobileSidebar = () => dispatch(setEnableMobileMenu(!enableMobileMenu));
+  const toggleMobileSmall = () => dispatch(setEnableMobileMenuSmall(!enableMobileMenuSmall));
 
-import { Button } from "reactstrap";
-
-import {
-  setEnableMobileMenu,
-  setEnableMobileMenuSmall,
-} from "../../reducers/ThemeOptions";
-
-class AppMobileMenu extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: false,
-      mobile: false,
-      activeSecondaryMenuMobile: false,
-    };
-  }
-
-  toggleMobileSidebar = () => {
-    let { enableMobileMenu, setEnableMobileMenu } = this.props;
-    setEnableMobileMenu(!enableMobileMenu);
-  };
-
-  toggleMobileSmall = () => {
-    let { enableMobileMenuSmall, setEnableMobileMenuSmall } = this.props;
-    setEnableMobileMenuSmall(!enableMobileMenuSmall);
-  };
-
-  state = {
-    openLeft: false,
-    openRight: false,
-    relativeWidth: false,
-    width: 280,
-    noTouchOpen: false,
-    noTouchClose: false,
-  };
-
-  render() {
-    return (
-      <Fragment>
-        <div className="app-header__mobile-menu">
-          <div onClick={this.toggleMobileSidebar}>
-            <Hamburger 
-              toggled={this.props.enableMobileMenu} 
-              toggle={this.toggleMobileSidebar}
-              size={26}
-              color="#6c757d"
-            />
+  return (
+    <Fragment>
+      <div className="app-header__mobile-menu">
+        <div
+          role="button"
+          tabIndex={0}
+          aria-label={enableMobileMenu ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={enableMobileMenu}
+          aria-controls="app-sidebar"
+          onClick={toggleMobileSidebar}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              toggleMobileSidebar();
+            }
+          }}
+        >
+          <Hamburger
+            toggled={enableMobileMenu}
+            toggle={toggleMobileSidebar}
+            size={26}
+            color="#6c757d"
+          />
+        </div>
+      </div>
+      <div className="app-header__menu">
+        <Button
+          type="button"
+          size="sm"
+          className={cx('btn-icon btn-icon-only', { active: enableMobileMenuSmall })}
+          color="primary"
+          onClick={toggleMobileSmall}
+          aria-label="Toggle header menu"
+          aria-pressed={enableMobileMenuSmall}
+        >
+          <div className="btn-icon-wrapper">
+            <FontAwesomeIcon icon={faEllipsisV} />
           </div>
-        </div>
-        <div className="app-header__menu">
-          <span onClick={this.toggleMobileSmall}>
-            <Button size="sm" className={cx("btn-icon btn-icon-only", {
-                active: this.props.enableMobileMenuSmall,
-              })}
-              color="primary"
-              onClick={this.toggleMobileSmall}>
-              <div className="btn-icon-wrapper">
-                <FontAwesomeIcon icon={faEllipsisV} />
-              </div>
-            </Button>
-          </span>
-        </div>
-      </Fragment>
-    );
-  }
+        </Button>
+      </div>
+    </Fragment>
+  );
 }
-
-const mapStateToProps = (state) => ({
-  closedSmallerSidebar: state.ThemeOptions.closedSmallerSidebar,
-  enableMobileMenu: state.ThemeOptions.enableMobileMenu,
-  enableMobileMenuSmall: state.ThemeOptions.enableMobileMenuSmall,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  setEnableMobileMenu: (enable) => dispatch(setEnableMobileMenu(enable)),
-  setEnableMobileMenuSmall: (enable) =>
-    dispatch(setEnableMobileMenuSmall(enable)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(AppMobileMenu);

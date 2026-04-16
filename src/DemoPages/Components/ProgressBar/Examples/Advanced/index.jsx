@@ -1,16 +1,7 @@
-import React, { Component, Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../../utils/TransitionWrapper';
-import { Progress } from "react-sweet-progress";
-import {
-  Row,
-  Col,
-  Card,
-  CardBody,
-  CardTitle,
-  Button,
-  ButtonGroup,
-  Container,
-} from "reactstrap";
+import React, { Component, Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../utils/TransitionWrapper';
+import { Progress } from '../../../../../components/CircleProgress';
+import { Row, Col, Card, CardBody, CardTitle, Button, ButtonGroup, Container } from 'reactstrap';
 
 export default class ProgressBarAdvancedExample extends Component {
   constructor(props) {
@@ -37,22 +28,44 @@ export default class ProgressBarAdvancedExample extends Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Row>
                 <Col md="6">
                   <Card className="main-card mb-3">
                     <CardBody>
                       <CardTitle>Colors</CardTitle>
-                      <Progress className="mb-3" percent={this.state.percent} theme={this.props.theme}
-                        width={this.props.width} strokeWidth={this.props.strokeWidth}/>
+                      <Progress
+                        className="mb-3"
+                        percent={this.state.percent}
+                        theme={this.props.theme}
+                        width={this.props.width}
+                        strokeWidth={this.props.strokeWidth}
+                      />
 
-                      <Progress className="mb-3" percent={this.state.percent} status="success"
-                        theme={this.props.theme} width={this.props.width} strokeWidth={this.props.strokeWidth}/>
+                      <Progress
+                        className="mb-3"
+                        percent={this.state.percent}
+                        status="success"
+                        theme={this.props.theme}
+                        width={this.props.width}
+                        strokeWidth={this.props.strokeWidth}
+                      />
 
-                      <Progress percent={this.state.percent} status="error" theme={this.props.theme}
-                        width={this.props.width} strokeWidth={this.props.strokeWidth}/>
+                      <Progress
+                        percent={this.state.percent}
+                        status="error"
+                        theme={this.props.theme}
+                        width={this.props.width}
+                        strokeWidth={this.props.strokeWidth}
+                      />
                       <div className="text-center mt-3">
                         <ButtonGroup>
                           <Button onClick={this.onDecClick} color="primary">
@@ -68,29 +81,33 @@ export default class ProgressBarAdvancedExample extends Component {
                   <Card className="main-card mb-3">
                     <CardBody>
                       <CardTitle>Colors</CardTitle>
-                      <Progress percent={this.state.percent} width={this.props.width} strokeWidth={this.props.strokeWidth}
+                      <Progress
+                        percent={this.state.percent}
+                        width={this.props.width}
+                        strokeWidth={this.props.strokeWidth}
                         theme={{
                           error: {
-                            symbol: this.state.percent + "%",
-                            trailColor: "pink",
-                            color: "red",
+                            symbol: this.state.percent + '%',
+                            trailColor: 'pink',
+                            color: 'red',
                           },
                           default: {
-                            symbol: this.state.percent + "%",
-                            trailColor: "lightblue",
-                            color: "blue",
+                            symbol: this.state.percent + '%',
+                            trailColor: 'lightblue',
+                            color: 'blue',
                           },
                           active: {
-                            symbol: this.state.percent + "%",
-                            trailColor: "yellow",
-                            color: "orange",
+                            symbol: this.state.percent + '%',
+                            trailColor: 'yellow',
+                            color: 'orange',
                           },
                           success: {
-                            symbol: this.state.percent + "%",
-                            trailColor: "lime",
-                            color: "green",
+                            symbol: this.state.percent + '%',
+                            trailColor: 'lime',
+                            color: 'green',
                           },
-                        }}/>
+                        }}
+                      />
                       <div className="text-center mt-3">
                         <ButtonGroup>
                           <Button onClick={this.onDecClick} color="primary">
@@ -110,16 +127,33 @@ export default class ProgressBarAdvancedExample extends Component {
                       <CardTitle>Circles</CardTitle>
                       <Row className="text-center mb-3">
                         <Col>
-                          <Progress percent={this.state.percent} theme={this.props.theme} type="circle"
-                            width={90} strokeWidth={this.props.strokeWidth}/>
+                          <Progress
+                            percent={this.state.percent}
+                            theme={this.props.theme}
+                            type="circle"
+                            width={90}
+                            strokeWidth={this.props.strokeWidth}
+                          />
                         </Col>
                         <Col>
-                          <Progress percent={this.state.percent} status="success" theme={this.props.theme}
-                            type="circle" width={92} strokeWidth={this.props.strokeWidth}/>
+                          <Progress
+                            percent={this.state.percent}
+                            status="success"
+                            theme={this.props.theme}
+                            type="circle"
+                            width={92}
+                            strokeWidth={this.props.strokeWidth}
+                          />
                         </Col>
                         <Col>
-                          <Progress percent={this.state.percent} status="error" theme={this.props.theme}
-                            type="circle" width={90} strokeWidth={this.props.strokeWidth}/>
+                          <Progress
+                            percent={this.state.percent}
+                            status="error"
+                            theme={this.props.theme}
+                            type="circle"
+                            width={90}
+                            strokeWidth={this.props.strokeWidth}
+                          />
                         </Col>
                       </Row>
                       <div className="text-center mt-3">
@@ -145,7 +179,13 @@ export default class ProgressBarAdvancedExample extends Component {
                           <Progress type="circle" width={72} percent={23} />
                         </Col>
                         <Col>
-                          <Progress type="circle" strokeWidth={2} percent={70} status="error" width={92}/>
+                          <Progress
+                            type="circle"
+                            strokeWidth={2}
+                            percent={70}
+                            status="error"
+                            width={92}
+                          />
                         </Col>
                         <Col>
                           <Progress type="circle" percent={34} width={112} />

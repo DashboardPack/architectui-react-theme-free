@@ -1,58 +1,51 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import cx from "classnames";
+import { useMemo } from 'react';
+import { useSelector } from 'react-redux';
+import cx from 'classnames';
 
-import TitleComponent1 from "./PageTitleExamples/Variation1";
-import TitleComponent2 from "./PageTitleExamples/Variation2";
-import TitleComponent3 from "./PageTitleExamples/Variation3";
+import TitleComponent1 from './PageTitleExamples/Variation1';
+import TitleComponent2 from './PageTitleExamples/Variation2';
+import TitleComponent3 from './PageTitleExamples/Variation3';
 
-class PageTitle extends Component {
-  randomize(myArray) {
-    return myArray[Math.floor(Math.random() * myArray.length)];
-  }
+const variations = [
+  <TitleComponent1 key="v1" />,
+  <TitleComponent2 key="v2" />,
+  <TitleComponent3 key="v3" />,
+];
 
-  render() {
-    let {
-      enablePageTitleIcon,
-      enablePageTitleSubheading,
+const pickRandom = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
-      heading,
-      icon,
-      subheading,
-    } = this.props;
+export default function PageTitle({ heading, icon, subheading }) {
+  const enablePageTitleIcon = useSelector((state) => state.ThemeOptions.enablePageTitleIcon);
+  const enablePageTitleSubheading = useSelector(
+    (state) => state.ThemeOptions.enablePageTitleSubheading
+  );
 
-    var arr = [<TitleComponent1 />, <TitleComponent2 />, <TitleComponent3 />];
+  const action = useMemo(() => pickRandom(variations), []);
 
-    return (
-      <div className="app-page-title">
-        <div className="page-title-wrapper">
-          <div className="page-title-heading">
-            <div className={cx("page-title-icon", {
-                "d-none": !enablePageTitleIcon,
-              })}>
-              <i className={icon} />
-            </div>
-            <div>
-              {heading}
-              <div className={cx("page-title-subheading", {
-                  "d-none": !enablePageTitleSubheading,
-                })}>
-                {subheading}
-              </div>
+  return (
+    <div className="app-page-title">
+      <div className="page-title-wrapper">
+        <div className="page-title-heading">
+          <div
+            className={cx('page-title-icon', {
+              'd-none': !enablePageTitleIcon,
+            })}
+          >
+            <i className={icon} />
+          </div>
+          <div>
+            {heading}
+            <div
+              className={cx('page-title-subheading', {
+                'd-none': !enablePageTitleSubheading,
+              })}
+            >
+              {subheading}
             </div>
           </div>
-          <div className="page-title-actions">{this.randomize(arr)}</div>
         </div>
+        <div className="page-title-actions">{action}</div>
       </div>
-    );
-  }
+    </div>
+  );
 }
-
-const mapStateToProps = (state) => ({
-  enablePageTitleIcon: state.ThemeOptions.enablePageTitleIcon,
-  enablePageTitleSubheading: state.ThemeOptions.enablePageTitleSubheading,
-});
-
-const mapDispatchToProps = (dispatch) => ({});
-
-export default connect(mapStateToProps, mapDispatchToProps)(PageTitle);

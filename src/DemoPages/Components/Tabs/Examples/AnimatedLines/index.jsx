@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../../utils/TransitionWrapper';
-import Tabs from "react-responsive-tabs";
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../utils/TransitionWrapper';
+import Tabs from 'react-responsive-tabs';
 
-import { Row, Col, Card, Container } from "reactstrap";
+import { Row, Col, Card, Container } from 'reactstrap';
 
-import dummyData from "../dummyData";
+import dummyData from '../dummyData';
 
 export default class AnimatedLinesTabsExample extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ export default class AnimatedLinesTabsExample extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      activeTab: "1",
+      activeTab: '1',
       showMore: true,
       transform: true,
       showInkBar: true,
@@ -41,8 +41,14 @@ export default class AnimatedLinesTabsExample extends React.Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Row>
                 <Col md="12">

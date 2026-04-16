@@ -1,22 +1,16 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
-import {
-  Row,
-  Col,
-  Card,
-  CardBody,
-  CardTitle,
-} from "reactstrap";
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
 // Import only one component at a time to test
-import ModalExample from "./Modal";
-import ModalBackdrop from "./ModalBackdrop";
-import ModalCustomCloseButton from "./ModalCustomCloseButton";
-import ModalCustomCloseIcon from "./ModalCustomCloseIcon";
-import ModalCustomTimeout from "./ModalCustomTimeout";
-import ModalExternal from "./ModalExternal";
-import ModalFadeless from "./ModalFadeless";
-import ModalNested from "./ModalNested";
+import ModalExample from './Modal';
+import ModalBackdrop from './ModalBackdrop';
+import ModalCustomCloseButton from './ModalCustomCloseButton';
+import ModalCustomCloseIcon from './ModalCustomCloseIcon';
+import ModalCustomTimeout from './ModalCustomTimeout';
+import ModalExternal from './ModalExternal';
+import ModalFadeless from './ModalFadeless';
+import ModalNested from './ModalNested';
 
 class ModalsExample extends React.Component {
   constructor(props) {
@@ -24,15 +18,8 @@ class ModalsExample extends React.Component {
 
     this.state = {
       visible: false,
-      animation: "zoom",
+      animation: 'zoom',
     };
-
-    // Debug logging
-    console.log('ModalsExample component initialized');
-  }
-
-  componentDidMount() {
-    console.log('ModalsExample component mounted successfully');
   }
 
   show(animation) {
@@ -47,13 +34,17 @@ class ModalsExample extends React.Component {
   }
 
   render() {
-    console.log('ModalsExample rendering...');
-    
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <Row className="text-center">
               <Col md="12">
                 <Card className="main-card mb-3">

@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../../utils/TransitionWrapper';
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../utils/TransitionWrapper';
 import {
   Card,
   CardBody,
@@ -13,15 +13,21 @@ import {
   FormFeedback,
   FormText,
   Container,
-} from "reactstrap";
+} from 'reactstrap';
 
 export default class FormsFeedback extends React.Component {
   render() {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Row>
                 <Col md="6">
@@ -30,36 +36,22 @@ export default class FormsFeedback extends React.Component {
                       <CardTitle>Basic</CardTitle>
                       <Form>
                         <FormGroup>
-                          <Label for="exampleEmail">
-                            Input without validation
-                          </Label>
+                          <Label for="exampleEmail">Input without validation</Label>
                           <Input />
-                          <FormFeedback>
-                            You will not be able to see this
-                          </FormFeedback>
-                          <FormText>
-                            Example help text that remains unchanged.
-                          </FormText>
+                          <FormFeedback>You will not be able to see this</FormFeedback>
+                          <FormText>Example help text that remains unchanged.</FormText>
                         </FormGroup>
                         <FormGroup>
                           <Label for="exampleEmail">Valid input</Label>
                           <Input valid />
-                          <FormFeedback valid>
-                            Sweet! that name is available
-                          </FormFeedback>
-                          <FormText>
-                            Example help text that remains unchanged.
-                          </FormText>
+                          <FormFeedback valid>Sweet! that name is available</FormFeedback>
+                          <FormText>Example help text that remains unchanged.</FormText>
                         </FormGroup>
                         <FormGroup>
                           <Label for="examplePassword">Invalid input</Label>
                           <Input invalid={true} />
-                          <FormFeedback>
-                            Oh noes! that name is already taken
-                          </FormFeedback>
-                          <FormText>
-                            Example help text that remains unchanged.
-                          </FormText>
+                          <FormFeedback>Oh noes! that name is already taken</FormFeedback>
+                          <FormText>Example help text that remains unchanged.</FormText>
                         </FormGroup>
                       </Form>
                     </CardBody>
@@ -71,16 +63,10 @@ export default class FormsFeedback extends React.Component {
                       <CardTitle>Alternate Style</CardTitle>
                       <Form>
                         <FormGroup>
-                          <Label for="exampleEmail">
-                            Input without validation
-                          </Label>
+                          <Label for="exampleEmail">Input without validation</Label>
                           <Input />
-                          <FormFeedback tooltip>
-                            You will not be able to see this
-                          </FormFeedback>
-                          <FormText>
-                            Example help text that remains unchanged.
-                          </FormText>
+                          <FormFeedback tooltip>You will not be able to see this</FormFeedback>
+                          <FormText>Example help text that remains unchanged.</FormText>
                         </FormGroup>
                         <FormGroup>
                           <Label for="exampleEmail">Valid input</Label>
@@ -88,19 +74,13 @@ export default class FormsFeedback extends React.Component {
                           <FormFeedback valid tooltip>
                             Sweet! that name is available
                           </FormFeedback>
-                          <FormText>
-                            Example help text that remains unchanged.
-                          </FormText>
+                          <FormText>Example help text that remains unchanged.</FormText>
                         </FormGroup>
                         <FormGroup>
                           <Label for="examplePassword">Invalid input</Label>
                           <Input invalid={true} />
-                          <FormFeedback tooltip>
-                            Oh noes! that name is already taken
-                          </FormFeedback>
-                          <FormText>
-                            Example help text that remains unchanged.
-                          </FormText>
+                          <FormFeedback tooltip>Oh noes! that name is already taken</FormFeedback>
+                          <FormText>Example help text that remains unchanged.</FormText>
                         </FormGroup>
                       </Form>
                     </CardBody>

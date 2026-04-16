@@ -1,8 +1,8 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
-import { Row, Col, Card, CardBody, Button } from "reactstrap";
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
+import { Row, Col, Card, CardBody, Button } from 'reactstrap';
 
-import PageTitle from "../../../../Layout/AppMain/PageTitle";
+import PageTitle from '../../../../Layout/AppMain/PageTitle';
 
 import {
   SketchPicker,
@@ -13,7 +13,7 @@ import {
   HuePicker,
   AlphaPicker,
   BlockPicker,
-} from "react-color";
+} from 'react-color';
 
 export default class FormColorPicker extends React.Component {
   state = {
@@ -30,24 +30,32 @@ export default class FormColorPicker extends React.Component {
 
   render() {
     const popover = {
-      position: "absolute",
-      zIndex: "2",
+      position: 'absolute',
+      zIndex: '2',
     };
     const cover = {
-      position: "fixed",
-      top: "0px",
-      right: "0px",
-      bottom: "0px",
-      left: "0px",
+      position: 'fixed',
+      top: '0px',
+      right: '0px',
+      bottom: '0px',
+      left: '0px',
     };
     return (
       <Fragment>
-        <PageTitle heading="Forms Color Picker"
+        <PageTitle
+          heading="Forms Color Picker"
           subheading="Color Pickers following the design from Photoshop, Sketch, Chrome, Twitter and more."
-          icon="pe-7s-drawer icon-gradient bg-happy-itmeo"/>
+          icon="pe-7s-drawer icon-gradient bg-happy-itmeo"
+        />
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <Row className="mt-2">
               <Col md="4">
                 <Card className="main-card mb-3">

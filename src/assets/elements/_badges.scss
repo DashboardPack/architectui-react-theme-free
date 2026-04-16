@@ -119,7 +119,7 @@
 
 .avatar-icon-wrapper {
   display: inline-block;
-  margin-right: .1rem;
+  margin-right: 0.1rem;
   position: relative;
 
   .badge {
@@ -160,13 +160,12 @@
 }
 
 .avatar-icon-add {
-
   .avatar-icon {
     background: $dropdown-link-hover-bg;
     border: tint-color($primary, 15%) dashed 1px;
     color: $primary;
     text-align: center;
-    opacity: .6;
+    opacity: 0.6;
 
     i {
       font-style: normal;
@@ -188,9 +187,8 @@
 
 a.avatar-icon-wrapper {
   &:hover {
-
     .avatar-icon {
-      opacity: .8;
+      opacity: 0.8;
     }
   }
 }
@@ -199,7 +197,7 @@ a.avatar-icon-wrapper {
   display: block;
   width: 44px;
   height: 44px;
-  transition: all .2s;
+  transition: all 0.2s;
   opacity: 1;
   @include border-radius(50px);
 
@@ -251,7 +249,7 @@ a.avatar-icon-wrapper {
   .avatar-icon {
     width: 26px;
     height: 26px;
-    transition: transform .2s;
+    transition: transform 0.2s;
   }
 
   &.avatar-icon-add {
@@ -311,7 +309,7 @@ a.avatar-icon-wrapper {
 
 @-webkit-keyframes sploosh {
   0% {
-    box-shadow: 0 0 0 0px rgba(#333, .2);
+    box-shadow: 0 0 0 0px rgba(#333, 0.2);
   }
   100% {
     box-shadow: 0 0 0 8px rgba(#333, 0);
@@ -355,7 +353,7 @@ a.avatar-icon-wrapper {
   }
 
   &::after {
-    -webkit-animation-delay: .33s;
+    -webkit-animation-delay: 0.33s;
     -webkit-animation-duration: 2.2s;
   }
 }

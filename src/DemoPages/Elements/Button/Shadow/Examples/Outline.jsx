@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from "react";
-import { Button, Container, ButtonGroup } from "reactstrap";
+import React, { Component, Fragment } from 'react';
+import { Button, Container, ButtonGroup } from 'reactstrap';
 
-import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
 class ButtonsShadowOutline extends Component {
   state = {
@@ -237,13 +237,23 @@ class ButtonsShadowOutline extends Component {
                 <CardBody>
                   <CardTitle>Wider</CardTitle>
                   <div className="text-center">
-                    <Button outline className="btn-wide mb-2 me-2 btn-shadow" size="lg" color="primary">
+                    <Button
+                      outline
+                      className="btn-wide mb-2 me-2 btn-shadow"
+                      size="lg"
+                      color="primary"
+                    >
                       Wider Large
                     </Button>
                     <Button outline className="btn-wide mb-2 me-2 btn-shadow" color="primary">
                       Wider Normal
                     </Button>
-                    <Button outline className="btn-wide mb-2 me-2 btn-shadow" size="sm" color="primary">
+                    <Button
+                      outline
+                      className="btn-wide mb-2 me-2 btn-shadow"
+                      size="sm"
+                      color="primary"
+                    >
                       Wider Small
                     </Button>
                   </div>
@@ -255,13 +265,23 @@ class ButtonsShadowOutline extends Component {
                 <CardBody>
                   <CardTitle>Sizing</CardTitle>
                   <div className="text-center">
-                    <Button outline className="btn-wide mb-2 me-2 btn-shadow" size="lg" color="primary">
+                    <Button
+                      outline
+                      className="btn-wide mb-2 me-2 btn-shadow"
+                      size="lg"
+                      color="primary"
+                    >
                       Large
                     </Button>
                     <Button outline className="btn-wide mb-2 me-2 btn-shadow" color="primary">
                       Normal
                     </Button>
-                    <Button outline className="btn-wide mb-2 me-2 btn-shadow" size="sm" color="primary">
+                    <Button
+                      outline
+                      className="btn-wide mb-2 me-2 btn-shadow"
+                      size="sm"
+                      color="primary"
+                    >
                       Small
                     </Button>
                   </div>
@@ -276,44 +296,89 @@ class ButtonsShadowOutline extends Component {
                       <CardTitle>Checkbox Buttons</CardTitle>
                       <div className="text-center">
                         <ButtonGroup size="sm" className="mb-2">
-                          <Button className="btn-shadow" outline color="primary"
-                            onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>
+                          <Button
+                            className="btn-shadow"
+                            outline
+                            color="primary"
+                            onClick={() => this.onCheckboxBtnClick(1)}
+                            active={this.state.cSelected.includes(1)}
+                          >
                             One
                           </Button>
-                          <Button className="btn-shadow" outline color="primary"
-                            onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>
+                          <Button
+                            className="btn-shadow"
+                            outline
+                            color="primary"
+                            onClick={() => this.onCheckboxBtnClick(2)}
+                            active={this.state.cSelected.includes(2)}
+                          >
                             Two
                           </Button>
-                          <Button className="btn-shadow" outline color="primary"
-                            onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>
+                          <Button
+                            className="btn-shadow"
+                            outline
+                            color="primary"
+                            onClick={() => this.onCheckboxBtnClick(3)}
+                            active={this.state.cSelected.includes(3)}
+                          >
                             Three
                           </Button>
                         </ButtonGroup>
                         <ButtonGroup className="mb-2">
-                          <Button className="btn-shadow" outline color="warning"
-                            onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>
+                          <Button
+                            className="btn-shadow"
+                            outline
+                            color="warning"
+                            onClick={() => this.onCheckboxBtnClick(1)}
+                            active={this.state.cSelected.includes(1)}
+                          >
                             One
                           </Button>
-                          <Button className="btn-shadow" outline color="success"
-                            onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>
+                          <Button
+                            className="btn-shadow"
+                            outline
+                            color="success"
+                            onClick={() => this.onCheckboxBtnClick(2)}
+                            active={this.state.cSelected.includes(2)}
+                          >
                             Two
                           </Button>
-                          <Button className="btn-shadow" outline color="danger"
-                            onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>
+                          <Button
+                            className="btn-shadow"
+                            outline
+                            color="danger"
+                            onClick={() => this.onCheckboxBtnClick(3)}
+                            active={this.state.cSelected.includes(3)}
+                          >
                             Three
                           </Button>
                         </ButtonGroup>
                         <ButtonGroup size="lg" className="mb-2">
-                          <Button className="btn-shadow" outline color="alternate"
-                            onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>
+                          <Button
+                            className="btn-shadow"
+                            outline
+                            color="alternate"
+                            onClick={() => this.onCheckboxBtnClick(1)}
+                            active={this.state.cSelected.includes(1)}
+                          >
                             One
                           </Button>
-                          <Button className="btn-shadow" outline color="dark" 
-                          onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>
+                          <Button
+                            className="btn-shadow"
+                            outline
+                            color="dark"
+                            onClick={() => this.onCheckboxBtnClick(2)}
+                            active={this.state.cSelected.includes(2)}
+                          >
                             Two
                           </Button>
-                          <Button className="btn-shadow" outline color="info" 
-                            onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>
+                          <Button
+                            className="btn-shadow"
+                            outline
+                            color="info"
+                            onClick={() => this.onCheckboxBtnClick(3)}
+                            active={this.state.cSelected.includes(3)}
+                          >
                             Three
                           </Button>
                         </ButtonGroup>
@@ -328,44 +393,89 @@ class ButtonsShadowOutline extends Component {
                       <CardTitle>Radio Buttons</CardTitle>
                       <div className="text-center">
                         <ButtonGroup size="sm" className="mb-2">
-                          <Button className="btn-shadow" outline color="primary"
-                            onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                          <Button
+                            className="btn-shadow"
+                            outline
+                            color="primary"
+                            onClick={() => this.onRadioBtnClick(1)}
+                            active={this.state.rSelected === 1}
+                          >
                             One
                           </Button>
-                          <Button className="btn-shadow" outline color="primary"
-                            onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>
+                          <Button
+                            className="btn-shadow"
+                            outline
+                            color="primary"
+                            onClick={() => this.onRadioBtnClick(2)}
+                            active={this.state.rSelected === 2}
+                          >
                             Two
                           </Button>
-                          <Button className="btn-shadow" outline color="primary"
-                            onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>
+                          <Button
+                            className="btn-shadow"
+                            outline
+                            color="primary"
+                            onClick={() => this.onRadioBtnClick(3)}
+                            active={this.state.rSelected === 3}
+                          >
                             Three
                           </Button>
                         </ButtonGroup>
                         <ButtonGroup className="mb-2">
-                          <Button className="btn-shadow" outline color="warning"
-                            onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                          <Button
+                            className="btn-shadow"
+                            outline
+                            color="warning"
+                            onClick={() => this.onRadioBtnClick(1)}
+                            active={this.state.rSelected === 1}
+                          >
                             One
                           </Button>
-                          <Button className="btn-shadow" outline color="success"
-                            onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>
+                          <Button
+                            className="btn-shadow"
+                            outline
+                            color="success"
+                            onClick={() => this.onRadioBtnClick(2)}
+                            active={this.state.rSelected === 2}
+                          >
                             Two
                           </Button>
-                          <Button className="btn-shadow" outline color="danger"
-                            onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>
+                          <Button
+                            className="btn-shadow"
+                            outline
+                            color="danger"
+                            onClick={() => this.onRadioBtnClick(3)}
+                            active={this.state.rSelected === 3}
+                          >
                             Three
                           </Button>
                         </ButtonGroup>
                         <ButtonGroup size="lg" className="mb-2">
-                          <Button className="btn-shadow" outline color="alternate"
-                            onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                          <Button
+                            className="btn-shadow"
+                            outline
+                            color="alternate"
+                            onClick={() => this.onRadioBtnClick(1)}
+                            active={this.state.rSelected === 1}
+                          >
                             One
                           </Button>
-                          <Button className="btn-shadow" outline color="dark"
-                            onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>
+                          <Button
+                            className="btn-shadow"
+                            outline
+                            color="dark"
+                            onClick={() => this.onRadioBtnClick(2)}
+                            active={this.state.rSelected === 2}
+                          >
                             Two
                           </Button>
-                          <Button className="btn-shadow" outline color="info"
-                            onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>
+                          <Button
+                            className="btn-shadow"
+                            outline
+                            color="info"
+                            onClick={() => this.onRadioBtnClick(3)}
+                            active={this.state.rSelected === 3}
+                          >
                             Three
                           </Button>
                         </ButtonGroup>

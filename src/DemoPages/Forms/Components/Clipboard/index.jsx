@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
 import {
   Row,
   Col,
@@ -10,20 +10,19 @@ import {
   Button,
   InputGroup,
   Input,
-} from "reactstrap";
+} from 'reactstrap';
 
-import { CopyToClipboard } from "react-copy-to-clipboard";
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
-import { faCopy } from "@fortawesome/free-solid-svg-icons";
+import { faCopy } from '@fortawesome/free-solid-svg-icons';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import PageTitle from "../../../../Layout/AppMain/PageTitle";
+import PageTitle from '../../../../Layout/AppMain/PageTitle';
 
 export default class FormClipboard extends React.Component {
   state = {
-    value:
-      "Write here the text that you are copying. \n This is a new text line!",
+    value: 'Write here the text that you are copying. \n This is a new text line!',
     copied: false,
   };
 
@@ -42,19 +41,32 @@ export default class FormClipboard extends React.Component {
   render() {
     return (
       <Fragment>
-        <PageTitle heading="Clipboard"
+        <PageTitle
+          heading="Clipboard"
           subheading="You can copy/paste text with this React form widget."
-          icon="pe-7s-phone icon-gradient bg-premium-dark"/>
+          icon="pe-7s-phone icon-gradient bg-premium-dark"
+        />
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <Row>
               <Col md="6">
                 <Card className="main-card mb-3">
                   <CardBody>
                     <CardTitle>Text to Copy</CardTitle>
-                    <textarea onChange={this.onChange} rows={2} cols={10}
-                      className="form-control" value={this.state.value}/>
+                    <textarea
+                      onChange={this.onChange}
+                      rows={2}
+                      cols={10}
+                      className="form-control"
+                      value={this.state.value}
+                    />
                     {this.state.copied ? (
                       <div className="text-center">
                         <h5 className="text-success mt-2">Copied.</h5>
@@ -101,8 +113,16 @@ export default class FormClipboard extends React.Component {
                 <Card className="main-card mb-3">
                   <CardBody>
                     <CardTitle>onClick Copy</CardTitle>
-                    <CopyToClipboard onCopy={this.onCopy} options={{ message: "Whoa!" }} text={this.state.value}>
-                      <Button color="primary" className="btn-shadow btn-pill btn-wide" onClick={this.onClick}>
+                    <CopyToClipboard
+                      onCopy={this.onCopy}
+                      options={{ message: 'Whoa!' }}
+                      text={this.state.value}
+                    >
+                      <Button
+                        color="primary"
+                        className="btn-shadow btn-pill btn-wide"
+                        onClick={this.onClick}
+                      >
                         Copy to clipboard with onClick prop
                       </Button>
                     </CopyToClipboard>

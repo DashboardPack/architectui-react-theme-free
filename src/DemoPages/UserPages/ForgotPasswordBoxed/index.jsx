@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap";
+import React, { Fragment } from 'react';
+import { Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 // Layout
 
 const ForgotPasswordBoxed = () => (
@@ -25,7 +25,12 @@ const ForgotPasswordBoxed = () => (
                       <Col md={12}>
                         <FormGroup>
                           <Label for="exampleEmail">Email</Label>
-                          <Input type="email" name="email" id="exampleEmail"placeholder="Email here..."/>
+                          <Input
+                            type="email"
+                            name="email"
+                            id="exampleEmail"
+                            placeholder="Email here..."
+                          />
                         </FormGroup>
                       </Col>
                     </Row>
@@ -33,7 +38,11 @@ const ForgotPasswordBoxed = () => (
                 </div>
                 <div className="divider" />
                 <h6 className="mb-0">
-                  <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()} className="text-primary">
+                  <a
+                    href="https://colorlib.com/"
+                    onClick={(e) => e.preventDefault()}
+                    className="text-primary"
+                  >
                     Sign in existing account
                   </a>
                 </h6>

@@ -1,23 +1,29 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../../utils/TransitionWrapper';
-import { Row, Col, Card, CardBody, CardTitle, Container } from "reactstrap";
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../utils/TransitionWrapper';
+import { Row, Col, Card, CardBody, CardTitle, Container } from 'reactstrap';
 
-import ProgressExample from "./Progress";
-import ProgressSizingExample from "./ProgressSizing";
-import ProgressRoundedExample from "./ProgressRounded";
-import ProgressAnimatedExample from "./ProgressAnimated";
-import ProgressColorExample from "./ProgressColor";
-import ProgressLabelsExample from "./ProgressLabels";
-import ProgressMaxExample from "./ProgressMax";
-import ProgressMultiExample from "./ProgressMulti";
-import ProgressStripedExample from "./ProgressStriped";
+import ProgressExample from './Progress';
+import ProgressSizingExample from './ProgressSizing';
+import ProgressRoundedExample from './ProgressRounded';
+import ProgressAnimatedExample from './ProgressAnimated';
+import ProgressColorExample from './ProgressColor';
+import ProgressLabelsExample from './ProgressLabels';
+import ProgressMaxExample from './ProgressMax';
+import ProgressMultiExample from './ProgressMulti';
+import ProgressStripedExample from './ProgressStriped';
 
 const ProgressBarExample = (props) => {
   return (
     <Fragment>
       <TransitionGroup>
-        <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-          timeout={0} enter={false} exit={false}>
+        <CSSTransition
+          component="div"
+          classNames="TabsAnimation"
+          appear={true}
+          timeout={0}
+          enter={false}
+          exit={false}
+        >
           <Container fluid>
             <Row>
               <Col md="6">

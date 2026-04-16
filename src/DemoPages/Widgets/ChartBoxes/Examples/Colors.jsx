@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
+import React, { Component, Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
 import {
   Row,
   Col,
@@ -11,7 +11,7 @@ import {
   NavItem,
   NavLink,
   Container,
-} from "reactstrap";
+} from 'reactstrap';
 
 import {
   AreaChart,
@@ -23,7 +23,7 @@ import {
   Bar,
   ComposedChart,
   CartesianGrid,
-} from "recharts";
+} from 'recharts';
 
 import {
   faAngleUp,
@@ -31,37 +31,37 @@ import {
   faArrowLeft,
   faArrowRight,
   faEllipsisH,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
-import bg1 from "../../../../assets/utils/images/dropdown-header/abstract1.jpg";
+import bg1 from '../../../../assets/utils/images/dropdown-header/abstract1.jpg';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const data = [
-  { name: "Page A", uv: 4000, pv: 2400, amt: 2400 },
-  { name: "Page B", uv: 3000, pv: 1398, amt: 2210 },
-  { name: "Page C", uv: 2000, pv: 9800, amt: 2290 },
-  { name: "Page D", uv: 2780, pv: 3908, amt: 2000 },
-  { name: "Page E", uv: 1890, pv: 4800, amt: 2181 },
-  { name: "Page F", uv: 2390, pv: 3800, amt: 2500 },
-  { name: "Page G", uv: 3490, pv: 4300, amt: 2100 },
-  { name: "Page C", uv: 2000, pv: 6800, amt: 2290 },
-  { name: "Page D", uv: 4780, pv: 7908, amt: 2000 },
-  { name: "Page E", uv: 2890, pv: 9800, amt: 2181 },
-  { name: "Page F", uv: 1390, pv: 3800, amt: 1500 },
-  { name: "Page G", uv: 3490, pv: 4300, amt: 2100 },
+  { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
+  { name: 'Page B', uv: 3000, pv: 1398, amt: 2210 },
+  { name: 'Page C', uv: 2000, pv: 9800, amt: 2290 },
+  { name: 'Page D', uv: 2780, pv: 3908, amt: 2000 },
+  { name: 'Page E', uv: 1890, pv: 4800, amt: 2181 },
+  { name: 'Page F', uv: 2390, pv: 3800, amt: 2500 },
+  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
+  { name: 'Page C', uv: 2000, pv: 6800, amt: 2290 },
+  { name: 'Page D', uv: 4780, pv: 7908, amt: 2000 },
+  { name: 'Page E', uv: 2890, pv: 9800, amt: 2181 },
+  { name: 'Page F', uv: 1390, pv: 3800, amt: 1500 },
+  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
 ];
 
 const data2 = [
-  { name: "Page A", uv: 5400, pv: 5240, amt: 1240 },
-  { name: "Page B", uv: 7300, pv: 4139, amt: 3221 },
-  { name: "Page C", uv: 8200, pv: 7980, amt: 5229 },
-  { name: "Page D", uv: 6278, pv: 4390, amt: 3200 },
-  { name: "Page E", uv: 3189, pv: 7480, amt: 6218 },
-  { name: "Page D", uv: 9478, pv: 6790, amt: 2200 },
-  { name: "Page E", uv: 1289, pv: 1980, amt: 7218 },
-  { name: "Page F", uv: 3139, pv: 2380, amt: 5150 },
-  { name: "Page G", uv: 5349, pv: 3430, amt: 3210 },
+  { name: 'Page A', uv: 5400, pv: 5240, amt: 1240 },
+  { name: 'Page B', uv: 7300, pv: 4139, amt: 3221 },
+  { name: 'Page C', uv: 8200, pv: 7980, amt: 5229 },
+  { name: 'Page D', uv: 6278, pv: 4390, amt: 3200 },
+  { name: 'Page E', uv: 3189, pv: 7480, amt: 6218 },
+  { name: 'Page D', uv: 9478, pv: 6790, amt: 2200 },
+  { name: 'Page E', uv: 1289, pv: 1980, amt: 7218 },
+  { name: 'Page F', uv: 3139, pv: 2380, amt: 5150 },
+  { name: 'Page G', uv: 5349, pv: 3430, amt: 3210 },
 ];
 
 class BasicExample extends Component {
@@ -69,8 +69,14 @@ class BasicExample extends Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Row>
                 <Col md="4">
@@ -97,11 +103,12 @@ class BasicExample extends Component {
                         <DropdownMenu className="dropdown-menu-lg dropdown-menu-right">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-primary">
-                              <div className="menu-header-image"
+                              <div
+                                className="menu-header-image"
                                 style={{
-                                  backgroundImage: "url(" + bg1 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg1 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <div>
                                   <h5 className="menu-header-title">Settings</h5>
@@ -113,45 +120,39 @@ class BasicExample extends Component {
                                   <Button size="sm" color="dark" className="me-2">
                                     Settings
                                   </Button>
-                                  <Button size="sm" className="btn-icon btn-icon-only" color="warning">
-                                    <i className="pe-7s-config btn-icon-wrapper"> {" "} </i>
+                                  <Button
+                                    size="sm"
+                                    className="btn-icon btn-icon-only"
+                                    color="warning"
+                                  >
+                                    <i className="pe-7s-config btn-icon-wrapper"> </i>
                                   </Button>
                                 </div>
                               </div>
                             </div>
                           </div>
                           <Nav vertical>
-                            <NavItem className="nav-item-header">
-                              Activity
-                            </NavItem>
+                            <NavItem className="nav-item-header">Activity</NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Chat
-                                <div className="ms-auto badge rounded-pill bg-info">
-                                  8
-                                </div>
+                                <div className="ms-auto badge rounded-pill bg-info">8</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
                               <NavLink href="#">Recover Password</NavLink>
                             </NavItem>
-                            <NavItem className="nav-item-header">
-                              My Account
-                            </NavItem>
+                            <NavItem className="nav-item-header">My Account</NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Settings
-                                <div className="ms-auto badge bg-success">
-                                  New
-                                </div>
+                                <div className="ms-auto badge bg-success">New</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Messages
-                                <div className="ms-auto badge bg-warning">
-                                  512
-                                </div>
+                                <div className="ms-auto badge bg-warning">512</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
@@ -236,7 +237,7 @@ class BasicExample extends Component {
                   </div>
                 </Col>
               </Row>
-              <div className="divider mt-0" style={{ marginBottom: "30px" }} />
+              <div className="divider mt-0" style={{ marginBottom: '30px' }} />
               <Row>
                 <Col md="4">
                   <div className="card mb-3 bg-arielle-smile widget-chart text-white card-border">
@@ -323,7 +324,7 @@ class BasicExample extends Component {
                   </div>
                 </Col>
               </Row>
-              <div className="divider mt-0" style={{ marginBottom: "30px" }} />
+              <div className="divider mt-0" style={{ marginBottom: '30px' }} />
               <Row>
                 <Col md="4">
                   <div className="card mb-3 bg-love-kiss widget-chart card-border">
@@ -335,14 +336,14 @@ class BasicExample extends Component {
                       <div className="widget-numbers">45.8k</div>
                       <div className="widget-subheading">Total Views</div>
                       <div className="widget-description">
-                        <FontAwesomeIcon className="text-white opacity-5" icon={faAngleUp}/>
+                        <FontAwesomeIcon className="text-white opacity-5" icon={faAngleUp} />
                         <span className="text-white">175.5%</span>
                       </div>
                     </div>
                     <div className="widget-chart-wrapper">
                       <ResponsiveContainer width="100%" aspect={3.0 / 1.0}>
                         <LineChart data={data} margin={{ top: 0, right: 5, left: 5, bottom: 0 }}>
-                          <Line type="monotone" dataKey="pv" stroke="#ffffff" strokeWidth={3}/>
+                          <Line type="monotone" dataKey="pv" stroke="#ffffff" strokeWidth={3} />
                         </LineChart>
                       </ResponsiveContainer>
                     </div>
@@ -365,7 +366,7 @@ class BasicExample extends Component {
                     <div className="widget-chart-wrapper opacity-4">
                       <ResponsiveContainer width="100%" aspect={3.0 / 1.0}>
                         <AreaChart data={data} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
-                          <Area type="monotoneX" dataKey="uv" stroke="#fd7e14" fill="#ffb87d"/>
+                          <Area type="monotoneX" dataKey="uv" stroke="#fd7e14" fill="#ffb87d" />
                         </AreaChart>
                       </ResponsiveContainer>
                     </div>
@@ -388,7 +389,7 @@ class BasicExample extends Component {
                     <div className="widget-chart-wrapper">
                       <ResponsiveContainer width="100%" aspect={3.0 / 1.0}>
                         <BarChart data={data}>
-                          <Bar dataKey="uv" fill="#81a4ff" stroke="#3f6ad8" strokeWidth={2}/>
+                          <Bar dataKey="uv" fill="#81a4ff" stroke="#3f6ad8" strokeWidth={2} />
                         </BarChart>
                       </ResponsiveContainer>
                     </div>
@@ -404,14 +405,14 @@ class BasicExample extends Component {
                       <div className="widget-numbers">63.2k</div>
                       <div className="widget-subheading">Bugs Fixed</div>
                       <div className="widget-description text-white opacity-6">
-                        <FontAwesomeIcon className="text-dark" icon={faArrowRight}/>
+                        <FontAwesomeIcon className="text-dark" icon={faArrowRight} />
                         <span className="ps-1">175.5%</span>
                       </div>
                     </div>
                     <div className="widget-chart-wrapper opacity-5">
                       <ResponsiveContainer width="100%" aspect={3.0 / 1.0}>
                         <AreaChart data={data} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
-                          <Area type="stepAfter" dataKey="uv" stroke="#bb3812" fill="#e9643d"/>
+                          <Area type="stepAfter" dataKey="uv" stroke="#bb3812" fill="#e9643d" />
                         </AreaChart>
                       </ResponsiveContainer>
                     </div>
@@ -434,7 +435,7 @@ class BasicExample extends Component {
                     <div className="widget-chart-wrapper">
                       <ResponsiveContainer width="100%" aspect={3.0 / 1.0}>
                         <BarChart data={data}>
-                          <Bar dataKey="uv" fill="#81a4ff" stroke="#3f6ad8" strokeWidth={2}/>
+                          <Bar dataKey="uv" fill="#81a4ff" stroke="#3f6ad8" strokeWidth={2} />
                         </BarChart>
                       </ResponsiveContainer>
                     </div>
@@ -450,21 +451,21 @@ class BasicExample extends Component {
                       <div className="widget-numbers">63.2k</div>
                       <div className="widget-subheading">Bugs Fixed</div>
                       <div className="widget-description text-white opacity-6">
-                        <FontAwesomeIcon className="text-dark" icon={faArrowRight}/>
+                        <FontAwesomeIcon className="text-dark" icon={faArrowRight} />
                         <span className="ps-1">175.5%</span>
                       </div>
                     </div>
                     <div className="widget-chart-wrapper opacity-5">
                       <ResponsiveContainer width="100%" aspect={3.0 / 1.0}>
                         <AreaChart data={data} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
-                          <Area type="stepAfter" dataKey="uv" stroke="#bb3812" fill="#e9643d"/>
+                          <Area type="stepAfter" dataKey="uv" stroke="#bb3812" fill="#e9643d" />
                         </AreaChart>
                       </ResponsiveContainer>
                     </div>
                   </div>
                 </Col>
               </Row>
-              <div className="divider mt-0" style={{ marginBottom: "30px" }} />
+              <div className="divider mt-0" style={{ marginBottom: '30px' }} />
               <Row>
                 <Col md="4">
                   <div className="card mb-3 widget-chart bg-mean-fruit card-border">
@@ -483,7 +484,7 @@ class BasicExample extends Component {
                     <div className="widget-chart-wrapper chart-wrapper-relative">
                       <ResponsiveContainer width="100%" aspect={3.0 / 1.0}>
                         <LineChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 0 }}>
-                          <Line type="monotone" dataKey="pv" stroke="#ffffff" strokeWidth={3}/>
+                          <Line type="monotone" dataKey="pv" stroke="#ffffff" strokeWidth={3} />
                         </LineChart>
                       </ResponsiveContainer>
                     </div>
@@ -506,7 +507,12 @@ class BasicExample extends Component {
                     <div className="widget-chart-wrapper chart-wrapper-relative">
                       <ResponsiveContainer width="100%" aspect={3.0 / 1.0}>
                         <AreaChart data={data} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
-                          <Area type="monotoneX" dataKey="uv" stroke="#ffffff" fill="rgba(255,255,255,.2)"/>
+                          <Area
+                            type="monotoneX"
+                            dataKey="uv"
+                            stroke="#ffffff"
+                            fill="rgba(255,255,255,.2)"
+                          />
                         </AreaChart>
                       </ResponsiveContainer>
                     </div>
@@ -529,7 +535,7 @@ class BasicExample extends Component {
                     <div className="widget-chart-wrapper chart-wrapper-relative">
                       <ResponsiveContainer width="100%" aspect={3.0 / 1.0}>
                         <BarChart data={data}>
-                          <Bar dataKey="uv" fill="#81a4ff" stroke="#3f6ad8" strokeWidth={1}/>
+                          <Bar dataKey="uv" fill="#81a4ff" stroke="#3f6ad8" strokeWidth={1} />
                         </BarChart>
                       </ResponsiveContainer>
                     </div>
@@ -552,7 +558,12 @@ class BasicExample extends Component {
                     <div className="widget-chart-wrapper chart-wrapper-relative">
                       <ResponsiveContainer width="100%" aspect={3.0 / 1.0}>
                         <AreaChart data={data} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
-                          <Area type="stepAfter" dataKey="uv" stroke="rgba(255,255,255,.7)" fill="rgba(255,255,255,.5)"/>
+                          <Area
+                            type="stepAfter"
+                            dataKey="uv"
+                            stroke="rgba(255,255,255,.7)"
+                            fill="rgba(255,255,255,.5)"
+                          />
                         </AreaChart>
                       </ResponsiveContainer>
                     </div>
@@ -563,12 +574,10 @@ class BasicExample extends Component {
                     <div className="widget-chart-content text-white">
                       <div className="icon-wrapper rounded">
                         <div className="icon-wrapper-bg bg-white opacity-6" />
-                        <i className="lnr-heart icon-gradient bg-premium-dark"> {" "} </i>
+                        <i className="lnr-heart icon-gradient bg-premium-dark"> </i>
                       </div>
                       <div className="widget-numbers">5.82k</div>
-                      <div className="widget-subheading">
-                        Active Social Profiles
-                      </div>
+                      <div className="widget-subheading">Active Social Profiles</div>
                       <div className="widget-description">
                         Down by
                         <span className="text-white ps-1 pe-1">
@@ -581,8 +590,13 @@ class BasicExample extends Component {
                     <div className="widget-chart-wrapper chart-wrapper-relative">
                       <ResponsiveContainer width="100%" aspect={3.0 / 1.0}>
                         <LineChart data={data2} margin={{ top: 0, right: 5, left: 5, bottom: 0 }}>
-                          <Line type="monotone" dataKey="pv" stroke="#ffffff" strokeWidth={2}/>
-                          <Line type="monotone" dataKey="uv" stroke="rgba(255,255,255,.7)" strokeWidth={2}/>
+                          <Line type="monotone" dataKey="pv" stroke="#ffffff" strokeWidth={2} />
+                          <Line
+                            type="monotone"
+                            dataKey="uv"
+                            stroke="rgba(255,255,255,.7)"
+                            strokeWidth={2}
+                          />
                         </LineChart>
                       </ResponsiveContainer>
                     </div>
@@ -610,8 +624,13 @@ class BasicExample extends Component {
                       <ResponsiveContainer width="100%" aspect={3.0 / 1.0}>
                         <ComposedChart data={data2}>
                           <CartesianGrid stroke="rgba(255,255,255,.1)" />
-                          <Area type="monotone" dataKey="amt" fill="rgba(255,255,255,.4)" stroke="transparent"/>
-                          <Bar dataKey="pv" barSize={5} fill="rgba(255,255,255,.9)"/>
+                          <Area
+                            type="monotone"
+                            dataKey="amt"
+                            fill="rgba(255,255,255,.4)"
+                            stroke="transparent"
+                          />
+                          <Bar dataKey="pv" barSize={5} fill="rgba(255,255,255,.9)" />
                           <Line type="monotone" dataKey="uv" stroke="#ffffff" />
                         </ComposedChart>
                       </ResponsiveContainer>

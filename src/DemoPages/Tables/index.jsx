@@ -1,17 +1,18 @@
-import React, { Fragment } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Fragment, Suspense, lazy } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import SuspenseFallback from '../../Layout/AppMain/SuspenseFallback';
 
-// Tables
-
-import RegularTables from "./RegularTables";
-import DataTables from "./DataTables";
+const RegularTables = lazy(() => import('./RegularTables'));
+const DataTables = lazy(() => import('./DataTables'));
 
 const Tables = () => (
   <Fragment>
-    <Routes>
-      <Route path="regular-tables" element={<RegularTables />} />
-      <Route path="datatables" element={<DataTables />} />
-    </Routes>
+    <Suspense fallback={<SuspenseFallback />}>
+      <Routes>
+        <Route path="regular-tables" element={<RegularTables />} />
+        <Route path="datatables" element={<DataTables />} />
+      </Routes>
+    </Suspense>
   </Fragment>
 );
 

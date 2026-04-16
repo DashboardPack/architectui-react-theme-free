@@ -1,24 +1,30 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../../utils/TransitionWrapper';
-import DoughnutExample from "../doughnut";
-import PieExample from "../pie";
-import DynamicDoughnutExample from "../dynamicDoughnut";
-import RadarExample from "../radar";
-import PolarExample from "../polar";
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../utils/TransitionWrapper';
+import DoughnutExample from '../doughnut';
+import PieExample from '../pie';
+import DynamicDoughnutExample from '../dynamicDoughnut';
+import RadarExample from '../radar';
+import PolarExample from '../polar';
 
-import { Row, Col, Card, CardBody, CardTitle, Container } from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle, Container } from 'reactstrap';
 
 export default class ChartJsCircular extends React.Component {
   componentDidMount() {
-    window.removeEventListener("keyup", this.keyHandling);
+    window.removeEventListener('keyup', this.keyHandling);
   }
 
   render() {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Row>
                 <Col lg="6">

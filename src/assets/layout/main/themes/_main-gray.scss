@@ -5,12 +5,11 @@
 $app-container-bg: #ffffff;
 $app-sidebar-bg: #ffffff;
 $app-header-bg: #f8f9fa;
-$app-header-logo-bg: rgba(0, 0, 0, .03);
+$app-header-logo-bg: rgba(0, 0, 0, 0.03);
 
 // Content
 
 .app-theme-gray {
-
   &.app-container {
     background: $app-container-bg;
   }
@@ -21,7 +20,7 @@ $app-header-logo-bg: rgba(0, 0, 0, .03);
   }
 
   .app-page-title {
-    background: rgba(0, 0, 0, .03);
+    background: rgba(0, 0, 0, 0.03);
   }
 
   .app-footer,
@@ -35,7 +34,7 @@ $app-header-logo-bg: rgba(0, 0, 0, .03);
 
   .app-header {
     .app-header__logo {
-      border-right: rgba(0, 0, 0, .1) solid 1px;
+      border-right: rgba(0, 0, 0, 0.1) solid 1px;
     }
   }
 
@@ -53,7 +52,6 @@ $app-header-logo-bg: rgba(0, 0, 0, .03);
     box-shadow: 0 0 0 0 transparent !important;
 
     & > .card-body {
-
       & > .card-title {
         text-transform: none;
         font-size: $font-size-lg;
@@ -71,7 +69,7 @@ $app-header-logo-bg: rgba(0, 0, 0, .03);
           height: 5px;
           left: 0;
           bottom: -2px;
-          content: "";
+          content: '';
         }
       }
     }
@@ -80,5 +78,4 @@ $app-header-logo-bg: rgba(0, 0, 0, .03);
   .app-inner-layout__sidebar {
     border-left: 0 !important;
   }
-
 }

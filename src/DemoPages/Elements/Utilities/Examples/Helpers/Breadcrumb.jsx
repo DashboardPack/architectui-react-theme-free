@@ -1,5 +1,5 @@
-import React from "react";
-import { Breadcrumb, BreadcrumbItem } from "reactstrap";
+import React from 'react';
+import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 
 const BreadcrumbExample = (props) => {
   return (
@@ -11,7 +11,7 @@ const BreadcrumbExample = (props) => {
         <BreadcrumbItem>
           <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()}>
             Home
-          </a>{" "}
+          </a>{' '}
         </BreadcrumbItem>
         <BreadcrumbItem active>Library</BreadcrumbItem>
       </Breadcrumb>
@@ -19,12 +19,12 @@ const BreadcrumbExample = (props) => {
         <BreadcrumbItem>
           <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()}>
             Home
-          </a>{" "}
+          </a>{' '}
         </BreadcrumbItem>
         <BreadcrumbItem>
           <a href="https://colorlib.com/" onClick={(e) => e.preventDefault()}>
             Library
-          </a>{" "}
+          </a>{' '}
         </BreadcrumbItem>
         <BreadcrumbItem active>Data</BreadcrumbItem>
       </Breadcrumb>

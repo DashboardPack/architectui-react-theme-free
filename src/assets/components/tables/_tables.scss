@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 
 .ReactTable {
   position: relative;
@@ -13,7 +13,7 @@
     align-items: stretch;
     width: 100%;
     border-collapse: collapse;
-    overflow: auto
+    overflow: auto;
   }
 
   .-pagination input,
@@ -84,7 +84,6 @@
           padding: 0;
         }
       }
-
     }
 
     &.-filters {
@@ -92,16 +91,16 @@
       background: $gray-100;
 
       .rt-th {
-        border-right: 1px solid $table-border-color
+        border-right: 1px solid $table-border-color;
       }
 
       &.-header {
-        box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.15)
+        box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.15);
       }
     }
 
     .rt-tr {
-      text-align: center
+      text-align: center;
     }
 
     .rt-th,
@@ -112,7 +111,7 @@
       font-weight: bold;
       border-right: 1px solid $table-border-color;
       border-bottom: 1px solid $table-border-color;
-      transition: box-shadow .3s cubic-bezier(.175, .885, .32, 1.275);
+      transition: box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       box-shadow: inset 0 0 0 0 transparent;
       color: $primary;
 
@@ -123,22 +122,22 @@
 
     .rt-th.-sort-asc,
     .rt-td.-sort-asc {
-      box-shadow: inset 0 3px 0 0 $primary
+      box-shadow: inset 0 3px 0 0 $primary;
     }
 
     .rt-th.-sort-desc,
     .rt-td.-sort-desc {
-      box-shadow: inset 0 -3px 0 0 $primary
+      box-shadow: inset 0 -3px 0 0 $primary;
     }
 
     .rt-th.-cursor-pointer,
     .rt-td.-cursor-pointer {
-      cursor: pointer
+      cursor: pointer;
     }
 
     .rt-th:last-child,
     .rt-td:last-child {
-      border-right: 0
+      border-right: 0;
     }
 
     .rt-resizable-header {
@@ -146,16 +145,16 @@
     }
 
     .rt-resizable-header:last-child {
-      overflow: hidden
+      overflow: hidden;
     }
 
     .rt-resizable-header-content {
       overflow: hidden;
-      text-overflow: ellipsis
+      text-overflow: ellipsis;
     }
 
     .rt-header-pivot {
-      border-right-color: #f7f7f7
+      border-right-color: #f7f7f7;
     }
 
     .rt-header-pivot:after,
@@ -163,25 +162,25 @@
       left: 100%;
       top: 50%;
       border: solid transparent;
-      content: " ";
+      content: ' ';
       height: 0;
       width: 0;
       position: absolute;
-      pointer-events: none
+      pointer-events: none;
     }
 
     .rt-header-pivot:after {
       border-color: rgba(255, 255, 255, 0);
       border-left-color: $white;
       border-width: 8px;
-      margin-top: -8px
+      margin-top: -8px;
     }
 
     .rt-header-pivot:before {
       border-color: rgba(102, 102, 102, 0);
       border-left-color: #f7f7f7;
       border-width: 10px;
-      margin-top: -10px
+      margin-top: -10px;
     }
   }
 
@@ -196,7 +195,7 @@
     }
 
     .rt-tr-group:last-child {
-      border-bottom: 0
+      border-bottom: 0;
     }
 
     .rt-td {
@@ -205,7 +204,7 @@
       align-content: center;
       display: flex;
 
-      [contenteditable="true"] {
+      [contenteditable='true'] {
         width: 100%;
         border: 1px solid transparent;
         background: $white !important;
@@ -220,12 +219,12 @@
     }
 
     .rt-td:last-child {
-      border-right: 0
+      border-right: 0;
     }
 
     .rt-expandable {
       cursor: pointer;
-      text-overflow: clip
+      text-overflow: clip;
     }
   }
 
@@ -233,12 +232,12 @@
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: stretch
+    align-items: stretch;
   }
 
   .rt-tr {
     flex: 1 0 auto;
-    display: inline-flex
+    display: inline-flex;
   }
 
   .rt-th,
@@ -247,7 +246,7 @@
     text-overflow: ellipsis;
     padding: $table-cell-padding;
     //overflow: hidden;
-    transition: .3s ease;
+    transition: 0.3s ease;
     transition-property: width, min-width, padding, opacity;
 
     &.-hidden {
@@ -255,7 +254,7 @@
       min-width: 0 !important;
       padding: 0 !important;
       border: 0 !important;
-      opacity: 0 !important
+      opacity: 0 !important;
     }
   }
 
@@ -275,11 +274,11 @@
       border-left: 5.04px solid transparent;
       border-right: 5.04px solid transparent;
       border-top: 7px solid rgba(0, 0, 0, 0.8);
-      transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
-      cursor: pointer
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
     }
     &.-open:after {
-      transform: translate(-50%, -50%) rotate(0)
+      transform: translate(-50%, -50%) rotate(0);
     }
   }
 
@@ -291,7 +290,7 @@
     bottom: 0;
     right: -18px;
     cursor: col-resize;
-    z-index: 10
+    z-index: 10;
   }
 
   .rt-tfoot {
@@ -303,13 +302,13 @@
     .rt-td {
       border-right: 1px solid $table-border-color;
       &:last-child {
-        border-right: 0
+        border-right: 0;
       }
     }
   }
 
   &.-striped .rt-tr.-odd {
-    background: rgba(0, 0, 0, 0.03)
+    background: rgba(0, 0, 0, 0.03);
   }
 
   &.-fixed {
@@ -323,7 +322,7 @@
   }
 
   &.-highlight .rt-tbody .rt-tr:not(.-padRow):hover {
-    background: $dropdown-link-hover-bg
+    background: $dropdown-link-hover-bg;
   }
 
   .-pagination {
@@ -346,26 +345,26 @@
       font-size: 1em;
       color: $primary;
       background: $gray-100;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
       cursor: pointer;
       outline: none;
       font-weight: bold;
     }
 
     .-btn[disabled] {
-      opacity: .5;
-      cursor: default
+      opacity: 0.5;
+      cursor: default;
     }
 
     .-btn:not([disabled]):hover {
       background: $primary;
-      color: $white
+      color: $white;
     }
 
     .-previous,
     .-next {
       flex: 1;
-      text-align: center
+      text-align: center;
     }
 
     .-center {
@@ -375,7 +374,7 @@
       flex-direction: row;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: space-around
+      justify-content: space-around;
     }
 
     .-totalPages {
@@ -398,11 +397,11 @@
 
     .-pageJump input {
       width: 70px;
-      text-align: center
+      text-align: center;
     }
 
     .-pageSizeOptions {
-      margin: 3px 10px
+      margin: 3px 10px;
     }
   }
 
@@ -413,11 +412,11 @@
     top: 50%;
     transform: translate(-50%, -50%);
     background: rgba(255, 255, 255, 0.8);
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     z-index: 1;
     pointer-events: none;
     padding: 20px;
-    color: rgba(0, 0, 0, 0.5)
+    color: rgba(0, 0, 0, 0.5);
   }
 
   .-loading {
@@ -428,7 +427,7 @@
     top: 0;
     bottom: 0;
     background: rgba(255, 255, 255, 0.8);
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     z-index: -1;
     opacity: 0;
     pointer-events: none;
@@ -444,7 +443,7 @@
     font-size: 15px;
     color: $primary;
     transform: translateY(-52%);
-    transition: all .3s cubic-bezier(.25, .46, .45, .94)
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .-loading.-active {
@@ -454,16 +453,15 @@
   }
 
   .-loading.-active > div {
-    transform: translateY(50%)
+    transform: translateY(50%);
   }
 
   .rt-resizing .rt-th,
   .rt-resizing .rt-td {
     transition: none !important;
     cursor: col-resize;
-    user-select: none
+    user-select: none;
   }
-
 }
 
 .table thead th,
@@ -518,7 +516,7 @@
 //react-data-table-component  css
 
 .rdt_Table {
-  border: 1px solid rgba(0,0,0,.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .rdt_TableCol {
@@ -528,7 +526,7 @@
   font-weight: 700;
   border-right: 1px solid #e9ecef;
   border-bottom: 1px solid #e9ecef;
-  transition: box-shadow .3s cubic-bezier(.175,.885,.32,1.275);
+  transition: box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: inset 0 0 0 0 transparent;
   color: #545cd8;
 }
@@ -538,7 +536,7 @@
 }
 
 .rdt_TableRow:nth-child(odd) {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 .rdt_TableRow:nth-child(even) {
   background-color: #f7f7f7;

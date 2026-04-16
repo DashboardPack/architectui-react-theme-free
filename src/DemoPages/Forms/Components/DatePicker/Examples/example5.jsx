@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react';
 
-import DatePicker from "react-datepicker";
-import addDays from "date-fns/addDays";
+import DatePicker from 'react-datepicker';
+import addDays from 'date-fns/addDays';
 
 class FormDatePicker5 extends React.Component {
   constructor(props) {

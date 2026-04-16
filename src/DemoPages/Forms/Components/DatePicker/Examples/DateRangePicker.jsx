@@ -1,14 +1,14 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react';
 
-import { InputGroup, FormGroup, Label, Form, Col, Row } from "reactstrap";
+import { InputGroup, FormGroup, Label, Form, Col, Row } from 'reactstrap';
 
-import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import DatePicker from "react-datepicker";
+import DatePicker from 'react-datepicker';
 
-import moment from "moment";
+import moment from 'moment';
 
 class FormDateRangePicker extends React.Component {
   constructor(props) {

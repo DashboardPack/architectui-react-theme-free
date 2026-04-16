@@ -11,8 +11,8 @@ export const TransitionGroup = ({ children, ...props }) => {
 };
 
 // CSSTransition replacement - simplified to avoid layout issues
-export const CSSTransition = ({ 
-  children, 
+export const CSSTransition = ({
+  children,
   classNames = 'TabsAnimation',
   timeout = 1500,
   appear = true,
@@ -20,23 +20,30 @@ export const CSSTransition = ({
   exit = false,
   component: Component = 'div',
   className = '',
-  ...props 
+  ...props
 }) => {
-  
   // For critical layout components (header, sidebar), render without animation wrappers
   // to ensure CSS rules like .fixed-header.fixed-sidebar .app-sidebar .app-header__logo work properly
   if (className && (className.includes('app-header') || className.includes('app-sidebar'))) {
     // Return the element directly without any wrapper divs that might break CSS selectors
     if (Component === 'div') {
-      return React.createElement('div', {
-        className,
-        ...props
-      }, children);
+      return React.createElement(
+        'div',
+        {
+          className,
+          ...props,
+        },
+        children
+      );
     }
-    return React.createElement(Component, {
-      className,
-      ...props
-    }, children);
+    return React.createElement(
+      Component,
+      {
+        className,
+        ...props,
+      },
+      children
+    );
   }
 
   // For other components, use simple fade animation
@@ -56,4 +63,4 @@ export const CSSTransition = ({
 };
 
 const TransitionComponents = { TransitionGroup, CSSTransition };
-export default TransitionComponents; 
+export default TransitionComponents;

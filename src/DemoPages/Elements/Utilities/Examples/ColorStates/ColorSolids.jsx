@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { Tooltip } from "reactstrap";
+import React, { Fragment } from 'react';
+import { Tooltip } from 'reactstrap';
 
 class TooltipItem extends React.Component {
   constructor(props) {
@@ -20,8 +20,12 @@ class TooltipItem extends React.Component {
   render() {
     return (
       <Fragment>
-        <div className={this.props.item.class} id={"TooltipC-" + this.props.id}/>
-        <Tooltip isOpen={this.state.tooltipOpen} target={"TooltipC-" + this.props.id} toggle={this.toggle}>
+        <div className={this.props.item.class} id={'TooltipC-' + this.props.id} />
+        <Tooltip
+          isOpen={this.state.tooltipOpen}
+          target={'TooltipC-' + this.props.id}
+          toggle={this.toggle}
+        >
           {this.props.item.text}
         </Tooltip>
       </Fragment>
@@ -36,44 +40,44 @@ class ColorSwatches extends React.Component {
     this.state = {
       tooltips: [
         {
-          text: "Primary",
-          class: "swatch-holder swatch-holder-lg bg-primary",
+          text: 'Primary',
+          class: 'swatch-holder swatch-holder-lg bg-primary',
         },
         {
-          text: "Secondary",
-          class: "swatch-holder swatch-holder-lg bg-secondary",
+          text: 'Secondary',
+          class: 'swatch-holder swatch-holder-lg bg-secondary',
         },
         {
-          text: "Success",
-          class: "swatch-holder swatch-holder-lg bg-success",
+          text: 'Success',
+          class: 'swatch-holder swatch-holder-lg bg-success',
         },
         {
-          text: "Info",
-          class: "swatch-holder swatch-holder-lg bg-info",
+          text: 'Info',
+          class: 'swatch-holder swatch-holder-lg bg-info',
         },
         {
-          text: "Warning",
-          class: "swatch-holder swatch-holder-lg bg-warning",
+          text: 'Warning',
+          class: 'swatch-holder swatch-holder-lg bg-warning',
         },
         {
-          text: "Danger",
-          class: "swatch-holder swatch-holder-lg bg-danger",
+          text: 'Danger',
+          class: 'swatch-holder swatch-holder-lg bg-danger',
         },
         {
-          text: "Focus",
-          class: "swatch-holder swatch-holder-lg bg-focus",
+          text: 'Focus',
+          class: 'swatch-holder swatch-holder-lg bg-focus',
         },
         {
-          text: "Alt",
-          class: "swatch-holder swatch-holder-lg bg-alternate",
+          text: 'Alt',
+          class: 'swatch-holder swatch-holder-lg bg-alternate',
         },
         {
-          text: "Light",
-          class: "swatch-holder swatch-holder-lg bg-light",
+          text: 'Light',
+          class: 'swatch-holder swatch-holder-lg bg-light',
         },
         {
-          text: "Dark",
-          class: "swatch-holder swatch-holder-lg bg-dark",
+          text: 'Dark',
+          class: 'swatch-holder swatch-holder-lg bg-dark',
         },
       ],
     };

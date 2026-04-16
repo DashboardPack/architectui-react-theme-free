@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react';
 import {
   Dropdown,
   InputGroup,
@@ -6,7 +6,7 @@ import {
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
-} from "reactstrap";
+} from 'reactstrap';
 
 class FormInputGroupButtonDropdown extends React.Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class FormInputGroupButtonDropdown extends React.Component {
     return (
       <Fragment>
         <InputGroup>
-          <Dropdown addonType="prepend" isOpen={this.state.dropdownOpen} toggle={this.toggle} >
+          <Dropdown addonType="prepend" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
             <DropdownToggle caret>Button Dropdown</DropdownToggle>
             <DropdownMenu>
               <DropdownItem header>Header</DropdownItem>

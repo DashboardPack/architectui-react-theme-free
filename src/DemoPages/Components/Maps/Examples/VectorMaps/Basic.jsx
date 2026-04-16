@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState } from 'react';
 import {
   ComposableMap,
   Geographies,
@@ -6,16 +6,16 @@ import {
   ZoomableGroup,
   Graticule,
   Sphere,
-} from "react-simple-maps";
+} from 'react-simple-maps';
 
-import world from "./Static/world-50m.json";
+import world from './Static/world-50m.json';
 
 const VectorMapsBasic = () => {
   const [hoveredGeo, setHoveredGeo] = useState(null);
 
   return (
     <Fragment>
-      <div style={{ width: "100%", aspectRatio: "16/9", minHeight: "350px" }}>
+      <div style={{ width: '100%', aspectRatio: '16/9', minHeight: '350px' }}>
         <ComposableMap
           projection="geoMercator"
           projectionConfig={{
@@ -25,8 +25,8 @@ const VectorMapsBasic = () => {
           width={800}
           height={450}
           style={{
-            width: "100%",
-            height: "100%",
+            width: '100%',
+            height: '100%',
           }}
         >
           <ZoomableGroup zoom={1} minZoom={1} maxZoom={8}>
@@ -43,23 +43,23 @@ const VectorMapsBasic = () => {
                       onMouseLeave={() => setHoveredGeo(null)}
                       style={{
                         default: {
-                          fill: "#6c5ce7",
-                          stroke: "#fff",
+                          fill: '#6c5ce7',
+                          stroke: '#fff',
                           strokeWidth: 0.5,
-                          outline: "none",
+                          outline: 'none',
                         },
                         hover: {
-                          fill: "#a29bfe",
-                          stroke: "#fff",
+                          fill: '#a29bfe',
+                          stroke: '#fff',
                           strokeWidth: 0.75,
-                          outline: "none",
-                          cursor: "pointer",
+                          outline: 'none',
+                          cursor: 'pointer',
                         },
                         pressed: {
-                          fill: "#5f27cd",
-                          stroke: "#fff",
+                          fill: '#5f27cd',
+                          stroke: '#fff',
                           strokeWidth: 0.75,
-                          outline: "none",
+                          outline: 'none',
                         },
                       }}
                     />

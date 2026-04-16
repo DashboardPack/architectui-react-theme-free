@@ -4,7 +4,7 @@
 
 .closed-sidebar {
   .app-sidebar {
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     width: $app-sidebar-width-collapsed;
     min-width: $app-sidebar-width-collapsed;
     flex: 0 0 $app-sidebar-width-collapsed;
@@ -59,7 +59,7 @@
         flex-direction: column;
         align-items: center;
         padding: 0;
-        
+
         &.visible {
           padding: 0;
 
@@ -115,9 +115,9 @@
         .metismenu-container {
           display: block;
           padding: 0;
-          
+
           &.visible {
-            padding: .5em 0 0 2rem;
+            padding: 0.5em 0 0 2rem;
 
             & > .metismenu-item > .metismenu-link {
               height: 2.3em;
@@ -141,7 +141,6 @@
   }
 
   &:not(.sidebar-mobile-open) {
-
     .app-sidebar {
       .scrollbar-container {
         position: static;
@@ -173,7 +172,6 @@
         }
       }
     }
-
   }
 
   &.fixed-sidebar {
@@ -227,7 +225,6 @@
           .logo-src {
             width: $logo-width;
             margin: 0;
-
           }
         }
       }

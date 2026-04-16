@@ -1,31 +1,43 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../utils/TransitionWrapper';
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../utils/TransitionWrapper';
 
-import PageTitle from "../../../Layout/AppMain/PageTitle";
+import PageTitle from '../../../Layout/AppMain/PageTitle';
 
 import Tabs, { TabPane } from '../../../utils/TabsWrapper';
 import { TabContent } from '../../../utils/TabsWrapper';
 import { ScrollableInkTabBar } from '../../../utils/TabsWrapper';
 
 // Examples
-import BasicExample from "./Examples/Basic";
-import ColorsExample from "./Examples/Colors";
-import GridsExample from "./Examples/Grids";
-import AlignmentExample from "./Examples/Alignment";
-import ProgressExample from "./Examples/Progress";
+import BasicExample from './Examples/Basic';
+import ColorsExample from './Examples/Colors';
+import GridsExample from './Examples/Grids';
+import AlignmentExample from './Examples/Alignment';
+import ProgressExample from './Examples/Progress';
 
 export default class WidgetsChartBoxes extends React.Component {
   render() {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
-            <div>  
-              <PageTitle heading="Chart Boxes"
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
+            <div>
+              <PageTitle
+                heading="Chart Boxes"
                 subheading="These boxes can be used to show numbers and data in a breautiful user friendly way."
-                icon="pe-7s-star icon-gradient bg-ripe-malin"/>
-              <Tabs defaultActiveKey="1" renderTabBar={() => <ScrollableInkTabBar />} renderTabContent={() => <TabContent />}>
+                icon="pe-7s-star icon-gradient bg-ripe-malin"
+              />
+              <Tabs
+                defaultActiveKey="1"
+                renderTabBar={() => <ScrollableInkTabBar />}
+                renderTabContent={() => <TabContent />}
+              >
                 <TabPane tab="Basic" key="1">
                   <BasicExample />
                 </TabPane>

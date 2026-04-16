@@ -5,9 +5,14 @@
 
 # dependencies
 /node_modules
+/.node_modules*
+/node_modules_*
 
 # testing
 /coverage
+/test-results
+/playwright-report
+/playwright/.cache
 
 # production
 /build
@@ -19,6 +24,11 @@
 .env.development.local
 .env.test.local
 .env.production.local
+
+# the project ships with package-lock.json (npm); pnpm/yarn lockfiles
+# only show up when contributors install with an alternate package manager
+pnpm-lock.yaml
+yarn.lock
 
 # upgrade tracking (keep private)
 REACT19_UPGRADE_RECIPE.md

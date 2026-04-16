@@ -1,28 +1,40 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../utils/TransitionWrapper';
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../utils/TransitionWrapper';
 
-import PageTitle from "../../../Layout/AppMain/PageTitle";
+import PageTitle from '../../../Layout/AppMain/PageTitle';
 
 import Tabs, { TabPane } from '../../../utils/TabsWrapper';
 import { TabContent } from '../../../utils/TabsWrapper';
 import { ScrollableInkTabBar } from '../../../utils/TabsWrapper';
 
 // Examples
-import VectorMapsExample from "./Examples/VectorMaps";
-import InteractiveMapsExample from "./Examples/GoogleMaps";
+import VectorMapsExample from './Examples/VectorMaps';
+import InteractiveMapsExample from './Examples/GoogleMaps';
 
 export default class MapsExample extends React.Component {
   render() {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <div>
-              <PageTitle heading="Maps"
+              <PageTitle
+                heading="Maps"
                 subheading="Implement interactive and vector maps in your applications."
-                icon="pe-7s-map icon-gradient bg-premium-dark"/>
-              <Tabs defaultActiveKey="1" renderTabBar={() => <ScrollableInkTabBar />} renderTabContent={() => <TabContent />}>
+                icon="pe-7s-map icon-gradient bg-premium-dark"
+              />
+              <Tabs
+                defaultActiveKey="1"
+                renderTabBar={() => <ScrollableInkTabBar />}
+                renderTabContent={() => <TabContent />}
+              >
                 <TabPane tab="Vector Maps" key="1">
                   <VectorMapsExample />
                 </TabPane>

@@ -37,11 +37,7 @@ const LoadingOverlay = ({
   };
 
   return (
-    <Tag
-      className={className}
-      style={{ position: 'relative', ...props.style }}
-      {...props}
-    >
+    <Tag className={className} style={{ position: 'relative', ...props.style }} {...props}>
       {children}
       <AnimatePresence>
         {active && (

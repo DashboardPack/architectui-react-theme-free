@@ -10,7 +10,7 @@
 
     .app-footer__inner {
       margin-left: $app-sidebar-width;
-      box-shadow: 0 -2px 15px rgba(shade-color($primary, 50%), .05);
+      box-shadow: 0 -2px 15px rgba(shade-color($primary, 50%), 0.05);
     }
   }
 

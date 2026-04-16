@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../../../utils/TransitionWrapper';
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../../utils/TransitionWrapper';
 import {
   Row,
   Col,
@@ -10,16 +10,16 @@ import {
   Label,
   Input,
   Container,
-} from "reactstrap";
+} from 'reactstrap';
 
-import { Combobox } from "react-widgets";
+import { Combobox } from 'react-widgets';
 
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-let colors = ["Orange", "Red", "Blue", "Purple"];
+let colors = ['Orange', 'Red', 'Blue', 'Purple'];
 
 library.add(faSpinner);
 
@@ -52,8 +52,14 @@ class FormComboboxExample extends React.Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Row>
                 <Col md="6">
@@ -62,8 +68,13 @@ class FormComboboxExample extends React.Component {
                       <CardTitle>Dropdown</CardTitle>
                       <Row form>
                         <Col md={12}>
-                          <Combobox data={people} value={value} allowCreate="onFilter"
-                            onChange={(value) => this.setState({ value })} textField="name"/>
+                          <Combobox
+                            data={people}
+                            value={value}
+                            allowCreate="onFilter"
+                            onChange={(value) => this.setState({ value })}
+                            textField="name"
+                          />
                         </Col>
                       </Row>
                     </CardBody>
@@ -81,15 +92,23 @@ class FormComboboxExample extends React.Component {
                         <Col md={4}>
                           <FormGroup>
                             <Label for="examplePassword">FontAwesome Icons</Label>
-                            <Combobox busy busySpinner={
-                                <FontAwesomeIcon className="text-primary" spin icon="spinner"/>
-                              }/>
+                            <Combobox
+                              busy
+                              busySpinner={
+                                <FontAwesomeIcon className="text-primary" spin icon="spinner" />
+                              }
+                            />
                           </FormGroup>
                         </Col>
                         <Col md={4}>
                           <FormGroup>
                             <Label for="examplePassword">Regular Input</Label>
-                            <Input type="text" name="address2" id="examplePassword" placeholder="Apartment, studio, or floor"/>
+                            <Input
+                              type="text"
+                              name="address2"
+                              id="examplePassword"
+                              placeholder="Apartment, studio, or floor"
+                            />
                           </FormGroup>
                         </Col>
                       </Row>
@@ -102,7 +121,7 @@ class FormComboboxExample extends React.Component {
                       <CardTitle>DropUp</CardTitle>
                       <Row form>
                         <Col md={12}>
-                          <Combobox data={["Orange", "Red", "Blue", "Purple"]} />
+                          <Combobox data={['Orange', 'Red', 'Blue', 'Purple']} />
                         </Col>
                       </Row>
                     </CardBody>
@@ -110,8 +129,17 @@ class FormComboboxExample extends React.Component {
                   <Card className="main-card mb-3">
                     <CardBody>
                       <CardTitle>Disabled</CardTitle>
-                      <Combobox className="mb-3" disabled data={colors} defaultValue={["Orange", "Blue"]}/>
-                      <Combobox data={colors} defaultValue={["Orange", "Blue"]} disabled={["Red"]}/>
+                      <Combobox
+                        className="mb-3"
+                        disabled
+                        data={colors}
+                        defaultValue={['Orange', 'Blue']}
+                      />
+                      <Combobox
+                        data={colors}
+                        defaultValue={['Orange', 'Blue']}
+                        disabled={['Red']}
+                      />
                     </CardBody>
                   </Card>
                 </Col>

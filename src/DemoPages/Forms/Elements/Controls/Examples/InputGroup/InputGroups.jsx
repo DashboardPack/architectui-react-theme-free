@@ -1,20 +1,26 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../../../utils/TransitionWrapper';
-import { Row, Col, Card, CardBody, CardTitle, Container } from "reactstrap";
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../../utils/TransitionWrapper';
+import { Row, Col, Card, CardBody, CardTitle, Container } from 'reactstrap';
 
-import FormInputGroupOverview from "./InputGroupOverview";
-import FormInputGroupSizing from "./InputGroupSizing";
-import FormInputGroupAddon from "./InputGroupAddon";
-import FormInputGroupButton from "./InputGroupButton";
-import FormInputGroupButtonDropdown from "./InputGroupButtonDropdown";
-import FormInputGroupButtonShorthand from "./InputGroupButtonShorthand";
+import FormInputGroupOverview from './InputGroupOverview';
+import FormInputGroupSizing from './InputGroupSizing';
+import FormInputGroupAddon from './InputGroupAddon';
+import FormInputGroupButton from './InputGroupButton';
+import FormInputGroupButtonDropdown from './InputGroupButtonDropdown';
+import FormInputGroupButtonShorthand from './InputGroupButtonShorthand';
 
 const InputGroups = (props) => {
   return (
     <Fragment>
       <TransitionGroup>
-        <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-          timeout={0} enter={false} exit={false}>
+        <CSSTransition
+          component="div"
+          classNames="TabsAnimation"
+          appear={true}
+          timeout={0}
+          enter={false}
+          exit={false}
+        >
           <Container fluid>
             <Row>
               <Col md="6">

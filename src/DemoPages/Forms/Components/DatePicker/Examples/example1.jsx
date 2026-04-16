@@ -1,12 +1,12 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react';
 
-import { InputGroup } from "reactstrap";
+import { InputGroup } from 'reactstrap';
 
-import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import DatePicker from "react-datepicker";
+import DatePicker from 'react-datepicker';
 
 class FormDatePicker1 extends React.Component {
   constructor(props) {
@@ -30,7 +30,11 @@ class FormDatePicker1 extends React.Component {
           <div className="input-group-text">
             <FontAwesomeIcon icon={faCalendarAlt} />
           </div>
-          <DatePicker className="form-control" selected={this.state.startDate} onChange={this.handleChange}/>
+          <DatePicker
+            className="form-control"
+            selected={this.state.startDate}
+            onChange={this.handleChange}
+          />
         </InputGroup>
       </Fragment>
     );

@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from "react";
-import { Button, Container, ButtonGroup } from "reactstrap";
+import React, { Component, Fragment } from 'react';
+import { Button, Container, ButtonGroup } from 'reactstrap';
 
-import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
 class ButtonsSquareDashed extends Component {
   state = {
@@ -100,19 +100,39 @@ class ButtonsSquareDashed extends Component {
               <Card className="main-card mb-3">
                 <CardBody>
                   <CardTitle>Active State</CardTitle>
-                  <Button outline className="mb-2 me-2 btn-square btn-dashed" active color="primary">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-square btn-dashed"
+                    active
+                    color="primary"
+                  >
                     Primary
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-square btn-dashed" active color="secondary">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-square btn-dashed"
+                    active
+                    color="secondary"
+                  >
                     Secondary
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-square btn-dashed" active color="success">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-square btn-dashed"
+                    active
+                    color="success"
+                  >
                     Success
                   </Button>
                   <Button outline className="mb-2 me-2 btn-square btn-dashed" active color="info">
                     Info
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-square btn-dashed" active color="warning">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-square btn-dashed"
+                    active
+                    color="warning"
+                  >
                     Warning
                   </Button>
                   <Button outline className="mb-2 me-2 btn-square btn-dashed" active color="danger">
@@ -121,7 +141,12 @@ class ButtonsSquareDashed extends Component {
                   <Button outline className="mb-2 me-2 btn-square btn-dashed" active color="focus">
                     Focus
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-square btn-dashed" active color="alternate">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-square btn-dashed"
+                    active
+                    color="alternate"
+                  >
                     Alt
                   </Button>
                   <Button outline className="mb-2 me-2 btn-square btn-dashed" active color="light">
@@ -140,31 +165,71 @@ class ButtonsSquareDashed extends Component {
               <Card className="main-card mb-3">
                 <CardBody>
                   <CardTitle>Disabled State</CardTitle>
-                  <Button outline className="mb-2 me-2 btn-square btn-dashed" disabled color="primary">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-square btn-dashed"
+                    disabled
+                    color="primary"
+                  >
                     Primary
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-square btn-dashed" disabled color="secondary">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-square btn-dashed"
+                    disabled
+                    color="secondary"
+                  >
                     Secondary
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-square btn-dashed" disabled color="success">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-square btn-dashed"
+                    disabled
+                    color="success"
+                  >
                     Success
                   </Button>
                   <Button outline className="mb-2 me-2 btn-square btn-dashed" disabled color="info">
                     Info
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-square btn-dashed" disabled color="warning">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-square btn-dashed"
+                    disabled
+                    color="warning"
+                  >
                     Warning
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-square btn-dashed" disabled color="danger">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-square btn-dashed"
+                    disabled
+                    color="danger"
+                  >
                     Danger
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-square btn-dashed" disabled color="focus">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-square btn-dashed"
+                    disabled
+                    color="focus"
+                  >
                     Focus
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-square btn-dashed" disabled color="alternate">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-square btn-dashed"
+                    disabled
+                    color="alternate"
+                  >
                     Alt
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-square btn-dashed" disabled color="light">
+                  <Button
+                    outline
+                    className="mb-2 me-2 btn-square btn-dashed"
+                    disabled
+                    color="light"
+                  >
                     Light
                   </Button>
                   <Button outline className="mb-2 me-2 btn-square btn-dashed" disabled color="dark">
@@ -180,13 +245,25 @@ class ButtonsSquareDashed extends Component {
               <Card className="main-card mb-3">
                 <CardBody>
                   <CardTitle>Block Level</CardTitle>
-                  <Button outline block className="mb-2 me-2 btn-square btn-dashed" size="lg" color="primary">
+                  <Button
+                    outline
+                    block
+                    className="mb-2 me-2 btn-square btn-dashed"
+                    size="lg"
+                    color="primary"
+                  >
                     Block Large
                   </Button>
                   <Button outline block className="mb-2 me-2 btn-square btn-dashed" color="primary">
                     Block Normal
                   </Button>
-                  <Button outline block className="mb-2 me-2 btn-square btn-dashed" size="sm" color="primary">
+                  <Button
+                    outline
+                    block
+                    className="mb-2 me-2 btn-square btn-dashed"
+                    size="sm"
+                    color="primary"
+                  >
                     Block Small
                   </Button>
                 </CardBody>
@@ -197,13 +274,27 @@ class ButtonsSquareDashed extends Component {
                 <CardBody>
                   <CardTitle>Wider</CardTitle>
                   <div className="text-center">
-                    <Button outline className="btn-wide mb-2 me-2 btn-square btn-dashed" size="lg" color="primary">
+                    <Button
+                      outline
+                      className="btn-wide mb-2 me-2 btn-square btn-dashed"
+                      size="lg"
+                      color="primary"
+                    >
                       Wider Large
                     </Button>
-                    <Button outline className="btn-wide mb-2 me-2 btn-square btn-dashed" color="primary">
+                    <Button
+                      outline
+                      className="btn-wide mb-2 me-2 btn-square btn-dashed"
+                      color="primary"
+                    >
                       Wider Normal
                     </Button>
-                    <Button outline className="btn-wide mb-2 me-2 btn-square btn-dashed" size="sm" color="primary">
+                    <Button
+                      outline
+                      className="btn-wide mb-2 me-2 btn-square btn-dashed"
+                      size="sm"
+                      color="primary"
+                    >
                       Wider Small
                     </Button>
                   </div>
@@ -215,13 +306,23 @@ class ButtonsSquareDashed extends Component {
                 <CardBody>
                   <CardTitle>Sizing</CardTitle>
                   <div className="text-center">
-                    <Button outline className="mb-2 me-2 btn-square btn-dashed" size="lg" color="primary">
+                    <Button
+                      outline
+                      className="mb-2 me-2 btn-square btn-dashed"
+                      size="lg"
+                      color="primary"
+                    >
                       Large
                     </Button>
                     <Button outline className="mb-2 me-2 btn-square btn-dashed" color="primary">
                       Normal
                     </Button>
-                    <Button outline className="mb-2 me-2 btn-square btn-dashed" size="sm" color="primary">
+                    <Button
+                      outline
+                      className="mb-2 me-2 btn-square btn-dashed"
+                      size="sm"
+                      color="primary"
+                    >
                       Small
                     </Button>
                   </div>
@@ -236,46 +337,91 @@ class ButtonsSquareDashed extends Component {
                   <CardTitle>Checkbox Buttons</CardTitle>
                   <div className="text-center">
                     <ButtonGroup size="sm" className="mb-2">
-                      <Button outline className="btn-square btn-dashed" color="primary"
-                        onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>
+                      <Button
+                        outline
+                        className="btn-square btn-dashed"
+                        color="primary"
+                        onClick={() => this.onCheckboxBtnClick(1)}
+                        active={this.state.cSelected.includes(1)}
+                      >
                         One
                       </Button>
-                      <Button outline className="btn-square btn-dashed" color="primary"
-                        onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>
+                      <Button
+                        outline
+                        className="btn-square btn-dashed"
+                        color="primary"
+                        onClick={() => this.onCheckboxBtnClick(2)}
+                        active={this.state.cSelected.includes(2)}
+                      >
                         Two
                       </Button>
-                      <Button outline className="btn-square btn-dashed" color="primary"
-                        onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>
+                      <Button
+                        outline
+                        className="btn-square btn-dashed"
+                        color="primary"
+                        onClick={() => this.onCheckboxBtnClick(3)}
+                        active={this.state.cSelected.includes(3)}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
                     <div className="divider" />
                     <ButtonGroup className="mb-2">
-                      <Button outline className="btn-square btn-dashed" color="danger"
-                        onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>
+                      <Button
+                        outline
+                        className="btn-square btn-dashed"
+                        color="danger"
+                        onClick={() => this.onCheckboxBtnClick(1)}
+                        active={this.state.cSelected.includes(1)}
+                      >
                         One
                       </Button>
-                      <Button outline className="btn-square btn-dashed" color="danger"
-                        onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>
+                      <Button
+                        outline
+                        className="btn-square btn-dashed"
+                        color="danger"
+                        onClick={() => this.onCheckboxBtnClick(2)}
+                        active={this.state.cSelected.includes(2)}
+                      >
                         Two
                       </Button>
-                      <Button outline className="btn-square btn-dashed" color="danger"
-                        onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>
+                      <Button
+                        outline
+                        className="btn-square btn-dashed"
+                        color="danger"
+                        onClick={() => this.onCheckboxBtnClick(3)}
+                        active={this.state.cSelected.includes(3)}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
                     <div className="divider" />
                     <ButtonGroup size="lg" className="mb-2">
-                      <Button outline className="btn-square btn-dashed" color="info"
-                        onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>
+                      <Button
+                        outline
+                        className="btn-square btn-dashed"
+                        color="info"
+                        onClick={() => this.onCheckboxBtnClick(1)}
+                        active={this.state.cSelected.includes(1)}
+                      >
                         One
                       </Button>
-                      <Button outline className="btn-square btn-dashed" color="info"
-                        onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>
+                      <Button
+                        outline
+                        className="btn-square btn-dashed"
+                        color="info"
+                        onClick={() => this.onCheckboxBtnClick(2)}
+                        active={this.state.cSelected.includes(2)}
+                      >
                         Two
                       </Button>
-                      <Button outline className="btn-square btn-dashed" color="info"
-                        onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>
+                      <Button
+                        outline
+                        className="btn-square btn-dashed"
+                        color="info"
+                        onClick={() => this.onCheckboxBtnClick(3)}
+                        active={this.state.cSelected.includes(3)}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
@@ -291,46 +437,91 @@ class ButtonsSquareDashed extends Component {
                   <CardTitle>Radio Buttons</CardTitle>
                   <div className="text-center">
                     <ButtonGroup size="sm" className="mb-2">
-                      <Button outline className="btn-square btn-dashed" color="primary"
-                        onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                      <Button
+                        outline
+                        className="btn-square btn-dashed"
+                        color="primary"
+                        onClick={() => this.onRadioBtnClick(1)}
+                        active={this.state.rSelected === 1}
+                      >
                         One
                       </Button>
-                      <Button outline className="btn-square btn-dashed" color="primary"
-                        onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>
+                      <Button
+                        outline
+                        className="btn-square btn-dashed"
+                        color="primary"
+                        onClick={() => this.onRadioBtnClick(2)}
+                        active={this.state.rSelected === 2}
+                      >
                         Two
                       </Button>
-                      <Button outline className="btn-square btn-dashed" color="primary"
-                        onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>
+                      <Button
+                        outline
+                        className="btn-square btn-dashed"
+                        color="primary"
+                        onClick={() => this.onRadioBtnClick(3)}
+                        active={this.state.rSelected === 3}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
                     <div className="divider" />
                     <ButtonGroup className="mb-2">
-                      <Button outline className="btn-square btn-dashed" color="success"
-                        onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                      <Button
+                        outline
+                        className="btn-square btn-dashed"
+                        color="success"
+                        onClick={() => this.onRadioBtnClick(1)}
+                        active={this.state.rSelected === 1}
+                      >
                         One
                       </Button>
-                      <Button outline className="btn-square btn-dashed" color="success"
-                        onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>
+                      <Button
+                        outline
+                        className="btn-square btn-dashed"
+                        color="success"
+                        onClick={() => this.onRadioBtnClick(2)}
+                        active={this.state.rSelected === 2}
+                      >
                         Two
                       </Button>
-                      <Button outline className="btn-square btn-dashed" color="success"
-                        onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>
+                      <Button
+                        outline
+                        className="btn-square btn-dashed"
+                        color="success"
+                        onClick={() => this.onRadioBtnClick(3)}
+                        active={this.state.rSelected === 3}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
                     <div className="divider" />
                     <ButtonGroup size="lg" className="mb-2">
-                      <Button outline className="btn-square btn-dashed" color="info"
-                        onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                      <Button
+                        outline
+                        className="btn-square btn-dashed"
+                        color="info"
+                        onClick={() => this.onRadioBtnClick(1)}
+                        active={this.state.rSelected === 1}
+                      >
                         One
                       </Button>
-                      <Button outline className="btn-square btn-dashed" color="info"
-                        onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>
+                      <Button
+                        outline
+                        className="btn-square btn-dashed"
+                        color="info"
+                        onClick={() => this.onRadioBtnClick(2)}
+                        active={this.state.rSelected === 2}
+                      >
                         Two
                       </Button>
-                      <Button outline className="btn-square btn-dashed" color="info"
-                        onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>
+                      <Button
+                        outline
+                        className="btn-square btn-dashed"
+                        color="info"
+                        onClick={() => this.onRadioBtnClick(3)}
+                        active={this.state.rSelected === 3}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>

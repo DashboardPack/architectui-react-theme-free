@@ -1,6 +1,6 @@
 // Chat
 
-@use "sass:math";
+@use 'sass:math';
 
 .chat-box-wrapper {
   display: flex;
@@ -49,6 +49,5 @@
         margin-left: 0;
       }
     }
-
   }
 }

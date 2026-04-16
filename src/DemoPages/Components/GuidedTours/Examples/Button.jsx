@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { headingSizes, themeColors } from "./settings";
+import styled from 'styled-components';
+import { headingSizes, themeColors } from './settings';
 
 const styles = `
     border: 0;
@@ -22,20 +22,16 @@ const Link = styled.a`
 `;
 
 const StyledButton = styled(Button)`
-  font-size: ${(props) => (props.h ? headingSizes[props.h - 1] : "inherit")};
+  font-size: ${(props) => (props.h ? headingSizes[props.h - 1] : 'inherit')};
   background-color: ${(props) => themeColors[props.color] || themeColors.dark};
 `;
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  font-size: ${(props) => (props.h ? headingSizes[props.h - 1] : "inherit")};
-  background: ${(props) => (props.bg ? themeColors[props.bg] : "none")};
+  font-size: ${(props) => (props.h ? headingSizes[props.h - 1] : 'inherit')};
+  background: ${(props) => (props.bg ? themeColors[props.bg] : 'none')};
   color: ${(props) =>
-    props.bg
-      ? "white"
-      : props.color
-      ? themeColors[props.color]
-      : themeColors.black};
+    props.bg ? 'white' : props.color ? themeColors[props.color] : themeColors.black};
   ${(props) =>
     props.nospaces &&
     `

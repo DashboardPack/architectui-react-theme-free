@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 import {
   Row,
   Col,
@@ -18,33 +18,24 @@ import {
   DropdownToggle,
   DropdownMenu,
   UncontrolledButtonDropdown,
-} from "reactstrap";
+} from 'reactstrap';
 
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 
-import CountUp from "react-countup";
+import CountUp from 'react-countup';
 
 import DataTable from 'react-data-table-component';
 
-import avatar1 from "../../../../assets/utils/images/avatars/1.jpg";
-import avatar2 from "../../../../assets/utils/images/avatars/2.jpg";
+import avatar1 from '../../../../assets/utils/images/avatars/1.jpg';
+import avatar2 from '../../../../assets/utils/images/avatars/2.jpg';
 
-import { IoIosAnalytics, IoMdApps } from "react-icons/io";
+import { IoIosAnalytics, IoMdApps } from 'react-icons/io';
 
-import PerfectScrollbar from "react-perfect-scrollbar";
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
-import { makeData } from "../../../Tables/DataTables/Examples/utils";
+import { makeData } from '../../../Tables/DataTables/Examples/utils';
 
-import {
-  AreaChart,
-  Area,
-  LineChart,
-  Line,
-  ResponsiveContainer,
-} from "recharts";
+import { AreaChart, Area, LineChart, Line, ResponsiveContainer } from 'recharts';
 
 import {
   faAngleDown,
@@ -52,35 +43,35 @@ import {
   faEllipsisH,
   faCheck,
   faTrashAlt,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const data123 = [
-  { name: "Page A", uv: 4000, pv: 2400, amt: 2400 },
-  { name: "Page B", uv: 3000, pv: 1398, amt: 2210 },
-  { name: "Page C", uv: 2000, pv: 9800, amt: 2290 },
-  { name: "Page D", uv: 2780, pv: 3908, amt: 2000 },
-  { name: "Page E", uv: 1890, pv: 4800, amt: 2181 },
-  { name: "Page F", uv: 2390, pv: 3800, amt: 2500 },
-  { name: "Page G", uv: 3490, pv: 4300, amt: 2100 },
-  { name: "Page C", uv: 2000, pv: 6800, amt: 2290 },
-  { name: "Page D", uv: 4780, pv: 7908, amt: 2000 },
-  { name: "Page E", uv: 2890, pv: 9800, amt: 2181 },
-  { name: "Page F", uv: 1390, pv: 3800, amt: 1500 },
-  { name: "Page G", uv: 3490, pv: 4300, amt: 2100 },
+  { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
+  { name: 'Page B', uv: 3000, pv: 1398, amt: 2210 },
+  { name: 'Page C', uv: 2000, pv: 9800, amt: 2290 },
+  { name: 'Page D', uv: 2780, pv: 3908, amt: 2000 },
+  { name: 'Page E', uv: 1890, pv: 4800, amt: 2181 },
+  { name: 'Page F', uv: 2390, pv: 3800, amt: 2500 },
+  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
+  { name: 'Page C', uv: 2000, pv: 6800, amt: 2290 },
+  { name: 'Page D', uv: 4780, pv: 7908, amt: 2000 },
+  { name: 'Page E', uv: 2890, pv: 9800, amt: 2181 },
+  { name: 'Page F', uv: 1390, pv: 3800, amt: 1500 },
+  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
 ];
 
 const data2 = [
-  { name: "Page A", uv: 5400, pv: 5240, amt: 1240 },
-  { name: "Page B", uv: 7300, pv: 4139, amt: 3221 },
-  { name: "Page C", uv: 8200, pv: 7980, amt: 5229 },
-  { name: "Page D", uv: 6278, pv: 4390, amt: 3200 },
-  { name: "Page E", uv: 3189, pv: 7480, amt: 6218 },
-  { name: "Page D", uv: 9478, pv: 6790, amt: 2200 },
-  { name: "Page E", uv: 1289, pv: 1980, amt: 7218 },
-  { name: "Page F", uv: 3139, pv: 2380, amt: 5150 },
-  { name: "Page G", uv: 5349, pv: 3430, amt: 3210 },
+  { name: 'Page A', uv: 5400, pv: 5240, amt: 1240 },
+  { name: 'Page B', uv: 7300, pv: 4139, amt: 3221 },
+  { name: 'Page C', uv: 8200, pv: 7980, amt: 5229 },
+  { name: 'Page D', uv: 6278, pv: 4390, amt: 3200 },
+  { name: 'Page E', uv: 3189, pv: 7480, amt: 6218 },
+  { name: 'Page D', uv: 9478, pv: 6790, amt: 2200 },
+  { name: 'Page E', uv: 1289, pv: 1980, amt: 7218 },
+  { name: 'Page F', uv: 3139, pv: 2380, amt: 5150 },
+  { name: 'Page G', uv: 5349, pv: 3430, amt: 3210 },
 ];
 
 export default class AnalyticsDashboard2 extends Component {
@@ -112,33 +103,33 @@ export default class AnalyticsDashboard2 extends Component {
     const { data } = this.state;
     const columns = [
       {
-        name: "First Name",
-        selector: row => row.firstName,
+        name: 'First Name',
+        selector: (row) => row.firstName,
         sortable: true,
       },
       {
-        name: "Last Name",
-        id: "lastName",
-        selector: row => row.lastName,
+        name: 'Last Name',
+        id: 'lastName',
+        selector: (row) => row.lastName,
         sortable: true,
       },
-    
+
       {
-        name: "Age",
-        selector: row => row.age,
+        name: 'Age',
+        selector: (row) => row.age,
         sortable: true,
       },
       {
-        name: "Status",
-        selector: row => row.status,
+        name: 'Status',
+        selector: (row) => row.status,
         sortable: true,
       },
-    
+
       {
-        name: "Visits",
-        selector: row => row.visits,
+        name: 'Visits',
+        selector: (row) => row.visits,
         sortable: true,
-        },
+      },
     ];
 
     return (
@@ -153,8 +144,17 @@ export default class AnalyticsDashboard2 extends Component {
                     <i className="lnr-laptop-phone text-warning" />
                   </div>
                   <div className="widget-numbers">
-                    <CountUp start={0} end={2.5} separator="" decimals={0} decimal="."
-                      prefix="" useEasing={false} suffix="M" duration="10"/>
+                    <CountUp
+                      start={0}
+                      end={2.5}
+                      separator=""
+                      decimals={0}
+                      decimal="."
+                      prefix=""
+                      useEasing={false}
+                      suffix="M"
+                      duration="10"
+                    />
                   </div>
                   <div className="widget-subheading fsize-1 pt-2 opacity-10 text-warning fw-bold">
                     Cash Deposits
@@ -170,7 +170,7 @@ export default class AnalyticsDashboard2 extends Component {
                 <div className="widget-chart-wrapper">
                   <ResponsiveContainer width="100%" aspect={3.0 / 1.0}>
                     <LineChart data={data123} margin={{ top: 0, right: 25, left: 25, bottom: 0 }}>
-                      <Line type="monotone" dataKey="pv" stroke="#f7b924" strokeWidth={3}/>
+                      <Line type="monotone" dataKey="pv" stroke="#f7b924" strokeWidth={3} />
                     </LineChart>
                   </ResponsiveContainer>
                 </div>
@@ -184,8 +184,17 @@ export default class AnalyticsDashboard2 extends Component {
                     <i className="lnr-graduation-hat text-danger" />
                   </div>
                   <div className="widget-numbers">
-                    <CountUp start={0} end={1.23} separator="" decimals={0} decimal=","
-                      prefix="" useEasing={false} suffix="M" duration="10"/>
+                    <CountUp
+                      start={0}
+                      end={1.23}
+                      separator=""
+                      decimals={0}
+                      decimal=","
+                      prefix=""
+                      useEasing={false}
+                      suffix="M"
+                      duration="10"
+                    />
                   </div>
                   <div className="widget-subheading fsize-1 pt-2 opacity-10 text-danger fw-bold">
                     Invested Dividents
@@ -201,8 +210,14 @@ export default class AnalyticsDashboard2 extends Component {
                 <div className="widget-chart-wrapper">
                   <ResponsiveContainer width="100%" aspect={3.0 / 1.0}>
                     <AreaChart data={data2} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
-                      <Area type="monotoneX" dataKey="uv" strokeWidth="2"
-                        stroke="#d92550" fill="#d92550" fillOpacity=".3"/>
+                      <Area
+                        type="monotoneX"
+                        dataKey="uv"
+                        strokeWidth="2"
+                        stroke="#d92550"
+                        fill="#d92550"
+                        fillOpacity=".3"
+                      />
                     </AreaChart>
                   </ResponsiveContainer>
                 </div>
@@ -216,8 +231,17 @@ export default class AnalyticsDashboard2 extends Component {
                     <i className="lnr-diamond text-info" />
                   </div>
                   <div className="widget-numbers text-danger">
-                    <CountUp start={0} end={294} separator="" decimals={0} decimal=","
-                      prefix="$" useEasing={false} suffix="" duration="10"/>
+                    <CountUp
+                      start={0}
+                      end={294}
+                      separator=""
+                      decimals={0}
+                      decimal=","
+                      prefix="$"
+                      useEasing={false}
+                      suffix=""
+                      duration="10"
+                    />
                   </div>
                   <div className="widget-subheading fsize-1 pt-2 opacity-10 text-info fw-bold">
                     Withdrawals
@@ -233,8 +257,14 @@ export default class AnalyticsDashboard2 extends Component {
                 <div className="widget-chart-wrapper">
                   <ResponsiveContainer width="100%" aspect={3.0 / 1.0}>
                     <AreaChart data={data123} margin={{ top: 0, right: 0, left: 0, bottom: 0 }}>
-                      <Area type="stepAfter" dataKey="uv" strokeWidth="2"
-                        stroke="#30b1ff" fill="#30b1ff" fillOpacity=".4"/>
+                      <Area
+                        type="stepAfter"
+                        dataKey="uv"
+                        strokeWidth="2"
+                        stroke="#30b1ff"
+                        fill="#30b1ff"
+                        fillOpacity=".4"
+                      />
                     </AreaChart>
                   </ResponsiveContainer>
                 </div>
@@ -294,92 +324,71 @@ export default class AnalyticsDashboard2 extends Component {
                 <div className="scroll-area-lg">
                   <PerfectScrollbar>
                     <div className="p-4">
-                      <VerticalTimeline layout="1-column" className="vertical-time-simple vertical-without-time">
+                      <VerticalTimeline
+                        layout="1-column"
+                        className="vertical-time-simple vertical-without-time"
+                      >
                         <VerticalTimelineElement className="vertical-timeline-item">
                           <h4 className="timeline-title">All Hands Meeting</h4>
                         </VerticalTimelineElement>
                         <VerticalTimelineElement className="vertical-timeline-item">
                           <p>
-                            Yet another one, at{" "}
-                            <span className="text-success">15:00 PM</span>
+                            Yet another one, at <span className="text-success">15:00 PM</span>
                           </p>
                         </VerticalTimelineElement>
                         <VerticalTimelineElement className="vertical-timeline-item">
-                          <h4 className="timeline-title">
-                            Build the production release
-                          </h4>
+                          <h4 className="timeline-title">Build the production release</h4>
                         </VerticalTimelineElement>
                         <VerticalTimelineElement className="vertical-timeline-item">
-                          <h4 className="timeline-title text-success">
-                            Something not important
-                          </h4>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement className="vertical-timeline-item">
-                          <h4 className="timeline-title">All Hands Meeting</h4>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement className="vertical-timeline-item">
-                          <p>
-                            Yet another one, at{" "}
-                            <span className="text-success">15:00 PM</span>
-                          </p>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement className="vertical-timeline-item">
-                          <h4 className="timeline-title">
-                            Build the production release
-                          </h4>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement className="vertical-timeline-item">
-                          <h4 className="timeline-title text-success">
-                            Something not important
-                          </h4>
+                          <h4 className="timeline-title text-success">Something not important</h4>
                         </VerticalTimelineElement>
                         <VerticalTimelineElement className="vertical-timeline-item">
                           <h4 className="timeline-title">All Hands Meeting</h4>
                         </VerticalTimelineElement>
                         <VerticalTimelineElement className="vertical-timeline-item">
                           <p>
-                            Yet another one, at{" "}
-                            <span className="text-success">15:00 PM</span>
+                            Yet another one, at <span className="text-success">15:00 PM</span>
                           </p>
                         </VerticalTimelineElement>
                         <VerticalTimelineElement className="vertical-timeline-item">
-                          <h4 className="timeline-title">
-                            Build the production release
-                          </h4>
+                          <h4 className="timeline-title">Build the production release</h4>
                         </VerticalTimelineElement>
                         <VerticalTimelineElement className="vertical-timeline-item">
-                          <h4 className="timeline-title text-success">
-                            Something not important
-                          </h4>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement className="vertical-timeline-item">
-                          <h4 className="timeline-title">
-                            Build the production release
-                          </h4>
-                        </VerticalTimelineElement>
-                        <VerticalTimelineElement className="vertical-timeline-item">
-                          <h4 className="timeline-title text-success">
-                            Something not important
-                          </h4>
+                          <h4 className="timeline-title text-success">Something not important</h4>
                         </VerticalTimelineElement>
                         <VerticalTimelineElement className="vertical-timeline-item">
                           <h4 className="timeline-title">All Hands Meeting</h4>
                         </VerticalTimelineElement>
                         <VerticalTimelineElement className="vertical-timeline-item">
                           <p>
-                            Yet another one, at{" "}
-                            <span className="text-success">15:00 PM</span>
+                            Yet another one, at <span className="text-success">15:00 PM</span>
                           </p>
                         </VerticalTimelineElement>
                         <VerticalTimelineElement className="vertical-timeline-item">
-                          <h4 className="timeline-title">
-                            Build the production release
-                          </h4>
+                          <h4 className="timeline-title">Build the production release</h4>
                         </VerticalTimelineElement>
                         <VerticalTimelineElement className="vertical-timeline-item">
-                          <h4 className="timeline-title text-success">
-                            Something not important
-                          </h4>
+                          <h4 className="timeline-title text-success">Something not important</h4>
+                        </VerticalTimelineElement>
+                        <VerticalTimelineElement className="vertical-timeline-item">
+                          <h4 className="timeline-title">Build the production release</h4>
+                        </VerticalTimelineElement>
+                        <VerticalTimelineElement className="vertical-timeline-item">
+                          <h4 className="timeline-title text-success">Something not important</h4>
+                        </VerticalTimelineElement>
+                        <VerticalTimelineElement className="vertical-timeline-item">
+                          <h4 className="timeline-title">All Hands Meeting</h4>
+                        </VerticalTimelineElement>
+                        <VerticalTimelineElement className="vertical-timeline-item">
+                          <p>
+                            Yet another one, at <span className="text-success">15:00 PM</span>
+                          </p>
+                        </VerticalTimelineElement>
+                        <VerticalTimelineElement className="vertical-timeline-item">
+                          <h4 className="timeline-title">Build the production release</h4>
+                        </VerticalTimelineElement>
+                        <VerticalTimelineElement className="vertical-timeline-item">
+                          <h4 className="timeline-title text-success">Something not important</h4>
                         </VerticalTimelineElement>
                       </VerticalTimeline>
                     </div>
@@ -387,9 +396,7 @@ export default class AnalyticsDashboard2 extends Component {
                 </div>
                 <CardFooter className="d-block text-center">
                   <Button className="btn-shadow btn-wide btn-pill" color="focus">
-                    <div className="badge badge-dot badge-dot-lg bg-warning badge-pulse">
-                      Badge
-                    </div>
+                    <div className="badge badge-dot badge-dot-lg bg-warning badge-pulse">Badge</div>
                     View All Messages
                   </Button>
                 </CardFooter>
@@ -401,26 +408,29 @@ export default class AnalyticsDashboard2 extends Component {
                   <div>Dynamic Tables</div>
                   <div className="btn-actions-pane-right">
                     <ButtonGroup size="sm">
-                      <Button caret="true" color="dark" className={"btn-shadow "}>
+                      <Button caret="true" color="dark" className={'btn-shadow '}>
                         Refresh
                       </Button>
-                      <Button color="dark"
-                        className={"btn-shadow "}
+                      <Button
+                        color="dark"
+                        className={'btn-shadow '}
                         onClick={() => {
-                          this.toggle("3");
-                        }}>
+                          this.toggle('3');
+                        }}
+                      >
                         Remove
                       </Button>
                     </ButtonGroup>
                   </div>
                 </CardHeader>
                 <CardBody>
-                <DataTable data={data}
-                  columns={columns}
-                  pagination
-                  fixedHeader
-                  fixedHeaderScrollHeight="360px"
-                />
+                  <DataTable
+                    data={data}
+                    columns={columns}
+                    pagination
+                    fixedHeader
+                    fixedHeaderScrollHeight="360px"
+                  />
                 </CardBody>
               </Card>
             </Col>
@@ -444,13 +454,12 @@ export default class AnalyticsDashboard2 extends Component {
                           </div>
                           <div>
                             <div className="chat-box">
-                              But I must explain to you how all this mistaken
-                              idea of denouncing pleasure and praising pain was
-                              born and I will give you a complete account of the
-                              system.
+                              But I must explain to you how all this mistaken idea of denouncing
+                              pleasure and praising pain was born and I will give you a complete
+                              account of the system.
                             </div>
                             <small className="opacity-6">
-                              <FontAwesomeIcon icon={faCalendarAlt} className="me-1"/>
+                              <FontAwesomeIcon icon={faCalendarAlt} className="me-1" />
                               11:01 AM | Yesterday
                             </small>
                           </div>
@@ -459,12 +468,11 @@ export default class AnalyticsDashboard2 extends Component {
                           <div className="chat-box-wrapper chat-box-wrapper-right">
                             <div>
                               <div className="chat-box">
-                                Expound the actual teachings of the great
-                                explorer of the truth, the master-builder of
-                                human happiness.
+                                Expound the actual teachings of the great explorer of the truth, the
+                                master-builder of human happiness.
                               </div>
                               <small className="opacity-6">
-                                <FontAwesomeIcon icon={faCalendarAlt} className="me-1"/>
+                                <FontAwesomeIcon icon={faCalendarAlt} className="me-1" />
                                 11:01 AM | Yesterday
                               </small>
                             </div>
@@ -489,13 +497,12 @@ export default class AnalyticsDashboard2 extends Component {
                           </div>
                           <div>
                             <div className="chat-box">
-                              But I must explain to you how all this mistaken
-                              idea of denouncing pleasure and praising pain was
-                              born and I will give you a complete account of the
-                              system.
+                              But I must explain to you how all this mistaken idea of denouncing
+                              pleasure and praising pain was born and I will give you a complete
+                              account of the system.
                             </div>
                             <small className="opacity-6">
-                              <FontAwesomeIcon icon={faCalendarAlt} className="me-1"/>
+                              <FontAwesomeIcon icon={faCalendarAlt} className="me-1" />
                               11:01 AM | Yesterday
                             </small>
                           </div>
@@ -504,11 +511,11 @@ export default class AnalyticsDashboard2 extends Component {
                           <div className="chat-box-wrapper chat-box-wrapper-right">
                             <div>
                               <div className="chat-box">
-                                Denouncing pleasure and praising pain was born
-                                and I will give you a complete account.
+                                Denouncing pleasure and praising pain was born and I will give you a
+                                complete account.
                               </div>
                               <small className="opacity-6">
-                                <FontAwesomeIcon icon={faCalendarAlt} className="me-1"/>
+                                <FontAwesomeIcon icon={faCalendarAlt} className="me-1" />
                                 11:01 AM | Yesterday
                               </small>
                             </div>
@@ -525,11 +532,9 @@ export default class AnalyticsDashboard2 extends Component {
                         <div className="float-end">
                           <div className="chat-box-wrapper chat-box-wrapper-right">
                             <div>
-                              <div className="chat-box">
-                                The master-builder of human happiness.
-                              </div>
+                              <div className="chat-box">The master-builder of human happiness.</div>
                               <small className="opacity-6">
-                                <FontAwesomeIcon icon={faCalendarAlt} className="me-1"/>
+                                <FontAwesomeIcon icon={faCalendarAlt} className="me-1" />
                                 11:01 AM | Yesterday
                               </small>
                             </div>
@@ -548,7 +553,11 @@ export default class AnalyticsDashboard2 extends Component {
                   </PerfectScrollbar>
                 </div>
                 <CardFooter>
-                  <Input bsSize="sm" type="text" placeholder="Write here and hit enter to send..."/>
+                  <Input
+                    bsSize="sm"
+                    type="text"
+                    placeholder="Write here and hit enter to send..."
+                  />
                 </CardFooter>
               </Card>
             </Col>
@@ -564,14 +573,17 @@ export default class AnalyticsDashboard2 extends Component {
                           <div className="widget-content p-0">
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left me-2 ms-2">
-                                <Input type="checkbox" className="me-2 form-check-input-custom" id="exampleCustomCheckbox12" label="&nbsp;"/>
+                                <Input
+                                  type="checkbox"
+                                  className="me-2 form-check-input-custom"
+                                  id="exampleCustomCheckbox12"
+                                  label="&nbsp;"
+                                />
                               </div>
                               <div className="widget-content-left">
                                 <div className="widget-heading">
                                   Wash the car
-                                  <div className="badge bg-danger ms-2">
-                                    Rejected
-                                  </div>
+                                  <div className="badge bg-danger ms-2">Rejected</div>
                                 </div>
                                 <div className="widget-subheading">
                                   <i>Written by Bob</i>
@@ -593,24 +605,30 @@ export default class AnalyticsDashboard2 extends Component {
                           <div className="widget-content p-0">
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left me-2 ms-2">
-                                <Input type="checkbox" className="me-2 form-check-input-custom" id="exampleCustomCheckbox1" label="&nbsp;"/>
+                                <Input
+                                  type="checkbox"
+                                  className="me-2 form-check-input-custom"
+                                  id="exampleCustomCheckbox1"
+                                  label="&nbsp;"
+                                />
                               </div>
                               <div className="widget-content-left">
-                                <div className="widget-heading">
-                                  Task with hover dropdown menu
-                                </div>
+                                <div className="widget-heading">Task with hover dropdown menu</div>
                                 <div className="widget-subheading">
                                   <div>
                                     By Johnny
-                                    <div className="badge rounded-pill bg-info ms-2">
-                                      NEW
-                                    </div>
+                                    <div className="badge rounded-pill bg-info ms-2">NEW</div>
                                   </div>
                                 </div>
                               </div>
                               <div className="widget-content-right widget-content-actions">
-                                <Dropdown className="d-inline-block rm-pointers" onMouseOver={this.onMouseEnter}
-                                  onMouseLeave={this.onMouseLeave} isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                                <Dropdown
+                                  className="d-inline-block rm-pointers"
+                                  onMouseOver={this.onMouseEnter}
+                                  onMouseLeave={this.onMouseLeave}
+                                  isOpen={this.state.dropdownOpen}
+                                  toggle={this.toggle}
+                                >
                                   <DropdownToggle color="link" className="border-0 btn-transition">
                                     <FontAwesomeIcon icon={faEllipsisH} />
                                   </DropdownToggle>
@@ -628,12 +646,15 @@ export default class AnalyticsDashboard2 extends Component {
                           <div className="widget-content p-0">
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left me-2 ms-2">
-                                <Input type="checkbox" className="me-2 form-check-input-custom" id="exampleCustomCheckbox4" label="&nbsp;"/>
+                                <Input
+                                  type="checkbox"
+                                  className="me-2 form-check-input-custom"
+                                  id="exampleCustomCheckbox4"
+                                  label="&nbsp;"
+                                />
                               </div>
                               <div className="widget-content-left flex2">
-                                <div className="widget-heading">
-                                  Badge on the right task
-                                </div>
+                                <div className="widget-heading">Badge on the right task</div>
                                 <div className="widget-subheading">
                                   This task has show on hover actions!
                                 </div>
@@ -644,9 +665,7 @@ export default class AnalyticsDashboard2 extends Component {
                                 </Button>
                               </div>
                               <div className="widget-content-right ms-3">
-                                <div className="badge rounded-pill bg-success">
-                                  Latest Task
-                                </div>
+                                <div className="badge rounded-pill bg-success">Latest Task</div>
                               </div>
                             </div>
                           </div>
@@ -656,17 +675,20 @@ export default class AnalyticsDashboard2 extends Component {
                           <div className="widget-content p-0">
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left me-2 ms-2">
-                                <Input type="checkbox" className="me-2 form-check-input-custom" id="exampleCustomCheckbox2" label="&nbsp;"/>
+                                <Input
+                                  type="checkbox"
+                                  className="me-2 form-check-input-custom"
+                                  id="exampleCustomCheckbox2"
+                                  label="&nbsp;"
+                                />
                               </div>
                               <div className="widget-content-left me-3">
                                 <div className="widget-content-left">
-                                  <img width={42} className="rounded" src={avatar2} alt=""/>
+                                  <img width={42} className="rounded" src={avatar2} alt="" />
                                 </div>
                               </div>
                               <div className="widget-content-left">
-                                <div className="widget-heading">
-                                  Go grocery shopping
-                                </div>
+                                <div className="widget-heading">Go grocery shopping</div>
                                 <div className="widget-subheading">
                                   A short description for this todo item
                                 </div>
@@ -687,20 +709,19 @@ export default class AnalyticsDashboard2 extends Component {
                           <div className="widget-content p-0">
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left me-2 ms-2">
-                                <Input type="checkbox" className="me-2 form-check-input-custom" id="exampleCustomCheckbox3" label="&nbsp;"/>
+                                <Input
+                                  type="checkbox"
+                                  className="me-2 form-check-input-custom"
+                                  id="exampleCustomCheckbox3"
+                                  label="&nbsp;"
+                                />
                               </div>
                               <div className="widget-content-left flex2">
-                                <div className="widget-heading">
-                                  Development Task
-                                </div>
-                                <div className="widget-subheading">
-                                  Finish React ToDo List App
-                                </div>
+                                <div className="widget-heading">Development Task</div>
+                                <div className="widget-subheading">Finish React ToDo List App</div>
                               </div>
                               <div className="widget-content-right">
-                                <div className="badge bg-warning me-2">
-                                  69
-                                </div>
+                                <div className="badge bg-warning me-2">69</div>
                               </div>
                               <div className="widget-content-right">
                                 <Button className="border-0 btn-transition" outline color="success">
@@ -737,21 +758,19 @@ export default class AnalyticsDashboard2 extends Component {
                           <div className="widget-content-outer">
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left">
-                                <div className="widget-heading">
-                                  Total Orders
-                                </div>
-                                <div className="widget-subheading">
-                                  Last year expenses
-                                </div>
+                                <div className="widget-heading">Total Orders</div>
+                                <div className="widget-subheading">Last year expenses</div>
                               </div>
                               <div className="widget-content-right">
-                                <div className="widget-numbers text-primary">
-                                  1896
-                                </div>
+                                <div className="widget-numbers text-primary">1896</div>
                               </div>
                             </div>
                             <div className="widget-progress-wrapper">
-                              <Progress className="progress-bar-sm progress-bar-animated-alt" color="primary" value="43"/>
+                              <Progress
+                                className="progress-bar-sm progress-bar-animated-alt"
+                                color="primary"
+                                value="43"
+                              />
                               <div className="progress-sub-label">
                                 <div className="sub-label-left">YoY Growth</div>
                                 <div className="sub-label-right">100%</div>
@@ -772,18 +791,18 @@ export default class AnalyticsDashboard2 extends Component {
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left">
                                 <div className="widget-heading">Followers</div>
-                                <div className="widget-subheading">
-                                  People interested
-                                </div>
+                                <div className="widget-subheading">People interested</div>
                               </div>
                               <div className="widget-content-right">
-                                <div className="widget-numbers text-success">
-                                  45,5%
-                                </div>
+                                <div className="widget-numbers text-success">45,5%</div>
                               </div>
                             </div>
                             <div className="widget-progress-wrapper">
-                              <Progress className="progress-bar-sm progress-bar-animated-alt" color="success" value="43"/>
+                              <Progress
+                                className="progress-bar-sm progress-bar-animated-alt"
+                                color="success"
+                                value="43"
+                              />
                               <div className="progress-sub-label">
                                 <div className="sub-label-left">YoY Growth</div>
                                 <div className="sub-label-right">100%</div>
@@ -804,9 +823,7 @@ export default class AnalyticsDashboard2 extends Component {
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left">
                                 <div className="widget-heading">Clients</div>
-                                <div className="widget-subheading">
-                                  Total Profit
-                                </div>
+                                <div className="widget-subheading">Total Profit</div>
                               </div>
                               <div className="widget-content-right">
                                 <div className="widget-numbers text-danger">
@@ -816,7 +833,11 @@ export default class AnalyticsDashboard2 extends Component {
                               </div>
                             </div>
                             <div className="widget-progress-wrapper">
-                              <Progress className="progress-bar-sm progress-bar-animated-alt" color="danger" value="43"/>
+                              <Progress
+                                className="progress-bar-sm progress-bar-animated-alt"
+                                color="danger"
+                                value="43"
+                              />
                               <div className="progress-sub-label">
                                 <div className="sub-label-left">YoY Growth</div>
                                 <div className="sub-label-right">100%</div>
@@ -836,21 +857,19 @@ export default class AnalyticsDashboard2 extends Component {
                           <div className="widget-content-outer">
                             <div className="widget-content-wrapper">
                               <div className="widget-content-left">
-                                <div className="widget-heading">
-                                  Products Sold
-                                </div>
-                                <div className="widget-subheading">
-                                  Total revenue streams
-                                </div>
+                                <div className="widget-heading">Products Sold</div>
+                                <div className="widget-subheading">Total revenue streams</div>
                               </div>
                               <div className="widget-content-right">
-                                <div className="widget-numbers text-focus">
-                                  682
-                                </div>
+                                <div className="widget-numbers text-focus">682</div>
                               </div>
                             </div>
                             <div className="widget-progress-wrapper">
-                              <Progress className="progress-bar-sm progress-bar-animated-alt" color="focus" value="43"/>
+                              <Progress
+                                className="progress-bar-sm progress-bar-animated-alt"
+                                color="focus"
+                                value="43"
+                              />
                               <div className="progress-sub-label">
                                 <div className="sub-label-left">YoY Growth</div>
                                 <div className="sub-label-right">100%</div>

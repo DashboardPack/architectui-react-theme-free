@@ -1,12 +1,12 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
-import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
-import { Typeahead } from "react-bootstrap-typeahead";
+import { Typeahead } from 'react-bootstrap-typeahead';
 
-import PageTitle from "../../../../Layout/AppMain/PageTitle";
+import PageTitle from '../../../../Layout/AppMain/PageTitle';
 
-import options from "./Examples/DummyData";
+import options from './Examples/DummyData';
 
 export default class FormTypeahead extends React.Component {
   state = {
@@ -17,18 +17,32 @@ export default class FormTypeahead extends React.Component {
     const { multiple } = this.state;
     return (
       <Fragment>
-        <PageTitle heading="Typeahead"
+        <PageTitle
+          heading="Typeahead"
           subheading="Create beautiful suggestion inputs for React form elements."
-          icon="pe-7s-plug icon-gradient bg-arielle-smile"/>
-        <TransitionGroup>  
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          icon="pe-7s-plug icon-gradient bg-arielle-smile"
+        />
+        <TransitionGroup>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <Row>
               <Col md="6">
                 <Card className="main-card mb-3">
                   <CardBody>
                     <CardTitle>Basic</CardTitle>
-                    <Typeahead id="typeID2" labelKey="name" multiple={multiple} options={options} placeholder="Choose a state..."/>
+                    <Typeahead
+                      id="typeID2"
+                      labelKey="name"
+                      multiple={multiple}
+                      options={options}
+                      placeholder="Choose a state..."
+                    />
                   </CardBody>
                 </Card>
               </Col>
@@ -36,8 +50,14 @@ export default class FormTypeahead extends React.Component {
                 <Card className="main-card mb-3">
                   <CardBody>
                     <CardTitle>Pre-Populate</CardTitle>
-                    <Typeahead id="typeID" defaultSelected={options.slice(0, 5)}
-                      labelKey="name" multiple options={options} placeholder="Choose a state..."/>
+                    <Typeahead
+                      id="typeID"
+                      defaultSelected={options.slice(0, 5)}
+                      labelKey="name"
+                      multiple
+                      options={options}
+                      placeholder="Choose a state..."
+                    />
                   </CardBody>
                 </Card>
               </Col>

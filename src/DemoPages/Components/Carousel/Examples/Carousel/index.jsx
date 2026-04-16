@@ -1,17 +1,23 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../../utils/TransitionWrapper';
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../utils/TransitionWrapper';
 
-import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
-import CarouselDefault from "./Carousel";
-import CustomExample from "./CustomTag";
+import CarouselDefault from './Carousel';
+import CustomExample from './CustomTag';
 
 const CarouselBSExample = (props) => {
   return (
     <Fragment>
       <TransitionGroup>
-        <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-          timeout={1500} enter={false} exit={false}>
+        <CSSTransition
+          component="div"
+          classNames="TabsAnimation"
+          appear={true}
+          timeout={1500}
+          enter={false}
+          exit={false}
+        >
           <Row className="slick-slider-md">
             <Col lg="6">
               <Card className="main-card mb-3">

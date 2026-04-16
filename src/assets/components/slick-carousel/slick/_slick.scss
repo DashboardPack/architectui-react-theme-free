@@ -48,13 +48,11 @@
 
   .slick-prev {
     left: -30px;
-
   }
 
   .slick-next {
     right: -30px;
   }
-
 
   &:hover {
     .slick-arrow {
@@ -99,7 +97,7 @@
 
   &:before,
   &:after {
-    content: "";
+    content: '';
     display: table;
   }
 
@@ -116,7 +114,7 @@
   float: left;
   height: 100%;
   min-height: 1px;
-  [dir="rtl"] & {
+  [dir='rtl'] & {
     float: right;
   }
   img {
@@ -151,4 +149,4 @@
   display: none;
 }
 
-@import "slick-theme";
+@import 'slick-theme';

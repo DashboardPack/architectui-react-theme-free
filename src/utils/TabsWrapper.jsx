@@ -2,22 +2,20 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // React 19 compatible tabs replacement for rc-tabs
-export const Tabs = ({ 
-  children, 
-  defaultActiveKey = "1", 
-  className = "", 
+export const Tabs = ({
+  children,
+  defaultActiveKey = '1',
+  className = '',
   renderTabBar = () => null,
   renderTabContent = () => null,
-  ...props 
+  ...props
 }) => {
   const [activeKey, setActiveKey] = useState(defaultActiveKey);
 
   // Extract TabPane children
-  const tabPanes = React.Children.toArray(children).filter(
-    child => child.type === TabPane
-  );
+  const tabPanes = React.Children.toArray(children).filter((child) => child.type === TabPane);
 
-  const activePane = tabPanes.find(pane => pane.key === activeKey) || tabPanes[0];
+  const activePane = tabPanes.find((pane) => pane.key === activeKey) || tabPanes[0];
 
   return (
     <div className={`react-tabs ${className}`} {...props}>
@@ -52,8 +50,9 @@ export const Tabs = ({
         </AnimatePresence>
       </div>
 
-      <style dangerouslySetInnerHTML={{
-        __html: `
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
           .tabs-nav-wrapper {
             border-bottom: 1px solid #dee2e6;
             margin-bottom: 1rem;
@@ -83,8 +82,9 @@ export const Tabs = ({
           .tab-content {
             position: relative;
           }
-        `
-      }} />
+        `,
+        }}
+      />
     </div>
   );
 };
@@ -103,4 +103,4 @@ export const ScrollableInkTabBar = () => {
   return null;
 };
 
-export default Tabs; 
+export default Tabs;

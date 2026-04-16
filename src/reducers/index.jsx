@@ -1,4 +1,4 @@
-import ThemeOptions from "./ThemeOptions";
+import ThemeOptions from './ThemeOptions';
 
 const reducer = {
   ThemeOptions,

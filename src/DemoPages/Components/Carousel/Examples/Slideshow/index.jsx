@@ -1,22 +1,28 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../../utils/TransitionWrapper';
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../utils/TransitionWrapper';
 
-import SimpleSlider from "./SimpleSlider";
-import MultipleItems from "./MultipleItems";
-import CenterMode from "./CenterMode";
-import Responsive from "./Responsive";
-import VariableWidth from "./VariableWidth";
-import DarkImg from "./DarkImg";
+import SimpleSlider from './SimpleSlider';
+import MultipleItems from './MultipleItems';
+import CenterMode from './CenterMode';
+import Responsive from './Responsive';
+import VariableWidth from './VariableWidth';
+import DarkImg from './DarkImg';
 
-import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
 class SlideshowExample extends React.Component {
   render() {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <Row>
               <Col md="6">
                 <Card className="main-card mb-3">

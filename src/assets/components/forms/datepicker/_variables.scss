@@ -8,8 +8,7 @@ $datepicker__muted-color: $gray-400;
 $datepicker__selected-color: map-get($theme-colors, 'primary');
 $datepicker__text-color: $gray-700;
 $datepicker__header-color: $gray-800;
-$datepicker__navigation-disabled-color: shade-color($datepicker__muted-color, 5%)
-;
+$datepicker__navigation-disabled-color: shade-color($datepicker__muted-color, 5%);
 
 $datepicker__border-radius: $border-radius;
 $datepicker__day-margin: 0.166rem;

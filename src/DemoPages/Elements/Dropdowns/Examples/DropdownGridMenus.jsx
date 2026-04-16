@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
 import {
   Button,
   UncontrolledButtonDropdown,
@@ -11,27 +11,27 @@ import {
   NavItem,
   NavLink,
   Container,
-} from "reactstrap";
+} from 'reactstrap';
 
-import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
-import PerfectScrollbar from "react-perfect-scrollbar";
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
-import bg1 from "../../../../assets/utils/images/dropdown-header/abstract1.jpg";
-import bg2 from "../../../../assets/utils/images/dropdown-header/abstract2.jpg";
-import bg3 from "../../../../assets/utils/images/dropdown-header/abstract3.jpg";
-import bg4 from "../../../../assets/utils/images/dropdown-header/abstract4.jpg";
-import bg5 from "../../../../assets/utils/images/dropdown-header/abstract5.jpg";
-import bg6 from "../../../../assets/utils/images/dropdown-header/abstract6.jpg";
-import bg7 from "../../../../assets/utils/images/dropdown-header/abstract7.jpg";
-import bg8 from "../../../../assets/utils/images/dropdown-header/abstract8.jpg";
-import bg9 from "../../../../assets/utils/images/dropdown-header/abstract9.jpg";
-import bg10 from "../../../../assets/utils/images/dropdown-header/abstract10.jpg";
-import bg11 from "../../../../assets/utils/images/dropdown-header/city1.jpg";
-import bg12 from "../../../../assets/utils/images/dropdown-header/city2.jpg";
-import bg13 from "../../../../assets/utils/images/dropdown-header/city3.jpg";
-import bg14 from "../../../../assets/utils/images/dropdown-header/city4.jpg";
-import bg15 from "../../../../assets/utils/images/dropdown-header/city5.jpg";
+import bg1 from '../../../../assets/utils/images/dropdown-header/abstract1.jpg';
+import bg2 from '../../../../assets/utils/images/dropdown-header/abstract2.jpg';
+import bg3 from '../../../../assets/utils/images/dropdown-header/abstract3.jpg';
+import bg4 from '../../../../assets/utils/images/dropdown-header/abstract4.jpg';
+import bg5 from '../../../../assets/utils/images/dropdown-header/abstract5.jpg';
+import bg6 from '../../../../assets/utils/images/dropdown-header/abstract6.jpg';
+import bg7 from '../../../../assets/utils/images/dropdown-header/abstract7.jpg';
+import bg8 from '../../../../assets/utils/images/dropdown-header/abstract8.jpg';
+import bg9 from '../../../../assets/utils/images/dropdown-header/abstract9.jpg';
+import bg10 from '../../../../assets/utils/images/dropdown-header/abstract10.jpg';
+import bg11 from '../../../../assets/utils/images/dropdown-header/city1.jpg';
+import bg12 from '../../../../assets/utils/images/dropdown-header/city2.jpg';
+import bg13 from '../../../../assets/utils/images/dropdown-header/city3.jpg';
+import bg14 from '../../../../assets/utils/images/dropdown-header/city4.jpg';
+import bg15 from '../../../../assets/utils/images/dropdown-header/city5.jpg';
 
 export default class DropdownGridMenus extends React.Component {
   constructor(props) {
@@ -63,8 +63,14 @@ export default class DropdownGridMenus extends React.Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Row>
                 <Col lg="6">
@@ -77,37 +83,27 @@ export default class DropdownGridMenus extends React.Component {
                         </DropdownToggle>
                         <DropdownMenu>
                           <Nav vertical>
-                            <NavItem className="nav-item-header">
-                              Activity
-                            </NavItem>
+                            <NavItem className="nav-item-header">Activity</NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Chat
-                                <div className="ms-auto badge rounded-pill bg-info">
-                                  8
-                                </div>
+                                <div className="ms-auto badge rounded-pill bg-info">8</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
                               <NavLink href="#">Recover Password</NavLink>
                             </NavItem>
-                            <NavItem className="nav-item-header">
-                              My Account
-                            </NavItem>
+                            <NavItem className="nav-item-header">My Account</NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Settings
-                                <div className="ms-auto badge bg-success">
-                                  New
-                                </div>
+                                <div className="ms-auto badge bg-success">New</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Messages
-                                <div className="ms-auto badge bg-warning">
-                                  512
-                                </div>
+                                <div className="ms-auto badge bg-warning">512</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
@@ -128,16 +124,12 @@ export default class DropdownGridMenus extends React.Component {
                         </DropdownToggle>
                         <DropdownMenu>
                           <Nav vertical>
-                            <NavItem className="nav-item-header">
-                              Activity
-                            </NavItem>
+                            <NavItem className="nav-item-header">Activity</NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 <i className="nav-link-icon pe-7s-chat"> </i>
                                 <span>Chat</span>
-                                <div className="ms-auto badge rounded-pill bg-info">
-                                  8
-                                </div>
+                                <div className="ms-auto badge rounded-pill bg-info">8</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
@@ -146,25 +138,19 @@ export default class DropdownGridMenus extends React.Component {
                                 <span>Recover Password</span>
                               </NavLink>
                             </NavItem>
-                            <NavItem className="nav-item-header">
-                              My Account
-                            </NavItem>
+                            <NavItem className="nav-item-header">My Account</NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 <i className="nav-link-icon pe-7s-config"> </i>
                                 <span>Settings</span>
-                                <div className="ms-auto badge bg-success">
-                                  New
-                                </div>
+                                <div className="ms-auto badge bg-success">New</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 <i className="nav-link-icon pe-7s-coffee"> </i>
                                 <span>Messages</span>
-                                <div className="ms-auto badge bg-warning">
-                                  512
-                                </div>
+                                <div className="ms-auto badge bg-warning">512</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
@@ -188,37 +174,27 @@ export default class DropdownGridMenus extends React.Component {
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-lg">
                           <Nav vertical>
-                            <NavItem className="nav-item-header">
-                              Activity
-                            </NavItem>
+                            <NavItem className="nav-item-header">Activity</NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Chat
-                                <div className="ms-auto badge rounded-pill bg-info">
-                                  8
-                                </div>
+                                <div className="ms-auto badge rounded-pill bg-info">8</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
                               <NavLink href="#">Recover Password</NavLink>
                             </NavItem>
-                            <NavItem className="nav-item-header">
-                              My Account
-                            </NavItem>
+                            <NavItem className="nav-item-header">My Account</NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Settings
-                                <div className="ms-auto badge bg-success">
-                                  New
-                                </div>
+                                <div className="ms-auto badge bg-success">New</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Messages
-                                <div className="ms-auto badge bg-warning">
-                                  512
-                                </div>
+                                <div className="ms-auto badge bg-warning">512</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
@@ -240,16 +216,12 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-xl">
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -258,25 +230,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -310,7 +276,7 @@ export default class DropdownGridMenus extends React.Component {
                               <div
                                 className="menu-header-image"
                                 style={{
-                                  backgroundImage: "url(" + bg1 + ")",
+                                  backgroundImage: 'url(' + bg1 + ')',
                                 }}
                               />
                               <div className="menu-header-content">
@@ -324,8 +290,12 @@ export default class DropdownGridMenus extends React.Component {
                                   <Button size="sm" color="dark" className="me-2">
                                     Settings
                                   </Button>
-                                  <Button size="sm" className="btn-icon btn-icon-only" color="warning">
-                                    <i className="pe-7s-config btn-icon-wrapper"> {" "} </i>
+                                  <Button
+                                    size="sm"
+                                    className="btn-icon btn-icon-only"
+                                    color="warning"
+                                  >
+                                    <i className="pe-7s-config btn-icon-wrapper"> </i>
                                   </Button>
                                 </div>
                               </div>
@@ -334,37 +304,27 @@ export default class DropdownGridMenus extends React.Component {
                           <div className="scroll-area-xs">
                             <PerfectScrollbar>
                               <Nav vertical>
-                                <NavItem className="nav-item-header">
-                                  Activity
-                                </NavItem>
+                                <NavItem className="nav-item-header">Activity</NavItem>
                                 <NavItem>
                                   <NavLink href="#">
                                     Chat
-                                    <div className="ms-auto badge rounded-pill bg-info">
-                                      8
-                                    </div>
+                                    <div className="ms-auto badge rounded-pill bg-info">8</div>
                                   </NavLink>
                                 </NavItem>
                                 <NavItem>
                                   <NavLink href="#">Recover Password</NavLink>
                                 </NavItem>
-                                <NavItem className="nav-item-header">
-                                  My Account
-                                </NavItem>
+                                <NavItem className="nav-item-header">My Account</NavItem>
                                 <NavItem>
                                   <NavLink href="#">
                                     Settings
-                                    <div className="ms-auto badge bg-success">
-                                      New
-                                    </div>
+                                    <div className="ms-auto badge bg-success">New</div>
                                   </NavLink>
                                 </NavItem>
                                 <NavItem>
                                   <NavLink href="#">
                                     Messages
-                                    <div className="ms-auto badge bg-warning">
-                                      512
-                                    </div>
+                                    <div className="ms-auto badge bg-warning">512</div>
                                   </NavLink>
                                 </NavItem>
                                 <NavItem>
@@ -391,62 +351,56 @@ export default class DropdownGridMenus extends React.Component {
                               <div
                                 className="menu-header-image opacity-1"
                                 style={{
-                                  backgroundImage: "url(" + bg3 + ")",
+                                  backgroundImage: 'url(' + bg3 + ')',
                                 }}
                               />
                               <div className="menu-header-content text-start">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                                 <div className="menu-header-btn-pane">
                                   <Button size="sm" color="dark" className="me-2">
                                     Settings
                                   </Button>
-                                  <Button size="sm" className="btn-icon btn-icon-only" color="warning">
-                                    <i className="pe-7s-config btn-icon-wrapper"> {" "} </i>
+                                  <Button
+                                    size="sm"
+                                    className="btn-icon btn-icon-only"
+                                    color="warning"
+                                  >
+                                    <i className="pe-7s-config btn-icon-wrapper"> </i>
                                   </Button>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div className="scroll-area-xs"
+                          <div
+                            className="scroll-area-xs"
                             style={{
-                              height: "150px",
-                            }}>
+                              height: '150px',
+                            }}
+                          >
                             <PerfectScrollbar>
                               <Nav vertical>
-                                <NavItem className="nav-item-header">
-                                  Activity
-                                </NavItem>
+                                <NavItem className="nav-item-header">Activity</NavItem>
                                 <NavItem>
                                   <NavLink href="#">
                                     Chat
-                                    <div className="ms-auto badge rounded-pill bg-info">
-                                      8
-                                    </div>
+                                    <div className="ms-auto badge rounded-pill bg-info">8</div>
                                   </NavLink>
                                 </NavItem>
                                 <NavItem>
                                   <NavLink href="#">Recover Password</NavLink>
                                 </NavItem>
-                                <NavItem className="nav-item-header">
-                                  My Account
-                                </NavItem>
+                                <NavItem className="nav-item-header">My Account</NavItem>
                                 <NavItem>
                                   <NavLink href="#">
                                     Settings
-                                    <div className="ms-auto badge bg-success">
-                                      New
-                                    </div>
+                                    <div className="ms-auto badge bg-success">New</div>
                                   </NavLink>
                                 </NavItem>
                                 <NavItem>
                                   <NavLink href="#">
                                     Messages
-                                    <div className="ms-auto badge bg-warning">
-                                      512
-                                    </div>
+                                    <div className="ms-auto badge bg-warning">512</div>
                                   </NavLink>
                                 </NavItem>
                                 <NavItem>
@@ -455,9 +409,7 @@ export default class DropdownGridMenus extends React.Component {
                                 <NavItem>
                                   <NavLink href="#">
                                     Messages
-                                    <div className="ms-auto badge bg-warning">
-                                      512
-                                    </div>
+                                    <div className="ms-auto badge bg-warning">512</div>
                                   </NavLink>
                                 </NavItem>
                                 <NavItem>
@@ -486,8 +438,9 @@ export default class DropdownGridMenus extends React.Component {
                               <div
                                 className="menu-header-image opacity-5"
                                 style={{
-                                  backgroundImage: "url(" + bg2 + ")",
-                                }}/>
+                                  backgroundImage: 'url(' + bg2 + ')',
+                                }}
+                              />
                               <div className="menu-header-content btn-pane-right">
                                 <div>
                                   <h5 className="menu-header-title">Settings</h5>
@@ -496,8 +449,12 @@ export default class DropdownGridMenus extends React.Component {
                                   </h6>
                                 </div>
                                 <div className="menu-header-btn-pane">
-                                  <Button size="sm" className="btn-icon btn-icon-only" color="warning">
-                                    <i className="pe-7s-config btn-icon-wrapper"> {" "} </i>
+                                  <Button
+                                    size="sm"
+                                    className="btn-icon btn-icon-only"
+                                    color="warning"
+                                  >
+                                    <i className="pe-7s-config btn-icon-wrapper"> </i>
                                   </Button>
                                 </div>
                               </div>
@@ -506,37 +463,27 @@ export default class DropdownGridMenus extends React.Component {
                           <div className="scroll-area-xs">
                             <PerfectScrollbar>
                               <Nav vertical>
-                                <NavItem className="nav-item-header">
-                                  Activity
-                                </NavItem>
+                                <NavItem className="nav-item-header">Activity</NavItem>
                                 <NavItem>
                                   <NavLink href="#">
                                     Chat
-                                    <div className="ms-auto badge rounded-pill bg-info">
-                                      8
-                                    </div>
+                                    <div className="ms-auto badge rounded-pill bg-info">8</div>
                                   </NavLink>
                                 </NavItem>
                                 <NavItem>
                                   <NavLink href="#">Recover Password</NavLink>
                                 </NavItem>
-                                <NavItem className="nav-item-header">
-                                  My Account
-                                </NavItem>
+                                <NavItem className="nav-item-header">My Account</NavItem>
                                 <NavItem>
                                   <NavLink href="#">
                                     Settings
-                                    <div className="ms-auto badge bg-success">
-                                      New
-                                    </div>
+                                    <div className="ms-auto badge bg-success">New</div>
                                   </NavLink>
                                 </NavItem>
                                 <NavItem>
                                   <NavLink href="#">
                                     Messages
-                                    <div className="ms-auto badge bg-warning">
-                                      512
-                                    </div>
+                                    <div className="ms-auto badge bg-warning">512</div>
                                   </NavLink>
                                 </NavItem>
                                 <NavItem>
@@ -571,48 +518,39 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-xl">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-primary">
-                              <div className="menu-header-image"
+                              <div
+                                className="menu-header-image"
                                 style={{
-                                  backgroundImage: "url(" + bg11 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg11 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
                               </div>
                             </div>
                           </div>
                           <Nav vertical>
-                            <NavItem className="nav-item-header">
-                              Activity
-                            </NavItem>
+                            <NavItem className="nav-item-header">Activity</NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Chat
-                                <div className="ms-auto badge rounded-pill bg-info">
-                                  8
-                                </div>
+                                <div className="ms-auto badge rounded-pill bg-info">8</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
                               <NavLink href="#">Recover Password</NavLink>
                             </NavItem>
-                            <NavItem className="nav-item-header">
-                              My Account
-                            </NavItem>
+                            <NavItem className="nav-item-header">My Account</NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Settings
-                                <div className="ms-auto badge bg-success">
-                                  New
-                                </div>
+                                <div className="ms-auto badge bg-success">New</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Messages
-                                <div className="ms-auto badge bg-warning">
-                                  512
-                                </div>
+                                <div className="ms-auto badge bg-warning">512</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
@@ -637,9 +575,9 @@ export default class DropdownGridMenus extends React.Component {
                               <div
                                 className="menu-header-image"
                                 style={{
-                                  backgroundImage: "url(" + bg12 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg12 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
                               </div>
@@ -647,16 +585,12 @@ export default class DropdownGridMenus extends React.Component {
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -665,25 +599,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -709,11 +637,12 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-xl">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-success">
-                              <div className="menu-header-image opacity-2"
+                              <div
+                                className="menu-header-image opacity-2"
                                 style={{
-                                  backgroundImage: "url(" + bg13 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg13 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
                               </div>
@@ -721,16 +650,12 @@ export default class DropdownGridMenus extends React.Component {
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -739,25 +664,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -786,9 +705,9 @@ export default class DropdownGridMenus extends React.Component {
                               <div
                                 className="menu-header-image"
                                 style={{
-                                  backgroundImage: "url(" + bg14 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg14 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
                               </div>
@@ -796,16 +715,12 @@ export default class DropdownGridMenus extends React.Component {
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -814,25 +729,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -861,9 +770,9 @@ export default class DropdownGridMenus extends React.Component {
                               <div
                                 className="menu-header-image opacity-1"
                                 style={{
-                                  backgroundImage: "url(" + bg15 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg15 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
                               </div>
@@ -871,16 +780,12 @@ export default class DropdownGridMenus extends React.Component {
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -889,25 +794,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -933,11 +832,12 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-xl">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-danger">
-                              <div className="menu-header-image opacity-3"
+                              <div
+                                className="menu-header-image opacity-3"
                                 style={{
-                                  backgroundImage: "url(" + bg1 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg1 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
                               </div>
@@ -945,16 +845,12 @@ export default class DropdownGridMenus extends React.Component {
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -963,25 +859,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1007,11 +897,12 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-xl">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-focus">
-                              <div className="menu-header-image opacity-8"
+                              <div
+                                className="menu-header-image opacity-8"
                                 style={{
-                                  backgroundImage: "url(" + bg2 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg2 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
                               </div>
@@ -1019,16 +910,12 @@ export default class DropdownGridMenus extends React.Component {
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1037,25 +924,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1081,11 +962,12 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-xl">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-alternate">
-                              <div className="menu-header-image opacity-2"
+                              <div
+                                className="menu-header-image opacity-2"
                                 style={{
-                                  backgroundImage: "url(" + bg3 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg3 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
                               </div>
@@ -1093,16 +975,12 @@ export default class DropdownGridMenus extends React.Component {
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1111,25 +989,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1158,9 +1030,9 @@ export default class DropdownGridMenus extends React.Component {
                               <div
                                 className="menu-header-image opacity-5"
                                 style={{
-                                  backgroundImage: "url(" + bg4 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg4 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content text-dark">
                                 <h5 className="menu-header-title">Settings</h5>
                               </div>
@@ -1168,16 +1040,12 @@ export default class DropdownGridMenus extends React.Component {
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1186,25 +1054,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1230,11 +1092,12 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-xl">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-dark">
-                              <div className="menu-header-image opacity-1"
+                              <div
+                                className="menu-header-image opacity-1"
                                 style={{
-                                  backgroundImage: "url(" + bg5 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg5 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
                               </div>
@@ -1242,16 +1105,12 @@ export default class DropdownGridMenus extends React.Component {
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1260,25 +1119,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1304,11 +1157,12 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-xl">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-link">
-                              <div className="menu-header-image opacity-3"
+                              <div
+                                className="menu-header-image opacity-3"
                                 style={{
-                                  backgroundImage: "url(" + bg6 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg6 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content text-dark">
                                 <h5 className="menu-header-title">Settings</h5>
                               </div>
@@ -1316,16 +1170,12 @@ export default class DropdownGridMenus extends React.Component {
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1334,25 +1184,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1385,51 +1229,40 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-lg">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-primary">
-                              <div className="menu-header-image"
+                              <div
+                                className="menu-header-image"
                                 style={{
-                                  backgroundImage: "url(" + bg1 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg1 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
                           <Nav vertical>
-                            <NavItem className="nav-item-header">
-                              Activity
-                            </NavItem>
+                            <NavItem className="nav-item-header">Activity</NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Chat
-                                <div className="ms-auto badge rounded-pill bg-info">
-                                  8
-                                </div>
+                                <div className="ms-auto badge rounded-pill bg-info">8</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
                               <NavLink href="#">Recover Password</NavLink>
                             </NavItem>
-                            <NavItem className="nav-item-header">
-                              My Account
-                            </NavItem>
+                            <NavItem className="nav-item-header">My Account</NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Settings
-                                <div className="ms-auto badge bg-success">
-                                  New
-                                </div>
+                                <div className="ms-auto badge bg-success">New</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Messages
-                                <div className="ms-auto badge bg-warning">
-                                  512
-                                </div>
+                                <div className="ms-auto badge bg-warning">512</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
@@ -1451,31 +1284,26 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-lg">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-secondary">
-                              <div className="menu-header-image opacity-5"
+                              <div
+                                className="menu-header-image opacity-5"
                                 style={{
-                                  backgroundImage: "url(" + bg2 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg2 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1484,25 +1312,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1531,29 +1353,23 @@ export default class DropdownGridMenus extends React.Component {
                               <div
                                 className="menu-header-image opacity-1"
                                 style={{
-                                  backgroundImage: "url(" + bg3 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg3 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1562,25 +1378,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1606,31 +1416,26 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-lg">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-info">
-                              <div className="menu-header-image opacity-5"
+                              <div
+                                className="menu-header-image opacity-5"
                                 style={{
-                                  backgroundImage: "url(" + bg4 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg4 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1639,25 +1444,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1683,31 +1482,26 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-lg">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-warning">
-                              <div className="menu-header-image opacity-1"
+                              <div
+                                className="menu-header-image opacity-1"
                                 style={{
-                                  backgroundImage: "url(" + bg5 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg5 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1716,25 +1510,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1763,29 +1551,23 @@ export default class DropdownGridMenus extends React.Component {
                               <div
                                 className="menu-header-image opacity-3"
                                 style={{
-                                  backgroundImage: "url(" + bg6 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg6 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1794,25 +1576,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1838,31 +1614,26 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-lg">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-focus">
-                              <div className="menu-header-image opacity-8"
+                              <div
+                                className="menu-header-image opacity-8"
                                 style={{
-                                  backgroundImage: "url(" + bg7 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg7 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1871,25 +1642,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1918,29 +1683,23 @@ export default class DropdownGridMenus extends React.Component {
                               <div
                                 className="menu-header-image opacity-3"
                                 style={{
-                                  backgroundImage: "url(" + bg8 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg8 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1949,25 +1708,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -1996,29 +1749,23 @@ export default class DropdownGridMenus extends React.Component {
                               <div
                                 className="menu-header-image"
                                 style={{
-                                  backgroundImage: "url(" + bg9 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg9 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content text-dark">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -2027,25 +1774,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -2074,29 +1815,23 @@ export default class DropdownGridMenus extends React.Component {
                               <div
                                 className="menu-header-image opacity-1"
                                 style={{
-                                  backgroundImage: "url(" + bg10 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg10 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -2105,25 +1840,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -2152,29 +1881,23 @@ export default class DropdownGridMenus extends React.Component {
                               <div
                                 className="menu-header-image opacity-1"
                                 style={{
-                                  backgroundImage: "url(" + bg11 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg11 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content text-dark">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -2183,25 +1906,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -2235,9 +1952,9 @@ export default class DropdownGridMenus extends React.Component {
                               <div
                                 className="menu-header-image"
                                 style={{
-                                  backgroundImage: "url(" + bg1 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg1 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <div>
                                   <h5 className="menu-header-title">Settings</h5>
@@ -2249,45 +1966,39 @@ export default class DropdownGridMenus extends React.Component {
                                   <Button size="sm" color="dark" className="me-2">
                                     Settings
                                   </Button>
-                                  <Button size="sm" className="btn-icon btn-icon-only" color="warning">
-                                    <i className="pe-7s-config btn-icon-wrapper"> {" "} </i>
+                                  <Button
+                                    size="sm"
+                                    className="btn-icon btn-icon-only"
+                                    color="warning"
+                                  >
+                                    <i className="pe-7s-config btn-icon-wrapper"> </i>
                                   </Button>
                                 </div>
                               </div>
                             </div>
                           </div>
                           <Nav vertical>
-                            <NavItem className="nav-item-header">
-                              Activity
-                            </NavItem>
+                            <NavItem className="nav-item-header">Activity</NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Chat
-                                <div className="ms-auto badge rounded-pill bg-info">
-                                  8
-                                </div>
+                                <div className="ms-auto badge rounded-pill bg-info">8</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
                               <NavLink href="#">Recover Password</NavLink>
                             </NavItem>
-                            <NavItem className="nav-item-header">
-                              My Account
-                            </NavItem>
+                            <NavItem className="nav-item-header">My Account</NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Settings
-                                <div className="ms-auto badge bg-success">
-                                  New
-                                </div>
+                                <div className="ms-auto badge bg-success">New</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Messages
-                                <div className="ms-auto badge bg-warning">
-                                  512
-                                </div>
+                                <div className="ms-auto badge bg-warning">512</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
@@ -2309,24 +2020,25 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-lg">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-success">
-                              <div className="menu-header-image opacity-1"
+                              <div
+                                className="menu-header-image opacity-1"
                                 style={{
-                                  backgroundImage: "url(" + bg3 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg3 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content text-start">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                                 <div className="menu-header-btn-pane">
                                   <Button size="sm" color="dark" className="me-2">
                                     Settings
                                   </Button>
-                                  <Button size="sm" className="btn-icon btn-icon-only" color="warning">
-                                    <i className="pe-7s-config btn-icon-wrapper">
-                                      {" "}
-                                    </i>
+                                  <Button
+                                    size="sm"
+                                    className="btn-icon btn-icon-only"
+                                    color="warning"
+                                  >
+                                    <i className="pe-7s-config btn-icon-wrapper"> </i>
                                   </Button>
                                 </div>
                               </div>
@@ -2334,16 +2046,12 @@ export default class DropdownGridMenus extends React.Component {
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -2352,25 +2060,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -2396,11 +2098,12 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-lg">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-secondary">
-                              <div className="menu-header-image opacity-5"
+                              <div
+                                className="menu-header-image opacity-5"
                                 style={{
-                                  backgroundImage: "url(" + bg2 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg2 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content btn-pane-right">
                                 <div>
                                   <h5 className="menu-header-title">Settings</h5>
@@ -2409,8 +2112,12 @@ export default class DropdownGridMenus extends React.Component {
                                   </h6>
                                 </div>
                                 <div className="menu-header-btn-pane">
-                                  <Button size="sm" className="btn-icon btn-icon-only" color="warning">
-                                    <i className="pe-7s-config btn-icon-wrapper"> {" "} </i>
+                                  <Button
+                                    size="sm"
+                                    className="btn-icon btn-icon-only"
+                                    color="warning"
+                                  >
+                                    <i className="pe-7s-config btn-icon-wrapper"> </i>
                                   </Button>
                                 </div>
                               </div>
@@ -2418,16 +2125,12 @@ export default class DropdownGridMenus extends React.Component {
                           </div>
                           <Nav vertical>
                             <Nav vertical>
-                              <NavItem className="nav-item-header">
-                                Activity
-                              </NavItem>
+                              <NavItem className="nav-item-header">Activity</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-chat"> </i>
                                   <span>Chat</span>
-                                  <div className="ms-auto badge rounded-pill bg-info">
-                                    8
-                                  </div>
+                                  <div className="ms-auto badge rounded-pill bg-info">8</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -2436,25 +2139,19 @@ export default class DropdownGridMenus extends React.Component {
                                   <span>Recover Password</span>
                                 </NavLink>
                               </NavItem>
-                              <NavItem className="nav-item-header">
-                                My Account
-                              </NavItem>
+                              <NavItem className="nav-item-header">My Account</NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-config"> </i>
                                   <span>Settings</span>
-                                  <div className="ms-auto badge bg-success">
-                                    New
-                                  </div>
+                                  <div className="ms-auto badge bg-success">New</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
                                 <NavLink href="#">
                                   <i className="nav-link-icon pe-7s-coffee"> </i>
                                   <span>Messages</span>
-                                  <div className="ms-auto badge bg-warning">
-                                    512
-                                  </div>
+                                  <div className="ms-auto badge bg-warning">512</div>
                                 </NavLink>
                               </NavItem>
                               <NavItem>
@@ -2489,22 +2186,25 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu>
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-success">
-                              <div className="menu-header-image opacity-1"
+                              <div
+                                className="menu-header-image opacity-1"
                                 style={{
-                                  backgroundImage: "url(" + bg3 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg3 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content text-start">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                                 <div className="menu-header-btn-pane">
                                   <Button size="sm" color="dark" className="me-2">
                                     Settings
                                   </Button>
-                                  <Button size="sm" className="btn-icon btn-icon-only" color="warning">
-                                    <i className="pe-7s-config btn-icon-wrapper"> {" "} </i>
+                                  <Button
+                                    size="sm"
+                                    className="btn-icon btn-icon-only"
+                                    color="warning"
+                                  >
+                                    <i className="pe-7s-config btn-icon-wrapper"> </i>
                                   </Button>
                                 </div>
                               </div>
@@ -2518,24 +2218,28 @@ export default class DropdownGridMenus extends React.Component {
                           <DropdownItem>Dividers</DropdownItem>
                         </DropdownMenu>
                       </UncontrolledButtonDropdown>
-                      <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter} onMouseLeave={this.onMouseLeave}
-                        isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                      <Dropdown
+                        className="d-inline-block"
+                        onMouseOver={this.onMouseEnter}
+                        onMouseLeave={this.onMouseLeave}
+                        isOpen={this.state.dropdownOpen}
+                        toggle={this.toggle}
+                      >
                         <DropdownToggle caret color="primary" className="mb-2 me-2">
                           Hover Open
                         </DropdownToggle>
                         <DropdownMenu className="dropdown-menu-lg">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-primary">
-                              <div className="menu-header-image"
+                              <div
+                                className="menu-header-image"
                                 style={{
-                                  backgroundImage: "url(" + bg1 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg1 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
@@ -2553,16 +2257,15 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-rounded dropdown-menu-lg">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-secondary">
-                              <div className="menu-header-image opacity-5"
+                              <div
+                                className="menu-header-image opacity-5"
                                 style={{
-                                  backgroundImage: "url(" + bg2 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg2 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
@@ -2581,16 +2284,15 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-shadow">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-success">
-                              <div className="menu-header-image opacity-1"
+                              <div
+                                className="menu-header-image opacity-1"
                                 style={{
-                                  backgroundImage: "url(" + bg3 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg3 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
@@ -2609,16 +2311,15 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-hover-link dropdown-menu-xl">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-info">
-                              <div className="menu-header-image opacity-5"
+                              <div
+                                className="menu-header-image opacity-5"
                                 style={{
-                                  backgroundImage: "url(" + bg4 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg4 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
@@ -2640,14 +2341,12 @@ export default class DropdownGridMenus extends React.Component {
                               <div
                                 className="menu-header-image opacity-1"
                                 style={{
-                                  backgroundImage: "url(" + bg5 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg5 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
@@ -2666,16 +2365,15 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-hover-link">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-focus">
-                              <div className="menu-header-image opacity-8"
+                              <div
+                                className="menu-header-image opacity-8"
                                 style={{
-                                  backgroundImage: "url(" + bg7 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg7 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
@@ -2706,16 +2404,15 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-right dropdown-menu-rounded">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-dark">
-                              <div className="menu-header-image opacity-1"
+                              <div
+                                className="menu-header-image opacity-1"
                                 style={{
-                                  backgroundImage: "url(" + bg10 + ")",
-                                }}>
-                              </div>
+                                  backgroundImage: 'url(' + bg10 + ')',
+                                }}
+                              ></div>
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
@@ -2741,57 +2438,77 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-lg">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-love-kiss">
-                              <div className="menu-header-image"
+                              <div
+                                className="menu-header-image"
                                 style={{
-                                  backgroundImage: "url(" + bg12 + ")",
-                                }}/>
+                                  backgroundImage: 'url(' + bg12 + ')',
+                                }}
+                              />
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
                           <div className="grid-menu grid-menu-3col">
                             <Row className="g-0">
                               <Col xl="4" sm="6">
-                                <Button className="btn-icon-vertical btn-transition" outline color="primary">
-                                  <i className="lnr-license btn-icon-wrapper"> {" "} </i>
+                                <Button
+                                  className="btn-icon-vertical btn-transition"
+                                  outline
+                                  color="primary"
+                                >
+                                  <i className="lnr-license btn-icon-wrapper"> </i>
                                   Primary
                                 </Button>
                               </Col>
                               <Col xl="4" sm="6">
-                                <Button className="btn-icon-vertical btn-transition" outline color="secondary">
+                                <Button
+                                  className="btn-icon-vertical btn-transition"
+                                  outline
+                                  color="secondary"
+                                >
                                   <i className="lnr-map btn-icon-wrapper"> </i>
                                   Secondary
                                 </Button>
                               </Col>
                               <Col xl="4" sm="6">
-                                <Button className="btn-icon-vertical btn-transition" outline color="success">
-                                  <i className="lnr-music-note btn-icon-wrapper"> {" "} </i>
+                                <Button
+                                  className="btn-icon-vertical btn-transition"
+                                  outline
+                                  color="success"
+                                >
+                                  <i className="lnr-music-note btn-icon-wrapper"> </i>
                                   Success
                                 </Button>
                               </Col>
                               <Col xl="4" sm="6">
-                                <Button className="btn-icon-vertical btn-transition" outline color="info">
+                                <Button
+                                  className="btn-icon-vertical btn-transition"
+                                  outline
+                                  color="info"
+                                >
                                   <i className="lnr-heart btn-icon-wrapper"> </i>
                                   Info
                                 </Button>
                               </Col>
                               <Col xl="4" sm="6">
-                                <Button className="btn-icon-vertical btn-transition" outline color="warning">
-                                  <i className="lnr-magic-wand btn-icon-wrapper">
-                                    {" "}
-                                  </i>
+                                <Button
+                                  className="btn-icon-vertical btn-transition"
+                                  outline
+                                  color="warning"
+                                >
+                                  <i className="lnr-magic-wand btn-icon-wrapper"> </i>
                                   Warning
                                 </Button>
                               </Col>
                               <Col xl="4" sm="6">
-                                <Button className="btn-icon-vertical btn-transition" outline color="danger">
-                                  <i className="lnr-lighter btn-icon-wrapper">
-                                    {" "}
-                                  </i>
+                                <Button
+                                  className="btn-icon-vertical btn-transition"
+                                  outline
+                                  color="danger"
+                                >
+                                  <i className="lnr-lighter btn-icon-wrapper"> </i>
                                   Danger
                                 </Button>
                               </Col>
@@ -2814,53 +2531,81 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-xl">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-sunny-morning">
-                              <div className="menu-header-image"
+                              <div
+                                className="menu-header-image"
                                 style={{
-                                  backgroundImage: "url(" + bg13 + ")",
-                                }}/>
+                                  backgroundImage: 'url(' + bg13 + ')',
+                                }}
+                              />
                               <div className="menu-header-content text-dark">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
                           <div className="grid-menu grid-menu-xl grid-menu-3col">
                             <Row className="g-0">
                               <Col xl="4" sm="6">
-                                <Button className="btn-icon-vertical btn-square btn-transition" outline color="link">
-                                  <i className="lnr-license btn-icon-wrapper btn-icon-lg mb-3"> {" "} </i>
+                                <Button
+                                  className="btn-icon-vertical btn-square btn-transition"
+                                  outline
+                                  color="link"
+                                >
+                                  <i className="lnr-license btn-icon-wrapper btn-icon-lg mb-3"> </i>
                                   Primary
                                 </Button>
                               </Col>
                               <Col xl="4" sm="6">
-                                <Button className="btn-icon-vertical btn-square btn-transition" outline color="link">
-                                  <i className="lnr-map btn-icon-wrapper btn-icon-lg mb-3"> {" "} </i>
+                                <Button
+                                  className="btn-icon-vertical btn-square btn-transition"
+                                  outline
+                                  color="link"
+                                >
+                                  <i className="lnr-map btn-icon-wrapper btn-icon-lg mb-3"> </i>
                                   Secondary
                                 </Button>
                               </Col>
                               <Col xl="4" sm="6">
-                                <Button className="btn-icon-vertical btn-square btn-transition" outline color="link" >
-                                  <i className="lnr-music-note btn-icon-wrapper btn-icon-lg mb-3"> {" "} </i>
+                                <Button
+                                  className="btn-icon-vertical btn-square btn-transition"
+                                  outline
+                                  color="link"
+                                >
+                                  <i className="lnr-music-note btn-icon-wrapper btn-icon-lg mb-3">
+                                    {' '}
+                                  </i>
                                   Success
                                 </Button>
                               </Col>
                               <Col xl="4" sm="6">
-                                <Button className="btn-icon-vertical btn-square btn-transition" outline color="link">
-                                  <i className="lnr-heart btn-icon-wrapper btn-icon-lg mb-3"> {" "} </i>
+                                <Button
+                                  className="btn-icon-vertical btn-square btn-transition"
+                                  outline
+                                  color="link"
+                                >
+                                  <i className="lnr-heart btn-icon-wrapper btn-icon-lg mb-3"> </i>
                                   Info
                                 </Button>
                               </Col>
                               <Col xl="4" sm="6">
-                                <Button className="btn-icon-vertical btn-square btn-transition" outline color="link">
-                                  <i className="lnr-magic-wand btn-icon-wrapper btn-icon-lg mb-3"> {" "} </i>
+                                <Button
+                                  className="btn-icon-vertical btn-square btn-transition"
+                                  outline
+                                  color="link"
+                                >
+                                  <i className="lnr-magic-wand btn-icon-wrapper btn-icon-lg mb-3">
+                                    {' '}
+                                  </i>
                                   Warning
                                 </Button>
                               </Col>
                               <Col xl="4" sm="6">
-                                <Button className="btn-icon-vertical btn-square btn-transition" outline color="link">
-                                  <i className="lnr-lighter btn-icon-wrapper btn-icon-lg mb-3"> {" "} </i>
+                                <Button
+                                  className="btn-icon-vertical btn-square btn-transition"
+                                  outline
+                                  color="link"
+                                >
+                                  <i className="lnr-lighter btn-icon-wrapper btn-icon-lg mb-3"> </i>
                                   Danger
                                 </Button>
                               </Col>
@@ -2883,40 +2628,56 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-lg">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-happy-itmeo">
-                              <div className="menu-header-image"
+                              <div
+                                className="menu-header-image"
                                 style={{
-                                  backgroundImage: "url(" + bg14 + ")",
-                                }}/>
+                                  backgroundImage: 'url(' + bg14 + ')',
+                                }}
+                              />
                               <div className="menu-header-content">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
                           <div className="grid-menu grid-menu-2col">
                             <Row className="g-0">
                               <Col sm="6">
-                                <Button className="btn-icon-vertical btn-transition" outline color="primary">
-                                  <i className="lnr-license btn-icon-wrapper"> {" "}</i>
+                                <Button
+                                  className="btn-icon-vertical btn-transition"
+                                  outline
+                                  color="primary"
+                                >
+                                  <i className="lnr-license btn-icon-wrapper"> </i>
                                   Primary
                                 </Button>
                               </Col>
                               <Col sm="6">
-                                <Button className="btn-icon-vertical btn-transition" outline color="secondary">
+                                <Button
+                                  className="btn-icon-vertical btn-transition"
+                                  outline
+                                  color="secondary"
+                                >
                                   <i className="lnr-map btn-icon-wrapper"> </i>
                                   Secondary
                                 </Button>
                               </Col>
                               <Col sm="6">
-                                <Button className="btn-icon-vertical btn-transition" outline color="success">
-                                  <i className="lnr-music-note btn-icon-wrapper"> {" "} </i>
+                                <Button
+                                  className="btn-icon-vertical btn-transition"
+                                  outline
+                                  color="success"
+                                >
+                                  <i className="lnr-music-note btn-icon-wrapper"> </i>
                                   Success
                                 </Button>
                               </Col>
                               <Col sm="6">
-                                <Button className="btn-icon-vertical btn-transition" outline color="info">
+                                <Button
+                                  className="btn-icon-vertical btn-transition"
+                                  outline
+                                  color="info"
+                                >
                                   <i className="lnr-heart btn-icon-wrapper"> </i>
                                   Info
                                 </Button>
@@ -2940,41 +2701,59 @@ export default class DropdownGridMenus extends React.Component {
                         <DropdownMenu className="dropdown-menu-xl">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-night-fade">
-                              <div className="menu-header-image opacity-1"
+                              <div
+                                className="menu-header-image opacity-1"
                                 style={{
-                                  backgroundImage: "url(" + bg15 + ")",
-                                }}/>
+                                  backgroundImage: 'url(' + bg15 + ')',
+                                }}
+                              />
                               <div className="menu-header-content text-dark">
                                 <h5 className="menu-header-title">Settings</h5>
-                                <h6 className="menu-header-subtitle">
-                                  Manage all of your options
-                                </h6>
+                                <h6 className="menu-header-subtitle">Manage all of your options</h6>
                               </div>
                             </div>
                           </div>
                           <div className="grid-menu grid-menu-xl grid-menu-2col">
                             <Row className="g-0">
                               <Col sm="6">
-                                <Button className="btn-icon-vertical btn-square btn-transition" outline color="link">
-                                  <i className="lnr-license btn-icon-wrapper btn-icon-lg mb-3"> {" "} </i>
+                                <Button
+                                  className="btn-icon-vertical btn-square btn-transition"
+                                  outline
+                                  color="link"
+                                >
+                                  <i className="lnr-license btn-icon-wrapper btn-icon-lg mb-3"> </i>
                                   Primary
                                 </Button>
                               </Col>
                               <Col sm="6">
-                                <Button className="btn-icon-vertical btn-square btn-transition" outline color="link">
-                                  <i className="lnr-map btn-icon-wrapper btn-icon-lg mb-3"> {" "} </i>
+                                <Button
+                                  className="btn-icon-vertical btn-square btn-transition"
+                                  outline
+                                  color="link"
+                                >
+                                  <i className="lnr-map btn-icon-wrapper btn-icon-lg mb-3"> </i>
                                   Secondary
                                 </Button>
                               </Col>
                               <Col sm="6">
-                                <Button className="btn-icon-vertical btn-square btn-transition" outline color="link">
-                                  <i className="lnr-music-note btn-icon-wrapper btn-icon-lg mb-3"> {" "} </i>
+                                <Button
+                                  className="btn-icon-vertical btn-square btn-transition"
+                                  outline
+                                  color="link"
+                                >
+                                  <i className="lnr-music-note btn-icon-wrapper btn-icon-lg mb-3">
+                                    {' '}
+                                  </i>
                                   Success
                                 </Button>
                               </Col>
                               <Col sm="6">
-                                <Button className="btn-icon-vertical btn-square btn-transition" outline color="link">
-                                  <i className="lnr-heart btn-icon-wrapper btn-icon-lg mb-3"> {" "} </i>
+                                <Button
+                                  className="btn-icon-vertical btn-square btn-transition"
+                                  outline
+                                  color="link"
+                                >
+                                  <i className="lnr-heart btn-icon-wrapper btn-icon-lg mb-3"> </i>
                                   Info
                                 </Button>
                               </Col>

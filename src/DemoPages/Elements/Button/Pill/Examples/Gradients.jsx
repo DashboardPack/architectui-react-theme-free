@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from "react";
-import { Button, Container, ButtonGroup } from "reactstrap";
+import React, { Component, Fragment } from 'react';
+import { Button, Container, ButtonGroup } from 'reactstrap';
 
-import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
 class ButtonsPillGradients extends Component {
   state = {
@@ -180,13 +180,23 @@ class ButtonsPillGradients extends Component {
               <Card className="main-card mb-3">
                 <CardBody>
                   <CardTitle>Block Level</CardTitle>
-                  <Button color="" block className="mb-2 me-2 btn-pill btn-gradient-primary" size="lg">
+                  <Button
+                    color=""
+                    block
+                    className="mb-2 me-2 btn-pill btn-gradient-primary"
+                    size="lg"
+                  >
                     Block Large
                   </Button>
                   <Button color="" block className="mb-2 me-2 btn-pill btn-gradient-primary">
                     Block Normal
                   </Button>
-                  <Button color="" block className="mb-2 me-2 btn-pill btn-gradient-primary" size="sm">
+                  <Button
+                    color=""
+                    block
+                    className="mb-2 me-2 btn-pill btn-gradient-primary"
+                    size="sm"
+                  >
                     Block Small
                   </Button>
                 </CardBody>
@@ -197,13 +207,21 @@ class ButtonsPillGradients extends Component {
                 <CardBody>
                   <CardTitle>Wider</CardTitle>
                   <div className="text-center">
-                    <Button color="" className="btn-wide mb-2 me-2 btn-pill btn-gradient-primary" size="lg">
+                    <Button
+                      color=""
+                      className="btn-wide mb-2 me-2 btn-pill btn-gradient-primary"
+                      size="lg"
+                    >
                       Wider Large
                     </Button>
                     <Button color="" className="btn-wide mb-2 me-2 btn-pill btn-gradient-primary">
                       Wider Normal
                     </Button>
-                    <Button color="" className="btn-wide mb-2 me-2 btn-pill btn-gradient-primary" size="sm">
+                    <Button
+                      color=""
+                      className="btn-wide mb-2 me-2 btn-pill btn-gradient-primary"
+                      size="sm"
+                    >
                       Wider Small
                     </Button>
                   </div>
@@ -236,51 +254,86 @@ class ButtonsPillGradients extends Component {
                   <CardTitle>Checkbox Buttons</CardTitle>
                   <div className="text-center">
                     <ButtonGroup size="sm" className="mb-2">
-                      <Button color="" className="btn-pill btn-gradient-primary"
-                        onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>
+                      <Button
+                        color=""
+                        className="btn-pill btn-gradient-primary"
+                        onClick={() => this.onCheckboxBtnClick(1)}
+                        active={this.state.cSelected.includes(1)}
+                      >
                         One
                       </Button>
-                      <Button color="" className="btn-pill btn-gradient-primary"
-                        onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>
+                      <Button
+                        color=""
+                        className="btn-pill btn-gradient-primary"
+                        onClick={() => this.onCheckboxBtnClick(2)}
+                        active={this.state.cSelected.includes(2)}
+                      >
                         Two
                       </Button>
-                      <Button color="" className="btn-pill btn-gradient-primary"
-                        onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>
+                      <Button
+                        color=""
+                        className="btn-pill btn-gradient-primary"
+                        onClick={() => this.onCheckboxBtnClick(3)}
+                        active={this.state.cSelected.includes(3)}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
                     <div className="divider" />
                     <ButtonGroup className="mb-2">
-                      <Button color="" className="btn-pill btn-gradient-warning" 
-                        onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>
+                      <Button
+                        color=""
+                        className="btn-pill btn-gradient-warning"
+                        onClick={() => this.onCheckboxBtnClick(1)}
+                        active={this.state.cSelected.includes(1)}
+                      >
                         One
                       </Button>
-                      <Button color="" className="btn-pill btn-gradient-warning"
-                        onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>
+                      <Button
+                        color=""
+                        className="btn-pill btn-gradient-warning"
+                        onClick={() => this.onCheckboxBtnClick(2)}
+                        active={this.state.cSelected.includes(2)}
+                      >
                         Two
                       </Button>
-                      <Button color="" className="btn-pill btn-gradient-warning"
-                        onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>
+                      <Button
+                        color=""
+                        className="btn-pill btn-gradient-warning"
+                        onClick={() => this.onCheckboxBtnClick(3)}
+                        active={this.state.cSelected.includes(3)}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
                     <div className="divider" />
                     <ButtonGroup size="lg" className="mb-2">
-                      <Button color="" className="btn-pill btn-gradient-alternate"
-                        onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>
+                      <Button
+                        color=""
+                        className="btn-pill btn-gradient-alternate"
+                        onClick={() => this.onCheckboxBtnClick(1)}
+                        active={this.state.cSelected.includes(1)}
+                      >
                         One
                       </Button>
-                      <Button color="" className="btn-pill btn-gradient-alternate"
-                        onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>
+                      <Button
+                        color=""
+                        className="btn-pill btn-gradient-alternate"
+                        onClick={() => this.onCheckboxBtnClick(2)}
+                        active={this.state.cSelected.includes(2)}
+                      >
                         Two
                       </Button>
                       <Button
-                        color="" className="btn-pill btn-gradient-alternate"
-                        onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>
+                        color=""
+                        className="btn-pill btn-gradient-alternate"
+                        onClick={() => this.onCheckboxBtnClick(3)}
+                        active={this.state.cSelected.includes(3)}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
-                    <div className="divider"/>
+                    <div className="divider" />
                     <p>Selected: {JSON.stringify(this.state.cSelected)}</p>
                   </div>
                 </CardBody>
@@ -292,47 +345,82 @@ class ButtonsPillGradients extends Component {
                   <CardTitle>Radio Buttons</CardTitle>
                   <div className="text-center">
                     <ButtonGroup size="sm" className="mb-2">
-                      <Button color="" className="btn-pill btn-gradient-primary"
-                        onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                      <Button
+                        color=""
+                        className="btn-pill btn-gradient-primary"
+                        onClick={() => this.onRadioBtnClick(1)}
+                        active={this.state.rSelected === 1}
+                      >
                         One
                       </Button>
-                      <Button color="" className="btn-pill btn-gradient-primary"
-                        onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>
+                      <Button
+                        color=""
+                        className="btn-pill btn-gradient-primary"
+                        onClick={() => this.onRadioBtnClick(2)}
+                        active={this.state.rSelected === 2}
+                      >
                         Two
                       </Button>
-                      <Button color="" className="btn-pill btn-gradient-primary"
-                        onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>
+                      <Button
+                        color=""
+                        className="btn-pill btn-gradient-primary"
+                        onClick={() => this.onRadioBtnClick(3)}
+                        active={this.state.rSelected === 3}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
                     <div className="divider" />
                     <ButtonGroup className="mb-2">
-                      <Button color="" className="btn-pill btn-gradient-success"
-                        onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                      <Button
+                        color=""
+                        className="btn-pill btn-gradient-success"
+                        onClick={() => this.onRadioBtnClick(1)}
+                        active={this.state.rSelected === 1}
+                      >
                         One
                       </Button>
-                      <Button color=""
-                        className="btn-pill btn-gradient-success" onClick={() => this.onRadioBtnClick(2)}
-                        active={this.state.rSelected === 2} >
+                      <Button
+                        color=""
+                        className="btn-pill btn-gradient-success"
+                        onClick={() => this.onRadioBtnClick(2)}
+                        active={this.state.rSelected === 2}
+                      >
                         Two
                       </Button>
-                      <Button color="" className="btn-pill btn-gradient-success"
-                        onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3} >
+                      <Button
+                        color=""
+                        className="btn-pill btn-gradient-success"
+                        onClick={() => this.onRadioBtnClick(3)}
+                        active={this.state.rSelected === 3}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
                     <div className="divider" />
                     <ButtonGroup size="lg" className="mb-2">
-                      <Button color="" className="btn-pill btn-gradient-dark"
-                        onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                      <Button
+                        color=""
+                        className="btn-pill btn-gradient-dark"
+                        onClick={() => this.onRadioBtnClick(1)}
+                        active={this.state.rSelected === 1}
+                      >
                         One
                       </Button>
-                      <Button color="" className="btn-pill btn-gradient-dark"
-                        onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>
+                      <Button
+                        color=""
+                        className="btn-pill btn-gradient-dark"
+                        onClick={() => this.onRadioBtnClick(2)}
+                        active={this.state.rSelected === 2}
+                      >
                         Two
                       </Button>
-                      <Button color="" className="btn-pill btn-gradient-dark"
-                        onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>
+                      <Button
+                        color=""
+                        className="btn-pill btn-gradient-dark"
+                        onClick={() => this.onRadioBtnClick(3)}
+                        active={this.state.rSelected === 3}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>

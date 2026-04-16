@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../../utils/TransitionWrapper';
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../../utils/TransitionWrapper';
 import {
   Col,
   Row,
@@ -12,16 +12,21 @@ import {
   Label,
   Input,
   Container,
-} from "reactstrap";
-
+} from 'reactstrap';
 
 export default class FormGridFormRow extends React.Component {
   render() {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Card className="main-card mb-3">
                 <CardBody>
@@ -31,23 +36,43 @@ export default class FormGridFormRow extends React.Component {
                       <Col md={6}>
                         <FormGroup>
                           <Label for="exampleEmail11">Email</Label>
-                          <Input type="email" name="email" id="exampleEmail11" placeholder="with a placeholder"/>
+                          <Input
+                            type="email"
+                            name="email"
+                            id="exampleEmail11"
+                            placeholder="with a placeholder"
+                          />
                         </FormGroup>
                       </Col>
                       <Col md={6}>
                         <FormGroup>
                           <Label for="examplePassword11">Password</Label>
-                          <Input type="password" name="password" id="examplePassword11" placeholder="password placeholder"/>
+                          <Input
+                            type="password"
+                            name="password"
+                            id="examplePassword11"
+                            placeholder="password placeholder"
+                          />
                         </FormGroup>
                       </Col>
                     </Row>
                     <FormGroup>
                       <Label for="exampleAddress">Address</Label>
-                      <Input type="text" name="address" id="exampleAddress" placeholder="1234 Main St"/>
+                      <Input
+                        type="text"
+                        name="address"
+                        id="exampleAddress"
+                        placeholder="1234 Main St"
+                      />
                     </FormGroup>
                     <FormGroup>
                       <Label for="exampleAddress2">Address 2</Label>
-                      <Input type="text" name="address2" id="exampleAddress2" placeholder="Apartment, studio, or floor"/>
+                      <Input
+                        type="text"
+                        name="address2"
+                        id="exampleAddress2"
+                        placeholder="Apartment, studio, or floor"
+                      />
                     </FormGroup>
                     <Row>
                       <Col md={6}>

@@ -9,22 +9,22 @@
 
 // Settings
 // ==================================================
-$hamburger-padding-x           : 0px !default;
-$hamburger-padding-y           : 0px !default;
-$hamburger-layer-width         : 24px !default;
-$hamburger-layer-height        : 2px !default;
-$hamburger-layer-spacing       : 4px !default;
-$hamburger-layer-color         : $primary !default;
-$hamburger-layer-border-radius : 10px !default;
-$hamburger-hover-opacity       : 0.7 !default;
-$hamburger-active-layer-color  : $hamburger-layer-color !default;
+$hamburger-padding-x: 0px !default;
+$hamburger-padding-y: 0px !default;
+$hamburger-layer-width: 24px !default;
+$hamburger-layer-height: 2px !default;
+$hamburger-layer-spacing: 4px !default;
+$hamburger-layer-color: $primary !default;
+$hamburger-layer-border-radius: 10px !default;
+$hamburger-hover-opacity: 0.7 !default;
+$hamburger-active-layer-color: $hamburger-layer-color !default;
 $hamburger-active-hover-opacity: $hamburger-hover-opacity !default;
 
 // To use CSS filters as the hover effect instead of opacity,
 // set $hamburger-hover-use-filter as true and
 // change the value of $hamburger-hover-filter accordingly.
-$hamburger-hover-use-filter   : false !default;
-$hamburger-hover-filter       : opacity(50%) !default;
+$hamburger-hover-use-filter: false !default;
+$hamburger-hover-filter: opacity(50%) !default;
 $hamburger-active-hover-filter: $hamburger-hover-filter !default;
 
 // Types (Remove or comment out what you don’t need)
@@ -60,46 +60,46 @@ $hamburger-types: (
   //stand-r,
   //squeeze,
   //vortex,
-  //vortex-r
+   //vortex-r
 ) !default;
 
 // Base Hamburger (We need this)
 // ==================================================
-@import "base";
+@import 'base';
 
 // Hamburger types
 // ==================================================
-@import "types/3dx";
-@import "types/3dx-r";
-@import "types/3dy";
-@import "types/3dy-r";
-@import "types/3dxy";
-@import "types/3dxy-r";
-@import "types/arrow";
-@import "types/arrow-r";
-@import "types/arrowalt";
-@import "types/arrowalt-r";
-@import "types/arrowturn";
-@import "types/arrowturn-r";
-@import "types/boring";
-@import "types/collapse";
-@import "types/collapse-r";
-@import "types/elastic";
-@import "types/elastic-r";
-@import "types/emphatic";
-@import "types/emphatic-r";
-@import "types/minus";
-@import "types/slider";
-@import "types/slider-r";
-@import "types/spin";
-@import "types/spin-r";
-@import "types/spring";
-@import "types/spring-r";
-@import "types/stand";
-@import "types/stand-r";
-@import "types/squeeze";
-@import "types/vortex";
-@import "types/vortex-r";
+@import 'types/3dx';
+@import 'types/3dx-r';
+@import 'types/3dy';
+@import 'types/3dy-r';
+@import 'types/3dxy';
+@import 'types/3dxy-r';
+@import 'types/arrow';
+@import 'types/arrow-r';
+@import 'types/arrowalt';
+@import 'types/arrowalt-r';
+@import 'types/arrowturn';
+@import 'types/arrowturn-r';
+@import 'types/boring';
+@import 'types/collapse';
+@import 'types/collapse-r';
+@import 'types/elastic';
+@import 'types/elastic-r';
+@import 'types/emphatic';
+@import 'types/emphatic-r';
+@import 'types/minus';
+@import 'types/slider';
+@import 'types/slider-r';
+@import 'types/spin';
+@import 'types/spin-r';
+@import 'types/spring';
+@import 'types/spring-r';
+@import 'types/stand';
+@import 'types/stand-r';
+@import 'types/squeeze';
+@import 'types/vortex';
+@import 'types/vortex-r';
 
 // ==================================================
 // Cooking up additional types:

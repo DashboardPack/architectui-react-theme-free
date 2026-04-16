@@ -1,6 +1,6 @@
 // List Group
 
-@use "sass:math";
+@use 'sass:math';
 
 .todo-list-wrapper {
   .todo-indicator {
@@ -10,14 +10,14 @@
     @include border-radius($border-radius-lg);
     left: math.div($card-spacer-x, 2);
     top: 20%;
-    opacity: .6;
-    transition: opacity .2s;
+    opacity: 0.6;
+    transition: opacity 0.2s;
   }
 
   .list-group-item {
     &:hover {
       .todo-indicator {
-        opacity: .9;
+        opacity: 0.9;
       }
     }
   }

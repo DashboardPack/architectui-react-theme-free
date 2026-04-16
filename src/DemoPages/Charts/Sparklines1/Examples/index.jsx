@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
-import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
 import {
   Sparklines,
@@ -9,7 +9,7 @@ import {
   SparklinesCurve,
   SparklinesReferenceLine,
   SparklinesSpots,
-} from "react-sparklines";
+} from 'react-sparklines';
 
 function boxMullerRandom() {
   let phase = true,
@@ -17,7 +17,7 @@ function boxMullerRandom() {
     x2,
     w;
 
-  return (function() {
+  return (function () {
     if (phase) {
       do {
         x1 = 2.0 * Math.random() - 1.0;
@@ -67,8 +67,14 @@ class ChartsSparklines1 extends React.Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <Row>
               <Col md="3">
                 <Card className="main-card mb-3">
@@ -100,24 +106,27 @@ class ChartsSparklines1 extends React.Component {
                       <Sparklines data={this.state.data} limit={20}>
                         <SparklinesBars
                           style={{
-                            fill: "#41c3f9",
-                            fillOpacity: ".25",
-                          }}/>
+                            fill: '#41c3f9',
+                            fillOpacity: '.25',
+                          }}
+                        />
                         <SparklinesLine
                           style={{
-                            stroke: "#41c3f9",
-                            fill: "none",
-                          }}/>
+                            stroke: '#41c3f9',
+                            fill: 'none',
+                          }}
+                        />
                       </Sparklines>
                     </div>
                     <div className="mb-2">
                       <Sparklines data={this.state.data} limit={20}>
                         <SparklinesLine
                           style={{
-                            stroke: "none",
-                            fill: "#8e44af",
-                            fillOpacity: "1",
-                          }}/>
+                            stroke: 'none',
+                            fill: '#8e44af',
+                            fillOpacity: '1',
+                          }}
+                        />
                       </Sparklines>
                     </div>
                     <Sparklines data={this.state.data} limit={10}>
@@ -136,8 +145,9 @@ class ChartsSparklines1 extends React.Component {
                           <SparklinesLine
                             height="30"
                             style={{
-                              fill: "none",
-                            }}/>
+                              fill: 'none',
+                            }}
+                          />
                         </Sparklines>
                       </Col>
                       <Col md="6">
@@ -145,8 +155,9 @@ class ChartsSparklines1 extends React.Component {
                           <SparklinesLine
                             height="30"
                             style={{
-                              fill: "none",
-                            }}/>
+                              fill: 'none',
+                            }}
+                          />
                           <SparklinesReferenceLine height="30" type="mean" />
                         </Sparklines>
                       </Col>
@@ -198,8 +209,9 @@ class ChartsSparklines1 extends React.Component {
                         <Sparklines height={90} data={sampleData}>
                           <SparklinesLine
                             style={{
-                              fill: "none",
-                            }}/>
+                              fill: 'none',
+                            }}
+                          />
                           <SparklinesSpots />
                         </Sparklines>
                       </Col>
@@ -208,8 +220,9 @@ class ChartsSparklines1 extends React.Component {
                           <SparklinesLine color="#56b45d" />
                           <SparklinesSpots
                             style={{
-                              fill: "#56b45d",
-                            }}/>
+                              fill: '#56b45d',
+                            }}
+                          />
                         </Sparklines>
                       </Col>
                       <Col md="4">
@@ -217,16 +230,18 @@ class ChartsSparklines1 extends React.Component {
                           <SparklinesLine
                             style={{
                               strokeWidth: 3,
-                              stroke: "#336aff",
-                              fill: "none",
-                            }}/>
+                              stroke: '#336aff',
+                              fill: 'none',
+                            }}
+                          />
                           <SparklinesSpots
                             size={4}
                             style={{
-                              stroke: "#336aff",
+                              stroke: '#336aff',
                               strokeWidth: 3,
-                              fill: "white",
-                            }}/>
+                              fill: 'white',
+                            }}
+                          />
                         </Sparklines>
                       </Col>
                     </Row>
@@ -245,23 +260,26 @@ class ChartsSparklines1 extends React.Component {
                         <Sparklines height={90} data={sampleData}>
                           <SparklinesBars
                             style={{
-                              fill: "#41c3f9",
-                            }}/>
+                              fill: '#41c3f9',
+                            }}
+                          />
                         </Sparklines>
                       </Col>
                       <Col md="4">
                         <Sparklines height={90} data={sampleData}>
                           <SparklinesBars
                             style={{
-                              stroke: "white",
-                              fill: "#41c3f9",
-                              fillOpacity: ".25",
-                            }}/>
+                              stroke: 'white',
+                              fill: '#41c3f9',
+                              fillOpacity: '.25',
+                            }}
+                          />
                           <SparklinesLine
                             style={{
-                              stroke: "#41c3f9",
-                              fill: "none",
-                            }}/>
+                              stroke: '#41c3f9',
+                              fill: 'none',
+                            }}
+                          />
                         </Sparklines>
                       </Col>
                     </Row>
@@ -306,9 +324,10 @@ class ChartsSparklines1 extends React.Component {
                     <Sparklines height={90} data={sampleData}>
                       <SparklinesBars
                         style={{
-                          fill: "slategray",
-                          fillOpacity: ".5",
-                        }}/>
+                          fill: 'slategray',
+                          fillOpacity: '.5',
+                        }}
+                      />
                       <SparklinesReferenceLine />
                     </Sparklines>
                   </CardBody>
@@ -325,9 +344,10 @@ class ChartsSparklines1 extends React.Component {
                             <SparklinesLine
                               style={{
                                 strokeWidth: 3,
-                                stroke: "#336aff",
-                                fill: "none",
-                              }}/>
+                                stroke: '#336aff',
+                                fill: 'none',
+                              }}
+                            />
                           </Sparklines>
                         </div>
                       </Col>
@@ -336,9 +356,10 @@ class ChartsSparklines1 extends React.Component {
                           <Sparklines height={90} data={sampleData100} width={200}>
                             <SparklinesLine
                               style={{
-                                stroke: "#2991c8",
-                                fill: "none",
-                              }}/>
+                                stroke: '#2991c8',
+                                fill: 'none',
+                              }}
+                            />
                             <SparklinesSpots />
                           </Sparklines>
                         </div>
@@ -348,13 +369,15 @@ class ChartsSparklines1 extends React.Component {
                           <Sparklines height={90} data={sampleData100}>
                             <SparklinesLine
                               style={{
-                                stroke: "black",
-                                fill: "none",
-                              }}/>
+                                stroke: 'black',
+                                fill: 'none',
+                              }}
+                            />
                             <SparklinesSpots
                               style={{
-                                fill: "orange",
-                              }}/>
+                                fill: 'orange',
+                              }}
+                            />
                           </Sparklines>
                         </div>
                       </Col>
@@ -363,10 +386,11 @@ class ChartsSparklines1 extends React.Component {
                           <Sparklines height={90} data={sampleData}>
                             <SparklinesBars
                               style={{
-                                stroke: "white",
-                                strokeWidth: "1",
-                                fill: "#40c0f5",
-                              }}/>
+                                stroke: 'white',
+                                strokeWidth: '1',
+                                fill: '#40c0f5',
+                              }}
+                            />
                           </Sparklines>
                         </div>
                       </Col>
@@ -375,10 +399,11 @@ class ChartsSparklines1 extends React.Component {
                           <Sparklines height={90} data={sampleData}>
                             <SparklinesLine
                               style={{
-                                stroke: "#8ed53f",
-                                strokeWidth: "1",
-                                fill: "none",
-                              }}/>
+                                stroke: '#8ed53f',
+                                strokeWidth: '1',
+                                fill: 'none',
+                              }}
+                            />
                           </Sparklines>
                         </div>
                       </Col>
@@ -387,10 +412,11 @@ class ChartsSparklines1 extends React.Component {
                           <Sparklines height={90} data={sampleData}>
                             <SparklinesLine
                               style={{
-                                stroke: "#d1192e",
-                                strokeWidth: "1",
-                                fill: "none",
-                              }}/>
+                                stroke: '#d1192e',
+                                strokeWidth: '1',
+                                fill: 'none',
+                              }}
+                            />
                           </Sparklines>
                         </div>
                       </Col>
@@ -399,47 +425,57 @@ class ChartsSparklines1 extends React.Component {
                           <Sparklines height={90} data={sampleData}>
                             <SparklinesLine
                               style={{
-                                stroke: "#559500",
-                                fill: "#8fc638",
-                                fillOpacity: "1",
-                              }}/>
+                                stroke: '#559500',
+                                fill: '#8fc638',
+                                fillOpacity: '1',
+                              }}
+                            />
                           </Sparklines>
                         </div>
                       </Col>
                       <Col md="3">
                         <div className="mb-3">
-                          <Sparklines height={90} data={sampleData}
+                          <Sparklines
+                            height={90}
+                            data={sampleData}
                             style={{
-                              background: "#272727",
+                              background: '#272727',
                             }}
-                            margin={10}>
+                            margin={10}
+                          >
                             <SparklinesLine
                               style={{
-                                stroke: "none",
-                                fill: "#d2673a",
-                                fillOpacity: ".5",
-                              }}/>
+                                stroke: 'none',
+                                fill: '#d2673a',
+                                fillOpacity: '.5',
+                              }}
+                            />
                           </Sparklines>
                         </div>
                       </Col>
                       <Col md="3">
                         <div className="mb-1">
-                          <Sparklines height={90} data={sampleData}
+                          <Sparklines
+                            height={90}
+                            data={sampleData}
                             style={{
-                              background: "#00bdcc",
+                              background: '#00bdcc',
                             }}
-                            margin={10}>
+                            margin={10}
+                          >
                             <SparklinesLine
                               style={{
-                                stroke: "white",
-                                fill: "none",
-                              }}/>
+                                stroke: 'white',
+                                fill: 'none',
+                              }}
+                            />
                             <SparklinesReferenceLine
                               style={{
-                                stroke: "white",
+                                stroke: 'white',
                                 strokeOpacity: 0.75,
-                                strokeDasharray: "2, 2",
-                              }}/>
+                                strokeDasharray: '2, 2',
+                              }}
+                            />
                           </Sparklines>
                         </div>
                       </Col>

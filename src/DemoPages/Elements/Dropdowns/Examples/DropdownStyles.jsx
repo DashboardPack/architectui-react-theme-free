@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react';
 import {
   Button,
   Dropdown,
@@ -7,10 +7,10 @@ import {
   DropdownMenu,
   DropdownItem,
   Container,
-} from "reactstrap";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
+} from 'reactstrap';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
 
-import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
 export default class DropdownStyles extends React.Component {
   constructor(props) {
@@ -42,8 +42,14 @@ export default class DropdownStyles extends React.Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Row>
                 <Col md="12">
@@ -63,8 +69,13 @@ export default class DropdownStyles extends React.Component {
                           <DropdownItem>Dividers</DropdownItem>
                         </DropdownMenu>
                       </UncontrolledButtonDropdown>
-                      <Dropdown className="d-inline-block" onMouseOver={this.onMouseEnter} onMouseLeave={this.onMouseLeave}
-                        isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                      <Dropdown
+                        className="d-inline-block"
+                        onMouseOver={this.onMouseEnter}
+                        onMouseLeave={this.onMouseLeave}
+                        isOpen={this.state.dropdownOpen}
+                        toggle={this.toggle}
+                      >
                         <DropdownToggle caret color="primary" className="mb-2 me-2">
                           Hover Open
                         </DropdownToggle>
@@ -325,7 +336,7 @@ export default class DropdownStyles extends React.Component {
                       <CardTitle>Split Dropdowns</CardTitle>
                       <UncontrolledButtonDropdown className="mb-2 me-2">
                         <Button color="primary">Primary</Button>
-                        <DropdownToggle className="dropdown-toggle-split" caret color="primary"/>
+                        <DropdownToggle className="dropdown-toggle-split" caret color="primary" />
                         <DropdownMenu>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -337,7 +348,7 @@ export default class DropdownStyles extends React.Component {
                       </UncontrolledButtonDropdown>
                       <UncontrolledButtonDropdown className="mb-2 me-2">
                         <Button color="secondary">Secondary</Button>
-                        <DropdownToggle className="dropdown-toggle-split" caret color="secondary"/>
+                        <DropdownToggle className="dropdown-toggle-split" caret color="secondary" />
                         <DropdownMenu>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -349,7 +360,7 @@ export default class DropdownStyles extends React.Component {
                       </UncontrolledButtonDropdown>
                       <UncontrolledButtonDropdown className="mb-2 me-2">
                         <Button color="success">Success</Button>
-                        <DropdownToggle className="dropdown-toggle-split" caret color="success"/>
+                        <DropdownToggle className="dropdown-toggle-split" caret color="success" />
                         <DropdownMenu>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -361,7 +372,7 @@ export default class DropdownStyles extends React.Component {
                       </UncontrolledButtonDropdown>
                       <UncontrolledButtonDropdown className="mb-2 me-2">
                         <Button color="info">Info</Button>
-                        <DropdownToggle className="dropdown-toggle-split" caret color="info"/>
+                        <DropdownToggle className="dropdown-toggle-split" caret color="info" />
                         <DropdownMenu>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -373,7 +384,7 @@ export default class DropdownStyles extends React.Component {
                       </UncontrolledButtonDropdown>
                       <UncontrolledButtonDropdown className="mb-2 me-2">
                         <Button color="warning">Warning</Button>
-                        <DropdownToggle className="dropdown-toggle-split" caret color="warning"/>
+                        <DropdownToggle className="dropdown-toggle-split" caret color="warning" />
                         <DropdownMenu>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -385,7 +396,7 @@ export default class DropdownStyles extends React.Component {
                       </UncontrolledButtonDropdown>
                       <UncontrolledButtonDropdown className="mb-2 me-2">
                         <Button color="danger">Danger</Button>
-                        <DropdownToggle className="dropdown-toggle-split" caret color="danger"/>
+                        <DropdownToggle className="dropdown-toggle-split" caret color="danger" />
                         <DropdownMenu>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -397,7 +408,7 @@ export default class DropdownStyles extends React.Component {
                       </UncontrolledButtonDropdown>
                       <UncontrolledButtonDropdown className="mb-2 me-2">
                         <Button color="focus">Focus</Button>
-                        <DropdownToggle className="dropdown-toggle-split" caret color="focus"/>
+                        <DropdownToggle className="dropdown-toggle-split" caret color="focus" />
                         <DropdownMenu>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -409,7 +420,7 @@ export default class DropdownStyles extends React.Component {
                       </UncontrolledButtonDropdown>
                       <UncontrolledButtonDropdown className="mb-2 me-2">
                         <Button color="alternate">Alt</Button>
-                        <DropdownToggle className="dropdown-toggle-split" caret color="alternate"/>
+                        <DropdownToggle className="dropdown-toggle-split" caret color="alternate" />
                         <DropdownMenu>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -421,7 +432,7 @@ export default class DropdownStyles extends React.Component {
                       </UncontrolledButtonDropdown>
                       <UncontrolledButtonDropdown className="mb-2 me-2">
                         <Button color="light">Light</Button>
-                        <DropdownToggle className="dropdown-toggle-split" caret color="light"/>
+                        <DropdownToggle className="dropdown-toggle-split" caret color="light" />
                         <DropdownMenu>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -433,7 +444,7 @@ export default class DropdownStyles extends React.Component {
                       </UncontrolledButtonDropdown>
                       <UncontrolledButtonDropdown className="mb-2 me-2">
                         <Button color="dark">Dark</Button>
-                        <DropdownToggle className="dropdown-toggle-split" caret color="dark"/>
+                        <DropdownToggle className="dropdown-toggle-split" caret color="dark" />
                         <DropdownMenu>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -452,7 +463,12 @@ export default class DropdownStyles extends React.Component {
                         <Button outline color="primary">
                           Primary
                         </Button>
-                        <DropdownToggle outline className="dropdown-toggle-split" caret color="primary"/>
+                        <DropdownToggle
+                          outline
+                          className="dropdown-toggle-split"
+                          caret
+                          color="primary"
+                        />
                         <DropdownMenu>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -466,7 +482,12 @@ export default class DropdownStyles extends React.Component {
                         <Button outline color="secondary">
                           Secondary
                         </Button>
-                        <DropdownToggle outline className="dropdown-toggle-split" caret color="secondary"/>
+                        <DropdownToggle
+                          outline
+                          className="dropdown-toggle-split"
+                          caret
+                          color="secondary"
+                        />
                         <DropdownMenu>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -480,7 +501,12 @@ export default class DropdownStyles extends React.Component {
                         <Button outline color="success">
                           Success
                         </Button>
-                        <DropdownToggle outline className="dropdown-toggle-split" caret color="success"/>
+                        <DropdownToggle
+                          outline
+                          className="dropdown-toggle-split"
+                          caret
+                          color="success"
+                        />
                         <DropdownMenu>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -494,7 +520,12 @@ export default class DropdownStyles extends React.Component {
                         <Button outline color="info">
                           Info
                         </Button>
-                        <DropdownToggle outline className="dropdown-toggle-split" caret color="info"/>
+                        <DropdownToggle
+                          outline
+                          className="dropdown-toggle-split"
+                          caret
+                          color="info"
+                        />
                         <DropdownMenu>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -508,7 +539,12 @@ export default class DropdownStyles extends React.Component {
                         <Button outline color="warning">
                           Warning
                         </Button>
-                        <DropdownToggle outline className="dropdown-toggle-split" caret color="warning"/>
+                        <DropdownToggle
+                          outline
+                          className="dropdown-toggle-split"
+                          caret
+                          color="warning"
+                        />
                         <DropdownMenu>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -522,7 +558,12 @@ export default class DropdownStyles extends React.Component {
                         <Button outline color="danger">
                           Danger
                         </Button>
-                        <DropdownToggle outline className="dropdown-toggle-split" caret color="danger"/>
+                        <DropdownToggle
+                          outline
+                          className="dropdown-toggle-split"
+                          caret
+                          color="danger"
+                        />
                         <DropdownMenu>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -536,7 +577,12 @@ export default class DropdownStyles extends React.Component {
                         <Button outline color="focus">
                           Focus
                         </Button>
-                        <DropdownToggle outline className="dropdown-toggle-split" caret color="focus"/>
+                        <DropdownToggle
+                          outline
+                          className="dropdown-toggle-split"
+                          caret
+                          color="focus"
+                        />
                         <DropdownMenu>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -550,7 +596,12 @@ export default class DropdownStyles extends React.Component {
                         <Button outline color="alternate">
                           Alt
                         </Button>
-                        <DropdownToggle outline className="dropdown-toggle-split" caret color="alternate"/>
+                        <DropdownToggle
+                          outline
+                          className="dropdown-toggle-split"
+                          caret
+                          color="alternate"
+                        />
                         <DropdownMenu>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -564,7 +615,12 @@ export default class DropdownStyles extends React.Component {
                         <Button outline color="light">
                           Light
                         </Button>
-                        <DropdownToggle outline className="dropdown-toggle-split" caret color="light"/>
+                        <DropdownToggle
+                          outline
+                          className="dropdown-toggle-split"
+                          caret
+                          color="light"
+                        />
                         <DropdownMenu>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -578,7 +634,12 @@ export default class DropdownStyles extends React.Component {
                         <Button outline color="dark">
                           Dark
                         </Button>
-                        <DropdownToggle outline className="dropdown-toggle-split" caret color="dark"/>
+                        <DropdownToggle
+                          outline
+                          className="dropdown-toggle-split"
+                          caret
+                          color="dark"
+                        />
                         <DropdownMenu>
                           <DropdownItem>Menus</DropdownItem>
                           <DropdownItem>Settings</DropdownItem>
@@ -598,7 +659,7 @@ export default class DropdownStyles extends React.Component {
                           <Button className="btn-wide" color="primary">
                             Dropleft
                           </Button>
-                          <DropdownToggle className="dropdown-toggle-split" caret color="primary"/>
+                          <DropdownToggle className="dropdown-toggle-split" caret color="primary" />
                           <DropdownMenu>
                             <DropdownItem>Menus</DropdownItem>
                             <DropdownItem>Settings</DropdownItem>
@@ -612,7 +673,7 @@ export default class DropdownStyles extends React.Component {
                           <Button className="btn-wide" color="primary">
                             Dropup
                           </Button>
-                          <DropdownToggle className="dropdown-toggle-split" caret color="primary"/>
+                          <DropdownToggle className="dropdown-toggle-split" caret color="primary" />
                           <DropdownMenu>
                             <DropdownItem>Menus</DropdownItem>
                             <DropdownItem>Settings</DropdownItem>
@@ -626,7 +687,7 @@ export default class DropdownStyles extends React.Component {
                           <Button className="btn-wide" color="primary">
                             Dropright
                           </Button>
-                          <DropdownToggle className="dropdown-toggle-split" caret color="primary"/>
+                          <DropdownToggle className="dropdown-toggle-split" caret color="primary" />
                           <DropdownMenu>
                             <DropdownItem>Menus</DropdownItem>
                             <DropdownItem>Settings</DropdownItem>
@@ -700,7 +761,7 @@ export default class DropdownStyles extends React.Component {
                         </DropdownMenu>
                       </UncontrolledButtonDropdown>
                       <UncontrolledButtonDropdown>
-                        <DropdownToggle caret outline className="mb-2 me-2"  color="secondary">
+                        <DropdownToggle caret outline className="mb-2 me-2" color="secondary">
                           Secondary
                         </DropdownToggle>
                         <DropdownMenu>
@@ -839,7 +900,12 @@ export default class DropdownStyles extends React.Component {
                           <Button size="lg" color="primary">
                             Large
                           </Button>
-                          <DropdownToggle size="lg" className="dropdown-toggle-split" caret color="primary"/>
+                          <DropdownToggle
+                            size="lg"
+                            className="dropdown-toggle-split"
+                            caret
+                            color="primary"
+                          />
                           <DropdownMenu>
                             <DropdownItem>Menus</DropdownItem>
                             <DropdownItem>Settings</DropdownItem>
@@ -851,7 +917,7 @@ export default class DropdownStyles extends React.Component {
                         </UncontrolledButtonDropdown>
                         <UncontrolledButtonDropdown className="mb-2 me-2">
                           <Button color="primary">Normal</Button>
-                          <DropdownToggle className="dropdown-toggle-split" caret color="primary"/>
+                          <DropdownToggle className="dropdown-toggle-split" caret color="primary" />
                           <DropdownMenu>
                             <DropdownItem>Menus</DropdownItem>
                             <DropdownItem>Settings</DropdownItem>
@@ -865,7 +931,12 @@ export default class DropdownStyles extends React.Component {
                           <Button size="sm" color="primary">
                             Small
                           </Button>
-                          <DropdownToggle size="sm" className="dropdown-toggle-split" caret color="primary"/>
+                          <DropdownToggle
+                            size="sm"
+                            className="dropdown-toggle-split"
+                            caret
+                            color="primary"
+                          />
                           <DropdownMenu>
                             <DropdownItem>Menus</DropdownItem>
                             <DropdownItem>Settings</DropdownItem>
@@ -928,7 +999,12 @@ export default class DropdownStyles extends React.Component {
                           <Button size="lg" className="btn-wide" color="primary">
                             Large
                           </Button>
-                          <DropdownToggle size="lg" className="dropdown-toggle-split" caret color="primary"/>
+                          <DropdownToggle
+                            size="lg"
+                            className="dropdown-toggle-split"
+                            caret
+                            color="primary"
+                          />
                           <DropdownMenu>
                             <DropdownItem>Menus</DropdownItem>
                             <DropdownItem>Settings</DropdownItem>
@@ -942,7 +1018,7 @@ export default class DropdownStyles extends React.Component {
                           <Button className="btn-wide" color="primary">
                             Normal
                           </Button>
-                          <DropdownToggle className="dropdown-toggle-split" caret color="primary"/>
+                          <DropdownToggle className="dropdown-toggle-split" caret color="primary" />
                           <DropdownMenu>
                             <DropdownItem>Menus</DropdownItem>
                             <DropdownItem>Settings</DropdownItem>
@@ -956,7 +1032,12 @@ export default class DropdownStyles extends React.Component {
                           <Button className="btn-wide" size="sm" color="primary">
                             Small
                           </Button>
-                          <DropdownToggle size="sm" className="dropdown-toggle-split" caret color="primary"/>
+                          <DropdownToggle
+                            size="sm"
+                            className="dropdown-toggle-split"
+                            caret
+                            color="primary"
+                          />
                           <DropdownMenu>
                             <DropdownItem>Menus</DropdownItem>
                             <DropdownItem>Settings</DropdownItem>
@@ -970,7 +1051,12 @@ export default class DropdownStyles extends React.Component {
                       <div className="divider" />
                       <div className="text-center">
                         <UncontrolledButtonDropdown>
-                          <DropdownToggle className="btn-wide mb-2 me-2" size="lg" caret color="primary">
+                          <DropdownToggle
+                            className="btn-wide mb-2 me-2"
+                            size="lg"
+                            caret
+                            color="primary"
+                          >
                             Large
                           </DropdownToggle>
                           <DropdownMenu>
@@ -996,7 +1082,12 @@ export default class DropdownStyles extends React.Component {
                           </DropdownMenu>
                         </UncontrolledButtonDropdown>
                         <UncontrolledButtonDropdown>
-                          <DropdownToggle className="btn-wide mb-2 me-2" size="sm" caret color="primary">
+                          <DropdownToggle
+                            className="btn-wide mb-2 me-2"
+                            size="sm"
+                            caret
+                            color="primary"
+                          >
                             Small
                           </DropdownToggle>
                           <DropdownMenu>

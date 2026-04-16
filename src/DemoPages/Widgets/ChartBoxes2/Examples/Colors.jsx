@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
+import React, { Component, Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
 import {
   Row,
   Col,
@@ -12,42 +12,34 @@ import {
   NavLink,
   Progress,
   Container,
-} from "reactstrap";
+} from 'reactstrap';
 
-import {
-  AreaChart,
-  Area,
-  LineChart,
-  Line,
-  ResponsiveContainer,
-  BarChart,
-  Bar,
-} from "recharts";
+import { AreaChart, Area, LineChart, Line, ResponsiveContainer, BarChart, Bar } from 'recharts';
 
 import {
   faAngleUp,
   faArrowLeft,
   faArrowRight,
   faEllipsisH,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
-import bg1 from "../../../../assets/utils/images/dropdown-header/abstract1.jpg";
+import bg1 from '../../../../assets/utils/images/dropdown-header/abstract1.jpg';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const data = [
-  { name: "Page A", uv: 4000, pv: 2400, amt: 2400 },
-  { name: "Page B", uv: 3000, pv: 1398, amt: 2210 },
-  { name: "Page C", uv: 2000, pv: 9800, amt: 2290 },
-  { name: "Page D", uv: 2780, pv: 3908, amt: 2000 },
-  { name: "Page E", uv: 1890, pv: 4800, amt: 2181 },
-  { name: "Page F", uv: 2390, pv: 3800, amt: 2500 },
-  { name: "Page G", uv: 3490, pv: 4300, amt: 2100 },
-  { name: "Page C", uv: 2000, pv: 6800, amt: 2290 },
-  { name: "Page D", uv: 4780, pv: 7908, amt: 2000 },
-  { name: "Page E", uv: 2890, pv: 9800, amt: 2181 },
-  { name: "Page F", uv: 1390, pv: 3800, amt: 1500 },
-  { name: "Page G", uv: 3490, pv: 4300, amt: 2100 },
+  { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
+  { name: 'Page B', uv: 3000, pv: 1398, amt: 2210 },
+  { name: 'Page C', uv: 2000, pv: 9800, amt: 2290 },
+  { name: 'Page D', uv: 2780, pv: 3908, amt: 2000 },
+  { name: 'Page E', uv: 1890, pv: 4800, amt: 2181 },
+  { name: 'Page F', uv: 2390, pv: 3800, amt: 2500 },
+  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
+  { name: 'Page C', uv: 2000, pv: 6800, amt: 2290 },
+  { name: 'Page D', uv: 4780, pv: 7908, amt: 2000 },
+  { name: 'Page E', uv: 2890, pv: 9800, amt: 2181 },
+  { name: 'Page F', uv: 1390, pv: 3800, amt: 1500 },
+  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
 ];
 
 class BasicExample extends Component {
@@ -55,8 +47,14 @@ class BasicExample extends Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Row>
                 <Col md="4">
@@ -64,9 +62,7 @@ class BasicExample extends Component {
                     <div className="widget-chart-content text-white">
                       <div className="widget-chart-flex">
                         <div className="widget-title">Sales</div>
-                        <div className="widget-subtitle opacity-7">
-                          Monthly Goals
-                        </div>
+                        <div className="widget-subtitle opacity-7">Monthly Goals</div>
                       </div>
                       <div className="widget-chart-flex">
                         <div className="widget-numbers">
@@ -91,10 +87,12 @@ class BasicExample extends Component {
                         <DropdownMenu className="dropdown-menu-lg dropdown-menu-right">
                           <div className="dropdown-menu-header">
                             <div className="dropdown-menu-header-inner bg-primary">
-                              <div className="menu-header-image"
+                              <div
+                                className="menu-header-image"
                                 style={{
-                                  backgroundImage: "url(" + bg1 + ")",
-                                }}/>
+                                  backgroundImage: 'url(' + bg1 + ')',
+                                }}
+                              />
                               <div className="menu-header-content">
                                 <div>
                                   <h5 className="menu-header-title">Settings</h5>
@@ -106,45 +104,39 @@ class BasicExample extends Component {
                                   <Button size="sm" color="dark" className="me-2">
                                     Settings
                                   </Button>
-                                  <Button size="sm" className="btn-icon btn-icon-only" color="warning">
-                                    <i className="pe-7s-config btn-icon-wrapper"> {" "} </i>
+                                  <Button
+                                    size="sm"
+                                    className="btn-icon btn-icon-only"
+                                    color="warning"
+                                  >
+                                    <i className="pe-7s-config btn-icon-wrapper"> </i>
                                   </Button>
                                 </div>
                               </div>
                             </div>
                           </div>
                           <Nav vertical>
-                            <NavItem className="nav-item-header">
-                              Activity
-                            </NavItem>
+                            <NavItem className="nav-item-header">Activity</NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Chat
-                                <div className="ms-auto badge rounded-pill bg-info">
-                                  8
-                                </div>
+                                <div className="ms-auto badge rounded-pill bg-info">8</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
                               <NavLink href="#">Recover Password</NavLink>
                             </NavItem>
-                            <NavItem className="nav-item-header">
-                              My Account
-                            </NavItem>
+                            <NavItem className="nav-item-header">My Account</NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Settings
-                                <div className="ms-auto badge bg-success">
-                                  New
-                                </div>
+                                <div className="ms-auto badge bg-success">New</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
                               <NavLink href="#">
                                 Messages
-                                <div className="ms-auto badge bg-warning">
-                                  512
-                                </div>
+                                <div className="ms-auto badge bg-warning">512</div>
                               </NavLink>
                             </NavItem>
                             <NavItem>
@@ -179,9 +171,7 @@ class BasicExample extends Component {
                     <div className="widget-chart-content text-white">
                       <div className="widget-chart-flex">
                         <div className="widget-title">Clients</div>
-                        <div className="widget-subtitle text-warning">
-                          Returning
-                        </div>
+                        <div className="widget-subtitle text-warning">Returning</div>
                       </div>
                       <div className="widget-chart-flex">
                         <div className="widget-numbers">
@@ -201,9 +191,7 @@ class BasicExample extends Component {
                     <div className="widget-chart-content text-white">
                       <div className="widget-chart-flex">
                         <div className="widget-title">Reports</div>
-                        <div className="widget-subtitle text-success">
-                          Bugs Fixed
-                        </div>
+                        <div className="widget-subtitle text-success">Bugs Fixed</div>
                       </div>
                       <div className="widget-chart-flex">
                         <div className="widget-numbers text-warning">357</div>
@@ -237,9 +225,7 @@ class BasicExample extends Component {
                     <div className="widget-chart-content text-white">
                       <div className="widget-chart-flex">
                         <div className="widget-title">Requests</div>
-                        <div className="widget-subtitle text-white">
-                          Submitted
-                        </div>
+                        <div className="widget-subtitle text-white">Submitted</div>
                       </div>
                       <div className="widget-chart-flex">
                         <div className="widget-numbers text-white">345</div>
@@ -252,7 +238,7 @@ class BasicExample extends Component {
                   </div>
                 </Col>
               </Row>
-              <div className="divider mt-0" style={{ marginBottom: "30px" }} />
+              <div className="divider mt-0" style={{ marginBottom: '30px' }} />
               <Row>
                 <Col md="6" lg="4">
                   <div className="card mb-3 widget-chart widget-chart2 bg-danger text-start">
@@ -260,9 +246,7 @@ class BasicExample extends Component {
                       <div className="widget-chart-content text-white">
                         <div className="widget-chart-flex">
                           <div className="widget-title">Sales</div>
-                          <div className="widget-subtitle text-white">
-                            Monthly Goals
-                          </div>
+                          <div className="widget-subtitle text-white">Monthly Goals</div>
                         </div>
                         <div className="widget-chart-flex">
                           <div className="widget-numbers">
@@ -278,7 +262,12 @@ class BasicExample extends Component {
                       <div className="widget-chart-wrapper">
                         <ResponsiveContainer height="100%">
                           <LineChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-                            <Line type="monotone" dataKey="pv" stroke="rgba(255,255,255,.3)" strokeWidth={3}/>
+                            <Line
+                              type="monotone"
+                              dataKey="pv"
+                              stroke="rgba(255,255,255,.3)"
+                              strokeWidth={3}
+                            />
                           </LineChart>
                         </ResponsiveContainer>
                       </div>
@@ -291,9 +280,7 @@ class BasicExample extends Component {
                       <div className="widget-chart-content text-white">
                         <div className="widget-chart-flex">
                           <div className="widget-title">Profiles</div>
-                          <div className="widget-subtitle text-white">
-                            Active Users
-                          </div>
+                          <div className="widget-subtitle text-white">Active Users</div>
                         </div>
                         <div className="widget-chart-flex">
                           <div className="widget-numbers">368</div>
@@ -306,7 +293,12 @@ class BasicExample extends Component {
                       <div className="widget-chart-wrapper">
                         <ResponsiveContainer height="100%">
                           <AreaChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-                            <Area type="monotoneX" dataKey="uv" stroke="rgba(255,255,255,.5)" fill="rgba(255,255,255,.25)"/>
+                            <Area
+                              type="monotoneX"
+                              dataKey="uv"
+                              stroke="rgba(255,255,255,.5)"
+                              fill="rgba(255,255,255,.25)"
+                            />
                           </AreaChart>
                         </ResponsiveContainer>
                       </div>
@@ -319,9 +311,7 @@ class BasicExample extends Component {
                       <div className="widget-chart-content text-white">
                         <div className="widget-chart-flex">
                           <div className="widget-title">Clients</div>
-                          <div className="widget-subtitle text-danger opacity-7">
-                            Returning
-                          </div>
+                          <div className="widget-subtitle text-danger opacity-7">Returning</div>
                         </div>
                         <div className="widget-chart-flex">
                           <div className="widget-numbers">
@@ -337,7 +327,12 @@ class BasicExample extends Component {
                       <div className="widget-chart-wrapper">
                         <ResponsiveContainer height="100%">
                           <BarChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-                            <Bar dataKey="uv" fill="rgba(255,255,255,.5)" stroke="rgba(255,255,255,.7)" strokeWidth={2}/>
+                            <Bar
+                              dataKey="uv"
+                              fill="rgba(255,255,255,.5)"
+                              stroke="rgba(255,255,255,.7)"
+                              strokeWidth={2}
+                            />
                           </BarChart>
                         </ResponsiveContainer>
                       </div>
@@ -350,9 +345,7 @@ class BasicExample extends Component {
                       <div className="widget-chart-content text-white">
                         <div className="widget-chart-flex">
                           <div className="widget-title">Reports</div>
-                          <div className="widget-subtitle text-white">
-                            Bugs Fixed
-                          </div>
+                          <div className="widget-subtitle text-white">Bugs Fixed</div>
                         </div>
                         <div className="widget-chart-flex">
                           <div className="widget-numbers text-white">1621</div>
@@ -365,7 +358,12 @@ class BasicExample extends Component {
                       <div className="widget-chart-wrapper">
                         <ResponsiveContainer height="100%">
                           <AreaChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-                            <Area type="stepAfter" dataKey="uv" stroke="rgba(255,255,255,.6)" fill="rgba(255,255,255,.3)"/>
+                            <Area
+                              type="stepAfter"
+                              dataKey="uv"
+                              stroke="rgba(255,255,255,.6)"
+                              fill="rgba(255,255,255,.3)"
+                            />
                           </AreaChart>
                         </ResponsiveContainer>
                       </div>
@@ -378,9 +376,7 @@ class BasicExample extends Component {
                       <div className="widget-chart-content text-white">
                         <div className="widget-chart-flex">
                           <div className="widget-title">Reports</div>
-                          <div className="widget-subtitle text-white">
-                            Bugs Fixed
-                          </div>
+                          <div className="widget-subtitle text-white">Bugs Fixed</div>
                         </div>
                         <div className="widget-chart-flex">
                           <div className="widget-numbers text-white">1621</div>
@@ -393,7 +389,12 @@ class BasicExample extends Component {
                       <div className="widget-chart-wrapper">
                         <ResponsiveContainer height="100%">
                           <AreaChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-                            <Area type="stepAfter" dataKey="uv" stroke="rgba(255,255,255,.6)" fill="rgba(255,255,255,.3)"/>
+                            <Area
+                              type="stepAfter"
+                              dataKey="uv"
+                              stroke="rgba(255,255,255,.6)"
+                              fill="rgba(255,255,255,.3)"
+                            />
                           </AreaChart>
                         </ResponsiveContainer>
                       </div>
@@ -406,9 +407,7 @@ class BasicExample extends Component {
                       <div className="widget-chart-content text-white">
                         <div className="widget-chart-flex">
                           <div className="widget-title">Reports</div>
-                          <div className="widget-subtitle text-white">
-                            Bugs Fixed
-                          </div>
+                          <div className="widget-subtitle text-white">Bugs Fixed</div>
                         </div>
                         <div className="widget-chart-flex">
                           <div className="widget-numbers text-white">1621</div>
@@ -421,7 +420,12 @@ class BasicExample extends Component {
                       <div className="widget-chart-wrapper">
                         <ResponsiveContainer height="100%">
                           <LineChart data={data} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
-                            <Line type="monotone" dataKey="pv" stroke="rgba(255,255,255,.3)" strokeWidth={3}/>
+                            <Line
+                              type="monotone"
+                              dataKey="pv"
+                              stroke="rgba(255,255,255,.3)"
+                              strokeWidth={3}
+                            />
                           </LineChart>
                         </ResponsiveContainer>
                       </div>
@@ -429,7 +433,7 @@ class BasicExample extends Component {
                   </div>
                 </Col>
               </Row>
-              <div className="divider mt-0" style={{ marginBottom: "30px" }} />
+              <div className="divider mt-0" style={{ marginBottom: '30px' }} />
               <Row>
                 <Col md="4">
                   <div className="card mb-3 widget-chart widget-chart2 bg-warm-flame text-start">
@@ -437,9 +441,7 @@ class BasicExample extends Component {
                       <div className="widget-chart-content text-white">
                         <div className="widget-chart-flex">
                           <div className="widget-title">Sales</div>
-                          <div className="widget-subtitle text-white">
-                            Monthly Goals
-                          </div>
+                          <div className="widget-subtitle text-white">Monthly Goals</div>
                         </div>
                         <div className="widget-chart-flex">
                           <div className="widget-numbers">
@@ -453,10 +455,12 @@ class BasicExample extends Component {
                         </div>
                       </div>
                       <div className="widget-progress-wrapper">
-                        <Progress className="progress-bar-sm progress-bar-animated-alt" color="success" value="65"/>
-                        <div className="progress-sub-label text-white">
-                          YoY Growth
-                        </div>
+                        <Progress
+                          className="progress-bar-sm progress-bar-animated-alt"
+                          color="success"
+                          value="65"
+                        />
+                        <div className="progress-sub-label text-white">YoY Growth</div>
                       </div>
                     </div>
                   </div>
@@ -467,9 +471,7 @@ class BasicExample extends Component {
                       <div className="widget-chart-content text-dark">
                         <div className="widget-chart-flex">
                           <div className="widget-title">Profiles</div>
-                          <div className="widget-subtitle text-dark">
-                            Active Users
-                          </div>
+                          <div className="widget-subtitle text-dark">Active Users</div>
                         </div>
                         <div className="widget-chart-flex">
                           <div className="widget-numbers">368</div>
@@ -480,10 +482,12 @@ class BasicExample extends Component {
                         </div>
                       </div>
                       <div className="widget-progress-wrapper">
-                        <Progress className="progress-bar-xs progress-bar-animated-alt" color="danger" value="85"/>
-                        <div className="progress-sub-label">
-                          Monthly Subscribers
-                        </div>
+                        <Progress
+                          className="progress-bar-xs progress-bar-animated-alt"
+                          color="danger"
+                          value="85"
+                        />
+                        <div className="progress-sub-label">Monthly Subscribers</div>
                       </div>
                     </div>
                   </div>
@@ -494,9 +498,7 @@ class BasicExample extends Component {
                       <div className="widget-chart-content text-white">
                         <div className="widget-chart-flex">
                           <div className="widget-title">Clients</div>
-                          <div className="widget-subtitle text-white opacity-7">
-                            Returning
-                          </div>
+                          <div className="widget-subtitle text-white opacity-7">Returning</div>
                         </div>
                         <div className="widget-chart-flex">
                           <div className="widget-numbers">
@@ -510,10 +512,12 @@ class BasicExample extends Component {
                         </div>
                       </div>
                       <div className="widget-progress-wrapper">
-                        <Progress className="progress-bar-sm progress-bar-animated" color="warning" value="47"/>
-                        <div className="progress-sub-label text-white">
-                          Successful Payments
-                        </div>
+                        <Progress
+                          className="progress-bar-sm progress-bar-animated"
+                          color="warning"
+                          value="47"
+                        />
+                        <div className="progress-sub-label text-white">Successful Payments</div>
                       </div>
                     </div>
                   </div>
@@ -524,9 +528,7 @@ class BasicExample extends Component {
                       <div className="widget-chart-content text-white">
                         <div className="widget-chart-flex">
                           <div className="widget-title">Reports</div>
-                          <div className="widget-subtitle text-white">
-                            Bugs Fixed
-                          </div>
+                          <div className="widget-subtitle text-white">Bugs Fixed</div>
                         </div>
                         <div className="widget-chart-flex">
                           <div className="widget-numbers text-warning">1621</div>
@@ -537,10 +539,8 @@ class BasicExample extends Component {
                         </div>
                       </div>
                       <div className="widget-progress-wrapper">
-                        <Progress className="progress-bar-xs" color="primary" value="91"/>
-                        <div className="progress-sub-label text-white">
-                          Severe Reports
-                        </div>
+                        <Progress className="progress-bar-xs" color="primary" value="91" />
+                        <div className="progress-sub-label text-white">Severe Reports</div>
                       </div>
                     </div>
                   </div>
@@ -551,9 +551,7 @@ class BasicExample extends Component {
                       <div className="widget-chart-content text-white">
                         <div className="widget-chart-flex">
                           <div className="widget-title opacity-5">Sales</div>
-                          <div className="widget-subtitle opacity-5 text-white">
-                            Monthly Goals
-                          </div>
+                          <div className="widget-subtitle opacity-5 text-white">Monthly Goals</div>
                         </div>
                         <div className="widget-chart-flex">
                           <div className="widget-numbers">
@@ -567,10 +565,12 @@ class BasicExample extends Component {
                         </div>
                       </div>
                       <div className="widget-progress-wrapper">
-                        <Progress className="progress-bar-xs progress-bar-animated-alt" color="warning" value="65"/>
-                        <div className="progress-sub-label text-white">
-                          YoY Growth
-                        </div>
+                        <Progress
+                          className="progress-bar-xs progress-bar-animated-alt"
+                          color="warning"
+                          value="65"
+                        />
+                        <div className="progress-sub-label text-white">YoY Growth</div>
                       </div>
                     </div>
                   </div>
@@ -581,9 +581,7 @@ class BasicExample extends Component {
                       <div className="widget-chart-content text-white">
                         <div className="widget-chart-flex">
                           <div className="widget-title opacity-5">Payments</div>
-                          <div className="widget-subtitle opacity-5 text-white">
-                            Totals
-                          </div>
+                          <div className="widget-subtitle opacity-5 text-white">Totals</div>
                         </div>
                         <div className="widget-chart-flex">
                           <div className="widget-numbers">
@@ -597,10 +595,12 @@ class BasicExample extends Component {
                         </div>
                       </div>
                       <div className="widget-progress-wrapper">
-                        <Progress className="progress-bar-xs progress-bar-animated-alt" color="info" value="65"/>
-                        <div className="progress-sub-label text-white">
-                          YoY Growth
-                        </div>
+                        <Progress
+                          className="progress-bar-xs progress-bar-animated-alt"
+                          color="info"
+                          value="65"
+                        />
+                        <div className="progress-sub-label text-white">YoY Growth</div>
                       </div>
                     </div>
                   </div>

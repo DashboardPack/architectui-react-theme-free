@@ -1,12 +1,12 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment } from 'react';
 
-import { Button, Input, UncontrolledTooltip } from "reactstrap";
+import { Button, Input, UncontrolledTooltip } from 'reactstrap';
 
-import { toast, Slide } from "react-toastify";
+import { toast, Slide } from 'react-toastify';
 
-import { faBatteryThreeQuarters } from "@fortawesome/free-solid-svg-icons";
+import { faBatteryThreeQuarters } from '@fortawesome/free-solid-svg-icons';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class TitleComponent1 extends Component {
   state = {
@@ -21,12 +21,12 @@ export default class TitleComponent1 extends Component {
   }
 
   notify22 = () =>
-    (this.toastId = toast("You can add whatever element in this section.", {
+    (this.toastId = toast('You can add whatever element in this section.', {
       transition: Slide,
       closeButton: true,
       autoClose: 5000,
-      position: "bottom-center",
-      type: "default",
+      position: 'bottom-center',
+      type: 'default',
     }));
 
   render() {
@@ -43,7 +43,7 @@ export default class TitleComponent1 extends Component {
         <Button onClick={this.notify22} color="dark" id="Tooltip-123">
           <FontAwesomeIcon icon={faBatteryThreeQuarters} />
         </Button>
-        <UncontrolledTooltip placement="left" target={"Tooltip-123"}>
+        <UncontrolledTooltip placement="left" target={'Tooltip-123'}>
           Show a Toastify notification example!
         </UncontrolledTooltip>
       </Fragment>

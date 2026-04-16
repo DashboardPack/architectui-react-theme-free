@@ -1,7 +1,6 @@
-import React, { Fragment } from "react";
-import { connect } from "react-redux";
+import { Fragment } from 'react';
 
-const AppFooter = ({ enableFixedFooter }) => {
+const AppFooter = () => {
   return (
     <Fragment>
       <div className="app-wrapper-footer">
@@ -10,18 +9,18 @@ const AppFooter = ({ enableFixedFooter }) => {
             <div className="app-footer-left">
               <ul className="nav">
                 <li className="nav-item me-3">
-                  <button 
-                    type="button" 
-                    className="nav-link btn btn-link p-0 border-0" 
+                  <button
+                    type="button"
+                    className="nav-link btn btn-link p-0 border-0"
                     style={{ background: 'none', color: 'inherit', textDecoration: 'none' }}
                   >
                     Footer Link 1
                   </button>
                 </li>
                 <li className="nav-item me-3">
-                  <button 
-                    type="button" 
-                    className="nav-link btn btn-link p-0 border-0" 
+                  <button
+                    type="button"
+                    className="nav-link btn btn-link p-0 border-0"
                     style={{ background: 'none', color: 'inherit', textDecoration: 'none' }}
                   >
                     Footer Link 2
@@ -32,9 +31,9 @@ const AppFooter = ({ enableFixedFooter }) => {
             <div className="app-footer-right">
               <ul className="nav">
                 <li className="nav-item me-3">
-                  <button 
-                    type="button" 
-                    className="nav-link btn btn-link p-0 border-0" 
+                  <button
+                    type="button"
+                    className="nav-link btn btn-link p-0 border-0"
                     style={{ background: 'none', color: 'inherit', textDecoration: 'none' }}
                   >
                     Footer Link 3
@@ -61,8 +60,4 @@ const AppFooter = ({ enableFixedFooter }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  enableFixedFooter: state.ThemeOptions.enableFixedFooter,
-});
-
-export default connect(mapStateToProps)(AppFooter);
+export default AppFooter;

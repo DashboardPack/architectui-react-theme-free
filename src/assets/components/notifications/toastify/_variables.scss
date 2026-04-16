@@ -4,7 +4,6 @@ $rt-toast-background: #ffffff !default;
 $rt-toast-min-height: 54px !default;
 $rt-toast-max-height: 800px !default;
 
-
 $rt-color-default: #fff !default;
 $rt-color-info: $info !default;
 $rt-color-success: $success !default;
@@ -13,7 +12,6 @@ $rt-color-error: $danger !default;
 
 $rt-color-progress-default: $primary !default;
 
-$rt-mobile: "only screen and (max-width : 480px)" !default;
+$rt-mobile: 'only screen and (max-width : 480px)' !default;
 $rt-font-family: sans-serif !default;
 $rt-z-index: 9999 !default;
-

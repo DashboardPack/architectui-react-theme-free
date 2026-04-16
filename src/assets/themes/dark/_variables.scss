@@ -1,5 +1,5 @@
-@use "sass:math";
-@use "sass:map";
+@use 'sass:math';
+@use 'sass:map';
 
 // GENERIC
 
@@ -21,27 +21,27 @@ $gray-200: #e9ecef;
 $gray-300: #dee2e6;
 $gray-400: #ced4da;
 $gray-500: #999;
-$gray-600: #7A8288;
-$gray-700: #52575C;
-$gray-800: #3A3F44;
-$gray-900: #272B30;
+$gray-600: #7a8288;
+$gray-700: #52575c;
+$gray-800: #3a3f44;
+$gray-900: #272b30;
 $black: #000;
 
 $grays: ();
 
 $grays: map.merge(
-                (
-                        "100": $gray-100,
-                        "200": $gray-200,
-                        "300": $gray-300,
-                        "400": $gray-400,
-                        "500": $gray-500,
-                        "600": $gray-600,
-                        "700": $gray-700,
-                        "800": $gray-800,
-                        "900": $gray-900
-                ),
-                $grays
+  (
+    '100': $gray-100,
+    '200': $gray-200,
+    '300': $gray-300,
+    '400': $gray-400,
+    '500': $gray-500,
+    '600': $gray-600,
+    '700': $gray-700,
+    '800': $gray-800,
+    '900': $gray-900,
+  ),
+  $grays
 );
 
 //--#{$color}
@@ -72,19 +72,19 @@ $alt: $purple;
 $theme-colors: ();
 
 $theme-colors: map.merge(
-                (
-                        "primary": $primary,
-                        "secondary": $secondary,
-                        "success": $success,
-                        "info": $info,
-                        "warning": $warning,
-                        "danger": $danger,
-                        "light": $light,
-                        "dark": $dark,
-                        "focus": $focus,
-                        "alternate": $alt
-                ),
-                $theme-colors
+  (
+    'primary': $primary,
+    'secondary': $secondary,
+    'success': $success,
+    'info': $info,
+    'warning': $warning,
+    'danger': $danger,
+    'light': $light,
+    'dark': $dark,
+    'focus': $focus,
+    'alternate': $alt,
+  ),
+  $theme-colors
 );
 
 // BOOTSTRAP OVERWRITES
@@ -96,7 +96,11 @@ $font-size-lg: ($font-size-base * 1.35);
 $font-size-sm: ($font-size-base * 1.1);
 $font-size-xs: math.div($font-size-base, 1.1);
 
-$btn-transition: color .15s, background-color .15s, border-color .15s, box-shadow .15s;
+$btn-transition:
+  color 0.15s,
+  background-color 0.15s,
+  border-color 0.15s,
+  box-shadow 0.15s;
 $btn-focus-width: 0;
 $btn-focus-box-shadow: none;
 
@@ -105,23 +109,36 @@ $pagination-focus-box-shadow: none;
 $body-color: $gray-700;
 
 $card-cap-bg: $white;
-$card-border-color: rgba(shade-color($primary, 25%), .125);
+$card-border-color: rgba(shade-color($primary, 25%), 0.125);
 
 $dropdown-min-width: 15rem;
 $dropdown-link-hover-bg: #e9ecef;
-$dropdown-item-padding-y: .4rem;
-$dropdown-padding-y: .65rem;
+$dropdown-item-padding-y: 0.4rem;
+$dropdown-padding-y: 0.65rem;
 
-$box-shadow-default: 0 0.46875rem 2.1875rem rgba(shade-color($primary, 50%), .03), 0 0.9375rem 1.40625rem rgba(shade-color($primary, 50%), .03), 0 0.25rem 0.53125rem rgba(shade-color($primary, 50%), .05), 0 0.125rem 0.1875rem rgba(shade-color($primary, 50%), .03);
+$box-shadow-default:
+  0 0.46875rem 2.1875rem rgba(shade-color($primary, 50%), 0.03),
+  0 0.9375rem 1.40625rem rgba(shade-color($primary, 50%), 0.03),
+  0 0.25rem 0.53125rem rgba(shade-color($primary, 50%), 0.05),
+  0 0.125rem 0.1875rem rgba(shade-color($primary, 50%), 0.03);
 
-$box-shadow-default-right: 0.46875rem 0 2.1875rem rgba(shade-color($primary, 50%), .03),
-0.9375rem 0 1.40625rem rgba(shade-color($primary, 50%), .03),
-0.25rem 0 0.53125rem rgba(shade-color($primary, 50%), .05),
-0.125rem 0 0.1875rem rgba(shade-color($primary, 50%), .03);
+$box-shadow-default-right:
+  0.46875rem 0 2.1875rem rgba(shade-color($primary, 50%), 0.03),
+  0.9375rem 0 1.40625rem rgba(shade-color($primary, 50%), 0.03),
+  0.25rem 0 0.53125rem rgba(shade-color($primary, 50%), 0.05),
+  0.125rem 0 0.1875rem rgba(shade-color($primary, 50%), 0.03);
 
-$box-shadow-default-inverse: 0 -0.46875rem 2.1875rem rgba(shade-color($primary, 50%), .03), 0 -0.9375rem 1.40625rem rgba(shade-color($primary, 50%), .03), 0 -0.25rem 0.53125rem rgba(shade-color($primary, 50%), .05), 0 -0.125rem 0.1875rem rgba(shade-color($primary, 50%), .03);
+$box-shadow-default-inverse:
+  0 -0.46875rem 2.1875rem rgba(shade-color($primary, 50%), 0.03),
+  0 -0.9375rem 1.40625rem rgba(shade-color($primary, 50%), 0.03),
+  0 -0.25rem 0.53125rem rgba(shade-color($primary, 50%), 0.05),
+  0 -0.125rem 0.1875rem rgba(shade-color($primary, 50%), 0.03);
 
-$box-shadow-lg-default: 0 0.76875rem 2.4875rem rgba($gray-800, .3), 0 1.3375rem 1.70625rem rgba($gray-800, .3), 0 0.55rem 0.53125rem rgba(shade-color($gray-800, 50%), .05), 0 0.225rem 0.4375rem rgba($gray-800, .3);
+$box-shadow-lg-default:
+  0 0.76875rem 2.4875rem rgba($gray-800, 0.3),
+  0 1.3375rem 1.70625rem rgba($gray-800, 0.3),
+  0 0.55rem 0.53125rem rgba(shade-color($gray-800, 50%), 0.05),
+  0 0.225rem 0.4375rem rgba($gray-800, 0.3);
 
 $form-check-input-margin-y: 0.3rem;
 
@@ -129,14 +146,14 @@ $input-group-addon-bg: tint-color($dropdown-link-hover-bg, 3%);
 
 // Tables
 
-$table-accent-bg: rgba($black, .03);
+$table-accent-bg: rgba($black, 0.03);
 $table-hover-bg: $dropdown-link-hover-bg;
 $table-active-bg: $table-hover-bg;
 $table-border-color: $gray-200;
 $table-head-bg: $gray-100;
 $table-head-color: $gray-600;
-$table-cell-padding: .55rem;
-$table-cell-padding-sm: .3rem;
+$table-cell-padding: 0.55rem;
+$table-cell-padding-sm: 0.3rem;
 
 // Popovers
 
@@ -149,11 +166,11 @@ $popover-header-bg: $white;
 
 $link-color: map-get($theme-colors, 'primary');
 $component-active-bg: map-get($theme-colors, 'primary');
-$custom-control-indicator-checked-disabled-bg: rgba(map-get($theme-colors, 'primary'), .5);
+$custom-control-indicator-checked-disabled-bg: rgba(map-get($theme-colors, 'primary'), 0.5);
 $form-feedback-valid-color: map-get($theme-colors, 'success');
 $form-feedback-invalid-color: map-get($theme-colors, 'danger');
 $progress-bar-bg: map-get($theme-colors, 'primary');
-$input-btn-focus-color: rgba($component-active-bg, .25);
+$input-btn-focus-color: rgba($component-active-bg, 0.25);
 $input-focus-border-color: tint-color($component-active-bg, 25%);
 $custom-control-indicator-checked-bg: $component-active-bg;
 $custom-control-indicator-active-bg: tint-color($component-active-bg, 35%);
@@ -165,12 +182,16 @@ $nav-pills-link-active-bg: $component-active-bg;
 $pagination-active-bg: $component-active-bg;
 $list-group-active-bg: $component-active-bg;
 
-$list-group-border-color: rgba($primary, .08);
+$list-group-border-color: rgba($primary, 0.08);
 
 // Mixins
 
 @mixin box-shadow-architect($shadow) {
-  box-shadow: 0 0.66875rem 2.3875rem rgba($shadow, .03), 0 1.1375rem 1.60625rem rgba($shadow, .03), 0 0.45rem 0.73125rem rgba($shadow, .05), 0 0.325rem 0.3875rem rgba($shadow, .03);
+  box-shadow:
+    0 0.66875rem 2.3875rem rgba($shadow, 0.03),
+    0 1.1375rem 1.60625rem rgba($shadow, 0.03),
+    0 0.45rem 0.73125rem rgba($shadow, 0.05),
+    0 0.325rem 0.3875rem rgba($shadow, 0.03);
 }
 
 // Border
@@ -190,11 +211,11 @@ $list-group-border-color: rgba($primary, .08);
 // Background
 
 @each $color, $value in $theme-colors {
-  @include bg-variant(".bg-#{$color}", $value);
+  @include bg-variant('.bg-#{$color}', $value);
 }
 
 @if $enable-gradients {
   @each $color, $value in $theme-colors {
-    @include bg-gradient-variant(".bg-gradient-#{$color}", $value);
+    @include bg-gradient-variant('.bg-gradient-#{$color}', $value);
   }
 }

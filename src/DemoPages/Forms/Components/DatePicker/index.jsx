@@ -1,31 +1,39 @@
-import React, { Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
-import PageTitle from "../../../../Layout/AppMain/PageTitle";
+import React, { Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
+import PageTitle from '../../../../Layout/AppMain/PageTitle';
 
-import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
 // Examples
 
-import FormDatePicker1 from "./Examples/example1";
-import FormDatePicker2 from "./Examples/example2";
-import FormDatePicker3 from "./Examples/example3";
-import FormDatePicker4 from "./Examples/example4";
-import FormDatePicker5 from "./Examples/example5";
-import FormDatePicker6 from "./Examples/example6";
-import FormDatePicker7 from "./Examples/example7";
-import FormDatePicker8 from "./Examples/example8";
-import FormDateRangePicker from "./Examples/DateRangePicker";
+import FormDatePicker1 from './Examples/example1';
+import FormDatePicker2 from './Examples/example2';
+import FormDatePicker3 from './Examples/example3';
+import FormDatePicker4 from './Examples/example4';
+import FormDatePicker5 from './Examples/example5';
+import FormDatePicker6 from './Examples/example6';
+import FormDatePicker7 from './Examples/example7';
+import FormDatePicker8 from './Examples/example8';
+import FormDateRangePicker from './Examples/DateRangePicker';
 
 class FormDatePicker extends React.Component {
   render() {
     return (
       <Fragment>
-        <PageTitle heading="Datepicker"
+        <PageTitle
+          heading="Datepicker"
           subheading="Build beautiful datepickers perfectly integrated in the general style of the application."
-          icon="pe-7s-battery icon-gradient bg-plum-plate"/>
+          icon="pe-7s-battery icon-gradient bg-plum-plate"
+        />
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={1500} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={1500}
+            enter={false}
+            exit={false}
+          >
             <Row>
               <Col md="6">
                 <Card className="main-card mb-3">

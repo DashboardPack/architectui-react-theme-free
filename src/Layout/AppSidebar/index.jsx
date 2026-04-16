@@ -1,79 +1,71 @@
-import React, { Component, Fragment } from "react";
-import { connect } from "react-redux";
-import cx from "classnames";
+import { Fragment } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import cx from 'classnames';
 
-import Nav from "../AppNav/VerticalNavWrapper";
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
+import Nav from '../AppNav/VerticalNavWrapper';
+import HeaderLogo from '../AppLogo';
 import { CSSTransition, TransitionGroup } from '../../utils/TransitionWrapper';
+import { setEnableMobileMenu } from '../../reducers/ThemeOptions';
 
-import PerfectScrollbar from "react-perfect-scrollbar";
-import HeaderLogo from "../AppLogo";
+export default function AppSidebar() {
+  const enableBackgroundImage = useSelector((s) => s.ThemeOptions.enableBackgroundImage);
+  const enableSidebarShadow = useSelector((s) => s.ThemeOptions.enableSidebarShadow);
+  const enableMobileMenu = useSelector((s) => s.ThemeOptions.enableMobileMenu);
+  const backgroundColor = useSelector((s) => s.ThemeOptions.backgroundColor);
+  const backgroundImage = useSelector((s) => s.ThemeOptions.backgroundImage);
+  const backgroundImageOpacity = useSelector((s) => s.ThemeOptions.backgroundImageOpacity);
+  const dispatch = useDispatch();
 
-import { setEnableMobileMenu } from "../../reducers/ThemeOptions";
+  const toggleMobileSidebar = () => dispatch(setEnableMobileMenu(!enableMobileMenu));
 
-class AppSidebar extends Component {
-  state = {
-    items: [
-      { id: 1, text: 'Buy eggs' },
-    ]
-  };
-
-  toggleMobileSidebar = () => {
-    let { enableMobileMenu, setEnableMobileMenu } = this.props;
-    setEnableMobileMenu(!enableMobileMenu);
-  };
-
-  render() {
-    let {
-      backgroundColor,
-      enableBackgroundImage,
-      enableSidebarShadow,
-      backgroundImage,
-      backgroundImageOpacity,
-    } = this.props;
-
-    return (
-      <Fragment>
-        <div className="sidebar-mobile-overlay" onClick={this.toggleMobileSidebar}/>
-        <TransitionGroup>
-          <CSSTransition component="div"
-            className={cx("app-sidebar", backgroundColor, {
-              "sidebar-shadow": enableSidebarShadow,
-            })}
-             appear={true} enter={false} exit={false} timeout={500}>
-            <div>
-              <HeaderLogo />
-              <PerfectScrollbar>
-                <div className="app-sidebar__inner">
-                  <Nav />
-                </div>
-              </PerfectScrollbar>
-              <div className={cx("app-sidebar-bg", backgroundImageOpacity)}
-                style={{
-                  backgroundImage: enableBackgroundImage
-                    ? "url(" + backgroundImage + ")"
-                    : null,
-                }}>
+  return (
+    <Fragment>
+      <div
+        className="sidebar-mobile-overlay"
+        role="button"
+        tabIndex={enableMobileMenu ? 0 : -1}
+        aria-label="Close navigation menu"
+        aria-hidden={!enableMobileMenu}
+        onClick={toggleMobileSidebar}
+        onKeyDown={(e) => {
+          if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleMobileSidebar();
+          }
+        }}
+      />
+      <TransitionGroup>
+        <CSSTransition
+          component="div"
+          className={cx('app-sidebar', backgroundColor, {
+            'sidebar-shadow': enableSidebarShadow,
+          })}
+          id="app-sidebar"
+          role="navigation"
+          aria-label="Primary"
+          appear={true}
+          enter={false}
+          exit={false}
+          timeout={500}
+        >
+          <div>
+            <HeaderLogo />
+            <PerfectScrollbar>
+              <div className="app-sidebar__inner">
+                <Nav />
               </div>
-            </div>
-          </CSSTransition>
-        </TransitionGroup>
-      </Fragment>
-    );
-  }
+            </PerfectScrollbar>
+            <div
+              className={cx('app-sidebar-bg', backgroundImageOpacity)}
+              style={{
+                backgroundImage: enableBackgroundImage ? `url(${backgroundImage})` : null,
+              }}
+            />
+          </div>
+        </CSSTransition>
+      </TransitionGroup>
+    </Fragment>
+  );
 }
-
-const mapStateToProps = (state) => ({
-  enableBackgroundImage: state.ThemeOptions.enableBackgroundImage,
-  enableSidebarShadow: state.ThemeOptions.enableSidebarShadow,
-  enableMobileMenu: state.ThemeOptions.enableMobileMenu,
-  backgroundColor: state.ThemeOptions.backgroundColor,
-  backgroundImage: state.ThemeOptions.backgroundImage,
-  backgroundImageOpacity: state.ThemeOptions.backgroundImageOpacity,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  setEnableMobileMenu: (enable) => dispatch(setEnableMobileMenu(enable)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(AppSidebar);

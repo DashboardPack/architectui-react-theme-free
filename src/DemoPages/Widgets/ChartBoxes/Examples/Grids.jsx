@@ -1,5 +1,5 @@
-import React, { Component, Fragment } from "react";
-import { CSSTransition, TransitionGroup  } from '../../../../utils/TransitionWrapper';
+import React, { Component, Fragment } from 'react';
+import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
 import {
   Row,
   Col,
@@ -12,34 +12,34 @@ import {
   Card,
   NavLink,
   Container,
-} from "reactstrap";
+} from 'reactstrap';
 
-import { AreaChart, Area, ResponsiveContainer } from "recharts";
+import { AreaChart, Area, ResponsiveContainer } from 'recharts';
 
 import {
   faAngleUp,
   faArrowLeft,
   faArrowRight,
   faEllipsisH,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 
-import bg1 from "../../../../assets/utils/images/dropdown-header/abstract1.jpg";
+import bg1 from '../../../../assets/utils/images/dropdown-header/abstract1.jpg';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const data = [
-  { name: "Page A", uv: 4000, pv: 2400, amt: 2400 },
-  { name: "Page B", uv: 3000, pv: 1398, amt: 2210 },
-  { name: "Page C", uv: 2000, pv: 9800, amt: 2290 },
-  { name: "Page D", uv: 2780, pv: 3908, amt: 2000 },
-  { name: "Page E", uv: 1890, pv: 4800, amt: 2181 },
-  { name: "Page F", uv: 2390, pv: 3800, amt: 2500 },
-  { name: "Page G", uv: 3490, pv: 4300, amt: 2100 },
-  { name: "Page C", uv: 2000, pv: 6800, amt: 2290 },
-  { name: "Page D", uv: 4780, pv: 7908, amt: 2000 },
-  { name: "Page E", uv: 2890, pv: 9800, amt: 2181 },
-  { name: "Page F", uv: 1390, pv: 3800, amt: 1500 },
-  { name: "Page G", uv: 3490, pv: 4300, amt: 2100 },
+  { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
+  { name: 'Page B', uv: 3000, pv: 1398, amt: 2210 },
+  { name: 'Page C', uv: 2000, pv: 9800, amt: 2290 },
+  { name: 'Page D', uv: 2780, pv: 3908, amt: 2000 },
+  { name: 'Page E', uv: 1890, pv: 4800, amt: 2181 },
+  { name: 'Page F', uv: 2390, pv: 3800, amt: 2500 },
+  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
+  { name: 'Page C', uv: 2000, pv: 6800, amt: 2290 },
+  { name: 'Page D', uv: 4780, pv: 7908, amt: 2000 },
+  { name: 'Page E', uv: 2890, pv: 9800, amt: 2181 },
+  { name: 'Page F', uv: 1390, pv: 3800, amt: 1500 },
+  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
 ];
 
 class GridsExample extends Component {
@@ -47,8 +47,14 @@ class GridsExample extends Component {
     return (
       <Fragment>
         <TransitionGroup>
-          <CSSTransition component="div" classNames="TabsAnimation" appear={true}
-            timeout={0} enter={false} exit={false}>
+          <CSSTransition
+            component="div"
+            classNames="TabsAnimation"
+            appear={true}
+            timeout={0}
+            enter={false}
+            exit={false}
+          >
             <Container fluid>
               <Row>
                 <Col lg="5">
@@ -93,15 +99,15 @@ class GridsExample extends Component {
                                 <DropdownMenu className="dropdown-menu-lg dropdown-menu-right">
                                   <div className="dropdown-menu-header">
                                     <div className="dropdown-menu-header-inner bg-primary">
-                                      <div className="menu-header-image"
+                                      <div
+                                        className="menu-header-image"
                                         style={{
-                                          backgroundImage: "url(" + bg1 + ")",
-                                        }}/>
+                                          backgroundImage: 'url(' + bg1 + ')',
+                                        }}
+                                      />
                                       <div className="menu-header-content">
                                         <div>
-                                          <h5 className="menu-header-title">
-                                            Settings
-                                          </h5>
+                                          <h5 className="menu-header-title">Settings</h5>
                                           <h6 className="menu-header-subtitle">
                                             Manage all of your options
                                           </h6>
@@ -110,37 +116,27 @@ class GridsExample extends Component {
                                     </div>
                                   </div>
                                   <Nav vertical>
-                                    <NavItem className="nav-item-header">
-                                      Activity
-                                    </NavItem>
+                                    <NavItem className="nav-item-header">Activity</NavItem>
                                     <NavItem>
                                       <NavLink href="#">
                                         Chat
-                                        <div className="ms-auto badge rounded-pill bg-info">
-                                          8
-                                        </div>
+                                        <div className="ms-auto badge rounded-pill bg-info">8</div>
                                       </NavLink>
                                     </NavItem>
                                     <NavItem>
                                       <NavLink href="#">Recover Password</NavLink>
                                     </NavItem>
-                                    <NavItem className="nav-item-header">
-                                      My Account
-                                    </NavItem>
+                                    <NavItem className="nav-item-header">My Account</NavItem>
                                     <NavItem>
                                       <NavLink href="#">
                                         Settings
-                                        <div className="ms-auto badge bg-success">
-                                          New
-                                        </div>
+                                        <div className="ms-auto badge bg-success">New</div>
                                       </NavLink>
                                     </NavItem>
                                     <NavItem>
                                       <NavLink href="#">
                                         Messages
-                                        <div className="ms-auto badge bg-warning">
-                                          512
-                                        </div>
+                                        <div className="ms-auto badge bg-warning">512</div>
                                       </NavLink>
                                     </NavItem>
                                     <NavItem>
@@ -148,7 +144,11 @@ class GridsExample extends Component {
                                     </NavItem>
                                     <NavItem className="nav-item-divider" />
                                     <NavItem className="nav-item-btn">
-                                      <Button size="sm" className="btn-wide btn-shadow" color="danger">
+                                      <Button
+                                        size="sm"
+                                        className="btn-wide btn-shadow"
+                                        color="danger"
+                                      >
                                         Cancel
                                       </Button>
                                     </NavItem>
@@ -175,9 +175,7 @@ class GridsExample extends Component {
                               <i className="lnr-laptop-phone text-danger" />
                             </div>
                             <div className="widget-numbers">5.82k</div>
-                            <div className="widget-subheading">
-                              Reports Submitted
-                            </div>
+                            <div className="widget-subheading">Reports Submitted</div>
                             <div className="widget-description text-primary">
                               <span className="ps-1">54.1%</span>
                               <FontAwesomeIcon icon={faAngleUp} />
@@ -225,9 +223,7 @@ class GridsExample extends Component {
                               <i className="lnr-laptop-phone text-danger" />
                             </div>
                             <div className="widget-numbers">5.82k</div>
-                            <div className="widget-subheading">
-                              Reports Submitted
-                            </div>
+                            <div className="widget-subheading">Reports Submitted</div>
                             <div className="widget-description text-primary">
                               <span className="ps-1">54.1%</span>
                               <FontAwesomeIcon icon={faAngleUp} />
@@ -250,14 +246,21 @@ class GridsExample extends Component {
                             </div>
                             <div className="widget-chart-wrapper opacity-4">
                               <ResponsiveContainer width="100%" aspect={3.0 / 1.0}>
-                                <AreaChart data={data}
+                                <AreaChart
+                                  data={data}
                                   margin={{
                                     top: 0,
                                     right: 0,
                                     left: 0,
                                     bottom: 0,
-                                  }}>
-                                  <Area type="monotoneX" dataKey="uv" stroke="#fd7e14" fill="#ffb87d"/>
+                                  }}
+                                >
+                                  <Area
+                                    type="monotoneX"
+                                    dataKey="uv"
+                                    stroke="#fd7e14"
+                                    fill="#ffb87d"
+                                  />
                                 </AreaChart>
                               </ResponsiveContainer>
                             </div>
@@ -320,9 +323,7 @@ class GridsExample extends Component {
                               <i className="lnr-laptop-phone text-danger" />
                             </div>
                             <div className="widget-numbers">5.82k</div>
-                            <div className="widget-subheading">
-                              Reports Submitted
-                            </div>
+                            <div className="widget-subheading">Reports Submitted</div>
                             <div className="widget-description text-primary">
                               <span className="ps-1">54.1%</span>
                               <FontAwesomeIcon icon={faAngleUp} />
@@ -339,16 +340,15 @@ class GridsExample extends Component {
                                 <DropdownMenu className="dropdown-menu-lg dropdown-menu-right">
                                   <div className="dropdown-menu-header">
                                     <div className="dropdown-menu-header-inner bg-primary">
-                                      <div className="menu-header-image"
+                                      <div
+                                        className="menu-header-image"
                                         style={{
-                                          backgroundImage: "url(" + bg1 + ")",
-                                        }}>
-                                      </div>
+                                          backgroundImage: 'url(' + bg1 + ')',
+                                        }}
+                                      ></div>
                                       <div className="menu-header-content">
                                         <div>
-                                          <h5 className="menu-header-title">
-                                            Settings
-                                          </h5>
+                                          <h5 className="menu-header-title">Settings</h5>
                                           <h6 className="menu-header-subtitle">
                                             Manage all of your options
                                           </h6>
@@ -357,37 +357,27 @@ class GridsExample extends Component {
                                     </div>
                                   </div>
                                   <Nav vertical>
-                                    <NavItem className="nav-item-header">
-                                      Activity
-                                    </NavItem>
+                                    <NavItem className="nav-item-header">Activity</NavItem>
                                     <NavItem>
                                       <NavLink href="#">
                                         Chat
-                                        <div className="ms-auto badge rounded-pill bg-info">
-                                          8
-                                        </div>
+                                        <div className="ms-auto badge rounded-pill bg-info">8</div>
                                       </NavLink>
                                     </NavItem>
                                     <NavItem>
                                       <NavLink href="#">Recover Password</NavLink>
                                     </NavItem>
-                                    <NavItem className="nav-item-header">
-                                      My Account
-                                    </NavItem>
+                                    <NavItem className="nav-item-header">My Account</NavItem>
                                     <NavItem>
                                       <NavLink href="#">
                                         Settings
-                                        <div className="ms-auto badge bg-success">
-                                          New
-                                        </div>
+                                        <div className="ms-auto badge bg-success">New</div>
                                       </NavLink>
                                     </NavItem>
                                     <NavItem>
                                       <NavLink href="#">
                                         Messages
-                                        <div className="ms-auto badge bg-warning">
-                                          512
-                                        </div>
+                                        <div className="ms-auto badge bg-warning">512</div>
                                       </NavLink>
                                     </NavItem>
                                     <NavItem>
@@ -395,7 +385,11 @@ class GridsExample extends Component {
                                     </NavItem>
                                     <NavItem className="nav-item-divider" />
                                     <NavItem className="nav-item-btn">
-                                      <Button size="sm" className="btn-wide btn-shadow" color="danger">
+                                      <Button
+                                        size="sm"
+                                        className="btn-wide btn-shadow"
+                                        color="danger"
+                                      >
                                         Cancel
                                       </Button>
                                     </NavItem>
@@ -422,9 +416,7 @@ class GridsExample extends Component {
                               <i className="lnr-laptop-phone text-danger" />
                             </div>
                             <div className="widget-numbers">5.82k</div>
-                            <div className="widget-subheading">
-                              Reports Submitted
-                            </div>
+                            <div className="widget-subheading">Reports Submitted</div>
                             <div className="widget-description text-primary">
                               <span className="ps-1">54.1%</span>
                               <FontAwesomeIcon icon={faAngleUp} />
@@ -486,9 +478,7 @@ class GridsExample extends Component {
                               <i className="lnr-laptop-phone text-danger" />
                             </div>
                             <div className="widget-numbers">5.82k</div>
-                            <div className="widget-subheading">
-                              Reports Submitted
-                            </div>
+                            <div className="widget-subheading">Reports Submitted</div>
                             <div className="widget-description text-primary">
                               <span className="ps-1">54.1%</span>
                               <FontAwesomeIcon icon={faAngleUp} />
@@ -523,9 +513,7 @@ class GridsExample extends Component {
                               <i className="lnr-laptop-phone text-danger" />
                             </div>
                             <div className="widget-numbers">5.82k</div>
-                            <div className="widget-subheading">
-                              Reports Submitted
-                            </div>
+                            <div className="widget-subheading">Reports Submitted</div>
                             <div className="widget-description text-primary">
                               <span className="ps-1">54.1%</span>
                               <FontAwesomeIcon icon={faAngleUp} />

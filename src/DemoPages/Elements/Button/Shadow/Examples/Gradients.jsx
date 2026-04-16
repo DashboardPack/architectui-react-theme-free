@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from "react";
-import { Button, Container, ButtonGroup } from "reactstrap";
+import React, { Component, Fragment } from 'react';
+import { Button, Container, ButtonGroup } from 'reactstrap';
 
-import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
 class ButtonsShadowGradients extends Component {
   state = {
@@ -60,39 +60,17 @@ class ButtonsShadowGradients extends Component {
               <Card className="main-card mb-3">
                 <CardBody>
                   <CardTitle>Color States</CardTitle>
-                  <Button className="mb-2 me-2 btn-shadow btn-gradient-primary">
-                    Primary
-                  </Button>
-                  <Button className="mb-2 me-2 btn-shadow btn-gradient-secondary">
-                    Secondary
-                  </Button>
-                  <Button className="mb-2 me-2 btn-shadow btn-gradient-success">
-                    Success
-                  </Button>
-                  <Button className="mb-2 me-2 btn-shadow btn-gradient-info">
-                    Info
-                  </Button>
-                  <Button className="mb-2 me-2 btn-shadow btn-gradient-warning">
-                    Warning
-                  </Button>
-                  <Button className="mb-2 me-2 btn-shadow btn-gradient-danger">
-                    Danger
-                  </Button>
-                  <Button className="mb-2 me-2 btn-shadow btn-gradient-focus">
-                    Focus
-                  </Button>
-                  <Button className="mb-2 me-2 btn-shadow btn-gradient-alternate">
-                    Alt
-                  </Button>
-                  <Button className="mb-2 me-2 btn-shadow btn-gradient-light">
-                    Light
-                  </Button>
-                  <Button className="mb-2 me-2 btn-shadow btn-gradient-dark">
-                    Dark
-                  </Button>
-                  <Button className="mb-2 me-2 btn-shadow btn-gradient-link">
-                    link
-                  </Button>
+                  <Button className="mb-2 me-2 btn-shadow btn-gradient-primary">Primary</Button>
+                  <Button className="mb-2 me-2 btn-shadow btn-gradient-secondary">Secondary</Button>
+                  <Button className="mb-2 me-2 btn-shadow btn-gradient-success">Success</Button>
+                  <Button className="mb-2 me-2 btn-shadow btn-gradient-info">Info</Button>
+                  <Button className="mb-2 me-2 btn-shadow btn-gradient-warning">Warning</Button>
+                  <Button className="mb-2 me-2 btn-shadow btn-gradient-danger">Danger</Button>
+                  <Button className="mb-2 me-2 btn-shadow btn-gradient-focus">Focus</Button>
+                  <Button className="mb-2 me-2 btn-shadow btn-gradient-alternate">Alt</Button>
+                  <Button className="mb-2 me-2 btn-shadow btn-gradient-light">Light</Button>
+                  <Button className="mb-2 me-2 btn-shadow btn-gradient-dark">Dark</Button>
+                  <Button className="mb-2 me-2 btn-shadow btn-gradient-link">link</Button>
                 </CardBody>
               </Card>
             </Col>
@@ -100,28 +78,46 @@ class ButtonsShadowGradients extends Component {
               <Card className="main-card mb-3">
                 <CardBody>
                   <CardTitle>Hover Shadow</CardTitle>
-                  <Button className="mb-2 me-2 btn-shadow-primary btn-gradient-primary" color="primary">
+                  <Button
+                    className="mb-2 me-2 btn-shadow-primary btn-gradient-primary"
+                    color="primary"
+                  >
                     Primary
                   </Button>
-                  <Button className="mb-2 me-2 btn-shadow-secondary btn-gradient-secondary" color="secondary">
+                  <Button
+                    className="mb-2 me-2 btn-shadow-secondary btn-gradient-secondary"
+                    color="secondary"
+                  >
                     Secondary
                   </Button>
-                  <Button className="mb-2 me-2 btn-shadow-success btn-gradient-success" color="success">
+                  <Button
+                    className="mb-2 me-2 btn-shadow-success btn-gradient-success"
+                    color="success"
+                  >
                     Success
                   </Button>
                   <Button className="mb-2 me-2 btn-shadow-info btn-gradient-info" color="info">
                     Info
                   </Button>
-                  <Button className="mb-2 me-2 btn-shadow-warning btn-gradient-warning" color="warning">
+                  <Button
+                    className="mb-2 me-2 btn-shadow-warning btn-gradient-warning"
+                    color="warning"
+                  >
                     Warning
                   </Button>
-                  <Button className="mb-2 me-2 btn-shadow-danger btn-gradient-danger" color="danger">
+                  <Button
+                    className="mb-2 me-2 btn-shadow-danger btn-gradient-danger"
+                    color="danger"
+                  >
                     Danger
                   </Button>
                   <Button className="mb-2 me-2 btn-shadow-focus btn-gradient-focus" color="focus">
                     Focus
                   </Button>
-                  <Button className="mb-2 me-2 btn-shadow-alternate btn-gradient-alternate" color="alternate">
+                  <Button
+                    className="mb-2 me-2 btn-shadow-alternate btn-gradient-alternate"
+                    color="alternate"
+                  >
                     Alt
                   </Button>
                   <Button className="mb-2 me-2 btn-shadow-light btn-gradient-light" color="light">
@@ -237,13 +233,19 @@ class ButtonsShadowGradients extends Component {
                 <CardBody>
                   <CardTitle>Wider</CardTitle>
                   <div className="text-center">
-                    <Button className="btn-wide mb-2 me-2 btn-shadow btn-gradient-primary" size="lg">
+                    <Button
+                      className="btn-wide mb-2 me-2 btn-shadow btn-gradient-primary"
+                      size="lg"
+                    >
                       Wider Large
                     </Button>
                     <Button className="btn-wide mb-2 me-2 btn-shadow btn-gradient-primary">
                       Wider Normal
                     </Button>
-                    <Button className="btn-wide mb-2 me-2 btn-shadow btn-gradient-primary" size="sm">
+                    <Button
+                      className="btn-wide mb-2 me-2 btn-shadow btn-gradient-primary"
+                      size="sm"
+                    >
                       Wider Small
                     </Button>
                   </div>
@@ -255,13 +257,19 @@ class ButtonsShadowGradients extends Component {
                 <CardBody>
                   <CardTitle>Sizing</CardTitle>
                   <div className="text-center">
-                    <Button className="btn-wide mb-2 me-2 btn-shadow btn-gradient-primary" size="lg">
+                    <Button
+                      className="btn-wide mb-2 me-2 btn-shadow btn-gradient-primary"
+                      size="lg"
+                    >
                       Large
                     </Button>
                     <Button className="btn-wide mb-2 me-2 btn-shadow btn-gradient-primary">
                       Normal
                     </Button>
-                    <Button className="btn-wide mb-2 me-2 btn-shadow btn-gradient-primary" size="sm">
+                    <Button
+                      className="btn-wide mb-2 me-2 btn-shadow btn-gradient-primary"
+                      size="sm"
+                    >
                       Small
                     </Button>
                   </div>
@@ -276,44 +284,71 @@ class ButtonsShadowGradients extends Component {
                       <CardTitle>Checkbox Buttons</CardTitle>
                       <div className="text-center">
                         <ButtonGroup size="sm" className="mb-2">
-                          <Button className="btn-shadow btn-gradient-primary" onClick={() => this.onCheckboxBtnClick(1)}
-                            active={this.state.cSelected.includes(1)}>
+                          <Button
+                            className="btn-shadow btn-gradient-primary"
+                            onClick={() => this.onCheckboxBtnClick(1)}
+                            active={this.state.cSelected.includes(1)}
+                          >
                             One
                           </Button>
-                          <Button className="btn-shadow btn-gradient-primary" onClick={() => this.onCheckboxBtnClick(2)}
-                            active={this.state.cSelected.includes(2)}>
+                          <Button
+                            className="btn-shadow btn-gradient-primary"
+                            onClick={() => this.onCheckboxBtnClick(2)}
+                            active={this.state.cSelected.includes(2)}
+                          >
                             Two
                           </Button>
-                          <Button className="btn-shadow btn-gradient-primary" onClick={() => this.onCheckboxBtnClick(3)}
-                            active={this.state.cSelected.includes(3)}>
+                          <Button
+                            className="btn-shadow btn-gradient-primary"
+                            onClick={() => this.onCheckboxBtnClick(3)}
+                            active={this.state.cSelected.includes(3)}
+                          >
                             Three
                           </Button>
                         </ButtonGroup>
                         <ButtonGroup className="mb-2">
-                          <Button className="btn-shadow btn-gradient-warning" onClick={() => this.onCheckboxBtnClick(1)}
-                            active={this.state.cSelected.includes(1)}>
+                          <Button
+                            className="btn-shadow btn-gradient-warning"
+                            onClick={() => this.onCheckboxBtnClick(1)}
+                            active={this.state.cSelected.includes(1)}
+                          >
                             One
                           </Button>
-                          <Button className="btn-shadow btn-gradient-success"
-                            onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>
+                          <Button
+                            className="btn-shadow btn-gradient-success"
+                            onClick={() => this.onCheckboxBtnClick(2)}
+                            active={this.state.cSelected.includes(2)}
+                          >
                             Two
                           </Button>
-                          <Button className="btn-shadow btn-gradient-danger"
-                            onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>
+                          <Button
+                            className="btn-shadow btn-gradient-danger"
+                            onClick={() => this.onCheckboxBtnClick(3)}
+                            active={this.state.cSelected.includes(3)}
+                          >
                             Three
                           </Button>
                         </ButtonGroup>
                         <ButtonGroup size="lg" className="mb-2">
-                          <Button className="btn-shadow btn-gradient-alternate"
-                            onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>
+                          <Button
+                            className="btn-shadow btn-gradient-alternate"
+                            onClick={() => this.onCheckboxBtnClick(1)}
+                            active={this.state.cSelected.includes(1)}
+                          >
                             One
                           </Button>
-                          <Button className="btn-shadow btn-gradient-dark"
-                            onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>
+                          <Button
+                            className="btn-shadow btn-gradient-dark"
+                            onClick={() => this.onCheckboxBtnClick(2)}
+                            active={this.state.cSelected.includes(2)}
+                          >
                             Two
                           </Button>
-                          <Button className="btn-shadow btn-gradient-info"
-                            onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>
+                          <Button
+                            className="btn-shadow btn-gradient-info"
+                            onClick={() => this.onCheckboxBtnClick(3)}
+                            active={this.state.cSelected.includes(3)}
+                          >
                             Three
                           </Button>
                         </ButtonGroup>
@@ -328,44 +363,71 @@ class ButtonsShadowGradients extends Component {
                       <CardTitle>Radio Buttons</CardTitle>
                       <div className="text-center">
                         <ButtonGroup size="sm" className="mb-2">
-                          <Button className="btn-shadow btn-gradient-primary"
-                            onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                          <Button
+                            className="btn-shadow btn-gradient-primary"
+                            onClick={() => this.onRadioBtnClick(1)}
+                            active={this.state.rSelected === 1}
+                          >
                             One
                           </Button>
-                          <Button className="btn-shadow btn-gradient-primary"
-                            onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>
+                          <Button
+                            className="btn-shadow btn-gradient-primary"
+                            onClick={() => this.onRadioBtnClick(2)}
+                            active={this.state.rSelected === 2}
+                          >
                             Two
                           </Button>
-                          <Button className="btn-shadow btn-gradient-primary"
-                            onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>
+                          <Button
+                            className="btn-shadow btn-gradient-primary"
+                            onClick={() => this.onRadioBtnClick(3)}
+                            active={this.state.rSelected === 3}
+                          >
                             Three
                           </Button>
                         </ButtonGroup>
                         <ButtonGroup className="mb-2">
-                          <Button className="btn-shadow btn-gradient-warning"
-                            onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                          <Button
+                            className="btn-shadow btn-gradient-warning"
+                            onClick={() => this.onRadioBtnClick(1)}
+                            active={this.state.rSelected === 1}
+                          >
                             One
                           </Button>
-                          <Button className="btn-shadow btn-gradient-success"
-                            onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>
+                          <Button
+                            className="btn-shadow btn-gradient-success"
+                            onClick={() => this.onRadioBtnClick(2)}
+                            active={this.state.rSelected === 2}
+                          >
                             Two
                           </Button>
-                          <Button className="btn-shadow btn-gradient-danger"
-                            onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>
+                          <Button
+                            className="btn-shadow btn-gradient-danger"
+                            onClick={() => this.onRadioBtnClick(3)}
+                            active={this.state.rSelected === 3}
+                          >
                             Three
                           </Button>
                         </ButtonGroup>
                         <ButtonGroup size="lg" className="mb-2">
-                          <Button className="btn-shadow btn-gradient-alternate"
-                            onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                          <Button
+                            className="btn-shadow btn-gradient-alternate"
+                            onClick={() => this.onRadioBtnClick(1)}
+                            active={this.state.rSelected === 1}
+                          >
                             One
                           </Button>
-                          <Button className="btn-shadow btn-gradient-dark"
-                            onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>
+                          <Button
+                            className="btn-shadow btn-gradient-dark"
+                            onClick={() => this.onRadioBtnClick(2)}
+                            active={this.state.rSelected === 2}
+                          >
                             Two
                           </Button>
-                          <Button className="btn-shadow btn-gradient-info"
-                            onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>
+                          <Button
+                            className="btn-shadow btn-gradient-info"
+                            onClick={() => this.onRadioBtnClick(3)}
+                            active={this.state.rSelected === 3}
+                          >
                             Three
                           </Button>
                         </ButtonGroup>

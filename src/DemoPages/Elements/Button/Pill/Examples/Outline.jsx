@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from "react";
-import { Button, Container, ButtonGroup } from "reactstrap";
+import React, { Component, Fragment } from 'react';
+import { Button, Container, ButtonGroup } from 'reactstrap';
 
-import { Row, Col, Card, CardBody, CardTitle } from "reactstrap";
+import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
 class ButtonsPillOutline extends Component {
   state = {
@@ -69,28 +69,28 @@ class ButtonsPillOutline extends Component {
                   <Button outline className="mb-2 me-2 btn-pill" color="success">
                     Success
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-pill" color="info"> 
+                  <Button outline className="mb-2 me-2 btn-pill" color="info">
                     Info
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-pill" color="warning"> 
+                  <Button outline className="mb-2 me-2 btn-pill" color="warning">
                     Warning
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-pill" color="danger"> 
+                  <Button outline className="mb-2 me-2 btn-pill" color="danger">
                     Danger
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-pill" color="focus"> 
+                  <Button outline className="mb-2 me-2 btn-pill" color="focus">
                     Focus
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-pill" color="alternate"> 
+                  <Button outline className="mb-2 me-2 btn-pill" color="alternate">
                     Alt
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-pill" color="light"> 
+                  <Button outline className="mb-2 me-2 btn-pill" color="light">
                     Light
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-pill" color="dark"> 
+                  <Button outline className="mb-2 me-2 btn-pill" color="dark">
                     Dark
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-pill" color="link"> 
+                  <Button outline className="mb-2 me-2 btn-pill" color="link">
                     link
                   </Button>
                 </CardBody>
@@ -103,31 +103,31 @@ class ButtonsPillOutline extends Component {
                   <Button outline className="mb-2 me-2 btn-pill" active color="primary">
                     Primary
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-pill" active color="secondary" > 
+                  <Button outline className="mb-2 me-2 btn-pill" active color="secondary">
                     Secondary
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-pill" active color="success"> 
+                  <Button outline className="mb-2 me-2 btn-pill" active color="success">
                     Success
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-pill" active color="info"> 
+                  <Button outline className="mb-2 me-2 btn-pill" active color="info">
                     Info
                   </Button>
                   <Button outline className="mb-2 me-2 btn-pill" active color="warning">
                     Warning
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-pill" active color="danger"> 
+                  <Button outline className="mb-2 me-2 btn-pill" active color="danger">
                     Danger
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-pill" active color="focus"> 
+                  <Button outline className="mb-2 me-2 btn-pill" active color="focus">
                     Focus
                   </Button>
                   <Button outline className="mb-2 me-2 btn-pill" active color="alternate">
                     Alt
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-pill" active color="light"> 
+                  <Button outline className="mb-2 me-2 btn-pill" active color="light">
                     Light
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-pill" active color="dark"> 
+                  <Button outline className="mb-2 me-2 btn-pill" active color="dark">
                     Dark
                   </Button>
                   <Button outline className="mb-2 me-2 btn-pill" active color="link">
@@ -158,8 +158,9 @@ class ButtonsPillOutline extends Component {
                   <Button outline className="mb-2 me-2 btn-pill" disabled color="danger">
                     Danger
                   </Button>
-                  <Button outline className="mb-2 me-2 btn-pill" disabled color="focus"
-                  > Focus
+                  <Button outline className="mb-2 me-2 btn-pill" disabled color="focus">
+                    {' '}
+                    Focus
                   </Button>
                   <Button outline className="mb-2 me-2 btn-pill" disabled color="alternate">
                     Alt
@@ -197,13 +198,23 @@ class ButtonsPillOutline extends Component {
                 <CardBody>
                   <CardTitle>Wider</CardTitle>
                   <div className="text-center">
-                    <Button outline className="btn-wide mb-2 me-2 btn-pill" size="lg" color="primary">
+                    <Button
+                      outline
+                      className="btn-wide mb-2 me-2 btn-pill"
+                      size="lg"
+                      color="primary"
+                    >
                       Wider Large
                     </Button>
                     <Button outline className="btn-wide mb-2 me-2 btn-pill" color="primary">
                       Wider Normal
                     </Button>
-                    <Button outline className="btn-wide mb-2 me-2 btn-pill" size="sm" color="primary">
+                    <Button
+                      outline
+                      className="btn-wide mb-2 me-2 btn-pill"
+                      size="sm"
+                      color="primary"
+                    >
                       Wider Small
                     </Button>
                   </div>
@@ -236,46 +247,88 @@ class ButtonsPillOutline extends Component {
                   <CardTitle>Checkbox Buttons</CardTitle>
                   <div className="text-center">
                     <ButtonGroup size="sm" className="mb-2">
-                      <Button className="btn-pill" outline color="primary"
-                        onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>
+                      <Button
+                        className="btn-pill"
+                        outline
+                        color="primary"
+                        onClick={() => this.onCheckboxBtnClick(1)}
+                        active={this.state.cSelected.includes(1)}
+                      >
                         One
                       </Button>
-                      <Button outline color="primary"
-                        onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>
+                      <Button
+                        outline
+                        color="primary"
+                        onClick={() => this.onCheckboxBtnClick(2)}
+                        active={this.state.cSelected.includes(2)}
+                      >
                         Two
                       </Button>
-                      <Button className="btn-pill" outline color="primary"
-                        onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>
+                      <Button
+                        className="btn-pill"
+                        outline
+                        color="primary"
+                        onClick={() => this.onCheckboxBtnClick(3)}
+                        active={this.state.cSelected.includes(3)}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
                     <div className="divider" />
                     <ButtonGroup className="mb-2">
-                      <Button className="btn-pill" outline color="warning"
-                        onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>
+                      <Button
+                        className="btn-pill"
+                        outline
+                        color="warning"
+                        onClick={() => this.onCheckboxBtnClick(1)}
+                        active={this.state.cSelected.includes(1)}
+                      >
                         One
                       </Button>
-                      <Button outline color="warning"
-                        onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>
+                      <Button
+                        outline
+                        color="warning"
+                        onClick={() => this.onCheckboxBtnClick(2)}
+                        active={this.state.cSelected.includes(2)}
+                      >
                         Two
                       </Button>
-                      <Button className="btn-pill" outline color="warning"
-                        onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>
+                      <Button
+                        className="btn-pill"
+                        outline
+                        color="warning"
+                        onClick={() => this.onCheckboxBtnClick(3)}
+                        active={this.state.cSelected.includes(3)}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
                     <div className="divider" />
                     <ButtonGroup size="lg" className="mb-2">
-                      <Button className="btn-pill" outline color="alternate"
-                        onClick={() => this.onCheckboxBtnClick(1)} active={this.state.cSelected.includes(1)}>
+                      <Button
+                        className="btn-pill"
+                        outline
+                        color="alternate"
+                        onClick={() => this.onCheckboxBtnClick(1)}
+                        active={this.state.cSelected.includes(1)}
+                      >
                         One
                       </Button>
-                      <Button outline color="alternate"
-                        onClick={() => this.onCheckboxBtnClick(2)} active={this.state.cSelected.includes(2)}>
+                      <Button
+                        outline
+                        color="alternate"
+                        onClick={() => this.onCheckboxBtnClick(2)}
+                        active={this.state.cSelected.includes(2)}
+                      >
                         Two
                       </Button>
-                      <Button className="btn-pill" outline color="alternate"
-                        onClick={() => this.onCheckboxBtnClick(3)} active={this.state.cSelected.includes(3)}>
+                      <Button
+                        className="btn-pill"
+                        outline
+                        color="alternate"
+                        onClick={() => this.onCheckboxBtnClick(3)}
+                        active={this.state.cSelected.includes(3)}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
@@ -291,46 +344,88 @@ class ButtonsPillOutline extends Component {
                   <CardTitle>Radio Buttons</CardTitle>
                   <div className="text-center">
                     <ButtonGroup size="sm" className="mb-2">
-                      <Button className="btn-pill" outline color="primary"
-                        onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                      <Button
+                        className="btn-pill"
+                        outline
+                        color="primary"
+                        onClick={() => this.onRadioBtnClick(1)}
+                        active={this.state.rSelected === 1}
+                      >
                         One
                       </Button>
-                      <Button outline color="primary"
-                        onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>
+                      <Button
+                        outline
+                        color="primary"
+                        onClick={() => this.onRadioBtnClick(2)}
+                        active={this.state.rSelected === 2}
+                      >
                         Two
                       </Button>
-                      <Button className="btn-pill" outline color="primary"
-                        onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>
+                      <Button
+                        className="btn-pill"
+                        outline
+                        color="primary"
+                        onClick={() => this.onRadioBtnClick(3)}
+                        active={this.state.rSelected === 3}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
                     <div className="divider" />
                     <ButtonGroup className="mb-2">
-                      <Button className="btn-pill" outline color="warning"
-                        onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                      <Button
+                        className="btn-pill"
+                        outline
+                        color="warning"
+                        onClick={() => this.onRadioBtnClick(1)}
+                        active={this.state.rSelected === 1}
+                      >
                         One
                       </Button>
-                      <Button outline color="warning"
-                        onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>
+                      <Button
+                        outline
+                        color="warning"
+                        onClick={() => this.onRadioBtnClick(2)}
+                        active={this.state.rSelected === 2}
+                      >
                         Two
                       </Button>
-                      <Button className="btn-pill" outline color="warning"
-                        onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>
+                      <Button
+                        className="btn-pill"
+                        outline
+                        color="warning"
+                        onClick={() => this.onRadioBtnClick(3)}
+                        active={this.state.rSelected === 3}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
                     <div className="divider" />
                     <ButtonGroup size="lg" className="mb-2">
-                      <Button className="btn-pill" outline color="info"
-                        onClick={() => this.onRadioBtnClick(1)} active={this.state.rSelected === 1}>
+                      <Button
+                        className="btn-pill"
+                        outline
+                        color="info"
+                        onClick={() => this.onRadioBtnClick(1)}
+                        active={this.state.rSelected === 1}
+                      >
                         One
                       </Button>
-                      <Button outline color="info"
-                        onClick={() => this.onRadioBtnClick(2)} active={this.state.rSelected === 2}>
+                      <Button
+                        outline
+                        color="info"
+                        onClick={() => this.onRadioBtnClick(2)}
+                        active={this.state.rSelected === 2}
+                      >
                         Two
                       </Button>
-                      <Button className="btn-pill" outline color="info"
-                        onClick={() => this.onRadioBtnClick(3)} active={this.state.rSelected === 3}>
+                      <Button
+                        className="btn-pill"
+                        outline
+                        color="info"
+                        onClick={() => this.onRadioBtnClick(3)}
+                        active={this.state.rSelected === 3}
+                      >
                         Three
                       </Button>
                     </ButtonGroup>
