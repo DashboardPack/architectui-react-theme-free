@@ -1,38 +1,19 @@
-import { Suspense, lazy, Fragment } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Fragment } from 'react';
+import { Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import SuspenseFallback from './SuspenseFallback';
 
-const UserPages = lazy(() => import('../../DemoPages/UserPages'));
-const Applications = lazy(() => import('../../DemoPages/Applications'));
-const Dashboards = lazy(() => import('../../DemoPages/Dashboards'));
-const Widgets = lazy(() => import('../../DemoPages/Widgets'));
-const Elements = lazy(() => import('../../DemoPages/Elements'));
-const Components = lazy(() => import('../../DemoPages/Components'));
-const Charts = lazy(() => import('../../DemoPages/Charts'));
-const Forms = lazy(() => import('../../DemoPages/Forms'));
-const Tables = lazy(() => import('../../DemoPages/Tables'));
+import demoRoutes from '../../DemoPages/routes';
 
-const lazyRoute = (Component, type = 'ball-pulse-rise') => (
-  <Suspense fallback={<SuspenseFallback type={type} />}>
-    <Component />
-  </Suspense>
-);
-
+/**
+ * App content area. Renders the route tree and a toast container.
+ *
+ * The demo routes live in `src/DemoPages/routes.jsx` so this shell stays
+ * framework-only — if you're starting a project from this template, replace
+ * the `demoRoutes()` call with your own `<Route>` children (see STARTER.md).
+ */
 const AppMain = () => (
   <Fragment>
-    <Routes>
-      <Route path="/components/*" element={lazyRoute(Components)} />
-      <Route path="/forms/*" element={lazyRoute(Forms)} />
-      <Route path="/charts/*" element={lazyRoute(Charts, 'ball-rotate')} />
-      <Route path="/tables/*" element={lazyRoute(Tables)} />
-      <Route path="/elements/*" element={lazyRoute(Elements, 'line-scale')} />
-      <Route path="/widgets/*" element={lazyRoute(Widgets, 'ball-pulse-sync')} />
-      <Route path="/pages/*" element={lazyRoute(UserPages, 'line-scale-party')} />
-      <Route path="/apps/*" element={lazyRoute(Applications, 'ball-pulse')} />
-      <Route path="/dashboards/*" element={lazyRoute(Dashboards, 'ball-grid-cy')} />
-      <Route path="/" element={<Navigate to="/dashboards/crm" replace />} />
-    </Routes>
+    <Routes>{demoRoutes()}</Routes>
     <ToastContainer />
   </Fragment>
 );
