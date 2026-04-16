@@ -6,22 +6,25 @@ import './assets/base.scss';
 import Main from './DemoPages/Main';
 import configureAppStore from './config/configureStore';
 import { Provider } from 'react-redux';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const store = configureAppStore();
 const rootElement = document.getElementById('root');
 
 const renderApp = (Component) => (
   <React.StrictMode>
-    <Provider store={store}>
-      <HashRouter
-        future={{
-          v7_startTransition: true,
-          v7_relativeSplatPath: true,
-        }}
-      >
-        <Component />
-      </HashRouter>
-    </Provider>
+    <ErrorBoundary>
+      <Provider store={store}>
+        <HashRouter
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
+        >
+          <Component />
+        </HashRouter>
+      </Provider>
+    </ErrorBoundary>
   </React.StrictMode>
 );
 
