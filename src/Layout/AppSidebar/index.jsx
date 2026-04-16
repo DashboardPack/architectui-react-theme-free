@@ -22,13 +22,29 @@ export default function AppSidebar() {
 
   return (
     <Fragment>
-      <div className="sidebar-mobile-overlay" onClick={toggleMobileSidebar} />
+      <div
+        className="sidebar-mobile-overlay"
+        role="button"
+        tabIndex={enableMobileMenu ? 0 : -1}
+        aria-label="Close navigation menu"
+        aria-hidden={!enableMobileMenu}
+        onClick={toggleMobileSidebar}
+        onKeyDown={(e) => {
+          if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleMobileSidebar();
+          }
+        }}
+      />
       <TransitionGroup>
         <CSSTransition
           component="div"
           className={cx('app-sidebar', backgroundColor, {
             'sidebar-shadow': enableSidebarShadow,
           })}
+          id="app-sidebar"
+          role="navigation"
+          aria-label="Primary"
           appear={true}
           enter={false}
           exit={false}

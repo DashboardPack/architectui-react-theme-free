@@ -18,10 +18,11 @@ export default function Header() {
     <Fragment>
       <TransitionGroup>
         <CSSTransition
-          component="div"
+          component="header"
           className={cx('app-header', headerBackgroundColor, {
             'header-shadow': enableHeaderShadow,
           })}
+          role="banner"
           appear={true}
           timeout={1500}
           enter={false}

@@ -83,10 +83,13 @@ function ThemeOptions() {
   return (
     <div className={'ui-theme-settings ' + (showing ? 'settings-open' : '')}>
       <Button
+        type="button"
         className="btn-open-options"
         id="TooltipDemo"
         color="warning"
         onClick={() => setShowing(!showing)}
+        aria-label="Open layout configurator"
+        aria-expanded={showing}
       >
         <FontAwesomeIcon icon={faCog} spin color="#573a04" fixedWidth={false} size="2x" />
       </Button>

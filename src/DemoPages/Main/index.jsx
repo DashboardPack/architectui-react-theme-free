@@ -25,6 +25,9 @@ export default function Main() {
 
   return (
     <Fragment>
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
       <ThemeOptions />
       <div ref={ref}>
         <div
@@ -43,9 +46,9 @@ export default function Main() {
           <div className="app-main">
             <AppSidebar />
             <div className="app-main__outer">
-              <div className="app-main__inner">
+              <main id="main-content" className="app-main__inner" tabIndex={-1}>
                 <AppMain />
-              </div>
+              </main>
               <AppFooter />
             </div>
           </div>

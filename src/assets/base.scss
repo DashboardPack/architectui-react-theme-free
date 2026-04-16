@@ -351,3 +351,44 @@
 // ORIGINAL ARCHITECTUI NAVIGATION STYLES
 @import 'layout/sidebar/modifiers/_navmenu-vertical';
 @import 'layout/sidebar/modifiers/_closed-sidebar';
+
+// ACCESSIBILITY
+
+// Skip-to-content link: visually hidden until focused with Tab, then pinned
+// to the top-left so keyboard and screen-reader users can jump past the
+// sidebar / header and straight into the page content.
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  z-index: 2000;
+  padding: 0.5rem 1rem;
+  background: var(--bs-primary, #545cd8);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0 0 0.25rem 0;
+  font-weight: 600;
+  transition: top 0.15s ease;
+
+  &:focus,
+  &:focus-visible {
+    top: 0;
+    outline: 2px solid #fff;
+    outline-offset: -4px;
+  }
+}
+
+// Keyboard-only focus ring. Bootstrap 5.3 ships a sensible default for
+// `:focus-visible` on form controls and native buttons, but custom
+// `widget-*` / `nav-link` / icon-button elements in this template don't
+// inherit it — add a gentle fallback so nothing keyboard-interactive is
+// invisible-focus. Opt-out via `data-focus-visible-self` for components
+// that carry their own box-shadow focus ring.
+:focus-visible {
+  outline: 2px solid var(--bs-primary, #545cd8);
+  outline-offset: 2px;
+}
+
+[data-focus-visible-self]:focus-visible {
+  outline: 0;
+}

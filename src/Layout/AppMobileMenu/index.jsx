@@ -20,7 +20,20 @@ export default function AppMobileMenu() {
   return (
     <Fragment>
       <div className="app-header__mobile-menu">
-        <div onClick={toggleMobileSidebar}>
+        <div
+          role="button"
+          tabIndex={0}
+          aria-label={enableMobileMenu ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={enableMobileMenu}
+          aria-controls="app-sidebar"
+          onClick={toggleMobileSidebar}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              toggleMobileSidebar();
+            }
+          }}
+        >
           <Hamburger
             toggled={enableMobileMenu}
             toggle={toggleMobileSidebar}
@@ -30,18 +43,19 @@ export default function AppMobileMenu() {
         </div>
       </div>
       <div className="app-header__menu">
-        <span onClick={toggleMobileSmall}>
-          <Button
-            size="sm"
-            className={cx('btn-icon btn-icon-only', { active: enableMobileMenuSmall })}
-            color="primary"
-            onClick={toggleMobileSmall}
-          >
-            <div className="btn-icon-wrapper">
-              <FontAwesomeIcon icon={faEllipsisV} />
-            </div>
-          </Button>
-        </span>
+        <Button
+          type="button"
+          size="sm"
+          className={cx('btn-icon btn-icon-only', { active: enableMobileMenuSmall })}
+          color="primary"
+          onClick={toggleMobileSmall}
+          aria-label="Toggle header menu"
+          aria-pressed={enableMobileMenuSmall}
+        >
+          <div className="btn-icon-wrapper">
+            <FontAwesomeIcon icon={faEllipsisV} />
+          </div>
+        </Button>
       </div>
     </Fragment>
   );
