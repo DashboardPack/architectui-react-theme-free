@@ -3,7 +3,13 @@ import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrap
 import { Row, Col, Card, CardBody, Container } from 'reactstrap';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
+// Importing `fab` pulls every brand icon (~500) into the bundle. Only the
+// two brand icons actually rendered on this demo page are needed, so import
+// them individually.
+import {
+  faFontAwesome,
+  faInternetExplorer,
+} from '@fortawesome/free-brands-svg-icons';
 import {
   faCoffee,
   faCog,
@@ -34,7 +40,8 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 library.add(
-  fab,
+  faFontAwesome,
+  faInternetExplorer,
   faCoffee,
   faCog,
   faSpinner,
