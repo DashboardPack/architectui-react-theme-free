@@ -1,5 +1,20 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- **Vitest + React Testing Library scaffolding:** `vitest.config.js`, `vitest.setup.js`, and initial tests — smoke test for `<AppFooter />`, unit tests for the `ThemeOptions` reducer, and a Redux store configuration test. The runner is not yet listed in `package.json` devDeps because adding it currently stalls `npm install` against the React 19 `overrides` block — see CONTRIBUTING.md for the manual install workaround until the planned override audit unblocks it.
+- **GitHub Actions CI workflow** (`.github/workflows/ci.yml`) running `lint` and `build` on every push and pull request using the Node version pinned in `.nvmrc`. The `test` step will come online once the test runner is installable via `npm install`.
+- **CONTRIBUTING.md** covering setup, scripts, project layout, code style, manual test install, commits, and PR expectations.
+- **`.env.example`** documenting the Vite env vars the project reads (`VITE_PORT`, `VITE_BASE`).
+- **Env-driven dev server and public base path:** `vite.config.js` now reads `VITE_PORT` and `VITE_BASE` via Vite's `loadEnv`, so deploys behind a subdirectory no longer require editing the config.
+
+### Changed
+
+- **HTTPS-only demo links:** switched remaining `http://` URLs in the Leaflet Google Maps demo (SRTM, Stamen) and the Guided Tours demo (CodePen) to `https://`. The SVG XML namespace URI (`http://www.w3.org/2000/svg`) is intentionally left as HTTP because the spec requires it.
+- **`jsx-a11y/label-has-associated-control` downgraded from error to warning** in `eslint.config.js` so the demo forms (which intentionally render labels without associated inputs) don't fail CI's lint step. Awareness preserved as a warning.
+
 ## [4.2.0] - 2025-12-03
 
 ### Changed
