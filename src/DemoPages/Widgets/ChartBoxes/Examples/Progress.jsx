@@ -25,7 +25,7 @@ import {
   CartesianGrid,
 } from 'recharts';
 
-import { Progress } from 'react-sweet-progress';
+import { Progress } from '../../../../components/CircleProgress';
 
 import {
   faAngleUp,

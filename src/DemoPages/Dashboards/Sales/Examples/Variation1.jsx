@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
-import { Progress } from 'react-sweet-progress';
+import { Progress } from '../../../../components/CircleProgress';
 import classnames from 'classnames';
 import { IoIosAnalytics } from 'react-icons/io';
 import DataTable from 'react-data-table-component';

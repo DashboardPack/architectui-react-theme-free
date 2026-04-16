@@ -31,7 +31,6 @@ const cjsInteropPackages = [
   'react-slick',
   'react-sparklines',
   'react-sticky-el',
-  'react-sweet-progress',
   'react-visibility-sensor',
 ];
 
@@ -137,13 +136,6 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         src: path.resolve(__dirname, './src'),
-        // react-sweet-progress 1.1.2 was built with an old @babel/preset-react
-        // that inlined `Symbol.for('react.element')` into its JSX helper. React
-        // 19 rejects those elements ("A React Element from an older version of
-        // React was rendered"). Redirect to the API-compatible local SVG
-        // implementation in src/components/CircleProgress.jsx until we drop the
-        // dependency entirely.
-        'react-sweet-progress': path.resolve(__dirname, './src/components/CircleProgress.jsx'),
         // Vite 8 / rolldown wraps internmap's ESM `export class InternMap` in a
         // lazy `__esmMin(cb)` initializer but d3-array's `ordinal.js` runs
         // `new InternMap()` eagerly inside another wrapper — the lazy cb never

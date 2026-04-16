@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { CSSTransition, TransitionGroup } from '../../../../../utils/TransitionWrapper';
-import { Progress } from 'react-sweet-progress';
+import { Progress } from '../../../../../components/CircleProgress';
 import { Row, Col, Card, CardBody, CardTitle, Button, ButtonGroup, Container } from 'reactstrap';
 
 export default class ProgressBarAdvancedExample extends Component {

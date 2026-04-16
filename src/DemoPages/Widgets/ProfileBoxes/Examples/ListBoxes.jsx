@@ -37,7 +37,7 @@ import {
   CardFooter,
 } from 'reactstrap';
 
-import { Progress } from 'react-sweet-progress';
+import { Progress } from '../../../../components/CircleProgress';
 
 class ListBoxes extends Component {
   constructor(props) {
