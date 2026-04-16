@@ -1,152 +1,133 @@
-# Release v4.2.0
+# Release v4.3.0
 
-## ArchitectUI React Dashboard v4.2.0
+## ArchitectUI React Dashboard v4.3.0
 
-**Release Date:** December 3, 2025
+**Release Date:** April 16, 2026
 
-This major release completes the modernization of ArchitectUI React with a full migration from Create React App to **Vite 7.2.6**, bringing dramatically faster build times and improved developer experience.
+This release is a focused developer-experience upgrade: a working test harness, a CI pipeline, env-driven Vite config, an overrides audit that unblocks `npm install`, and new contributor docs. There are **no user-facing UI changes** — upgrading is safe for anyone already on v4.2.0.
 
 ---
 
 ## Highlights
 
-- **Vite Migration** - Build times reduced from ~30s to ~3s with instant HMR
-- **348 Files Renamed** - All .js files converted to .jsx for better tooling
-- **No API Keys Required** - Google Maps replaced with free Leaflet/OpenStreetMap
-- **Enhanced Vector Maps** - Redesigned with proper sizing and interactivity
-- **React 19 Compatibility** - New custom components replace deprecated packages
+- **`npm install` now finishes in ~1 minute** (was stalling indefinitely) after pruning 11 of 18 React 19 compatibility overrides whose upstream packages have since caught up.
+- **Vitest 4 + React Testing Library** wired in with a jsdom environment, shared setup, and initial tests across reducer, store, and a layout component.
+- **GitHub Actions CI** runs `lint`, `vitest run`, and `build` on every push and pull request.
+- **Env-driven dev server and build base path** via `VITE_PORT` and `VITE_BASE` — no more editing `vite.config.js` for alternate ports or subdirectory deploys.
+- **CONTRIBUTING.md** with the full developer workflow (scripts, env vars, testing, commit style, PR checklist).
 
 ---
 
 ## What's Changed
 
-### Build System Migration
+### Overrides Audit
 
-The entire build system has been migrated from Create React App to Vite 7.2.6:
+The React 19 migration (v4.1.0) shipped with a defensive `overrides` block that force-pinned `react`/`react-dom` into 18 different sub-dependency trees. By the time this release was cut, upstream maintainers had updated most of those packages' peer ranges to cover React 19 — so the overrides were no longer load-bearing, and npm's `arborist` resolver was hanging trying to reconcile them against the full dep graph on fresh installs.
 
-- Development server starts in under 1 second (previously ~15-20 seconds)
-- Hot Module Replacement (HMR) is now instant
-- Production builds complete in ~3 seconds (previously ~30 seconds)
-- Removed `react-scripts`, `react-app-rewired`, and `config-overrides.js`
-- Added new `vite.config.js` with Node.js polyfills and optimized settings
+Each override was audited against the current published `peerDependencies.react`:
 
-### File Extensions
+**Dropped (upstream now accepts React 19):**
 
-All 348 JavaScript files have been renamed from `.js` to `.jsx` for:
+`rc-slider`, `rc-tooltip`, `rc-util`, `rc-motion`, `@rc-component/trigger`, `@rc-component/portal`, `rc-resize-observer`, `react-copy-to-clipboard`, `styled-components`, `react-resize-detector`, `react-intersection-observer`
 
-- Better IDE tooling and IntelliSense support
-- Explicit JSX syntax recognition
-- Vite compatibility
+**Kept (upstream still caps at ≤18):**
 
-### Maps Overhaul
+`ckeditor4-react`, `react-anime`, `react-popper`, `react-responsive-tabs`, `react-simple-maps`, `react-table`, `reactour`
 
-**Leaflet/OpenStreetMap** (replaces Google Maps):
+Net effect: clean `npm install --legacy-peer-deps` completes in ~1 minute instead of hanging.
 
-- No API key required
-- Multiple map styles: Standard, Dark, Satellite, Topographic, Watercolor
-- Full interactive controls (zoom, pan, markers)
+### Testing
 
-**Enhanced Vector Maps**:
+A first-class Vitest 4 + React Testing Library setup:
 
-- Proper sizing that fills the card container
-- Interactive hover effects on countries
-- Zoom and pan functionality
-- City markers with population tooltips
+- `vitest.config.js` — jsdom environment, `src` alias, coverage exclusions for assets / polyfills / service worker
+- `vitest.setup.js` — `@testing-library/jest-dom` matchers, RTL auto-cleanup, `matchMedia` / `ResizeObserver` shims
+- Initial tests: `ThemeOptions` reducer, `configureAppStore`, `<AppFooter />` render smoke
 
-### New Custom Components
+Scripts:
 
-Created to replace deprecated React 18 packages:
+| Command                   | Description                                      |
+| ------------------------- | ------------------------------------------------ |
+| `npm test`                | Vitest in watch mode                             |
+| `npm test -- --run`       | Single run (same mode CI uses)                   |
+| `npm run test:ui`         | Open the Vitest UI                               |
+| `npm run test:coverage`   | Single run with v8 coverage report               |
 
-| Component           | Replaces                 | Technology    |
-| ------------------- | ------------------------ | ------------- |
-| `LoadingOverlay`    | react-loading-overlay-ts | Framer Motion |
-| `TabsWrapper`       | rc-tabs                  | Native React  |
-| `TransitionWrapper` | react-transition-group   | Framer Motion |
+### Continuous Integration
 
-### React 19 Compatibility
+New workflow at [.github/workflows/ci.yml](.github/workflows/ci.yml):
 
-Added comprehensive npm overrides to resolve React version conflicts in third-party packages that bundle older React versions.
+- Runs on every push to `master` / `main` / `feature/**` and on every PR
+- Steps: `npm ci --legacy-peer-deps` → `npm run lint` → `npx vitest run` → `npm run build`
+- Node version from `.nvmrc` (Node 22 LTS)
+- Concurrency cancels stale runs on the same ref
 
-### SCSS Updates
+### Environment Variables
 
-Removed tilde (~) prefix from all SCSS imports for Vite compatibility.
+`vite.config.js` now reads env vars via Vite's `loadEnv`. Supported keys are documented in [.env.example](.env.example):
 
----
+| Key           | Default | Effect                                                       |
+| ------------- | ------- | ------------------------------------------------------------ |
+| `VITE_PORT`   | `3001`  | Dev server port                                              |
+| `VITE_BASE`   | `./`    | Public base path for the build (e.g. `"/architectui/"`)      |
 
-## Removed Dependencies
+Copy `.env.example` to `.env.local` and adjust — tracked config stays untouched.
 
-| Package                    | Reason                       |
-| -------------------------- | ---------------------------- |
-| `react-scripts`            | Replaced by Vite             |
-| `react-app-rewired`        | No longer needed             |
-| `react-loading-overlay-ts` | Replaced by custom component |
-| `google-map-react`         | Replaced by Leaflet          |
-| `rc-tabs`                  | Replaced by custom component |
-| `react-transition-group`   | Replaced by Framer Motion    |
+### Contributor Documentation
 
----
+New [CONTRIBUTING.md](CONTRIBUTING.md) covers:
 
-## Installation
+- Prerequisites (Node version from `.nvmrc`, `--legacy-peer-deps` rationale)
+- Full script table
+- Environment variable reference
+- Project layout
+- Code style expectations
+- Testing guidance
+- Commit conventions (`Phase X.Y:` prefix for upgrade work)
+- Pull request checklist
 
-```bash
-# Clone the repository
-git clone https://github.com/DashboardPack/architectui-react-theme-free.git
-cd architectui-react-theme-free
+### Quality & Security
 
-# Install dependencies
-npm install --legacy-peer-deps
-
-# Start development server
-npm start
-```
-
-The application will open at `http://localhost:3001`
+- `jsx-a11y/label-has-associated-control` downgraded from error to warning in `eslint.config.js` — the demo forms intentionally render labels without associated inputs, and blocking CI on them added no signal. Other jsx-a11y rules remain active.
+- Remaining `http://` URLs in demo content switched to `https://` (Leaflet SRTM & Stamen attributions, Guided Tours CodePen link). The SVG XML namespace URI is intentionally left as HTTP — it's a spec-mandated identifier, not a fetchable URL.
+- Defensive `.gitignore` + ESLint ignore patterns for `.node_modules*` and `node_modules_*` so local package-manager experiments can't trip up lint or `git status` later.
 
 ---
 
-## Build for Production
+## Upgrade from v4.2.0
 
-```bash
-# Create production build
-npm run build
+1. Pull the latest code.
+2. Delete `node_modules` and `package-lock.json`.
+3. `npm install --legacy-peer-deps` — should finish in ~1 minute.
+4. Optional: copy `.env.example` to `.env.local` if you want a different `VITE_PORT` or `VITE_BASE`.
+5. Run the usual sanity checks: `npm run lint`, `npm test -- --run`, `npm run build`.
 
-# Preview production build
-npm run preview
-```
-
-Preview available at `http://localhost:4173`
+No code changes are required in consumer projects.
 
 ---
 
 ## Tech Stack
 
-| Category     | Technology                     | Version  |
-| ------------ | ------------------------------ | -------- |
-| Framework    | React                          | 19.2.0   |
-| Build Tool   | Vite                           | 7.2.6    |
-| UI Framework | Bootstrap                      | 5.3.8    |
-| Components   | Reactstrap                     | 9.2.3    |
-| State        | Redux Toolkit                  | 2.11.0   |
-| Routing      | React Router                   | 7.9.6    |
-| Animations   | Framer Motion                  | 12.23.25 |
-| Charts       | ApexCharts, Chart.js, Recharts | Latest   |
-| Maps         | Leaflet, react-simple-maps     | Latest   |
-| Styling      | Sass                           | 1.94.2   |
+| Category     | Technology                          | Version  |
+| ------------ | ----------------------------------- | -------- |
+| Framework    | React                               | 19.2     |
+| Build Tool   | Vite                                | 8        |
+| Test Runner  | Vitest + React Testing Library      | 4 / 16   |
+| Linting      | ESLint 9 (flat config) + Prettier 3 | —        |
+| UI Framework | Bootstrap                           | 5.3.8    |
+| Components   | Reactstrap                          | 9.2.3    |
+| State        | Redux Toolkit                       | 2.11     |
+| Routing      | React Router                        | 7.14     |
+| Animations   | Framer Motion                       | 12.38    |
+| Charts       | ApexCharts, Chart.js, Recharts      | 5.10 / 4.5 / 3.8 |
+| Maps         | Leaflet, react-simple-maps          | 1.9 / 3.0 |
+| Styling      | Sass                                | 1.99     |
 
 ---
 
 ## Security
 
-**0 vulnerabilities** - Clean npm audit with all dependencies updated.
-
----
-
-## Upgrade Notes
-
-1. Delete `node_modules` and `package-lock.json` before upgrading
-2. Run `npm install --legacy-peer-deps`
-3. Note: `npm start` now uses Vite (port 3001)
-4. Build output is now in `dist/` instead of `build/`
+**0 vulnerabilities** — clean `npm audit` after the overrides audit and dependency refresh.
 
 ---
 
@@ -160,9 +141,9 @@ Preview available at `http://localhost:4173`
 
 ## Full Changelog
 
-See [CHANGELOG.md](CHANGELOG.md) for complete version history.
+See [Changelog.md](Changelog.md) for complete version history.
 
-**Full Changelog**: https://github.com/DashboardPack/architectui-react-theme-free/compare/v4.1.0...v4.2.0
+**Full Changelog**: <https://github.com/DashboardPack/architectui-react-theme-free/compare/v4.2.0...v4.3.0>
 
 ---
 

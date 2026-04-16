@@ -16,8 +16,9 @@ This template offers clean, responsive design with a comprehensive set of UI com
 
 ### Core Technologies
 
-- **React 19.2.0** - Latest React with improved performance and features
-- **Vite 7.2.6** - Lightning-fast build tool with instant HMR
+- **React 19.2** - Latest React with improved performance and features
+- **Vite 8** - Lightning-fast build tool with instant HMR
+- **Vitest 4** - First-party test runner with React Testing Library
 - **Bootstrap 5.3.8** - Modern CSS framework with utilities
 - **Redux Toolkit** - State management
 - **React Router v7** - Navigation and routing
@@ -88,34 +89,74 @@ This template offers clean, responsive design with a comprehensive set of UI com
 
 ## Project Structure
 
-```
+```text
 architectui-react-theme-free/
+├── .github/workflows/      # GitHub Actions CI workflow
 ├── public/                 # Static files
 ├── src/
-│   ├── assets/            # Styles, images, and static assets
-│   ├── components/        # Reusable UI components
-│   ├── DemoPages/         # Demo pages and examples
-│   │   ├── Dashboards/    # Dashboard variations
-│   │   ├── Components/    # UI component examples
-│   │   ├── Forms/         # Form examples
-│   │   └── Tables/        # Table examples
-│   ├── Layout/            # Layout components
-│   │   ├── AppHeader/     # Header components
-│   │   ├── AppSidebar/    # Sidebar components
-│   │   └── AppFooter/     # Footer components
-│   └── reducers/          # Redux store configuration
-├── vite.config.js        # Vite configuration
-└── package.json          # Dependencies and scripts
+│   ├── assets/             # SCSS entry, images, themes
+│   ├── components/         # Reusable UI components
+│   ├── config/             # Redux store configuration
+│   ├── DemoPages/          # Demo pages and examples (lazy-loaded)
+│   │   ├── Dashboards/     # Dashboard variations
+│   │   ├── Components/     # UI component examples
+│   │   ├── Forms/          # Form examples
+│   │   └── Tables/         # Table examples
+│   ├── Layout/             # Layout components
+│   │   ├── AppHeader/      # Header components
+│   │   ├── AppSidebar/     # Sidebar components
+│   │   └── AppFooter/      # Footer components
+│   ├── reducers/           # Redux slices (ThemeOptions)
+│   └── utils/              # Small shared helpers
+├── .env.example            # Documented VITE_* env vars
+├── vite.config.js          # Vite configuration (env-driven)
+├── vitest.config.js        # Vitest configuration
+├── vitest.setup.js         # Shared test setup
+├── eslint.config.js        # ESLint flat config
+└── package.json            # Dependencies and scripts
 ```
 
 ## Available Scripts
 
-| Command           | Description                                |
-| ----------------- | ------------------------------------------ |
-| `npm start`       | Start development server (port 3001)       |
-| `npm run dev`     | Start development server (alias for start) |
-| `npm run build`   | Create production build                    |
-| `npm run preview` | Preview production build locally           |
+| Command                   | Description                                            |
+| ------------------------- | ------------------------------------------------------ |
+| `npm start` / `npm run dev` | Start the Vite dev server (default port 3001)        |
+| `npm run build`           | Create production build in `build/`                    |
+| `npm run build:analyze`   | Build and open the Rollup bundle visualizer            |
+| `npm run preview`         | Preview the production build locally (port 4173)       |
+| `npm run lint`            | Run ESLint                                             |
+| `npm run lint:fix`        | Run ESLint and auto-fix what it can                    |
+| `npm run format`          | Run Prettier in write mode                             |
+| `npm run format:check`    | Run Prettier in check-only mode                        |
+| `npm test`                | Run Vitest in watch mode                               |
+| `npm test -- --run`       | Run the test suite once (same mode CI uses)            |
+| `npm run test:ui`         | Open the Vitest UI                                     |
+| `npm run test:coverage`   | Run the suite once with v8 coverage reporting          |
+
+## Environment Variables
+
+Copy [.env.example](.env.example) to `.env.local` and adjust as needed. Only `VITE_`-prefixed keys are exposed to the browser bundle.
+
+| Key           | Default | Effect                                                       |
+| ------------- | ------- | ------------------------------------------------------------ |
+| `VITE_PORT`   | `3001`  | Dev server port                                              |
+| `VITE_BASE`   | `./`    | Public base path used by the production build (set to e.g. `"/architectui/"` when deploying to a subdirectory) |
+
+## Testing
+
+Tests live next to the code under test as `*.test.jsx` and run on Vitest + React Testing Library:
+
+```bash
+npm test              # watch mode
+npm test -- --run     # single run
+npm run test:coverage # v8 coverage report under coverage/
+```
+
+Shared setup (matchers, RTL cleanup, `matchMedia` / `ResizeObserver` shims) is in [vitest.setup.js](vitest.setup.js); config is in [vitest.config.js](vitest.config.js).
+
+## Continuous Integration
+
+GitHub Actions runs `lint`, `vitest run`, and `build` on every push and pull request using the Node version pinned in [.nvmrc](.nvmrc). See [.github/workflows/ci.yml](.github/workflows/ci.yml).
 
 ## Browser Support
 
@@ -139,7 +180,7 @@ Customize the color scheme by modifying the Sass variables in:
 
 Adjust layout settings in:
 
-- `src/reducers/ThemeOptions.js`
+- `src/reducers/ThemeOptions.jsx`
 
 ### Adding New Components
 
@@ -220,12 +261,13 @@ Upgrade to **[ArchitectUI React PRO](https://dashboardpack.com/theme-details/arc
 ### Dependencies
 
 - **UI Framework**: Bootstrap 5.3.8, Reactstrap 9.2.3
-- **Charts**: ApexCharts 5.3.6, Chart.js 4.5.1, Recharts 3.5.1
-- **Icons**: FontAwesome 7.1.0, React Icons 5.5.0
+- **Charts**: ApexCharts 5.10, Chart.js 4.5, Recharts 3.8
+- **Icons**: FontAwesome 7.2, React Icons 5.6
 - **Forms**: React Select, React Datepicker, React Input Mask
-- **Animations**: Framer Motion 12.23.25, React Animations
-- **State Management**: Redux Toolkit 2.11.0
-- **Build Tools**: Vite 7.2.6, Sass 1.94.2
+- **Animations**: Framer Motion 12.38, React Animations
+- **State Management**: Redux Toolkit 2.11, React Redux 9.2
+- **Build Tools**: Vite 8, Sass 1.99
+- **Quality**: ESLint 9 (flat config), Prettier 3, Vitest 4 + React Testing Library 16
 
 ### Performance Features
 
@@ -237,13 +279,13 @@ Upgrade to **[ArchitectUI React PRO](https://dashboardpack.com/theme-details/arc
 
 ## Contributing
 
-We welcome contributions! Please follow these steps:
+We welcome contributions. Read [CONTRIBUTING.md](CONTRIBUTING.md) for the full developer workflow (scripts, env vars, testing, commit style, PR checklist). Short version:
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+3. Make sure `npm run lint`, `npm test -- --run`, and `npm run build` all pass locally — same checks CI runs
+4. Commit your changes (`git commit -m 'Add amazing feature'`)
+5. Push to the branch (`git push origin feature/amazing-feature`) and open a Pull Request
 
 ## License
 

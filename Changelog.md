@@ -1,20 +1,26 @@
 # Changelog
 
-## [Unreleased]
+## [4.3.0] - 2026-04-16
+
+First release focused purely on developer experience around the template — no user-facing UI changes. If you're upgrading from 4.2.0: delete `node_modules` and `package-lock.json`, then `npm install --legacy-peer-deps`; `npm install` now finishes in ~1 minute instead of stalling.
 
 ### Added
 
-- **Vitest + React Testing Library** wired into `package.json` (`vitest`, `@vitest/ui`, `@vitest/coverage-v8`, `@testing-library/react`, `@testing-library/jest-dom`, `@testing-library/user-event`, `jsdom`) with `npm test`, `npm run test:ui`, and `npm run test:coverage` scripts. Initial coverage: a smoke test for `<AppFooter />`, unit tests for the `ThemeOptions` reducer, and a Redux store configuration test. Setup file in `vitest.setup.js`, config in `vitest.config.js`.
-- **GitHub Actions CI workflow** (`.github/workflows/ci.yml`) running `lint`, `vitest run`, and `build` on every push and pull request using the Node version pinned in `.nvmrc`.
-- **CONTRIBUTING.md** covering setup, scripts, project layout, code style, testing, commits, and PR expectations.
-- **`.env.example`** documenting the Vite env vars the project reads (`VITE_PORT`, `VITE_BASE`).
-- **Env-driven dev server and public base path:** `vite.config.js` now reads `VITE_PORT` and `VITE_BASE` via Vite's `loadEnv`, so deploys behind a subdirectory no longer require editing the config.
+- **Vitest + React Testing Library test harness.** `vitest.config.js` (jsdom env, `src` alias, coverage exclusions for assets/polyfills/serviceWorker) and `vitest.setup.js` (`@testing-library/jest-dom` matchers, RTL cleanup, `matchMedia` / `ResizeObserver` shims). Scripts: `npm test` (watch), `npm test -- --run` (single), `npm run test:ui`, `npm run test:coverage` (v8). Initial tests cover the `ThemeOptions` reducer, `configureAppStore`, and `<AppFooter />`.
+- **GitHub Actions CI workflow** (`.github/workflows/ci.yml`) runs `npm ci --legacy-peer-deps`, `npm run lint`, `npx vitest run`, and `npm run build` on every push to `master`/`main`/`feature/**` and on every PR. Node version comes from `.nvmrc`; concurrency cancels stale runs on the same ref.
+- **CONTRIBUTING.md** covering prerequisites, scripts, env vars, project layout, code style, testing, commits, and PR expectations.
+- **`.env.example`** documenting `VITE_PORT` and `VITE_BASE`.
+- **Env-driven dev server and public base path.** `vite.config.js` now reads `VITE_PORT` and `VITE_BASE` via Vite's `loadEnv`, so deploys behind a subdirectory (or on a different dev port) no longer require editing the config.
 
 ### Changed
 
-- **Pruned the `overrides` block:** dropped 11 of 18 nested React 19 overrides whose upstream packages already declare React 19 in their peer deps (`rc-slider`, `rc-tooltip`, `rc-util`, `rc-motion`, `@rc-component/trigger`, `@rc-component/portal`, `rc-resize-observer`, `react-copy-to-clipboard`, `styled-components`, `react-resize-detector`, `react-intersection-observer`). The 7 packages still pinned (`ckeditor4-react`, `react-anime`, `react-popper`, `react-responsive-tabs`, `react-simple-maps`, `react-table`, `reactour`) genuinely cap their react peer at ≤18 and still need the override. Net effect: `npm install` now completes in ~1 minute (was hanging indefinitely against the bloated overrides graph).
-- **HTTPS-only demo links:** switched remaining `http://` URLs in the Leaflet Google Maps demo (SRTM, Stamen) and the Guided Tours demo (CodePen) to `https://`. The SVG XML namespace URI (`http://www.w3.org/2000/svg`) is intentionally left as HTTP because the spec requires it.
-- **`jsx-a11y/label-has-associated-control` downgraded from error to warning** in `eslint.config.js` so the demo forms (which intentionally render labels without associated inputs) don't fail CI's lint step. Awareness preserved as a warning.
+- **Pruned the `overrides` block.** Dropped 11 of 18 nested React 19 overrides whose upstream packages already declare React 19 in their peer deps (`rc-slider`, `rc-tooltip`, `rc-util`, `rc-motion`, `@rc-component/trigger`, `@rc-component/portal`, `rc-resize-observer`, `react-copy-to-clipboard`, `styled-components`, `react-resize-detector`, `react-intersection-observer`). The 7 still pinned (`ckeditor4-react`, `react-anime`, `react-popper`, `react-responsive-tabs`, `react-simple-maps`, `react-table`, `reactour`) genuinely cap their React peer at ≤18 and still need the override. Net effect: npm's dependency resolver no longer hangs — `npm install --legacy-peer-deps` now finishes in ~1 minute on a clean tree.
+- **HTTPS-only demo links.** Switched remaining `http://` URLs in the Leaflet map demo (SRTM, Stamen) and the Guided Tours demo (CodePen) to `https://`. The SVG XML namespace URI (`http://www.w3.org/2000/svg`) is intentionally left as HTTP — it's a spec-mandated identifier, not a fetchable URL.
+- **`jsx-a11y/label-has-associated-control` downgraded from error to warning** in `eslint.config.js` so the demo forms (which intentionally render labels without associated inputs) don't fail CI's lint step. Awareness preserved as a warning, consistent with the project's existing jsx-a11y stance.
+
+### Fixed
+
+- **Stale / renamed `node_modules*` directories no longer pollute lint and git scans.** `.gitignore` and `eslint.config.js` now both ignore `.node_modules*` and `node_modules_*` patterns, so local debris from package-manager experiments (e.g. a renamed `.node_modules_obsolete`) can't silently wedge `npm run lint` or `git status`.
 
 ## [4.2.0] - 2025-12-03
 
