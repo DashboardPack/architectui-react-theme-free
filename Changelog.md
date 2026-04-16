@@ -1,5 +1,44 @@
 # Changelog
 
+## [4.5.0] - 2026-04-16
+
+Phase 14–17. The "exceptional" polish pass: real dark mode, accessibility basics, four more unmaintained dependencies gone, and a clear path for consumers to turn the template into their own project. Eight commits since 4.4.0, every one independently green through lint + unit + build + Playwright.
+
+### Added
+
+- **Real dark mode.** New `darkMode` field on the `ThemeOptions` slice (`'auto' | 'light' | 'dark'`), persisted to `localStorage` alongside the other theme prefs. `src/hooks/useDarkModeSync.js` writes the resolved value to `<html data-bs-theme>` so Bootstrap 5.3's native dark palette kicks in across reactstrap, cards, forms, tables, and everything else styled with Bootstrap utilities. `'auto'` follows `prefers-color-scheme` and reacts live to OS changes; explicit choices override it. Three-button Auto/Light/Dark control at the top of the ThemeOptions side panel, wired with `aria-pressed` for AT.
+- **Accessibility primitives.** Top-level `<a class="skip-link" href="#main-content">` jumps keyboard users past the sidebar/header. `<header role="banner">`, `<div role="navigation" id="app-sidebar" aria-label="Primary">`, and `<main id="main-content" tabIndex={-1}>` landmarks so screen readers announce the shell correctly. `:focus-visible` fallback ring for every keyboard-interactive element the template's custom classes wouldn't otherwise highlight.
+- **ARIA on icon-only buttons.** Layout-configurator cog, mobile hamburger, and mobile-overflow button all get `aria-label`, `aria-expanded`/`aria-pressed`, `aria-controls` where they reference other landmarks, and proper `type="button"` attributes. The mobile overlay scrim gets keyboard activation (Enter/Space/Escape).
+- **`src/hooks/useInView.js`** — a ~25-line `IntersectionObserver` hook replacing the `react-visibility-sensor` render-prop pattern.
+- **`src/components/Loader.jsx`** — a local `<Loader>` + `Types` dictionary matching the old `react-loaders` API, wired to the existing `loaders.css` animations.
+- **`src/DemoPages/routes.jsx`** — demo routes are now defined in the demo folder instead of `Layout/AppMain`, so `Layout/` is framework-only.
+- **`STARTER.md`** — step-by-step guide for stripping the template down to a starter: what to keep, what to delete, the three edits you need after `rm -rf src/DemoPages`, and how the reliability features (ErrorBoundary, persistence, dark mode, a11y) survive the trim automatically.
+
+### Changed
+
+- **Layout primitives are now semantic.** `Layout/AppHeader` renders as a `<header>`, `Layout/AppSidebar` as a `<nav>`-equivalent `div role="navigation"`, `DemoPages/Main`'s page-content slot as `<main>`. Same visual layout, usable tree for assistive tech.
+- **Dashboard sparkline widgets span the full card width** in CRM Dashboard 2 and Analytics (eight `<Col md="9">` → `md="12"`). The previous columns left ~25% of each card empty on the right.
+- **`persistThemeOptions` whitelist** extended to include `darkMode`. Existing stored state upgrades cleanly — the load path merges persisted keys over the reducer defaults so first-time visits to 4.5.0 get `'auto'`.
+
+### Removed
+
+- **`react-anime`** (peer-pinned to 17.x, zero source imports). Dropped from `dependencies` and from the nested override block. Also pruned `react-anime|animejs` from the `vendor-motion` manualChunks rule.
+- **`react-visibility-sensor`** (unmaintained since 2020). Replaced by `useInView` + a rewritten `DemoPages/Elements/ScreenVisibility/Examples/Fade.jsx` that uses it.
+- **`react-loaders`** (last published 2018). Replaced by the local `<Loader>` component via `resolve.alias`; the five consumer files still import from `'react-loaders'` for zero source-level churn.
+- Three entries from the Phase 7 CJS interop list (`react-loaders`, `react-visibility-sensor`, and indirectly the vendor-motion chunk entries) — they're not CJS packages anymore, they're local modules.
+
+### Infrastructure
+
+- New test files: `src/hooks/useDarkModeSync.test.jsx` (5 tests), extended `src/reducers/ThemeOptions.test.jsx` with a `darkMode` case. Total unit suite: 23 tests across 6 files (was 16/5).
+- `vitest.setup.js` already handles the `matchMedia` mock used by the new hook's tests.
+- CI workflow, Playwright suite, and all other scaffolding from 4.3.0 / 4.4.0 carry over unchanged.
+
+### Upgrade notes from 4.4.0
+
+Pure forward compatibility. Users who already had `ThemeOptions` prefs in `localStorage` get `'auto'` for `darkMode` on first load (defaults merge over persisted state). Nothing else changes on disk.
+
+If you were using `react-anime`, `react-visibility-sensor`, or `react-loaders` directly in your fork: the first two are gone; the third is aliased to the local `src/components/Loader.jsx` which preserves the `<Loader>` + `Types` surface. Custom loader types or deep configuration of the old packages won't carry over — the local component only does what `loaders.css` can do (which is every animation the template actually uses).
+
 ## [4.4.0] - 2026-04-16
 
 The "every page actually works" release. Phases 7–12 fix seven distinct runtime bugs latent on the Vite migration since v4.2.0, halve the largest JS chunk, add persistence and crash recovery, and wire in a route smoke test that prevents a repeat.

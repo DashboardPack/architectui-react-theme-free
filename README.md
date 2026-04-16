@@ -170,7 +170,13 @@ Config in [playwright.config.js](playwright.config.js).
 ## Reliability Features
 
 - **Top-level `<ErrorBoundary>`** ([src/components/ErrorBoundary.jsx](src/components/ErrorBoundary.jsx)) catches any render-time crash in the demo pages and shows a friendly card with the error message, component stack (dev only), and a reload button instead of blanking the screen.
-- **Theme preferences persist to `localStorage`** ([src/config/persistThemeOptions.js](src/config/persistThemeOptions.js)). Color scheme, fixed-header / fixed-sidebar / fixed-footer toggles, background image, and the page-title options all survive refresh. A whitelist controls what gets written so non-persisted UI state stays in memory.
+- **Theme preferences persist to `localStorage`** ([src/config/persistThemeOptions.js](src/config/persistThemeOptions.js)). Color scheme, fixed-header / fixed-sidebar / fixed-footer toggles, background image, dark-mode choice, and the page-title options all survive refresh. A whitelist controls what gets written so non-persisted UI state stays in memory.
+- **Dark mode** via Bootstrap 5.3's `data-bs-theme`. Auto (follows `prefers-color-scheme`), Light, or Dark — picked from the ThemeOptions side panel and persisted. [`src/hooks/useDarkModeSync.js`](src/hooks/useDarkModeSync.js) keeps `<html>` in sync and re-reacts to OS changes when the user leaves the pref on Auto.
+- **Accessibility basics** — skip-to-content link, `<header>` / `<nav>` / `<main>` landmarks, `:focus-visible` rings, `aria-label` / `aria-expanded` / `aria-pressed` on icon-only buttons, keyboard activation on the mobile overlay scrim.
+
+## Starting a new project
+
+See [STARTER.md](STARTER.md) for the full "strip to starter" guide. Short version: `rm -rf src/DemoPages/`, swap three files, and you're left with just the shell + reliability features.
 
 ## Continuous Integration
 
