@@ -1,133 +1,143 @@
-# Release v4.3.0
+# Release v4.4.0
 
-## ArchitectUI React Dashboard v4.3.0
+## ArchitectUI React Dashboard v4.4.0
 
 **Release Date:** April 16, 2026
 
-This release is a focused developer-experience upgrade: a working test harness, a CI pipeline, env-driven Vite config, an overrides audit that unblocks `npm install`, and new contributor docs. There are **no user-facing UI changes** — upgrading is safe for anyone already on v4.2.0.
+The "every page actually works" release. Seven distinct runtime bugs latent on the Vite migration branch since v4.2.0 are fixed; the largest JS chunk drops ~86%; a new Playwright route smoke test prevents a repeat.
+
+Upgrading from v4.3.0 is **zero code changes** in consumer projects.
 
 ---
 
 ## Highlights
 
-- **`npm install` now finishes in ~1 minute** (was stalling indefinitely) after pruning 11 of 18 React 19 compatibility overrides whose upstream packages have since caught up.
-- **Vitest 4 + React Testing Library** wired in with a jsdom environment, shared setup, and initial tests across reducer, store, and a layout component.
-- **GitHub Actions CI** runs `lint`, `vitest run`, and `build` on every push and pull request.
-- **Env-driven dev server and build base path** via `VITE_PORT` and `VITE_BASE` — no more editing `vite.config.js` for alternate ports or subdirectory deploys.
-- **CONTRIBUTING.md** with the full developer workflow (scripts, env vars, testing, commit style, PR checklist).
+- **86% smaller FontAwesome chunk.** Biggest single initial-load win in the template: `vendor-fontawesome` went from 668 kB / 259 kB gzip down to 94 kB / 29.5 kB.
+- **Top-level `<ErrorBoundary>`** renders a recoverable card instead of blanking the app when any demo page throws.
+- **Theme preferences persist across reloads.** Color scheme / fixed-header / fixed-sidebar / fixed-footer / background / page-title toggles all survive refresh via a whitelisted `localStorage` subscriber.
+- **Playwright route smoke test** runs in CI on every push — 24 demo routes must render without uncaught errors or `Element type is invalid` / `not a constructor` console errors.
+- **Seven runtime regressions fixed** across CJS-interop edge cases, React 19 symbol drift, and a d3-array lazy-init hazard. Cards Advanced, CRM Dashboard 2, all four dashboard variants, and every Suspense fallback now render.
+- **`jsconfig.json` + JSDoc types** on the critical hand-off points so editors can catch import mistakes without a full TypeScript migration.
+- **One less unmaintained dependency** — `react-sweet-progress` is out, replaced by a local SVG implementation of the same API.
 
 ---
 
 ## What's Changed
 
-### Overrides Audit
+### Runtime reliability — seven fixes in one
 
-The React 19 migration (v4.1.0) shipped with a defensive `overrides` block that force-pinned `react`/`react-dom` into 18 different sub-dependency trees. By the time this release was cut, upstream maintainers had updated most of those packages' peer ranges to cover React 19 — so the overrides were no longer load-bearing, and npm's `arborist` resolver was hanging trying to reconcile them against the full dep graph on fresh installs.
+Phase 5 / 6 released v4.3.0 without a runtime-level validation of every demo page, because the previous CI pipeline only exercised lint / unit tests / build. v4.4.0 adds that validation and, in the process, lands fixes for every bug it surfaced:
 
-Each override was audited against the current published `peerDependencies.react`:
+| Symptom                                               | Root cause                                                                          | Fix                                                                 |
+| ----------------------------------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| Cards Advanced: "Element type is invalid: got object" | Vite wraps `react-responsive-tabs` CJS as `export default require_X()`              | `cjsInteropPlugin` rewrites consumer-side `import`s                 |
+| CRM Dashboard 2: same                                 | `react-data-table-component`                                                        | Same plugin                                                         |
+| Every Suspense fallback: "got: undefined"             | `import { Loader }` from `react-loaders` (CJS, no named re-exports)                 | Same plugin                                                         |
+| All dashboards: "InternMap is not a constructor"      | Rolldown wraps `internmap` ESM in `__esmMin(cb)` without the trailing `()`          | Alias `internmap` → its synchronous UMD dist                        |
+| Sales dashboard: "A React Element from older React"   | `react-sweet-progress` inlines `Symbol.for('react.element')` in its Babel JSX shim  | Drop the dep; use local `<Progress>` in `src/components/`           |
+| Mixed `react-is` versions rendering old-React elements| `prop-types`, `hoist-non-react-statics`, `reactour` all pulled `react-is@16.13.1`   | Pin `react-is: ^19.2.5` via `overrides`                             |
+| `/elements/navigation` missing `lnr-*` glyphs         | SCSS `url('linearicons/...')` not rebased through Vite's `@import`                  | Move fonts to `public/fonts/linearicons/`, use absolute URLs        |
 
-**Dropped (upstream now accepts React 19):**
+### Bundle: `vendor-fontawesome` 668 kB → 94 kB
 
-`rc-slider`, `rc-tooltip`, `rc-util`, `rc-motion`, `@rc-component/trigger`, `@rc-component/portal`, `rc-resize-observer`, `react-copy-to-clipboard`, `styled-components`, `react-resize-detector`, `react-intersection-observer`
+The FontAwesome demo imported `fab` (the whole brand-icons namespace, ~500 icons) to render just two brand icons. Switched to named imports for `faFontAwesome` and `faInternetExplorer`. Solid icons and everything else already used named imports, so no other page is affected.
 
-**Kept (upstream still caps at ≤18):**
+| Chunk                   | Before    | After    | Delta    |
+| ----------------------- | --------- | -------- | -------- |
+| `vendor-fontawesome.js` | 668.09 kB | 94.50 kB | **−86%** |
+| gzip                    | 259.30 kB | 29.51 kB | **−89%** |
 
-`ckeditor4-react`, `react-anime`, `react-popper`, `react-responsive-tabs`, `react-simple-maps`, `react-table`, `reactour`
+### Top-level ErrorBoundary
 
-Net effect: clean `npm install --legacy-peer-deps` completes in ~1 minute instead of hanging.
+Wraps `<Provider>` and the `<HashRouter>` in `src/index.jsx`. On a thrown render, swaps the broken subtree for a card that includes:
 
-### Testing
+- The error message.
+- The full component stack (dev only).
+- A "Reload page" button.
 
-A first-class Vitest 4 + React Testing Library setup:
+Dev logs still go through `console.error` so Vite's overlay still surfaces crashes. Production only shows the card.
 
-- `vitest.config.js` — jsdom environment, `src` alias, coverage exclusions for assets / polyfills / service worker
-- `vitest.setup.js` — `@testing-library/jest-dom` matchers, RTL auto-cleanup, `matchMedia` / `ResizeObserver` shims
-- Initial tests: `ThemeOptions` reducer, `configureAppStore`, `<AppFooter />` render smoke
+### ThemeOptions persistence
 
-Scripts:
+New `src/config/persistThemeOptions.js` exposes `loadPersistedThemeOptions()` and `subscribeThemeOptionsPersistence(store)`. A 15-field whitelist controls what gets written. Writes dedupe on-change, so non-persisted slice updates don't touch storage. Quota / disabled-storage / private-mode errors are swallowed silently.
 
-| Command                   | Description                                      |
-| ------------------------- | ------------------------------------------------ |
-| `npm test`                | Vitest in watch mode                             |
-| `npm test -- --run`       | Single run (same mode CI uses)                   |
-| `npm run test:ui`         | Open the Vitest UI                               |
-| `npm run test:coverage`   | Single run with v8 coverage report               |
+Hydration merges the persisted subset over the reducer's defaults, so any field added to the slice since the user's last visit falls back to its current default instead of coming back `undefined`.
 
-### Continuous Integration
+### Playwright smoke test
 
-New workflow at [.github/workflows/ci.yml](.github/workflows/ci.yml):
+[e2e/routes.spec.js](e2e/routes.spec.js) walks 24 curated demo routes against `npm run preview`:
 
-- Runs on every push to `master` / `main` / `feature/**` and on every PR
-- Steps: `npm ci --legacy-peer-deps` → `npm run lint` → `npx vitest run` → `npm run build`
-- Node version from `.nvmrc` (Node 22 LTS)
-- Concurrency cancels stale runs on the same ref
+- Every dashboard variant (analytics, crm, commerce, sales, minimal-dashboard-1).
+- Apps: mailbox, chat, FAQ section.
+- Component demos: accordion, modals, calendar, maps.
+- Elements: cards, icons, navigation.
+- Forms, tables, charts.
+- User pages: login, register, forgot-password.
+- Widgets: chart-boxes-3.
 
-### Environment Variables
+Each test navigates, asserts the body contains page-identifying text, and hard-fails on any uncaught page error, `Element type is invalid`, `not a constructor`, or `ChunkLoadError` console error.
 
-`vite.config.js` now reads env vars via Vite's `loadEnv`. Supported keys are documented in [.env.example](.env.example):
+Wired into CI after `build`. Failing runs upload the Playwright HTML report as a 7-day artifact.
 
-| Key           | Default | Effect                                                       |
-| ------------- | ------- | ------------------------------------------------------------ |
-| `VITE_PORT`   | `3001`  | Dev server port                                              |
-| `VITE_BASE`   | `./`    | Public base path for the build (e.g. `"/architectui/"`)      |
+### JSDoc + jsconfig
 
-Copy `.env.example` to `.env.local` and adjust — tracked config stays untouched.
+Zero-cost editor tooling without a TypeScript migration. `jsconfig.json` declares `src/*` path mapping, `vite/client` / `vitest/globals` / `node` types, and `allowJs`. JSDoc `@typedef` / `@param` / `@returns` annotations cover:
 
-### Contributor Documentation
+- `configureAppStore` — returns `EnhancedStore`.
+- `PersistedThemeOptions` typedef + the three persist helpers' signatures.
+- `ErrorBoundary` class shape.
 
-New [CONTRIBUTING.md](CONTRIBUTING.md) covers:
+Autocomplete, go-to-definition, and hover type info all work in VS Code etc. `checkJs` stays off — the Playwright smoke test catches the class of bug a full type-check would.
 
-- Prerequisites (Node version from `.nvmrc`, `--legacy-peer-deps` rationale)
-- Full script table
-- Environment variable reference
-- Project layout
-- Code style expectations
-- Testing guidance
-- Commit conventions (`Phase X.Y:` prefix for upgrade work)
-- Pull request checklist
+### Dependency removed
 
-### Quality & Security
+`react-sweet-progress@1.1.2` — unmaintained since 2021, built with an old `@babel/preset-react` that inlined `Symbol.for('react.element')` into its `createElement` helper (React 19 rejects). Local drop-in at `src/components/CircleProgress.jsx` matches the public API.
 
-- `jsx-a11y/label-has-associated-control` downgraded from error to warning in `eslint.config.js` — the demo forms intentionally render labels without associated inputs, and blocking CI on them added no signal. Other jsx-a11y rules remain active.
-- Remaining `http://` URLs in demo content switched to `https://` (Leaflet SRTM & Stamen attributions, Guided Tours CodePen link). The SVG XML namespace URI is intentionally left as HTTP — it's a spec-mandated identifier, not a fetchable URL.
-- Defensive `.gitignore` + ESLint ignore patterns for `.node_modules*` and `node_modules_*` so local package-manager experiments can't trip up lint or `git status` later.
+### Interop plugin
+
+`cjsInteropPlugin` in `vite.config.js` rewrites `import` statements for 13 Babel-compiled CJS packages into a namespace-destructure that handles both `module.exports = X` and `__esModule + exports.default = X` shapes. Source files keep natural import syntax; the plugin applies in both dev and the production build. The explicit list:
+
+`react-bootstrap-sweetalert`, `react-copy-to-clipboard`, `react-countup`, `react-data-table-component`, `react-input-mask`, `react-liquid-gauge`, `react-loaders`, `react-perfect-scrollbar`, `react-responsive-tabs`, `react-slick`, `react-sparklines`, `react-sticky-el`, `react-visibility-sensor`.
 
 ---
 
-## Upgrade from v4.2.0
+## Upgrade from v4.3.0
 
 1. Pull the latest code.
 2. Delete `node_modules` and `package-lock.json`.
-3. `npm install --legacy-peer-deps` — should finish in ~1 minute.
-4. Optional: copy `.env.example` to `.env.local` if you want a different `VITE_PORT` or `VITE_BASE`.
-5. Run the usual sanity checks: `npm run lint`, `npm test -- --run`, `npm run build`.
+3. `npm install --legacy-peer-deps` — still needed for React 19 / older lib peer ranges.
+4. `npm run test:e2e:install` — one-off, installs the Chromium browser Playwright uses.
+5. Sanity check: `npm run lint`, `npm test -- --run`, `npm run build`, `npm run test:e2e`.
 
-No code changes are required in consumer projects.
+No consumer code changes.
+
+If you have a custom `<Progress>` component wrapping `react-sweet-progress`, check the local `CircleProgress.jsx` — it covers the 95% case (`type`, `percent`, `theme.active.color`, `theme.active.trailColor`) but deliberately doesn't reimplement every edge case.
 
 ---
 
 ## Tech Stack
 
-| Category     | Technology                          | Version  |
-| ------------ | ----------------------------------- | -------- |
-| Framework    | React                               | 19.2     |
-| Build Tool   | Vite                                | 8        |
-| Test Runner  | Vitest + React Testing Library      | 4 / 16   |
-| Linting      | ESLint 9 (flat config) + Prettier 3 | —        |
-| UI Framework | Bootstrap                           | 5.3.8    |
-| Components   | Reactstrap                          | 9.2.3    |
-| State        | Redux Toolkit                       | 2.11     |
-| Routing      | React Router                        | 7.14     |
-| Animations   | Framer Motion                       | 12.38    |
+| Category     | Technology                          | Version          |
+| ------------ | ----------------------------------- | ---------------- |
+| Framework    | React                               | 19.2             |
+| Build Tool   | Vite                                | 8                |
+| Test Runners | Vitest + React Testing Library      | 4 / 16           |
+|              | Playwright                          | 1.59             |
+| Linting      | ESLint 9 (flat config) + Prettier 3 | —                |
+| UI Framework | Bootstrap                           | 5.3.8            |
+| Components   | Reactstrap                          | 9.2.3            |
+| State        | Redux Toolkit                       | 2.11             |
+| Routing      | React Router                        | 7.14             |
+| Animations   | Framer Motion                       | 12.38            |
 | Charts       | ApexCharts, Chart.js, Recharts      | 5.10 / 4.5 / 3.8 |
-| Maps         | Leaflet, react-simple-maps          | 1.9 / 3.0 |
-| Styling      | Sass                                | 1.99     |
+| Maps         | Leaflet, react-simple-maps          | 1.9 / 3.0        |
+| Styling      | Sass                                | 1.99             |
 
 ---
 
 ## Security
 
-**0 vulnerabilities** — clean `npm audit` after the overrides audit and dependency refresh.
+**0 vulnerabilities** — clean `npm audit` after the dependency refresh.
 
 ---
 
@@ -143,7 +153,7 @@ No code changes are required in consumer projects.
 
 See [Changelog.md](Changelog.md) for complete version history.
 
-**Full Changelog**: <https://github.com/DashboardPack/architectui-react-theme-free/compare/v4.2.0...v4.3.0>
+**Full Changelog**: <https://github.com/DashboardPack/architectui-react-theme-free/compare/v4.3.0...v4.4.0>
 
 ---
 

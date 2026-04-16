@@ -1,5 +1,54 @@
 # Changelog
 
+## [4.4.0] - 2026-04-16
+
+The "every page actually works" release. Phases 7–12 fix seven distinct runtime bugs latent on the Vite migration since v4.2.0, halve the largest JS chunk, add persistence and crash recovery, and wire in a route smoke test that prevents a repeat.
+
+### Added
+
+- **Top-level `<ErrorBoundary>`** at the app root. A crash in any demo page now renders a friendly card (title, error message, component stack in dev, reload button) instead of blanking the app. Covers the exact class of failure this branch was masking — invalid React elements from CJS-interop mismatches.
+- **Theme preferences persist across reloads.** `src/config/persistThemeOptions.js` whitelists 15 `ThemeOptions` fields (color scheme, fixed header/sidebar/footer toggles, background image + opacity, page-title toggles, …) and hydrates them from `localStorage` on startup. Writes dedupe on-change so non-persisted slice updates don't touch storage; quota / disabled / private-mode exceptions are swallowed silently.
+- **Playwright route smoke test** (`e2e/routes.spec.js`). Spins up `npm run preview`, walks 24 curated demo routes against the production build, fails on any uncaught page error, "Element type is invalid" / "not a constructor" / "ChunkLoadError" console error, or missing page copy. Wired into CI after `build`; failing runs upload the Playwright report as an artifact. Scripts: `npm run test:e2e`, `npm run test:e2e:install`.
+- **`jsconfig.json` + JSDoc types** on the Redux store factory, the theme-persistence helpers, and `ErrorBoundary`. Editors get autocomplete + go-to-definition on the hand-off points where type errors cascade the furthest, without the cost of a full TypeScript migration (`checkJs: false`).
+- **CJS-import interop plugin** (`cjsInteropPlugin` in `vite.config.js`). Rewrites consumer-side `import X from 'pkg'` / `import { Y } from 'pkg'` for 13 Babel-compiled CJS packages into a namespace-destructure that handles both `module.exports = X` and `__esModule + exports.default = X` shapes. Fixes the "got object" / "got undefined" element-type errors on CRM Dashboard 2, Cards Advanced, and the Suspense fallback.
+- **Route-level bundle test coverage.** Every dashboard, app, component demo, forms, tables, charts, user page, and widget entry point now has at least one automated render check. 24 tests total, ~17s wall clock in CI.
+
+### Changed
+
+- **Bundle size: `vendor-fontawesome` 668 kB → 94 kB (gzip 259 kB → 29.5 kB).** The FontAwesome demo page imported the whole `fab` brand set (~500 icons) to show two; switched to named imports for `faFontAwesome` and `faInternetExplorer`. ~86% off the chunk on disk, ~89% off the wire. Biggest initial-load win available in the template right now.
+- **`internmap` pinned to `^2.0.3` + aliased to its UMD dist.** Rolldown wraps the ESM `export class InternMap` in a lazy `__esmMin(cb)` initializer, but `d3-array/ordinal.js` calls `new InternMap()` eagerly inside another wrapper — the lazy `cb` never fires before use, so every production-build dashboard using recharts scales threw `TypeError: InternMap is not a constructor`. The UMD dist defines the class synchronously.
+- **`react-is` pinned to `^19.2.5`** via `overrides`. Hoisted `react-is@16.13.1` copies (inside `prop-types`, `hoist-non-react-statics`, `reactour`) use the pre-React-19 `Symbol.for('react.element')` and rendered elements React 19 rejected as "older". Dedupes the tree to 19.2.5.
+- **Relocated linearicons fonts to `public/fonts/linearicons/`.** SCSS now references them as absolute URLs (`/fonts/linearicons/...`) so they resolve identically in dev and the production build — Vite doesn't rebase CSS URLs that come from `@import`-ed SCSS partials, which silently broke every `lnr-*` glyph.
+- **HTTPS-only demo links** in the Leaflet maps demo (SRTM, Stamen) and the Guided Tours demo (CodePen).
+
+### Fixed
+
+- **CRM Dashboard 2 renders** (was "Element type is invalid: got object" — `react-data-table-component` default-import namespace leak, via the Phase 7 interop plugin).
+- **Cards Advanced renders** (same class of bug via `react-responsive-tabs`).
+- **Every `<Suspense fallback>` renders** (same class via `react-loaders`' named import).
+- **Sales / Analytics / CRM / Commerce dashboards render** (combined internmap + react-is + react-sweet-progress fixes).
+- **`lnr-*` icons on /elements/navigation** (linearicons font path).
+
+### Removed
+
+- **`react-sweet-progress@1.1.2` dependency.** The old `@babel/preset-react` output inlined `Symbol.for('react.element')` directly into its `createElement` helper; every `<Progress>` it produced arrived at React 19 with the pre-19 `$$typeof`. Replaced by a local drop-in at `src/components/CircleProgress.jsx` that matches the public API (`<Progress type="circle|line" percent theme={{ active: { color, trailColor } }} />`). The previously needed `resolve.alias` hop is gone too.
+
+### Infrastructure
+
+- **CI workflow** (`.github/workflows/ci.yml`) extended with `npx playwright install --with-deps chromium` and the route smoke test step. Playwright report uploads on failure with 7-day retention.
+- **`.gitignore`** additions for `/test-results`, `/playwright-report`, `/playwright/.cache`.
+
+### Upgrade notes from 4.3.0
+
+No code changes in consumer projects. If you're deploying:
+
+1. Pull latest, delete `node_modules` and `package-lock.json`.
+2. `npm install --legacy-peer-deps` (still needed for the React 19 / older lib peer ranges).
+3. Run `npm run test:e2e:install` once to fetch the Chromium browser Playwright uses.
+4. Sanity-check with `npm run lint`, `npm test -- --run`, `npm run build`, `npm run test:e2e`.
+
+If you have a custom `<Progress>` usage, check the `CircleProgress.jsx` API — it covers the 95% case (`type`, `percent`, `theme.active.color`, `theme.active.trailColor`) but deliberately doesn't reimplement every edge of the original.
+
 ## [4.3.0] - 2026-04-16
 
 First release focused purely on developer experience around the template — no user-facing UI changes. If you're upgrading from 4.2.0: delete `node_modules` and `package-lock.json`, then `npm install --legacy-peer-deps`; `npm install` now finishes in ~1 minute instead of stalling.

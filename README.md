@@ -118,20 +118,22 @@ architectui-react-theme-free/
 
 ## Available Scripts
 
-| Command                   | Description                                            |
-| ------------------------- | ------------------------------------------------------ |
-| `npm start` / `npm run dev` | Start the Vite dev server (default port 3001)        |
-| `npm run build`           | Create production build in `build/`                    |
-| `npm run build:analyze`   | Build and open the Rollup bundle visualizer            |
-| `npm run preview`         | Preview the production build locally (port 4173)       |
-| `npm run lint`            | Run ESLint                                             |
-| `npm run lint:fix`        | Run ESLint and auto-fix what it can                    |
-| `npm run format`          | Run Prettier in write mode                             |
-| `npm run format:check`    | Run Prettier in check-only mode                        |
-| `npm test`                | Run Vitest in watch mode                               |
-| `npm test -- --run`       | Run the test suite once (same mode CI uses)            |
-| `npm run test:ui`         | Open the Vitest UI                                     |
-| `npm run test:coverage`   | Run the suite once with v8 coverage reporting          |
+| Command                     | Description                                             |
+| --------------------------- | ------------------------------------------------------- |
+| `npm start` / `npm run dev` | Start the Vite dev server (default port 3001)           |
+| `npm run build`             | Create production build in `build/`                     |
+| `npm run build:analyze`     | Build and open the Rollup bundle visualizer             |
+| `npm run preview`           | Preview the production build locally (port 4173)        |
+| `npm run lint`              | Run ESLint                                              |
+| `npm run lint:fix`          | Run ESLint and auto-fix what it can                     |
+| `npm run format`            | Run Prettier in write mode                              |
+| `npm run format:check`      | Run Prettier in check-only mode                         |
+| `npm test`                  | Run Vitest in watch mode                                |
+| `npm test -- --run`         | Run the test suite once (same mode CI uses)             |
+| `npm run test:ui`           | Open the Vitest UI                                      |
+| `npm run test:coverage`     | Run the suite once with v8 coverage reporting           |
+| `npm run test:e2e`          | Run the Playwright route smoke test against the preview |
+| `npm run test:e2e:install`  | One-off: install the Chromium browser Playwright uses   |
 
 ## Environment Variables
 
@@ -144,7 +146,9 @@ Copy [.env.example](.env.example) to `.env.local` and adjust as needed. Only `VI
 
 ## Testing
 
-Tests live next to the code under test as `*.test.jsx` and run on Vitest + React Testing Library:
+Two layers of tests:
+
+**Unit / component (Vitest + React Testing Library)** — tests live next to the code as `*.test.jsx`:
 
 ```bash
 npm test              # watch mode
@@ -152,11 +156,34 @@ npm test -- --run     # single run
 npm run test:coverage # v8 coverage report under coverage/
 ```
 
-Shared setup (matchers, RTL cleanup, `matchMedia` / `ResizeObserver` shims) is in [vitest.setup.js](vitest.setup.js); config is in [vitest.config.js](vitest.config.js).
+Shared setup (matchers, RTL cleanup, `matchMedia` / `ResizeObserver` / `localStorage` shims) is in [vitest.setup.js](vitest.setup.js); config is in [vitest.config.js](vitest.config.js).
+
+**End-to-end (Playwright)** — [e2e/routes.spec.js](e2e/routes.spec.js) spins up `npm run preview` and walks 24 demo routes, failing on any uncaught page error or "Element type is invalid" / "not a constructor" console error. First run needs the browser installed:
+
+```bash
+npm run test:e2e:install    # once
+npm run test:e2e            # run the suite
+```
+
+Config in [playwright.config.js](playwright.config.js).
+
+## Reliability Features
+
+- **Top-level `<ErrorBoundary>`** ([src/components/ErrorBoundary.jsx](src/components/ErrorBoundary.jsx)) catches any render-time crash in the demo pages and shows a friendly card with the error message, component stack (dev only), and a reload button instead of blanking the screen.
+- **Theme preferences persist to `localStorage`** ([src/config/persistThemeOptions.js](src/config/persistThemeOptions.js)). Color scheme, fixed-header / fixed-sidebar / fixed-footer toggles, background image, and the page-title options all survive refresh. A whitelist controls what gets written so non-persisted UI state stays in memory.
 
 ## Continuous Integration
 
-GitHub Actions runs `lint`, `vitest run`, and `build` on every push and pull request using the Node version pinned in [.nvmrc](.nvmrc). See [.github/workflows/ci.yml](.github/workflows/ci.yml).
+GitHub Actions runs on every push and pull request using the Node version pinned in [.nvmrc](.nvmrc). Pipeline:
+
+1. `npm ci --legacy-peer-deps`
+2. `npm run lint`
+3. `npx vitest run`
+4. `npm run build`
+5. `npx playwright install --with-deps chromium`
+6. `npx playwright test --project=chromium` (Playwright report uploaded as an artifact if any step fails)
+
+See [.github/workflows/ci.yml](.github/workflows/ci.yml).
 
 ## Browser Support
 
