@@ -27,46 +27,44 @@ if (typeof window !== 'undefined' && !window.ResizeObserver) {
   };
 }
 
-// jsdom's window.localStorage in recent Vitest/jsdom combos can be a Storage
-// instance lacking `.clear()`/`.setItem()` — replace it with a spec-shaped
-// in-memory polyfill so persistence tests round-trip cleanly.
+// localStorage is inconsistent across Node/jsdom/Vitest combos: depending on
+// the runtime, `window.localStorage` may lack methods, or expose methods that
+// silently no-op (e.g. Node 22's experimental localStorage without
+// `--localstorage-file` drops every write). Method-existence checks therefore
+// aren't enough — Node 22 has the methods but they don't persist, which made
+// the persistence tests pass on Node 26 yet fail in CI on Node 22. Install a
+// spec-shaped in-memory polyfill unconditionally so storage behaves
+// identically everywhere.
 if (typeof window !== 'undefined') {
-  const hasWorkingStorage =
-    window.localStorage &&
-    typeof window.localStorage.clear === 'function' &&
-    typeof window.localStorage.setItem === 'function';
-
-  if (!hasWorkingStorage) {
-    class MemoryStorage {
-      constructor() {
-        this._store = new Map();
-      }
-      get length() {
-        return this._store.size;
-      }
-      clear() {
-        this._store.clear();
-      }
-      getItem(key) {
-        return this._store.has(key) ? this._store.get(key) : null;
-      }
-      setItem(key, value) {
-        this._store.set(String(key), String(value));
-      }
-      removeItem(key) {
-        this._store.delete(key);
-      }
-      key(index) {
-        return Array.from(this._store.keys())[index] ?? null;
-      }
+  class MemoryStorage {
+    constructor() {
+      this._store = new Map();
     }
-    Object.defineProperty(window, 'localStorage', {
-      configurable: true,
-      value: new MemoryStorage(),
-    });
-    Object.defineProperty(window, 'sessionStorage', {
-      configurable: true,
-      value: new MemoryStorage(),
-    });
+    get length() {
+      return this._store.size;
+    }
+    clear() {
+      this._store.clear();
+    }
+    getItem(key) {
+      return this._store.has(key) ? this._store.get(key) : null;
+    }
+    setItem(key, value) {
+      this._store.set(String(key), String(value));
+    }
+    removeItem(key) {
+      this._store.delete(key);
+    }
+    key(index) {
+      return Array.from(this._store.keys())[index] ?? null;
+    }
   }
+  Object.defineProperty(window, 'localStorage', {
+    configurable: true,
+    value: new MemoryStorage(),
+  });
+  Object.defineProperty(window, 'sessionStorage', {
+    configurable: true,
+    value: new MemoryStorage(),
+  });
 }
