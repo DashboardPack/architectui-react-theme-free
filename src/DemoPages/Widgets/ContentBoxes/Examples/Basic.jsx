@@ -66,7 +66,7 @@ import {
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Sparklines, SparklinesBars, SparklinesLine } from 'react-sparklines';
+import { Sparklines, SparklinesBars, SparklinesLine } from '../../../../components/Sparklines';
 
 const data55 = [
   { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },

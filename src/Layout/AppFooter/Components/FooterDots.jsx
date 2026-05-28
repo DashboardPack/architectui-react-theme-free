@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import city2 from '../../../assets/utils/images/dropdown-header/city2.jpg';
 import avatar6 from '../../../assets/utils/images/avatars/2.jpg';
 
-import Tabs from 'react-responsive-tabs';
+import Tabs from '../../../../components/ResponsiveTabs';
 
 // Dropdown Tabs Content
 import ChatExample from './TabsContent/ChatExample';

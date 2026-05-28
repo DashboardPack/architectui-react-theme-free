@@ -1,116 +1,137 @@
-import React, { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
 import { Row, Col, Card, CardBody, Button } from 'reactstrap';
 
 import PageTitle from '../../../../Layout/AppMain/PageTitle';
 
 import {
-  SketchPicker,
-  CompactPicker,
-  SwatchesPicker,
-  TwitterPicker,
-  CirclePicker,
-  HuePicker,
-  AlphaPicker,
-  BlockPicker,
-} from 'react-color';
+  Sketch,
+  Compact,
+  Swatch,
+  Github,
+  Circle,
+  Hue,
+  Alpha,
+  Block,
+  hsvaToHex,
+} from '@uiw/react-color';
 
-export default class FormColorPicker extends React.Component {
-  state = {
-    displayColorPicker: false,
-  };
+const palette = [
+  '#D0021B',
+  '#F5A623',
+  '#F8E71C',
+  '#8B572A',
+  '#7ED321',
+  '#417505',
+  '#BD10E0',
+  '#9013FE',
+  '#4A90E2',
+  '#50E3C2',
+  '#B8E986',
+  '#000000',
+  '#4A4A4A',
+  '#9B9B9B',
+  '#FFFFFF',
+];
 
-  handleClick = () => {
-    this.setState({ displayColorPicker: !this.state.displayColorPicker });
-  };
+const Centered = ({ children }) => (
+  <div className="d-flex justify-content-center">{children}</div>
+);
 
-  handleClose = () => {
-    this.setState({ displayColorPicker: false });
-  };
+export default function FormColorPicker() {
+  const [hsva, setHsva] = useState({ h: 214, s: 60, v: 85, a: 1 });
+  const [displayColorPicker, setDisplayColorPicker] = useState(false);
+  const hex = hsvaToHex(hsva);
+  const onChange = (color) => setHsva(color.hsva);
 
-  render() {
-    const popover = {
-      position: 'absolute',
-      zIndex: '2',
-    };
-    const cover = {
-      position: 'fixed',
-      top: '0px',
-      right: '0px',
-      bottom: '0px',
-      left: '0px',
-    };
-    return (
-      <Fragment>
-        <PageTitle
-          heading="Forms Color Picker"
-          subheading="Color Pickers following the design from Photoshop, Sketch, Chrome, Twitter and more."
-          icon="pe-7s-drawer icon-gradient bg-happy-itmeo"
-        />
-        <TransitionGroup>
-          <CSSTransition
-            component="div"
-            classNames="TabsAnimation"
-            appear={true}
-            timeout={1500}
-            enter={false}
-            exit={false}
-          >
-            <Row className="mt-2">
-              <Col md="4">
-                <Card className="main-card mb-3">
-                  <CardBody>
-                    <Button color="primary btn-wide btn-shadow" onClick={this.handleClick}>
-                      Pick Color
-                    </Button>
-                    {this.state.displayColorPicker ? (
-                      <div style={popover}>
-                        <div style={cover} onClick={this.handleClose} />
-                        <TwitterPicker />
-                      </div>
-                    ) : null}
-                  </CardBody>
-                </Card>
-                <Card className="main-card mb-3">
-                  <CardBody>
-                    <SketchPicker className="mx-auto mb-4" />
-                  </CardBody>
-                </Card>
-              </Col>
-              <Col md="4">
-                <Card className="main-card mb-3">
-                  <CardBody>
-                    <SwatchesPicker className="mx-auto" />
-                  </CardBody>
-                </Card>
-                <Card className="main-card mb-3">
-                  <CardBody>
-                    <BlockPicker className="mx-auto" />
-                  </CardBody>
-                </Card>
-              </Col>
-              <Col md="4">
-                <Card className="main-card mb-3">
-                  <CardBody>
-                    <CirclePicker className="mx-auto" />
-                  </CardBody>
-                </Card>
-                <Card className="main-card mb-3">
-                  <CardBody>
-                    <CompactPicker className="mx-auto" />
-                  </CardBody>
-                </Card>
-                <Card className="main-card mb-3">
-                  <CardBody>
-                    <HuePicker className="mx-auto mb-3" />
-                    <AlphaPicker className="mx-auto" />
-                  </CardBody>
-                </Card>
-              </Col>
-            </Row>
-          </CSSTransition>
-        </TransitionGroup>
-      </Fragment>
-    );
-  }
+  return (
+    <Fragment>
+      <PageTitle
+        heading="Forms Color Picker"
+        subheading="Color Pickers following the design from Photoshop, Sketch, Chrome, Twitter and more."
+        icon="pe-7s-drawer icon-gradient bg-happy-itmeo"
+      />
+      <TransitionGroup>
+        <CSSTransition
+          component="div"
+          classNames="TabsAnimation"
+          appear={true}
+          timeout={1500}
+          enter={false}
+          exit={false}
+        >
+          <Row className="mt-2">
+            <Col md="4">
+              <Card className="main-card mb-3">
+                <CardBody>
+                  <Button
+                    color="primary btn-wide btn-shadow"
+                    onClick={() => setDisplayColorPicker((v) => !v)}
+                  >
+                    Pick Color
+                  </Button>
+                  {displayColorPicker ? (
+                    <div style={{ position: 'absolute', zIndex: 2 }}>
+                      <div
+                        style={{ position: 'fixed', top: 0, right: 0, bottom: 0, left: 0 }}
+                        onClick={() => setDisplayColorPicker(false)}
+                      />
+                      <Github color={hex} onChange={onChange} />
+                    </div>
+                  ) : null}
+                </CardBody>
+              </Card>
+              <Card className="main-card mb-3">
+                <CardBody>
+                  <Centered>
+                    <Sketch color={hex} onChange={onChange} />
+                  </Centered>
+                </CardBody>
+              </Card>
+            </Col>
+            <Col md="4">
+              <Card className="main-card mb-3">
+                <CardBody>
+                  <Centered>
+                    <Swatch colors={palette} color={hex} onChange={onChange} />
+                  </Centered>
+                </CardBody>
+              </Card>
+              <Card className="main-card mb-3">
+                <CardBody>
+                  <Centered>
+                    <Block color={hex} onChange={onChange} />
+                  </Centered>
+                </CardBody>
+              </Card>
+            </Col>
+            <Col md="4">
+              <Card className="main-card mb-3">
+                <CardBody>
+                  <Centered>
+                    <Circle colors={palette} color={hex} onChange={onChange} />
+                  </Centered>
+                </CardBody>
+              </Card>
+              <Card className="main-card mb-3">
+                <CardBody>
+                  <Centered>
+                    <Compact color={hex} onChange={onChange} />
+                  </Centered>
+                </CardBody>
+              </Card>
+              <Card className="main-card mb-3">
+                <CardBody>
+                  <Hue hue={hsva.h} onChange={(newHue) => setHsva({ ...hsva, ...newHue })} />
+                  <div className="mt-3">
+                    <Alpha hsva={hsva} onChange={(newAlpha) => setHsva({ ...hsva, ...newAlpha })} />
+                  </div>
+                </CardBody>
+              </Card>
+            </Col>
+          </Row>
+        </CSSTransition>
+      </TransitionGroup>
+    </Fragment>
+  );
 }

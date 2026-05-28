@@ -1,7 +1,14 @@
 import { color } from 'd3-color';
-import { interpolateRgb } from 'd3-interpolate';
 import React, { Fragment, Component } from 'react';
-import LiquidFillGauge from 'react-liquid-gauge';
+import LiquidGauge from '../../../../components/LiquidGauge';
+
+// Linear RGB interpolation between two colors (replaces d3-interpolate).
+const interpolateRgb = (a, b) => (t) => {
+  const ca = color(a).rgb();
+  const cb = color(b).rgb();
+  const ch = (x, y) => Math.round(x + (y - x) * t);
+  return `rgb(${ch(ca.r, cb.r)}, ${ch(ca.g, cb.g)}, ${ch(ca.b, cb.b)})`;
+};
 import {
   Row,
   Col,
@@ -40,7 +47,7 @@ import { faAngleUp, faArrowLeft, faArrowRight } from '@fortawesome/free-solid-sv
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Sparklines, SparklinesBars, SparklinesLine } from 'react-sparklines';
+import { Sparklines, SparklinesBars, SparklinesLine } from '../../../../components/Sparklines';
 
 function boxMullerRandom() {
   let phase = true,
@@ -780,7 +787,7 @@ export default class CommerceDashboard1 extends Component {
                       <div className="text-center">
                         <h5 className="widget-heading opacity-4">Total Sales</h5>
                         <h5>
-                          <LiquidFillGauge
+                          <LiquidGauge
                             style={{ margin: '0 auto' }}
                             width={radius}
                             height={radius}

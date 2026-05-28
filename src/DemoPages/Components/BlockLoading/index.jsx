@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import classnames from 'classnames';
 import { CSSTransition, TransitionGroup } from '../../../utils/TransitionWrapper';
-import Tabs from 'react-responsive-tabs';
+import Tabs from '../../../components/ResponsiveTabs';
 
 import dummyData from './dummyData';
 

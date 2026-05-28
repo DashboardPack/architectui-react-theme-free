@@ -19,17 +19,11 @@ const analyze = process.env.ANALYZE === 'true';
 // (`module.exports = X`) and Babel-CJS (`exports.default = X`) shapes
 // uniformly. Source files stay authored with the natural import syntax.
 const cjsInteropPackages = [
-  'react-bootstrap-sweetalert',
   'react-copy-to-clipboard',
   'react-countup',
   'react-data-table-component',
-  'react-input-mask',
-  'react-liquid-gauge',
   'react-perfect-scrollbar',
-  'react-responsive-tabs',
   'react-slick',
-  'react-sparklines',
-  'react-sticky-el',
 ];
 
 const cjsInteropPlugin = (pkgs) => {
@@ -159,9 +153,9 @@ export default defineConfig(({ mode }) => {
         'react/jsx-dev-runtime',
         // Force a proper bundle so the `InternMap` class doesn't get wrapped
         // in a lazy initializer that leaves it undefined at the point
-        // recharts calls `new InternMap()`.
+        // recharts calls `new InternMap()`. (recharts bundles its own d3-array
+        // via victory-vendor, so d3-array isn't a top-level package to include.)
         'internmap',
-        'd3-array',
       ],
     },
     server: {
@@ -197,8 +191,6 @@ export default defineConfig(({ mode }) => {
             if (/[\\/]node_modules[\\/](framer-motion|react-animations)[\\/]/.test(id))
               return 'vendor-motion';
             if (/[\\/]node_modules[\\/]styled-components[\\/]/.test(id)) return 'vendor-styled';
-            if (/[\\/]node_modules[\\/](ckeditor|ckeditor4|ckeditor4-react)[\\/]/.test(id))
-              return 'vendor-ckeditor';
           },
         },
       },

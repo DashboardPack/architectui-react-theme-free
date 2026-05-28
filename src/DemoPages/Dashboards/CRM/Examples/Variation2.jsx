@@ -32,7 +32,7 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 
 import { faAngleUp, faDotCircle, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
-import { Sparklines, SparklinesCurve } from 'react-sparklines';
+import { Sparklines, SparklinesCurve } from '../../../../components/Sparklines';
 
 import { makeData } from '../../../Tables/DataTables/Examples/utils';
 

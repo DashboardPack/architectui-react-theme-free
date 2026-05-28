@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import DatePicker from 'react-datepicker';
 
-import moment from 'moment';
+import { isAfter } from 'date-fns';
 
 class FormDateRangePicker extends React.Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class FormDateRangePicker extends React.Component {
     startDate = startDate || this.state.startDate;
     endDate = endDate || this.state.endDate;
 
-    if (moment(startDate).isAfter(endDate)) {
+    if (startDate && endDate && isAfter(startDate, endDate)) {
       endDate = startDate;
     }
 

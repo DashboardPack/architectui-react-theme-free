@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Card, CardBody, Col, CardTitle, Row } from 'reactstrap';
 
-import Rating from 'react-rating';
+import Rating from '../../../../components/Rating';
 
 import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
 

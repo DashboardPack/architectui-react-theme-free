@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import Tabs from 'react-responsive-tabs';
+import Tabs from '../../../../components/ResponsiveTabs';
 
 import city3 from '../../../../assets/utils/images/dropdown-header/city3.jpg';
 

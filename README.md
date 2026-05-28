@@ -12,6 +12,16 @@ ArchitectUI React is a feature-rich, free admin dashboard template designed for 
 
 This template offers clean, responsive design with a comprehensive set of UI components, charts, forms, and layout options. Perfect for startups, enterprises, and developers looking for a production-ready admin dashboard solution.
 
+## What's New in 4.6.0
+
+A dependency-modernization release — see [Changelog.md](Changelog.md) and [RELEASE.md](RELEASE.md) for the full detail.
+
+- **0 `npm audit` vulnerabilities** (down from 5) and every dependency on its latest version.
+- **16 abandoned/unused packages removed**; `react-data-table-component` upgraded to v8.
+- **End-of-life CKEditor 4 replaced** with the maintained `react-simple-wysiwyg`.
+- **Abandoned packages swapped** for maintained equivalents (`@react-input/mask`, `@uiw/react-color`, `sweetalert2`, `rc-input-number`, `react-easy-crop`, `@reactour/tour` v3, `date-fns`) or small dependency-free local components (`Sparklines`, `ResponsiveTabs`, `LiquidGauge`, `Rating`, `Sticky`).
+- **No breaking changes** to the template's layout, theming, or starter workflow.
+
 ## Key Features
 
 ### Core Technologies
@@ -294,13 +304,16 @@ Upgrade to **[ArchitectUI React PRO](https://dashboardpack.com/theme-details/arc
 ### Dependencies
 
 - **UI Framework**: Bootstrap 5.3.8, Reactstrap 9.2.3
-- **Charts**: ApexCharts 5.10, Chart.js 4.5, Recharts 3.8
+- **Charts**: ApexCharts 5.13, Chart.js 4.5, Recharts 3.8
+- **Maps**: Leaflet 1.9, react-simple-maps 3.0
 - **Icons**: FontAwesome 7.2, React Icons 5.6
-- **Forms**: React Select, React Datepicker, React Input Mask
-- **Animations**: Framer Motion 12.38, React Animations
-- **State Management**: Redux Toolkit 2.11, React Redux 9.2
+- **Forms**: React Select, React Datepicker, @react-input/mask, rc-input-number
+- **Editor**: react-simple-wysiwyg
+- **Notifications**: SweetAlert2, React Toastify
+- **Animations**: Framer Motion 12.40
+- **State Management**: Redux Toolkit 2.12, React Redux 9.3
 - **Build Tools**: Vite 8, Sass 1.99
-- **Quality**: ESLint 9 (flat config), Prettier 3, Vitest 4 + React Testing Library 16
+- **Quality**: ESLint 9 (flat config), Prettier 3, Vitest 4 + React Testing Library 16, Playwright 1.59
 
 ### Performance Features
 

@@ -1,9 +1,16 @@
 import { color } from 'd3-color';
-import { interpolateRgb } from 'd3-interpolate';
 import React, { Fragment, Component } from 'react';
-import LiquidFillGauge from 'react-liquid-gauge';
+import LiquidGauge from '../../../../components/LiquidGauge';
 import { Row, Col, Card, CardBody, CardTitle, Button } from 'reactstrap';
 import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
+
+// Linear RGB interpolation between two colors (replaces d3-interpolate).
+const interpolateRgb = (a, b) => (t) => {
+  const ca = color(a).rgb();
+  const cb = color(b).rgb();
+  const ch = (x, y) => Math.round(x + (y - x) * t);
+  return `rgb(${ch(ca.r, cb.r)}, ${ch(ca.g, cb.g)}, ${ch(ca.b, cb.b)})`;
+};
 
 export default class ChartsLiquidGaugeExample extends Component {
   state = {
@@ -53,7 +60,7 @@ export default class ChartsLiquidGaugeExample extends Component {
                     <CardTitle>Liquid Gauges</CardTitle>
                     <Row className="text-center">
                       <Col md="6" lg="4">
-                        <LiquidFillGauge
+                        <LiquidGauge
                           style={{ margin: '0 auto' }}
                           width={radius}
                           height={radius}
@@ -106,7 +113,7 @@ export default class ChartsLiquidGaugeExample extends Component {
                         />
                       </Col>
                       <Col md="6" lg="4">
-                        <LiquidFillGauge
+                        <LiquidGauge
                           style={{ margin: '0 auto' }}
                           width={radius * 1.5}
                           height={radius * 1.5}
@@ -159,7 +166,7 @@ export default class ChartsLiquidGaugeExample extends Component {
                         />
                       </Col>
                       <Col md="6" lg="4">
-                        <LiquidFillGauge
+                        <LiquidGauge
                           style={{ margin: '0 auto' }}
                           width={radius * 2}
                           height={radius * 2}

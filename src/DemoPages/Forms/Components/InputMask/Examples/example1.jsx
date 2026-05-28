@@ -1,28 +1,26 @@
 import React, { Fragment } from 'react';
 import { Row, Col, Card, CardBody, CardTitle, InputGroup } from 'reactstrap';
 
-import InputMask from 'react-input-mask';
+import { InputMask } from '@react-input/mask';
 
 import { faCalendarAlt, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class FormInputMaskExample extends React.Component {
+  // `_` placeholders accept a single digit; literal characters stay as typed.
+  replacement = { _: /\d/ };
+
   state = {
     value: '',
-    mask: '9999-9999-9999-9999',
+    mask: '____-____-____-____',
   };
 
   onChange = (event) => {
-    var value = event.target.value;
-    var newState = {
-      mask: '9999-9999-9999-9999',
-      value: value,
-    };
-    if (/^3[47]/.test(value)) {
-      newState.mask = '9999-999999-99999';
-    }
-    this.setState(newState);
+    const value = event.target.value;
+    // American Express cards (starting 34/37) use a 4-6-5 grouping.
+    const mask = /^3[47]/.test(value) ? '____-______-_____' : '____-____-____-____';
+    this.setState({ mask, value });
   };
 
   render() {
@@ -37,13 +35,21 @@ class FormInputMaskExample extends React.Component {
                   <div className="input-group-text">
                     <FontAwesomeIcon icon={faPhone} />
                   </div>
-                  <InputMask className="form-control" mask="+4\\9 99 999 99" maskChar={null} />
+                  <InputMask
+                    className="form-control"
+                    mask="+49 __ ___ __"
+                    replacement={this.replacement}
+                  />
                 </InputGroup>
                 <InputGroup>
                   <div className="input-group-text">
                     <FontAwesomeIcon icon={faPhone} />
                   </div>
-                  <InputMask className="form-control" mask="+7 (999) 999-99-99" maskChar={null} />
+                  <InputMask
+                    className="form-control"
+                    mask="+7 (___) ___-__-__"
+                    replacement={this.replacement}
+                  />
                 </InputGroup>
               </CardBody>
             </Card>
@@ -56,7 +62,12 @@ class FormInputMaskExample extends React.Component {
                   <div className="input-group-text">
                     <FontAwesomeIcon icon={faCalendarAlt} />
                   </div>
-                  <InputMask className="form-control" mask="99-99-9999" defaultValue="27-10-2018" />
+                  <InputMask
+                    className="form-control"
+                    mask="__-__-____"
+                    replacement={this.replacement}
+                    defaultValue="27-10-2018"
+                  />
                 </InputGroup>
                 <InputGroup>
                   <div className="input-group-text">
@@ -64,7 +75,8 @@ class FormInputMaskExample extends React.Component {
                   </div>
                   <InputMask
                     className="form-control"
-                    mask="99/99/9999"
+                    mask="__/__/____"
+                    replacement={this.replacement}
                     placeholder="Enter birthdate"
                   />
                 </InputGroup>
@@ -77,7 +89,13 @@ class FormInputMaskExample extends React.Component {
                 <CardTitle>Credit Card</CardTitle>
                 <InputGroup>
                   <div className="input-group-text">@</div>
-                  <InputMask className="form-control" {...this.state} onChange={this.onChange} />
+                  <InputMask
+                    className="form-control"
+                    mask={this.state.mask}
+                    replacement={this.replacement}
+                    value={this.state.value}
+                    onChange={this.onChange}
+                  />
                 </InputGroup>
               </CardBody>
             </Card>

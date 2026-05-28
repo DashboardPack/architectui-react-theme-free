@@ -1,86 +1,81 @@
-# Release v4.5.0
+# Release v4.6.0
 
-## ArchitectUI React Dashboard v4.5.0
+## ArchitectUI React Dashboard v4.6.0
 
-**Release Date:** April 16, 2026
+**Release Date:** May 28, 2026
 
-The "exceptional polish" release. Real dark mode, accessibility basics, four more unmaintained dependencies gone, and a proper starter-mode guide for consumers who want to turn the template into their own project. Eight commits on top of 4.4.0 — every one green through lint, unit tests, build, and the 24-route Playwright smoke test.
+The dependency-modernization release. Every dependency is now at its latest version, the `npm audit` report is clean (**0 vulnerabilities**, down from 5), and sixteen abandoned or unused packages are gone — the ones still in use replaced by maintained libraries or small in-repo components so no demo loses functionality. Every step was verified green through lint (0 errors), 23 unit tests, the production build, and the Playwright route smoke test.
 
 ---
 
 ## Highlights
 
-- **Real Bootstrap 5.3 dark mode** — `auto` / `light` / `dark` on the ThemeOptions panel, persisted, reactive to `prefers-color-scheme`.
-- **Accessibility basics** — skip link, semantic landmarks (`<header>`, `<nav>`, `<main>`), `:focus-visible` rings, ARIA on icon-only buttons.
-- **Three more unmaintained deps removed** — `react-anime` (unused), `react-visibility-sensor` (→ local IntersectionObserver hook), `react-loaders` (→ local component + existing `loaders.css`). Total since the start of the migration: four.
-- **Starter-mode guide** ([STARTER.md](STARTER.md)) — step-by-step instructions for stripping to a starter project. Demo routes moved out of `Layout/AppMain` so the shell is framework-only.
-- **Sparkline widget bug fix** — eight dashboard cards in CRM Dashboard 2 and Analytics were rendering their sparkline in a 9/12 column, leaving ~25% empty on the right.
+- **0 `npm audit` vulnerabilities** (was 5: 2 high, 3 moderate).
+- **16 packages removed** — 9 dead (zero source imports) plus 7 abandoned ones replaced. 45 packages pruned from `node_modules` in total.
+- **13 abandoned packages replaced** with maintained libraries or local components — same demos, same behaviour.
+- **`react-data-table-component` 7 → 8** — the only dependency a major version behind.
+- **End-of-life `ckeditor4` removed** — swapped for the maintained, lightweight `react-simple-wysiwyg`.
+- **No breaking changes to the template's own API.** Same layout shell, theming, and starter workflow.
 
 ---
 
 ## What's Changed
 
-### Dark mode
+### Security
 
-New `darkMode` field on the `ThemeOptions` slice with three values:
+`npm audit` is now clean. The `uuid` advisory came in through the unused `react-validation`; removing it plus a non-breaking `npm audit fix` (transitive `brace-expansion`, `fast-uri`, `tmp`) cleared everything.
 
-- `'auto'` — follows `prefers-color-scheme`. Reacts live when the OS theme flips.
-- `'light'` — force light regardless of system.
-- `'dark'` — force dark regardless of system.
+### Removed — unused (zero source imports)
 
-Persisted via the existing `localStorage` subscriber. `src/hooks/useDarkModeSync.js` resolves the preference into the concrete `'light' | 'dark'` value Bootstrap expects and writes it to `<html data-bs-theme>`. Bootstrap 5.3's native dark palette kicks in across reactstrap, cards, forms, tables, typography, and every utility-styled surface. Custom widgets with hard-coded colours still inherit correctly because they use `var(--bs-*)` tokens.
+`react-validation`, `react-form-validator-core`, `react-table`, `react-image-crop`, `react-on-screen`, `react-animations`, `aphrodite`, and the now-unused `sweetalert` (v2).
 
-A three-button `Auto / Light / Dark` control lives at the top of the ThemeOptions side panel, with `aria-pressed` indicating the active choice.
+### Replaced — abandoned → maintained library
 
-### Accessibility pass
+| Old (last published)                     | New                   |
+| ---------------------------------------- | --------------------- |
+| `react-input-mask` (2022)                | `@react-input/mask`   |
+| `react-color` (2022)                     | `@uiw/react-color`    |
+| `react-bootstrap-sweetalert` (2022)      | `sweetalert2`         |
+| `react-numeric-input` (2022)             | `rc-input-number`     |
+| `react-cropper` (2023)                   | `react-easy-crop`     |
+| `reactour` v1 (2024)                     | `@reactour/tour` v3   |
+| `ckeditor4` / `ckeditor4-react` (**EOL**)| `react-simple-wysiwyg`|
+| `moment` (maintenance-mode)              | `date-fns` (already a dependency) |
 
-First real sweep. Nothing lint-counted was broken (lint warnings were mostly `no-unused-vars` in demo code), but the template wasn't actually usable by keyboard-only or screen-reader users:
+### Replaced — abandoned → local component
 
-| Addition                                       | Purpose                                               |
-| ---------------------------------------------- | ----------------------------------------------------- |
-| `<a class="skip-link" href="#main-content">`   | Tab-to-skip past the fixed sidebar and header         |
-| `<header role="banner">`                       | Primary landmark for the app header                   |
-| `<div role="navigation" id="app-sidebar">`     | Primary-nav landmark + target for `aria-controls`     |
-| `<main id="main-content" tabIndex={-1}>`       | Content landmark + skip-link target                   |
-| `:focus-visible` fallback ring                 | Keyboard-only highlight on custom widget classes      |
-| `aria-label` on cog, hamburger, overflow btns  | Screen readers announce meaning, not "button"         |
-| Keyboard activation on mobile overlay scrim    | Enter/Space/Escape close the mobile sidebar           |
+Small, dependency-free reimplementations under `src/components/` that preserve the original package's API and markup:
 
-Opt-out for components with their own focus styling: `data-focus-visible-self` on the element.
+| Package                  | Replacement                          |
+| ------------------------ | ------------------------------------ |
+| `react-sparklines`       | `src/components/Sparklines/`         |
+| `react-responsive-tabs`  | `src/components/ResponsiveTabs/` (same `RRT__*` classes the SCSS targets) |
+| `react-liquid-gauge`     | `src/components/LiquidGauge.jsx` (animated SVG wave fill) |
+| `react-rating`           | `src/components/Rating.jsx` (keeps the per-position custom-symbol API) |
+| `react-sticky-el`        | `src/components/Sticky.jsx` (native CSS `position: sticky`) |
 
-### Three more dependencies dropped
+### Changed
 
-Phase 12 (in 4.4.0) removed `react-sweet-progress`. This release removes three more:
+- `react-data-table-component` bumped to v8 — no call-site changes needed.
+- `moment` usages migrated to `date-fns`: `dateFnsLocalizer` for the big-calendar demo, `isAfter` for the date-range pickers.
 
-| Package                   | Reason                                               | Replaced by                                               |
-| ------------------------- | ---------------------------------------------------- | --------------------------------------------------------- |
-| `react-anime`             | Zero source imports; 17.x peer pin                   | Deleted outright                                          |
-| `react-visibility-sensor` | Last released 2020; class component, render-prop     | `src/hooks/useInView.js` (IntersectionObserver, ~25 LOC)  |
-| `react-loaders`           | Last released 2018; webpack-UMD with brittle interop | `src/components/Loader.jsx` (uses existing `loaders.css`) |
+### Kept deliberately
 
-The local `<Loader>` is aliased to the `react-loaders` specifier so the five consumer imports stay as `from 'react-loaders'` — zero source-level churn on the demo pages.
+- `react-simple-maps` (v3) — still on its latest major and not abandoned; reimplementing its d3-geo projection/zoom stack would add risk with no security or maintenance benefit.
 
-### Layout / DemoPages separation
+### Infrastructure
 
-Before this release `Layout/AppMain/index.jsx` owned nine `DemoPages/*` lazy imports. After, it's a 15-line shell that imports `demoRoutes()` from `src/DemoPages/routes.jsx`. For consumers starting a new project:
-
-- `rm -rf src/DemoPages/` produces exactly one import error (in `Layout/AppMain`).
-- [STARTER.md](STARTER.md) walks through the three edits you need after the delete, with full code examples.
-- Everything else — the shell, theme persistence, dark mode, error boundary, accessibility, CI, Playwright — is framework and survives the trim unchanged.
-
-### Sparkline width fix
-
-Eight widget cards (four in CRM Dashboard 2, four in Analytics) were rendering their sparkline SVG in `<Col md="9">` inside `<Row className="widget-chart-wrapper">`. There was no sibling column — the 9/12 was purely a leftover from an old layout — so the charts visibly stopped at 75% of card width. Now `md="12"`; SVGs stretch edge to edge.
+- `vite.config.js`: trimmed the CJS-interop list to the five packages that still need it, removed the dead `vendor-ckeditor` manualChunk and the stale `d3-array` optimizeDeps entry, and dropped `react-table` / `reactour` / `react-responsive-tabs` / `ckeditor4-react` from `overrides`.
 
 ---
 
-## Upgrade from v4.4.0
+## Upgrade from v4.5.0
 
-Pure forward compatibility. No consumer code changes.
+Pure forward compatibility for consumers of the template UI.
 
-1. Pull, `npm install --legacy-peer-deps` (if you want the slimmer tree), run the usual sanity checks.
-2. First load on 4.5.0 gets `darkMode: 'auto'` as a default (persisted state merges over reducer defaults, so any prefs users had keep working).
-3. If you had forks that used `react-anime` or `react-visibility-sensor` directly: neither package ships anymore. `react-loaders` is aliased locally and preserves the `{ Loader, Types }` import shape.
+1. Pull and reinstall: `npm install --legacy-peer-deps` (the lockfile was refreshed).
+2. If your fork imported any removed package **directly**, switch to the replacement above. The local components (`Sparklines`, `ResponsiveTabs`, `LiquidGauge`, `Rating`, `Sticky`) live in `src/components/` and keep the original prop API.
+3. Nothing in the layout shell, theming, persistence, dark mode, or accessibility layer changed.
 
 ---
 
@@ -95,18 +90,18 @@ Pure forward compatibility. No consumer code changes.
 | Linting      | ESLint 9 (flat config) + Prettier 3 | —                |
 | UI Framework | Bootstrap 5.3 (dark-mode ready)     | 5.3.8            |
 | Components   | Reactstrap                          | 9.2.3            |
-| State        | Redux Toolkit                       | 2.11             |
-| Routing      | React Router                        | 7.14             |
-| Animations   | Framer Motion                       | 12.38            |
-| Charts       | ApexCharts, Chart.js, Recharts      | 5.10 / 4.5 / 3.8 |
+| State        | Redux Toolkit                       | 2.12             |
+| Routing      | React Router                        | 7.15             |
+| Charts       | ApexCharts, Chart.js, Recharts      | 5.13 / 4.5 / 3.8 |
 | Maps         | Leaflet, react-simple-maps          | 1.9 / 3.0        |
+| Editor       | react-simple-wysiwyg                | 3.4              |
 | Styling      | Sass                                | 1.99             |
 
 ---
 
 ## Security
 
-**0 vulnerabilities** — clean `npm audit` after the four dependency removals across 4.4.0 + 4.5.0.
+**0 vulnerabilities** — clean `npm audit` after removing `react-validation` (the `uuid` advisory source) and applying the non-breaking transitive fixes.
 
 ---
 
@@ -123,7 +118,7 @@ Pure forward compatibility. No consumer code changes.
 
 See [Changelog.md](Changelog.md) for complete version history.
 
-**Full Changelog**: <https://github.com/DashboardPack/architectui-react-theme-free/compare/v4.4.0...v4.5.0>
+**Full Changelog**: <https://github.com/DashboardPack/architectui-react-theme-free/compare/v4.5.0...v4.6.0>
 
 ---
 

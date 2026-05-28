@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { CSSTransition, TransitionGroup } from '../../../../../utils/TransitionWrapper';
-import Tabs from 'react-responsive-tabs';
+import Tabs from '../../../../../components/ResponsiveTabs';
 
 import { Row, Col, Card, Container } from 'reactstrap';
 

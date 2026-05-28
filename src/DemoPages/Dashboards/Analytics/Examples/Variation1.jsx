@@ -38,7 +38,7 @@ import { makeData } from '../../../Tables/DataTables/Examples/utils';
 
 import { ResponsiveContainer, AreaChart, Area } from 'recharts';
 
-import { Sparklines, SparklinesCurve } from 'react-sparklines';
+import { Sparklines, SparklinesCurve } from '../../../../components/Sparklines';
 
 import {
   faAngleUp,

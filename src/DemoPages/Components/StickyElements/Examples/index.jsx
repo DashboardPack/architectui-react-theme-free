@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { CSSTransition, TransitionGroup } from '../../../../utils/TransitionWrapper';
 import { Row, Col, Card, CardBody, CardTitle } from 'reactstrap';
 
-import Sticky from 'react-sticky-el';
+import Sticky from '../../../../components/Sticky';
 
 class StickyElements extends Component {
   render() {

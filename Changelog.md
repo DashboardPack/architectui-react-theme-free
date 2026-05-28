@@ -1,5 +1,46 @@
 # Changelog
 
+## [4.6.0] - 2026-05-28
+
+Dependency modernization pass. Every dependency is at its latest version, all `npm audit` vulnerabilities are gone (now **0**, was 5), and sixteen abandoned or unused packages were removed — the still-used ones replaced by maintained libraries or small local components so no demo loses functionality. Verified green through lint (0 errors), 23 unit tests, the production build, and the 24-route Playwright smoke test (plus a 10-route smoke pass over every swapped page).
+
+### Security
+
+- **0 `npm audit` vulnerabilities** (was 5: 2 high, 3 moderate). The `uuid` advisory came in through the unused `react-validation`; removing it plus a non-breaking `npm audit fix` (transitive `brace-expansion`, `fast-uri`, `tmp`) cleared the rest.
+
+### Changed
+
+- **`react-data-table-component` 7 → 8** — the only dependency a major version behind. No call-site changes needed.
+- All other ranges already tracked latest; the lockfile was refreshed.
+
+### Removed (unused — zero source imports)
+
+- `react-validation`, `react-form-validator-core`, `react-table`, `react-image-crop`, `react-on-screen`, `react-animations`, `aphrodite`, plus the now-unused `sweetalert` (v2) and the briefly-added `@smastrom/react-rating`.
+
+### Replaced (abandoned → maintained library or local component)
+
+- `react-input-mask` (2022) → **`@react-input/mask`**
+- `react-color` (2022) → **`@uiw/react-color`**
+- `react-bootstrap-sweetalert` (2022) → **`sweetalert2`**
+- `react-numeric-input` (2022) → **`rc-input-number`** (same `rc-*` family as the existing slider/tooltip)
+- `react-cropper` (2023) → **`react-easy-crop`**
+- `reactour` v1 (2024) → **`@reactour/tour`** v3 (hook-based `TourProvider` / `useTour`)
+- `ckeditor4` / `ckeditor4-react` (**end-of-life** software) → **`react-simple-wysiwyg`**
+- `react-rating` (2022) → local **`src/components/Rating.jsx`** (keeps the per-position custom-symbol API the demo relies on)
+- `react-sparklines` (2022) → local **`src/components/Sparklines/`** (faithful reimplementation of the same component API and point math)
+- `react-responsive-tabs` (2022) → local **`src/components/ResponsiveTabs/`** (emits the same `RRT__*` class structure the SCSS targets)
+- `react-sticky-el` (2024) → local **`src/components/Sticky.jsx`** (native CSS `position: sticky`)
+- `react-liquid-gauge` (2022) → local **`src/components/LiquidGauge.jsx`** (animated SVG wave fill; also drops the undeclared `d3-interpolate` import)
+- `moment` (maintenance-mode) → **`date-fns`** (already a dependency): `dateFnsLocalizer` for the big-calendar demo, `isAfter` for the date-range pickers
+
+### Kept deliberately
+
+- **`react-simple-maps`** (v3, 2023) — still on its latest major and not abandoned; reimplementing its d3-geo projection/zoom stack as custom code would add risk with no security or maintenance benefit.
+
+### Infrastructure
+
+- `vite.config.js`: trimmed the CJS-interop list to the five packages that still need it, removed the dead `vendor-ckeditor` manualChunk, and dropped `react-table` / `reactour` / `react-responsive-tabs` / `ckeditor4-react` from `overrides`.
+
 ## [4.5.0] - 2026-04-16
 
 Phase 14–17. The "exceptional" polish pass: real dark mode, accessibility basics, four more unmaintained dependencies gone, and a clear path for consumers to turn the template into their own project. Eight commits since 4.4.0, every one independently green through lint + unit + build + Playwright.

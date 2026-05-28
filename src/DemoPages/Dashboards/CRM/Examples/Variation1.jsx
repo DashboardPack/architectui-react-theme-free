@@ -36,7 +36,7 @@ import {
   faArrowUp,
 } from '@fortawesome/free-solid-svg-icons';
 
-import { Sparklines, SparklinesBars, SparklinesLine } from 'react-sparklines';
+import { Sparklines, SparklinesBars, SparklinesLine } from '../../../../components/Sparklines';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CountUp from 'react-countup';

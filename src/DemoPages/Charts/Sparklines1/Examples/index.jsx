@@ -9,7 +9,7 @@ import {
   SparklinesCurve,
   SparklinesReferenceLine,
   SparklinesSpots,
-} from 'react-sparklines';
+} from '../../../../components/Sparklines';
 
 function boxMullerRandom() {
   let phase = true,
