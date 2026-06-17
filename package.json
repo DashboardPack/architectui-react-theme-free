@@ -80,7 +80,7 @@
     "react-popper": "^2.3.0",
     "react-redux": "^9.2.0",
     "react-resize-detector": "^12.3.0",
-    "react-router-dom": "^7.14.1",
+    "react-router-dom": "^7.18.0",
     "react-select": "^5.10.2",
     "react-simple-maps": "^3.0.0",
     "react-simple-wysiwyg": "^3.4.1",
