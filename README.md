@@ -12,14 +12,15 @@ ArchitectUI React is a feature-rich, free admin dashboard template designed for 
 
 This template offers clean, responsive design with a comprehensive set of UI components, charts, forms, and layout options. Perfect for startups, enterprises, and developers looking for a production-ready admin dashboard solution.
 
-## What's New in 4.6.0
+## What's New in 4.7.0
 
-A dependency-modernization release — see [Changelog.md](Changelog.md) and [RELEASE.md](RELEASE.md) for the full detail.
+A security-refresh release — see [Changelog.md](Changelog.md) and [RELEASE.md](RELEASE.md) for the full detail.
 
-- **0 `npm audit` vulnerabilities** (down from 5) and every dependency on its latest version.
-- **16 abandoned/unused packages removed**; `react-data-table-component` upgraded to v8.
-- **End-of-life CKEditor 4 replaced** with the maintained `react-simple-wysiwyg`.
-- **Abandoned packages swapped** for maintained equivalents (`@react-input/mask`, `@uiw/react-color`, `sweetalert2`, `rc-input-number`, `react-easy-crop`, `@reactour/tour` v3, `date-fns`) or small dependency-free local components (`Sparklines`, `ResponsiveTabs`, `LiquidGauge`, `Rating`, `Sticky`).
+- **6 `npm audit` vulnerabilities → 0** (was 4 high, 1 moderate, 1 low); every dependency back on its latest version.
+- **`react-router` 7.18.0 and `vite` 8.1.0** patch the two high-severity direct-dependency advisories; transitive `undici`, `js-yaml`, and `@babel/core` fixed alongside.
+- **Two major bumps, both no-impact**: `react-easy-crop` 5 → 6 (build tooling only) and `@babel/runtime` 7 → 8 (a vestigial, unimported dependency).
+- **`Rating` component** rewritten to React's adjust-state-during-render pattern (the new `set-state-in-effect` lint rule).
+- **ESLint held at 9.x** — its `react` / `jsx-a11y` plugins don't yet support ESLint 10.
 - **No breaking changes** to the template's layout, theming, or starter workflow.
 
 ## Key Features
@@ -149,10 +150,10 @@ architectui-react-theme-free/
 
 Copy [.env.example](.env.example) to `.env.local` and adjust as needed. Only `VITE_`-prefixed keys are exposed to the browser bundle.
 
-| Key           | Default | Effect                                                       |
-| ------------- | ------- | ------------------------------------------------------------ |
-| `VITE_PORT`   | `3001`  | Dev server port                                              |
-| `VITE_BASE`   | `./`    | Public base path used by the production build (set to e.g. `"/architectui/"` when deploying to a subdirectory) |
+| Key         | Default | Effect                                                                                                         |
+| ----------- | ------- | -------------------------------------------------------------------------------------------------------------- |
+| `VITE_PORT` | `3001`  | Dev server port                                                                                                |
+| `VITE_BASE` | `./`    | Public base path used by the production build (set to e.g. `"/architectui/"` when deploying to a subdirectory) |
 
 ## Testing
 

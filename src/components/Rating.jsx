@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 // Local replacement for `react-rating` (last published 2022). Preserves the
 // flexible API the demo relies on: `emptySymbol` / `fullSymbol` can each be a
@@ -28,9 +28,13 @@ export default function Rating({
   const [value, setValue] = useState(initialRating);
 
   // `initialRating` acts as the source of truth so the parent can reset it.
-  useEffect(() => {
+  // Adjust state during render (React's recommended pattern) instead of an
+  // effect, which avoids an extra render pass and the set-state-in-effect lint.
+  const [prevInitial, setPrevInitial] = useState(initialRating);
+  if (initialRating !== prevInitial) {
+    setPrevInitial(initialRating);
     setValue(initialRating);
-  }, [initialRating]);
+  }
 
   const current = hover != null ? hover : value;
   const display = typeof current === 'number' ? current : 0;

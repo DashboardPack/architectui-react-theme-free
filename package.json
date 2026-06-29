@@ -1,6 +1,6 @@
 {
   "name": "architectui-react-theme-free",
-  "version": "4.6.0",
+  "version": "4.7.0",
   "homepage": "./",
   "private": true,
   "type": "module",
@@ -31,7 +31,7 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
-    "@babel/runtime": "^7.29.2",
+    "@babel/runtime": "^8.0.0",
     "@fortawesome/fontawesome-free": "^7.2.0",
     "@fortawesome/fontawesome-svg-core": "^7.2.0",
     "@fortawesome/free-brands-svg-icons": "^7.2.0",
@@ -71,7 +71,7 @@
     "react-datepicker": "^9.1.0",
     "react-dom": "^19.2.5",
     "react-dropzone": "^15.0.0",
-    "react-easy-crop": "^5.5.7",
+    "react-easy-crop": "^6.0.2",
     "react-flagkit": "^2.0.4",
     "react-icons": "^5.6.0",
     "react-leaflet": "^5.0.0",

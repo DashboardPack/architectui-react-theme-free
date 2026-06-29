@@ -1,5 +1,32 @@
 # Changelog
 
+## [4.7.0] - 2026-06-29
+
+Security and dependency-refresh release. A month after 4.6.0, fresh advisories landed against `react-router`, `vite`, and three transitive packages; this pass clears all of them and pulls every dependency back up to its latest version. Verified green through lint (0 errors), 23 unit tests, the production build, and the 24-route Playwright smoke test.
+
+### Security
+
+- **6 `npm audit` vulnerabilities → 0** (was 4 high, 1 moderate, 1 low):
+  - **`react-router` / `react-router-dom`** (high) → **7.18.0**: vendored `turbo-stream` arbitrary-constructor RCE, DoS via unbounded `__manifest` path expansion, and CSRF via PUT/PATCH/DELETE document requests.
+  - **`vite`** (high) → **8.1.0**: `server.fs.deny` bypass via Windows alternate paths and `launch-editor` NTLMv2 hash disclosure.
+  - **`undici`** (high, transitive) → **7.28.0**: seven advisories incl. TLS validation bypass and Set-Cookie injection.
+  - **`@babel/core`** (low, transitive) → **7.29.7**: arbitrary file read via `sourceMappingURL`.
+  - **`js-yaml`** (moderate, transitive) → **4.3.0**: quadratic-complexity DoS in merge-key handling.
+
+### Changed
+
+- **`react-easy-crop` 5 → 6** — major bump; v6 only modernizes the package's build/test tooling, no runtime API change. The Image Cropper demo (core `image`/`crop`/`zoom`/`aspect`/`onCropChange`/`onZoomChange`/`onCropComplete` props) is unaffected.
+- **`@babel/runtime` 7 → 8** — major bump of a vestigial direct dependency (no `src/` import; transitive 7.x is still deduped where libraries require it).
+- **Lockfile refreshed to latest across ~40 packages.** The `^` ranges already tracked latest, so `npm update` pulled the newest in-range releases without package.json edits — notably `react` / `react-dom` 19.2.7, `apexcharts` 5.15.2, `recharts` 3.9.0, `framer-motion` 12.42.0, `@reduxjs/toolkit` 2.12.0, `react-redux` 9.3.0, `sass` 1.101.0, `vite` 8.1.0, `vitest` 4.1.9, `@playwright/test` 1.61.1, `prettier` 3.9.1, `date-fns` 4.4.0.
+
+### Fixed
+
+- **`src/components/Rating.jsx`** — `eslint-plugin-react-hooks` 7.1 promoted `set-state-in-effect` to an error, which flagged the component's prop-syncing `useEffect`. Rewrote it as React's recommended adjust-state-during-render pattern, preserving the parent-driven reset behaviour while dropping an extra render pass.
+
+### Kept deliberately
+
+- **`eslint` / `@eslint/js` held at 9.x** (latest 9.39.4) rather than 10.x. `eslint-plugin-react` and `eslint-plugin-jsx-a11y` do not yet declare ESLint 10 peer support (ESLint 10 removed deprecated context APIs they rely on), and 9.x has no open advisories — so there is no security reason to rush. Revisit once both plugins ship `^10` support.
+
 ## [4.6.0] - 2026-05-28
 
 Dependency modernization pass. Every dependency is at its latest version, all `npm audit` vulnerabilities are gone (now **0**, was 5), and sixteen abandoned or unused packages were removed — the still-used ones replaced by maintained libraries or small local components so no demo loses functionality. Verified green through lint (0 errors), 23 unit tests, the production build, and the 24-route Playwright smoke test (plus a 10-route smoke pass over every swapped page).
