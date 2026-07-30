@@ -2,7 +2,7 @@
 
 **React 19 Compatible** - A modern, responsive admin dashboard template built with React 19, Bootstrap 5, and comprehensive component library.
 
-[![ArchitectUI Bootstrap 5 ReactJS Theme FREE](https://colorlib.com/wp/wp-content/uploads/sites/2/architectui-react-free.jpg)](https://demo.dashboardpack.com/architectui-react-free/)
+[![ArchitectUI Bootstrap 5 ReactJS Theme FREE](.github/preview.webp)](https://demo.dashboardpack.com/architectui-react-free/)
 
 [**View Live Demo**](https://demo.dashboardpack.com/architectui-react-free/)
 
