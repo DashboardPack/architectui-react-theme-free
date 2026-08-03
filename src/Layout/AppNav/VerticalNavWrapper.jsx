@@ -1,5 +1,5 @@
 import { Fragment, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 import { setEnableMobileMenu } from '../../reducers/ThemeOptions';
 import { UpgradeNav, MainNav, ComponentsNav, FormsNav, WidgetsNav, ChartsNav } from './NavItems';

@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Routes } from 'react-router-dom';
+import { Routes } from 'react-router';
 import { ToastContainer } from 'react-toastify';
 
 import demoRoutes from '../../DemoPages/routes';

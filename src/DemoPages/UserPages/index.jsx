@@ -1,5 +1,5 @@
 import { Fragment, Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router';
 import SuspenseFallback from '../../Layout/AppMain/SuspenseFallback';
 
 const Login = lazy(() => import('./Login/'));

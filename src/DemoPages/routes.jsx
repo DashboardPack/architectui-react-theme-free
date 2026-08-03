@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { Route, Navigate } from 'react-router-dom';
+import { Route, Navigate } from 'react-router';
 import SuspenseFallback from '../Layout/AppMain/SuspenseFallback';
 
 // Every demo section is code-split so only the routes a user visits pay the

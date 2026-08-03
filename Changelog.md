@@ -1,5 +1,33 @@
 # Changelog
 
+## [4.8.0] - 2026-08-03
+
+Security and dependency-refresh release, prompted by the Dependabot **PostCSS path traversal** advisory. Clears all five outstanding advisories and pulls every dependency to its latest resolvable version. Verified green through lint (0 errors), 23 unit tests, and the production build.
+
+### Security
+
+- **5 `npm audit` vulnerabilities → 0** (all high):
+  - **`postcss`** → **8.5.25**: [GHSA-r28c-9q8g-f849](https://github.com/advisories/GHSA-r28c-9q8g-f849) — path traversal in previous-source-map auto-loading (`sourceMappingURL`) leading to arbitrary `.map` file disclosure. This is the advisory Dependabot flagged.
+  - **`react-router`** → **8.3.0**: RSC-mode CSRF bypass allowing action execution before a 400 response ([GHSA-qwww-vcr4-c8h2](https://github.com/advisories/GHSA-qwww-vcr4-c8h2)). The whole `7.12.0 – 8.2.0` range is affected, so no 7.x release fixes it — see the migration note below.
+  - **`brace-expansion`** (transitive): DoS via exponential-time expansion and unbounded expansion length.
+  - **`fast-uri`** → **3.1.5** (transitive): host confusion via literal backslash authority delimiter and failed IDN canonicalization.
+
+### Changed
+
+- **`react-router-dom` 7.18.0 → `react-router` 8.3.0 (breaking upstream, transparent here).** `react-router-dom` is discontinued at 7.18.2 and pins `react-router` to the matching vulnerable 7.x release, so the advisory cannot be cleared on the 7.x line. In v7 `react-router-dom` was already a thin re-export of `react-router`, so the migration is an import swap: the 13 files importing `HashRouter`, `Link`, `Navigate`, `Route`, `Routes` and `useLocation` now import them from `react-router`. No routing behaviour, API or markup changed.
+  - **If you have custom pages**, update your imports: `from 'react-router-dom'` → `from 'react-router'`.
+- **`react-dropzone` 15 → 20** — the render-prop `<Dropzone>` default export is unchanged; the Dropzone demo is unaffected.
+- **`apexcharts` 5 → 6** — `react-apexcharts` declares `apexcharts: >=5.10.1`, so the peer is satisfied; chart demos verified in the build.
+- **`@testing-library/jest-dom` 6 → 7** and **`jsdom` 29 → 30** — test tooling only; all 23 tests pass.
+- **`engines.node` raised to `>=22`** — required by `react-dropzone` 20 and `@testing-library/jest-dom` 7.
+- **React 19.2.8**, `recharts` 3.10.1, `framer-motion` 12.43.0, `styled-components` 6.4.4, `react-data-table-component` 8.8.0, `react-easy-crop` 6.2.3, `react-icons` 5.7.0, FontAwesome 7.3.1, `vite` 8.2.0, `vitest` 4.1.10, `sass` 1.102.0, `prettier` 3.9.6, `@playwright/test` 1.62.1.
+- **`overrides` now use npm's `$name` reference syntax** for `react`, `react-dom`, `@types/react` and `postcss`, so they track the direct dependency automatically instead of drifting out of sync and failing installs with `EOVERRIDE`.
+
+### Kept deliberately
+
+- **`eslint` / `@eslint/js` held at 9.x** (latest 10.8.0). `eslint-plugin-react` (7.37.5) and `eslint-plugin-jsx-a11y` (6.10.2) still cap their peer range at ESLint 9, and neither has shipped a v10-compatible release. 9.x has no open advisories.
+- **`@vitejs/plugin-react` held at 6.0.3** (latest 6.0.5). 6.0.5 pulls `@rolldown/plugin-babel`, whose optional peer resolves `@babel/plugin-transform-runtime` 8 and then demands `@babel/core` ^8, conflicting with the tree. Dev-only, patch-level, no security impact.
+
 ## [4.7.0] - 2026-06-29
 
 Security and dependency-refresh release. A month after 4.6.0, fresh advisories landed against `react-router`, `vite`, and three transitive packages; this pass clears all of them and pulls every dependency back up to its latest version. Verified green through lint (0 errors), 23 unit tests, the production build, and the 24-route Playwright smoke test.
