@@ -179,9 +179,7 @@ export default defineConfig(({ mode }) => {
             if (/[\\/]node_modules[\\/](reactstrap|react-bootstrap|bootstrap|@restart)[\\/]/.test(id))
               return 'vendor-bootstrap';
             if (/[\\/]node_modules[\\/]@fortawesome[\\/]/.test(id)) return 'vendor-fontawesome';
-            if (/[\\/]node_modules[\\/](apexcharts|react-apexcharts)[\\/]/.test(id))
-              return 'vendor-apexcharts';
-            if (/[\\/]node_modules[\\/](chart\.js|react-chartjs-2)[\\/]/.test(id))
+            if (/[\\/]node_modules[\\/](chart\.js|react-chartjs-2|chartjs-plugin-zoom|hammerjs)[\\/]/.test(id))
               return 'vendor-chartjs';
             if (/[\\/]node_modules[\\/]recharts[\\/]/.test(id)) return 'vendor-recharts';
             if (/[\\/]node_modules[\\/](leaflet|react-leaflet)[\\/]/.test(id)) return 'vendor-leaflet';

@@ -29,7 +29,9 @@ const routes = [
   // Tables
   { hash: '#/tables/datatables', expect: /Table|Data/i },
   // Charts
-  { hash: '#/charts/apexcharts', expect: /Chart/i },
+  { hash: '#/charts/chartjs-advanced', expect: /Chart\.js Advanced/i },
+  // Old URL of the Chart.js Advanced page, kept as a redirect
+  { hash: '#/charts/apexcharts', expect: /Chart\.js Advanced/i },
   { hash: '#/charts/chartjs', expect: /Chart/i },
   // User pages
   { hash: '#/pages/login', expect: /Login|Sign in/i },

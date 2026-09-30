@@ -3,7 +3,13 @@ import { CSSTransition, TransitionGroup } from '../../../utils/TransitionWrapper
 
 import PageTitleAlt3 from '../../../Layout/AppMain/PageTitleAlt3';
 
-import Chart from 'react-apexcharts';
+import { Doughnut } from 'react-chartjs-2';
+import {
+  centerTextPlugin,
+  chartColors,
+  gaugeColors,
+  horizontalGradient,
+} from '../../../config/chartTheme';
 
 import bg1 from '../../../assets/utils/images/dropdown-header/abstract1.jpg';
 
@@ -52,6 +58,8 @@ import {
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+const radialPlugins = [centerTextPlugin];
+
 export default class MinimalDashboard1 extends Component {
   constructor(props) {
     super(props);
@@ -62,87 +70,49 @@ export default class MinimalDashboard1 extends Component {
       visible: true,
       popoverOpen1: false,
 
-      optionsRadial: {
-        chart: {
-          height: 350,
-          type: 'radialBar',
-          toolbar: {
-            show: true,
-          },
-        },
-        plotOptions: {
-          radialBar: {
-            startAngle: -135,
-            endAngle: 225,
-            hollow: {
-              margin: 0,
-              size: '70%',
-              background: '#fff',
-              image: undefined,
-              imageOffsetX: 0,
-              imageOffsetY: 0,
-              position: 'front',
-              dropShadow: {
-                enabled: true,
-                top: 3,
-                left: 0,
-                blur: 4,
-                opacity: 0.24,
-              },
-            },
-            track: {
-              background: '#fff',
-              strokeWidth: '67%',
-              margin: 0, // margin is in pixels
-              dropShadow: {
-                enabled: true,
-                top: -3,
-                left: 0,
-                blur: 4,
-                opacity: 0.35,
-              },
-            },
-
-            dataLabels: {
-              showOn: 'always',
-              name: {
-                offsetY: -10,
-                show: true,
-                color: '#888',
-                fontSize: '17px',
-              },
-              value: {
-                formatter: function (val) {
-                  return parseInt(val);
-                },
-                color: '#111',
-                fontSize: '36px',
-                show: true,
-              },
-            },
-          },
-        },
-        fill: {
-          type: 'gradient',
-          gradient: {
-            shade: 'dark',
-            type: 'horizontal',
-            shadeIntensity: 0.5,
-            gradientToColors: ['#ABE5A1'],
-            inverseColors: true,
-            opacityFrom: 1,
-            opacityTo: 1,
-            stops: [0, 100],
-          },
-        },
-        stroke: {
-          lineCap: 'round',
-        },
-        labels: ['Percent'],
-      },
       seriesRadial: [76],
     };
+    this.radialChart = { data: this.radialData(), options: this.radialOptions() };
     this.onDismiss = this.onDismiss.bind(this);
+  }
+
+  // 270° gauge: a doughnut from -135° with a gradient value arc and a light track.
+  radialData() {
+    const c = chartColors();
+    const value = this.state.seriesRadial[0];
+    return {
+      labels: ['Percent', ''],
+      datasets: [
+        {
+          data: [value, 100 - value],
+          backgroundColor: gaugeColors(horizontalGradient('#ABE5A1', c.info), c.track),
+          borderWidth: 0,
+          borderRadius: [20, 0],
+        },
+      ],
+    };
+  }
+
+  radialOptions() {
+    return {
+      responsive: true,
+      maintainAspectRatio: false,
+      rotation: -135,
+      circumference: 270,
+      cutout: '80%',
+      layout: { padding: 16 },
+      events: [],
+      plugins: {
+        legend: { display: false },
+        tooltip: { enabled: false },
+        centerText: {
+          label: 'Percent',
+          value: parseInt(this.state.seriesRadial[0], 10),
+          labelSize: 17,
+          valueSize: 36,
+        },
+      },
+    };
   }
 
   togglePop1() {
@@ -320,12 +290,13 @@ export default class MinimalDashboard1 extends Component {
                       </div>
                     </CardHeader>
                     <CardBody className="p-0">
-                      <Chart
-                        options={this.state.optionsRadial}
-                        series={this.state.seriesRadial}
-                        type="radialBar"
-                        height={270}
-                      />
+                      <div style={{ position: 'relative', height: 270 }}>
+                        <Doughnut
+                          data={this.radialChart.data}
+                          options={this.radialChart.options}
+                          plugins={radialPlugins}
+                        />
+                      </div>
                       <div className="widget-content pt-0 w-100">
                         <div className="widget-content-outer">
                           <div className="widget-content-wrapper">

@@ -1,79 +1,52 @@
 import React, { Component } from 'react';
-import Chart from 'react-apexcharts';
+import { Bar } from 'react-chartjs-2';
+import { chartColors, sparklineOptions } from '../../../../config/chartTheme';
 
 class Column extends Component {
   constructor(props) {
     super(props);
 
+    const c = chartColors();
+
     this.state = {
-      options55: {
-        chart: {
-          height: 350,
-          type: 'bar',
-          sparkline: {
-            enabled: true,
+      data55: {
+        labels: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+        datasets: [
+          {
+            label: 'Net Profit',
+            data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
+            backgroundColor: c.primary,
           },
-        },
-        plotOptions: {
-          bar: {
-            horizontal: false,
-            endingShape: 'rounded',
-            columnWidth: '55%',
+          {
+            label: 'Revenue',
+            data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
+            backgroundColor: c.success,
           },
-        },
-        dataLabels: {
-          enabled: false,
-        },
-        stroke: {
-          show: true,
-          width: 2,
-          colors: ['transparent'],
-        },
-        xaxis: {
-          categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
-        },
-        yaxis: {
-          title: {
-            text: '$ (thousands)',
+          {
+            label: 'Free Cash Flow',
+            data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
+            backgroundColor: c.warning,
           },
-        },
-        fill: {
-          opacity: 1,
-        },
-        tooltip: {
-          y: {
-            formatter: function (val) {
-              return '$ ' + val + ' thousands';
+        ],
+      },
+      options55: sparklineOptions({
+        datasets: { bar: { barPercentage: 0.8, categoryPercentage: 0.55, borderRadius: 2 } },
+        scales: { y: { display: false, beginAtZero: true } },
+        plugins: {
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.dataset.label}: $ ${ctx.parsed.y} thousands`,
             },
           },
         },
-      },
-      series55: [
-        {
-          name: 'Net Profit',
-          data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
-        },
-        {
-          name: 'Revenue',
-          data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
-        },
-        {
-          name: 'Free Cash Flow',
-          data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
-        },
-      ],
+      }),
     };
   }
 
   render() {
     return (
-      <div className="column">
-        <Chart
-          options={this.state.options55}
-          series={this.state.series55}
-          type="bar"
-          width="100%"
-        />
+      <div className="column" style={{ position: 'relative', height: 210 }}>
+        <Bar data={this.state.data55} options={this.state.options55} />
       </div>
     );
   }

@@ -64,4 +64,5 @@ This template predates React 19 and pulls in many older libraries. Several mecha
 
 - Components are `.jsx`; one feature per file. Section folders use an `index.jsx` barrel.
 - ESLint flat config (`eslint.config.js`): `prop-types` and several a11y interaction rules are off; `no-unused-vars` allows `_`-prefixed; `console` allows only `warn`/`error`/`info`. jsx-a11y recommended rules are on — the template maintains accessibility basics (skip link, landmarks, `:focus-visible`, ARIA on icon buttons).
+- Charts: Chart.js (MIT) is the chart library. Components import `src/config/chartTheme.js` (not `chart.js/auto`): it registers Chart.js, sets `Chart.defaults` from the Bootstrap CSS variables and re-themes charts on the page when `data-bs-theme` changes. `src/components/ZoomableChart` = chart + zoom toolbar. Do not add chart libraries that are not MIT/Apache/BSD licensed.
 - Env vars are `VITE_`-prefixed only (`VITE_PORT`, `VITE_BASE`); copy `.env.example` to `.env.local`. `VITE_BASE` sets the production base path for subdirectory deploys.

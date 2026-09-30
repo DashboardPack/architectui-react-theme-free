@@ -40,7 +40,7 @@ import avatar3 from '../../../../assets/utils/images/avatars/3.jpg';
 
 import classnames from 'classnames';
 
-import 'chart.js/auto';
+import '../../../../config/chartTheme';
 import { Doughnut, Radar } from 'react-chartjs-2';
 
 import {

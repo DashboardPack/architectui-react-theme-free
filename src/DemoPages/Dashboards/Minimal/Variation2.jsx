@@ -3,7 +3,8 @@ import { CSSTransition, TransitionGroup } from '../../../utils/TransitionWrapper
 
 import PageTitleAlt3 from '../../../Layout/AppMain/PageTitleAlt3';
 
-import Chart from 'react-apexcharts';
+import ZoomableChart from '../../../components/ZoomableChart';
+import { alpha, chartColors } from '../../../config/chartTheme';
 
 import IncomeReport from '../Commerce/Examples/Components/IncomeReport';
 import IncomeReport2 from '../Commerce/Examples/Components/IncomeReport2';
@@ -77,91 +78,76 @@ export default class MinimalDashboard2 extends Component {
 
     this.togglePop1 = this.togglePop1.bind(this);
 
+    const c = chartColors();
+
     this.state = {
       popoverOpen1: false,
       activeTab: '2',
 
-      optionsMixedChart: {
-        chart: {
-          height: 350,
-          type: 'line',
-          stacked: false,
-        },
-        stroke: {
-          width: [0, 2, 5],
-          curve: 'smooth',
-        },
-        plotOptions: {
-          bar: {
-            columnWidth: '50%',
-          },
-        },
-        fill: {
-          opacity: [0.85, 0.25, 1],
-          gradient: {
-            inverseColors: false,
-            shade: 'light',
-            type: 'vertical',
-            opacityFrom: 0.85,
-            opacityTo: 0.55,
-            stops: [0, 100, 100, 100],
-          },
-        },
+      dataMixedChart: {
         labels: [
-          '01/01/2003',
-          '02/01/2003',
-          '03/01/2003',
-          '04/01/2003',
-          '05/01/2003',
-          '06/01/2003',
-          '07/01/2003',
-          '08/01/2003',
-          '09/01/2003',
-          '10/01/2003',
-          '11/01/2003',
+          'Jan 2003',
+          'Feb 2003',
+          'Mar 2003',
+          'Apr 2003',
+          'May 2003',
+          'Jun 2003',
+          'Jul 2003',
+          'Aug 2003',
+          'Sep 2003',
+          'Oct 2003',
+          'Nov 2003',
         ],
-        markers: {
-          size: 0,
-        },
-        xaxis: {
-          type: 'datetime',
-        },
-        yaxis: {
-          title: {
-            text: 'Points',
+        datasets: [
+          {
+            type: 'bar',
+            label: 'TEAM A',
+            data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30],
+            backgroundColor: alpha(c.primary, 0.85),
+            order: 1,
           },
-          min: 0,
-        },
-        tooltip: {
-          shared: true,
-          intersect: false,
+          {
+            type: 'bar',
+            label: 'TEAM B',
+            data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43],
+            backgroundColor: alpha(c.success, 0.25),
+            borderColor: c.success,
+            borderWidth: 2,
+            order: 1,
+          },
+          {
+            type: 'line',
+            label: 'TEAM C',
+            data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39],
+            borderColor: c.warning,
+            backgroundColor: c.warning,
+            borderWidth: 4,
+            tension: 0.4,
+            pointRadius: 0,
+            order: 0,
+          },
+        ],
+      },
+      optionsMixedChart: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        datasets: { bar: { barPercentage: 0.8, categoryPercentage: 0.6 } },
+        scales: {
           y: {
-            formatter: function (y) {
-              if (typeof y !== 'undefined') {
-                return y.toFixed(0) + ' points';
-              }
-              return y;
+            beginAtZero: true,
+            title: { display: true, text: 'Points' },
+          },
+        },
+        plugins: {
+          legend: { position: 'bottom' },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(0)} points`,
             },
           },
         },
       },
-      seriesMixedChart: [
-        {
-          name: 'TEAM A',
-          type: 'column',
-          data: [23, 11, 22, 27, 13, 22, 37, 21, 44, 22, 30],
-        },
-        {
-          name: 'TEAM B',
-          type: 'bar',
-          data: [44, 55, 41, 67, 22, 43, 21, 41, 56, 27, 43],
-        },
-        {
-          name: 'TEAM C',
-          type: 'line',
-          data: [30, 25, 36, 30, 45, 35, 64, 52, 59, 36, 39],
-        },
-      ],
     };
   }
 
@@ -297,13 +283,14 @@ export default class MinimalDashboard2 extends Component {
                     </CardBody>
                   </TabPane>
                   <TabPane tabId="2">
-                    <Chart
-                      options={this.state.optionsMixedChart}
-                      series={this.state.seriesMixedChart}
-                      type="line"
-                      width="100%"
-                      height="330px"
-                    />
+                    <div className="p-3">
+                      <ZoomableChart
+                        type="bar"
+                        data={this.state.dataMixedChart}
+                        options={this.state.optionsMixedChart}
+                        height={300}
+                      />
+                    </div>
                   </TabPane>
                   <TabPane tabId="3">
                     <IncomeReport2 />

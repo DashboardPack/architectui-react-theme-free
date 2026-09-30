@@ -1,5 +1,5 @@
 import React from 'react';
-import 'chart.js/auto';
+import '../../../../config/chartTheme';
 import { Bar } from 'react-chartjs-2';
 
 const data = {

@@ -47,7 +47,7 @@ A security-refresh release — see [Changelog.md](Changelog.md) for the full det
 - **30+ Ready-to-use Components** - Forms, tables, charts, modals, and more
 - **Multiple Dashboard Layouts** - Analytics, CRM, Commerce, Sales, and Minimal
 - **Advanced Form Elements** - Date pickers, file uploads, text editors, sliders
-- **Data Visualization** - ApexCharts, Chart.js, Recharts integration
+- **Data Visualization** - Chart.js (MIT) and Recharts integration
 - **Interactive Maps** - Leaflet/OpenStreetMap and Vector Maps (no API key required)
 - **Responsive Design** - Mobile-first approach with all device compatibility
 
@@ -209,6 +209,14 @@ GitHub Actions runs on every push and pull request using the Node version pinned
 
 See [.github/workflows/ci.yml](.github/workflows/ci.yml).
 
+## Charts
+
+The template's charts use [Chart.js](https://www.chartjs.org/) 4.5 (MIT) through [react-chartjs-2](https://react-chartjs-2.js.org/) (MIT), plus Recharts (MIT) on some dashboards and widgets. Zooming uses [chartjs-plugin-zoom](https://www.chartjs.org/chartjs-plugin-zoom/) (MIT, with hammerjs, MIT).
+
+Import `src/config/chartTheme.js` instead of `chart.js/auto` in any component that draws a Chart.js chart. It registers Chart.js and sets `Chart.defaults` to match the template: the body font, colours from the Bootstrap CSS variables (`--bs-primary`, `--bs-body-color`, `--bs-border-color`, …), subtle horizontal gridlines, rounded bars and dark tooltips. When dark mode is switched on or off, charts already on the page pick up the new colours. It also exports helpers used by the demos — `chartColors()`, `verticalGradient()` for area fills, `sparklineOptions()`, and the `centerTextPlugin` / `arcPercentPlugin` inline plugins for gauges and donuts. `src/components/ZoomableChart` wraps a chart with drag / Ctrl + wheel / pinch zooming and zoom buttons.
+
+The Chart.js examples are under **Charts → ChartJS** (`#/charts/chartjs`) and **Chart.js Advanced** (`#/charts/chartjs-advanced`: zoomable area chart, progress ring, donut, horizontal bars and sparklines), and on the two Minimal dashboards.
+
 ## Browser Support
 
 ArchitectUI React supports all modern browsers:
@@ -312,7 +320,7 @@ Upgrade to **[ArchitectUI React PRO](https://dashboardpack.com/theme-details/arc
 ### Dependencies
 
 - **UI Framework**: Bootstrap 5.3.8, Reactstrap 9.2.3
-- **Charts**: ApexCharts 5.13, Chart.js 4.5, Recharts 3.8
+- **Charts**: Chart.js 4.5 (react-chartjs-2, chartjs-plugin-zoom), Recharts 3.10
 - **Maps**: Leaflet 1.9, react-simple-maps 3.0
 - **Icons**: FontAwesome 7.2, React Icons 5.6
 - **Forms**: React Select, React Datepicker, @react-input/mask, rc-input-number

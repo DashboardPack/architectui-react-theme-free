@@ -1,77 +1,83 @@
 import React, { Component } from 'react';
-import Chart from 'react-apexcharts';
+import { Chart } from 'react-chartjs-2';
+import { chartColors } from '../../../../config/chartTheme';
 
 class Mixed extends Component {
   constructor(props) {
     super(props);
 
+    const c = chartColors();
+
     this.state = {
-      optionsMixedChart1: {
-        chart: {
-          height: 350,
-          type: 'line',
-          toolbar: {
-            show: false,
-          },
-        },
-        stroke: {
-          width: [0, 4],
-        },
+      dataMixedChart1: {
         labels: [
-          '01 Jan 2001',
-          '02 Jan 2001',
-          '03 Jan 2001',
-          '04 Jan 2001',
-          '05 Jan 2001',
-          '06 Jan 2001',
-          '07 Jan 2001',
-          '08 Jan 2001',
-          '09 Jan 2001',
-          '10 Jan 2001',
-          '11 Jan 2001',
-          '12 Jan 2001',
+          '01 Jan',
+          '02 Jan',
+          '03 Jan',
+          '04 Jan',
+          '05 Jan',
+          '06 Jan',
+          '07 Jan',
+          '08 Jan',
+          '09 Jan',
+          '10 Jan',
+          '11 Jan',
+          '12 Jan',
         ],
-        xaxis: {
-          type: 'datetime',
-        },
-        yaxis: [
+        datasets: [
           {
-            title: {
-              text: 'Website Blog',
-            },
+            type: 'bar',
+            label: 'Website Blog',
+            data: [440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160],
+            yAxisID: 'y',
+            backgroundColor: c.primary,
+            barPercentage: 0.75,
+            order: 1,
           },
           {
-            opposite: true,
-            title: {
-              text: 'Social Media',
-            },
+            type: 'line',
+            label: 'Social Media',
+            data: [23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16],
+            yAxisID: 'y1',
+            borderColor: c.success,
+            backgroundColor: c.success,
+            borderWidth: 3,
+            tension: 0.3,
+            pointRadius: 0,
+            order: 0,
           },
         ],
       },
-      seriesMixedChart1: [
-        {
-          name: 'Website Blog',
-          type: 'column',
-          data: [440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160],
+      optionsMixedChart1: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        scales: {
+          y: {
+            position: 'left',
+            beginAtZero: true,
+            title: { display: true, text: 'Website Blog' },
+          },
+          y1: {
+            position: 'right',
+            grid: { display: false },
+            title: { display: true, text: 'Social Media' },
+          },
         },
-        {
-          name: 'Social Media',
-          type: 'line',
-          data: [23, 42, 35, 27, 43, 22, 17, 31, 22, 22, 12, 16],
+        plugins: {
+          legend: { position: 'bottom' },
         },
-      ],
+      },
     };
   }
 
   render() {
     return (
-      <div className="bar">
+      <div className="bar" style={{ position: 'relative', height: 325 }}>
         <Chart
+          type="bar"
+          data={this.state.dataMixedChart1}
           options={this.state.optionsMixedChart1}
-          series={this.state.seriesMixedChart1}
-          type="line"
-          width="100%"
-          height="325px"
         />
       </div>
     );
