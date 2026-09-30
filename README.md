@@ -12,23 +12,21 @@ ArchitectUI React is a feature-rich, free admin dashboard template designed for 
 
 This template offers clean, responsive design with a comprehensive set of UI components, charts, forms, and layout options. Perfect for startups, enterprises, and developers looking for a production-ready admin dashboard solution.
 
-## What's New in 4.8.0
+## What's New in 4.9.0
 
-A security-refresh release — see [Changelog.md](Changelog.md) for the full detail.
+A charts release — see [Changelog.md](Changelog.md) for the full detail.
 
-- **5 high-severity `npm audit` vulnerabilities → 0**, including the Dependabot-flagged **PostCSS path traversal** ([GHSA-r28c-9q8g-f849](https://github.com/advisories/GHSA-r28c-9q8g-f849)) — `postcss` is now 8.5.25.
-- **`react-router-dom` → `react-router` 8.3.0.** The React Router RSC CSRF advisory affects the entire `7.12.0 – 8.2.0` range, and `react-router-dom` is discontinued at 7.18.2 pinned to a vulnerable 7.x. Since v7's `react-router-dom` was already a re-export shim, this is a pure import swap with no behaviour change.
-  - ⚠️ **Update your custom pages**: change `from 'react-router-dom'` to `from 'react-router'`.
-- **Major bumps, all verified**: `react-dropzone` 15 → 20, `apexcharts` 5 → 6, `@testing-library/jest-dom` 6 → 7, `jsdom` 29 → 30.
-- **React 19.2.8**, Vite 8.2, Vitest 4.1.10, Sass 1.102 and the rest of the stack on latest.
-- **Now requires Node.js 22+** (`react-dropzone` 20, `jest-dom` 7).
-- **Verified green**: 0 lint errors, 23/23 unit tests, clean production build.
-- **ESLint held at 9.x** — its `react` / `jsx-a11y` plugins still don't support ESLint 10.
+- **Charts are now Chart.js 4.5 (MIT).** The previous chart library moved to a proprietary licence that does not allow redistribution in templates, so every one of its charts was rebuilt with Chart.js through `react-chartjs-2`; zooming uses `chartjs-plugin-zoom`. All three are MIT-licensed. See [Charts](#charts).
+- **Chart.js Advanced page** (`#/charts/chartjs-advanced`) replaces the old advanced-charts page with the same examples; the old URL redirects there. The Minimal dashboards are rebuilt on Chart.js too.
+- **One shared chart theme** (`src/config/chartTheme.js`): charts take their font and colours from the Bootstrap CSS variables and follow the dark-mode switch.
+- **~216 kB less gzipped JavaScript** (1,344 kB → 1,128 kB).
+- **Fixed**: `npm ci` works again (a lockfile entry was missing its version), and the Minimal dashboards no longer log a reactstrap `bsSize` console error.
 
-## Previous Release: 4.7.0
+## Previous Release: 4.8.0
 
-- **6 `npm audit` vulnerabilities → 0**; `react-router` 7.18.0 and `vite` 8.1.0 patched two high-severity advisories.
-- **`Rating` component** rewritten to React's adjust-state-during-render pattern.
+- **5 high-severity `npm audit` vulnerabilities → 0**, including the **PostCSS path traversal** advisory ([GHSA-r28c-9q8g-f849](https://github.com/advisories/GHSA-r28c-9q8g-f849)).
+- **`react-router-dom` → `react-router` 8.3.0** — a pure import swap. ⚠️ In custom pages, change `from 'react-router-dom'` to `from 'react-router'`.
+- **Now requires Node.js 22+**; `react-dropzone` 20, React 19.2.8, Vite 8.2 and the rest of the stack on latest.
 
 ## Key Features
 

@@ -1,5 +1,24 @@
 # Changelog
 
+## [4.9.0] - 2026-10-01
+
+Charts release. ApexCharts is replaced by **Chart.js 4.5 (MIT)**: from 5.2 onwards ApexCharts ships under a proprietary licence that does not allow redistribution inside templates like this one. Every ApexCharts chart is rebuilt with Chart.js, so no demo loses a chart. Verified green through lint (0 errors), 23 unit tests, the production build and the Playwright route smoke test.
+
+### Changed
+
+- **Charts are Chart.js 4.5 (MIT) through `react-chartjs-2` (MIT).** Zooming uses `chartjs-plugin-zoom` (MIT, with `hammerjs`, MIT). `apexcharts` and `react-apexcharts` are removed, along with the `.apexcharts-*` styles and their build chunk.
+- **The ApexCharts demo page is now Chart.js Advanced** (`#/charts/chartjs-advanced`) with the same examples: a zoomable area chart (drag, Ctrl + wheel or pinch to zoom, plus zoom in / out / reset buttons), a progress ring, a donut with percentage labels, horizontal bars and area / bar / line sparklines. The old `#/charts/apexcharts` URL redirects there.
+- **Minimal dashboards 1 and 2** rebuilt on Chart.js: the bar + line traffic chart with two y axes, the 270° income gauge, the population pyramid, the column sparklines and the zoomable mixed chart in the Products tab.
+- **New shared chart theme, `src/config/chartTheme.js`.** Import it instead of `chart.js/auto`. It sets `Chart.defaults` from the Bootstrap CSS variables (body font, `--bs-body-color`, `--bs-border-color`, …): subtle horizontal gridlines, rounded bars, dot legend markers and dark tooltips. Charts on the page re-read the colours when dark mode is switched, axis labels and gridlines included. The existing ChartJS demos and the Content Boxes widgets use it too.
+- **New `src/components/ZoomableChart`**: a Chart.js chart with the zoom toolbar.
+- **Smaller build**: all JavaScript is 1,128 kB gzipped, down from 1,344 kB. The chart library chunk is 80 kB gzipped instead of 301 kB (232 kB ApexCharts + 68 kB Chart.js), and the >600 kB chunk-size warning is gone.
+  - **If you have custom pages that used ApexCharts**, rebuild them with Chart.js (`react-chartjs-2`); `src/DemoPages/Charts/ChartJsAdvanced/` has an example of each former ApexCharts chart.
+
+### Fixed
+
+- **`npm ci` failed** with "Invalid Version" because the lockfile listed the `@rolldown/binding-android-arm64` platform binding without a version. The entry is now complete, so clean installs (and CI) work again.
+- **Console error on the Minimal dashboards**: the page-title period selector passed `size="sm"` to reactstrap's `Input`, which logs a `bsSize` warning as an error. It now uses `bsSize`; the markup is unchanged.
+
 ## [4.8.0] - 2026-08-03
 
 Security and dependency-refresh release, prompted by the Dependabot **PostCSS path traversal** advisory. Clears all five outstanding advisories and pulls every dependency to its latest resolvable version. Verified green through lint (0 errors), 23 unit tests, and the production build.
