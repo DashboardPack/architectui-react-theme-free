@@ -33,7 +33,7 @@ export default class TitleComponent1 extends Component {
     return (
       <Fragment>
         <div className="d-inline-block pe-3">
-          <Input id="custom-inp-top" size="sm" type="select">
+          <Input id="custom-inp-top" bsSize="sm" type="select">
             <option>Select period...</option>
             <option>Last Week</option>
             <option>Last Month</option>
