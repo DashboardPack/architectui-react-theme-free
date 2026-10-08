@@ -1,5 +1,23 @@
 # Changelog
 
+## [4.9.2] - 2026-10-08
+
+React template polish release.
+
+### Fixed
+
+- **Header user dropdown**: removed the fixed-height `PerfectScrollbar` wrapper around the short activity/account menu so the dropdown no longer shows an awkward inner vertical scrollbar.
+- **Sidebar upgrade badge**: changed the badge text from `PRO` to `HOT`, switched it to the danger color, and added spacing so it does not sit too close to the menu label.
+
+### Changed
+
+- **Version bumped to 4.9.2.**
+
+### Verification
+
+- `npm run lint` — 0 errors; existing warnings remain.
+- `npm run build` — clean.
+
 ## [4.9.1] - 2026-10-08
 
 Maintenance refresh for the 2026 template line.

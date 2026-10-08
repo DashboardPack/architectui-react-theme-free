@@ -12,7 +12,14 @@ ArchitectUI React is a feature-rich, free admin dashboard template designed for 
 
 This template offers clean, responsive design with a comprehensive set of UI components, charts, forms, and layout options. Perfect for startups, enterprises, and developers looking for a production-ready admin dashboard solution.
 
-## What's New in 4.9.1
+## What's New in 4.9.2
+
+A small polish release for the React header and upgrade CTA — see [Changelog.md](Changelog.md) for the full detail.
+
+- **Header user dropdown**: removed the tiny inner scrollbar from the account activity menu so the dropdown sizes naturally.
+- **Sidebar upgrade badge**: changed the label from `PRO` to `HOT`, moved it to the danger color, and added more spacing from the menu text.
+
+## Previous Release: 4.9.1
 
 A maintenance refresh for the 2026 template line — see [Changelog.md](Changelog.md) for the full detail.
 
