@@ -54,6 +54,10 @@
         visibility: hidden;
       }
 
+      .sidebar-menu-badge {
+        display: none;
+      }
+
       .metismenu-container {
         display: flex;
         flex-direction: column;
@@ -110,6 +114,11 @@
 
         .metismenu-state-icon {
           visibility: visible;
+        }
+
+        .sidebar-menu-badge {
+          display: inline-flex;
+          align-items: center;
         }
 
         .metismenu-container {

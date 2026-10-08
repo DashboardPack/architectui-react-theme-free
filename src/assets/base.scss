@@ -56,6 +56,16 @@
 @import 'bootstrap/scss/helpers';
 @import 'bootstrap/scss/utilities/api';
 
+body {
+  background: #f5f7fb;
+}
+
+.app-main__outer {
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.05), transparent 32rem),
+    linear-gradient(180deg, #f7f9fc 0%, #eef2f7 100%);
+}
+
 // LAYOUT
 
 @import 'layout/layout';

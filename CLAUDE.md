@@ -53,7 +53,7 @@ This template predates React 19 and pulls in many older libraries. Several mecha
 - **`vite.config.js` `cjsInteropPlugin`** rewrites `import X from 'pkg'` for the handful of CommonJS packages listed in `cjsInteropPackages` whose default/named export shape doesn't survive Vite's esbuild interop. If a `react-*` import resolves to `undefined` or "Element type is invalid", add the package to that list rather than changing the import syntax.
 - **Vite aliases**: `react-loaders` → local `src/components/Loader.jsx` (drops a stale 2018 UMD dep); `internmap` → its `dist/` UMD (fixes "InternMap is not a constructor" from recharts/d3 under Vite's lazy ESM wrapping).
 - **Local replacements for abandoned packages** live in `src/components/` (`Sparklines/`, `ResponsiveTabs/`, `LiquidGauge.jsx`, `Rating.jsx`, `Sticky.jsx`) — small dependency-free reimplementations that preserve the old package's API/markup. Prefer extending these over re-adding the original packages.
-- **`patch-finddomnode.js`** is a manual helper that strips `findDOMNode` (removed in React 19) from `react-onclickoutside` / `react-widgets`. The `postinstall: patch-package` hook currently no-ops (no `patches/` dir); run the findDOMNode script by hand only if those packages throw.
+- **`patch-finddomnode.js`** is a manual helper that strips `findDOMNode` (removed in React 19) from `react-onclickoutside` / `react-widgets`. There is no automatic patch-package hook; run the helper by hand only if those packages throw.
 
 ## Testing
 

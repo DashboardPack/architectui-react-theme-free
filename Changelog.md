@@ -1,5 +1,29 @@
 # Changelog
 
+## [4.9.1] - 2026-10-08
+
+Maintenance refresh for the 2026 template line.
+
+### Security
+
+- **`npm audit`: 17 vulnerabilities → 0.** Refreshes the lockfile through the latest safe in-range releases, clearing advisories in `undici`, `js-yaml`, `@vitest/mocker`, `baseline-browser-mapping`, `browserslist`, `nanoid`, `source-map-js`, `brace-expansion`, `fast-uri`, and related transitive packages.
+- **Removed unused `patch-package`** and its no-op `postinstall` hook. The repo has no `patches/` directory, so this only removed a vulnerable dev-only dependency path.
+
+### Changed
+
+- **Version bumped to 4.9.1.**
+- **Dependencies refreshed** within the validated compatibility window: React / React DOM 19.3, React Router 8.4, Vite 8.3, `@vitejs/plugin-react` 6.1, Playwright 1.64, Redux Toolkit 2.13, Sass 1.105, jsdom 30.1, PostCSS 8.5.29, Prettier 3.9.9, and other patch/minor updates.
+- **Removed stale direct Babel dependencies** (`@babel/runtime`, `@babel/plugin-proposal-private-property-in-object`) that were no longer imported by source and complicated modern peer resolution.
+- **Held deliberately**: ESLint 9, Vitest 4, `framer-motion` 12, `react-simple-maps` 3, and `slick-carousel` 1 remain on their current majors pending a dedicated breaking-change pass.
+
+### Fixed
+
+- **Collapsed desktop sidebar badge alignment**: upgrade badges are hidden in icon-only mode and restored when the sidebar expands on hover.
+
+### Design
+
+- Softened the dashboard canvas and card treatment with a lighter page background, subtle borders, calmer shadows, and cleaner card headers for better consistency with the refreshed HTML template.
+
 ## [4.9.0] - 2026-10-01
 
 Charts release. ApexCharts is replaced by **Chart.js 4.5 (MIT)**: from 5.2 onwards ApexCharts ships under a proprietary licence that does not allow redistribution inside templates like this one. Every ApexCharts chart is rebuilt with Chart.js, so no demo loses a chart. Verified green through lint (0 errors), 23 unit tests, the production build and the Playwright route smoke test.

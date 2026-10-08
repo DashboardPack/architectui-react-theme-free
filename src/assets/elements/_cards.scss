@@ -3,8 +3,9 @@
 @use 'sass:math';
 
 .card {
-  box-shadow: $box-shadow-default;
-  border-width: 0;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 0.5rem;
   transition: all 0.2s;
 
   & > .dropdown-menu-header {
@@ -76,7 +77,8 @@
 .card-header {
   display: flex;
   align-items: center;
-  border-bottom-width: 1px;
+  background: rgba(255, 255, 255, 0.72);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
   padding-top: 0;
   padding-bottom: 0;
   padding-right: math.div($card-spacer-x, 2);
