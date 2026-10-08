@@ -2,8 +2,6 @@ import React, { Fragment } from 'react';
 
 import { IoIosCalendar } from 'react-icons/io';
 
-import PerfectScrollbar from 'react-perfect-scrollbar';
-
 import {
   DropdownToggle,
   DropdownMenu,
@@ -91,43 +89,34 @@ class UserBox extends React.Component {
                         </div>
                       </div>
                     </div>
-                    <div
-                      className="scroll-area-xs"
-                      style={{
-                        height: '150px',
-                      }}
-                    >
-                      <PerfectScrollbar>
-                        <Nav vertical>
-                          <NavItem className="nav-item-header">Activity</NavItem>
-                          <NavItem>
-                            <NavLink href="#">
-                              Chat
-                              <div className="ms-auto badge rounded-pill bg-info">8</div>
-                            </NavLink>
-                          </NavItem>
-                          <NavItem>
-                            <NavLink href="#">Recover Password</NavLink>
-                          </NavItem>
-                          <NavItem className="nav-item-header">My Account</NavItem>
-                          <NavItem>
-                            <NavLink href="#">
-                              Settings
-                              <div className="ms-auto badge bg-success">New</div>
-                            </NavLink>
-                          </NavItem>
-                          <NavItem>
-                            <NavLink href="#">
-                              Messages
-                              <div className="ms-auto badge bg-warning">512</div>
-                            </NavLink>
-                          </NavItem>
-                          <NavItem>
-                            <NavLink href="#">Logs</NavLink>
-                          </NavItem>
-                        </Nav>
-                      </PerfectScrollbar>
-                    </div>
+                    <Nav className="user-menu-nav" vertical>
+                      <NavItem className="nav-item-header">Activity</NavItem>
+                      <NavItem>
+                        <NavLink href="#">
+                          Chat
+                          <div className="ms-auto badge rounded-pill bg-info">8</div>
+                        </NavLink>
+                      </NavItem>
+                      <NavItem>
+                        <NavLink href="#">Recover Password</NavLink>
+                      </NavItem>
+                      <NavItem className="nav-item-header">My Account</NavItem>
+                      <NavItem>
+                        <NavLink href="#">
+                          Settings
+                          <div className="ms-auto badge bg-success">New</div>
+                        </NavLink>
+                      </NavItem>
+                      <NavItem>
+                        <NavLink href="#">
+                          Messages
+                          <div className="ms-auto badge bg-warning">512</div>
+                        </NavLink>
+                      </NavItem>
+                      <NavItem>
+                        <NavLink href="#">Logs</NavLink>
+                      </NavItem>
+                    </Nav>
                     <Nav vertical>
                       <NavItem className="nav-item-divider mb-0" />
                     </Nav>

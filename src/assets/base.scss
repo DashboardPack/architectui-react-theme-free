@@ -257,6 +257,10 @@ body {
       &.active {
         font-weight: bold;
       }
+
+      .sidebar-menu-badge {
+        margin-left: 0.75rem !important;
+      }
     }
 
     i.metismenu-state-icon,

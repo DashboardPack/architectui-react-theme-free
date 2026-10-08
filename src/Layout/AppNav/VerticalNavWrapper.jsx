@@ -39,7 +39,7 @@ const SubMenu = ({ item, toggleMobileSidebar }) => {
       >
         <i className={`metismenu-icon ${item.icon}`} />
         <span className="metismenu-link-title">{item.label}</span>
-        {item.badge && <span className="sidebar-menu-badge badge bg-success ms-auto">{item.badge}</span>}
+        {item.badge && <span className="sidebar-menu-badge badge bg-danger ms-auto">{item.badge}</span>}
         {hasSubmenu && (
           <i className={`metismenu-state-icon pe-7s-angle-${isSubMenuOpen ? 'up' : 'down'}`} />
         )}
