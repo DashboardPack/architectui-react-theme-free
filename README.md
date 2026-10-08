@@ -12,7 +12,17 @@ ArchitectUI React is a feature-rich, free admin dashboard template designed for 
 
 This template offers clean, responsive design with a comprehensive set of UI components, charts, forms, and layout options. Perfect for startups, enterprises, and developers looking for a production-ready admin dashboard solution.
 
-## What's New in 4.9.0
+## What's New in 4.9.1
+
+A maintenance refresh for the 2026 template line — see [Changelog.md](Changelog.md) for the full detail.
+
+- **Security clean-up**: `npm audit` is back to 0 vulnerabilities. The lockfile now carries the latest safe transitive fixes for `undici`, `js-yaml`, `@vitest/mocker`, `baseline-browser-mapping`, `browserslist`, `nanoid`, `source-map-js`, and related tooling packages.
+- **Dependencies refreshed**: React 19.3, React Router 8.4, Vite 8.3, Playwright 1.64, Sass 1.105, jsdom 30.1, Redux Toolkit 2.13 and other current in-range releases.
+- **Removed dead install hook**: the unused `patch-package` postinstall step and stale direct Babel dependencies are gone, which keeps fresh installs quieter and removes the last audit issue.
+- **Sidebar polish**: upgrade badges now collapse cleanly in desktop icon-only mode and reappear when the sidebar is hovered open.
+- **Visual consistency**: cards and the application background now use the softer 2026 treatment from the HTML refresh — lighter borders, calmer shadows, and a cleaner dashboard canvas.
+
+## Previous Release: 4.9.0
 
 A charts release — see [Changelog.md](Changelog.md) for the full detail.
 
@@ -32,12 +42,12 @@ A charts release — see [Changelog.md](Changelog.md) for the full detail.
 
 ### Core Technologies
 
-- **React 19.2** - Latest React with improved performance and features
+- **React 19.3** - Latest React with improved performance and features
 - **Vite 8** - Lightning-fast build tool with instant HMR
 - **Vitest 4** - First-party test runner with React Testing Library
 - **Bootstrap 5.3.8** - Modern CSS framework with utilities
 - **Redux Toolkit** - State management
-- **React Router v8** - Navigation and routing
+- **React Router v8.4** - Navigation and routing
 - **Sass/SCSS** - Advanced styling capabilities
 
 ### UI Components
