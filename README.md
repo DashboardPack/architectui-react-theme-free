@@ -52,7 +52,7 @@ A charts release — see [Changelog.md](Changelog.md) for the full detail.
 - **React 19.3** - Latest React with improved performance and features
 - **Vite 8** - Lightning-fast build tool with instant HMR
 - **Vitest 4** - First-party test runner with React Testing Library
-- **Bootstrap 5.3.8** - Modern CSS framework with utilities
+- **Bootstrap 5.3.9** - Modern CSS framework with utilities
 - **Redux Toolkit** - State management
 - **React Router v8.4** - Navigation and routing
 - **Sass/SCSS** - Advanced styling capabilities
@@ -334,7 +334,7 @@ Upgrade to **[ArchitectUI React PRO](https://dashboardpack.com/theme-details/arc
 
 ### Dependencies
 
-- **UI Framework**: Bootstrap 5.3.8, Reactstrap 9.2.3
+- **UI Framework**: Bootstrap 5.3.9, Reactstrap 9.2.3
 - **Charts**: Chart.js 4.5 (react-chartjs-2, chartjs-plugin-zoom), Recharts 3.10
 - **Maps**: Leaflet 1.9, react-simple-maps 3.0
 - **Icons**: FontAwesome 7.2, React Icons 5.6
