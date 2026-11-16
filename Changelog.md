@@ -1,5 +1,25 @@
 # Changelog
 
+## [4.9.3] - 2026-11-16
+
+Dependency refresh and Bootstrap 5.3.9.
+
+### Changed
+
+- **Bootstrap 5.3.8 to 5.3.9.**
+- **Dependencies updated to latest**: React 19.3.1, react-router 8.5, Redux Toolkit 2.14, Chart.js 4.6, Vite 8.3.8, Vitest 5, framer-motion 14, react-simple-maps 5, slick-carousel 2, jsdom 31, glob 14, Sass 1.108 and the remaining minor and patch releases.
+- **ESLint stays on 9.x**: `eslint-plugin-react` and `eslint-plugin-jsx-a11y` do not declare ESLint 10 support yet.
+
+### Fixed
+
+- **Vector maps** (Components > Maps): react-simple-maps 5 dropped the `default`/`hover`/`pressed` style object on `Geography`, so countries rendered black. Fill and hover now come from props, and the map centre moved to `ZoomableGroup` so the framing is unchanged.
+
+### Verification
+
+- `npm run lint` 0 errors, 23 unit tests, production build, 25 Playwright route smoke tests.
+- All 72 demo routes loaded in a real browser (light and dark): zero console errors and zero failed requests. Key pages pixel-compared against the previous build.
+- `npm audit`: 0 vulnerabilities. `npm ci` verified on npm 10.
+
 ## [4.9.2] - 2026-10-08
 
 React template polish release.

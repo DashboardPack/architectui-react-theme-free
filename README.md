@@ -12,7 +12,14 @@ ArchitectUI React is a feature-rich, free admin dashboard template designed for 
 
 This template offers clean, responsive design with a comprehensive set of UI components, charts, forms, and layout options. Perfect for startups, enterprises, and developers looking for a production-ready admin dashboard solution.
 
-## What's New in 4.9.2
+## What's New in 4.9.3
+
+Dependency refresh and Bootstrap 5.3.9 — see [Changelog.md](Changelog.md) for the full detail.
+
+- **Bootstrap 5.3.9** and every dependency at its latest release (React 19.3.1, Vite 8.3, Vitest 5, react-router 8.5, Chart.js 4.6, framer-motion 14).
+- **Vector maps fixed** for react-simple-maps 5 (countries no longer render black).
+
+## Previous Release: 4.9.2
 
 A small polish release for the React header and upgrade CTA — see [Changelog.md](Changelog.md) for the full detail.
 
