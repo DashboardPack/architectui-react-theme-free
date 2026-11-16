@@ -20,7 +20,6 @@ const VectorMapsBasic = () => {
           projection="geoMercator"
           projectionConfig={{
             scale: 147,
-            center: [0, 30],
           }}
           width={800}
           height={450}
@@ -29,7 +28,7 @@ const VectorMapsBasic = () => {
             height: '100%',
           }}
         >
-          <ZoomableGroup zoom={1} minZoom={1} maxZoom={8}>
+          <ZoomableGroup center={[0, 30]} zoom={1} minZoom={1} maxZoom={8}>
             <Sphere stroke="#E4E5E6" strokeWidth={0.5} fill="#f8f9fa" />
             <Graticule stroke="#E4E5E6" strokeWidth={0.3} />
             <Geographies geography={world}>
@@ -41,27 +40,10 @@ const VectorMapsBasic = () => {
                       geography={geo}
                       onMouseEnter={() => setHoveredGeo(geo.rsmKey)}
                       onMouseLeave={() => setHoveredGeo(null)}
-                      style={{
-                        default: {
-                          fill: '#6c5ce7',
-                          stroke: '#fff',
-                          strokeWidth: 0.5,
-                          outline: 'none',
-                        },
-                        hover: {
-                          fill: '#a29bfe',
-                          stroke: '#fff',
-                          strokeWidth: 0.75,
-                          outline: 'none',
-                          cursor: 'pointer',
-                        },
-                        pressed: {
-                          fill: '#5f27cd',
-                          stroke: '#fff',
-                          strokeWidth: 0.75,
-                          outline: 'none',
-                        },
-                      }}
+                      fill={hoveredGeo === geo.rsmKey ? '#a29bfe' : '#6c5ce7'}
+                      stroke="#fff"
+                      strokeWidth={hoveredGeo === geo.rsmKey ? 0.75 : 0.5}
+                      style={{ outline: 'none', cursor: 'pointer' }}
                     />
                   );
                 })

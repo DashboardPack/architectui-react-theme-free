@@ -12,7 +12,14 @@ ArchitectUI React is a feature-rich, free admin dashboard template designed for 
 
 This template offers clean, responsive design with a comprehensive set of UI components, charts, forms, and layout options. Perfect for startups, enterprises, and developers looking for a production-ready admin dashboard solution.
 
-## What's New in 4.9.2
+## What's New in 4.9.3
+
+Dependency refresh and Bootstrap 5.3.9 — see [Changelog.md](Changelog.md) for the full detail.
+
+- **Bootstrap 5.3.9** and every dependency at its latest release (React 19.3.1, Vite 8.3, Vitest 5, react-router 8.5, Chart.js 4.6, framer-motion 14).
+- **Vector maps fixed** for react-simple-maps 5 (countries no longer render black).
+
+## Previous Release: 4.9.2
 
 A small polish release for the React header and upgrade CTA — see [Changelog.md](Changelog.md) for the full detail.
 
@@ -52,7 +59,7 @@ A charts release — see [Changelog.md](Changelog.md) for the full detail.
 - **React 19.3** - Latest React with improved performance and features
 - **Vite 8** - Lightning-fast build tool with instant HMR
 - **Vitest 4** - First-party test runner with React Testing Library
-- **Bootstrap 5.3.8** - Modern CSS framework with utilities
+- **Bootstrap 5.3.9** - Modern CSS framework with utilities
 - **Redux Toolkit** - State management
 - **React Router v8.4** - Navigation and routing
 - **Sass/SCSS** - Advanced styling capabilities
@@ -334,7 +341,7 @@ Upgrade to **[ArchitectUI React PRO](https://dashboardpack.com/theme-details/arc
 
 ### Dependencies
 
-- **UI Framework**: Bootstrap 5.3.8, Reactstrap 9.2.3
+- **UI Framework**: Bootstrap 5.3.9, Reactstrap 9.2.3
 - **Charts**: Chart.js 4.5 (react-chartjs-2, chartjs-plugin-zoom), Recharts 3.10
 - **Maps**: Leaflet 1.9, react-simple-maps 3.0
 - **Icons**: FontAwesome 7.2, React Icons 5.6

@@ -26,6 +26,7 @@ const cities = [
 
 const VectorMapsMarkers = () => {
   const [hoveredCity, setHoveredCity] = useState(null);
+  const [hoveredGeo, setHoveredGeo] = useState(null);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (e) => {
@@ -42,7 +43,6 @@ const VectorMapsMarkers = () => {
           projection="geoMercator"
           projectionConfig={{
             scale: 147,
-            center: [0, 30],
           }}
           width={800}
           height={450}
@@ -51,7 +51,7 @@ const VectorMapsMarkers = () => {
             height: '100%',
           }}
         >
-          <ZoomableGroup zoom={1} minZoom={1} maxZoom={8}>
+          <ZoomableGroup center={[0, 30]} zoom={1} minZoom={1} maxZoom={8}>
             <Sphere stroke="#E4E5E6" strokeWidth={0.5} fill="#f0f4f8" />
             <Graticule stroke="#E4E5E6" strokeWidth={0.3} />
             <Geographies geography={world}>
@@ -60,24 +60,12 @@ const VectorMapsMarkers = () => {
                   <Geography
                     key={geo.rsmKey}
                     geography={geo}
-                    style={{
-                      default: {
-                        fill: '#74b9ff',
-                        stroke: '#fff',
-                        strokeWidth: 0.5,
-                        outline: 'none',
-                      },
-                      hover: {
-                        fill: '#0984e3',
-                        stroke: '#fff',
-                        strokeWidth: 0.5,
-                        outline: 'none',
-                      },
-                      pressed: {
-                        fill: '#0984e3',
-                        outline: 'none',
-                      },
-                    }}
+                    onMouseEnter={() => setHoveredGeo(geo.rsmKey)}
+                    onMouseLeave={() => setHoveredGeo(null)}
+                    fill={hoveredGeo === geo.rsmKey ? '#0984e3' : '#74b9ff'}
+                    stroke="#fff"
+                    strokeWidth={0.5}
+                    style={{ outline: 'none' }}
                   />
                 ))
               }
